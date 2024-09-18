@@ -33,6 +33,7 @@
 		BF25D06B2C9AB14A00CB7EE8 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D0692C9AB14A00CB7EE8 /* ProductListViewController.swift */; };
 		BF25D06C2C9AB14A00CB7EE8 /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF25D06A2C9AB14A00CB7EE8 /* ProductListViewController.xib */; };
 		BF25D06E2C9AC0D100CB7EE8 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D06D2C9AC0D100CB7EE8 /* DIContainer.swift */; };
+		BF25D0712C9ADA5B00CB7EE8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D0702C9ADA5B00CB7EE8 /* AuthService.swift */; };
 		BF5B322E2C92E3E00063CA29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */; };
 		BF5B32302C92E3E00063CA29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322F2C92E3E00063CA29 /* SceneDelegate.swift */; };
 		BF5B32322C92E3E00063CA29 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32312C92E3E00063CA29 /* LoginViewController.swift */; };
@@ -88,6 +89,7 @@
 		BF25D0692C9AB14A00CB7EE8 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		BF25D06A2C9AB14A00CB7EE8 /* ProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
 		BF25D06D2C9AC0D100CB7EE8 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		BF25D0702C9ADA5B00CB7EE8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BF5B322A2C92E3E00063CA29 /* Shang_Buyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shang_Buyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF5B322F2C92E3E00063CA29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				BF25D0582C9972EE00CB7EE8 /* APIService.swift */,
+				BF25D0702C9ADA5B00CB7EE8 /* AuthService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				BF25D0592C9972EE00CB7EE8 /* APIService.swift in Sources */,
 				BF25D06E2C9AC0D100CB7EE8 /* DIContainer.swift in Sources */,
 				BF25D0442C97239400CB7EE8 /* Button+Extension.swift in Sources */,
+				BF25D0712C9ADA5B00CB7EE8 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
