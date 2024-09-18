@@ -5,8 +5,8 @@
 //  Created by Louis Macbook on 17/09/2024.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 protocol ProductRepository {
     func getProducts() -> AnyPublisher<[Product], Error>
@@ -22,5 +22,4 @@ class ProductRepositoryImpl: ProductRepository {
     func getProducts() -> AnyPublisher<[Product], Error> {
         return apiService.request(endpoint: .getProduct, method: .get, parameters: nil)
     }
-    
 }

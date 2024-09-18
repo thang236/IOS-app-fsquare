@@ -41,4 +41,3 @@ class TokenManager {
         UserDefaults.standard.removeObject(forKey: refreshTokenKey)
     }
 }
-

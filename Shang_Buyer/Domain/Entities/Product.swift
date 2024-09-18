@@ -1,5 +1,5 @@
 //
-//  AccountModel.swift
+//  Product.swift
 //  Shang_Buyer
 //
 //  Created by Louis Macbook on 17/09/2024.

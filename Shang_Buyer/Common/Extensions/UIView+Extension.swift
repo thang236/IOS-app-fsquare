@@ -18,34 +18,36 @@ extension UIView {
             layer.masksToBounds = newValue > 0
         }
     }
+
     @IBInspectable var borderWidth: CGFloat {
-            get {
-                return layer.borderWidth
-            }
-            set {
-                layer.borderWidth = newValue
-            }
+        get {
+            return layer.borderWidth
         }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+
     @IBInspectable var borderColor: UIColor? {
-           get {
-               if let color = layer.borderColor {
-                   return UIColor(cgColor: color)
-               }
-               return nil
-           }
-           set {
-               layer.borderColor = newValue?.cgColor
-           }
-       }
-    
-    func addBorderAround(borderWidth: CGFloat, borderColor: UIColor, cornerRadius: CGFloat? = nil) {
-            self.layer.borderWidth = borderWidth
-            self.layer.borderColor = borderColor.cgColor
-            if let cornerRadius = cornerRadius {
-                self.layer.cornerRadius = cornerRadius
-                self.layer.masksToBounds = true
+        get {
+            if let color = layer.borderColor {
+                return UIColor(cgColor: color)
             }
+            return nil
         }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
+
+    func addBorderAround(borderWidth: CGFloat, borderColor: UIColor, cornerRadius: CGFloat? = nil) {
+        layer.borderWidth = borderWidth
+        layer.borderColor = borderColor.cgColor
+        if let cornerRadius = cornerRadius {
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = true
+        }
+    }
 
     func addTopBorder(color: UIColor, thickness: CGFloat) {
         let borderLayer = CALayer()

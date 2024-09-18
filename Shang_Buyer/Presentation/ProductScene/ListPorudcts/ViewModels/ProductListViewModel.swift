@@ -5,8 +5,8 @@
 //  Created by Louis Macbook on 18/09/2024.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 class ProductListViewModel: ObservableObject {
     @Published var products: [Product] = []
@@ -14,21 +14,22 @@ class ProductListViewModel: ObservableObject {
 
     private let getProductsUseCase: GetProductsUseCase
     private var cancellables = Set<AnyCancellable>()
-    
+
     init(getProductsUseCase: GetProductsUseCase) {
         self.getProductsUseCase = getProductsUseCase
     }
+
     func loadProducts() {
         getProductsUseCase.execute()
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
                     break
-                case .failure(let error):
+                case let .failure(error):
                     self.errorMessage = error.localizedDescription
                 }
-            }, receiveValue: {products in
+            }, receiveValue: { products in
                 self.products = products
-            } ).store(in: &cancellables)
+            }).store(in: &cancellables)
     }
 }
