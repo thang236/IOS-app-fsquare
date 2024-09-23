@@ -31,9 +31,24 @@
 		BF25D05D2C99756300CB7EE8 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D05C2C99756300CB7EE8 /* ProductRepository.swift */; };
 		BF25D0642C9AAEFC00CB7EE8 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D0632C9AAEFC00CB7EE8 /* ProductListViewModel.swift */; };
 		BF25D06B2C9AB14A00CB7EE8 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D0692C9AB14A00CB7EE8 /* ProductListViewController.swift */; };
-		BF25D06C2C9AB14A00CB7EE8 /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF25D06A2C9AB14A00CB7EE8 /* ProductListViewController.xib */; };
 		BF25D06E2C9AC0D100CB7EE8 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D06D2C9AC0D100CB7EE8 /* DIContainer.swift */; };
 		BF25D0712C9ADA5B00CB7EE8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D0702C9ADA5B00CB7EE8 /* AuthService.swift */; };
+		BF25D08F2C9C01F000CB7EE8 /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF25D0902C9C01F000CB7EE8 /* ProductListViewController.xib */; };
+		BF25D09A2C9C089400CB7EE8 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D0992C9C089400CB7EE8 /* UserDefaultsKey.swift */; };
+		BF25D0A22C9C0BC000CB7EE8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BF25D0A12C9C0BC000CB7EE8 /* Localizable.xcstrings */; };
+		BF25D0A42C9C121300CB7EE8 /* LocalizableKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D0A32C9C121300CB7EE8 /* LocalizableKey.swift */; };
+		BF25D0AC2C9D2ADB00CB7EE8 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D0AA2C9D2ADB00CB7EE8 /* LoadingViewController.swift */; };
+		BF25D0AD2C9D2ADB00CB7EE8 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF25D0AB2C9D2ADB00CB7EE8 /* LoadingViewController.xib */; };
+		BF25D0AF2C9D2C5300CB7EE8 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D0AE2C9D2C5300CB7EE8 /* UILabel+Extension.swift */; };
+		BF25D0B22C9D2E1500CB7EE8 /* HeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25D0B12C9D2E1500CB7EE8 /* HeadingLabel.swift */; };
+		BF4244E92C9D581800F43C8B /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4244E82C9D581800F43C8B /* FontWeight.swift */; };
+		BF4244EC2C9D599800F43C8B /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4244EB2C9D599800F43C8B /* BodyLabel.swift */; };
+		BF4244EE2C9D5A4C00F43C8B /* DescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4244ED2C9D5A4C00F43C8B /* DescriptionLabel.swift */; };
+		BF4244F12C9D634F00F43C8B /* FullButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4244F02C9D634F00F43C8B /* FullButton.swift */; };
+		BF4244F32C9D679A00F43C8B /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4244F22C9D679A00F43C8B /* ButtonType.swift */; };
+		BF4244F52CA1589B00F43C8B /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4244F42CA1589B00F43C8B /* BaseButton.swift */; };
+		BF4244F72CA15A4600F43C8B /* LightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4244F62CA15A4600F43C8B /* LightButton.swift */; };
+		BF4244F92CA15C3F00F43C8B /* OutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4244F82CA15C3F00F43C8B /* OutlineButton.swift */; };
 		BF5B322E2C92E3E00063CA29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */; };
 		BF5B32302C92E3E00063CA29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322F2C92E3E00063CA29 /* SceneDelegate.swift */; };
 		BF5B32322C92E3E00063CA29 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32312C92E3E00063CA29 /* LoginViewController.swift */; };
@@ -47,6 +62,8 @@
 		BF5B32652C92E5100063CA29 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5B32642C92E5100063CA29 /* LoginViewController.xib */; };
 		BF5B32722C92EBAA0063CA29 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32712C92EBAA0063CA29 /* LoginViewModel.swift */; };
 		BF5B32782C92F3250063CA29 /* AppApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32772C92F3250063CA29 /* AppApi.swift */; };
+		BF869EE72CA1699100B59D8B /* FullNormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EE62CA1699100B59D8B /* FullNormalButton.swift */; };
+		BF869EE92CA16CFB00B59D8B /* OutlineNormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EE82CA16CFB00B59D8B /* OutlineNormalButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,9 +104,24 @@
 		BF25D05C2C99756300CB7EE8 /* ProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
 		BF25D0632C9AAEFC00CB7EE8 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		BF25D0692C9AB14A00CB7EE8 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
-		BF25D06A2C9AB14A00CB7EE8 /* ProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
 		BF25D06D2C9AC0D100CB7EE8 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		BF25D0702C9ADA5B00CB7EE8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		BF25D0902C9C01F000CB7EE8 /* ProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
+		BF25D0992C9C089400CB7EE8 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		BF25D0A12C9C0BC000CB7EE8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		BF25D0A32C9C121300CB7EE8 /* LocalizableKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableKey.swift; sourceTree = "<group>"; };
+		BF25D0AA2C9D2ADB00CB7EE8 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		BF25D0AB2C9D2ADB00CB7EE8 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
+		BF25D0AE2C9D2C5300CB7EE8 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		BF25D0B12C9D2E1500CB7EE8 /* HeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingLabel.swift; sourceTree = "<group>"; };
+		BF4244E82C9D581800F43C8B /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
+		BF4244EB2C9D599800F43C8B /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
+		BF4244ED2C9D5A4C00F43C8B /* DescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionLabel.swift; sourceTree = "<group>"; };
+		BF4244F02C9D634F00F43C8B /* FullButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullButton.swift; sourceTree = "<group>"; };
+		BF4244F22C9D679A00F43C8B /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
+		BF4244F42CA1589B00F43C8B /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		BF4244F62CA15A4600F43C8B /* LightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightButton.swift; sourceTree = "<group>"; };
+		BF4244F82CA15C3F00F43C8B /* OutlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineButton.swift; sourceTree = "<group>"; };
 		BF5B322A2C92E3E00063CA29 /* Shang_Buyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shang_Buyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF5B322F2C92E3E00063CA29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +139,8 @@
 		BF5B32642C92E5100063CA29 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BF5B32712C92EBAA0063CA29 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		BF5B32772C92F3250063CA29 /* AppApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppApi.swift; sourceTree = "<group>"; };
+		BF869EE62CA1699100B59D8B /* FullNormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNormalButton.swift; sourceTree = "<group>"; };
+		BF869EE82CA16CFB00B59D8B /* OutlineNormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineNormalButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				BF25D0692C9AB14A00CB7EE8 /* ProductListViewController.swift */,
-				BF25D06A2C9AB14A00CB7EE8 /* ProductListViewController.xib */,
+				BF25D0902C9C01F000CB7EE8 /* ProductListViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +237,63 @@
 				BF25D0602C9AAE7300CB7EE8 /* View */,
 			);
 			path = ListPorudcts;
+			sourceTree = "<group>";
+		};
+		BF25D0A72C9D2A9F00CB7EE8 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				BF25D0A92C9D2AC700CB7EE8 /* View */,
+				BF25D0A82C9D2AC100CB7EE8 /* ViewModel */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		BF25D0A82C9D2AC100CB7EE8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BF25D0A92C9D2AC700CB7EE8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF25D0AA2C9D2ADB00CB7EE8 /* LoadingViewController.swift */,
+				BF25D0AB2C9D2ADB00CB7EE8 /* LoadingViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF25D0B02C9D2E0700CB7EE8 /* ViewCustom */ = {
+			isa = PBXGroup;
+			children = (
+				BF4244EF2C9D630200F43C8B /* ButtonCustom */,
+				BF4244EA2C9D598300F43C8B /* LabelCustom */,
+			);
+			path = ViewCustom;
+			sourceTree = "<group>";
+		};
+		BF4244EA2C9D598300F43C8B /* LabelCustom */ = {
+			isa = PBXGroup;
+			children = (
+				BF25D0B12C9D2E1500CB7EE8 /* HeadingLabel.swift */,
+				BF4244EB2C9D599800F43C8B /* BodyLabel.swift */,
+				BF4244ED2C9D5A4C00F43C8B /* DescriptionLabel.swift */,
+			);
+			path = LabelCustom;
+			sourceTree = "<group>";
+		};
+		BF4244EF2C9D630200F43C8B /* ButtonCustom */ = {
+			isa = PBXGroup;
+			children = (
+				BF4244F02C9D634F00F43C8B /* FullButton.swift */,
+				BF4244F42CA1589B00F43C8B /* BaseButton.swift */,
+				BF4244F62CA15A4600F43C8B /* LightButton.swift */,
+				BF4244F82CA15C3F00F43C8B /* OutlineButton.swift */,
+				BF869EE62CA1699100B59D8B /* FullNormalButton.swift */,
+				BF869EE82CA16CFB00B59D8B /* OutlineNormalButton.swift */,
+			);
+			path = ButtonCustom;
 			sourceTree = "<group>";
 		};
 		BF5B32212C92E3E00063CA29 = {
@@ -272,6 +363,7 @@
 			children = (
 				BF25D02E2C97235200CB7EE8 /* Font */,
 				BF5B32362C92E3E20063CA29 /* Assets.xcassets */,
+				BF25D0A12C9C0BC000CB7EE8 /* Localizable.xcstrings */,
 			);
 			path = Rescources;
 			sourceTree = "<group>";
@@ -340,6 +432,7 @@
 		BF5B326E2C92EB800063CA29 /* AuthScene */ = {
 			isa = PBXGroup;
 			children = (
+				BF25D0A72C9D2A9F00CB7EE8 /* Loading */,
 				BF5B32702C92EB8B0063CA29 /* View */,
 				BF5B326F2C92EB840063CA29 /* ViewModels */,
 			);
@@ -385,7 +478,11 @@
 		BF5B327A2C92F49F0063CA29 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				BF25D0992C9C089400CB7EE8 /* UserDefaultsKey.swift */,
 				BF25D0482C9821C400CB7EE8 /* MenuOption.swift */,
+				BF25D0A32C9C121300CB7EE8 /* LocalizableKey.swift */,
+				BF4244E82C9D581800F43C8B /* FontWeight.swift */,
+				BF4244F22C9D679A00F43C8B /* ButtonType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -393,6 +490,7 @@
 		BF5B327B2C92F4B60063CA29 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BF25D0B02C9D2E0700CB7EE8 /* ViewCustom */,
 				BF25D04A2C9821F100CB7EE8 /* AuthInterceptor.swift */,
 				BF25D05A2C9973B000CB7EE8 /* TokenManager.swift */,
 			);
@@ -412,6 +510,7 @@
 				BF25D0362C97239400CB7EE8 /* UITableView+Extension.swift */,
 				BF25D0342C97239400CB7EE8 /* UIView+Extension.swift */,
 				BF25D0392C97239400CB7EE8 /* UIViewController+Extension.swift */,
+				BF25D0AE2C9D2C5300CB7EE8 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -508,6 +607,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = BF5B32212C92E3E00063CA29;
 			packageReferences = (
@@ -532,10 +632,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF25D0AD2C9D2ADB00CB7EE8 /* LoadingViewController.xib in Resources */,
 				BF5B323A2C92E3E20063CA29 /* LaunchScreen.storyboard in Resources */,
 				BF5B32372C92E3E20063CA29 /* Assets.xcassets in Resources */,
+				BF25D0A22C9C0BC000CB7EE8 /* Localizable.xcstrings in Resources */,
 				BF25D0302C97237900CB7EE8 /* Inter-VariableFont_opsz,wght.ttf in Resources */,
-				BF25D06C2C9AB14A00CB7EE8 /* ProductListViewController.xib in Resources */,
+				BF25D08F2C9C01F000CB7EE8 /* ProductListViewController.xib in Resources */,
 				BF5B32652C92E5100063CA29 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,30 +666,45 @@
 				BF25D03B2C97239400CB7EE8 /* UICollectionView+Extension.swift in Sources */,
 				BF25D0642C9AAEFC00CB7EE8 /* ProductListViewModel.swift in Sources */,
 				BF5B32612C92E4E10063CA29 /* Coordinator.swift in Sources */,
+				BF869EE92CA16CFB00B59D8B /* OutlineNormalButton.swift in Sources */,
+				BF869EE72CA1699100B59D8B /* FullNormalButton.swift in Sources */,
 				BF25D03F2C97239400CB7EE8 /* Date+Extension.swift in Sources */,
 				BF5B32322C92E3E00063CA29 /* LoginViewController.swift in Sources */,
+				BF4244F12C9D634F00F43C8B /* FullButton.swift in Sources */,
 				BF25D0492C9821C400CB7EE8 /* MenuOption.swift in Sources */,
 				BF25D0432C97239400CB7EE8 /* UIViewController+Extension.swift in Sources */,
+				BF4244F72CA15A4600F43C8B /* LightButton.swift in Sources */,
 				BF5B32782C92F3250063CA29 /* AppApi.swift in Sources */,
+				BF25D0A42C9C121300CB7EE8 /* LocalizableKey.swift in Sources */,
 				BF5B32722C92EBAA0063CA29 /* LoginViewModel.swift in Sources */,
+				BF4244E92C9D581800F43C8B /* FontWeight.swift in Sources */,
 				BF5B32632C92E4F70063CA29 /* HomeCoordinator.swift in Sources */,
+				BF4244F52CA1589B00F43C8B /* BaseButton.swift in Sources */,
 				BF25D04B2C9821F100CB7EE8 /* AuthInterceptor.swift in Sources */,
 				BF25D0422C97239400CB7EE8 /* UIColor+Extension.swift in Sources */,
 				BF25D03E2C97239400CB7EE8 /* UIView+Extension.swift in Sources */,
+				BF4244F92CA15C3F00F43C8B /* OutlineButton.swift in Sources */,
 				BF25D05D2C99756300CB7EE8 /* ProductRepository.swift in Sources */,
 				BF25D06B2C9AB14A00CB7EE8 /* ProductListViewController.swift in Sources */,
 				BF5B322E2C92E3E00063CA29 /* AppDelegate.swift in Sources */,
 				BF25D0402C97239400CB7EE8 /* UITableView+Extension.swift in Sources */,
+				BF25D09A2C9C089400CB7EE8 /* UserDefaultsKey.swift in Sources */,
 				BF5B32302C92E3E00063CA29 /* SceneDelegate.swift in Sources */,
+				BF4244EE2C9D5A4C00F43C8B /* DescriptionLabel.swift in Sources */,
 				BF25D0552C996AF400CB7EE8 /* GetProductsUseCase.swift in Sources */,
+				BF4244EC2C9D599800F43C8B /* BodyLabel.swift in Sources */,
 				BF25D0502C9969E600CB7EE8 /* Product.swift in Sources */,
 				BF25D03C2C97239400CB7EE8 /* TextField+Extension.swift in Sources */,
 				BF25D0412C97239400CB7EE8 /* String+Extension.swift in Sources */,
+				BF25D0AF2C9D2C5300CB7EE8 /* UILabel+Extension.swift in Sources */,
 				BF25D03D2C97239400CB7EE8 /* UIFont+Extension.swift in Sources */,
+				BF25D0AC2C9D2ADB00CB7EE8 /* LoadingViewController.swift in Sources */,
 				BF25D05B2C9973B100CB7EE8 /* TokenManager.swift in Sources */,
 				BF25D0592C9972EE00CB7EE8 /* APIService.swift in Sources */,
 				BF25D06E2C9AC0D100CB7EE8 /* DIContainer.swift in Sources */,
 				BF25D0442C97239400CB7EE8 /* Button+Extension.swift in Sources */,
+				BF4244F32C9D679A00F43C8B /* ButtonType.swift in Sources */,
+				BF25D0B22C9D2E1500CB7EE8 /* HeadingLabel.swift in Sources */,
 				BF25D0712C9ADA5B00CB7EE8 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,6 +758,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -704,6 +822,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
