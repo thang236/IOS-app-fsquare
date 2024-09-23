@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  HeadingLabel.swift
 //  Shang_Buyer
 //
 //  Created by Louis Macbook on 20/09/2024.
@@ -19,10 +19,10 @@ class HeadingLabel: UILabel {
     }
 
     private func setupStyle() {
-        if let interFont = UIFont.interItalicVariableFont(fontWeight: .semibold, size: self.font.pointSize) {
-            self.font = interFont.withWeight(600)
+        if let interFont = UIFont.interItalicVariableFont(fontWeight: .semibold, size: font.pointSize) {
+            font = interFont.withWeight(600)
         } else {
-            self.font = UIFont.systemFont(ofSize: self.font.pointSize, weight: .semibold)
+            font = UIFont.systemFont(ofSize: font.pointSize, weight: .semibold)
         }
     }
 }

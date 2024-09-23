@@ -12,15 +12,16 @@ import UIKit
 class OutlineButton: BaseButton {
     override func setup() {
         super.setup()
-        self.addBorderAround(borderWidth: 1, borderColor: .primaryDark)
-        self.tintColor = .primaryDark
-        self.backgroundColor = .clear
+        addBorderAround(borderWidth: 1, borderColor: .primaryDark)
+        tintColor = .primaryDark
+        backgroundColor = .clear
     }
+
     override func updateButtonAppearance() {
         super.updateButtonAppearance()
-        if self.isEnabled {
-            self.addBorderAround(borderWidth: 1, borderColor: .primaryDark, cornerRadius: 8)
-            self.tintColor = .primaryDark
+        if isEnabled {
+            addBorderAround(borderWidth: 1, borderColor: .primaryDark, cornerRadius: 8)
+            tintColor = .primaryDark
         }
     }
 }

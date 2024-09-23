@@ -22,10 +22,10 @@ class AuthServiceImpl: AuthService {
                 .validate()
                 .responseDecodable(of: LoginResponse.self) { response in
                     switch response.result {
-                    case .success(let loginResponse):
+                    case let .success(loginResponse):
                         TokenManager.shared.saveAccessToken(loginResponse.token)
                         promise(.success(loginResponse.token))
-                    case .failure(let error):
+                    case let .failure(error):
                         promise(.failure(error))
                     }
                 }

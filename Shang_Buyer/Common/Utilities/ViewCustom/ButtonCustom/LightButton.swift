@@ -12,14 +12,15 @@ import UIKit
 class LightButton: BaseButton {
     override func setup() {
         super.setup()
-        self.backgroundColor = .backgroundDark
-        self.tintColor = .neutralGrayMedium
+        backgroundColor = .backgroundDark
+        tintColor = .neutralGrayMedium
     }
+
     override func updateButtonAppearance() {
         super.updateButtonAppearance()
-        if self.isEnabled {
-            self.backgroundColor = .backgroundDark
-            self.tintColor = .neutralGrayMedium
+        if isEnabled {
+            backgroundColor = .backgroundDark
+            tintColor = .neutralGrayMedium
         }
     }
 }

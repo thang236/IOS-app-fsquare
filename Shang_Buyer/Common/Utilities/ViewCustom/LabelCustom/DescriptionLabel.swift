@@ -20,10 +20,10 @@ class DescriptionLabel: UILabel {
     }
 
     private func setupStyle() {
-        if let interFont = UIFont.interItalicVariableFont(fontWeight: .medium, size: self.font.pointSize) {
-            self.font = interFont.withWeight(400)
+        if let interFont = UIFont.interItalicVariableFont(fontWeight: .medium, size: font.pointSize) {
+            font = interFont.withWeight(400)
         } else {
-            self.font = UIFont.systemFont(ofSize: self.font.pointSize, weight: .semibold)
+            font = UIFont.systemFont(ofSize: font.pointSize, weight: .semibold)
         }
     }
 }

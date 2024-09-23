@@ -19,7 +19,7 @@ class HomeCoordinator: Coordinator {
         let viewModel = DIContainer.shared.resolveProductListViewModel()
         let viewController = ProductListViewController(viewModel: viewModel)
         viewController.coordinator = self
-        //test
+        // test
         let vc = LoadingViewController()
         navigationController.pushViewController(vc, animated: true)
     }

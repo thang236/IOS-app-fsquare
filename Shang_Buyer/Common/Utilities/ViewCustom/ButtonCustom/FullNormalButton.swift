@@ -12,15 +12,15 @@ import UIKit
 class FullNormalButton: BaseButton {
     override func setup() {
         super.setup()
-        self.backgroundColor = .backgroundMedium
-        self.tintColor = .neutralMedium
+        backgroundColor = .backgroundMedium
+        tintColor = .neutralMedium
     }
-    
+
     override func updateButtonAppearance() {
         super.updateButtonAppearance()
-        if self.isEnabled {
-            self.backgroundColor = .backgroundMedium
-            self.tintColor = .neutralMedium
+        if isEnabled {
+            backgroundColor = .backgroundMedium
+            tintColor = .neutralMedium
         }
     }
 }

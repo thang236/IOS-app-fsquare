@@ -23,6 +23,3 @@ enum ButtonHeight: CGFloat, CaseIterable {
     case small = 40
     case extraSmall = 30
 }
-
-
-

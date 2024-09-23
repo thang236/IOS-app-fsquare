@@ -6,8 +6,9 @@
 //
 
 import Foundation
+
 enum LocalizedKey: String {
-    case greeting = "greeting"
-    case login = "login"
+    case greeting
+    case login
     case singnIn = "SignIn"
 }

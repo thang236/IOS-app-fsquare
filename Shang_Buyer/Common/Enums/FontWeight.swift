@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 enum FontWeight: String {
     case regular = "Inter-Regular"
     case medium = "Inter-Regular_Medium"
