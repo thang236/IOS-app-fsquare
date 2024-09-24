@@ -51,7 +51,6 @@
 		BF4244F92CA15C3F00F43C8B /* OutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4244F82CA15C3F00F43C8B /* OutlineButton.swift */; };
 		BF5B322E2C92E3E00063CA29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */; };
 		BF5B32302C92E3E00063CA29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322F2C92E3E00063CA29 /* SceneDelegate.swift */; };
-		BF5B32322C92E3E00063CA29 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32312C92E3E00063CA29 /* LoginViewController.swift */; };
 		BF5B32372C92E3E20063CA29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5B32362C92E3E20063CA29 /* Assets.xcassets */; };
 		BF5B323A2C92E3E20063CA29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5B32382C92E3E20063CA29 /* LaunchScreen.storyboard */; };
 		BF5B32452C92E3E20063CA29 /* Shang_BuyerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32442C92E3E20063CA29 /* Shang_BuyerTests.swift */; };
@@ -59,11 +58,15 @@
 		BF5B32512C92E3E20063CA29 /* Shang_BuyerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32502C92E3E20063CA29 /* Shang_BuyerUITestsLaunchTests.swift */; };
 		BF5B32612C92E4E10063CA29 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32602C92E4E10063CA29 /* Coordinator.swift */; };
 		BF5B32632C92E4F70063CA29 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32622C92E4F70063CA29 /* HomeCoordinator.swift */; };
-		BF5B32652C92E5100063CA29 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5B32642C92E5100063CA29 /* LoginViewController.xib */; };
-		BF5B32722C92EBAA0063CA29 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32712C92EBAA0063CA29 /* LoginViewModel.swift */; };
 		BF5B32782C92F3250063CA29 /* AppApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32772C92F3250063CA29 /* AppApi.swift */; };
 		BF869EE72CA1699100B59D8B /* FullNormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EE62CA1699100B59D8B /* FullNormalButton.swift */; };
 		BF869EE92CA16CFB00B59D8B /* OutlineNormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EE82CA16CFB00B59D8B /* OutlineNormalButton.swift */; };
+		BF869EF02CA297A800B59D8B /* LoginMethodSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EEE2CA297A800B59D8B /* LoginMethodSelectionViewController.swift */; };
+		BF869EF12CA297A800B59D8B /* LoginMethodSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF869EEF2CA297A800B59D8B /* LoginMethodSelectionViewController.xib */; };
+		BF869EF32CA2A03A00B59D8B /* GhostButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EF22CA2A03900B59D8B /* GhostButton.swift */; };
+		BFCF72402CA2A45100208985 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF723F2CA2A45100208985 /* AuthCoordinator.swift */; };
+		BFCF72492CA2A5FD00208985 /* LoginWithPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF72472CA2A5FC00208985 /* LoginWithPassViewController.swift */; };
+		BFCF724A2CA2A5FD00208985 /* LoginWithPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFCF72482CA2A5FC00208985 /* LoginWithPassViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,7 +128,6 @@
 		BF5B322A2C92E3E00063CA29 /* Shang_Buyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shang_Buyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF5B322F2C92E3E00063CA29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BF5B32312C92E3E00063CA29 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF5B32362C92E3E20063CA29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF5B32392C92E3E20063CA29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF5B323B2C92E3E20063CA29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,11 +138,15 @@
 		BF5B32502C92E3E20063CA29 /* Shang_BuyerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shang_BuyerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BF5B32602C92E4E10063CA29 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BF5B32622C92E4F70063CA29 /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		BF5B32642C92E5100063CA29 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		BF5B32712C92EBAA0063CA29 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		BF5B32772C92F3250063CA29 /* AppApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppApi.swift; sourceTree = "<group>"; };
 		BF869EE62CA1699100B59D8B /* FullNormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNormalButton.swift; sourceTree = "<group>"; };
 		BF869EE82CA16CFB00B59D8B /* OutlineNormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineNormalButton.swift; sourceTree = "<group>"; };
+		BF869EEE2CA297A800B59D8B /* LoginMethodSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodSelectionViewController.swift; sourceTree = "<group>"; };
+		BF869EEF2CA297A800B59D8B /* LoginMethodSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginMethodSelectionViewController.xib; sourceTree = "<group>"; };
+		BF869EF22CA2A03900B59D8B /* GhostButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostButton.swift; sourceTree = "<group>"; };
+		BFCF723F2CA2A45100208985 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		BFCF72472CA2A5FC00208985 /* LoginWithPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithPassViewController.swift; sourceTree = "<group>"; };
+		BFCF72482CA2A5FC00208985 /* LoginWithPassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginWithPassViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +298,7 @@
 				BF4244F82CA15C3F00F43C8B /* OutlineButton.swift */,
 				BF869EE62CA1699100B59D8B /* FullNormalButton.swift */,
 				BF869EE82CA16CFB00B59D8B /* OutlineNormalButton.swift */,
+				BF869EF22CA2A03900B59D8B /* GhostButton.swift */,
 			);
 			path = ButtonCustom;
 			sourceTree = "<group>";
@@ -432,28 +439,12 @@
 		BF5B326E2C92EB800063CA29 /* AuthScene */ = {
 			isa = PBXGroup;
 			children = (
+				BFCF723E2CA2A43F00208985 /* Flow */,
+				BFCF72412CA2A57000208985 /* LoginWithPassword */,
+				BF869EEB2CA2973E00B59D8B /* LoginMetholSelection */,
 				BF25D0A72C9D2A9F00CB7EE8 /* Loading */,
-				BF5B32702C92EB8B0063CA29 /* View */,
-				BF5B326F2C92EB840063CA29 /* ViewModels */,
 			);
 			path = AuthScene;
-			sourceTree = "<group>";
-		};
-		BF5B326F2C92EB840063CA29 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				BF5B32712C92EBAA0063CA29 /* LoginViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		BF5B32702C92EB8B0063CA29 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BF5B32642C92E5100063CA29 /* LoginViewController.xib */,
-				BF5B32312C92E3E00063CA29 /* LoginViewController.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		BF5B32752C92F1020063CA29 /* Common */ = {
@@ -513,6 +504,56 @@
 				BF25D0AE2C9D2C5300CB7EE8 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BF869EEB2CA2973E00B59D8B /* LoginMetholSelection */ = {
+			isa = PBXGroup;
+			children = (
+				BF869EED2CA2977900B59D8B /* ViewModel */,
+				BF869EEC2CA2977500B59D8B /* View */,
+			);
+			path = LoginMetholSelection;
+			sourceTree = "<group>";
+		};
+		BF869EEC2CA2977500B59D8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF869EEE2CA297A800B59D8B /* LoginMethodSelectionViewController.swift */,
+				BF869EEF2CA297A800B59D8B /* LoginMethodSelectionViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF869EED2CA2977900B59D8B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BFCF723E2CA2A43F00208985 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				BFCF723F2CA2A45100208985 /* AuthCoordinator.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		BFCF72412CA2A57000208985 /* LoginWithPassword */ = {
+			isa = PBXGroup;
+			children = (
+				BFCF72422CA2A58300208985 /* View */,
+			);
+			path = LoginWithPassword;
+			sourceTree = "<group>";
+		};
+		BFCF72422CA2A58300208985 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFCF72472CA2A5FC00208985 /* LoginWithPassViewController.swift */,
+				BFCF72482CA2A5FC00208985 /* LoginWithPassViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -633,12 +674,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF25D0AD2C9D2ADB00CB7EE8 /* LoadingViewController.xib in Resources */,
+				BFCF724A2CA2A5FD00208985 /* LoginWithPassViewController.xib in Resources */,
 				BF5B323A2C92E3E20063CA29 /* LaunchScreen.storyboard in Resources */,
 				BF5B32372C92E3E20063CA29 /* Assets.xcassets in Resources */,
 				BF25D0A22C9C0BC000CB7EE8 /* Localizable.xcstrings in Resources */,
 				BF25D0302C97237900CB7EE8 /* Inter-VariableFont_opsz,wght.ttf in Resources */,
 				BF25D08F2C9C01F000CB7EE8 /* ProductListViewController.xib in Resources */,
-				BF5B32652C92E5100063CA29 /* LoginViewController.xib in Resources */,
+				BF869EF12CA297A800B59D8B /* LoginMethodSelectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,14 +711,13 @@
 				BF869EE92CA16CFB00B59D8B /* OutlineNormalButton.swift in Sources */,
 				BF869EE72CA1699100B59D8B /* FullNormalButton.swift in Sources */,
 				BF25D03F2C97239400CB7EE8 /* Date+Extension.swift in Sources */,
-				BF5B32322C92E3E00063CA29 /* LoginViewController.swift in Sources */,
 				BF4244F12C9D634F00F43C8B /* FullButton.swift in Sources */,
 				BF25D0492C9821C400CB7EE8 /* MenuOption.swift in Sources */,
 				BF25D0432C97239400CB7EE8 /* UIViewController+Extension.swift in Sources */,
+				BFCF72402CA2A45100208985 /* AuthCoordinator.swift in Sources */,
 				BF4244F72CA15A4600F43C8B /* LightButton.swift in Sources */,
 				BF5B32782C92F3250063CA29 /* AppApi.swift in Sources */,
 				BF25D0A42C9C121300CB7EE8 /* LocalizableKey.swift in Sources */,
-				BF5B32722C92EBAA0063CA29 /* LoginViewModel.swift in Sources */,
 				BF4244E92C9D581800F43C8B /* FontWeight.swift in Sources */,
 				BF5B32632C92E4F70063CA29 /* HomeCoordinator.swift in Sources */,
 				BF4244F52CA1589B00F43C8B /* BaseButton.swift in Sources */,
@@ -693,8 +734,10 @@
 				BF4244EE2C9D5A4C00F43C8B /* DescriptionLabel.swift in Sources */,
 				BF25D0552C996AF400CB7EE8 /* GetProductsUseCase.swift in Sources */,
 				BF4244EC2C9D599800F43C8B /* BodyLabel.swift in Sources */,
+				BFCF72492CA2A5FD00208985 /* LoginWithPassViewController.swift in Sources */,
 				BF25D0502C9969E600CB7EE8 /* Product.swift in Sources */,
 				BF25D03C2C97239400CB7EE8 /* TextField+Extension.swift in Sources */,
+				BF869EF32CA2A03A00B59D8B /* GhostButton.swift in Sources */,
 				BF25D0412C97239400CB7EE8 /* String+Extension.swift in Sources */,
 				BF25D0AF2C9D2C5300CB7EE8 /* UILabel+Extension.swift in Sources */,
 				BF25D03D2C97239400CB7EE8 /* UIFont+Extension.swift in Sources */,
@@ -705,6 +748,7 @@
 				BF25D0442C97239400CB7EE8 /* Button+Extension.swift in Sources */,
 				BF4244F32C9D679A00F43C8B /* ButtonType.swift in Sources */,
 				BF25D0B22C9D2E1500CB7EE8 /* HeadingLabel.swift in Sources */,
+				BF869EF02CA297A800B59D8B /* LoginMethodSelectionViewController.swift in Sources */,
 				BF25D0712C9ADA5B00CB7EE8 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,8 +22,8 @@ class AppCoordinator: Coordinator {
     }
 
     func start() {
-        let homeCoordinator = HomeCoordinator(navigationController: navigationController)
-        homeCoordinator.start()
+        let authCoordinator = AuthCoordinator(navigationController: navigationController)
+        authCoordinator.start()
 
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

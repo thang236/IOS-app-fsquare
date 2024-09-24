@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcom to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXm-NN-MLi" customClass="HeadingLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                    <rect key="frame" x="20" y="616.33333333333337" width="353" height="43"/>
+                    <rect key="frame" x="20" y="620" width="353" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGa-1u-HsA">
-                    <rect key="frame" x="20" y="667.33333333333337" width="238" height="97"/>
+                    <rect key="frame" x="20.000000000000014" y="671" width="225.33333333333337" height="93.333333333333371"/>
                     <fontDescription key="fontDescription" name="Inter-Regular_ExtraBold" family="Inter" pointSize="80"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -77,6 +77,11 @@
             <point key="canvasLocation" x="96.946564885496173" y="-11.267605633802818"/>
         </view>
     </objects>
+    <designables>
+        <designable name="5m5-uC-lFS">
+            <size key="intrinsicContentSize" width="631.33333333333337" height="17"/>
+        </designable>
+    </designables>
     <resources>
         <image name="BackgroundImage/loangdingBackground" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">

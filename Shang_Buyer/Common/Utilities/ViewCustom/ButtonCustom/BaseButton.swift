@@ -39,7 +39,17 @@ class BaseButton: UIButton {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        titleLabel?.font = UIFont.interItalicVariableFont(fontWeight: .regular, size: 16)?.withWeight(500)
+        titleLabel?.font = UIFont.interItalicVariableFont(fontWeight: .medium, size: 16)?.withWeight(500)
+        switch heightOption {
+        case 0:
+            titleLabel?.font = titleLabel?.font.withSize(16)
+        case 1:
+            titleLabel?.font = titleLabel?.font.withSize(14)
+        case 2, 3:
+            titleLabel?.font = titleLabel?.font.withSize(13)
+        default:
+            titleLabel?.font = UIFont.interItalicVariableFont(fontWeight: .regular, size: 16)?.withWeight(500)
+        }
     }
 
     func setup() {

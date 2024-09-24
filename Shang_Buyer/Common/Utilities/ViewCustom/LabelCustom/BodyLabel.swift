@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@IBDesignable
 class BodyLabel: UILabel {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

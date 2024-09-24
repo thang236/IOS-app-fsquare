@@ -12,9 +12,13 @@ final class DIContainer {
 
     private init() {}
 
+    // MARK: API Service
+
     func resolveAPIService() -> APIService {
         return APIServiceImpl()
     }
+
+    // MARK: get
 
     func resolveProductRepository() -> ProductRepository {
         let apiService = resolveAPIService()
@@ -30,4 +34,12 @@ final class DIContainer {
         let getProductsUseCase = resolveGetProductsUseCase()
         return ProductListViewModel(getProductsUseCase: getProductsUseCase)
     }
+
+    // MARK: Auth Service
+
+    func resolveAuthService() -> AuthService {
+        return AuthServiceImpl()
+    }
+
+//    func resolveAuthRepository() -> AuthRe
 }
