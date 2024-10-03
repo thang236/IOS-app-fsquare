@@ -16,20 +16,20 @@ protocol AuthService {
 class AuthServiceImpl: AuthService {
     func request<T>(endpoint: AppApi, parameters: [String: Any]?) -> AnyPublisher<T, Error> where T: Decodable {
         let url = endpoint.url
-        
+
         return Future { promise in
             AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
                 .validate()
                 .responseData { response in
                     switch response.result {
-                    case .success(let data):
+                    case let .success(data):
                         do {
                             let decodedObject = try JSONDecoder().decode(T.self, from: data)
                             promise(.success(decodedObject))
                         } catch {
                             promise(.failure(error))
                         }
-                    case .failure(let error):
+                    case let .failure(error):
                         if let data = response.data {
                             do {
                                 let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: data)

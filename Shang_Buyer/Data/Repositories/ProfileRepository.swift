@@ -18,9 +18,8 @@ class ProfileRepositoryImpl: ProfileRepository {
     init(apiService: APIService) {
         self.apiService = apiService
     }
+
     func getProfile() -> AnyPublisher<ProfileResponse, Error> {
         apiService.request(endpoint: .getProfile, method: .get, parameters: nil)
     }
-
-  
 }

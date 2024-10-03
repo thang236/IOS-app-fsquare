@@ -31,14 +31,14 @@ class APIServiceImpl: APIService {
                 .responseData { response in
 
                     switch response.result {
-                    case .success(let data):
+                    case let .success(data):
                         do {
                             let decodedObject = try JSONDecoder().decode(T.self, from: data)
                             promise(.success(decodedObject))
                         } catch {
                             promise(.failure(error))
                         }
-                    case .failure(let error):
+                    case let .failure(error):
                         if let data = response.data {
                             do {
                                 let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: data)
@@ -56,4 +56,3 @@ class APIServiceImpl: APIService {
         .eraseToAnyPublisher()
     }
 }
-

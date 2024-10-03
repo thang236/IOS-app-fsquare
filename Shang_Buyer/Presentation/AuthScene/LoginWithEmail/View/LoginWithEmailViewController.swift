@@ -58,7 +58,6 @@ class LoginWithEmailViewController: UIViewController {
         handleNextButton()
     }
 
-    
     private func toggleCheckBox() {
         if checkBox {
             let icon = UIImage.Toggle.focusTrue

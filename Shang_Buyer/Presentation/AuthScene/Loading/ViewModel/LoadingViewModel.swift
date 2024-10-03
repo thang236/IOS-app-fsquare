@@ -5,26 +5,25 @@
 //  Created by Louis Macbook on 01/10/2024.
 //
 
-import Foundation
 import Combine
+import Foundation
 
-class LoadingViewModel : ObservableObject {
+class LoadingViewModel: ObservableObject {
     @Published var checkToken: Bool = false
     @Published var errorMessage: String? = nil
-    
-    
-    private var getProfileUseCase : GetProfileUseCase
+
+    private var getProfileUseCase: GetProfileUseCase
     private var cancellables = Set<AnyCancellable>()
-    
+
     init(getProfileUseCase: GetProfileUseCase) {
         self.getProfileUseCase = getProfileUseCase
     }
+
     func getProfile(completion: @escaping (Result<ProfileResponse, Error>) -> Void) {
         getProfileUseCase.execute().sink(receiveCompletion: { completion in
             switch completion {
             case .finished:
                 print("finished")
-                break
             case let .failure(error):
                 self.errorMessage = error.localizedDescription
             }

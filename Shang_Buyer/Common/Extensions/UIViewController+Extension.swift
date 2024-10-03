@@ -31,15 +31,14 @@ extension UIViewController {
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
-    
-    
+
     func showToast(message: String, chooseImageToast: ChooseImageToast) {
         let toastView = UIView()
         toastView.backgroundColor = UIColor.backgroundToast
         toastView.layer.cornerRadius = 10
         toastView.clipsToBounds = true
         toastView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         let imageView = UIImageView()
         switch chooseImageToast {
         case .error:
@@ -53,7 +52,7 @@ extension UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        
+
         let toastLabel = UILabel()
         toastLabel.textColor = UIColor.white
         toastLabel.font = UIFont.interItalicVariableFont(fontWeight: .regular, size: 14)
@@ -61,40 +60,37 @@ extension UIViewController {
         toastLabel.numberOfLines = 0
         toastLabel.textAlignment = .left
         toastLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+
         let stackView = UIStackView(arrangedSubviews: [imageView, toastLabel])
         stackView.axis = .horizontal
         stackView.spacing = 10
         stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         toastView.addSubview(stackView)
-        
-        self.view.addSubview(toastView)
-        
+
+        view.addSubview(toastView)
+
         NSLayoutConstraint.activate([
-               stackView.leadingAnchor.constraint(equalTo: toastView.leadingAnchor, constant: 10),
-               stackView.trailingAnchor.constraint(equalTo: toastView.trailingAnchor, constant: -10),
-               stackView.topAnchor.constraint(equalTo: toastView.topAnchor, constant: 10),
-               stackView.bottomAnchor.constraint(equalTo: toastView.bottomAnchor, constant: -10),
-               
-               toastView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-               toastView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -30),
-               toastView.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor, constant: -40)
-           ])
-        
+            stackView.leadingAnchor.constraint(equalTo: toastView.leadingAnchor, constant: 10),
+            stackView.trailingAnchor.constraint(equalTo: toastView.trailingAnchor, constant: -10),
+            stackView.topAnchor.constraint(equalTo: toastView.topAnchor, constant: 10),
+            stackView.bottomAnchor.constraint(equalTo: toastView.bottomAnchor, constant: -10),
+
+            toastView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            toastView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            toastView.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor, constant: -40),
+        ])
+
         // Animation cho toast
         UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
             toastView.alpha = 0.0
-        }, completion: { isCompleted in
+        }, completion: { _ in
             toastView.removeFromSuperview()
         })
     }
-
-
-
-
 }
+
 enum ChooseImageToast: String {
     case success
     case warning

@@ -18,7 +18,7 @@ class VerifyOTPUseCaseImpl: VerifyOTPUseCase {
     init(authRepository: AuthRepository) {
         self.authRepository = authRepository
     }
-    
+
     func execute(parameter: [String: Any]) -> AnyPublisher<AuthResponse, Error> {
         return authRepository.verifyOTPAuth(parameter: parameter)
     }

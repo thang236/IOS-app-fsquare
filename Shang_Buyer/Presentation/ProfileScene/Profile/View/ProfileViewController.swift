@@ -8,15 +8,13 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    @IBOutlet private weak var profileTableView: UITableView!
-    @IBOutlet private weak var phoneLabel: BodyLabel!
-    @IBOutlet private weak var fullNameLabel: HeadingLabel!
-    @IBOutlet private weak var avatarImage: UIImageView!
+    @IBOutlet private var profileTableView: UITableView!
+    @IBOutlet private var phoneLabel: BodyLabel!
+    @IBOutlet private var fullNameLabel: HeadingLabel!
+    @IBOutlet private var avatarImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-
 }

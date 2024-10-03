@@ -49,10 +49,9 @@ class OTPTextField: UITextField {
         stackView.distribution = .fillEqually
         stackView.spacing = 25
         stackView.backgroundColor = .clear
-        self.backgroundColor = .clear
-        self.borderWidth = 0
-        
-        
+        backgroundColor = .clear
+        borderWidth = 0
+
         for _ in 1 ... count {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false

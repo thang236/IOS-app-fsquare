@@ -13,6 +13,4 @@ struct Profile {
     let title: String
 }
 
-extension Profile {
-    
-}
+extension Profile {}

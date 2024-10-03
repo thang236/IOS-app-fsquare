@@ -36,6 +36,7 @@ final class DIContainer {
     }
 
     // MARK: Auth Service
+
     func resolveAuthService() -> AuthService {
         return AuthServiceImpl()
     }
@@ -46,11 +47,12 @@ final class DIContainer {
     }
 
     // MARK: Login
+
     func resolveLoginEmailUseCase() -> LoginEmailUseCase {
         let authRepository = resolveAuthRepository()
         return LoginEmailUseCaseImpl(authRepository: authRepository)
     }
-    
+
     func resolveLoadingViewModel() -> LoadingViewModel {
         let getProfileUseCase = resolveGetProfileUseCase()
         return LoadingViewModel(getProfileUseCase: getProfileUseCase)
@@ -80,12 +82,14 @@ final class DIContainer {
         let verifyOTPUseCase = resolveVerifyOTPUseCase()
         return VerifyOTPViewModel(verifyOTPUseCase: verifyOTPUseCase)
     }
-    
-    //MARK: Profile
-    func resolveProfileRepository() -> ProfileRepository{
+
+    // MARK: Profile
+
+    func resolveProfileRepository() -> ProfileRepository {
         let apiService = resolveAPIService()
         return ProfileRepositoryImpl(apiService: apiService)
     }
+
     func resolveGetProfileUseCase() -> GetProfileUseCase {
         let profileRepo = resolveProfileRepository()
         return GetProfileUseCaseImpl(profileRepository: profileRepo)

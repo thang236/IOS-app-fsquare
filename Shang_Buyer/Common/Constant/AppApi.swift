@@ -14,25 +14,29 @@ enum AppApi {
     case verifyAuth
     case getProduct
     case loginEmail
-    
+
     case getProfile
-    
+
     var url: String {
         switch self {
         case .getProduct:
             return "123"
-            //MARK: Endpoint auth
+
+            // MARK: Endpoint auth
+
         case .signUp:
             return "\(AppApi.baseURL)/auth/customer/v1/registrations"
+
         case .verifyAuth:
             return "\(AppApi.baseURL)/auth/customer/v1/verifications"
+
         case .loginEmail:
             return "\(AppApi.baseURL)/auth/customer/v1/authentications"
-            
-            //MARK: Endpoint product
+
+            // MARK: Endpoint product
+
         case .getProfile:
             return "\(AppApi.baseURL)/api/customer/v1/customers/profile"
-            
         }
     }
 }

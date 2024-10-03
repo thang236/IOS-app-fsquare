@@ -5,14 +5,13 @@
 //  Created by Louis Macbook on 04/09/2024.
 //
 
+import Alamofire
 import Foundation
 import UIKit
-import Alamofire
-
 
 class AuthInterceptor: RequestInterceptor {
     // Thêm Access Token và Content-Type vào mỗi request
-    func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
+    func adapt(_ urlRequest: URLRequest, for _: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var request = urlRequest
 
         // Thêm Access Token
@@ -23,11 +22,10 @@ class AuthInterceptor: RequestInterceptor {
             completion(.failure(error))
             return
         }
-        
+
         // Thêm Content-Type
         request.setValue("application/json", forHTTPHeaderField: "Content-Type") // Thay đổi giá trị nếu cần
 
         completion(.success(request))
     }
 }
-

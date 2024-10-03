@@ -14,18 +14,19 @@ protocol ProfileCollectionViewCellDelegate {
 class ProfileCollectionViewCell: UICollectionViewCell {
     var delegate: ProfileCollectionViewCellDelegate?
 
-    @IBOutlet weak var titleLabel: BodyLabel!
-    @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet var titleLabel: BodyLabel!
+    @IBOutlet var iconImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    private func setUpTableView(profile: Profile){
+
+    private func setUpTableView(profile: Profile) {
         iconImage.image = profile.icon
         titleLabel.text = profile.title
     }
 
-    @IBAction func didTapNavigation(_ sender: Any) {
+    @IBAction func didTapNavigation(_: Any) {
         delegate?.onClickNavigation()
     }
 }
