@@ -11,4 +11,5 @@ enum UserDefaultsKey: String {
     case isDarkMode
     case userInfo
     case language
+    case rememberMe
 }

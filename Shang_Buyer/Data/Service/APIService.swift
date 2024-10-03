@@ -7,6 +7,7 @@
 
 import Alamofire
 import Combine
+import Foundation
 
 protocol APIService {
     func request<T: Decodable>(endpoint: AppApi, method: HTTPMethod, parameters: [String: Any]?) -> AnyPublisher<T, Error>
@@ -22,19 +23,37 @@ class APIServiceImpl: APIService {
 
     func request<T: Decodable>(endpoint: AppApi, method: HTTPMethod, parameters: [String: Any]?) -> AnyPublisher<T, Error> {
         let url = endpoint.url
+        print("URL: \(url)")
 
         return Future { promise in
             self.session.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default)
                 .validate()
-                .responseDecodable(of: T.self) { response in
+                .responseData { response in
+
                     switch response.result {
-                    case let .success(decodedObject):
-                        promise(.success(decodedObject))
-                    case let .failure(error):
-                        promise(.failure(error))
+                    case .success(let data):
+                        do {
+                            let decodedObject = try JSONDecoder().decode(T.self, from: data)
+                            promise(.success(decodedObject))
+                        } catch {
+                            promise(.failure(error))
+                        }
+                    case .failure(let error):
+                        if let data = response.data {
+                            do {
+                                let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: data)
+                                let customError = NSError(domain: "", code: response.response?.statusCode ?? 0, userInfo: [NSLocalizedDescriptionKey: errorResponse.message])
+                                promise(.failure(customError))
+                            } catch {
+                                promise(.failure(error))
+                            }
+                        } else {
+                            promise(.failure(error))
+                        }
                     }
                 }
         }
         .eraseToAnyPublisher()
     }
 }
+
