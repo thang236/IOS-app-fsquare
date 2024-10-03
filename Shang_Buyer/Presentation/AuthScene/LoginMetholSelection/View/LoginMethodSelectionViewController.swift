@@ -12,7 +12,16 @@ class LoginMethodSelectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
 
         // Do any additional setup after loading the view.
+    }
+
+    @IBAction func didTapSignUp(_: Any) {
+        coordinator?.gotoRegisterScreen()
+    }
+
+    @IBAction func didTapSignIn(_: Any) {
+        coordinator?.goToLoginByEmail()
     }
 }

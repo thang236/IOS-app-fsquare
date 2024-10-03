@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuccessfullyRegisterViewController" customModule="Shang_Buyer" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registerSuccess" translatesAutoresizingMaskIntoConstraints="NO" id="oe2-Th-oZc">
+                    <rect key="frame" x="0.0" y="120.66666666666667" width="444.33333333333331" height="228.33333333333331"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="oe2-Th-oZc" secondAttribute="height" multiplier="393:202" id="yd6-56-BhK"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gef-Py-xE5">
+                    <rect key="frame" x="57" y="389" width="279" height="99"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iV9-ay-aiF" customClass="HeadingLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="38.666666666666686" y="0.0" width="202" height="57.333333333333336"/>
+                            <string key="text">Successfully
+Created an account</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAh-Hy-Drh" customClass="DescriptionLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="65.333333333333314" width="279" height="33.666666666666657"/>
+                            <string key="text">After this you can explore our services and 
+enjoy our products. Have fun and enjoy it!</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" name="neutralGrayMedium"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9L-QO-w20" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
+                    <rect key="frame" x="20" y="783.66666666666663" width="353" height="34.333333333333371"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Let’s Explore"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="heightOption">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="didTapExploreButton:" destination="-1" eventType="touchUpInside" id="PaU-ce-gIG"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="h9L-QO-w20" secondAttribute="bottom" id="PjZ-zb-ymu"/>
+                <constraint firstItem="h9L-QO-w20" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dYf-32-2T6"/>
+                <constraint firstItem="Gef-Py-xE5" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="h6g-Po-GLs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h9L-QO-w20" secondAttribute="trailing" constant="20" id="hS0-E6-W59"/>
+                <constraint firstItem="oe2-Th-oZc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="51.333333333333314" id="tvp-01-p5L"/>
+                <constraint firstItem="oe2-Th-oZc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vfj-RL-egv"/>
+                <constraint firstItem="Gef-Py-xE5" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="yqF-2U-XY5"/>
+                <constraint firstItem="Gef-Py-xE5" firstAttribute="top" secondItem="oe2-Th-oZc" secondAttribute="bottom" constant="40" id="ytB-x7-uUe"/>
+            </constraints>
+            <point key="canvasLocation" x="89.312977099236633" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="registerSuccess" width="301" height="229"/>
+        <namedColor name="neutralGrayMedium">
+            <color red="0.5725490196078431" green="0.60392156862745094" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

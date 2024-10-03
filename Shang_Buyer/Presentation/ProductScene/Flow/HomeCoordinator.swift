@@ -16,11 +16,11 @@ class HomeCoordinator: Coordinator {
     }
 
     func start() {
-        let viewModel = DIContainer.shared.resolveProductListViewModel()
-        let viewController = ProductListViewController(viewModel: viewModel)
-        viewController.coordinator = self
+        let viewModel = DIContainer.shared.resolveLoadingViewModel()
+//        let viewController = ProductListViewController(viewModel: viewModel)
+
         // test
-        let vc = LoadingViewController()
+        let vc = LoadingViewController(viewModel: viewModel)
         navigationController.pushViewController(vc, animated: true)
     }
 }

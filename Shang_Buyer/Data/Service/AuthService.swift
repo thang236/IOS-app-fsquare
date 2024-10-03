@@ -7,26 +7,40 @@
 
 import Alamofire
 import Combine
+import Foundation
 
 protocol AuthService {
-    func login(username: String, password: String) -> AnyPublisher<String, Error>
+    func request<T: Decodable>(endpoint: AppApi, parameters: [String: Any]?) -> AnyPublisher<T, Error>
 }
 
 class AuthServiceImpl: AuthService {
-    func login(username: String, password: String) -> AnyPublisher<String, Error> {
-        let loginURL = "https://api.example.com/login"
-        let parameters: [String: String] = ["username": username, "password": password]
+    func request<T>(endpoint: AppApi, parameters: [String: Any]?) -> AnyPublisher<T, Error> where T: Decodable {
+        let url = endpoint.url
 
         return Future { promise in
-            AF.request(loginURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
                 .validate()
-                .responseDecodable(of: LoginResponse.self) { response in
+                .responseData { response in
                     switch response.result {
-                    case let .success(loginResponse):
-                        TokenManager.shared.saveAccessToken(loginResponse.token)
-                        promise(.success(loginResponse.token))
+                    case let .success(data):
+                        do {
+                            let decodedObject = try JSONDecoder().decode(T.self, from: data)
+                            promise(.success(decodedObject))
+                        } catch {
+                            promise(.failure(error))
+                        }
                     case let .failure(error):
-                        promise(.failure(error))
+                        if let data = response.data {
+                            do {
+                                let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: data)
+                                let customError = NSError(domain: "", code: response.response?.statusCode ?? 0, userInfo: [NSLocalizedDescriptionKey: errorResponse.message])
+                                promise(.failure(customError))
+                            } catch {
+                                promise(.failure(error))
+                            }
+                        } else {
+                            promise(.failure(error))
+                        }
                     }
                 }
         }
@@ -34,7 +48,6 @@ class AuthServiceImpl: AuthService {
     }
 }
 
-// Define your response model
 struct LoginResponse: Decodable {
     let token: String
 }

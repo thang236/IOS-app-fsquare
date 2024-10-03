@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Shang_Buyer" customModuleProvider="target">
+            <connections>
+                <outlet property="scrollView" destination="bGj-Wa-WEK" id="zvc-Qa-2ST"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="wBk-dS-8fj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGj-Wa-WEK">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5v-9d-3W4" userLabel="ContentView">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerHome" translatesAutoresizingMaskIntoConstraints="NO" id="fZk-Lw-pdl">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="181.33333333333334"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="fZk-Lw-pdl" secondAttribute="height" multiplier="375:173" id="Nuk-Vc-ARu"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="fZk-Lw-pdl" firstAttribute="leading" secondItem="g5v-9d-3W4" secondAttribute="leading" id="B4E-bs-QG3"/>
+                                <constraint firstAttribute="height" constant="1000" id="bOC-oN-XmG"/>
+                                <constraint firstItem="fZk-Lw-pdl" firstAttribute="top" secondItem="g5v-9d-3W4" secondAttribute="top" id="qvd-F0-G1G"/>
+                                <constraint firstAttribute="trailing" secondItem="fZk-Lw-pdl" secondAttribute="trailing" id="sq8-wX-Sh3"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="primaryDark"/>
+                    <constraints>
+                        <constraint firstItem="g5v-9d-3W4" firstAttribute="top" secondItem="2l0-Lt-xe2" secondAttribute="top" id="AlW-Ri-qek"/>
+                        <constraint firstItem="g5v-9d-3W4" firstAttribute="bottom" secondItem="2l0-Lt-xe2" secondAttribute="bottom" id="LbH-HF-ErF"/>
+                        <constraint firstItem="g5v-9d-3W4" firstAttribute="trailing" secondItem="2l0-Lt-xe2" secondAttribute="trailing" id="X93-V9-TM6"/>
+                        <constraint firstItem="g5v-9d-3W4" firstAttribute="leading" secondItem="2l0-Lt-xe2" secondAttribute="leading" id="vpg-C4-fbE"/>
+                        <constraint firstItem="g5v-9d-3W4" firstAttribute="width" secondItem="Vf4-En-G4E" secondAttribute="width" multiplier="1:1" id="z8D-un-m7R"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="2l0-Lt-xe2"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Vf4-En-G4E"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bGj-Wa-WEK" secondAttribute="bottom" id="2ct-db-yVk"/>
+                <constraint firstItem="bGj-Wa-WEK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B3G-gH-ezV"/>
+                <constraint firstItem="bGj-Wa-WEK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cvV-Lr-IIE"/>
+                <constraint firstAttribute="trailing" secondItem="bGj-Wa-WEK" secondAttribute="trailing" id="eCg-pn-oWt"/>
+            </constraints>
+            <point key="canvasLocation" x="234.35114503816794" y="-131.69014084507043"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bannerHome" width="375" height="173"/>
+        <namedColor name="primaryDark">
+            <color red="1" green="0.50588235294117645" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

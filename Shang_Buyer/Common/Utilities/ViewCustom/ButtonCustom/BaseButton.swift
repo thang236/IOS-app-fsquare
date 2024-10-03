@@ -53,11 +53,13 @@ class BaseButton: UIButton {
     }
 
     func setup() {
-        layer.cornerRadius = 8
-        clipsToBounds = true
-        invalidateIntrinsicContentSize()
-        addTarget(self, action: #selector(updateButtonAppearance), for: [.allTouchEvents, .allEvents])
-        updateButtonAppearance()
+        DispatchQueue.main.async {
+            self.layer.cornerRadius = 8
+            self.clipsToBounds = true
+            self.invalidateIntrinsicContentSize()
+            self.addTarget(self, action: #selector(self.self.updateButtonAppearance), for: [.allTouchEvents, .allEvents])
+            self.updateButtonAppearance()
+        }
     }
 
     @objc func updateButtonAppearance() {

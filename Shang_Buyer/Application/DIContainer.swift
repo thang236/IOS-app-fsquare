@@ -41,5 +41,57 @@ final class DIContainer {
         return AuthServiceImpl()
     }
 
-//    func resolveAuthRepository() -> AuthRe
+    func resolveAuthRepository() -> AuthRepository {
+        let authService = resolveAuthService()
+        return AuthRepositoryImpl(authService: authService)
+    }
+
+    // MARK: Login
+
+    func resolveLoginEmailUseCase() -> LoginEmailUseCase {
+        let authRepository = resolveAuthRepository()
+        return LoginEmailUseCaseImpl(authRepository: authRepository)
+    }
+
+    func resolveLoadingViewModel() -> LoadingViewModel {
+        let getProfileUseCase = resolveGetProfileUseCase()
+        return LoadingViewModel(getProfileUseCase: getProfileUseCase)
+    }
+
+    func resolveLoginEmailViewModel() -> LoginWithEmailViewModel {
+        let loginUseCase = resolveLoginEmailUseCase()
+        return LoginWithEmailViewModel(loginEmailUseCase: loginUseCase)
+    }
+
+    func resolveRegisterUseCase() -> RegisterUseCase {
+        let authRepository = resolveAuthRepository()
+        return RegisterUseCaseImpl(authRepository: authRepository)
+    }
+
+    func resolveRegisterViewModel() -> RegisterViewModel {
+        let registerUseCase = resolveRegisterUseCase()
+        return RegisterViewModel(registerUseCase: registerUseCase)
+    }
+
+    func resolveVerifyOTPUseCase() -> VerifyOTPUseCase {
+        let authRepository = resolveAuthRepository()
+        return VerifyOTPUseCaseImpl(authRepository: authRepository)
+    }
+
+    func resolveVerifyAthViewModel() -> VerifyOTPViewModel {
+        let verifyOTPUseCase = resolveVerifyOTPUseCase()
+        return VerifyOTPViewModel(verifyOTPUseCase: verifyOTPUseCase)
+    }
+
+    // MARK: Profile
+
+    func resolveProfileRepository() -> ProfileRepository {
+        let apiService = resolveAPIService()
+        return ProfileRepositoryImpl(apiService: apiService)
+    }
+
+    func resolveGetProfileUseCase() -> GetProfileUseCase {
+        let profileRepo = resolveProfileRepository()
+        return GetProfileUseCaseImpl(profileRepository: profileRepo)
+    }
 }
