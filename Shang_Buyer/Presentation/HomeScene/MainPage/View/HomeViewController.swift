@@ -14,7 +14,6 @@ class HomeViewController: UIViewController {
 
         setupNavigationBar()
         navigationController?.navigationBar.barTintColor = UIColor.primaryDark
-
         scrollView.delegate = self
     }
 

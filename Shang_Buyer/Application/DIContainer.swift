@@ -94,4 +94,9 @@ final class DIContainer {
         let profileRepo = resolveProfileRepository()
         return GetProfileUseCaseImpl(profileRepository: profileRepo)
     }
+
+    func resolveProfileViewModel() -> ProfileViewModel {
+        let getProfileUseCase = resolveGetProfileUseCase()
+        return ProfileViewModel(getProfileUseCase: getProfileUseCase)
+    }
 }

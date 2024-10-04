@@ -87,9 +87,10 @@
 		BF96CA452CA56A09004F7BE9 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96CA442CA56A09004F7BE9 /* OTPTextField.swift */; };
 		BF96CBD92CA56AF500066A1F /* VerifyOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96CBD72CA56AF500066A1F /* VerifyOTPViewController.swift */; };
 		BF96CBDA2CA56AF500066A1F /* VerifyOTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF96CBD82CA56AF500066A1F /* VerifyOTPViewController.xib */; };
-		BFA057D52CAE9E9300890399 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA057D32CAE9E9300890399 /* ProfileCollectionViewCell.swift */; };
-		BFA057D62CAE9E9300890399 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA057D42CAE9E9300890399 /* ProfileCollectionViewCell.xib */; };
 		BFA057D82CAEA18900890399 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA057D72CAEA18900890399 /* Profile.swift */; };
+		BFA057DB2CAEA56B00890399 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA057DA2CAEA56B00890399 /* ProfileViewModel.swift */; };
+		BFA057DE2CAFF3D100890399 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA057DC2CAFF3D100890399 /* ProfileTableViewCell.swift */; };
+		BFA057DF2CAFF3D100890399 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA057DD2CAFF3D100890399 /* ProfileTableViewCell.xib */; };
 		BFAF1D7E2CA6A0CA0085609C /* VerifyOTPUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF1D7D2CA6A0CA0085609C /* VerifyOTPUseCase.swift */; };
 		BFAF1D802CA6A18A0085609C /* VerifyOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF1D7F2CA6A18A0085609C /* VerifyOTPViewModel.swift */; };
 		BFAF1D832CA838AE0085609C /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF1D822CA838AE0085609C /* AuthResponse.swift */; };
@@ -209,9 +210,10 @@
 		BF96CA442CA56A09004F7BE9 /* OTPTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		BF96CBD72CA56AF500066A1F /* VerifyOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewController.swift; sourceTree = "<group>"; };
 		BF96CBD82CA56AF500066A1F /* VerifyOTPViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyOTPViewController.xib; sourceTree = "<group>"; };
-		BFA057D32CAE9E9300890399 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
-		BFA057D42CAE9E9300890399 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
 		BFA057D72CAEA18900890399 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		BFA057DA2CAEA56B00890399 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		BFA057DC2CAFF3D100890399 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		BFA057DD2CAFF3D100890399 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		BFAF1D7D2CA6A0CA0085609C /* VerifyOTPUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPUseCase.swift; sourceTree = "<group>"; };
 		BFAF1D7F2CA6A18A0085609C /* VerifyOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewModel.swift; sourceTree = "<group>"; };
 		BFAF1D822CA838AE0085609C /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 		BF1E66772CAD2E59001C48E9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				BFA057D92CAEA53700890399 /* ViewModel */,
 				BF1E66782CAD2E65001C48E9 /* View */,
 			);
 			path = Profile;
@@ -817,10 +820,18 @@
 		BFA057D22CAE9E5200890399 /* ProfileCell */ = {
 			isa = PBXGroup;
 			children = (
-				BFA057D32CAE9E9300890399 /* ProfileCollectionViewCell.swift */,
-				BFA057D42CAE9E9300890399 /* ProfileCollectionViewCell.xib */,
+				BFA057DC2CAFF3D100890399 /* ProfileTableViewCell.swift */,
+				BFA057DD2CAFF3D100890399 /* ProfileTableViewCell.xib */,
 			);
 			path = ProfileCell;
+			sourceTree = "<group>";
+		};
+		BFA057D92CAEA53700890399 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BFA057DA2CAEA56B00890399 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BFAF1D812CA838A00085609C /* Response */ = {
@@ -1073,8 +1084,8 @@
 			files = (
 				BF25D0AD2C9D2ADB00CB7EE8 /* LoadingViewController.xib in Resources */,
 				BFCF72582CA3EC9C00208985 /* RegisterViewController.xib in Resources */,
-				BFA057D62CAE9E9300890399 /* ProfileCollectionViewCell.xib in Resources */,
 				BF1E665F2CAD244B001C48E9 /* HomeViewController.xib in Resources */,
+				BFA057DF2CAFF3D100890399 /* ProfileTableViewCell.xib in Resources */,
 				BF5B323A2C92E3E20063CA29 /* LaunchScreen.storyboard in Resources */,
 				BF5B32372C92E3E20063CA29 /* Assets.xcassets in Resources */,
 				BFEB4E2A2CAAB1310033F950 /* SuccessfullyRegisterViewController.xib in Resources */,
@@ -1134,6 +1145,7 @@
 				BF4244E92C9D581800F43C8B /* FontWeight.swift in Sources */,
 				BF5B32632C92E4F70063CA29 /* HomeCoordinator.swift in Sources */,
 				BF4244F52CA1589B00F43C8B /* BaseButton.swift in Sources */,
+				BFA057DE2CAFF3D100890399 /* ProfileTableViewCell.swift in Sources */,
 				BFCF72642CA4042C00208985 /* UIImage+Extension.swift in Sources */,
 				BF25D04B2C9821F100CB7EE8 /* AuthInterceptor.swift in Sources */,
 				BF25D0422C97239400CB7EE8 /* UIColor+Extension.swift in Sources */,
@@ -1149,6 +1161,7 @@
 				BFAF1D9A2CAA807C0085609C /* LoginEmailUseCase.swift in Sources */,
 				BFCF725D2CA3EF4000208985 /* NormalField.swift in Sources */,
 				BFAF1D942CAA7DF60085609C /* LoginWithEmailViewController.swift in Sources */,
+				BFA057DB2CAEA56B00890399 /* ProfileViewModel.swift in Sources */,
 				BF96CA3B2CA4152C004F7BE9 /* RegisterUseCase.swift in Sources */,
 				BF1E664C2CAC061C001C48E9 /* ErrorResponse.swift in Sources */,
 				BF96CA452CA56A09004F7BE9 /* OTPTextField.swift in Sources */,
@@ -1188,7 +1201,6 @@
 				BF869EF02CA297A800B59D8B /* LoginMethodSelectionViewController.swift in Sources */,
 				BF1E667B2CAD2E70001C48E9 /* ProfileViewController.swift in Sources */,
 				BF1E66592CAD21C4001C48E9 /* TabViewController.swift in Sources */,
-				BFA057D52CAE9E9300890399 /* ProfileCollectionViewCell.swift in Sources */,
 				BF25D0712C9ADA5B00CB7EE8 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
