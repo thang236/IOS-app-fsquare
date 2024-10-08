@@ -56,8 +56,7 @@ class LoadingViewController: UIViewController {
                 switch completion {
                 case let .success(data):
                     if data.status == HTTPStatus.success.message {
-                        let tabVC = TabViewController()
-                        self.navigationController?.pushViewController(tabVC, animated: true)
+                        self.coordinator?.didFinishAuthentication()
                     } else {
                         self.showToast(message: "Please Login again", chooseImageToast: .warning)
                         self.coordinator?.goToLoginMethodSelection()

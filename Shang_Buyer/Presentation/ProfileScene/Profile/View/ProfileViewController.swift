@@ -9,6 +9,8 @@ import Combine
 import UIKit
 
 class ProfileViewController: UIViewController {
+    private var profile: ProfileItem? = nil
+    var coordinator: ProfileCoordinator?
     private let profiles: [Profile] = Profile.profiles
     @IBOutlet private var profileTableView: UITableView!
     @IBOutlet private var phoneLabel: BodyLabel!
@@ -83,7 +85,10 @@ class ProfileViewController: UIViewController {
         viewModel.getProfile { completion in
             switch completion {
             case let .success(data):
-                let profile: ProfileItem = data.data
+                self.profile = data.data
+                guard let profile = self.profile else {
+                    return
+                }
                 self.setupProfile(profile: profile)
             case let .failure(failure):
                 self.showToast(message: failure.localizedDescription, chooseImageToast: .warning)
@@ -101,13 +106,18 @@ class ProfileViewController: UIViewController {
         }
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        let tableViewHeight = tableView.frame.height
-        return tableViewHeight / CGFloat(profiles.count)
+    @IBAction func didTabEditProfile(_: Any) {
+//        let editProfileVC = EditProfileViewController()
+//        navigationController?.pushViewController(editProfileVC, animated: true)
     }
 }
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+        let tableViewHeight = tableView.frame.height
+        return tableViewHeight / CGFloat(profiles.count)
+    }
+
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return profiles.count
     }
@@ -121,7 +131,31 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("ttt")
-        let selectedProfile = profiles[indexPath.row]
+        var indexSelected = SettingProfileTable(rawValue: indexPath.row)!
+        switch indexSelected {
+        case .editProfile:
+            guard let profile = profile else {
+                return
+            }
+            coordinator?.goToEditProfile(profileModel: profile, vc: self)
+        case .address:
+            print("111")
+        case .noti:
+            print("111")
+        case .wallet:
+            print("111")
+        case .security:
+            print("111")
+        case .policy:
+            print("111")
+        case .logout:
+            print("555")
+        }
+    }
+}
+
+extension ProfileViewController: EditProfileViewModelDelegate {
+    func updateProfile(profile: ProfileItem) {
+        setupProfile(profile: profile)
     }
 }

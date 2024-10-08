@@ -55,4 +55,9 @@ class AuthCoordinator: Coordinator {
         successVc.coordinator = self
         navigationController.pushViewController(successVc, animated: true)
     }
+
+    func didFinishAuthentication() {
+        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
+        tabBarCoordinator.start()
+    }
 }

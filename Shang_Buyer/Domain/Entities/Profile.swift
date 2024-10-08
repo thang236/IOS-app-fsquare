@@ -24,3 +24,13 @@ extension Profile {
         Profile(icon: UIImage.loginLogout, title: "Logout"),
     ]
 }
+
+enum SettingProfileTable: Int {
+    case editProfile = 0
+    case address = 1
+    case noti = 2
+    case wallet = 3
+    case security = 4
+    case policy = 5
+    case logout = 6
+}

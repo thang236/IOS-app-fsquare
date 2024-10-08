@@ -1,5 +1,5 @@
 //
-//  Coordinator.swift
+//  AppCoordinator.swift
 //  CombineMVVMUIKitExample
 //
 //  Created by Louis Macbook on 11/09/2024.
@@ -27,5 +27,10 @@ class AppCoordinator: Coordinator {
 
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+    }
+
+    func startTabFlow() {
+        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
+        tabBarCoordinator.start()
     }
 }
