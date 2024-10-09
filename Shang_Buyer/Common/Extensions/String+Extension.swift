@@ -8,6 +8,20 @@
 import Foundation
 
 extension String {
+    func toShortDate() -> String? {
+        let isoFormatter = DateFormatter()
+        isoFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+        isoFormatter.locale = Locale(identifier: "en_US_POSIX")
+
+        if let date = isoFormatter.date(from: self) {
+            let shortDateFormatter = DateFormatter()
+            shortDateFormatter.dateFormat = "yyyy-MM-dd"
+            return shortDateFormatter.string(from: date)
+        }
+
+        return nil
+    }
+
     func isValidEmail() -> Bool {
         let emailRegex = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}$"
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)

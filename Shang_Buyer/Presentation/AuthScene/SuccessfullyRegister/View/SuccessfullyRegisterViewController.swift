@@ -16,6 +16,6 @@ class SuccessfullyRegisterViewController: UIViewController {
 
     @IBAction func didTapExploreButton(_: Any) {
         let mainVc = MainPageViewController()
-        navigationController?.pushViewController(mainVc, animated: true)
+        coordinator?.didFinishAuthentication()
     }
 }

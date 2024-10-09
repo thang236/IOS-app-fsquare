@@ -90,6 +90,9 @@
 		BF9F326C2CB0166400530523 /* EditProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F326B2CB0166400530523 /* EditProfileUseCase.swift */; };
 		BF9F326F2CB3B96700530523 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F326E2CB3B96700530523 /* ProfileCoordinator.swift */; };
 		BF9F32712CB3C31E00530523 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F32702CB3C31E00530523 /* TabBarCoordinator.swift */; };
+		BF9F32772CB529C600530523 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F32752CB529C600530523 /* AddressViewController.swift */; };
+		BF9F32782CB529C600530523 /* AddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9F32762CB529C600530523 /* AddressViewController.xib */; };
+		BF9F327A2CB529D000530523 /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F32792CB529D000530523 /* AddressViewModel.swift */; };
 		BFA057D82CAEA18900890399 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA057D72CAEA18900890399 /* Profile.swift */; };
 		BFA057DB2CAEA56B00890399 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA057DA2CAEA56B00890399 /* ProfileViewModel.swift */; };
 		BFA057DE2CAFF3D100890399 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA057DC2CAFF3D100890399 /* ProfileTableViewCell.swift */; };
@@ -219,6 +222,9 @@
 		BF9F326B2CB0166400530523 /* EditProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileUseCase.swift; sourceTree = "<group>"; };
 		BF9F326E2CB3B96700530523 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		BF9F32702CB3C31E00530523 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		BF9F32752CB529C600530523 /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		BF9F32762CB529C600530523 /* AddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressViewController.xib; sourceTree = "<group>"; };
+		BF9F32792CB529D000530523 /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
 		BFA057D72CAEA18900890399 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		BFA057DA2CAEA56B00890399 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		BFA057DC2CAFF3D100890399 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -396,6 +402,7 @@
 		BF1E66762CAD2E52001C48E9 /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
+				BF9F32722CB5293A00530523 /* Address */,
 				BF9F326D2CB3B95700530523 /* Flow */,
 				BFA057E02CB0077800890399 /* EditProfile */,
 				BF1E66772CAD2E59001C48E9 /* Profile */,
@@ -840,6 +847,32 @@
 			path = Flow;
 			sourceTree = "<group>";
 		};
+		BF9F32722CB5293A00530523 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				BF9F32742CB5295000530523 /* View */,
+				BF9F32732CB5294C00530523 /* ViewModel */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		BF9F32732CB5294C00530523 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BF9F32792CB529D000530523 /* AddressViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BF9F32742CB5295000530523 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF9F32752CB529C600530523 /* AddressViewController.swift */,
+				BF9F32762CB529C600530523 /* AddressViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BFA057D22CAE9E5200890399 /* ProfileCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1147,6 +1180,7 @@
 				BFAF1D8E2CA846060085609C /* MainPageViewController.xib in Resources */,
 				BF869EF12CA297A800B59D8B /* LoginMethodSelectionViewController.xib in Resources */,
 				BF1E66672CAD248E001C48E9 /* CartViewController.xib in Resources */,
+				BF9F32782CB529C600530523 /* AddressViewController.xib in Resources */,
 				BFAF1D952CAA7DF60085609C /* LoginWithEmailViewController.xib in Resources */,
 				BF1E666E2CAD2DAE001C48E9 /* MyOrderViewController.xib in Resources */,
 				BF1E667C2CAD2E70001C48E9 /* ProfileViewController.xib in Resources */,
@@ -1223,6 +1257,7 @@
 				BF4244EE2C9D5A4C00F43C8B /* DescriptionLabel.swift in Sources */,
 				BF96CA382CA40E63004F7BE9 /* Register.swift in Sources */,
 				BF96CA362CA40E1E004F7BE9 /* AuthRepository.swift in Sources */,
+				BF9F327A2CB529D000530523 /* AddressViewModel.swift in Sources */,
 				BFAF1D7E2CA6A0CA0085609C /* VerifyOTPUseCase.swift in Sources */,
 				BF25D0552C996AF400CB7EE8 /* GetProductsUseCase.swift in Sources */,
 				BF4244EC2C9D599800F43C8B /* BodyLabel.swift in Sources */,
@@ -1250,6 +1285,7 @@
 				BF25D05B2C9973B100CB7EE8 /* TokenManager.swift in Sources */,
 				BF25D0592C9972EE00CB7EE8 /* APIService.swift in Sources */,
 				BF25D06E2C9AC0D100CB7EE8 /* DIContainer.swift in Sources */,
+				BF9F32772CB529C600530523 /* AddressViewController.swift in Sources */,
 				BFA057E82CB007BC00890399 /* EditProfileViewModel.swift in Sources */,
 				BF25D0442C97239400CB7EE8 /* Button+Extension.swift in Sources */,
 				BF4244F32C9D679A00F43C8B /* ButtonType.swift in Sources */,

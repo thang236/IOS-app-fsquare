@@ -37,7 +37,6 @@ class EditProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupNav()
         setupBindings()
         setupField()
@@ -51,7 +50,7 @@ class EditProfileViewController: UIViewController {
         datePicker.preferredDatePickerStyle = .wheels
         birthField.inputView = datePicker
         if let date = profileModel.birthDay {
-            birthField.text = date
+            birthField.text = date.toShortDate()
         } else {
             birthField.text = currentDate.formatDateToString()
         }

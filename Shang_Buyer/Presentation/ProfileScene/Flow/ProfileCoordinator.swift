@@ -36,4 +36,9 @@ class ProfileCoordinator: Coordinator {
         editProfileVC.coordinator = self
         navigationController.pushViewController(editProfileVC, animated: true)
     }
+
+    func logoutUser() {
+        let authCoordinator = AuthCoordinator(navigationController: navigationController)
+        authCoordinator.goToLoginMethodSelection()
+    }
 }

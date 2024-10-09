@@ -207,10 +207,10 @@
     </objects>
     <designables>
         <designable name="23b-lL-uXb">
-            <size key="intrinsicContentSize" width="132.33333333333334" height="34"/>
+            <size key="intrinsicContentSize" width="353" height="48"/>
         </designable>
         <designable name="3TT-fY-UDz">
-            <size key="intrinsicContentSize" width="157.33333333333334" height="34"/>
+            <size key="intrinsicContentSize" width="353" height="48"/>
         </designable>
         <designable name="4Rl-Tx-2Ui">
             <size key="intrinsicContentSize" width="41" height="17"/>
@@ -222,10 +222,10 @@
             <size key="intrinsicContentSize" width="64.333333333333329" height="17"/>
         </designable>
         <designable name="UDX-tJ-KwH">
-            <size key="intrinsicContentSize" width="161" height="34"/>
+            <size key="intrinsicContentSize" width="353" height="48"/>
         </designable>
         <designable name="Xq0-qr-PDX">
-            <size key="intrinsicContentSize" width="148" height="34"/>
+            <size key="intrinsicContentSize" width="353" height="48"/>
         </designable>
         <designable name="f7e-8Z-qyP">
             <size key="intrinsicContentSize" width="34.666666666666664" height="17"/>
@@ -234,7 +234,7 @@
             <size key="intrinsicContentSize" width="51.666666666666664" height="17"/>
         </designable>
         <designable name="tXg-d7-rgD">
-            <size key="intrinsicContentSize" width="139" height="34"/>
+            <size key="intrinsicContentSize" width="353" height="48"/>
         </designable>
     </designables>
     <resources>

@@ -149,7 +149,9 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         case .policy:
             print("111")
         case .logout:
-            print("555")
+            TokenManager.shared.removeTokens()
+            UserDefaults.standard.set(false, forKey: .rememberMe)
+            coordinator?.logoutUser()
         }
     }
 }
