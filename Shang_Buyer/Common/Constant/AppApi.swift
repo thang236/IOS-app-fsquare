@@ -16,6 +16,7 @@ enum AppApi {
     case loginEmail
 
     case getProfile
+    case editProfile
 
     var url: String {
         switch self {
@@ -33,9 +34,12 @@ enum AppApi {
         case .loginEmail:
             return "\(AppApi.baseURL)/auth/customer/v1/authentications"
 
-            // MARK: Endpoint product
+            // MARK: Endpoint profile
 
         case .getProfile:
+            return "\(AppApi.baseURL)/api/customer/v1/customers/profile"
+
+        case .editProfile:
             return "\(AppApi.baseURL)/api/customer/v1/customers/profile"
         }
     }

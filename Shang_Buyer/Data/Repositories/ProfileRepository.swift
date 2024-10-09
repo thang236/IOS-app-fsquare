@@ -10,6 +10,7 @@ import Foundation
 
 protocol ProfileRepository {
     func getProfile() -> AnyPublisher<ProfileResponse, Error>
+    func editProfile(parameters: [String: Any]) -> AnyPublisher<ProfileResponse, Error>
 }
 
 class ProfileRepositoryImpl: ProfileRepository {
@@ -21,5 +22,9 @@ class ProfileRepositoryImpl: ProfileRepository {
 
     func getProfile() -> AnyPublisher<ProfileResponse, Error> {
         apiService.request(endpoint: .getProfile, method: .get, parameters: nil)
+    }
+
+    func editProfile(parameters: [String: Any]) -> AnyPublisher<ProfileResponse, Error> {
+        apiService.request(endpoint: .editProfile, method: .patch, parameters: parameters)
     }
 }

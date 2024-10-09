@@ -123,7 +123,7 @@ class VerifyOTPViewController: UIViewController {
                 DispatchQueue.main.async {
                     if self.isLogin {
                         let mainVC = MainPageViewController()
-                        self.navigationController?.pushViewController(mainVC, animated: true)
+                        self.coordinator?.didFinishAuthentication()
                     } else {
                         self.coordinator?.gotoSuccessRegister()
                     }

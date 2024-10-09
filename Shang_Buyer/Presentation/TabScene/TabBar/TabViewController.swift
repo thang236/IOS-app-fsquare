@@ -8,40 +8,78 @@
 import UIKit
 
 class TabViewController: UITabBarController {
+    var coordinator: TabBarCoordinator?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTabs()
-        tabBar.tintColor = .primaryDark
-        tabBar.backgroundColor = .white
-        tabBar.unselectedItemTintColor = .neutralLight
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        DispatchQueue.main.async {
+            self.setupTabs()
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        }
+        delegate = self
     }
 
     private func setupTabs() {
-        let home = createNav(title: "Home", unSelectedImage: UIImage.homeOutline, selectedImage: UIImage.homeFill, vc: HomeViewController())
-        let cart = createNav(title: "Cart", unSelectedImage: UIImage.bagOutline, selectedImage: UIImage.bagFill, vc: CartViewController())
-        let order = createNav(title: "Orders", unSelectedImage: UIImage.cartOutline, selectedImage: UIImage.cartFill, vc: MyOrderViewController())
-        let wallet = createNav(title: "Wallet", unSelectedImage: UIImage.walletOutline, selectedImage: UIImage.walletFill, vc: MyEWalletViewController())
-        let profile = createNav(title: "Profile", unSelectedImage: UIImage.userOutline, selectedImage: UIImage.userFill, vc: ProfileViewController())
+        guard let coordinator = coordinator else {
+            return
+        }
 
-        setViewControllers([home, cart, order, wallet, profile], animated: true)
+        let profileViewController = coordinator.getProfile()
+
+        // Tạo UITabBarItems
+        let homeTabItem = UITabBarItem(title: "Home", image: UIImage.homeOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.homeFill)
+        let cartTabItem = UITabBarItem(title: "Cart", image: UIImage.bagOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.bagFill)
+        let orderTabItem = UITabBarItem(title: "Orders", image: UIImage.cartOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.cartFill)
+        let walletTabItem = UITabBarItem(title: "Wallet", image: UIImage.walletOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.walletFill)
+        let profileTabItem = UITabBarItem(title: "Profile", image: UIImage.userOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.userFill)
+
+        // Tạo view controllers cho từng tab và bọc trong UINavigationController
+        let homeVC = UINavigationController(rootViewController: HomeViewController())
+        let cartVC = UINavigationController(rootViewController: CartViewController())
+        let orderVC = UINavigationController(rootViewController: MyOrderViewController())
+        let walletVC = UINavigationController(rootViewController: MyEWalletViewController())
+        let profileVC = UINavigationController(rootViewController: profileViewController)
+
+        homeVC.tabBarItem = homeTabItem
+        cartVC.tabBarItem = cartTabItem
+        orderVC.tabBarItem = orderTabItem
+        walletVC.tabBarItem = walletTabItem
+        profileVC.tabBarItem = profileTabItem
+
+        setViewControllers([homeVC, cartVC, orderVC, walletVC, profileVC], animated: true)
+
         let fontAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.interItalicVariableFont(fontWeight: .regular, size: 12) as Any,
         ]
 
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .selected)
-    }
 
-    private func createNav(title: String, unSelectedImage: UIImage?, selectedImage: UIImage?, vc: UIViewController) -> UINavigationController {
-        let nav = UINavigationController(rootViewController: vc)
-        nav.tabBarItem.title = title
-        nav.tabBarItem.image = unSelectedImage?.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight)
-        nav.tabBarItem.selectedImage = selectedImage?.withRenderingMode(.alwaysOriginal)
-        return nav
+        tabBar.tintColor = .primaryDark
+        tabBar.backgroundColor = .white
+        tabBar.unselectedItemTintColor = .neutralLight
+    }
+}
+
+extension TabViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        // Kiểm tra xem viewController đã chọn là loại UINavigationController không
+        if let navController = viewController as? UINavigationController {
+            let topViewController = navController.topViewController
+
+            if topViewController is ProfileViewController {
+                // Nếu đã ở trên ProfileViewController, không cần gọi coordinator nữa
+                return
+            }
+        }
+
+        // Gọi coordinator để điều hướng đến Profile nếu người dùng nhấn vào tab Profile
+        if let navController = viewController as? UINavigationController,
+           let selectedIndex = tabBarController.viewControllers?.firstIndex(of: viewController)
+        {
+            if selectedIndex == 4 { // Giả sử tab Profile là tab thứ 5 (index 4)
+//                coordinator?.goToProfile()  Gọi coordinator để điều hướng đến Profile
+            }
+        }
     }
 }

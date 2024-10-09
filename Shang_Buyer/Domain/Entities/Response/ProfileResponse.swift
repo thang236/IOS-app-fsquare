@@ -11,7 +11,7 @@ struct ProfileItem: Codable {
     let id: String
     let firstName: String
     let lastName: String
-    let email: String
+    let email: String?
     let avatar: String?
     let birthDay: String?
     let phone: String?

@@ -89,6 +89,22 @@ extension UIViewController {
             toastView.removeFromSuperview()
         })
     }
+
+    func setupNavigationBar(leftBarButton: UIBarButtonItem? = nil, title: String, rightBarButton: [UIBarButtonItem]? = nil) {
+        let titleLabel = UILabel()
+        titleLabel.text = title
+        titleLabel.font = UIFont.interItalicVariableFont(fontWeight: .semibold, size: 20)
+        titleLabel.textColor = .black
+        titleLabel.sizeToFit()
+        let leftTitleItem = UIBarButtonItem(customView: titleLabel)
+        if let leftBarButton = leftBarButton {
+            navigationItem.leftBarButtonItems = [leftBarButton, leftTitleItem]
+        } else {
+            navigationItem.leftBarButtonItem = leftTitleItem
+        }
+
+        navigationItem.rightBarButtonItems = rightBarButton
+    }
 }
 
 enum ChooseImageToast: String {

@@ -34,7 +34,6 @@ class LoadingViewController: UIViewController {
             .compactMap { $0 }
             .receive(on: DispatchQueue.main).sink { [weak self] errorMessage in
                 print("errorMessage:   \(errorMessage)")
-//                self?.showToast(message: errorMessage, chooseImageToast: .error)
                 self?.showAlert(title: "error", message: errorMessage)
 
             }.store(in: &cancellables)
@@ -42,7 +41,6 @@ class LoadingViewController: UIViewController {
 
     func checkRemember() {
         let check = UserDefaults.standard.bool(forKey: .rememberMe)
-        print(check)
         if check {
             checkToken()
         } else {
@@ -56,8 +54,7 @@ class LoadingViewController: UIViewController {
                 switch completion {
                 case let .success(data):
                     if data.status == HTTPStatus.success.message {
-                        let tabVC = TabViewController()
-                        self.navigationController?.pushViewController(tabVC, animated: true)
+                        self.coordinator?.didFinishAuthentication()
                     } else {
                         self.showToast(message: "Please Login again", chooseImageToast: .warning)
                         self.coordinator?.goToLoginMethodSelection()

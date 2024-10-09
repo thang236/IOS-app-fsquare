@@ -11,17 +11,19 @@ class HomeViewController: UIViewController {
     @IBOutlet private var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupNavigationBar()
-        navigationController?.navigationBar.barTintColor = UIColor.primaryDark
-
-        scrollView.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
-//        edgesForExtendedLayout = []
+
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground() // Đặt nền không trong suốt
+            appearance.backgroundColor = .primaryDark // Hoặc màu bạn muốn
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+            navigationController?.navigationBar.standardAppearance = appearance
+        }
     }
 
     private func setupNavigationBar() {
@@ -35,6 +37,8 @@ class HomeViewController: UIViewController {
         let favoriteButton = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(didTapFavorite))
         favoriteButton.tintColor = .white
         navigationItem.rightBarButtonItems = [favoriteButton, searchButton]
+
+        navigationController?.navigationBar.barTintColor = .primaryDark
     }
 
     @objc func didTapSearchButton() {}
@@ -42,13 +46,4 @@ class HomeViewController: UIViewController {
     @objc func didTapFavorite() {}
 }
 
-extension HomeViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        print(offsetY)
-        if offsetY > 0 {
-            navigationController?.navigationBar.barTintColor = .primaryDark
-            navigationController?.navigationBar.backgroundColor = UIColor.primaryDark
-        }
-    }
-}
+extension HomeViewController: UIScrollViewDelegate {}

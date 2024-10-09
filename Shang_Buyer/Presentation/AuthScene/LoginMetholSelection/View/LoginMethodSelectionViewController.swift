@@ -24,4 +24,8 @@ class LoginMethodSelectionViewController: UIViewController {
     @IBAction func didTapSignIn(_: Any) {
         coordinator?.goToLoginByEmail()
     }
+
+    @IBAction func didTapGuestButton(_: Any) {
+        coordinator?.didFinishAuthentication()
+    }
 }
