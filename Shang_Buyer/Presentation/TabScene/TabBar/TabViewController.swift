@@ -28,7 +28,7 @@ class TabViewController: UITabBarController {
 
         // Tạo UITabBarItems
         let homeTabItem = UITabBarItem(title: "Home", image: UIImage.homeOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.homeFill)
-        let cartTabItem = UITabBarItem(title: "Cart", image: UIImage.bagOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.bagFill)
+        let cartTabItem = UITabBarItem(title: "Cart", image: UIImage.bagOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.bagFill.withRenderingMode(.alwaysOriginal))
         let orderTabItem = UITabBarItem(title: "Orders", image: UIImage.cartOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.cartFill)
         let walletTabItem = UITabBarItem(title: "Wallet", image: UIImage.walletOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.walletFill)
         let profileTabItem = UITabBarItem(title: "Profile", image: UIImage.userOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.userFill)
@@ -63,23 +63,23 @@ class TabViewController: UITabBarController {
 
 extension TabViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        // Kiểm tra xem viewController đã chọn là loại UINavigationController không
-        if let navController = viewController as? UINavigationController {
-            let topViewController = navController.topViewController
-
-            if topViewController is ProfileViewController {
-                // Nếu đã ở trên ProfileViewController, không cần gọi coordinator nữa
-                return
-            }
-        }
-
-        // Gọi coordinator để điều hướng đến Profile nếu người dùng nhấn vào tab Profile
-        if let navController = viewController as? UINavigationController,
-           let selectedIndex = tabBarController.viewControllers?.firstIndex(of: viewController)
-        {
-            if selectedIndex == 4 { // Giả sử tab Profile là tab thứ 5 (index 4)
-//                coordinator?.goToProfile()  Gọi coordinator để điều hướng đến Profile
-            }
-        }
+//        // Kiểm tra xem viewController đã chọn là loại UINavigationController không
+//        if let navController = viewController as? UINavigationController {
+//            let topViewController = navController.topViewController
+//
+//            if topViewController is ProfileViewController {
+//                // Nếu đã ở trên ProfileViewController, không cần gọi coordinator nữa
+//                return
+//            }
+//        }
+//
+//        // Gọi coordinator để điều hướng đến Profile nếu người dùng nhấn vào tab Profile
+//        if let navController = viewController as? UINavigationController,
+//           let selectedIndex = tabBarController.viewControllers?.firstIndex(of: viewController)
+//        {
+//            if selectedIndex == 4 { // Giả sử tab Profile là tab thứ 5 (index 4)
+////                coordinator?.goToProfile()  Gọi coordinator để điều hướng đến Profile
+//            }
+//        }
     }
 }

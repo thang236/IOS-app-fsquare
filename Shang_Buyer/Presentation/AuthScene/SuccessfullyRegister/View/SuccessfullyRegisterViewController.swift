@@ -15,7 +15,6 @@ class SuccessfullyRegisterViewController: UIViewController {
     }
 
     @IBAction func didTapExploreButton(_: Any) {
-        let mainVc = MainPageViewController()
         coordinator?.didFinishAuthentication()
     }
 }

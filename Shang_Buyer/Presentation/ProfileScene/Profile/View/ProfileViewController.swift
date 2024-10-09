@@ -131,7 +131,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var indexSelected = SettingProfileTable(rawValue: indexPath.row)!
+        let indexSelected = SettingProfileTable(rawValue: indexPath.row)!
         switch indexSelected {
         case .editProfile:
             guard let profile = profile else {

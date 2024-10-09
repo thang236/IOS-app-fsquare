@@ -50,7 +50,6 @@ extension UIView {
         layer.shadowOpacity = shadowOpacity
         layer.shadowOffset = shadowOffset
         layer.shadowRadius = shadowRadius
-        layer.mask
     }
 
     func addBorderAround(borderWidth: CGFloat, borderColor: UIColor, cornerRadius: CGFloat? = nil) {

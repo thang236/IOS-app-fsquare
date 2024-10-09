@@ -122,7 +122,6 @@ class VerifyOTPViewController: UIViewController {
                 TokenManager.shared.saveAccessToken(token)
                 DispatchQueue.main.async {
                     if self.isLogin {
-                        let mainVC = MainPageViewController()
                         self.coordinator?.didFinishAuthentication()
                     } else {
                         self.coordinator?.gotoSuccessRegister()
