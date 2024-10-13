@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BrandCollectionViewCell" customModule="Shang_Buyer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Otj-Hp-U8c">
+                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageShimmer" translatesAutoresizingMaskIntoConstraints="NO" id="mRa-Nx-njc">
+                                <rect key="frame" x="10" y="10" width="44" height="44"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mRa-Nx-njc" firstAttribute="top" secondItem="Otj-Hp-U8c" secondAttribute="top" constant="10" id="2TF-mw-Pz7"/>
+                            <constraint firstAttribute="trailing" secondItem="mRa-Nx-njc" secondAttribute="trailing" constant="10" id="YVC-dD-AOC"/>
+                            <constraint firstAttribute="bottom" secondItem="mRa-Nx-njc" secondAttribute="bottom" constant="10" id="Yyn-SX-PbM"/>
+                            <constraint firstItem="mRa-Nx-njc" firstAttribute="leading" secondItem="Otj-Hp-U8c" secondAttribute="leading" constant="10" id="bQ9-EH-ThS"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="backgroundMedium"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Otj-Hp-U8c" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6Xl-Be-hVU"/>
+                <constraint firstAttribute="trailing" secondItem="Otj-Hp-U8c" secondAttribute="trailing" id="mEw-NI-peL"/>
+                <constraint firstAttribute="bottom" secondItem="Otj-Hp-U8c" secondAttribute="bottom" id="oBr-tk-TEb"/>
+                <constraint firstItem="Otj-Hp-U8c" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uWe-U0-yPs"/>
+            </constraints>
+            <size key="customSize" width="261" height="258"/>
+            <connections>
+                <outlet property="bannerImageView" destination="mRa-Nx-njc" id="g0u-zM-gRG"/>
+            </connections>
+            <point key="canvasLocation" x="187.02290076335876" y="92.957746478873247"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="imageShimmer" width="86.5" height="86.5"/>
+        <namedColor name="backgroundMedium">
+            <color red="0.95686274509803926" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

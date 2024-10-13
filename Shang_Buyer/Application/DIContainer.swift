@@ -30,11 +30,6 @@ final class DIContainer {
         return GetProductsUseCaseImpl(productRepository: productRepository)
     }
 
-    func resolveProductListViewModel() -> ProductListViewModel {
-        let getProductsUseCase = resolveGetProductsUseCase()
-        return ProductListViewModel(getProductsUseCase: getProductsUseCase)
-    }
-
     // MARK: Auth Service
 
     func resolveAuthService() -> AuthService {
@@ -108,5 +103,33 @@ final class DIContainer {
     func resolveEditProfileViewModel() -> EditProfileViewModel {
         let editProfileUseCase = resolveEditProfileUseCase()
         return EditProfileViewModel(editProfileUseCase: editProfileUseCase)
+    }
+
+    // MARK: Main page
+
+    func resolveShoesRepository() -> ShoesRepository {
+        let apiService = resolveAPIService()
+        return ShoesRepositoryImpl(apiService: apiService)
+    }
+
+    func resolveGetShoesUseCase() -> GetShoesUseCase {
+        let shoesRepo = resolveShoesRepository()
+        return GetShoesUseCaseImpl(shoesRepository: shoesRepo)
+    }
+
+    func resolveBrandRepository() -> BrandRepository {
+        let apiService = resolveAPIService()
+        return BrandRepositoryImpl(apiService: apiService)
+    }
+
+    func resolveGetBrandUseCase() -> GetBrandUseCase {
+        let brandRepo = resolveBrandRepository()
+        return GetBrandUseCaseImpl(brandRepository: brandRepo)
+    }
+
+    func resolveHomeViewModel() -> HomeViewModel {
+        let getShoesUseCase = resolveGetShoesUseCase()
+        let getBrandUseCase = resolveGetBrandUseCase()
+        return HomeViewModel(getShoesUseCase: getShoesUseCase, getBrandUseCase: getBrandUseCase)
     }
 }

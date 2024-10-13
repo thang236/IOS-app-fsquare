@@ -25,6 +25,7 @@ class TabViewController: UITabBarController {
         }
 
         let profileViewController = coordinator.getProfile()
+        let homeViewController = coordinator.getHome()
 
         // Tạo UITabBarItems
         let homeTabItem = UITabBarItem(title: "Home", image: UIImage.homeOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.homeFill)
@@ -34,7 +35,7 @@ class TabViewController: UITabBarController {
         let profileTabItem = UITabBarItem(title: "Profile", image: UIImage.userOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.userFill)
 
         // Tạo view controllers cho từng tab và bọc trong UINavigationController
-        let homeVC = UINavigationController(rootViewController: HomeViewController())
+        let homeVC = UINavigationController(rootViewController: homeViewController)
         let cartVC = UINavigationController(rootViewController: CartViewController())
         let orderVC = UINavigationController(rootViewController: MyOrderViewController())
         let walletVC = UINavigationController(rootViewController: MyEWalletViewController())
@@ -62,7 +63,7 @@ class TabViewController: UITabBarController {
 }
 
 extension TabViewController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    func tabBarController(_: UITabBarController, didSelect _: UIViewController) {
 //        // Kiểm tra xem viewController đã chọn là loại UINavigationController không
 //        if let navController = viewController as? UINavigationController {
 //            let topViewController = navController.topViewController
@@ -78,7 +79,7 @@ extension TabViewController: UITabBarControllerDelegate {
 //           let selectedIndex = tabBarController.viewControllers?.firstIndex(of: viewController)
 //        {
 //            if selectedIndex == 4 { // Giả sử tab Profile là tab thứ 5 (index 4)
-////                coordinator?.goToProfile()  Gọi coordinator để điều hướng đến Profile
+        ////                coordinator?.goToProfile()  Gọi coordinator để điều hướng đến Profile
 //            }
 //        }
     }

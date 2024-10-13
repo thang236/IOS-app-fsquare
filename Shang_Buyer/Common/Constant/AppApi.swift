@@ -18,6 +18,10 @@ enum AppApi {
     case getProfile
     case editProfile
 
+    case getShoes
+
+    case getBrand
+
     var url: String {
         switch self {
         case .getProduct:
@@ -41,6 +45,16 @@ enum AppApi {
 
         case .editProfile:
             return "\(AppApi.baseURL)/api/customer/v1/customers/profile"
+
+            // MARK: EndPoint Shoes
+
+        case .getShoes:
+            return "\(AppApi.baseURL)/api/customer/v2/shoes"
+
+            // MARK: Endpoint brand
+
+        case .getBrand:
+            return "\(AppApi.baseURL)/api/customer/v2/brands"
         }
     }
 }

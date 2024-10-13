@@ -29,4 +29,10 @@ class TabBarCoordinator: Coordinator {
         let profileVC: ProfileViewController = profileCoordinator.getProfile()
         return profileVC
     }
+
+    func getHome() -> HomeViewController {
+        let homeCoordinator = HomeCoordinator(navigationController: navigationController)
+        let homeVC = homeCoordinator.getHome()
+        return homeVC
+    }
 }

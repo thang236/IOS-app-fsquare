@@ -34,8 +34,10 @@ class LoadingViewController: UIViewController {
             .compactMap { $0 }
             .receive(on: DispatchQueue.main).sink { [weak self] errorMessage in
                 print("errorMessage:   \(errorMessage)")
-                self?.showAlert(title: "error", message: errorMessage)
-
+                if errorMessage == "Token is obsolete" {
+                    self?.coordinator?.goToLoginMethodSelection()
+                }
+                self?.showToast(message: errorMessage, chooseImageToast: .error)
             }.store(in: &cancellables)
     }
 
