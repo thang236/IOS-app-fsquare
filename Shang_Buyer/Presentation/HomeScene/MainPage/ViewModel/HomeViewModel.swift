@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 class HomeViewModel: ObservableObject {
-    @Published var shoes: [ShoeData] = []
+    @Published var shoesResponse: ShoesResponse? = nil
     @Published var errorMessage: String? = nil
     @Published var brands: [BrandItem] = []
     var cancellables = Set<AnyCancellable>()
@@ -40,7 +40,7 @@ class HomeViewModel: ObservableObject {
                 }
             }, receiveValue: { shoesResponse in
                 if shoesResponse.status == HTTPStatus.success.message {
-                    self.shoes = shoesResponse.data
+                    self.shoesResponse = shoesResponse
                 } else {
                     self.errorMessage = "\(shoesResponse.status): \(shoesResponse.message)"
                 }

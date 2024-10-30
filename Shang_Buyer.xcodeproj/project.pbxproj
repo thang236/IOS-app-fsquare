@@ -82,6 +82,10 @@
 		BF5B32512C92E3E20063CA29 /* Shang_BuyerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32502C92E3E20063CA29 /* Shang_BuyerUITestsLaunchTests.swift */; };
 		BF5B32612C92E4E10063CA29 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32602C92E4E10063CA29 /* AppCoordinator.swift */; };
 		BF5B32782C92F3250063CA29 /* AppApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32772C92F3250063CA29 /* AppApi.swift */; };
+		BF62C0612CD27CE900879233 /* ShoeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62C05F2CD27CE900879233 /* ShoeDetailViewController.swift */; };
+		BF62C0622CD27CE900879233 /* ShoeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF62C0602CD27CE900879233 /* ShoeDetailViewController.xib */; };
+		BF62C0642CD27CF700879233 /* ShoeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62C0632CD27CF700879233 /* ShoeDetailViewModel.swift */; };
+		BF6B5DDB2CBC08CB00AF4372 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = BF6B5DDA2CBC08CB00AF4372 /* SkeletonView */; };
 		BF869EE72CA1699100B59D8B /* FullNormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EE62CA1699100B59D8B /* FullNormalButton.swift */; };
 		BF869EE92CA16CFB00B59D8B /* OutlineNormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EE82CA16CFB00B59D8B /* OutlineNormalButton.swift */; };
 		BF869EF02CA297A800B59D8B /* LoginMethodSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EEE2CA297A800B59D8B /* LoginMethodSelectionViewController.swift */; };
@@ -223,6 +227,9 @@
 		BF5B32502C92E3E20063CA29 /* Shang_BuyerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shang_BuyerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BF5B32602C92E4E10063CA29 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		BF5B32772C92F3250063CA29 /* AppApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppApi.swift; sourceTree = "<group>"; };
+		BF62C05F2CD27CE900879233 /* ShoeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailViewController.swift; sourceTree = "<group>"; };
+		BF62C0602CD27CE900879233 /* ShoeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoeDetailViewController.xib; sourceTree = "<group>"; };
+		BF62C0632CD27CF700879233 /* ShoeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailViewModel.swift; sourceTree = "<group>"; };
 		BF869EE62CA1699100B59D8B /* FullNormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNormalButton.swift; sourceTree = "<group>"; };
 		BF869EE82CA16CFB00B59D8B /* OutlineNormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineNormalButton.swift; sourceTree = "<group>"; };
 		BF869EEE2CA297A800B59D8B /* LoginMethodSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodSelectionViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +287,7 @@
 				BF25D0272C971A7700CB7EE8 /* Alamofire in Frameworks */,
 				BF25D0212C971A5B00CB7EE8 /* Kingfisher in Frameworks */,
 				BF25D0242C971A6600CB7EE8 /* IQKeyboardManagerSwift in Frameworks */,
+				BF6B5DDB2CBC08CB00AF4372 /* SkeletonView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +369,7 @@
 		BF1E665A2CAD242E001C48E9 /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				BF62C05D2CD27CB600879233 /* HomeDetail */,
 				BF18F3962CB7B8AE00A975F9 /* Flow */,
 				BF1E66632CAD247D001C48E9 /* MainPage */,
 			);
@@ -802,6 +811,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		BF62C05D2CD27CB600879233 /* HomeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BF62C05E2CD27CC000879233 /* View */,
+				BF62C0632CD27CF700879233 /* ShoeDetailViewModel.swift */,
+			);
+			path = HomeDetail;
+			sourceTree = "<group>";
+		};
+		BF62C05E2CD27CC000879233 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF62C05F2CD27CE900879233 /* ShoeDetailViewController.swift */,
+				BF62C0602CD27CE900879233 /* ShoeDetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BF869EEB2CA2973E00B59D8B /* LoginMetholSelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -1104,6 +1131,7 @@
 				BF25D0232C971A6600CB7EE8 /* IQKeyboardManagerSwift */,
 				BF25D0262C971A7700CB7EE8 /* Alamofire */,
 				BF25D02B2C971ABE00CB7EE8 /* ProgressHUD */,
+				BF6B5DDA2CBC08CB00AF4372 /* SkeletonView */,
 			);
 			productName = Shang_Buyer;
 			productReference = BF5B322A2C92E3E00063CA29 /* Shang_Buyer.app */;
@@ -1183,6 +1211,7 @@
 				BF25D0222C971A6600CB7EE8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				BF25D0252C971A7700CB7EE8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				BF25D02A2C971ABE00CB7EE8 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+				BF6B5DD92CBC08CB00AF4372 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = BF5B322B2C92E3E00063CA29 /* Products */;
 			projectDirPath = "";
@@ -1216,6 +1245,7 @@
 				BF869EF12CA297A800B59D8B /* LoginMethodSelectionViewController.xib in Resources */,
 				BF1E66672CAD248E001C48E9 /* CartViewController.xib in Resources */,
 				BF9F32782CB529C600530523 /* AddressViewController.xib in Resources */,
+				BF62C0622CD27CE900879233 /* ShoeDetailViewController.xib in Resources */,
 				BFAF1D952CAA7DF60085609C /* LoginWithEmailViewController.xib in Resources */,
 				BF9F32812CB6868D00530523 /* ProductCollectionViewCell.xib in Resources */,
 				BF1E666E2CAD2DAE001C48E9 /* MyOrderViewController.xib in Resources */,
@@ -1309,6 +1339,7 @@
 				BFAF1D9C2CAA8FBF0085609C /* HTTPStatus.swift in Sources */,
 				BF1E66462CABE396001C48E9 /* UserDefaults+Extension.swift in Sources */,
 				BF1E66662CAD248E001C48E9 /* CartViewController.swift in Sources */,
+				BF62C0612CD27CE900879233 /* ShoeDetailViewController.swift in Sources */,
 				BF25D0412C97239400CB7EE8 /* String+Extension.swift in Sources */,
 				BFCF72612CA3FB6B00208985 /* RegisterViewModel.swift in Sources */,
 				BF96CBD92CA56AF500066A1F /* VerifyOTPViewController.swift in Sources */,
@@ -1337,6 +1368,7 @@
 				BF1E667B2CAD2E70001C48E9 /* ProfileViewController.swift in Sources */,
 				BF18F3922CB6C0AB00A975F9 /* GetShoesUseCase.swift in Sources */,
 				BF1E66592CAD21C4001C48E9 /* TabViewController.swift in Sources */,
+				BF62C0642CD27CF700879233 /* ShoeDetailViewModel.swift in Sources */,
 				BF25D0712C9ADA5B00CB7EE8 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1708,6 +1740,14 @@
 				minimumVersion = 14.1.3;
 			};
 		};
+		BF6B5DD92CBC08CB00AF4372 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.31.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1730,6 +1770,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF25D02A2C971ABE00CB7EE8 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
 			productName = ProgressHUD;
+		};
+		BF6B5DDA2CBC08CB00AF4372 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF6B5DD92CBC08CB00AF4372 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -45,14 +45,29 @@ extension UIImageView {
         image = placeholderImage
         startShimmerEffect()
 
-        kf.setImage(with: url, placeholder: placeholderImage) { result in
+        // Giữ lại URL hiện tại để kiểm tra sau
+        let currentURL = url
+
+        kf.setImage(
+            with: url,
+            placeholder: placeholderImage,
+            options: [.forceTransition, .fromMemoryCacheOrRefresh]
+        ) { result in
             switch result {
             case let .success(value):
-                self.stopShimmerEffect() // Dừng shimmer khi ảnh đã tải xong
+                // Kiểm tra xem URL hiện tại có khớp với URL đã tải hay không
+                if currentURL == url {
+                    self.stopShimmerEffect()
+                    self.image = value.image
+                } else {
+                    // Nếu không khớp, bỏ qua việc gán hình ảnh
+                    print("Error: Loaded image source does not match the expected source.")
+                    self.stopShimmerEffect()
+                }
             case let .failure(error):
                 print("Error loading image: \(error.localizedDescription)")
-                self.self.stopShimmerEffect() // Dừng shimmer nếu tải ảnh thất bại
-                self.image = placeholderImage // Giữ ảnh placeholder nếu tải ảnh thất bại
+                self.stopShimmerEffect()
+                self.image = placeholderImage
             }
         }
     }
