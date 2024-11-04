@@ -62,9 +62,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
             showAnimatedGradientSkeleton()
         }
     }
-    
-    
-    @IBAction func didTapFavButton(_ sender: Any) {
+
+    @IBAction func didTapFavButton(_: Any) {
         guard let delegate = delegate else { return }
 //        delegate.didTapFavButton(index: )
     }

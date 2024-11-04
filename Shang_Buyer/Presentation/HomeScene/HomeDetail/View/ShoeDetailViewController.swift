@@ -8,14 +8,10 @@
 import UIKit
 
 class ShoeDetailViewController: UIViewController {
-
+    @IBOutlet private var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-
-  
-
 }

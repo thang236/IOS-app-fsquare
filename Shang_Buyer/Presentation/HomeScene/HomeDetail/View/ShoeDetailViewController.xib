@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShoeDetailViewController" customModule="Shang_Buyer" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="Ok4-wZ-DCF" id="k06-5A-4nU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,9 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ok4-wZ-DCF">
-                    <rect key="frame" x="76" y="253" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ok4-wZ-DCF">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tav-0m-Z1e">
                         <size key="itemSize" width="128" height="128"/>
@@ -32,6 +32,12 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ok4-wZ-DCF" secondAttribute="trailing" id="JOA-pz-1RW"/>
+                <constraint firstItem="Ok4-wZ-DCF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KRB-Mq-gkN"/>
+                <constraint firstItem="Ok4-wZ-DCF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Yog-yo-G4y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ok4-wZ-DCF" secondAttribute="bottom" id="bot-Sg-T6v"/>
+            </constraints>
             <point key="canvasLocation" x="28" y="21"/>
         </view>
     </objects>
