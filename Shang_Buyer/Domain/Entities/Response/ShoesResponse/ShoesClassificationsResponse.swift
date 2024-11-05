@@ -9,7 +9,7 @@ import Foundation
 
 struct ShoesClassificationsData: Codable {
     let id: String
-    let thumbnail: [Thumbnail]
+    let thumbnail: Thumbnail
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case thumbnail
@@ -19,5 +19,5 @@ struct ShoesClassificationsData: Codable {
 struct ShoesClassificationsResponse: Codable {
     let status: String
     let message: String
-    let data: ShoesClassificationsData
+    let data: [ShoesClassificationsData]
 }

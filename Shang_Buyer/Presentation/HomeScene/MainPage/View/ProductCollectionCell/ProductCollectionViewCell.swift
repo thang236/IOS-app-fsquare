@@ -64,7 +64,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func didTapFavButton(_: Any) {
-        guard let delegate = delegate else { return }
+//        guard let delegate = delegate else { return }
 //        delegate.didTapFavButton(index: )
     }
 }

@@ -243,8 +243,11 @@ extension HomeViewController: SkeletonCollectionViewDelegate, SkeletonCollection
         }
     }
 
-    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
+        if collectionView == shoesCollectionView {
+            coordinator?.goToShoesDetail(idShoes: shoes[indexPath.row].id)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {

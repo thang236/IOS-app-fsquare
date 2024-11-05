@@ -20,6 +20,7 @@ class HomeCoordinator: Coordinator {
         let homeVC = HomeViewController(viewModel: homeViewModel)
         homeVC.coordinator = self
         navigationController.pushViewController(homeVC, animated: true)
+
     }
 
     func getHome() -> HomeViewController {
@@ -27,5 +28,10 @@ class HomeCoordinator: Coordinator {
         let homeVC = HomeViewController(viewModel: homeViewModel)
         homeVC.coordinator = self
         return homeVC
+    }
+    func goToShoesDetail(idShoes: String) {
+        let shoesDetailViewModel = DIContainer.shared.resolveShoesDetailViewModel()
+        let shoesDetailVC = ShoeDetailViewController(shoesID: idShoes, viewModel: shoesDetailViewModel)
+        navigationController.pushViewController(shoesDetailVC, animated: true)
     }
 }

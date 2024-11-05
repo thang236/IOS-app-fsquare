@@ -20,7 +20,7 @@ struct ClassificationsResponse: Codable {
     let status: String
     let message: String
     let data: ClassificationsData
-    let videos: String?
+    let videos: Thumbnail?
     let color: String
     let country: String
     let price: Double

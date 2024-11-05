@@ -94,7 +94,7 @@
 		BF5B32782C92F3250063CA29 /* AppApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32772C92F3250063CA29 /* AppApi.swift */; };
 		BF62C0612CD27CE900879233 /* ShoeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62C05F2CD27CE900879233 /* ShoeDetailViewController.swift */; };
 		BF62C0622CD27CE900879233 /* ShoeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF62C0602CD27CE900879233 /* ShoeDetailViewController.xib */; };
-		BF62C0642CD27CF700879233 /* ShoeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62C0632CD27CF700879233 /* ShoeDetailViewModel.swift */; };
+		BF62C0642CD27CF700879233 /* ShoesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62C0632CD27CF700879233 /* ShoesDetailViewModel.swift */; };
 		BF6B5DDB2CBC08CB00AF4372 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = BF6B5DDA2CBC08CB00AF4372 /* SkeletonView */; };
 		BF869EE72CA1699100B59D8B /* FullNormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EE62CA1699100B59D8B /* FullNormalButton.swift */; };
 		BF869EE92CA16CFB00B59D8B /* OutlineNormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EE82CA16CFB00B59D8B /* OutlineNormalButton.swift */; };
@@ -140,6 +140,17 @@
 		BFCF725D2CA3EF4000208985 /* NormalField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF725C2CA3EF4000208985 /* NormalField.swift */; };
 		BFCF72612CA3FB6B00208985 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF72602CA3FB6B00208985 /* RegisterViewModel.swift */; };
 		BFCF72642CA4042C00208985 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF72632CA4042C00208985 /* UIImage+Extension.swift */; };
+		BFD740BA2CD9045E0041BD3F /* ShoesDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740B92CD9045E0041BD3F /* ShoesDetailRepository.swift */; };
+		BFD740BD2CD9076E0041BD3F /* GetShoesDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740BC2CD9076E0041BD3F /* GetShoesDetailUseCase.swift */; };
+		BFD740BF2CD911420041BD3F /* ShoesClassificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740BE2CD911420041BD3F /* ShoesClassificationRepository.swift */; };
+		BFD740C12CD9B5600041BD3F /* ClassificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740C02CD9B5600041BD3F /* ClassificationRepository.swift */; };
+		BFD740C32CD9B6100041BD3F /* SizesClassificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740C22CD9B6100041BD3F /* SizesClassificationRepository.swift */; };
+		BFD740C52CD9B6660041BD3F /* SizesClassificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740C42CD9B6660041BD3F /* SizesClassificationResponse.swift */; };
+		BFD740C72CD9B73A0041BD3F /* SizeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740C62CD9B73A0041BD3F /* SizeResponse.swift */; };
+		BFD740C92CD9BCFF0041BD3F /* GetClassificationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740C82CD9BCFF0041BD3F /* GetClassificationsUseCase.swift */; };
+		BFD740CB2CD9BF0A0041BD3F /* GetShoesClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740CA2CD9BF0A0041BD3F /* GetShoesClassification.swift */; };
+		BFD740CD2CD9BFCA0041BD3F /* GetSizeClassificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740CC2CD9BFCA0041BD3F /* GetSizeClassificationUseCase.swift */; };
+		BFD740CF2CD9C09D0041BD3F /* SizeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740CE2CD9C09D0041BD3F /* SizeRepository.swift */; };
 		BFEB4E292CAAB1310033F950 /* SuccessfullyRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB4E272CAAB1310033F950 /* SuccessfullyRegisterViewController.swift */; };
 		BFEB4E2A2CAAB1310033F950 /* SuccessfullyRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEB4E282CAAB1310033F950 /* SuccessfullyRegisterViewController.xib */; };
 /* End PBXBuildFile section */
@@ -249,7 +260,7 @@
 		BF5B32772C92F3250063CA29 /* AppApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppApi.swift; sourceTree = "<group>"; };
 		BF62C05F2CD27CE900879233 /* ShoeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailViewController.swift; sourceTree = "<group>"; };
 		BF62C0602CD27CE900879233 /* ShoeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoeDetailViewController.xib; sourceTree = "<group>"; };
-		BF62C0632CD27CF700879233 /* ShoeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailViewModel.swift; sourceTree = "<group>"; };
+		BF62C0632CD27CF700879233 /* ShoesDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesDetailViewModel.swift; sourceTree = "<group>"; };
 		BF869EE62CA1699100B59D8B /* FullNormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNormalButton.swift; sourceTree = "<group>"; };
 		BF869EE82CA16CFB00B59D8B /* OutlineNormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineNormalButton.swift; sourceTree = "<group>"; };
 		BF869EEE2CA297A800B59D8B /* LoginMethodSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodSelectionViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +305,17 @@
 		BFCF725C2CA3EF4000208985 /* NormalField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalField.swift; sourceTree = "<group>"; };
 		BFCF72602CA3FB6B00208985 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		BFCF72632CA4042C00208985 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		BFD740B92CD9045E0041BD3F /* ShoesDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesDetailRepository.swift; sourceTree = "<group>"; };
+		BFD740BC2CD9076E0041BD3F /* GetShoesDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetShoesDetailUseCase.swift; sourceTree = "<group>"; };
+		BFD740BE2CD911420041BD3F /* ShoesClassificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesClassificationRepository.swift; sourceTree = "<group>"; };
+		BFD740C02CD9B5600041BD3F /* ClassificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationRepository.swift; sourceTree = "<group>"; };
+		BFD740C22CD9B6100041BD3F /* SizesClassificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesClassificationRepository.swift; sourceTree = "<group>"; };
+		BFD740C42CD9B6660041BD3F /* SizesClassificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesClassificationResponse.swift; sourceTree = "<group>"; };
+		BFD740C62CD9B73A0041BD3F /* SizeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeResponse.swift; sourceTree = "<group>"; };
+		BFD740C82CD9BCFF0041BD3F /* GetClassificationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClassificationsUseCase.swift; sourceTree = "<group>"; };
+		BFD740CA2CD9BF0A0041BD3F /* GetShoesClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetShoesClassification.swift; sourceTree = "<group>"; };
+		BFD740CC2CD9BFCA0041BD3F /* GetSizeClassificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSizeClassificationUseCase.swift; sourceTree = "<group>"; };
+		BFD740CE2CD9C09D0041BD3F /* SizeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeRepository.swift; sourceTree = "<group>"; };
 		BFEB4E272CAAB1310033F950 /* SuccessfullyRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfullyRegisterViewController.swift; sourceTree = "<group>"; };
 		BFEB4E282CAAB1310033F950 /* SuccessfullyRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuccessfullyRegisterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -358,7 +380,7 @@
 		09EF3A062CD8A63700B6FE02 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				BF62C0632CD27CF700879233 /* ShoeDetailViewModel.swift */,
+				BF62C0632CD27CF700879233 /* ShoesDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -366,7 +388,12 @@
 		BF18F38D2CB6BE0300A975F9 /* ShoesUseCases */ = {
 			isa = PBXGroup;
 			children = (
+				BFD740C82CD9BCFF0041BD3F /* GetClassificationsUseCase.swift */,
+				BFD740CA2CD9BF0A0041BD3F /* GetShoesClassification.swift */,
+				BFD740BC2CD9076E0041BD3F /* GetShoesDetailUseCase.swift */,
 				BF18F3912CB6C0AB00A975F9 /* GetShoesUseCase.swift */,
+				BFD740CC2CD9BFCA0041BD3F /* GetSizeClassificationUseCase.swift */,
+				BFD740CE2CD9C09D0041BD3F /* SizeRepository.swift */,
 			);
 			path = ShoesUseCases;
 			sourceTree = "<group>";
@@ -424,7 +451,6 @@
 		BF1E665A2CAD242E001C48E9 /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
-				09EF3A062CD8A63700B6FE02 /* ViewModel */,
 				BF62C05D2CD27CB600879233 /* HomeDetail */,
 				BF18F3962CB7B8AE00A975F9 /* Flow */,
 				BF1E66632CAD247D001C48E9 /* MainPage */,
@@ -760,10 +786,10 @@
 		BF5B32692C92E6820063CA29 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				BFD740BB2CD907240041BD3F /* ShoesRepository */,
 				BF25D05C2C99756300CB7EE8 /* ProductRepository.swift */,
 				BF96CA352CA40E1E004F7BE9 /* AuthRepository.swift */,
 				BF1E66472CABF95A001C48E9 /* ProfileRepository.swift */,
-				BF18F38F2CB6BE5400A975F9 /* ShoesRepository.swift */,
 				BF18F3A52CB906F000A975F9 /* BrandRepository.swift */,
 			);
 			path = Repositories;
@@ -870,6 +896,7 @@
 		BF62C05D2CD27CB600879233 /* HomeDetail */ = {
 			isa = PBXGroup;
 			children = (
+				09EF3A062CD8A63700B6FE02 /* ViewModel */,
 				BF62C05E2CD27CC000879233 /* View */,
 			);
 			path = HomeDetail;
@@ -1038,14 +1065,12 @@
 		BFAF1D812CA838A00085609C /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				BFD740B82CD902ED0041BD3F /* ShoesResponse */,
 				BFAF1D822CA838AE0085609C /* AuthResponse.swift */,
 				BF1E66492CABF9A6001C48E9 /* ProfileResponse.swift */,
 				BF1E664B2CAC061C001C48E9 /* ErrorResponse.swift */,
 				BF18F38B2CB6B91700A975F9 /* ShoesResponse.swift */,
 				BF18F39E2CB8FFFC00A975F9 /* BrandResponse.swift */,
-				0925F3DF2CD360EC00530A69 /* ShoesDetailResponse.swift */,
-				09EF3A092CD8B0B900B6FE02 /* ClassificationsResponse.swift */,
-				09EF3A0B2CD8BAB000B6FE02 /* ShoesClassificationsResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1145,6 +1170,30 @@
 				BFCF725C2CA3EF4000208985 /* NormalField.swift */,
 			);
 			path = TextFieldCustom;
+			sourceTree = "<group>";
+		};
+		BFD740B82CD902ED0041BD3F /* ShoesResponse */ = {
+			isa = PBXGroup;
+			children = (
+				0925F3DF2CD360EC00530A69 /* ShoesDetailResponse.swift */,
+				09EF3A092CD8B0B900B6FE02 /* ClassificationsResponse.swift */,
+				09EF3A0B2CD8BAB000B6FE02 /* ShoesClassificationsResponse.swift */,
+				BFD740C42CD9B6660041BD3F /* SizesClassificationResponse.swift */,
+				BFD740C62CD9B73A0041BD3F /* SizeResponse.swift */,
+			);
+			path = ShoesResponse;
+			sourceTree = "<group>";
+		};
+		BFD740BB2CD907240041BD3F /* ShoesRepository */ = {
+			isa = PBXGroup;
+			children = (
+				BFD740B92CD9045E0041BD3F /* ShoesDetailRepository.swift */,
+				BF18F38F2CB6BE5400A975F9 /* ShoesRepository.swift */,
+				BFD740BE2CD911420041BD3F /* ShoesClassificationRepository.swift */,
+				BFD740C02CD9B5600041BD3F /* ClassificationRepository.swift */,
+				BFD740C22CD9B6100041BD3F /* SizesClassificationRepository.swift */,
+			);
+			path = ShoesRepository;
 			sourceTree = "<group>";
 		};
 		BFEB4E202CAAAE890033F950 /* SuccessfullyRegister */ = {
@@ -1352,6 +1401,7 @@
 				BF25D0432C97239400CB7EE8 /* UIViewController+Extension.swift in Sources */,
 				BFCF72402CA2A45100208985 /* AuthCoordinator.swift in Sources */,
 				BF18F3902CB6BE5400A975F9 /* ShoesRepository.swift in Sources */,
+				BFD740C72CD9B73A0041BD3F /* SizeResponse.swift in Sources */,
 				BFCF725B2CA3EDA300208985 /* BaseField.swift in Sources */,
 				BFEB4E292CAAB1310033F950 /* SuccessfullyRegisterViewController.swift in Sources */,
 				BF18F3982CB7B8DA00A975F9 /* HomeCoordinator.swift in Sources */,
@@ -1359,10 +1409,12 @@
 				BF1E666D2CAD2DAE001C48E9 /* MyOrderViewController.swift in Sources */,
 				BF4244F72CA15A4600F43C8B /* LightButton.swift in Sources */,
 				BFA057E52CB007AD00890399 /* EditProfileViewController.swift in Sources */,
+				BFD740BA2CD9045E0041BD3F /* ShoesDetailRepository.swift in Sources */,
 				BF5B32782C92F3250063CA29 /* AppApi.swift in Sources */,
 				BF25D0A42C9C121300CB7EE8 /* LocalizableKey.swift in Sources */,
 				BFAF1D832CA838AE0085609C /* AuthResponse.swift in Sources */,
 				BF18F3A92CB9074600A975F9 /* GetBrandUseCase.swift in Sources */,
+				BFD740C92CD9BCFF0041BD3F /* GetClassificationsUseCase.swift in Sources */,
 				BF4244E92C9D581800F43C8B /* FontWeight.swift in Sources */,
 				BF4244F52CA1589B00F43C8B /* BaseButton.swift in Sources */,
 				BFA057DE2CAFF3D100890399 /* ProfileTableViewCell.swift in Sources */,
@@ -1371,6 +1423,7 @@
 				BF25D04B2C9821F100CB7EE8 /* AuthInterceptor.swift in Sources */,
 				BF25D0422C97239400CB7EE8 /* UIColor+Extension.swift in Sources */,
 				BF1E66512CAC5232001C48E9 /* LoadingViewModel.swift in Sources */,
+				BFD740CB2CD9BF0A0041BD3F /* GetShoesClassification.swift in Sources */,
 				BF18F3A32CB900FE00A975F9 /* BrandCollectionViewCell.swift in Sources */,
 				BF25D03E2C97239400CB7EE8 /* UIView+Extension.swift in Sources */,
 				BF4244F92CA15C3F00F43C8B /* OutlineButton.swift in Sources */,
@@ -1381,6 +1434,7 @@
 				BF1E66742CAD2E20001C48E9 /* MyEWalletViewController.swift in Sources */,
 				BF25D0402C97239400CB7EE8 /* UITableView+Extension.swift in Sources */,
 				BFAF1D9A2CAA807C0085609C /* LoginEmailUseCase.swift in Sources */,
+				BFD740CD2CD9BFCA0041BD3F /* GetSizeClassificationUseCase.swift in Sources */,
 				BFCF725D2CA3EF4000208985 /* NormalField.swift in Sources */,
 				0925F3DD2CD3601600530A69 /* SizeCollectionViewCell.swift in Sources */,
 				BFAF1D942CAA7DF60085609C /* LoginWithEmailViewController.swift in Sources */,
@@ -1391,6 +1445,7 @@
 				BF25D09A2C9C089400CB7EE8 /* UserDefaultsKey.swift in Sources */,
 				BF5B32302C92E3E00063CA29 /* SceneDelegate.swift in Sources */,
 				BF4244EE2C9D5A4C00F43C8B /* DescriptionLabel.swift in Sources */,
+				BFD740BD2CD9076E0041BD3F /* GetShoesDetailUseCase.swift in Sources */,
 				BF96CA382CA40E63004F7BE9 /* Register.swift in Sources */,
 				BF96CA362CA40E1E004F7BE9 /* AuthRepository.swift in Sources */,
 				09EF3A0C2CD8BAB000B6FE02 /* ShoesClassificationsResponse.swift in Sources */,
@@ -1404,6 +1459,7 @@
 				BF18F38C2CB6B91700A975F9 /* ShoesResponse.swift in Sources */,
 				BF25D03C2C97239400CB7EE8 /* TextField+Extension.swift in Sources */,
 				09EF3A0A2CD8B0B900B6FE02 /* ClassificationsResponse.swift in Sources */,
+				BFD740CF2CD9C09D0041BD3F /* SizeRepository.swift in Sources */,
 				BF869EF32CA2A03A00B59D8B /* GhostButton.swift in Sources */,
 				BFA057D82CAEA18900890399 /* Profile.swift in Sources */,
 				BFAF1D9C2CAA8FBF0085609C /* HTTPStatus.swift in Sources */,
@@ -1423,14 +1479,17 @@
 				BF1E664A2CABF9A6001C48E9 /* ProfileResponse.swift in Sources */,
 				BF9F326C2CB0166400530523 /* EditProfileUseCase.swift in Sources */,
 				BF1E66482CABF95A001C48E9 /* ProfileRepository.swift in Sources */,
+				BFD740C12CD9B5600041BD3F /* ClassificationRepository.swift in Sources */,
 				BF25D05B2C9973B100CB7EE8 /* TokenManager.swift in Sources */,
 				BF25D0592C9972EE00CB7EE8 /* APIService.swift in Sources */,
 				BF25D06E2C9AC0D100CB7EE8 /* DIContainer.swift in Sources */,
 				BF9F327C2CB66D0900530523 /* UIImageView+Extension.swift in Sources */,
 				BF18F39F2CB8FFFC00A975F9 /* BrandResponse.swift in Sources */,
 				BF9F32772CB529C600530523 /* AddressViewController.swift in Sources */,
+				BFD740BF2CD911420041BD3F /* ShoesClassificationRepository.swift in Sources */,
 				BFA057E82CB007BC00890399 /* EditProfileViewModel.swift in Sources */,
 				BF25D0442C97239400CB7EE8 /* Button+Extension.swift in Sources */,
+				BFD740C52CD9B6660041BD3F /* SizesClassificationResponse.swift in Sources */,
 				BF18F3A62CB906F000A975F9 /* BrandRepository.swift in Sources */,
 				0925F3E02CD360EC00530A69 /* ShoesDetailResponse.swift in Sources */,
 				BF4244F32C9D679A00F43C8B /* ButtonType.swift in Sources */,
@@ -1440,7 +1499,8 @@
 				BF1E667B2CAD2E70001C48E9 /* ProfileViewController.swift in Sources */,
 				BF18F3922CB6C0AB00A975F9 /* GetShoesUseCase.swift in Sources */,
 				BF1E66592CAD21C4001C48E9 /* TabViewController.swift in Sources */,
-				BF62C0642CD27CF700879233 /* ShoeDetailViewModel.swift in Sources */,
+				BF62C0642CD27CF700879233 /* ShoesDetailViewModel.swift in Sources */,
+				BFD740C32CD9B6100041BD3F /* SizesClassificationRepository.swift in Sources */,
 				BF25D0712C9ADA5B00CB7EE8 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

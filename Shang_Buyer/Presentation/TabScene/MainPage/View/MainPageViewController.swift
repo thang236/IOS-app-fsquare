@@ -15,6 +15,5 @@ class MainPageViewController: UIViewController {
         guard let token = TokenManager.shared.getAccessToken() else {
             return
         }
-        print(token)
     }
 }

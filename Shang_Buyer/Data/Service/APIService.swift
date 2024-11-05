@@ -24,7 +24,6 @@ class APIServiceImpl: APIService {
 
     func request<T: Decodable>(endpoint: AppApi, method: HTTPMethod, parameters: [String: Any]?) -> AnyPublisher<T, Error> {
         let url = endpoint.url
-
         return Future { promise in
             self.session.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default)
                 .validate()
