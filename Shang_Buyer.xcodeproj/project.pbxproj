@@ -83,6 +83,11 @@
 		BF4244F52CA1589B00F43C8B /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4244F42CA1589B00F43C8B /* BaseButton.swift */; };
 		BF4244F72CA15A4600F43C8B /* LightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4244F62CA15A4600F43C8B /* LightButton.swift */; };
 		BF4244F92CA15C3F00F43C8B /* OutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4244F82CA15C3F00F43C8B /* OutlineButton.swift */; };
+		BF4760752CDFC34400207153 /* DescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4760732CDFC34400207153 /* DescriptionCollectionViewCell.swift */; };
+		BF4760762CDFC34400207153 /* DescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4760742CDFC34400207153 /* DescriptionCollectionViewCell.xib */; };
+		BF4760782CE05CB800207153 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4760772CE05CB700207153 /* StepperView.swift */; };
+		BF47607C2CE061AA00207153 /* AddToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47607A2CE061AA00207153 /* AddToCartViewController.swift */; };
+		BF47607D2CE061AA00207153 /* AddToCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF47607B2CE061AA00207153 /* AddToCartViewController.xib */; };
 		BF5B322E2C92E3E00063CA29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */; };
 		BF5B32302C92E3E00063CA29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322F2C92E3E00063CA29 /* SceneDelegate.swift */; };
 		BF5B32372C92E3E20063CA29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5B32362C92E3E20063CA29 /* Assets.xcassets */; };
@@ -151,6 +156,8 @@
 		BFD740CB2CD9BF0A0041BD3F /* GetShoesClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740CA2CD9BF0A0041BD3F /* GetShoesClassification.swift */; };
 		BFD740CD2CD9BFCA0041BD3F /* GetSizeClassificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740CC2CD9BFCA0041BD3F /* GetSizeClassificationUseCase.swift */; };
 		BFD740CF2CD9C09D0041BD3F /* SizeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740CE2CD9C09D0041BD3F /* SizeRepository.swift */; };
+		BFD740D32CDA6E310041BD3F /* DescribeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD740D12CDA6E310041BD3F /* DescribeCollectionViewCell.swift */; };
+		BFD740D42CDA6E310041BD3F /* DescribeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD740D22CDA6E310041BD3F /* DescribeCollectionViewCell.xib */; };
 		BFEB4E292CAAB1310033F950 /* SuccessfullyRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB4E272CAAB1310033F950 /* SuccessfullyRegisterViewController.swift */; };
 		BFEB4E2A2CAAB1310033F950 /* SuccessfullyRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEB4E282CAAB1310033F950 /* SuccessfullyRegisterViewController.xib */; };
 /* End PBXBuildFile section */
@@ -245,6 +252,11 @@
 		BF4244F42CA1589B00F43C8B /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		BF4244F62CA15A4600F43C8B /* LightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightButton.swift; sourceTree = "<group>"; };
 		BF4244F82CA15C3F00F43C8B /* OutlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineButton.swift; sourceTree = "<group>"; };
+		BF4760732CDFC34400207153 /* DescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		BF4760742CDFC34400207153 /* DescriptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		BF4760772CE05CB700207153 /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
+		BF47607A2CE061AA00207153 /* AddToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartViewController.swift; sourceTree = "<group>"; };
+		BF47607B2CE061AA00207153 /* AddToCartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToCartViewController.xib; sourceTree = "<group>"; };
 		BF5B322A2C92E3E00063CA29 /* Shang_Buyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shang_Buyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF5B322F2C92E3E00063CA29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -316,6 +328,8 @@
 		BFD740CA2CD9BF0A0041BD3F /* GetShoesClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetShoesClassification.swift; sourceTree = "<group>"; };
 		BFD740CC2CD9BFCA0041BD3F /* GetSizeClassificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSizeClassificationUseCase.swift; sourceTree = "<group>"; };
 		BFD740CE2CD9C09D0041BD3F /* SizeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeRepository.swift; sourceTree = "<group>"; };
+		BFD740D12CDA6E310041BD3F /* DescribeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribeCollectionViewCell.swift; sourceTree = "<group>"; };
+		BFD740D22CDA6E310041BD3F /* DescribeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescribeCollectionViewCell.xib; sourceTree = "<group>"; };
 		BFEB4E272CAAB1310033F950 /* SuccessfullyRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfullyRegisterViewController.swift; sourceTree = "<group>"; };
 		BFEB4E282CAAB1310033F950 /* SuccessfullyRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuccessfullyRegisterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -451,6 +465,7 @@
 		BF1E665A2CAD242E001C48E9 /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				BF4760792CE0619100207153 /* AddToCartViewController */,
 				BF62C05D2CD27CB600879233 /* HomeDetail */,
 				BF18F3962CB7B8AE00A975F9 /* Flow */,
 				BF1E66632CAD247D001C48E9 /* MainPage */,
@@ -642,6 +657,7 @@
 				BFCF72592CA3ED9200208985 /* TextFieldCustom */,
 				BF4244EF2C9D630200F43C8B /* ButtonCustom */,
 				BF4244EA2C9D598300F43C8B /* LabelCustom */,
+				BF4760772CE05CB700207153 /* StepperView.swift */,
 			);
 			path = ViewCustom;
 			sourceTree = "<group>";
@@ -668,6 +684,24 @@
 				BF869EF22CA2A03900B59D8B /* GhostButton.swift */,
 			);
 			path = ButtonCustom;
+			sourceTree = "<group>";
+		};
+		BF4760712CDFC31400207153 /* DescriptionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BF4760732CDFC34400207153 /* DescriptionCollectionViewCell.swift */,
+				BF4760742CDFC34400207153 /* DescriptionCollectionViewCell.xib */,
+			);
+			path = DescriptionViewCell;
+			sourceTree = "<group>";
+		};
+		BF4760792CE0619100207153 /* AddToCartViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF47607A2CE061AA00207153 /* AddToCartViewController.swift */,
+				BF47607B2CE061AA00207153 /* AddToCartViewController.xib */,
+			);
+			path = AddToCartViewController;
 			sourceTree = "<group>";
 		};
 		BF5B32212C92E3E00063CA29 = {
@@ -905,6 +939,8 @@
 		BF62C05E2CD27CC000879233 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF4760712CDFC31400207153 /* DescriptionViewCell */,
+				BFD740D02CDA6DF50041BD3F /* DescribeCollectionViewCell */,
 				09EF3A012CD8A53E00B6FE02 /* ColorCollectionViewCell */,
 				0925F3DA2CD3600300530A69 /* SizeCollectionViewCell */,
 				0925F3CF2CD35D4C00530A69 /* HeaderColletionViewCell */,
@@ -1196,6 +1232,15 @@
 			path = ShoesRepository;
 			sourceTree = "<group>";
 		};
+		BFD740D02CDA6DF50041BD3F /* DescribeCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BFD740D12CDA6E310041BD3F /* DescribeCollectionViewCell.swift */,
+				BFD740D22CDA6E310041BD3F /* DescribeCollectionViewCell.xib */,
+			);
+			path = DescribeCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		BFEB4E202CAAAE890033F950 /* SuccessfullyRegister */ = {
 			isa = PBXGroup;
 			children = (
@@ -1340,6 +1385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF4760762CDFC34400207153 /* DescriptionCollectionViewCell.xib in Resources */,
 				BF25D0AD2C9D2ADB00CB7EE8 /* LoadingViewController.xib in Resources */,
 				BFCF72582CA3EC9C00208985 /* RegisterViewController.xib in Resources */,
 				BF1E665F2CAD244B001C48E9 /* HomeViewController.xib in Resources */,
@@ -1347,6 +1393,7 @@
 				BF5B323A2C92E3E20063CA29 /* LaunchScreen.storyboard in Resources */,
 				0925F3DE2CD3601600530A69 /* SizeCollectionViewCell.xib in Resources */,
 				BF18F3A42CB900FE00A975F9 /* BrandCollectionViewCell.xib in Resources */,
+				BFD740D42CDA6E310041BD3F /* DescribeCollectionViewCell.xib in Resources */,
 				BF5B32372C92E3E20063CA29 /* Assets.xcassets in Resources */,
 				BFA057E62CB007AD00890399 /* EditProfileViewController.xib in Resources */,
 				BFEB4E2A2CAAB1310033F950 /* SuccessfullyRegisterViewController.xib in Resources */,
@@ -1363,6 +1410,7 @@
 				BFAF1D952CAA7DF60085609C /* LoginWithEmailViewController.xib in Resources */,
 				BF9F32812CB6868D00530523 /* ProductCollectionViewCell.xib in Resources */,
 				BF1E666E2CAD2DAE001C48E9 /* MyOrderViewController.xib in Resources */,
+				BF47607D2CE061AA00207153 /* AddToCartViewController.xib in Resources */,
 				BF1E667C2CAD2E70001C48E9 /* ProfileViewController.xib in Resources */,
 				BF1E66752CAD2E20001C48E9 /* MyEWalletViewController.xib in Resources */,
 			);
@@ -1435,6 +1483,7 @@
 				BF25D0402C97239400CB7EE8 /* UITableView+Extension.swift in Sources */,
 				BFAF1D9A2CAA807C0085609C /* LoginEmailUseCase.swift in Sources */,
 				BFD740CD2CD9BFCA0041BD3F /* GetSizeClassificationUseCase.swift in Sources */,
+				BF4760752CDFC34400207153 /* DescriptionCollectionViewCell.swift in Sources */,
 				BFCF725D2CA3EF4000208985 /* NormalField.swift in Sources */,
 				0925F3DD2CD3601600530A69 /* SizeCollectionViewCell.swift in Sources */,
 				BFAF1D942CAA7DF60085609C /* LoginWithEmailViewController.swift in Sources */,
@@ -1445,6 +1494,7 @@
 				BF25D09A2C9C089400CB7EE8 /* UserDefaultsKey.swift in Sources */,
 				BF5B32302C92E3E00063CA29 /* SceneDelegate.swift in Sources */,
 				BF4244EE2C9D5A4C00F43C8B /* DescriptionLabel.swift in Sources */,
+				BF47607C2CE061AA00207153 /* AddToCartViewController.swift in Sources */,
 				BFD740BD2CD9076E0041BD3F /* GetShoesDetailUseCase.swift in Sources */,
 				BF96CA382CA40E63004F7BE9 /* Register.swift in Sources */,
 				BF96CA362CA40E1E004F7BE9 /* AuthRepository.swift in Sources */,
@@ -1478,6 +1528,7 @@
 				BF1E665E2CAD244B001C48E9 /* HomeViewController.swift in Sources */,
 				BF1E664A2CABF9A6001C48E9 /* ProfileResponse.swift in Sources */,
 				BF9F326C2CB0166400530523 /* EditProfileUseCase.swift in Sources */,
+				BF4760782CE05CB800207153 /* StepperView.swift in Sources */,
 				BF1E66482CABF95A001C48E9 /* ProfileRepository.swift in Sources */,
 				BFD740C12CD9B5600041BD3F /* ClassificationRepository.swift in Sources */,
 				BF25D05B2C9973B100CB7EE8 /* TokenManager.swift in Sources */,
@@ -1489,6 +1540,7 @@
 				BFD740BF2CD911420041BD3F /* ShoesClassificationRepository.swift in Sources */,
 				BFA057E82CB007BC00890399 /* EditProfileViewModel.swift in Sources */,
 				BF25D0442C97239400CB7EE8 /* Button+Extension.swift in Sources */,
+				BFD740D32CDA6E310041BD3F /* DescribeCollectionViewCell.swift in Sources */,
 				BFD740C52CD9B6660041BD3F /* SizesClassificationResponse.swift in Sources */,
 				BF18F3A62CB906F000A975F9 /* BrandRepository.swift in Sources */,
 				0925F3E02CD360EC00530A69 /* ShoesDetailResponse.swift in Sources */,

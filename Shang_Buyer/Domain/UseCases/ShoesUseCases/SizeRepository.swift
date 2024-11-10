@@ -5,8 +5,8 @@
 //  Created by Louis Macbook on 05/11/2024.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 protocol SizeRepository {
     func getShoesSize(idSize: String) -> AnyPublisher<SizesClassificationResponse, Error>
@@ -14,11 +14,11 @@ protocol SizeRepository {
 
 class SizeRepositoryImpl: SizeRepository {
     private let sizeRepository: SizeRepository
-    
+
     init(sizeRepository: SizeRepository) {
         self.sizeRepository = sizeRepository
     }
-    
+
     func getShoesSize(idSize: String) -> AnyPublisher<SizesClassificationResponse, Error> {
         return sizeRepository.getShoesSize(idSize: idSize)
     }

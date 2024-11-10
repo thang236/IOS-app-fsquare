@@ -5,8 +5,8 @@
 //  Created by Louis Macbook on 04/11/2024.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 protocol ShoesDetailRepository {
     func getShoesDetail(idShoes: String) -> AnyPublisher<ShoesDetailResponse, Error>

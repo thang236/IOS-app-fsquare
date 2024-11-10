@@ -5,8 +5,8 @@
 //  Created by Louis Macbook on 05/11/2024.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 protocol GetClassificationsUseCase {
     func execute(idClassification: String) -> AnyPublisher<ClassificationsResponse, Error>

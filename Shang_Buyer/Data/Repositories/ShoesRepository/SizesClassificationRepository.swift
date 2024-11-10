@@ -5,8 +5,8 @@
 //  Created by Louis Macbook on 05/11/2024.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 protocol SizesClassificationRepository {
     func getShoesSize(idClassification: String) -> AnyPublisher<SizesClassificationResponse, Error>
@@ -23,7 +23,7 @@ class SizeClassificationRepositoryImpl: SizesClassificationRepository {
         if TokenManager.shared.getAccessToken() != nil || TokenManager.shared.getAccessToken() != "" {
             apiService.request(endpoint: .getSizeClassification(idClassification: idClassification), method: .get, parameters: nil)
         } else {
-            apiService.requestNoToken(endpoint:.getSizeClassification(idClassification: idClassification), method: .get, parameters: nil)
+            apiService.requestNoToken(endpoint: .getSizeClassification(idClassification: idClassification), method: .get, parameters: nil)
         }
     }
 }

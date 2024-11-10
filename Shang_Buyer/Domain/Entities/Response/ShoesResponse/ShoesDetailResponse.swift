@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct shoesDetailData: Codable {
+struct ShoesDetailData: Codable, Hashable {
     let id: String
     let name: String
     let brand: String
@@ -31,10 +31,19 @@ struct shoesDetailData: Codable {
         case isFavorite
         case thumbnail
     }
+
+    // Implement hash(into:) và ==
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func == (lhs: ShoesDetailData, rhs: ShoesDetailData) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 struct ShoesDetailResponse: Codable {
     let status: String
     let message: String
-    let data: shoesDetailData
+    let data: ShoesDetailData
 }

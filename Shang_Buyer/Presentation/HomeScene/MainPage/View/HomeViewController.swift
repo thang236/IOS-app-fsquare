@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
         didSet {
             shoesCollectionView.dataSource = self
             shoesCollectionView.delegate = self
-            shoesCollectionView.registerCell(cellType: ProductCollectionViewCell.self, nibName: "ProductCollectionViewCell")
+            shoesCollectionView.registerCell(cellType: ProductCollectionViewCell.self)
         }
     }
 
@@ -77,7 +77,6 @@ class HomeViewController: UIViewController {
         setupBindings()
         setupCollectionView()
         bannerHomeImage.roundBottomCorners(radius: 30)
-        //        self.viewModel.getShoes(page: self.shoesPage)
         viewModel.getBrand()
         view.layoutIfNeeded()
 
@@ -128,7 +127,7 @@ class HomeViewController: UIViewController {
         favoriteButton.tintColor = .white
         navigationItem.rightBarButtonItems = [favoriteButton, searchButton]
 
-        navigationController?.navigationBar.barTintColor = .primaryDark
+//        navigationController?.navigationBar.barTintColor = .primaryDark
     }
 
     private func setupBindings() {
@@ -168,7 +167,7 @@ class HomeViewController: UIViewController {
     private func setupCollectionView() {
         brandCollectionView.delegate = self
         brandCollectionView.dataSource = self
-        brandCollectionView.registerCell(cellType: BrandCollectionViewCell.self, nibName: "BrandCollectionViewCell")
+        brandCollectionView.registerCell(cellType: BrandCollectionViewCell.self)
 
         scrollView.delegate = self
     }
@@ -246,7 +245,7 @@ extension HomeViewController: SkeletonCollectionViewDelegate, SkeletonCollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         if collectionView == shoesCollectionView {
-            coordinator?.goToShoesDetail(idShoes: shoes[indexPath.row].id)
+            coordinator?.goToShoesDetail(idShoes: shoes[indexPath.row].id, navigation: navigationController!)
         }
     }
 

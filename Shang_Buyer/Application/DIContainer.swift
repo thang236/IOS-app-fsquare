@@ -132,21 +132,32 @@ final class DIContainer {
         let getBrandUseCase = resolveGetBrandUseCase()
         return HomeViewModel(getShoesUseCase: getShoesUseCase, getBrandUseCase: getBrandUseCase)
     }
-    
-    //MARK: Detail shoes
+
+    // MARK: Detail shoes
+
     func resolveShoesDetailRepository() -> ShoesDetailRepository {
         let apiService = resolveAPIService()
         return ShoesDetailRepositoryImpl(apiService: apiService)
     }
-    
+
     func resolveGetShoesDetailUseCase() -> GetShoesDetailUseCase {
         let shoesDetailRepo = resolveShoesDetailRepository()
         return GetShoesDetailUseCaseImpl(shoesDetailRepository: shoesDetailRepo)
     }
-    
+
+    func resolveShoesClassificationRepository() -> ShoesClassificationRepository {
+        let apiService = resolveAPIService()
+        return ShoesClassificationsRepositoryImpl(apiService: apiService)
+    }
+
+    func resolveGetShoesClassificationUseCase() -> GetShoesClassificationUseCase {
+        let shoesClassificationRepo = resolveShoesClassificationRepository()
+        return GetShoesClassificationUseCaseImpl(shoesClassificationRepository: shoesClassificationRepo)
+    }
+
     func resolveShoesDetailViewModel() -> ShoesDetailViewModel {
         let getShoesDetailUseCase = resolveGetShoesDetailUseCase()
-        return ShoesDetailViewModel(getShoesDetailUseCase: getShoesDetailUseCase)
+        let getShoesClassificationUseCase = resolveGetShoesClassificationUseCase()
+        return ShoesDetailViewModel(getShoesDetailUseCase: getShoesDetailUseCase, getShoesClassificationUseCase: getShoesClassificationUseCase)
     }
-    
 }

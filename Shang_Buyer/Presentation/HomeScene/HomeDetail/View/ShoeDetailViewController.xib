@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShoeDetailViewController" customModule="Shang_Buyer" customModuleProvider="target">
             <connections>
+                <outlet property="BottomView" destination="UOu-hy-4IF" id="6xq-IT-GyZ"/>
                 <outlet property="collectionView" destination="Ok4-wZ-DCF" id="k06-5A-4nU"/>
+                <outlet property="priceLbl" destination="t0V-0O-1Dd" id="Vmw-L0-kbo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ok4-wZ-DCF">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="718"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tav-0m-Z1e">
                         <size key="itemSize" width="128" height="128"/>
@@ -29,19 +31,64 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOu-hy-4IF">
+                    <rect key="frame" x="0.0" y="718" width="393" height="100"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukn-nB-TZl" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="219.66666666666663" y="31" width="157.33333333333337" height="38"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="bagFill" title="Add to Cart " imagePadding="10"/>
+                            <connections>
+                                <action selector="didTapAddToCart:" destination="-1" eventType="touchUpInside" id="clb-Qo-E5W"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MFT-3S-zJE">
+                            <rect key="frame" x="20" y="21" width="157.33333333333334" height="58"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjL-eQ-jUK" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="157.33333333333334" height="19.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0V-0O-1Dd" customClass="HeadingLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="29.333333333333371" width="157.33333333333334" height="28.666666666666671"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Ukn-nB-TZl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MFT-3S-zJE" secondAttribute="trailing" constant="8" symbolic="YES" id="0yK-mP-pXe"/>
+                        <constraint firstAttribute="trailing" secondItem="Ukn-nB-TZl" secondAttribute="trailing" constant="16" id="BMr-jO-48J"/>
+                        <constraint firstAttribute="height" constant="100" id="QwL-PT-ZHH"/>
+                        <constraint firstItem="MFT-3S-zJE" firstAttribute="leading" secondItem="UOu-hy-4IF" secondAttribute="leading" constant="20" id="TpZ-oD-hVe"/>
+                        <constraint firstItem="MFT-3S-zJE" firstAttribute="centerY" secondItem="Ukn-nB-TZl" secondAttribute="centerY" id="V5H-MC-Ltu"/>
+                        <constraint firstItem="MFT-3S-zJE" firstAttribute="centerY" secondItem="UOu-hy-4IF" secondAttribute="centerY" id="ZpY-PN-yXm"/>
+                        <constraint firstItem="MFT-3S-zJE" firstAttribute="width" secondItem="UOu-hy-4IF" secondAttribute="width" multiplier="0.4" id="wNC-0u-zOn"/>
+                        <constraint firstItem="Ukn-nB-TZl" firstAttribute="width" secondItem="MFT-3S-zJE" secondAttribute="width" multiplier="1:1" id="yeT-4Q-fKg"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ok4-wZ-DCF" secondAttribute="trailing" id="JOA-pz-1RW"/>
                 <constraint firstItem="Ok4-wZ-DCF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KRB-Mq-gkN"/>
+                <constraint firstItem="UOu-hy-4IF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TL8-hm-i4e"/>
                 <constraint firstItem="Ok4-wZ-DCF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Yog-yo-G4y"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ok4-wZ-DCF" secondAttribute="bottom" id="bot-Sg-T6v"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UOu-hy-4IF" secondAttribute="trailing" id="aBS-n0-zu8"/>
+                <constraint firstItem="UOu-hy-4IF" firstAttribute="top" secondItem="Ok4-wZ-DCF" secondAttribute="bottom" id="arM-4a-qKl"/>
+                <constraint firstItem="UOu-hy-4IF" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="crT-Ud-Y29"/>
             </constraints>
-            <point key="canvasLocation" x="28" y="21"/>
+            <point key="canvasLocation" x="26.717557251908396" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
+        <image name="bagFill" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -5,8 +5,8 @@
 //  Created by Louis Macbook on 05/11/2024.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 protocol GetShoesClassificationUseCase {
     func execute(idShoes: String) -> AnyPublisher<ShoesClassificationsResponse, Error>
@@ -14,11 +14,11 @@ protocol GetShoesClassificationUseCase {
 
 class GetShoesClassificationUseCaseImpl: GetShoesClassificationUseCase {
     private let shoesClassificationRepository: ShoesClassificationRepository
-    
+
     init(shoesClassificationRepository: ShoesClassificationRepository) {
         self.shoesClassificationRepository = shoesClassificationRepository
     }
-    
+
     func execute(idShoes: String) -> AnyPublisher<ShoesClassificationsResponse, Error> {
         return shoesClassificationRepository.getShoesClassification(idShoes: idShoes)
     }
