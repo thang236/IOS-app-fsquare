@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SizeCollectionViewCell" customModule="Shang_Buyer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="131" height="98"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="131" height="98"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KJF-jy-4hk">
+                        <rect key="frame" x="0.0" y="0.0" width="131" height="98"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elf-2e-TwO">
+                                <rect key="frame" x="28" y="31.666666666666671" width="75" height="35"/>
+                                <color key="tintColor" name="PrimaryDark"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Elf-2e-TwO" firstAttribute="centerX" secondItem="KJF-jy-4hk" secondAttribute="centerX" id="C1U-0Q-Jqr"/>
+                            <constraint firstItem="Elf-2e-TwO" firstAttribute="centerY" secondItem="KJF-jy-4hk" secondAttribute="centerY" id="pQu-gm-Uqe"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="KJF-jy-4hk" secondAttribute="trailing" id="2P8-Vg-aOf"/>
+                <constraint firstItem="KJF-jy-4hk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2wh-eG-8iF"/>
+                <constraint firstAttribute="bottom" secondItem="KJF-jy-4hk" secondAttribute="bottom" id="OWY-3n-nC3"/>
+                <constraint firstItem="KJF-jy-4hk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hZA-eA-AvO"/>
+            </constraints>
+            <size key="customSize" width="131" height="98"/>
+            <point key="canvasLocation" x="200.76335877862596" y="37.323943661971832"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="PrimaryDark">
+            <color red="1" green="0.50588235294117645" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

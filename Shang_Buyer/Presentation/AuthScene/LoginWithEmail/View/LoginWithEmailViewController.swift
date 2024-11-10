@@ -63,7 +63,7 @@ class LoginWithEmailViewController: UIViewController {
             let icon = UIImage.Toggle.focusTrue
             rememberButton.setImage(icon, for: .normal)
         } else {
-            let icon: UIImage = UIImage.Toggle.focusFalse
+            let icon = UIImage.Toggle.focusFalse
             rememberButton.setImage(icon, for: .normal)
         }
     }

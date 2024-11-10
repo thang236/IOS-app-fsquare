@@ -18,6 +18,16 @@ enum AppApi {
     case getProfile
     case editProfile
 
+    case getShoes
+
+    case getBrand
+
+    case getDetailShoes(isLogin: Bool = false, idShoes: String)
+    case getShoesClassification(idShoes: String)
+    case getClassifications(idClassification: String)
+    case getSizeClassification(idClassification: String)
+    case getSize(idSize: String)
+
     var url: String {
         switch self {
         case .getProduct:
@@ -41,6 +51,37 @@ enum AppApi {
 
         case .editProfile:
             return "\(AppApi.baseURL)/api/customer/v1/customers/profile"
+
+            // MARK: EndPoint Shoes
+
+        case .getShoes:
+            return "\(AppApi.baseURL)/api/customer/v2/shoes"
+
+            // MARK: Endpoint brand
+
+        case .getBrand:
+            return "\(AppApi.baseURL)/api/customer/v2/brands"
+
+            // MARK: Endpoint Shoes Detail
+
+        case let .getDetailShoes(isLogin, idShoes):
+            if isLogin {
+                return "\(AppApi.baseURL)/api/customer/v1/shoes/\(idShoes)"
+            } else {
+                return "\(AppApi.baseURL)/api/customer/v2/shoes/\(idShoes)"
+            }
+
+        case let .getClassifications(idClassification):
+            return "\(AppApi.baseURL)/api/customer/v2/classifications/\(idClassification)"
+
+        case let .getShoesClassification(idShoes):
+            return "\(AppApi.baseURL)/api/customer/v2/classifications/shoes/\(idShoes)"
+
+        case let .getSizeClassification(idClassification):
+            return "\(AppApi.baseURL)/api/customer/v2/sizes/classifications/{id}/\(idClassification)"
+
+        case let .getSize(idSize):
+            return "\(AppApi.baseURL)/api/customer/v2/sizes/\(idSize)"
         }
     }
 }

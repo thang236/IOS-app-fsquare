@@ -23,7 +23,7 @@ class ProfileViewModel: ObservableObject {
         getProfileUseCase.execute().sink(receiveCompletion: { completion in
             switch completion {
             case .finished:
-                print("finished")
+                break
             case let .failure(error):
                 self.errorMessage = error.localizedDescription
             }

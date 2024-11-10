@@ -58,7 +58,7 @@ class RegisterViewController: UIViewController {
             let icon = UIImage.Toggle.focusTrue
             checkButton.setImage(icon, for: .normal)
         } else {
-            let icon: UIImage = UIImage.Toggle.focusFalse
+            let icon = UIImage.Toggle.focusFalse
             checkButton.setImage(icon, for: .normal)
         }
     }

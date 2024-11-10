@@ -34,7 +34,6 @@ class EditProfileViewModel: ObservableObject {
         } else if !phone.isValidVietnamesePhoneNumber() {
             errorMessage = "Please fill your phone number (VietNam)"
         } else {
-            print(email)
             let name = fullName.split(separator: " ").map(String.init)
 
             let parameter = [
