@@ -23,10 +23,6 @@ class TabViewController: UITabBarController {
         guard let coordinator = coordinator else {
             return
         }
-
-        let profileViewController = coordinator.getProfile()
-        let homeViewController = coordinator.getHome()
-
         // Tạo UITabBarItems
         let homeTabItem = UITabBarItem(title: "Home", image: UIImage.homeOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.homeFill)
         let cartTabItem = UITabBarItem(title: "Cart", image: UIImage.bagOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.bagFill.withRenderingMode(.alwaysOriginal))
@@ -35,11 +31,13 @@ class TabViewController: UITabBarController {
         let profileTabItem = UITabBarItem(title: "Profile", image: UIImage.userOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.userFill)
 
         // Tạo view controllers cho từng tab và bọc trong UINavigationController
-        let homeVC = UINavigationController(rootViewController: homeViewController)
+        let homeCoordinator = HomeCoordinator()
+        let homeVC = homeCoordinator.getNavigationController()
+        let profileCoordinator = ProfileCoordinator()
+        let profileVC = profileCoordinator.getNavigationController()
         let cartVC = UINavigationController(rootViewController: CartViewController())
         let orderVC = UINavigationController(rootViewController: MyOrderViewController())
         let walletVC = UINavigationController(rootViewController: MyEWalletViewController())
-        let profileVC = UINavigationController(rootViewController: profileViewController)
 
         homeVC.tabBarItem = homeTabItem
         cartVC.tabBarItem = cartTabItem

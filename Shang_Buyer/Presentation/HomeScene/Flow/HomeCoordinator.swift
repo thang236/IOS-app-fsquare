@@ -11,27 +11,22 @@ import UIKit
 class HomeCoordinator: Coordinator {
     private let navigationController: UINavigationController
 
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-
-    func start() {
+    init() {
         let homeViewModel = DIContainer.shared.resolveHomeViewModel()
         let homeVC = HomeViewController(viewModel: homeViewModel)
+        navigationController = UINavigationController(rootViewController: homeVC)
         homeVC.coordinator = self
-        navigationController.pushViewController(homeVC, animated: true)
     }
 
-    func getHome() -> HomeViewController {
-        let homeViewModel = DIContainer.shared.resolveHomeViewModel()
-        let homeVC = HomeViewController(viewModel: homeViewModel)
-        homeVC.coordinator = self
-        return homeVC
+    func getNavigationController() -> UINavigationController {
+        return navigationController
     }
 
-    func goToShoesDetail(idShoes: String, navigation: UINavigationController) {
+    func start() {}
+
+    func goToShoesDetail(idShoes: String) {
         let shoesDetailViewModel = DIContainer.shared.resolveShoesDetailViewModel()
         let shoesDetailVC = ShoeDetailViewController(shoesID: idShoes, viewModel: shoesDetailViewModel)
-        navigation.pushViewController(shoesDetailVC, animated: true)
+        navigationController.pushViewController(shoesDetailVC, animated: true)
     }
 }

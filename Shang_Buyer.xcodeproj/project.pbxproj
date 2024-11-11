@@ -88,6 +88,17 @@
 		BF4760782CE05CB800207153 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4760772CE05CB700207153 /* StepperView.swift */; };
 		BF47607C2CE061AA00207153 /* AddToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47607A2CE061AA00207153 /* AddToCartViewController.swift */; };
 		BF47607D2CE061AA00207153 /* AddToCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF47607B2CE061AA00207153 /* AddToCartViewController.xib */; };
+		BF4760802CE0A23900207153 /* ProvincesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47607F2CE0A23900207153 /* ProvincesResponse.swift */; };
+		BF4760832CE0A2BF00207153 /* DistrictsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4760822CE0A2BF00207153 /* DistrictsResponse.swift */; };
+		BF4760852CE0A2F700207153 /* WardsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4760842CE0A2F700207153 /* WardsResponse.swift */; };
+		BF4760882CE0A35A00207153 /* GetProvincesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4760872CE0A35A00207153 /* GetProvincesUseCase.swift */; };
+		BF47608A2CE0A38D00207153 /* AddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4760892CE0A38D00207153 /* AddressRepository.swift */; };
+		BF47608C2CE0A4FF00207153 /* GetAddressUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47608B2CE0A4FF00207153 /* GetAddressUseCase.swift */; };
+		BF4760902CE0A63C00207153 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47608E2CE0A63C00207153 /* AddressTableViewCell.swift */; };
+		BF4760912CE0A63C00207153 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF47608F2CE0A63C00207153 /* AddressTableViewCell.xib */; };
+		BF4760932CE0B1D400207153 /* AddressResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4760922CE0B1D400207153 /* AddressResponse.swift */; };
+		BF4760A12CE2516100207153 /* AddNewAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47609F2CE2516100207153 /* AddNewAddressViewController.swift */; };
+		BF4760A22CE2516100207153 /* AddNewAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4760A02CE2516100207153 /* AddNewAddressViewController.xib */; };
 		BF5B322E2C92E3E00063CA29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */; };
 		BF5B32302C92E3E00063CA29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322F2C92E3E00063CA29 /* SceneDelegate.swift */; };
 		BF5B32372C92E3E20063CA29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5B32362C92E3E20063CA29 /* Assets.xcassets */; };
@@ -97,6 +108,10 @@
 		BF5B32512C92E3E20063CA29 /* Shang_BuyerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32502C92E3E20063CA29 /* Shang_BuyerUITestsLaunchTests.swift */; };
 		BF5B32612C92E4E10063CA29 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32602C92E4E10063CA29 /* AppCoordinator.swift */; };
 		BF5B32782C92F3250063CA29 /* AppApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B32772C92F3250063CA29 /* AppApi.swift */; };
+		BF5D618D2CE259EF006202D2 /* ChooseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D618B2CE259EF006202D2 /* ChooseLocationViewController.swift */; };
+		BF5D618E2CE259EF006202D2 /* ChooseLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5D618C2CE259EF006202D2 /* ChooseLocationViewController.xib */; };
+		BF5D61932CE288A7006202D2 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D61912CE288A7006202D2 /* EditAddressViewController.swift */; };
+		BF5D61942CE288A7006202D2 /* EditAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5D61922CE288A7006202D2 /* EditAddressViewController.xib */; };
 		BF62C0612CD27CE900879233 /* ShoeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62C05F2CD27CE900879233 /* ShoeDetailViewController.swift */; };
 		BF62C0622CD27CE900879233 /* ShoeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF62C0602CD27CE900879233 /* ShoeDetailViewController.xib */; };
 		BF62C0642CD27CF700879233 /* ShoesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62C0632CD27CF700879233 /* ShoesDetailViewModel.swift */; };
@@ -131,8 +146,6 @@
 		BFAF1D7E2CA6A0CA0085609C /* VerifyOTPUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF1D7D2CA6A0CA0085609C /* VerifyOTPUseCase.swift */; };
 		BFAF1D802CA6A18A0085609C /* VerifyOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF1D7F2CA6A18A0085609C /* VerifyOTPViewModel.swift */; };
 		BFAF1D832CA838AE0085609C /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF1D822CA838AE0085609C /* AuthResponse.swift */; };
-		BFAF1D8D2CA846060085609C /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF1D8B2CA846060085609C /* MainPageViewController.swift */; };
-		BFAF1D8E2CA846060085609C /* MainPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAF1D8C2CA846060085609C /* MainPageViewController.xib */; };
 		BFAF1D942CAA7DF60085609C /* LoginWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF1D922CAA7DF60085609C /* LoginWithEmailViewController.swift */; };
 		BFAF1D952CAA7DF60085609C /* LoginWithEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAF1D932CAA7DF60085609C /* LoginWithEmailViewController.xib */; };
 		BFAF1D982CAA7F1B0085609C /* LoginWithEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF1D972CAA7F1B0085609C /* LoginWithEmailViewModel.swift */; };
@@ -257,6 +270,17 @@
 		BF4760772CE05CB700207153 /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
 		BF47607A2CE061AA00207153 /* AddToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartViewController.swift; sourceTree = "<group>"; };
 		BF47607B2CE061AA00207153 /* AddToCartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToCartViewController.xib; sourceTree = "<group>"; };
+		BF47607F2CE0A23900207153 /* ProvincesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvincesResponse.swift; sourceTree = "<group>"; };
+		BF4760822CE0A2BF00207153 /* DistrictsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictsResponse.swift; sourceTree = "<group>"; };
+		BF4760842CE0A2F700207153 /* WardsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardsResponse.swift; sourceTree = "<group>"; };
+		BF4760872CE0A35A00207153 /* GetProvincesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProvincesUseCase.swift; sourceTree = "<group>"; };
+		BF4760892CE0A38D00207153 /* AddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRepository.swift; sourceTree = "<group>"; };
+		BF47608B2CE0A4FF00207153 /* GetAddressUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAddressUseCase.swift; sourceTree = "<group>"; };
+		BF47608E2CE0A63C00207153 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		BF47608F2CE0A63C00207153 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		BF4760922CE0B1D400207153 /* AddressResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressResponse.swift; sourceTree = "<group>"; };
+		BF47609F2CE2516100207153 /* AddNewAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAddressViewController.swift; sourceTree = "<group>"; };
+		BF4760A02CE2516100207153 /* AddNewAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewAddressViewController.xib; sourceTree = "<group>"; };
 		BF5B322A2C92E3E00063CA29 /* Shang_Buyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shang_Buyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF5B322F2C92E3E00063CA29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -270,6 +294,10 @@
 		BF5B32502C92E3E20063CA29 /* Shang_BuyerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shang_BuyerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BF5B32602C92E4E10063CA29 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		BF5B32772C92F3250063CA29 /* AppApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppApi.swift; sourceTree = "<group>"; };
+		BF5D618B2CE259EF006202D2 /* ChooseLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationViewController.swift; sourceTree = "<group>"; };
+		BF5D618C2CE259EF006202D2 /* ChooseLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseLocationViewController.xib; sourceTree = "<group>"; };
+		BF5D61912CE288A7006202D2 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
+		BF5D61922CE288A7006202D2 /* EditAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditAddressViewController.xib; sourceTree = "<group>"; };
 		BF62C05F2CD27CE900879233 /* ShoeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailViewController.swift; sourceTree = "<group>"; };
 		BF62C0602CD27CE900879233 /* ShoeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoeDetailViewController.xib; sourceTree = "<group>"; };
 		BF62C0632CD27CF700879233 /* ShoesDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesDetailViewModel.swift; sourceTree = "<group>"; };
@@ -303,8 +331,6 @@
 		BFAF1D7D2CA6A0CA0085609C /* VerifyOTPUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPUseCase.swift; sourceTree = "<group>"; };
 		BFAF1D7F2CA6A18A0085609C /* VerifyOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewModel.swift; sourceTree = "<group>"; };
 		BFAF1D822CA838AE0085609C /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
-		BFAF1D8B2CA846060085609C /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
-		BFAF1D8C2CA846060085609C /* MainPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPageViewController.xib; sourceTree = "<group>"; };
 		BFAF1D922CAA7DF60085609C /* LoginWithEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithEmailViewController.swift; sourceTree = "<group>"; };
 		BFAF1D932CAA7DF60085609C /* LoginWithEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginWithEmailViewController.xib; sourceTree = "<group>"; };
 		BFAF1D972CAA7F1B0085609C /* LoginWithEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithEmailViewModel.swift; sourceTree = "<group>"; };
@@ -450,6 +476,7 @@
 			children = (
 				BF1E664E2CAC5097001C48E9 /* GetProfileUseCase.swift */,
 				BF9F326B2CB0166400530523 /* EditProfileUseCase.swift */,
+				BF47608B2CE0A4FF00207153 /* GetAddressUseCase.swift */,
 			);
 			path = ProfileUseCase;
 			sourceTree = "<group>";
@@ -571,6 +598,8 @@
 		BF1E66762CAD2E52001C48E9 /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
+				BF5D618F2CE2888E006202D2 /* EditAddress */,
+				BF47609D2CE2513600207153 /* AddNewAddress */,
 				BF9F32722CB5293A00530523 /* Address */,
 				BF9F326D2CB3B95700530523 /* Flow */,
 				BFA057E02CB0077800890399 /* EditProfile */,
@@ -704,6 +733,52 @@
 			path = AddToCartViewController;
 			sourceTree = "<group>";
 		};
+		BF47607E2CE0A22100207153 /* AddressResponse */ = {
+			isa = PBXGroup;
+			children = (
+				BF47607F2CE0A23900207153 /* ProvincesResponse.swift */,
+				BF4760822CE0A2BF00207153 /* DistrictsResponse.swift */,
+				BF4760842CE0A2F700207153 /* WardsResponse.swift */,
+				BF4760922CE0B1D400207153 /* AddressResponse.swift */,
+			);
+			path = AddressResponse;
+			sourceTree = "<group>";
+		};
+		BF4760862CE0A33A00207153 /* AddressUseCases */ = {
+			isa = PBXGroup;
+			children = (
+				BF4760872CE0A35A00207153 /* GetProvincesUseCase.swift */,
+			);
+			path = AddressUseCases;
+			sourceTree = "<group>";
+		};
+		BF47608D2CE0A61900207153 /* AddressTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BF47608E2CE0A63C00207153 /* AddressTableViewCell.swift */,
+				BF47608F2CE0A63C00207153 /* AddressTableViewCell.xib */,
+			);
+			path = AddressTableViewCell;
+			sourceTree = "<group>";
+		};
+		BF47609D2CE2513600207153 /* AddNewAddress */ = {
+			isa = PBXGroup;
+			children = (
+				BF47609E2CE2514D00207153 /* View */,
+			);
+			path = AddNewAddress;
+			sourceTree = "<group>";
+		};
+		BF47609E2CE2514D00207153 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D618A2CE259C3006202D2 /* ChooseLocation */,
+				BF47609F2CE2516100207153 /* AddNewAddressViewController.swift */,
+				BF4760A02CE2516100207153 /* AddNewAddressViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BF5B32212C92E3E00063CA29 = {
 			isa = PBXGroup;
 			children = (
@@ -825,6 +900,7 @@
 				BF96CA352CA40E1E004F7BE9 /* AuthRepository.swift */,
 				BF1E66472CABF95A001C48E9 /* ProfileRepository.swift */,
 				BF18F3A52CB906F000A975F9 /* BrandRepository.swift */,
+				BF4760892CE0A38D00207153 /* AddressRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -841,6 +917,7 @@
 		BF5B326C2C92E6A90063CA29 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				BF4760862CE0A33A00207153 /* AddressUseCases */,
 				BF18F3A72CB9073800A975F9 /* BrandUseCases */,
 				BF18F38D2CB6BE0300A975F9 /* ShoesUseCases */,
 				BF1E664D2CAC508A001C48E9 /* ProfileUseCase */,
@@ -925,6 +1002,32 @@
 				BF9F327B2CB66D0900530523 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BF5D618A2CE259C3006202D2 /* ChooseLocation */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D618B2CE259EF006202D2 /* ChooseLocationViewController.swift */,
+				BF5D618C2CE259EF006202D2 /* ChooseLocationViewController.xib */,
+			);
+			path = ChooseLocation;
+			sourceTree = "<group>";
+		};
+		BF5D618F2CE2888E006202D2 /* EditAddress */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D61902CE28899006202D2 /* View */,
+			);
+			path = EditAddress;
+			sourceTree = "<group>";
+		};
+		BF5D61902CE28899006202D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D61912CE288A7006202D2 /* EditAddressViewController.swift */,
+				BF5D61922CE288A7006202D2 /* EditAddressViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BF62C05D2CD27CB600879233 /* HomeDetail */ = {
@@ -1040,6 +1143,7 @@
 		BF9F32742CB5295000530523 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF47608D2CE0A61900207153 /* AddressTableViewCell */,
 				BF9F32752CB529C600530523 /* AddressViewController.swift */,
 				BF9F32762CB529C600530523 /* AddressViewController.xib */,
 			);
@@ -1101,6 +1205,7 @@
 		BFAF1D812CA838A00085609C /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				BF47607E2CE0A22100207153 /* AddressResponse */,
 				BFD740B82CD902ED0041BD3F /* ShoesResponse */,
 				BFAF1D822CA838AE0085609C /* AuthResponse.swift */,
 				BF1E66492CABF9A6001C48E9 /* ProfileResponse.swift */,
@@ -1115,27 +1220,9 @@
 			isa = PBXGroup;
 			children = (
 				BF1E66522CAD2155001C48E9 /* TabBar */,
-				BFAF1D892CA845E40085609C /* MainPage */,
 				BF9F32702CB3C31E00530523 /* TabBarCoordinator.swift */,
 			);
 			path = TabScene;
-			sourceTree = "<group>";
-		};
-		BFAF1D892CA845E40085609C /* MainPage */ = {
-			isa = PBXGroup;
-			children = (
-				BFAF1D8A2CA845F70085609C /* View */,
-			);
-			path = MainPage;
-			sourceTree = "<group>";
-		};
-		BFAF1D8A2CA845F70085609C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BFAF1D8B2CA846060085609C /* MainPageViewController.swift */,
-				BFAF1D8C2CA846060085609C /* MainPageViewController.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		BFAF1D8F2CAA7DB00085609C /* LoginWithEmail */ = {
@@ -1387,12 +1474,14 @@
 			files = (
 				BF4760762CDFC34400207153 /* DescriptionCollectionViewCell.xib in Resources */,
 				BF25D0AD2C9D2ADB00CB7EE8 /* LoadingViewController.xib in Resources */,
+				BF4760912CE0A63C00207153 /* AddressTableViewCell.xib in Resources */,
 				BFCF72582CA3EC9C00208985 /* RegisterViewController.xib in Resources */,
 				BF1E665F2CAD244B001C48E9 /* HomeViewController.xib in Resources */,
 				BFA057DF2CAFF3D100890399 /* ProfileTableViewCell.xib in Resources */,
 				BF5B323A2C92E3E20063CA29 /* LaunchScreen.storyboard in Resources */,
 				0925F3DE2CD3601600530A69 /* SizeCollectionViewCell.xib in Resources */,
 				BF18F3A42CB900FE00A975F9 /* BrandCollectionViewCell.xib in Resources */,
+				BF5D61942CE288A7006202D2 /* EditAddressViewController.xib in Resources */,
 				BFD740D42CDA6E310041BD3F /* DescribeCollectionViewCell.xib in Resources */,
 				BF5B32372C92E3E20063CA29 /* Assets.xcassets in Resources */,
 				BFA057E62CB007AD00890399 /* EditProfileViewController.xib in Resources */,
@@ -1402,13 +1491,14 @@
 				BF25D0302C97237900CB7EE8 /* Inter-VariableFont_opsz,wght.ttf in Resources */,
 				0925F3D92CD35DE700530A69 /* HeaderShoesDetailCollectionViewCell.xib in Resources */,
 				BF96CBDA2CA56AF500066A1F /* VerifyOTPViewController.xib in Resources */,
-				BFAF1D8E2CA846060085609C /* MainPageViewController.xib in Resources */,
 				BF869EF12CA297A800B59D8B /* LoginMethodSelectionViewController.xib in Resources */,
 				BF1E66672CAD248E001C48E9 /* CartViewController.xib in Resources */,
 				BF9F32782CB529C600530523 /* AddressViewController.xib in Resources */,
 				BF62C0622CD27CE900879233 /* ShoeDetailViewController.xib in Resources */,
 				BFAF1D952CAA7DF60085609C /* LoginWithEmailViewController.xib in Resources */,
 				BF9F32812CB6868D00530523 /* ProductCollectionViewCell.xib in Resources */,
+				BF5D618E2CE259EF006202D2 /* ChooseLocationViewController.xib in Resources */,
+				BF4760A22CE2516100207153 /* AddNewAddressViewController.xib in Resources */,
 				BF1E666E2CAD2DAE001C48E9 /* MyOrderViewController.xib in Resources */,
 				BF47607D2CE061AA00207153 /* AddToCartViewController.xib in Resources */,
 				BF1E667C2CAD2E70001C48E9 /* ProfileViewController.xib in Resources */,
@@ -1444,11 +1534,14 @@
 				BFAF1D982CAA7F1B0085609C /* LoginWithEmailViewModel.swift in Sources */,
 				BF25D03F2C97239400CB7EE8 /* Date+Extension.swift in Sources */,
 				BF4244F12C9D634F00F43C8B /* FullButton.swift in Sources */,
+				BF4760832CE0A2BF00207153 /* DistrictsResponse.swift in Sources */,
 				BF9F32712CB3C31E00530523 /* TabBarCoordinator.swift in Sources */,
 				BF25D0492C9821C400CB7EE8 /* MenuOption.swift in Sources */,
+				BF47608A2CE0A38D00207153 /* AddressRepository.swift in Sources */,
 				BF25D0432C97239400CB7EE8 /* UIViewController+Extension.swift in Sources */,
 				BFCF72402CA2A45100208985 /* AuthCoordinator.swift in Sources */,
 				BF18F3902CB6BE5400A975F9 /* ShoesRepository.swift in Sources */,
+				BF5D618D2CE259EF006202D2 /* ChooseLocationViewController.swift in Sources */,
 				BFD740C72CD9B73A0041BD3F /* SizeResponse.swift in Sources */,
 				BFCF725B2CA3EDA300208985 /* BaseField.swift in Sources */,
 				BFEB4E292CAAB1310033F950 /* SuccessfullyRegisterViewController.swift in Sources */,
@@ -1458,8 +1551,10 @@
 				BF4244F72CA15A4600F43C8B /* LightButton.swift in Sources */,
 				BFA057E52CB007AD00890399 /* EditProfileViewController.swift in Sources */,
 				BFD740BA2CD9045E0041BD3F /* ShoesDetailRepository.swift in Sources */,
+				BF4760932CE0B1D400207153 /* AddressResponse.swift in Sources */,
 				BF5B32782C92F3250063CA29 /* AppApi.swift in Sources */,
 				BF25D0A42C9C121300CB7EE8 /* LocalizableKey.swift in Sources */,
+				BF5D61932CE288A7006202D2 /* EditAddressViewController.swift in Sources */,
 				BFAF1D832CA838AE0085609C /* AuthResponse.swift in Sources */,
 				BF18F3A92CB9074600A975F9 /* GetBrandUseCase.swift in Sources */,
 				BFD740C92CD9BCFF0041BD3F /* GetClassificationsUseCase.swift in Sources */,
@@ -1473,12 +1568,14 @@
 				BF1E66512CAC5232001C48E9 /* LoadingViewModel.swift in Sources */,
 				BFD740CB2CD9BF0A0041BD3F /* GetShoesClassification.swift in Sources */,
 				BF18F3A32CB900FE00A975F9 /* BrandCollectionViewCell.swift in Sources */,
+				BF4760902CE0A63C00207153 /* AddressTableViewCell.swift in Sources */,
 				BF25D03E2C97239400CB7EE8 /* UIView+Extension.swift in Sources */,
 				BF4244F92CA15C3F00F43C8B /* OutlineButton.swift in Sources */,
 				BF25D05D2C99756300CB7EE8 /* ProductRepository.swift in Sources */,
 				BF5B322E2C92E3E00063CA29 /* AppDelegate.swift in Sources */,
 				BF1E664F2CAC5097001C48E9 /* GetProfileUseCase.swift in Sources */,
 				BF9F32802CB6868D00530523 /* ProductCollectionViewCell.swift in Sources */,
+				BF4760802CE0A23900207153 /* ProvincesResponse.swift in Sources */,
 				BF1E66742CAD2E20001C48E9 /* MyEWalletViewController.swift in Sources */,
 				BF25D0402C97239400CB7EE8 /* UITableView+Extension.swift in Sources */,
 				BFAF1D9A2CAA807C0085609C /* LoginEmailUseCase.swift in Sources */,
@@ -1489,6 +1586,7 @@
 				BFAF1D942CAA7DF60085609C /* LoginWithEmailViewController.swift in Sources */,
 				BFA057DB2CAEA56B00890399 /* ProfileViewModel.swift in Sources */,
 				BF96CA3B2CA4152C004F7BE9 /* RegisterUseCase.swift in Sources */,
+				BF4760852CE0A2F700207153 /* WardsResponse.swift in Sources */,
 				BF1E664C2CAC061C001C48E9 /* ErrorResponse.swift in Sources */,
 				BF96CA452CA56A09004F7BE9 /* OTPTextField.swift in Sources */,
 				BF25D09A2C9C089400CB7EE8 /* UserDefaultsKey.swift in Sources */,
@@ -1503,8 +1601,8 @@
 				BFAF1D7E2CA6A0CA0085609C /* VerifyOTPUseCase.swift in Sources */,
 				BF25D0552C996AF400CB7EE8 /* GetProductsUseCase.swift in Sources */,
 				BF4244EC2C9D599800F43C8B /* BodyLabel.swift in Sources */,
-				BFAF1D8D2CA846060085609C /* MainPageViewController.swift in Sources */,
 				BFCF72572CA3EC9C00208985 /* RegisterViewController.swift in Sources */,
+				BF47608C2CE0A4FF00207153 /* GetAddressUseCase.swift in Sources */,
 				BF25D0502C9969E600CB7EE8 /* Product.swift in Sources */,
 				BF18F38C2CB6B91700A975F9 /* ShoesResponse.swift in Sources */,
 				BF25D03C2C97239400CB7EE8 /* TextField+Extension.swift in Sources */,
@@ -1522,6 +1620,7 @@
 				BF25D0AF2C9D2C5300CB7EE8 /* UILabel+Extension.swift in Sources */,
 				BF9F326F2CB3B96700530523 /* ProfileCoordinator.swift in Sources */,
 				BF25D03D2C97239400CB7EE8 /* UIFont+Extension.swift in Sources */,
+				BF4760A12CE2516100207153 /* AddNewAddressViewController.swift in Sources */,
 				BF25D0AC2C9D2ADB00CB7EE8 /* LoadingViewController.swift in Sources */,
 				BFAF1D802CA6A18A0085609C /* VerifyOTPViewModel.swift in Sources */,
 				0925F3D82CD35DE700530A69 /* HeaderShoesDetailCollectionViewCell.swift in Sources */,
@@ -1545,6 +1644,7 @@
 				BF18F3A62CB906F000A975F9 /* BrandRepository.swift in Sources */,
 				0925F3E02CD360EC00530A69 /* ShoesDetailResponse.swift in Sources */,
 				BF4244F32C9D679A00F43C8B /* ButtonType.swift in Sources */,
+				BF4760882CE0A35A00207153 /* GetProvincesUseCase.swift in Sources */,
 				BF25D0B22C9D2E1500CB7EE8 /* HeadingLabel.swift in Sources */,
 				BF869EF02CA297A800B59D8B /* LoginMethodSelectionViewController.swift in Sources */,
 				BF18F3952CB7B44F00A975F9 /* HomeViewModel.swift in Sources */,

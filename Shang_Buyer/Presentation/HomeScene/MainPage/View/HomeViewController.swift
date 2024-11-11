@@ -192,7 +192,6 @@ extension HomeViewController: UIScrollViewDelegate {
                 } else {
                     shoesPage += 1
                 }
-                print("shoesPage \(shoesPage)")
                 viewModel.getShoes(page: shoesPage)
             }
 
@@ -245,7 +244,7 @@ extension HomeViewController: SkeletonCollectionViewDelegate, SkeletonCollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         if collectionView == shoesCollectionView {
-            coordinator?.goToShoesDetail(idShoes: shoes[indexPath.row].id, navigation: navigationController!)
+            coordinator?.goToShoesDetail(idShoes: shoes[indexPath.row].id)
         }
     }
 

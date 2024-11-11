@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="139" id="KGk-i7-Jjw" customClass="AddressTableViewCell" customModule="Shang_Buyer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="139"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="438" height="139"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addressIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cSU-zm-Vjh">
+                        <rect key="frame" x="16" y="49.666666666666657" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="cSU-zm-Vjh" secondAttribute="height" multiplier="1:1" id="WrL-1p-EBa"/>
+                            <constraint firstAttribute="height" constant="40" id="Zzd-cu-hO8"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="NCw-gL-gdR">
+                        <rect key="frame" x="64" y="47" width="155" height="45"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="left" alignment="firstBaseline" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="1LK-U9-eeB">
+                                <rect key="frame" x="0.0" y="0.0" width="155" height="22"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQc-ub-RTY" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdm-fg-kXN">
+                                        <rect key="frame" x="100" y="0.0" width="55" height="22"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="default" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeB-e5-sbt" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" red="0.37254902719999999" green="0.77647060160000003" blue="0.60392159219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="statusLightSuccess"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="XeB-e5-sbt" secondAttribute="trailing" id="URS-MW-KPJ"/>
+                                            <constraint firstAttribute="width" constant="55" id="b6w-lR-TaQ"/>
+                                            <constraint firstAttribute="width" secondItem="qdm-fg-kXN" secondAttribute="height" multiplier="55:22" id="cgZ-U8-18q"/>
+                                            <constraint firstAttribute="bottom" secondItem="XeB-e5-sbt" secondAttribute="bottom" id="iac-Rq-JTH"/>
+                                            <constraint firstItem="XeB-e5-sbt" firstAttribute="top" secondItem="qdm-fg-kXN" secondAttribute="top" id="qfs-LL-m7T"/>
+                                            <constraint firstItem="XeB-e5-sbt" firstAttribute="leading" secondItem="qdm-fg-kXN" secondAttribute="leading" id="qvA-dn-PnB"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 Hai Bà Trưng, Hà Nội" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp1-KK-5RF" customClass="DescriptionLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="155" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7Y-PY-oiW">
+                        <rect key="frame" x="368" y="42.666666666666657" width="54" height="54"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="o7Y-PY-oiW" secondAttribute="height" multiplier="1:1" id="Z38-dj-Yjp"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="editAddress"/>
+                        <connections>
+                            <action selector="tapEditButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GBR-eO-4lQ"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NCw-gL-gdR" secondAttribute="bottom" constant="20" symbolic="YES" id="7Ng-wD-iLP"/>
+                    <constraint firstItem="o7Y-PY-oiW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NCw-gL-gdR" secondAttribute="trailing" constant="8" symbolic="YES" id="aev-of-KLa"/>
+                    <constraint firstItem="cSU-zm-Vjh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="dNJ-SU-CUT"/>
+                    <constraint firstItem="NCw-gL-gdR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="dOP-3j-XKQ"/>
+                    <constraint firstItem="NCw-gL-gdR" firstAttribute="leading" secondItem="cSU-zm-Vjh" secondAttribute="trailing" constant="8" symbolic="YES" id="mq5-a1-SIO"/>
+                    <constraint firstAttribute="trailing" secondItem="o7Y-PY-oiW" secondAttribute="trailing" constant="16" id="nyr-sc-db6"/>
+                    <constraint firstItem="NCw-gL-gdR" firstAttribute="centerY" secondItem="cSU-zm-Vjh" secondAttribute="centerY" id="oI2-X0-QL4"/>
+                    <constraint firstItem="cSU-zm-Vjh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vV5-G4-VCV"/>
+                    <constraint firstItem="o7Y-PY-oiW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yx5-4B-b9q"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressLbl" destination="Gp1-KK-5RF" id="Bd2-qz-r7v"/>
+                <outlet property="isDefaultView" destination="qdm-fg-kXN" id="7oe-8X-0EI"/>
+                <outlet property="titleLbl" destination="nQc-ub-RTY" id="Kmb-El-YWl"/>
+            </connections>
+            <point key="canvasLocation" x="33.587786259541986" y="53.169014084507047"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="XeB-e5-sbt">
+            <size key="intrinsicContentSize" width="36.666666666666664" height="13.333333333333334"/>
+        </designable>
+        <designable name="nQc-ub-RTY">
+            <size key="intrinsicContentSize" width="43.333333333333336" height="19.333333333333332"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="addressIcon" width="46" height="46"/>
+        <image name="editAddress" width="30" height="30"/>
+        <namedColor name="statusLightSuccess">
+            <color red="0.93725490196078431" green="0.97647058823529409" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

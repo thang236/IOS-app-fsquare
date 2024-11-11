@@ -19,7 +19,7 @@ struct ShoeData: Codable {
     let maxPrice: Double
     let rating: Double
     let reviewCount: Int
-    let isFavorite: Bool
+    let isFavorite: Bool?
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"

@@ -17,6 +17,13 @@ enum AppApi {
 
     case getProfile
     case editProfile
+    case getAddress
+    case getProvinces
+    case getDistricts(idProvince: Int)
+    case getWards(idDistrict: Int)
+    case postLocation
+    case editLocation(idLocation: String)
+    case deleteLocation(idLocation: String)
 
     case getShoes
 
@@ -49,8 +56,29 @@ enum AppApi {
         case .getProfile:
             return "\(AppApi.baseURL)/api/customer/v1/customers/profile"
 
+        case .getAddress:
+            return "\(AppApi.baseURL)/api/customer/v1/customers/location"
+
         case .editProfile:
             return "\(AppApi.baseURL)/api/customer/v1/customers/profile"
+
+        case .getProvinces:
+            return "\(AppApi.baseURL)/api/customer/v1/locations/provinces"
+
+        case let .getDistricts(idProvince):
+            return "\(AppApi.baseURL)/api/customer/v1/locations/districts/\(idProvince)"
+
+        case let .getWards(idDistrict):
+            return "\(AppApi.baseURL)/api/customer/v1/locations/wards/\(idDistrict)"
+
+        case .postLocation:
+            return "\(AppApi.baseURL)/api/customer/v1/customers/location"
+
+        case let .editLocation(idLocation):
+            return "\(AppApi.baseURL)/api/customer/v1/customers/location/\(idLocation)"
+
+        case let .deleteLocation(idLocation):
+            return "\(AppApi.baseURL)/api/customer/v1/customers/location/\(idLocation)"
 
             // MARK: EndPoint Shoes
 

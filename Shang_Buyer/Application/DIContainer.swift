@@ -105,6 +105,21 @@ final class DIContainer {
         return EditProfileViewModel(editProfileUseCase: editProfileUseCase)
     }
 
+    func resolveAddressRepository() -> AddressRepository {
+        let apiService = resolveAPIService()
+        return AddressRepositoryImpl(apiService: apiService)
+    }
+
+    func resolveGetAddressUseCase() -> GetAddressUseCase {
+        let addressRepository = resolveAddressRepository()
+        return GetAddressUseCaseImpl(addressRepository: addressRepository)
+    }
+
+    func resolveAddressViewModel() -> AddressViewModel {
+        let getAddressUseCase = resolveGetAddressUseCase()
+        return AddressViewModel(getAddressUseCase: getAddressUseCase)
+    }
+
     // MARK: Main page
 
     func resolveShoesRepository() -> ShoesRepository {

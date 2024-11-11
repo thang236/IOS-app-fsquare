@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddressViewController" customModule="Shang_Buyer" customModuleProvider="target">
             <connections>
                 <outlet property="bottomView" destination="gAx-Fl-bdO" id="7Zh-0t-62V"/>
+                <outlet property="tableView" destination="y7l-Mk-HVg" id="pBb-gF-QtR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,21 +21,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="y7l-Mk-HVg">
-                    <rect key="frame" x="20" y="59" width="353" height="633"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="653"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAx-Fl-bdO">
                     <rect key="frame" x="0.0" y="732" width="393" height="86"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYF-qC-qnq" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
-                            <rect key="frame" x="20" y="25.333333333333371" width="353" height="35"/>
+                            <rect key="frame" x="20" y="25.666666666666632" width="353" height="34.333333333333343"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Add New Address"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Add New address"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="heightOption">
                                     <integer key="value" value="0"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapNewAddress:" destination="-1" eventType="touchUpInside" id="5GD-Xa-HBd"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -53,18 +57,23 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="gAx-Fl-bdO" firstAttribute="top" secondItem="y7l-Mk-HVg" secondAttribute="bottom" constant="40" id="3s1-RB-93Z"/>
+                <constraint firstItem="gAx-Fl-bdO" firstAttribute="top" secondItem="y7l-Mk-HVg" secondAttribute="bottom" constant="20" id="3s1-RB-93Z"/>
                 <constraint firstItem="gAx-Fl-bdO" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="82:812" id="66d-b8-Ia6"/>
                 <constraint firstItem="y7l-Mk-HVg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7kT-yp-vFL"/>
-                <constraint firstItem="y7l-Mk-HVg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="COW-zb-aCU"/>
+                <constraint firstItem="y7l-Mk-HVg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="COW-zb-aCU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gAx-Fl-bdO" secondAttribute="bottom" id="EHG-2D-cYA"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y7l-Mk-HVg" secondAttribute="trailing" constant="20" id="Qrq-Sl-Gin"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y7l-Mk-HVg" secondAttribute="trailing" id="Qrq-Sl-Gin"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gAx-Fl-bdO" secondAttribute="trailing" id="nPv-YW-n9K"/>
                 <constraint firstItem="gAx-Fl-bdO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xnm-IP-c8M"/>
             </constraints>
             <point key="canvasLocation" x="28" y="20"/>
         </view>
     </objects>
+    <designables>
+        <designable name="OYF-qC-qnq">
+            <size key="intrinsicContentSize" width="158.33333333333334" height="34.333333333333336"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
