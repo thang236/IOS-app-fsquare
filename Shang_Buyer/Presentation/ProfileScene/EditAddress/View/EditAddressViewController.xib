@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditAddressViewController" customModule="Shang_Buyer" customModuleProvider="target">
+            <connections>
+                <outlet property="cityField" destination="8cb-Aq-Tgh" id="ppR-R0-Vpr"/>
+                <outlet property="districtField" destination="UGJ-PE-E0L" id="7zo-rF-kA2"/>
+                <outlet property="isDefaultSwitch" destination="5X9-cq-Rmy" id="pIP-PJ-wMQ"/>
+                <outlet property="streetField" destination="Ssm-OA-yYi" id="pv0-xe-cVE"/>
+                <outlet property="titleField" destination="BQh-go-mOK" id="lJv-df-Erl"/>
+                <outlet property="view" destination="LfY-2l-1lf" id="M6C-X3-XiK"/>
+                <outlet property="wardField" destination="w2o-8Y-xIC" id="EnB-OX-BaO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="LfY-2l-1lf">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GTZ-MH-as2">
+                    <rect key="frame" x="16" y="99" width="361" height="59"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7U-nN-pf4" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BQh-go-mOK" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="25" width="361" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="BQh-go-mOK" secondAttribute="trailing" id="O3Z-2U-zaC"/>
+                        <constraint firstItem="BQh-go-mOK" firstAttribute="leading" secondItem="GTZ-MH-as2" secondAttribute="leading" id="aWr-1l-65f"/>
+                    </constraints>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4UN-O2-j4L">
+                    <rect key="frame" x="16" y="173" width="361" height="59"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxa-pw-6Ic" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8cb-Aq-Tgh" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="25" width="361" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="chevron.right" catalog="system"/>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="8cb-Aq-Tgh" firstAttribute="leading" secondItem="4UN-O2-j4L" secondAttribute="leading" id="mZO-sL-JaL"/>
+                        <constraint firstAttribute="trailing" secondItem="8cb-Aq-Tgh" secondAttribute="trailing" id="qav-yF-uEB"/>
+                    </constraints>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nff-tI-bP1">
+                    <rect key="frame" x="16" y="247" width="361" height="59"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="District" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnO-zY-eF5" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="46.666666666666664" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose District" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGJ-PE-E0L" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="25" width="361" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="chevron.right" catalog="system"/>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="UGJ-PE-E0L" firstAttribute="leading" secondItem="nff-tI-bP1" secondAttribute="leading" id="8yE-7m-zKc"/>
+                        <constraint firstAttribute="trailing" secondItem="UGJ-PE-E0L" secondAttribute="trailing" id="EVw-Zm-71W"/>
+                    </constraints>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5P2-nD-aHy" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
+                    <rect key="frame" x="16" y="783.66666666666663" width="361" height="34.333333333333371"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                    <connections>
+                        <action selector="didTapSubmit:" destination="-1" eventType="touchUpInside" id="hBK-0r-nxS"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qit-Qg-vgp">
+                    <rect key="frame" x="16" y="321" width="361" height="59"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ward" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGV-2A-oR6" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="34" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose Ward" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2o-8Y-xIC" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="25" width="361" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="chevron.right" catalog="system"/>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="w2o-8Y-xIC" firstAttribute="leading" secondItem="qit-Qg-vgp" secondAttribute="leading" id="6sA-0R-ji6"/>
+                        <constraint firstAttribute="trailing" secondItem="w2o-8Y-xIC" secondAttribute="trailing" id="xM1-Xm-hH9"/>
+                    </constraints>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sQh-M9-SBU">
+                    <rect key="frame" x="16" y="395" width="361" height="59"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street and Apartment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fx8-SA-Yxi" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="139.33333333333334" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your street and apartment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ssm-OA-yYi" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="25" width="361" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Ssm-OA-yYi" secondAttribute="trailing" id="WUE-Xf-wAg"/>
+                        <constraint firstItem="Ssm-OA-yYi" firstAttribute="leading" secondItem="sQh-M9-SBU" secondAttribute="leading" id="jVP-bB-ws1"/>
+                    </constraints>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vsf-pd-AZI">
+                    <rect key="frame" x="16" y="474" width="361" height="31"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="set as Default Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbk-TS-CyW" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="145.66666666666666" height="31"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5X9-cq-Rmy">
+                            <rect key="frame" x="312" y="0.0" width="51" height="31"/>
+                        </switch>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="aSd-FS-gAI"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="sQh-M9-SBU" firstAttribute="top" secondItem="qit-Qg-vgp" secondAttribute="bottom" constant="15" id="0zo-6b-ywU"/>
+                <constraint firstItem="aSd-FS-gAI" firstAttribute="trailing" secondItem="vsf-pd-AZI" secondAttribute="trailing" constant="16" id="7CN-3J-K0i"/>
+                <constraint firstItem="nff-tI-bP1" firstAttribute="top" secondItem="4UN-O2-j4L" secondAttribute="bottom" constant="15" id="Btu-ou-8RL"/>
+                <constraint firstItem="aSd-FS-gAI" firstAttribute="trailing" secondItem="qit-Qg-vgp" secondAttribute="trailing" constant="16" id="FNB-Ch-o21"/>
+                <constraint firstItem="4UN-O2-j4L" firstAttribute="leading" secondItem="aSd-FS-gAI" secondAttribute="leading" constant="16" id="Ft9-Iy-VYJ"/>
+                <constraint firstItem="vsf-pd-AZI" firstAttribute="top" secondItem="sQh-M9-SBU" secondAttribute="bottom" constant="20" id="NTa-OQ-aNm"/>
+                <constraint firstItem="GTZ-MH-as2" firstAttribute="leading" secondItem="aSd-FS-gAI" secondAttribute="leading" constant="16" id="NY9-I0-sdK"/>
+                <constraint firstItem="4UN-O2-j4L" firstAttribute="top" secondItem="GTZ-MH-as2" secondAttribute="bottom" constant="15" id="PF1-7j-oPa"/>
+                <constraint firstItem="5P2-nD-aHy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sQh-M9-SBU" secondAttribute="bottom" constant="8" symbolic="YES" id="PhY-by-jK5"/>
+                <constraint firstItem="qit-Qg-vgp" firstAttribute="leading" secondItem="aSd-FS-gAI" secondAttribute="leading" constant="16" id="R9u-gI-Bpj"/>
+                <constraint firstItem="5P2-nD-aHy" firstAttribute="leading" secondItem="aSd-FS-gAI" secondAttribute="leading" constant="16" id="SmV-XZ-Imb"/>
+                <constraint firstItem="GTZ-MH-as2" firstAttribute="top" secondItem="aSd-FS-gAI" secondAttribute="top" constant="40" id="TWr-8H-NUm"/>
+                <constraint firstItem="aSd-FS-gAI" firstAttribute="trailing" secondItem="5P2-nD-aHy" secondAttribute="trailing" constant="16" id="WaM-OP-YmO"/>
+                <constraint firstItem="aSd-FS-gAI" firstAttribute="trailing" secondItem="sQh-M9-SBU" secondAttribute="trailing" constant="16" id="XA3-A4-j31"/>
+                <constraint firstItem="nff-tI-bP1" firstAttribute="leading" secondItem="aSd-FS-gAI" secondAttribute="leading" constant="16.000000000000007" id="c4Q-zB-XtN"/>
+                <constraint firstItem="aSd-FS-gAI" firstAttribute="trailing" secondItem="GTZ-MH-as2" secondAttribute="trailing" constant="16" id="eU9-0O-9TI"/>
+                <constraint firstItem="sQh-M9-SBU" firstAttribute="leading" secondItem="aSd-FS-gAI" secondAttribute="leading" constant="16" id="gUy-ju-VdP"/>
+                <constraint firstItem="aSd-FS-gAI" firstAttribute="trailing" secondItem="4UN-O2-j4L" secondAttribute="trailing" constant="16" id="ncb-Ll-PAh"/>
+                <constraint firstItem="aSd-FS-gAI" firstAttribute="trailing" secondItem="nff-tI-bP1" secondAttribute="trailing" constant="16" id="s6s-tM-dTo"/>
+                <constraint firstItem="vsf-pd-AZI" firstAttribute="leading" secondItem="aSd-FS-gAI" secondAttribute="leading" constant="16.000000000000014" id="v98-np-NE5"/>
+                <constraint firstItem="qit-Qg-vgp" firstAttribute="top" secondItem="nff-tI-bP1" secondAttribute="bottom" constant="15" id="yvA-d4-qvc"/>
+                <constraint firstItem="aSd-FS-gAI" firstAttribute="bottom" secondItem="5P2-nD-aHy" secondAttribute="bottom" id="z4R-nF-Yb6"/>
+            </constraints>
+            <point key="canvasLocation" x="11" y="-11"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="5P2-nD-aHy">
+            <size key="intrinsicContentSize" width="78" height="34.333333333333336"/>
+        </designable>
+        <designable name="8cb-Aq-Tgh">
+            <size key="intrinsicContentSize" width="104.66666666666667" height="34"/>
+        </designable>
+        <designable name="B7U-nN-pf4">
+            <size key="intrinsicContentSize" width="28.333333333333332" height="17"/>
+        </designable>
+        <designable name="BQh-go-mOK">
+            <size key="intrinsicContentSize" width="122.66666666666667" height="34"/>
+        </designable>
+        <designable name="PnO-zY-eF5">
+            <size key="intrinsicContentSize" width="46.666666666666664" height="17"/>
+        </designable>
+        <designable name="Ssm-OA-yYi">
+            <size key="intrinsicContentSize" width="234.33333333333334" height="34"/>
+        </designable>
+        <designable name="UGJ-PE-E0L">
+            <size key="intrinsicContentSize" width="127.66666666666667" height="34"/>
+        </designable>
+        <designable name="fx8-SA-Yxi">
+            <size key="intrinsicContentSize" width="139.33333333333334" height="17"/>
+        </designable>
+        <designable name="oxa-pw-6Ic">
+            <size key="intrinsicContentSize" width="25.666666666666668" height="17"/>
+        </designable>
+        <designable name="qGV-2A-oR6">
+            <size key="intrinsicContentSize" width="34" height="17"/>
+        </designable>
+        <designable name="w2o-8Y-xIC">
+            <size key="intrinsicContentSize" width="115" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

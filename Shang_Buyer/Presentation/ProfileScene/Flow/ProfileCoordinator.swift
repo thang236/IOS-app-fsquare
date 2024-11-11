@@ -11,23 +11,18 @@ import UIKit
 class ProfileCoordinator: Coordinator {
     private let navigationController: UINavigationController
 
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-
-    func start() {
+    init() {
         let profileViewModel = DIContainer.shared.resolveProfileViewModel()
         let profileVC = ProfileViewController(viewModel: profileViewModel)
+        navigationController = UINavigationController(rootViewController: profileVC)
         profileVC.coordinator = self
-        navigationController.pushViewController(profileVC, animated: true)
     }
 
-    func getProfile() -> ProfileViewController {
-        let profileViewModel = DIContainer.shared.resolveProfileViewModel()
-        let profileVC = ProfileViewController(viewModel: profileViewModel)
-        profileVC.coordinator = self
-        return profileVC
+    func getNavigationController() -> UINavigationController {
+        return navigationController
     }
+
+    func start() {}
 
     func goToEditProfile(profileModel: ProfileItem, vc: EditProfileViewModelDelegate) {
         let editProfileViewModel = DIContainer.shared.resolveEditProfileViewModel()
@@ -35,6 +30,31 @@ class ProfileCoordinator: Coordinator {
         let editProfileVC = EditProfileViewController(viewModel: editProfileViewModel, profileModel: profileModel)
         editProfileVC.coordinator = self
         navigationController.pushViewController(editProfileVC, animated: true)
+    }
+
+    // MARK: - Address
+
+    func goToAddress() {
+        let addressViewModel = DIContainer.shared.resolveAddressViewModel()
+        let addressVC = AddressViewController(viewModel: addressViewModel)
+        addressVC.coordinator = self
+        navigationController.pushViewController(addressVC, animated: true)
+    }
+
+    func gotoAddAddress(addressViewModel: AddressViewModel) {
+        let addAddessVC = AddNewAddressViewController(viewModel: addressViewModel)
+        addAddessVC.coordinator = self
+        navigationController.pushViewController(addAddessVC, animated: true)
+    }
+
+    func goToChooseLocation(viewModel: AddressViewModel, chooseLocationType: ChooseLocationType) {
+        let chooseLocationVC = ChooseLocationViewController(viewModel: viewModel, chooseLocationType: chooseLocationType)
+        navigationController.pushViewController(chooseLocationVC, animated: true)
+    }
+
+    func goToEditAddress(viewModel: AddressViewModel, address: AddressData) {
+        let editAddress = EditAddressViewController(viewModel: viewModel, address: address)
+        navigationController.pushViewController(editAddress, animated: true)
     }
 
     func logoutUser() {

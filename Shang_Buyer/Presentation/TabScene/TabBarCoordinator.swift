@@ -23,16 +23,4 @@ class TabBarCoordinator: Coordinator {
         tabBarController.coordinator = self
         navigationController.setViewControllers([tabBarController], animated: false)
     }
-
-    func getProfile() -> ProfileViewController {
-        let profileCoordinator = ProfileCoordinator(navigationController: navigationController)
-        let profileVC: ProfileViewController = profileCoordinator.getProfile()
-        return profileVC
-    }
-
-    func getHome() -> HomeViewController {
-        let homeCoordinator = HomeCoordinator(navigationController: navigationController)
-        let homeVC = homeCoordinator.getHome()
-        return homeVC
-    }
 }

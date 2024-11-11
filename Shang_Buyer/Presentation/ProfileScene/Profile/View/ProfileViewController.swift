@@ -123,10 +123,10 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.configure(cellType: ProfileTableViewCell.self, at: indexPath, with: profiles[indexPath.row]) { cell in
-            cell.setUpTableView(profile: profiles[indexPath.row])
-            cell.selectionStyle = .none
-        }
+        let cell = tableView.dequeueReusableCell(cellType: ProfileTableViewCell.self, at: indexPath)
+        cell.setUpTableView(profile: profiles[indexPath.row])
+        cell.selectionStyle = .none
+
         return cell
     }
 
@@ -139,7 +139,12 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             }
             coordinator?.goToEditProfile(profileModel: profile, vc: self)
         case .address:
-            print("111")
+            if let token = TokenManager.shared.getAccessToken() {
+                print("Token: \(token)")
+                coordinator?.goToAddress()
+            } else {
+                showAlert(title: "Alert", message: "Please login to use this feature")
+            }
         case .noti:
             print("111")
         case .wallet:
