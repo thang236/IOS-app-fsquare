@@ -43,6 +43,13 @@ class EditAddressViewController: UIViewController {
         isDefaultSwitch.isOn = address.isDefault
     }
 
+    @IBAction func didTapIsDefaultButton(_: Any) {
+        if !isDefaultSwitch.isOn {
+            showToast(message: "This address is is default you must set default other address", chooseImageToast: .warning)
+            isDefaultSwitch.setOn(true, animated: false)
+        }
+    }
+
     func setupNav() {
         navigationItem.hidesBackButton = true
         let image: UIImage = #imageLiteral(resourceName: "positionLeft")

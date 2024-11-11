@@ -10,13 +10,22 @@ import UIKit
 
 class AddressViewController: UIViewController {
     @IBOutlet var bottomView: UIView!
-
     @IBOutlet var tableView: UITableView!
 
     private var viewModel: AddressViewModel?
     private var cancellables = Set<AnyCancellable>()
     private var addressDatas: [AddressData] = []
     var coordinator: ProfileCoordinator?
+    private let refreshControl = UIRefreshControl()
+
+    private let noDataLabel: UILabel = {
+        let label = UILabel()
+        label.text = "You don't have any address"
+        label.textColor = .neutralUltraDark
+        label.textAlignment = .center
+        label.isHidden = true
+        return label
+    }()
 
     init(viewModel: AddressViewModel) {
         super.init(nibName: nil, bundle: nil)
@@ -34,14 +43,23 @@ class AddressViewController: UIViewController {
         bottomView.addShadow()
         setupBinding()
         setupTableView()
+        setupNoDataLabel()
+        setupPullToRefresh()
+    }
+
+    private func setupPullToRefresh() {
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+
+    @objc private func refreshData() {
+        viewModel?.getAddress()
     }
 
     func setupNav() {
         navigationItem.hidesBackButton = true
         let image: UIImage = #imageLiteral(resourceName: "positionLeft")
-        guard let size = navigationController?.navigationBar.frame.height else {
-            return
-        }
+        guard let size = navigationController?.navigationBar.frame.height else { return }
         let resizedImage = image.resizeImage(targetSize: CGSize(width: size, height: size))
         let backButton = UIBarButtonItem(image: resizedImage, style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.tintColor = .neutralUltraDark
@@ -77,7 +95,24 @@ class AddressViewController: UIViewController {
                 guard let address = address else { return }
                 self?.addressDatas = address.data.sorted { $0.isDefault && !$1.isDefault }
                 self?.tableView.reloadData()
+                self?.toggleNoDataLabel()
+                self?.refreshControl.endRefreshing()
             }.store(in: &cancellables)
+    }
+
+    private func setupNoDataLabel() {
+        // Thêm UILabel vào tableView
+        tableView.addSubview(noDataLabel)
+        noDataLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            noDataLabel.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            noDataLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
+        ])
+    }
+
+    private func toggleNoDataLabel() {
+        // Kiểm tra xem dữ liệu có trống hay không để hiển thị hoặc ẩn UILabel
+        noDataLabel.isHidden = !addressDatas.isEmpty
     }
 
     @IBAction func didTapNewAddress(_: Any) {
@@ -107,21 +142,23 @@ extension AddressViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let swipeAction = UIContextualAction(style: .normal, title: nil) { _, _, completionHandler in
-            self.viewModel?.deleteLocation(idLocation: self.addressDatas[indexPath.section].id, completion: { completion in
-                switch completion {
-                case .success:
-                    if self.addressDatas[indexPath.section].isDefault {
-                        self.showToast(message: "this address is default you can't remove", chooseImageToast: .warning)
-                    } else {
+            if self.addressDatas[indexPath.section].isDefault {
+                self.showToast(message: "this address is default you can't remove", chooseImageToast: .warning)
+            } else {
+                self.viewModel?.deleteLocation(idLocation: self.addressDatas[indexPath.section].id, completion: { completion in
+                    switch completion {
+                    case .success:
+
                         self.addressDatas.remove(at: indexPath.section)
                         self.showToast(message: "Delete address success", chooseImageToast: .success)
                         self.tableView.reloadData()
+
+                    case let .failure(failure):
+                        self.showToast(message: failure.localizedDescription, chooseImageToast: .warning)
                     }
-                case let .failure(failure):
-                    self.showToast(message: failure.localizedDescription, chooseImageToast: .warning)
-                }
-            })
-            completionHandler(true)
+                })
+                completionHandler(true)
+            }
         }
         swipeAction.image = UIImage(systemName: "trash")
         swipeAction.backgroundColor = .red
