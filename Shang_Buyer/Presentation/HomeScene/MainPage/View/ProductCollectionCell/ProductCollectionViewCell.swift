@@ -9,7 +9,7 @@ import SkeletonView
 import UIKit
 
 protocol ProductCollectionViewCellDelegate: AnyObject {
-    func didTapFavButton(index: Int)
+    func didTapFavButton(shoes: ShoeData)
 }
 
 class ProductCollectionViewCell: UICollectionViewCell {
@@ -21,6 +21,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var startProduct: UIImageView!
     @IBOutlet private var nameProduct: BodyLabel!
     @IBOutlet private var productImageView: UIImageView!
+    private var shoes: ShoeData?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,8 +44,14 @@ class ProductCollectionViewCell: UICollectionViewCell {
 
     func setupCollectionView(shoes: ShoeData?) {
         if let shoes = shoes {
+            self.shoes = shoes
+            if shoes.isFavorite ?? false {
+                favButton.setImage(.fav, for: .normal)
+            } else {
+                favButton.setImage(.notFav, for: .normal)
+            }
             hideSkeleton()
-            quantitySoldLabel.text = "\(shoes.reviewCount) sold"
+            quantitySoldLabel.text = "\(shoes.sales) sold"
             numberStart.text = "\(shoes.rating)"
             nameProduct.text = shoes.name
             if let url = URL(string: shoes.thumbnail.url) {
@@ -64,7 +71,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func didTapFavButton(_: Any) {
-//        guard let delegate = delegate else { return }
-//        delegate.didTapFavButton(index: )
+        guard let delegate = delegate else { return }
+        delegate.didTapFavButton(shoes: shoes!)
     }
 }

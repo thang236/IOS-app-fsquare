@@ -99,6 +99,9 @@
 		BF4760932CE0B1D400207153 /* AddressResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4760922CE0B1D400207153 /* AddressResponse.swift */; };
 		BF4760A12CE2516100207153 /* AddNewAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47609F2CE2516100207153 /* AddNewAddressViewController.swift */; };
 		BF4760A22CE2516100207153 /* AddNewAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4760A02CE2516100207153 /* AddNewAddressViewController.xib */; };
+		BF4CE3252CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CE3232CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift */; };
+		BF4CE3262CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4CE3242CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib */; };
+		BF4CE32C2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CE32B2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift */; };
 		BF5B322E2C92E3E00063CA29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */; };
 		BF5B32302C92E3E00063CA29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322F2C92E3E00063CA29 /* SceneDelegate.swift */; };
 		BF5B32372C92E3E20063CA29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5B32362C92E3E20063CA29 /* Assets.xcassets */; };
@@ -112,9 +115,14 @@
 		BF5D618E2CE259EF006202D2 /* ChooseLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5D618C2CE259EF006202D2 /* ChooseLocationViewController.xib */; };
 		BF5D61932CE288A7006202D2 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D61912CE288A7006202D2 /* EditAddressViewController.swift */; };
 		BF5D61942CE288A7006202D2 /* EditAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5D61922CE288A7006202D2 /* EditAddressViewController.xib */; };
+		BF6120242CE39BAD00AC6562 /* PopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6120222CE39BAD00AC6562 /* PopularCollectionViewCell.swift */; };
+		BF6120252CE39BAD00AC6562 /* PopularCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6120232CE39BAD00AC6562 /* PopularCollectionViewCell.xib */; };
 		BF62C0612CD27CE900879233 /* ShoeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62C05F2CD27CE900879233 /* ShoeDetailViewController.swift */; };
 		BF62C0622CD27CE900879233 /* ShoeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF62C0602CD27CE900879233 /* ShoeDetailViewController.xib */; };
 		BF62C0642CD27CF700879233 /* ShoesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62C0632CD27CF700879233 /* ShoesDetailViewModel.swift */; };
+		BF68418F2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF68418D2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.swift */; };
+		BF6841902CE7D2A5008F9FD0 /* LoadingCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF68418E2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.xib */; };
+		BF6841922CE83A9E008F9FD0 /* FavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6841912CE83A9E008F9FD0 /* FavoriteResponse.swift */; };
 		BF6B5DDB2CBC08CB00AF4372 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = BF6B5DDA2CBC08CB00AF4372 /* SkeletonView */; };
 		BF869EE72CA1699100B59D8B /* FullNormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EE62CA1699100B59D8B /* FullNormalButton.swift */; };
 		BF869EE92CA16CFB00B59D8B /* OutlineNormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF869EE82CA16CFB00B59D8B /* OutlineNormalButton.swift */; };
@@ -281,6 +289,9 @@
 		BF4760922CE0B1D400207153 /* AddressResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressResponse.swift; sourceTree = "<group>"; };
 		BF47609F2CE2516100207153 /* AddNewAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAddressViewController.swift; sourceTree = "<group>"; };
 		BF4760A02CE2516100207153 /* AddNewAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewAddressViewController.xib; sourceTree = "<group>"; };
+		BF4CE3232CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		BF4CE3242CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerHomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		BF4CE32B2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderHomeCollectionReusableView.swift; sourceTree = "<group>"; };
 		BF5B322A2C92E3E00063CA29 /* Shang_Buyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shang_Buyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF5B322F2C92E3E00063CA29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -298,9 +309,14 @@
 		BF5D618C2CE259EF006202D2 /* ChooseLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseLocationViewController.xib; sourceTree = "<group>"; };
 		BF5D61912CE288A7006202D2 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		BF5D61922CE288A7006202D2 /* EditAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditAddressViewController.xib; sourceTree = "<group>"; };
+		BF6120222CE39BAD00AC6562 /* PopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewCell.swift; sourceTree = "<group>"; };
+		BF6120232CE39BAD00AC6562 /* PopularCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF62C05F2CD27CE900879233 /* ShoeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailViewController.swift; sourceTree = "<group>"; };
 		BF62C0602CD27CE900879233 /* ShoeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoeDetailViewController.xib; sourceTree = "<group>"; };
 		BF62C0632CD27CF700879233 /* ShoesDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesDetailViewModel.swift; sourceTree = "<group>"; };
+		BF68418D2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionReusableView.swift; sourceTree = "<group>"; };
+		BF68418E2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCollectionReusableView.xib; sourceTree = "<group>"; };
+		BF6841912CE83A9E008F9FD0 /* FavoriteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteResponse.swift; sourceTree = "<group>"; };
 		BF869EE62CA1699100B59D8B /* FullNormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNormalButton.swift; sourceTree = "<group>"; };
 		BF869EE82CA16CFB00B59D8B /* OutlineNormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineNormalButton.swift; sourceTree = "<group>"; };
 		BF869EEE2CA297A800B59D8B /* LoginMethodSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodSelectionViewController.swift; sourceTree = "<group>"; };
@@ -503,10 +519,13 @@
 		BF1E665B2CAD2437001C48E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF99E40B2CE3C64D004244CB /* BannerCollectionViewCell */,
+				BF6120212CE39B7E00AC6562 /* PopularCollectionViewCell */,
 				BF18F3A02CB900EB00A975F9 /* BrandColletionViewCell */,
 				BF9F327D2CB6866000530523 /* ProductCollectionCell */,
 				BF1E665C2CAD244B001C48E9 /* HomeViewController.swift */,
 				BF1E665D2CAD244B001C48E9 /* HomeViewController.xib */,
+				BF6120202CE398C000AC6562 /* HeaderFooterCollection */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1030,6 +1049,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BF6120202CE398C000AC6562 /* HeaderFooterCollection */ = {
+			isa = PBXGroup;
+			children = (
+				BF4CE32B2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift */,
+				BF68418D2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.swift */,
+				BF68418E2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.xib */,
+			);
+			path = HeaderFooterCollection;
+			sourceTree = "<group>";
+		};
+		BF6120212CE39B7E00AC6562 /* PopularCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BF6120222CE39BAD00AC6562 /* PopularCollectionViewCell.swift */,
+				BF6120232CE39BAD00AC6562 /* PopularCollectionViewCell.xib */,
+			);
+			path = PopularCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		BF62C05D2CD27CB600879233 /* HomeDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -1113,6 +1151,15 @@
 				BFAF1D7F2CA6A18A0085609C /* VerifyOTPViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BF99E40B2CE3C64D004244CB /* BannerCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BF4CE3232CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift */,
+				BF4CE3242CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib */,
+			);
+			path = BannerCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		BF9F326D2CB3B95700530523 /* Flow */ = {
@@ -1212,6 +1259,7 @@
 				BF1E664B2CAC061C001C48E9 /* ErrorResponse.swift */,
 				BF18F38B2CB6B91700A975F9 /* ShoesResponse.swift */,
 				BF18F39E2CB8FFFC00A975F9 /* BrandResponse.swift */,
+				BF6841912CE83A9E008F9FD0 /* FavoriteResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1482,6 +1530,8 @@
 				0925F3DE2CD3601600530A69 /* SizeCollectionViewCell.xib in Resources */,
 				BF18F3A42CB900FE00A975F9 /* BrandCollectionViewCell.xib in Resources */,
 				BF5D61942CE288A7006202D2 /* EditAddressViewController.xib in Resources */,
+				BF6841902CE7D2A5008F9FD0 /* LoadingCollectionReusableView.xib in Resources */,
+				BF6120252CE39BAD00AC6562 /* PopularCollectionViewCell.xib in Resources */,
 				BFD740D42CDA6E310041BD3F /* DescribeCollectionViewCell.xib in Resources */,
 				BF5B32372C92E3E20063CA29 /* Assets.xcassets in Resources */,
 				BFA057E62CB007AD00890399 /* EditProfileViewController.xib in Resources */,
@@ -1494,6 +1544,7 @@
 				BF869EF12CA297A800B59D8B /* LoginMethodSelectionViewController.xib in Resources */,
 				BF1E66672CAD248E001C48E9 /* CartViewController.xib in Resources */,
 				BF9F32782CB529C600530523 /* AddressViewController.xib in Resources */,
+				BF4CE3262CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib in Resources */,
 				BF62C0622CD27CE900879233 /* ShoeDetailViewController.xib in Resources */,
 				BFAF1D952CAA7DF60085609C /* LoginWithEmailViewController.xib in Resources */,
 				BF9F32812CB6868D00530523 /* ProductCollectionViewCell.xib in Resources */,
@@ -1537,6 +1588,7 @@
 				BF4760832CE0A2BF00207153 /* DistrictsResponse.swift in Sources */,
 				BF9F32712CB3C31E00530523 /* TabBarCoordinator.swift in Sources */,
 				BF25D0492C9821C400CB7EE8 /* MenuOption.swift in Sources */,
+				BF68418F2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.swift in Sources */,
 				BF47608A2CE0A38D00207153 /* AddressRepository.swift in Sources */,
 				BF25D0432C97239400CB7EE8 /* UIViewController+Extension.swift in Sources */,
 				BFCF72402CA2A45100208985 /* AuthCoordinator.swift in Sources */,
@@ -1576,6 +1628,7 @@
 				BF1E664F2CAC5097001C48E9 /* GetProfileUseCase.swift in Sources */,
 				BF9F32802CB6868D00530523 /* ProductCollectionViewCell.swift in Sources */,
 				BF4760802CE0A23900207153 /* ProvincesResponse.swift in Sources */,
+				BF6841922CE83A9E008F9FD0 /* FavoriteResponse.swift in Sources */,
 				BF1E66742CAD2E20001C48E9 /* MyEWalletViewController.swift in Sources */,
 				BF25D0402C97239400CB7EE8 /* UITableView+Extension.swift in Sources */,
 				BFAF1D9A2CAA807C0085609C /* LoginEmailUseCase.swift in Sources */,
@@ -1584,6 +1637,7 @@
 				BFCF725D2CA3EF4000208985 /* NormalField.swift in Sources */,
 				0925F3DD2CD3601600530A69 /* SizeCollectionViewCell.swift in Sources */,
 				BFAF1D942CAA7DF60085609C /* LoginWithEmailViewController.swift in Sources */,
+				BF4CE32C2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift in Sources */,
 				BFA057DB2CAEA56B00890399 /* ProfileViewModel.swift in Sources */,
 				BF96CA3B2CA4152C004F7BE9 /* RegisterUseCase.swift in Sources */,
 				BF4760852CE0A2F700207153 /* WardsResponse.swift in Sources */,
@@ -1599,6 +1653,7 @@
 				09EF3A0C2CD8BAB000B6FE02 /* ShoesClassificationsResponse.swift in Sources */,
 				BF9F327A2CB529D000530523 /* AddressViewModel.swift in Sources */,
 				BFAF1D7E2CA6A0CA0085609C /* VerifyOTPUseCase.swift in Sources */,
+				BF6120242CE39BAD00AC6562 /* PopularCollectionViewCell.swift in Sources */,
 				BF25D0552C996AF400CB7EE8 /* GetProductsUseCase.swift in Sources */,
 				BF4244EC2C9D599800F43C8B /* BodyLabel.swift in Sources */,
 				BFCF72572CA3EC9C00208985 /* RegisterViewController.swift in Sources */,
@@ -1607,6 +1662,7 @@
 				BF18F38C2CB6B91700A975F9 /* ShoesResponse.swift in Sources */,
 				BF25D03C2C97239400CB7EE8 /* TextField+Extension.swift in Sources */,
 				09EF3A0A2CD8B0B900B6FE02 /* ClassificationsResponse.swift in Sources */,
+				BF4CE3252CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift in Sources */,
 				BFD740CF2CD9C09D0041BD3F /* SizeRepository.swift in Sources */,
 				BF869EF32CA2A03A00B59D8B /* GhostButton.swift in Sources */,
 				BFA057D82CAEA18900890399 /* Profile.swift in Sources */,

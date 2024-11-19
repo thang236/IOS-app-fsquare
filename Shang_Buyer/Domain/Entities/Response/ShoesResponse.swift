@@ -11,7 +11,7 @@ struct Thumbnail: Codable {
     let url: String
 }
 
-struct ShoeData: Codable {
+struct ShoeData: Codable, Hashable {
     let id: String
     let name: String
     let thumbnail: Thumbnail
@@ -19,7 +19,8 @@ struct ShoeData: Codable {
     let maxPrice: Double
     let rating: Double
     let reviewCount: Int
-    let isFavorite: Bool?
+    var isFavorite: Bool?
+    let sales: Int
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -30,6 +31,15 @@ struct ShoeData: Codable {
         case rating
         case reviewCount
         case isFavorite
+        case sales
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func == (lhs: ShoeData, rhs: ShoeData) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 
@@ -46,6 +56,6 @@ struct Pagination: Codable {
 struct ShoesResponse: Codable {
     let status: String
     let message: String
-    let data: [ShoeData]
+    var data: [ShoeData]
     let options: Pagination
 }

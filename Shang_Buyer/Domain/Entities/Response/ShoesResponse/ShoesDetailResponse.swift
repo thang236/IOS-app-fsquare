@@ -14,9 +14,12 @@ struct ShoesDetailData: Codable, Hashable {
     let category: String
     let describe: String
     let description: String
+    let classificationCount: Int
+    let minPrice: Double
+    let maxPrice: Double
     let rating: Double
     let reviewCount: Int
-    let isFavorite: Bool
+    let isFavorite: Bool?
     let thumbnail: Thumbnail
 
     enum CodingKeys: String, CodingKey {
@@ -26,13 +29,15 @@ struct ShoesDetailData: Codable, Hashable {
         case category
         case describe
         case description
+        case classificationCount
+        case minPrice
+        case maxPrice
         case rating
         case reviewCount
         case isFavorite
         case thumbnail
     }
 
-    // Implement hash(into:) và ==
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

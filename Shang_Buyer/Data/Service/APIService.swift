@@ -23,12 +23,17 @@ class APIServiceImpl: APIService {
     }
 
     func request<T: Decodable>(endpoint: AppApi, method: HTTPMethod, parameters: [String: Any]?) -> AnyPublisher<T, Error> {
+        var encoding: ParameterEncoding = JSONEncoding.default
+        if method == .get {
+            encoding = URLEncoding.default
+        } else {
+            encoding = JSONEncoding.default
+        }
         let url = endpoint.url
         return Future { promise in
-            self.session.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default)
+            self.session.request(url, method: method, parameters: parameters, encoding: encoding)
                 .validate()
                 .responseData { response in
-
                     switch response.result {
                     case let .success(data):
                         do {

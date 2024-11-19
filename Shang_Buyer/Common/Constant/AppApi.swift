@@ -26,6 +26,7 @@ enum AppApi {
     case deleteLocation(idLocation: String)
 
     case getShoes
+    case addFav
 
     case getBrand
 
@@ -83,7 +84,14 @@ enum AppApi {
             // MARK: EndPoint Shoes
 
         case .getShoes:
-            return "\(AppApi.baseURL)/api/customer/v2/shoes"
+            if TokenManager.shared.getAccessToken() != nil {
+                return "\(AppApi.baseURL)/api/customer/v1/shoes"
+            } else {
+                return "\(AppApi.baseURL)/api/customer/v2/shoes"
+            }
+
+        case .addFav:
+            return "\(AppApi.baseURL)/api/customer/v1/favorites"
 
             // MARK: Endpoint brand
 

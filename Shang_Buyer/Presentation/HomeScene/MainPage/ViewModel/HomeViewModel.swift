@@ -11,7 +11,13 @@ import Foundation
 class HomeViewModel: ObservableObject {
     @Published var shoesResponse: ShoesResponse? = nil
     @Published var errorMessage: String? = nil
+    @Published var successMessage: String? = nil
     @Published var brands: [BrandItem] = []
+    @Published var brandLoading: Bool = true
+    @Published var shoesLoading: Bool = true
+    @Published var shoesFavoriteID: String? = nil
+    @Published var hasNextPage: Bool = false
+    @Published var page: Int = 1
     var cancellables = Set<AnyCancellable>()
 
     let getShoesUseCase: GetShoesUseCase
@@ -22,9 +28,75 @@ class HomeViewModel: ObservableObject {
         self.getBrandUseCase = getBrandUseCase
     }
 
-    func getShoes(page: Int) {
+    func initDataSource() {
+        page = 1
+        getShoes(page: page)
+        getBrand()
+    }
+
+    func toggleFav(shoes: ShoeData) {
+        guard let isFav = shoes.isFavorite else { return }
+        if isFav {
+            removeFAv(idShoes: shoes.id)
+        } else {
+            addFAv(idShoes: shoes.id)
+        }
+    }
+
+    private func removeFAv(idShoes: String) {
         let parameter: [String: Any] = [
-            "size": 10,
+            "shoes": idShoes,
+        ]
+        getShoesUseCase.removeFavoriteShoes(parameter: parameter)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    self.successMessage = "Success remove favorite shoes"
+                case let .failure(failure):
+                    print("ErrorremoveFavoriteShoes: \(failure.localizedDescription)")
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { favoriteResponse in
+                if favoriteResponse.status == HTTPStatus.success.message {
+                    for (index, shoes) in self.shoesResponse!.data.enumerated() {
+                        if shoes.id == idShoes {
+                            self.shoesResponse!.data[index].isFavorite = false
+                            self.shoesFavoriteID = idShoes
+                        }
+                    }
+                } else { self.errorMessage = "\(favoriteResponse.status): \(favoriteResponse.message)" }
+            }).store(in: &cancellables)
+    }
+
+    private func addFAv(idShoes: String) {
+        let parameter: [String: Any] = [
+            "shoes": idShoes,
+        ]
+        getShoesUseCase.addFavoriteShoes(parameter: parameter)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    self.successMessage = "Success add favorite shoes"
+                case let .failure(failure):
+                    print("Error addFavoriteShoes: \(failure.localizedDescription)")
+
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { favoriteResponse in
+                if favoriteResponse.status == HTTPStatus.created.message {
+                    for (index, shoes) in self.shoesResponse!.data.enumerated() {
+                        if shoes.id == idShoes {
+                            self.shoesResponse!.data[index].isFavorite = true
+                            self.shoesFavoriteID = idShoes
+                        }
+                    }
+                } else { self.errorMessage = "\(favoriteResponse.status): \(favoriteResponse.message)" }
+            }).store(in: &cancellables)
+    }
+
+    func getMoreShoes() {
+        let parameter: [String: Any] = [
+            "size": 3,
             "page": page,
             "search": "",
             "brand": "",
@@ -40,7 +112,46 @@ class HomeViewModel: ObservableObject {
                 }
             }, receiveValue: { shoesResponse in
                 if shoesResponse.status == HTTPStatus.success.message {
+                    self.shoesResponse?.data.append(contentsOf: shoesResponse.data)
+                    if shoesResponse.options.hasNextPage {
+                        self.page += 1
+                        self.hasNextPage = true
+                    } else {
+                        self.hasNextPage = false
+                    }
+                    self.shoesLoading = false
+
+                } else {
+                    self.errorMessage = "\(shoesResponse.status): \(shoesResponse.message)"
+                }
+            }).store(in: &cancellables)
+    }
+
+    func getShoes(page: Int) {
+        let parameter: [String: Any] = [
+            "size": 3,
+            "page": page,
+            "search": "",
+            "brand": "",
+            "category": "",
+        ]
+        getShoesUseCase.execute(parameter: parameter)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    self.shoesLoading = false
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { shoesResponse in
+                if shoesResponse.status == HTTPStatus.success.message {
                     self.shoesResponse = shoesResponse
+                    if shoesResponse.options.hasNextPage {
+                        self.page += 1
+                        self.hasNextPage = true
+                    } else {
+                        self.hasNextPage = false
+                    }
                 } else {
                     self.errorMessage = "\(shoesResponse.status): \(shoesResponse.message)"
                 }
@@ -55,11 +166,11 @@ class HomeViewModel: ObservableObject {
         ]
         getBrandUseCase.execute(parameter: parameter)
             .sink(receiveCompletion: { result in
-                print(result)
                 switch result {
                 case .finished:
-                    break
+                    self.brandLoading = false
                 case let .failure(failure):
+                    print("Error getBrand: \(failure.localizedDescription)")
                     self.errorMessage = failure.localizedDescription
                 }
             }, receiveValue: { brandResponse in

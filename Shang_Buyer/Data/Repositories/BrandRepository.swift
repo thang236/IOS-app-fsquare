@@ -20,6 +20,6 @@ class BrandRepositoryImpl: BrandRepository {
     }
 
     func getBrand(parameters: [String: Any]) -> AnyPublisher<BrandResponse, Error> {
-        apiService.requestNoToken(endpoint: .getShoes, method: .get, parameters: parameters)
+        apiService.request(endpoint: .getBrand, method: .get, parameters: parameters)
     }
 }
