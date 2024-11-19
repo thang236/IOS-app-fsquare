@@ -9,7 +9,9 @@ import Combine
 import Foundation
 
 protocol ShoesRepository {
+    func addFavoriteShoes(parameters: [String: Any]) -> AnyPublisher<FavoriteResponse, Error>
     func getShoes(parameters: [String: Any]) -> AnyPublisher<ShoesResponse, Error>
+    func removeFavoriteShoes(parameters: [String: Any]) -> AnyPublisher<FavoriteRemoveResponse, Error>
 }
 
 class ShoesRepositoryImpl: ShoesRepository {
@@ -19,7 +21,15 @@ class ShoesRepositoryImpl: ShoesRepository {
         self.apiService = apiService
     }
 
+    func addFavoriteShoes(parameters: [String: Any]) -> AnyPublisher<FavoriteResponse, Error> {
+        apiService.request(endpoint: .addFav, method: .post, parameters: parameters)
+    }
+
     func getShoes(parameters: [String: Any]) -> AnyPublisher<ShoesResponse, Error> {
-        apiService.requestNoToken(endpoint: .getShoes, method: .get, parameters: parameters)
+        apiService.request(endpoint: .getShoes, method: .get, parameters: parameters)
+    }
+
+    func removeFavoriteShoes(parameters: [String: Any]) -> AnyPublisher<FavoriteRemoveResponse, Error> {
+        apiService.request(endpoint: .addFav, method: .post, parameters: parameters)
     }
 }

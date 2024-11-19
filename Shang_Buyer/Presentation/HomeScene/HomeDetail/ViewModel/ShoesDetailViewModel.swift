@@ -53,12 +53,10 @@ class ShoesDetailViewModel: ObservableObject {
                     print("Completion: Success")
                 case let .failure(failure):
                     self.errorMessage = failure.localizedDescription
-                    print("Error: \(self.errorMessage)")
+                    print("Error getShoesDetail: \(self.errorMessage)")
                 }
             }, receiveValue: { shoesDetail in
-                // Cập nhật ngay shoesDetail khi có dữ liệu thành công từ API
                 self.shoesDetail = shoesDetail
-                print("Shoes detail updated: \(self.shoesDetail)")
             }).store(in: &cancellables)
     }
 
@@ -77,6 +75,7 @@ class ShoesDetailViewModel: ObservableObject {
                 case let .failure(failure):
                     self.errorMessage = failure.localizedDescription
                     print(self.errorMessage)
+                    print("Error getShoesClassification: \(self.errorMessage)")
                 }
             }, receiveValue: { shoesClassification in
                 self.shoesClassification = shoesClassification

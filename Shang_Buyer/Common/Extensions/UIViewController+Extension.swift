@@ -78,7 +78,7 @@ extension UIViewController {
             stackView.bottomAnchor.constraint(equalTo: toastView.bottomAnchor, constant: -10),
 
             toastView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            toastView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            toastView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
             toastView.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor, constant: -40),
         ])
 

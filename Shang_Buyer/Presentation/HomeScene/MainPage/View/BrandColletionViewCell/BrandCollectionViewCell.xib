@@ -22,27 +22,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="319" height="399"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageShimmer" translatesAutoresizingMaskIntoConstraints="NO" id="QIj-V1-NSb">
-                                <rect key="frame" x="20" y="20" width="279" height="279"/>
+                                <rect key="frame" x="0.0" y="0.0" width="319" height="319"/>
                                 <color key="backgroundColor" name="backgroundMedium"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QIj-V1-NSb" secondAttribute="height" multiplier="1:1" id="Nzz-MH-RBL"/>
                                 </constraints>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooX-HX-Nf7">
-                                <rect key="frame" x="138.66666666666666" y="299" width="42" height="100"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooX-HX-Nf7" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="327" width="319" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="QIj-V1-NSb" secondAttribute="trailing" constant="20" symbolic="YES" id="2XA-pa-tKF"/>
-                            <constraint firstItem="QIj-V1-NSb" firstAttribute="top" secondItem="thw-12-6M4" secondAttribute="top" constant="20" symbolic="YES" id="F7g-zr-RUJ"/>
+                            <constraint firstAttribute="trailing" secondItem="QIj-V1-NSb" secondAttribute="trailing" id="2XA-pa-tKF"/>
+                            <constraint firstAttribute="trailing" secondItem="ooX-HX-Nf7" secondAttribute="trailing" id="DFx-Dd-Kmp"/>
+                            <constraint firstItem="QIj-V1-NSb" firstAttribute="top" secondItem="thw-12-6M4" secondAttribute="top" id="F7g-zr-RUJ"/>
+                            <constraint firstItem="ooX-HX-Nf7" firstAttribute="leading" secondItem="thw-12-6M4" secondAttribute="leading" id="HC3-rl-6CU"/>
                             <constraint firstAttribute="bottom" secondItem="ooX-HX-Nf7" secondAttribute="bottom" id="biM-AN-9pi"/>
-                            <constraint firstItem="ooX-HX-Nf7" firstAttribute="top" secondItem="QIj-V1-NSb" secondAttribute="bottom" id="fAj-zh-utp"/>
-                            <constraint firstItem="QIj-V1-NSb" firstAttribute="leading" secondItem="thw-12-6M4" secondAttribute="leading" constant="20" symbolic="YES" id="t1m-28-OOM"/>
+                            <constraint firstItem="ooX-HX-Nf7" firstAttribute="top" secondItem="QIj-V1-NSb" secondAttribute="bottom" constant="8" symbolic="YES" id="fAj-zh-utp"/>
+                            <constraint firstItem="QIj-V1-NSb" firstAttribute="leading" secondItem="thw-12-6M4" secondAttribute="leading" id="t1m-28-OOM"/>
                             <constraint firstItem="ooX-HX-Nf7" firstAttribute="centerX" secondItem="thw-12-6M4" secondAttribute="centerX" id="uZo-nz-cK9"/>
                         </constraints>
                     </view>
@@ -63,6 +65,11 @@
             <point key="canvasLocation" x="245.03816793893128" y="209.50704225352115"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="ooX-HX-Nf7">
+            <size key="intrinsicContentSize" width="37.333333333333336" height="18"/>
+        </designable>
+    </designables>
     <resources>
         <image name="imageShimmer" width="86.5" height="86.5"/>
         <namedColor name="backgroundMedium">

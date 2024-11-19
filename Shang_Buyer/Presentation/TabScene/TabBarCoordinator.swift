@@ -23,4 +23,8 @@ class TabBarCoordinator: Coordinator {
         tabBarController.coordinator = self
         navigationController.setViewControllers([tabBarController], animated: false)
     }
+
+    func getNavigationController() -> UINavigationController {
+        return navigationController
+    }
 }

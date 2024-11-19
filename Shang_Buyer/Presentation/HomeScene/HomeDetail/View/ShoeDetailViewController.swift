@@ -16,7 +16,7 @@ enum ShoesDetailSectionType: Int, CaseIterable, Hashable {
 
 enum ShoeDetailContentCell: Hashable {
     case headerImage(image: String)
-    case describe(title: String, ratting: Double, describe: String, isFav: Bool)
+    case describe(shoesDetailData: ShoesDetailData)
     case description(description: String)
 }
 
@@ -45,9 +45,9 @@ class ShoeDetailViewController: UIViewController {
                     let cell = collectionView.dequeueReusableCell(withType: HeaderShoesDetailCollectionViewCell.self, for: indexPath)
                     cell.configureCell(image: image)
                     return cell
-                case let .describe(title, ratting, describe, isFav):
+                case let .describe(shoesDetailData):
                     let cell = collectionView.dequeueReusableCell(withType: DescribeCollectionViewCell.self, for: indexPath)
-                    cell.configureCell(title: title, ratting: ratting, describe: describe, isFav: isFav)
+                    cell.configureCell(shoesDetailData: shoesDetailData)
                     return cell
                 case let .description(description):
                     let cell = collectionView.dequeueReusableCell(withType: DescriptionCollectionViewCell.self, for: indexPath)
@@ -138,8 +138,11 @@ class ShoeDetailViewController: UIViewController {
                     var snapshot = NSDiffableDataSourceSnapshot<ShoesDetailSectionType, ShoeDetailContentCell>()
                     snapshot.appendSections(ShoesDetailSectionType.allCases)
                     snapshot.appendItems([.headerImage(image: shoesDetail.data.thumbnail.url)], toSection: .headerImage)
-                    snapshot.appendItems([.describe(title: shoesDetail.data.name, ratting: shoesDetail.data.rating, describe: shoesDetail.data.describe, isFav: shoesDetail.data.isFavorite)], toSection: .describe)
+                    snapshot.appendItems(
+                        [.describe(shoesDetailData: shoesDetail.data)], toSection: .describe
+                    )
                     snapshot.appendItems([.description(description: shoesDetail.data.description)], toSection: .description)
+                    self.priceLbl.text = "$\(shoesDetail.data.minPrice)"
                     self.dataSource.apply(snapshot, animatingDifferences: true)
                 }
             }.store(in: &cancellables)

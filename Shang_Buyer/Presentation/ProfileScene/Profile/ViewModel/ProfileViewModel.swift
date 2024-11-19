@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 class ProfileViewModel: ObservableObject {
-    @Published var errorMessage: String = ""
+    @Published var errorMessage: String? = nil
     @Published var profileResponse: ProfileResponse?
 
     private var getProfileUseCase: GetProfileUseCase

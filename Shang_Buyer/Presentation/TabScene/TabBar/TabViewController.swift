@@ -33,7 +33,7 @@ class TabViewController: UITabBarController {
         // Tạo view controllers cho từng tab và bọc trong UINavigationController
         let homeCoordinator = HomeCoordinator()
         let homeVC = homeCoordinator.getNavigationController()
-        let profileCoordinator = ProfileCoordinator()
+        let profileCoordinator = ProfileCoordinator(navigationMain: coordinator.getNavigationController())
         let profileVC = profileCoordinator.getNavigationController()
         let cartVC = UINavigationController(rootViewController: CartViewController())
         let orderVC = UINavigationController(rootViewController: MyOrderViewController())

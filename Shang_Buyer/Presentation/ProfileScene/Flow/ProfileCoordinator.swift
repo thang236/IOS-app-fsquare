@@ -10,8 +10,10 @@ import UIKit
 
 class ProfileCoordinator: Coordinator {
     private let navigationController: UINavigationController
+    private let navigationMain: UINavigationController
 
-    init() {
+    init(navigationMain: UINavigationController) {
+        self.navigationMain = navigationMain
         let profileViewModel = DIContainer.shared.resolveProfileViewModel()
         let profileVC = ProfileViewController(viewModel: profileViewModel)
         navigationController = UINavigationController(rootViewController: profileVC)
@@ -58,7 +60,7 @@ class ProfileCoordinator: Coordinator {
     }
 
     func logoutUser() {
-        let authCoordinator = AuthCoordinator(navigationController: navigationController)
+        let authCoordinator = AuthCoordinator(navigationController: navigationMain)
         authCoordinator.goToLoginMethodSelection()
     }
 }

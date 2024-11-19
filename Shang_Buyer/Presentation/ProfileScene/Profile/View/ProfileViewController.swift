@@ -74,7 +74,8 @@ class ProfileViewController: UIViewController {
     private func setupBindings() {
         viewModel.$errorMessage
             .compactMap { $0 }
-            .receive(on: DispatchQueue.main).sink { [weak self] errorMessage in
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] errorMessage in
                 print("errorMessage:   \(errorMessage)")
                 self?.showToast(message: errorMessage, chooseImageToast: .error)
 

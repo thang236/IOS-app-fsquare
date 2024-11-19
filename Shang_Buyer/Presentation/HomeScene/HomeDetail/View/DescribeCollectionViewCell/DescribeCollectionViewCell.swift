@@ -24,6 +24,11 @@ class DescribeCollectionViewCell: UICollectionViewCell {
     @IBOutlet var starImage3: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        soldLbl.layer.backgroundColor = UIColor.neutralGrayMedium.cgColor
+        soldLbl.layer.cornerRadius = 5
+        soldLbl.layer.masksToBounds = true
+        soldLbl.textAlignment = .center
+
         descriptionLbl.showGradientSkeleton(delay: 0.25)
         titleLabel.showGradientSkeleton(delay: 0.25)
         soldLbl.showGradientSkeleton(delay: 0.25)
@@ -38,72 +43,43 @@ class DescribeCollectionViewCell: UICollectionViewCell {
 
     private func setUpRatting(rattingNumber: Double) {
         let starImages = [starImage1, starImage2, starImage3, starImage4, starImage5]
+
         for i in 0 ..< 5 {
             starImages[i]?.hideSkeleton()
             starImages[i]?.image = UIImage(systemName: "star")
         }
 
-        if rattingNumber == 0 {
-        } else if rattingNumber > 0 && rattingNumber < 1 {
-            starImages[0]?.image = UIImage(systemName: "star.leadinghalf.fill")
-        } else if rattingNumber == 1 {
-            starImages[0]?.image = UIImage(systemName: "star.fill")
-        } else if rattingNumber > 1 && rattingNumber < 2 {
-            starImages[0]?.image = UIImage(systemName: "star.fill")
-            starImages[1]?.image = UIImage(systemName: "star.leadinghalf.fill")
-        } else if rattingNumber == 2 {
-            starImages[0]?.image = UIImage(systemName: "star.fill")
-            starImages[1]?.image = UIImage(systemName: "star.fill")
-        } else if rattingNumber > 2 && rattingNumber < 3 {
-            starImages[0]?.image = UIImage(systemName: "star.fill")
-            starImages[1]?.image = UIImage(systemName: "star.fill")
-            starImages[2]?.image = UIImage(systemName: "star.leadinghalf.fill")
-        } else if rattingNumber == 3 {
-            starImages[0]?.image = UIImage(systemName: "star.fill")
-            starImages[1]?.image = UIImage(systemName: "star.fill")
-            starImages[2]?.image = UIImage(systemName: "star.fill")
-        } else if rattingNumber > 3 && rattingNumber < 4 {
-            starImages[0]?.image = UIImage(systemName: "star.fill")
-            starImages[1]?.image = UIImage(systemName: "star.fill")
-            starImages[2]?.image = UIImage(systemName: "star.fill")
-            starImages[3]?.image = UIImage(systemName: "star.leadinghalf.fill")
-        } else if rattingNumber == 4 {
-            starImages[0]?.image = UIImage(systemName: "star.fill")
-            starImages[1]?.image = UIImage(systemName: "star.fill")
-            starImages[2]?.image = UIImage(systemName: "star.fill")
-            starImages[3]?.image = UIImage(systemName: "star.fill")
-        } else if rattingNumber > 4 && rattingNumber < 5 {
-            starImages[0]?.image = UIImage(systemName: "star.fill")
-            starImages[1]?.image = UIImage(systemName: "star.fill")
-            starImages[2]?.image = UIImage(systemName: "star.fill")
-            starImages[3]?.image = UIImage(systemName: "star.fill")
-            starImages[4]?.image = UIImage(systemName: "star.leadinghalf.fill")
-        } else if rattingNumber == 5 {
-            starImages[0]?.image = UIImage(systemName: "star.fill")
-            starImages[1]?.image = UIImage(systemName: "star.fill")
-            starImages[2]?.image = UIImage(systemName: "star.fill")
-            starImages[3]?.image = UIImage(systemName: "star.fill")
-            starImages[4]?.image = UIImage(systemName: "star.fill")
+        let fullStars = Int(rattingNumber)
+        let halfStar = (rattingNumber - Double(fullStars)) >= 0.5 ? 1 : 0
+
+        for i in 0 ..< fullStars {
+            starImages[i]?.image = UIImage(systemName: "star.fill")
+        }
+
+        if fullStars + halfStar <= 5 {
+            starImages[fullStars]?.image = halfStar == 1 ? UIImage(systemName: "star.leadinghalf.fill") : UIImage(systemName: "star.fill")
+        }
+
+        for i in (fullStars + halfStar) ..< 5 {
+            starImages[i]?.image = UIImage(systemName: "star")
         }
     }
 
-    func configureCell(title: String, ratting: Double, describe: String, isFav: Bool) {
+    func configureCell(shoesDetailData: ShoesDetailData) {
         descriptionLbl.hideSkeleton()
         titleLabel.hideSkeleton()
         soldLbl.hideSkeleton()
         rattingLbl.hideSkeleton()
         favIcon.hideSkeleton()
 
-        titleLabel.text = title
-        descriptionLbl.text = describe
-        soldLbl.layer.backgroundColor = UIColor.neutralGrayMedium.cgColor
-        soldLbl.layer.cornerRadius = 5
-        soldLbl.layer.masksToBounds = true
-        soldLbl.textAlignment = .center
-        setUpRatting(rattingNumber: ratting)
-        rattingLbl.text = "\(ratting)  |"
+        titleLabel.text = shoesDetailData.name
+        descriptionLbl.text = shoesDetailData.describe
+
+        setUpRatting(rattingNumber: shoesDetailData.rating)
+        rattingLbl.text = "\(shoesDetailData.rating)"
         soldLbl.text = "1000 Sold"
-        if isFav {
+
+        if shoesDetailData.isFavorite ?? false {
             favIcon.image = UIImage.fav
         } else {
             favIcon.image = UIImage.notFav
