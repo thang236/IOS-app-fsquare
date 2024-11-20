@@ -33,6 +33,7 @@ class HomeCoordinator: Coordinator {
     func goToFavorite() {
         let favoriteViewModel = DIContainer.shared.resolveFavoriteViewModel()
         let favoriteVC = FavoriteViewController(viewModel: favoriteViewModel)
+        favoriteVC.coordinator = self
         navigationController.pushViewController(favoriteVC, animated: true)
     }
 }

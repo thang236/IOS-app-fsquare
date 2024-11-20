@@ -131,7 +131,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h06-wA-90I" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="48" width="37" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" name="primaryDark"/>
+                                        <color key="textColor" name="PrimaryDark"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="useFontLineHeight" value="YES"/>
@@ -16190,6 +16190,9 @@ j64ADo+wAA6PsgAOj7QADqFUAA6hWQAOoWYADqFpAA6hdgAOoXsADqGDAA6hhgAOoYsADqGTAAAAAAAA
 BAEAAAAAAAAAVgAAAAAAAAAAAAAAAAAOoZY
 </mutableData>
         </image>
+        <namedColor name="PrimaryDark">
+            <color red="1" green="0.50588235294117645" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="backgroundDark">
             <color red="0.93725490196078431" green="0.94117647058823528" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

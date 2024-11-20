@@ -13,8 +13,10 @@ protocol FavoriteViewControllerDelegate: AnyObject {
 
 class FavoriteViewController: UIViewController {
     var delegate: FavoriteViewControllerDelegate?
+    var coordinator: HomeCoordinator?
     @IBOutlet private var collectionView: UICollectionView!
     private let viewModel: FavoriteViewModel
+    private var searchBar: UISearchBar!
 
     init(viewModel: FavoriteViewModel) {
         self.viewModel = viewModel
@@ -64,7 +66,24 @@ class FavoriteViewController: UIViewController {
         setupNavigationBar(leftBarButton: backButton, title: "My Favorite", rightBarButton: [searchButton])
     }
 
-    @objc func didTapSearchButton() {}
+    @objc func didTapSearchButton() {
+        navigationItem.rightBarButtonItems = nil
+        navigationItem.leftBarButtonItems = nil
+        searchBar = UISearchBar()
+        searchBar.placeholder = "Search some shoes..."
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+        searchBar.becomeFirstResponder()
+
+        navigationItem.titleView = searchBar
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        navigationItem.titleView = nil
+        setupNav()
+        viewModel.filterFavorites(by: "")
+    }
 
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
@@ -79,7 +98,7 @@ class FavoriteViewController: UIViewController {
     }
 
     private func setupBindings() {
-        viewModel.$favorites
+        viewModel.$filteredFavorites
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.collectionView.reloadData()
@@ -106,7 +125,7 @@ class FavoriteViewController: UIViewController {
 
 extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        return viewModel.favorites?.data.count ?? 10
+        return viewModel.filteredFavorites?.count ?? 10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -125,11 +144,21 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 16, bottom: 0, right: 16)
     }
+
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        coordinator?.goToShoesDetail(idShoes: viewModel.favorites?.data[indexPath.row].shoesId ?? "")
+    }
 }
 
 extension FavoriteViewController: FavoriteCollectionViewCellDelegate {
     func didTapFavButton(favorite: FavoriteData) {
         viewModel.deleteFavoriteShoes(idFavorite: favorite.id, idShoes: favorite.shoesId)
         delegate?.didTapRemoveFavButton(favorite: favorite)
+    }
+}
+
+extension FavoriteViewController: UISearchBarDelegate {
+    func searchBar(_: UISearchBar, textDidChange searchText: String) {
+        viewModel.filterFavorites(by: searchText)
     }
 }

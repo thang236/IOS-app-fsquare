@@ -11,7 +11,7 @@ import Foundation
 class FavoriteViewModel: ObservableObject {
     private let favoriteUseCase: FavoriteUseCase
     var cancellables = Set<AnyCancellable>()
-
+    @Published var filteredFavorites: [FavoriteData]? = nil
     @Published var isLoading: Bool = true
     @Published var favorites: FavoriteResponse? = nil
     @Published var errorMessage: String? = nil
@@ -19,6 +19,15 @@ class FavoriteViewModel: ObservableObject {
 
     init(favoriteUseCase: FavoriteUseCase) {
         self.favoriteUseCase = favoriteUseCase
+    }
+
+    func filterFavorites(by searchText: String) {
+        guard let favorites = favorites?.data else { return }
+        if searchText.isEmpty {
+            filteredFavorites = favorites
+        } else {
+            filteredFavorites = favorites.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+        }
     }
 
     func getFavoriteShoes() {
@@ -34,6 +43,7 @@ class FavoriteViewModel: ObservableObject {
                 }
             } receiveValue: { response in
                 self.favorites = response
+                self.filteredFavorites = response.data
                 self.isLoading = false
             }
             .store(in: &cancellables)

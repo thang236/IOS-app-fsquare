@@ -83,29 +83,11 @@ class ShoeDetailViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
-        DispatchQueue.main.async {
-            self.tabBarController?.tabBar.isHidden = true
-            self.navigationController?.navigationBar.layer.shadowOpacity = 0
-            if #available(iOS 15.0, *) {
-                let appearance = UINavigationBarAppearance()
-                appearance.configureWithOpaqueBackground()
-                appearance.backgroundColor = .clear
-                self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
-                self.navigationController?.navigationBar.standardAppearance = appearance
-            }
-        }
+        tabBarController?.tabBar.isHidden = true
     }
 
     override func viewWillDisappear(_: Bool) {
-        guard let tabBarItem = tabBarController?.tabBar else { return }
-        tabBarItem.isHidden = false
-        if #available(iOS 15.0, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = .primaryDark
-            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
-            self.navigationController?.navigationBar.standardAppearance = appearance
-        }
+        tabBarController?.tabBar.isHidden = false
     }
 
     func setupNav() {
