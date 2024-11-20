@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -84,7 +83,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Ylo-ZP-bsT"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Ylo-ZP-bsT" firstAttribute="trailing" secondItem="U3s-jm-Rhx" secondAttribute="trailing" constant="20" id="34P-jg-ncD"/>
                 <constraint firstItem="F6d-ED-Ass" firstAttribute="leading" secondItem="Ylo-ZP-bsT" secondAttribute="leading" constant="20" id="CZm-KD-xsZ"/>
@@ -125,8 +124,5 @@
         <namedColor name="neutralUltraDark">
             <color red="0.015686274509803921" green="0.0078431372549019607" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

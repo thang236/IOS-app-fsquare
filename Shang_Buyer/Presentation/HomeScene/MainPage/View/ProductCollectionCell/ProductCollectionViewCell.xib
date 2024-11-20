@@ -140,7 +140,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VCw-iM-pdG" firstAttribute="top" secondItem="0CU-YI-G9G" secondAttribute="bottom" constant="8" symbolic="YES" id="Tz8-0f-T1J"/>
                             <constraint firstItem="VCw-iM-pdG" firstAttribute="leading" secondItem="GSo-0Z-Qc9" secondAttribute="leading" id="fK2-Xv-oTO"/>
@@ -16205,9 +16205,6 @@ BAEAAAAAAAAAVgAAAAAAAAAAAAAAAAAOoZY
         <namedColor name="primaryDark">
             <color red="1" green="0.50588235294117645" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

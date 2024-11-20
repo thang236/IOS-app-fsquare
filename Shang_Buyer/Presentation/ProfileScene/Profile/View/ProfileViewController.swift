@@ -138,13 +138,18 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             guard let profile = profile else {
                 return
             }
-            coordinator?.goToEditProfile(profileModel: profile, vc: self)
+            if let token = TokenManager.shared.getAccessToken() {
+                print("Token: \(token)")
+                coordinator?.goToEditProfile(profileModel: profile, vc: self)
+            } else {
+                showToast(message: "Please login to use this feature", chooseImageToast: .warning)
+            }
         case .address:
             if let token = TokenManager.shared.getAccessToken() {
                 print("Token: \(token)")
                 coordinator?.goToAddress()
             } else {
-                showAlert(title: "Alert", message: "Please login to use this feature")
+                showToast(message: "Please login to use this feature", chooseImageToast: .warning)
             }
         case .noti:
             print("111")

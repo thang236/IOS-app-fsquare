@@ -55,30 +55,18 @@ class TabViewController: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .selected)
 
         tabBar.tintColor = .primaryDark
-        tabBar.backgroundColor = .white
+        tabBar.backgroundColor = UIColor.white
         tabBar.unselectedItemTintColor = .neutralLight
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.white
+            tabBar.standardAppearance = appearance
+            tabBar.scrollEdgeAppearance = appearance
+        }
     }
 }
 
 extension TabViewController: UITabBarControllerDelegate {
-    func tabBarController(_: UITabBarController, didSelect _: UIViewController) {
-//        // Kiểm tra xem viewController đã chọn là loại UINavigationController không
-//        if let navController = viewController as? UINavigationController {
-//            let topViewController = navController.topViewController
-//
-//            if topViewController is ProfileViewController {
-//                // Nếu đã ở trên ProfileViewController, không cần gọi coordinator nữa
-//                return
-//            }
-//        }
-//
-//        // Gọi coordinator để điều hướng đến Profile nếu người dùng nhấn vào tab Profile
-//        if let navController = viewController as? UINavigationController,
-//           let selectedIndex = tabBarController.viewControllers?.firstIndex(of: viewController)
-//        {
-//            if selectedIndex == 4 { // Giả sử tab Profile là tab thứ 5 (index 4)
-        ////                coordinator?.goToProfile()  Gọi coordinator để điều hướng đến Profile
-//            }
-//        }
-    }
+    func tabBarController(_: UITabBarController, didSelect _: UIViewController) {}
 }

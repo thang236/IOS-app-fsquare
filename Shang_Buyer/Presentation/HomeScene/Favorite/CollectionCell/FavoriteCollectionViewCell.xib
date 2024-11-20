@@ -140,7 +140,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="apP-tT-9Q1" secondAttribute="trailing" id="qEf-1P-BM7"/>
                             <constraint firstItem="apP-tT-9Q1" firstAttribute="top" secondItem="59H-KZ-NHz" secondAttribute="bottom" constant="8" symbolic="YES" id="tVg-pI-Bcr"/>
@@ -16208,9 +16208,6 @@ BAEAAAAAAAAAVgAAAAAAAAAAAAAAAAAOoZY
         <namedColor name="primaryDark">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

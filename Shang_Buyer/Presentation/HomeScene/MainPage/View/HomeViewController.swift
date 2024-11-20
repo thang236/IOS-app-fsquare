@@ -353,7 +353,11 @@ class HomeViewController: UIViewController {
     @objc func didTapSearchButton() {}
 
     @objc func didTapFavorite() {
-        coordinator?.goToFavorite()
+        if TokenManager.shared.getAccessToken() == nil {
+            self.showToast(message: "Please login to view favorite", chooseImageToast: .warning)
+        } else {
+            coordinator?.goToFavorite()
+        }
     }
 }
 

@@ -22,6 +22,7 @@ class HeaderHomeCollectionReusableView: UICollectionReusableView {
         let label = HeadingLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.interItalicVariableFont(fontWeight: .semibold, size: 20)
+        label.textColor = .black
         return label
     }()
 
