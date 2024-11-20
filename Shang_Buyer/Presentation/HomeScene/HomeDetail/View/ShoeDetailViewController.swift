@@ -117,27 +117,26 @@ class ShoeDetailViewController: UIViewController {
         viewModel?.$shoesDetail.receive(on: DispatchQueue.main)
             .sink { shoesDetail in
                 if let shoesDetail = shoesDetail {
-                    var snapshot = NSDiffableDataSourceSnapshot<ShoesDetailSectionType, ShoeDetailContentCell>()
-                    snapshot.appendSections(ShoesDetailSectionType.allCases)
-                    snapshot.appendItems([.headerImage(image: shoesDetail.data.thumbnail.url)], toSection: .headerImage)
+                    var snapshot = self.dataSource.snapshot()
                     snapshot.appendItems(
                         [.describe(shoesDetailData: shoesDetail.data)], toSection: .describe
                     )
                     snapshot.appendItems([.description(description: shoesDetail.data.description)], toSection: .description)
                     self.priceLbl.text = "$\(shoesDetail.data.minPrice)"
-                    self.dataSource.apply(snapshot, animatingDifferences: true)
+                    self.dataSource.apply(snapshot, animatingDifferences: false)
                 }
             }.store(in: &cancellables)
 
         viewModel?.$shoesClassification
-            .sink { _ in
-//                if let shoesClassification = shoesClassification {
-//                    var snapshot = NSDiffableDataSourceSnapshot<ShoesDetailSectionType, ShoeDetailContentCell>()
-//                    snapshot.appendSections(ShoesDetailSectionType.allCases)
-//
-//                    self.dataSource.apply(snapshot, animatingDifferences: true)
-//
-//                }
+            .sink { shoesClassification in
+                if let shoesClassification = shoesClassification {
+                    var snapshot = self.dataSource.snapshot()
+                    for shoesClassificationItem in shoesClassification.data {
+                        snapshot.appendItems([.headerImage(image: shoesClassificationItem.thumbnail.url)], toSection: .headerImage)
+                    }
+
+                    self.dataSource.apply(snapshot, animatingDifferences: false)
+                }
             }.store(in: &cancellables)
     }
 
@@ -164,11 +163,15 @@ class ShoeDetailViewController: UIViewController {
 
             switch sectionType {
             case .headerImage:
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(self.view.frame.width))
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(self.view.frame.width))
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
                 let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .continuous
+
                 return section
 
             case .describe:

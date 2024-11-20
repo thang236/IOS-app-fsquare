@@ -65,6 +65,7 @@ class LoadingViewController: UIViewController {
                     }
                 case let .failure(failure):
                     self.showToast(message: "error: \(failure)", chooseImageToast: .error)
+                    TokenManager.shared.removeTokens()
                     self.coordinator?.goToLoginMethodSelection()
                 }
             }

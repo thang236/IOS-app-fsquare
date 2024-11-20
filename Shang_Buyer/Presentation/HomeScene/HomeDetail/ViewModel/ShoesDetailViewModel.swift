@@ -34,8 +34,8 @@ class ShoesDetailViewModel: ObservableObject {
 
     func initDataSource(idShoes: String) {
         self.idShoes = idShoes
-        getShoesDetail()
         getShoesClassification()
+        getShoesDetail()
     }
 
     func getShoesDetail() {
@@ -68,7 +68,6 @@ class ShoesDetailViewModel: ObservableObject {
         isLoading = true
         getShoesClassificationUseCase.execute(idShoes: idShoes)
             .sink(receiveCompletion: { completion in
-                self.isLoading = false
                 switch completion {
                 case .finished:
                     break
@@ -78,6 +77,7 @@ class ShoesDetailViewModel: ObservableObject {
                     print("Error getShoesClassification: \(self.errorMessage)")
                 }
             }, receiveValue: { shoesClassification in
+                self.isLoading = false
                 self.shoesClassification = shoesClassification
             }).store(in: &cancellables)
     }

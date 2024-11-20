@@ -11,21 +11,26 @@ import Foundation
 class ProfileViewModel: ObservableObject {
     @Published var errorMessage: String? = nil
     @Published var profileResponse: ProfileResponse?
-
+    
     private var getProfileUseCase: GetProfileUseCase
     private var cancellables = Set<AnyCancellable>()
-
+    
     init(getProfileUseCase: GetProfileUseCase) {
         self.getProfileUseCase = getProfileUseCase
     }
-
+    
     func getProfile(completion: @escaping (Result<ProfileResponse, Error>) -> Void) {
         getProfileUseCase.execute().sink(receiveCompletion: { completion in
             switch completion {
             case .finished:
                 break
             case let .failure(error):
-                self.errorMessage = error.localizedDescription
+                if let error = error as? NSError {
+                    if error.code == 401 {
+                    } else {
+                        self.errorMessage = error.localizedDescription
+                    }
+                }
             }
         }, receiveValue: { profileResponse in
             completion(.success(profileResponse))

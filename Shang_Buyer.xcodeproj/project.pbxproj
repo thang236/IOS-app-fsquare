@@ -531,7 +531,6 @@
 				BF62C05D2CD27CB600879233 /* HomeDetail */,
 				BF18F3962CB7B8AE00A975F9 /* Flow */,
 				BF1E66632CAD247D001C48E9 /* MainPage */,
-				BF6841AC2CEE314C008F9FD0 /* SharedData.swift */,
 			);
 			path = HomeScene;
 			sourceTree = "<group>";
@@ -843,6 +842,7 @@
 			children = (
 				BF5B323B2C92E3E20063CA29 /* Info.plist */,
 				BF5B32752C92F1020063CA29 /* Common */,
+				BF6841AC2CEE314C008F9FD0 /* SharedData.swift */,
 				BF5B325D2C92E4780063CA29 /* Application */,
 				BF5B32662C92E62A0063CA29 /* Data */,
 				BF5B32672C92E6300063CA29 /* Domain */,

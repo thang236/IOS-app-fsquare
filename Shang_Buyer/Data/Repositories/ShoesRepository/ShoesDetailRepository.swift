@@ -20,10 +20,6 @@ class ShoesDetailRepositoryImpl: ShoesDetailRepository {
     }
 
     func getShoesDetail(idShoes: String) -> AnyPublisher<ShoesDetailResponse, Error> {
-        if TokenManager.shared.getAccessToken() != nil || TokenManager.shared.getAccessToken() != "" {
-            apiService.request(endpoint: .getDetailShoes(isLogin: false, idShoes: idShoes), method: .get, parameters: nil)
-        } else {
-            apiService.requestNoToken(endpoint: .getDetailShoes(idShoes: idShoes), method: .get, parameters: nil)
-        }
+        apiService.request(endpoint: .getDetailShoes(idShoes: idShoes), method: .get, parameters: nil)
     }
 }

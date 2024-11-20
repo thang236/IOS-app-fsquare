@@ -32,7 +32,7 @@ enum AppApi {
 
     case getBrand
 
-    case getDetailShoes(isLogin: Bool = false, idShoes: String)
+    case getDetailShoes(idShoes: String)
     case getShoesClassification(idShoes: String)
     case getClassifications(idClassification: String)
     case getSizeClassification(idClassification: String)
@@ -92,6 +92,13 @@ enum AppApi {
                 return "\(AppApi.baseURL)/api/customer/v2/shoes"
             }
 
+        case let .getDetailShoes(idShoes):
+            if TokenManager.shared.getAccessToken() != nil {
+                return "\(AppApi.baseURL)/api/customer/v1/shoes/\(idShoes)"
+            } else {
+                return "\(AppApi.baseURL)/api/customer/v2/shoes/\(idShoes)"
+            }
+
         case .addFav:
             return "\(AppApi.baseURL)/api/customer/v1/favorites"
 
@@ -107,13 +114,6 @@ enum AppApi {
             return "\(AppApi.baseURL)/api/customer/v2/brands"
 
             // MARK: Endpoint Shoes Detail
-
-        case let .getDetailShoes(isLogin, idShoes):
-            if isLogin {
-                return "\(AppApi.baseURL)/api/customer/v1/shoes/\(idShoes)"
-            } else {
-                return "\(AppApi.baseURL)/api/customer/v2/shoes/\(idShoes)"
-            }
 
         case let .getClassifications(idClassification):
             return "\(AppApi.baseURL)/api/customer/v2/classifications/\(idClassification)"

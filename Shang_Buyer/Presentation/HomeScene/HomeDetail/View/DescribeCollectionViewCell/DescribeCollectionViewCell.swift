@@ -41,27 +41,22 @@ class DescribeCollectionViewCell: UICollectionViewCell {
         starImage5.showGradientSkeleton(delay: 0.25)
     }
 
-    private func setUpRatting(rattingNumber: Double) {
+    private func setUpRating(ratingNumber: Double) {
         let starImages = [starImage1, starImage2, starImage3, starImage4, starImage5]
 
-        for i in 0 ..< 5 {
-            starImages[i]?.hideSkeleton()
-            starImages[i]?.image = UIImage(systemName: "star")
+        let fullStars = Int(ratingNumber)
+        let halfStar = (ratingNumber - Double(fullStars)) >= 0.5 ? 1 : 0
+
+        for (index, starImage) in starImages.enumerated() {
+            starImage?.image = UIImage(systemName: "star")
+            if index < fullStars {
+                starImage?.image = UIImage(systemName: "star.fill")
+            } else if index == fullStars && halfStar == 1 {
+                starImage?.image = UIImage(systemName: "star.leadinghalf.fill")
+            }
         }
-
-        let fullStars = Int(rattingNumber)
-        let halfStar = (rattingNumber - Double(fullStars)) >= 0.5 ? 1 : 0
-
-        for i in 0 ..< fullStars {
-            starImages[i]?.image = UIImage(systemName: "star.fill")
-        }
-
-        if fullStars + halfStar <= 5 {
-            starImages[fullStars]?.image = halfStar == 1 ? UIImage(systemName: "star.leadinghalf.fill") : UIImage(systemName: "star.fill")
-        }
-
-        for i in (fullStars + halfStar) ..< 5 {
-            starImages[i]?.image = UIImage(systemName: "star")
+        for starImage in starImages {
+            starImage?.hideSkeleton()
         }
     }
 
@@ -75,7 +70,7 @@ class DescribeCollectionViewCell: UICollectionViewCell {
         titleLabel.text = shoesDetailData.name
         descriptionLbl.text = shoesDetailData.describe
 
-        setUpRatting(rattingNumber: shoesDetailData.rating)
+        setUpRating(ratingNumber: shoesDetailData.rating)
         rattingLbl.text = "\(shoesDetailData.rating)"
         soldLbl.text = "1000 Sold"
 
