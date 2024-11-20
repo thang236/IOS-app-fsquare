@@ -10,7 +10,7 @@ import Foundation
 
 protocol GetShoesUseCase {
     func execute(parameter: [String: Any]) -> AnyPublisher<ShoesResponse, Error>
-    func addFavoriteShoes(parameter: [String: Any]) -> AnyPublisher<FavoriteResponse, Error>
+    func addFavoriteShoes(parameter: [String: Any]) -> AnyPublisher<AddFavoriteResponse, Error>
     func removeFavoriteShoes(parameter: [String: Any]) -> AnyPublisher<FavoriteRemoveResponse, Error>
 }
 
@@ -25,7 +25,7 @@ class GetShoesUseCaseImpl: GetShoesUseCase {
         return shoesRepository.getShoes(parameters: parameter)
     }
 
-    func addFavoriteShoes(parameter: [String: Any]) -> AnyPublisher<FavoriteResponse, Error> {
+    func addFavoriteShoes(parameter: [String: Any]) -> AnyPublisher<AddFavoriteResponse, Error> {
         return shoesRepository.addFavoriteShoes(parameters: parameter)
     }
 

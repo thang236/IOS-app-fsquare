@@ -29,4 +29,10 @@ class HomeCoordinator: Coordinator {
         let shoesDetailVC = ShoeDetailViewController(shoesID: idShoes, viewModel: shoesDetailViewModel)
         navigationController.pushViewController(shoesDetailVC, animated: true)
     }
+
+    func goToFavorite() {
+        let favoriteViewModel = DIContainer.shared.resolveFavoriteViewModel()
+        let favoriteVC = FavoriteViewController(viewModel: favoriteViewModel)
+        navigationController.pushViewController(favoriteVC, animated: true)
+    }
 }

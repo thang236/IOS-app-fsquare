@@ -26,6 +26,23 @@ class HomeViewModel: ObservableObject {
     init(getShoesUseCase: GetShoesUseCase, getBrandUseCase: GetBrandUseCase) {
         self.getShoesUseCase = getShoesUseCase
         self.getBrandUseCase = getBrandUseCase
+        observeSharedData()
+    }
+
+    private func observeSharedData() {
+        SharedData.shared.$idShoesRemoveFav
+            .compactMap { $0 }
+            .sink { [weak self] idShoesRemoveFav in
+                guard let self = self else { return }
+                print("idShoesRemoveFav  ", idShoesRemoveFav)
+                for (index, shoes) in self.shoesResponse!.data.enumerated() {
+                    if shoes.id == idShoesRemoveFav {
+                        self.shoesResponse!.data[index].isFavorite = false
+                        self.shoesFavoriteID = idShoesRemoveFav
+                    }
+                }
+            }
+            .store(in: &cancellables)
     }
 
     func initDataSource() {
@@ -37,13 +54,13 @@ class HomeViewModel: ObservableObject {
     func toggleFav(shoes: ShoeData) {
         guard let isFav = shoes.isFavorite else { return }
         if isFav {
-            removeFAv(idShoes: shoes.id)
+            removeFAvHome(idShoes: shoes.id)
         } else {
-            addFAv(idShoes: shoes.id)
+            addFAvHome(idShoes: shoes.id)
         }
     }
 
-    private func removeFAv(idShoes: String) {
+    private func removeFAvHome(idShoes: String) {
         let parameter: [String: Any] = [
             "shoes": idShoes,
         ]
@@ -68,7 +85,7 @@ class HomeViewModel: ObservableObject {
             }).store(in: &cancellables)
     }
 
-    private func addFAv(idShoes: String) {
+    private func addFAvHome(idShoes: String) {
         let parameter: [String: Any] = [
             "shoes": idShoes,
         ]
@@ -177,4 +194,8 @@ class HomeViewModel: ObservableObject {
                 self.brands = brandResponse.data
             }).store(in: &cancellables)
     }
+
+//    func setubBinding() {
+//        favoriteViewModel.
+//    }
 }

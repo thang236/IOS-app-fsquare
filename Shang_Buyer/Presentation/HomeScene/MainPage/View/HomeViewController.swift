@@ -137,6 +137,16 @@ class HomeViewController: UIViewController {
         }
     }
 
+    override func viewWillDisappear(_: Bool) {
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .clear
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+            navigationController?.navigationBar.standardAppearance = appearance
+        }
+    }
+
     // MARK: - Setup layout
 
     private func setupNavigationBar() {
@@ -342,7 +352,9 @@ class HomeViewController: UIViewController {
 
     @objc func didTapSearchButton() {}
 
-    @objc func didTapFavorite() {}
+    @objc func didTapFavorite() {
+        coordinator?.goToFavorite()
+    }
 }
 
 extension HomeViewController: ProductCollectionViewCellDelegate {
