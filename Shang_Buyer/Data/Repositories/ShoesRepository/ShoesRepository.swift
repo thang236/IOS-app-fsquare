@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 protocol ShoesRepository {
-    func addFavoriteShoes(parameters: [String: Any]) -> AnyPublisher<FavoriteResponse, Error>
+    func addFavoriteShoes(parameters: [String: Any]) -> AnyPublisher<AddFavoriteResponse, Error>
     func getShoes(parameters: [String: Any]) -> AnyPublisher<ShoesResponse, Error>
     func removeFavoriteShoes(parameters: [String: Any]) -> AnyPublisher<FavoriteRemoveResponse, Error>
 }
@@ -21,7 +21,7 @@ class ShoesRepositoryImpl: ShoesRepository {
         self.apiService = apiService
     }
 
-    func addFavoriteShoes(parameters: [String: Any]) -> AnyPublisher<FavoriteResponse, Error> {
+    func addFavoriteShoes(parameters: [String: Any]) -> AnyPublisher<AddFavoriteResponse, Error> {
         apiService.request(endpoint: .addFav, method: .post, parameters: parameters)
     }
 

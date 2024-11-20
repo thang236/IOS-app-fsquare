@@ -148,6 +148,21 @@ final class DIContainer {
         return HomeViewModel(getShoesUseCase: getShoesUseCase, getBrandUseCase: getBrandUseCase)
     }
 
+    func resolveFavoriteRepository() -> FavoriteRepository {
+        let apiService = resolveAPIService()
+        return FavoriteRepositoryImpl(apiService: apiService)
+    }
+
+    func resolveFavoriteUseCase() -> FavoriteUseCase {
+        let favoriteRepo = resolveFavoriteRepository()
+        return FavoriteUseCaseImpl(favoriteRepository: favoriteRepo)
+    }
+
+    func resolveFavoriteViewModel() -> FavoriteViewModel {
+        let favoriteUseCase = resolveFavoriteUseCase()
+        return FavoriteViewModel(favoriteUseCase: favoriteUseCase)
+    }
+
     // MARK: Detail shoes
 
     func resolveShoesDetailRepository() -> ShoesDetailRepository {

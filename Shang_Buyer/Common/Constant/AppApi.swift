@@ -27,6 +27,8 @@ enum AppApi {
 
     case getShoes
     case addFav
+    case getFavorite
+    case removeFavorite(idFavorite: String)
 
     case getBrand
 
@@ -92,6 +94,12 @@ enum AppApi {
 
         case .addFav:
             return "\(AppApi.baseURL)/api/customer/v1/favorites"
+
+        case .getFavorite:
+            return "\(AppApi.baseURL)/api/customer/v1/favorites"
+
+        case let .removeFavorite(idFavorite):
+            return "\(AppApi.baseURL)/api/customer/v1/favorites/\(idFavorite)"
 
             // MARK: Endpoint brand
 
