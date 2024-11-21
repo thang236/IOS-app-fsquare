@@ -160,6 +160,9 @@
 		BFA057E52CB007AD00890399 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA057E32CB007AD00890399 /* EditProfileViewController.swift */; };
 		BFA057E62CB007AD00890399 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA057E42CB007AD00890399 /* EditProfileViewController.xib */; };
 		BFA057E82CB007BC00890399 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA057E72CB007BC00890399 /* EditProfileViewModel.swift */; };
+		BFA8BAF32CEF16640008CA6E /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8BAF12CEF16640008CA6E /* CartCollectionViewCell.swift */; };
+		BFA8BAF42CEF16640008CA6E /* CartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA8BAF22CEF16640008CA6E /* CartCollectionViewCell.xib */; };
+		BFA8BAF72CEF22310008CA6E /* BagResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8BAF62CEF22310008CA6E /* BagResponse.swift */; };
 		BFAF1D7E2CA6A0CA0085609C /* VerifyOTPUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF1D7D2CA6A0CA0085609C /* VerifyOTPUseCase.swift */; };
 		BFAF1D802CA6A18A0085609C /* VerifyOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF1D7F2CA6A18A0085609C /* VerifyOTPViewModel.swift */; };
 		BFAF1D832CA838AE0085609C /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF1D822CA838AE0085609C /* AuthResponse.swift */; };
@@ -362,6 +365,9 @@
 		BFA057E32CB007AD00890399 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		BFA057E42CB007AD00890399 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		BFA057E72CB007BC00890399 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		BFA8BAF12CEF16640008CA6E /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
+		BFA8BAF22CEF16640008CA6E /* CartCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCollectionViewCell.xib; sourceTree = "<group>"; };
+		BFA8BAF62CEF22310008CA6E /* BagResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagResponse.swift; sourceTree = "<group>"; };
 		BFAF1D7D2CA6A0CA0085609C /* VerifyOTPUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPUseCase.swift; sourceTree = "<group>"; };
 		BFAF1D7F2CA6A18A0085609C /* VerifyOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewModel.swift; sourceTree = "<group>"; };
 		BFAF1D822CA838AE0085609C /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
@@ -568,6 +574,7 @@
 		BF1E66622CAD247A001C48E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFA8BAF02CEF16470008CA6E /* CartCell */,
 				BF1E66642CAD248E001C48E9 /* CartViewController.swift */,
 				BF1E66652CAD248E001C48E9 /* CartViewController.xib */,
 			);
@@ -1308,9 +1315,27 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		BFA8BAF02CEF16470008CA6E /* CartCell */ = {
+			isa = PBXGroup;
+			children = (
+				BFA8BAF12CEF16640008CA6E /* CartCollectionViewCell.swift */,
+				BFA8BAF22CEF16640008CA6E /* CartCollectionViewCell.xib */,
+			);
+			path = CartCell;
+			sourceTree = "<group>";
+		};
+		BFA8BAF52CEF22260008CA6E /* Bag */ = {
+			isa = PBXGroup;
+			children = (
+				BFA8BAF62CEF22310008CA6E /* BagResponse.swift */,
+			);
+			path = Bag;
+			sourceTree = "<group>";
+		};
 		BFAF1D812CA838A00085609C /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				BFA8BAF52CEF22260008CA6E /* Bag */,
 				BF6841982CED1D5F008F9FD0 /* FavoriteResponse */,
 				BF47607E2CE0A22100207153 /* AddressResponse */,
 				BFD740B82CD902ED0041BD3F /* ShoesResponse */,
@@ -1588,6 +1613,7 @@
 				BFA057DF2CAFF3D100890399 /* ProfileTableViewCell.xib in Resources */,
 				BF5B323A2C92E3E20063CA29 /* LaunchScreen.storyboard in Resources */,
 				0925F3DE2CD3601600530A69 /* SizeCollectionViewCell.xib in Resources */,
+				BFA8BAF42CEF16640008CA6E /* CartCollectionViewCell.xib in Resources */,
 				BF18F3A42CB900FE00A975F9 /* BrandCollectionViewCell.xib in Resources */,
 				BF5D61942CE288A7006202D2 /* EditAddressViewController.xib in Resources */,
 				BF6841902CE7D2A5008F9FD0 /* LoadingCollectionReusableView.xib in Resources */,
@@ -1647,6 +1673,7 @@
 				BF25D03F2C97239400CB7EE8 /* Date+Extension.swift in Sources */,
 				BF4244F12C9D634F00F43C8B /* FullButton.swift in Sources */,
 				BF4760832CE0A2BF00207153 /* DistrictsResponse.swift in Sources */,
+				BFA8BAF32CEF16640008CA6E /* CartCollectionViewCell.swift in Sources */,
 				BF9F32712CB3C31E00530523 /* TabBarCoordinator.swift in Sources */,
 				BF25D0492C9821C400CB7EE8 /* MenuOption.swift in Sources */,
 				BF68418F2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.swift in Sources */,
@@ -1660,6 +1687,7 @@
 				BFEB4E292CAAB1310033F950 /* SuccessfullyRegisterViewController.swift in Sources */,
 				BF18F3982CB7B8DA00A975F9 /* HomeCoordinator.swift in Sources */,
 				09EF3A082CD8A75300B6FE02 /* CollectionViewHeaderReusableView.swift in Sources */,
+				BFA8BAF72CEF22310008CA6E /* BagResponse.swift in Sources */,
 				BF1E666D2CAD2DAE001C48E9 /* MyOrderViewController.swift in Sources */,
 				BF4244F72CA15A4600F43C8B /* LightButton.swift in Sources */,
 				BFA057E52CB007AD00890399 /* EditProfileViewController.swift in Sources */,

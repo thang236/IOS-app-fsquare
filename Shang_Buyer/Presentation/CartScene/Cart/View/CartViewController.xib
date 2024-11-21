@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartViewController" customModule="Shang_Buyer" customModuleProvider="target">
             <connections>
+                <outlet property="checkOutButton" destination="uEf-6K-cU4" id="Y0H-k9-oVi"/>
+                <outlet property="collectionView" destination="oZc-rp-bba" id="FOR-IA-sjR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,14 +19,53 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oZc-rp-bba">
+                    <rect key="frame" x="0.0" y="59" width="393" height="677"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="owY-lY-hmi">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxp-wj-tCf">
+                    <rect key="frame" x="0.0" y="736" width="393" height="82"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEf-6K-cU4" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="16" y="24.000000000000004" width="361" height="34.333333333333343"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" imagePlacement="trailing" title="Check out"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="uEf-6K-cU4" secondAttribute="trailing" constant="16" id="6gy-ec-MSH"/>
+                        <constraint firstItem="uEf-6K-cU4" firstAttribute="leading" secondItem="qxp-wj-tCf" secondAttribute="leading" constant="16" id="9AZ-fM-FK4"/>
+                        <constraint firstAttribute="height" constant="82" id="o8h-ft-z13"/>
+                        <constraint firstItem="uEf-6K-cU4" firstAttribute="centerY" secondItem="qxp-wj-tCf" secondAttribute="centerY" id="sTf-Rb-yQo"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBlueColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qxp-wj-tCf" firstAttribute="top" secondItem="oZc-rp-bba" secondAttribute="bottom" id="0S3-Dx-TX4"/>
+                <constraint firstItem="oZc-rp-bba" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GTb-x8-cNA"/>
+                <constraint firstItem="oZc-rp-bba" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="LYS-1I-Fo7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qxp-wj-tCf" secondAttribute="bottom" id="XFM-fH-Q4V"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qxp-wj-tCf" secondAttribute="trailing" id="ZPv-tu-PCu"/>
+                <constraint firstItem="qxp-wj-tCf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="h86-RX-NeB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oZc-rp-bba" secondAttribute="trailing" id="nvL-ZO-Hjh"/>
+            </constraints>
             <point key="canvasLocation" x="140" y="20"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="arrow.right" catalog="system" width="128" height="95"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

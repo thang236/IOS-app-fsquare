@@ -68,6 +68,9 @@ class StepperView: UIView {
         decrementButton.addTarget(self, action: #selector(decrementValue), for: .touchUpInside)
         incrementButton.addTarget(self, action: #selector(incrementValue), for: .touchUpInside)
     }
+    func getValue() -> Int {
+        return value
+    }
 
     @objc private func decrementValue() {
         if value > 0 {
