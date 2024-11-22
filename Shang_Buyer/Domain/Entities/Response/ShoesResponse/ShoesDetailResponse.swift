@@ -21,6 +21,7 @@ struct ShoesDetailData: Codable, Hashable {
     let reviewCount: Int
     let isFavorite: Bool?
     let thumbnail: Thumbnail
+    let sales: Int
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -36,6 +37,7 @@ struct ShoesDetailData: Codable, Hashable {
         case reviewCount
         case isFavorite
         case thumbnail
+        case sales
     }
 
     func hash(into hasher: inout Hasher) {

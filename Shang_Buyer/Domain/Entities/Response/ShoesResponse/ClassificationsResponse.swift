@@ -10,9 +10,15 @@ import Foundation
 struct ClassificationsData: Codable {
     let id: String
     let images: [Thumbnail]
+    let color: String
+    let country: String
+    let price: Double
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case images
+        case color
+        case country
+        case price
     }
 }
 
@@ -21,7 +27,4 @@ struct ClassificationsResponse: Codable {
     let message: String
     let data: ClassificationsData
     let videos: Thumbnail?
-    let color: String
-    let country: String
-    let price: Double
 }

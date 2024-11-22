@@ -13,6 +13,9 @@
                 <outlet property="BottomView" destination="UOu-hy-4IF" id="6xq-IT-GyZ"/>
                 <outlet property="collectionView" destination="Ok4-wZ-DCF" id="k06-5A-4nU"/>
                 <outlet property="priceLbl" destination="t0V-0O-1Dd" id="Vmw-L0-kbo"/>
+                <outlet property="quantityLabel" destination="WLz-8f-5Ec" id="D90-w3-3Se"/>
+                <outlet property="quantityStackView" destination="o2y-KK-GDE" id="Kp2-8j-D0j"/>
+                <outlet property="stepperView" destination="QXT-kH-tWk" id="8e4-3b-1Bf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ok4-wZ-DCF">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="718"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="683.66666666666663"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tav-0m-Z1e">
                         <size key="itemSize" width="128" height="128"/>
@@ -32,28 +35,52 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOu-hy-4IF">
-                    <rect key="frame" x="0.0" y="718" width="393" height="100"/>
+                    <rect key="frame" x="0.0" y="683.66666666666663" width="393" height="134.33333333333337"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukn-nB-TZl" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
-                            <rect key="frame" x="219.66666666666663" y="31" width="157.33333333333337" height="38"/>
+                            <rect key="frame" x="16" y="90.333333333333371" width="361" height="44"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="bagFill" title="Add to Cart " imagePadding="10"/>
                             <connections>
                                 <action selector="didTapAddToCart:" destination="-1" eventType="touchUpInside" id="clb-Qo-E5W"/>
                             </connections>
                         </button>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MFT-3S-zJE">
-                            <rect key="frame" x="20" y="21" width="157.33333333333334" height="58"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MFT-3S-zJE">
+                            <rect key="frame" x="16" y="19.333333333333371" width="131.66666666666666" height="56"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjL-eQ-jUK" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="157.33333333333334" height="19.333333333333332"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Giá:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjL-eQ-jUK" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="131.66666666666666" height="19.333333333333332"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0V-0O-1Dd" customClass="HeadingLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="29.333333333333371" width="157.33333333333334" height="28.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="27.333333333333371" width="131.66666666666666" height="28.666666666666671"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXT-kH-tWk" customClass="StepperView" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="259" y="35.333333333333371" width="118" height="40"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="YDL-EX-BPY"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o2y-KK-GDE">
+                            <rect key="frame" x="270.33333333333331" y="7.9999999999999982" width="95.666666666666686" height="19.333333333333329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="số lượng :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lz-rE-dW8">
+                                    <rect key="frame" x="0.0" y="0.0" width="70.666666666666671" height="19.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLz-8f-5Ec">
+                                    <rect key="frame" x="78.666666666666686" y="0.0" width="17" height="19.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -62,14 +89,17 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="Ukn-nB-TZl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MFT-3S-zJE" secondAttribute="trailing" constant="8" symbolic="YES" id="0yK-mP-pXe"/>
-                        <constraint firstAttribute="trailing" secondItem="Ukn-nB-TZl" secondAttribute="trailing" constant="16" id="BMr-jO-48J"/>
-                        <constraint firstAttribute="height" constant="100" id="QwL-PT-ZHH"/>
-                        <constraint firstItem="MFT-3S-zJE" firstAttribute="leading" secondItem="UOu-hy-4IF" secondAttribute="leading" constant="20" id="TpZ-oD-hVe"/>
-                        <constraint firstItem="MFT-3S-zJE" firstAttribute="centerY" secondItem="Ukn-nB-TZl" secondAttribute="centerY" id="V5H-MC-Ltu"/>
-                        <constraint firstItem="MFT-3S-zJE" firstAttribute="centerY" secondItem="UOu-hy-4IF" secondAttribute="centerY" id="ZpY-PN-yXm"/>
-                        <constraint firstItem="MFT-3S-zJE" firstAttribute="width" secondItem="UOu-hy-4IF" secondAttribute="width" multiplier="0.4" id="wNC-0u-zOn"/>
-                        <constraint firstItem="Ukn-nB-TZl" firstAttribute="width" secondItem="MFT-3S-zJE" secondAttribute="width" multiplier="1:1" id="yeT-4Q-fKg"/>
+                        <constraint firstItem="MFT-3S-zJE" firstAttribute="leading" secondItem="Ukn-nB-TZl" secondAttribute="leading" id="0vg-SO-TC3"/>
+                        <constraint firstItem="QXT-kH-tWk" firstAttribute="trailing" secondItem="Ukn-nB-TZl" secondAttribute="trailing" id="5wi-5C-ZmS"/>
+                        <constraint firstAttribute="trailing" secondItem="Ukn-nB-TZl" secondAttribute="trailing" constant="16" id="72B-Lz-AEx"/>
+                        <constraint firstItem="o2y-KK-GDE" firstAttribute="centerX" secondItem="QXT-kH-tWk" secondAttribute="centerX" id="BrQ-HG-VLY"/>
+                        <constraint firstItem="Ukn-nB-TZl" firstAttribute="top" secondItem="QXT-kH-tWk" secondAttribute="bottom" constant="15" id="M49-c0-neb"/>
+                        <constraint firstItem="QXT-kH-tWk" firstAttribute="width" secondItem="UOu-hy-4IF" secondAttribute="width" multiplier="3:10" id="WQH-CT-cCU"/>
+                        <constraint firstAttribute="bottom" secondItem="Ukn-nB-TZl" secondAttribute="bottom" id="aQi-oR-dfU"/>
+                        <constraint firstItem="Ukn-nB-TZl" firstAttribute="leading" secondItem="UOu-hy-4IF" secondAttribute="leading" constant="16" id="bD9-QS-qfl"/>
+                        <constraint firstItem="Ukn-nB-TZl" firstAttribute="top" secondItem="MFT-3S-zJE" secondAttribute="bottom" constant="15" id="fnQ-87-GEO"/>
+                        <constraint firstItem="QXT-kH-tWk" firstAttribute="top" secondItem="o2y-KK-GDE" secondAttribute="bottom" constant="8" id="hje-AP-EEE"/>
+                        <constraint firstItem="o2y-KK-GDE" firstAttribute="top" secondItem="UOu-hy-4IF" secondAttribute="top" constant="8" id="l0s-ha-r5o"/>
                     </constraints>
                 </view>
             </subviews>
@@ -87,6 +117,14 @@
             <point key="canvasLocation" x="26.717557251908396" y="20.422535211267608"/>
         </view>
     </objects>
+    <designables>
+        <designable name="Ukn-nB-TZl">
+            <size key="intrinsicContentSize" width="361" height="44"/>
+        </designable>
+        <designable name="pjL-eQ-jUK">
+            <size key="intrinsicContentSize" width="28.333333333333332" height="19.333333333333332"/>
+        </designable>
+    </designables>
     <resources>
         <image name="bagFill" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">

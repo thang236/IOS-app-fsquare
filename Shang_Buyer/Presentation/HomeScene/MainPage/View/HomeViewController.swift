@@ -354,7 +354,7 @@ class HomeViewController: UIViewController {
 
     @objc func didTapFavorite() {
         if TokenManager.shared.getAccessToken() == nil {
-            self.showToast(message: "Please login to view favorite", chooseImageToast: .warning)
+            showToast(message: "Please login to view favorite", chooseImageToast: .warning)
         } else {
             coordinator?.goToFavorite()
         }

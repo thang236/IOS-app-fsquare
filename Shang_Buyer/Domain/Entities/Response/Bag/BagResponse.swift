@@ -15,7 +15,7 @@ struct BagData: Codable {
     let size: String
     let quantity: Int
     let price: Double
-    
+
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case shoes

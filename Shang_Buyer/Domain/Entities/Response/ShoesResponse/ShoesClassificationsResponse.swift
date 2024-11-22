@@ -10,9 +10,11 @@ import Foundation
 struct ShoesClassificationsData: Codable, Hashable {
     let id: String
     let thumbnail: Thumbnail
+    let color: String
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case thumbnail
+        case color
     }
 
     static func == (lhs: ShoesClassificationsData, rhs: ShoesClassificationsData) -> Bool {

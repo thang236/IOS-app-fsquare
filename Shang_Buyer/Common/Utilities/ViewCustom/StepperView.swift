@@ -8,12 +8,18 @@
 import Foundation
 import UIKit
 
+protocol StepperViewDelegate: AnyObject {
+    func showToast(message: String)
+}
+
 @IBDesignable
 class StepperView: UIView {
+    var delegate: StepperViewDelegate?
     private let decrementButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("-", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 24, weight: .bold)
+        button.setTitleColor(.neutralUltraDark, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 24, weight: .regular)
         button.backgroundColor = .backgroundMedium
         return button
     }()
@@ -21,15 +27,16 @@ class StepperView: UIView {
     private let incrementButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("+", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 24, weight: .bold)
+        button.setTitleColor(.neutralUltraDark, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 24, weight: .regular)
         button.backgroundColor = .backgroundMedium
         return button
     }()
 
     private let valueLabel: UILabel = {
         let label = UILabel()
-        label.text = "0"
-        label.font = .systemFont(ofSize: 20)
+        label.text = "1"
+        label.font = .interItalicVariableFont(fontWeight: .semibold, size: 22)
         label.textAlignment = .center
         return label
     }()
@@ -39,6 +46,8 @@ class StepperView: UIView {
             valueLabel.text = "\(value)"
         }
     }
+
+    private var maxValue: Int? = nil
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,6 +64,7 @@ class StepperView: UIView {
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .equalSpacing
+        stackView.spacing = 8
 
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,22 +73,47 @@ class StepperView: UIView {
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+
+            decrementButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8),
+            decrementButton.widthAnchor.constraint(equalTo: decrementButton.heightAnchor),
+
+            incrementButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8),
+            incrementButton.widthAnchor.constraint(equalTo: incrementButton.heightAnchor),
         ])
 
         decrementButton.addTarget(self, action: #selector(decrementValue), for: .touchUpInside)
         incrementButton.addTarget(self, action: #selector(incrementValue), for: .touchUpInside)
     }
+
     func getValue() -> Int {
         return value
     }
 
     @objc private func decrementValue() {
-        if value > 0 {
+        if value > 1 {
             value -= 1
         }
     }
 
+    func setMaxValue(maxValue: Int) {
+        self.maxValue = maxValue
+    }
+
     @objc private func incrementValue() {
+        guard let maxValue = maxValue else {
+            value += 1
+            return
+        }
+
+        if value >= maxValue {
+            if maxValue == 1 {
+                delegate?.showToast(message: "hãy chọn size trước khi chọn số lượng")
+            } else {
+                delegate?.showToast(message: "số lượng mua không thể vượt qua số lượng hiện có")
+            }
+            return
+        }
+
         value += 1
     }
 }

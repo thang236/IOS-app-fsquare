@@ -8,30 +8,29 @@
 import UIKit
 
 class CartCollectionViewCell: UICollectionViewCell {
-    @IBOutlet private weak var priceLabel: BodyLabel!
-    @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var nameLabel: BodyLabel!
-    @IBOutlet private weak var sizeLabel: BodyLabel!
-    @IBOutlet private weak var colorLabel: BodyLabel!
-    @IBOutlet private weak var colorView: UIView!
-    @IBOutlet weak var stepperView: StepperView!
+    @IBOutlet private var priceLabel: BodyLabel!
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var nameLabel: BodyLabel!
+    @IBOutlet private var sizeLabel: BodyLabel!
+    @IBOutlet private var colorLabel: BodyLabel!
+    @IBOutlet private var colorView: UIView!
+    @IBOutlet var stepperView: StepperView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        colorView.layer.cornerRadius = colorView.frame.width/2
+        colorView.layer.cornerRadius = colorView.frame.width / 2
         colorView.layer.masksToBounds = true
-        
+
         priceLabel.isSkeletonable = true
         imageView.isSkeletonable = true
         nameLabel.isSkeletonable = true
         sizeLabel.isSkeletonable = true
         colorLabel.isSkeletonable = true
         colorView.isSkeletonable = true
-        
-        contentView.showAnimatedSkeleton()
 
+        contentView.showAnimatedSkeleton()
     }
-    
+
     func setupCell(bag: BagData) {
         priceLabel.text = "\(bag.price)"
         nameLabel.text = bag.shoes
@@ -41,5 +40,4 @@ class CartCollectionViewCell: UICollectionViewCell {
             imageView.loadImageWithShimmer(url: url)
         }
     }
-
 }
