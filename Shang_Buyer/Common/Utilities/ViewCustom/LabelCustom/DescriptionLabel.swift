@@ -20,7 +20,7 @@ class DescriptionLabel: UILabel {
     }
 
     private func setupStyle() {
-        if let interFont = UIFont.interItalicVariableFont(fontWeight: .medium, size: font.pointSize) {
+        if let interFont = UIFont.interItalicVariableFont(fontWeight: .regular, size: font.pointSize) {
             font = interFont.withWeight(400)
         } else {
             font = UIFont.systemFont(ofSize: font.pointSize, weight: .semibold)

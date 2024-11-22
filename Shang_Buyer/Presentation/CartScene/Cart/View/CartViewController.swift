@@ -1,0 +1,18 @@
+//
+//  CartViewController.swift
+//  Shang_Buyer
+//
+//  Created by Louis Macbook on 02/10/2024.
+//
+
+import UIKit
+
+class CartViewController: UIViewController {
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var checkOutButton: FullButton!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+}

@@ -1,0 +1,201 @@
+//
+//  HomeViewModel.swift
+//  Shang_Buyer
+//
+//  Created by Louis Macbook on 10/10/2024.
+//
+
+import Combine
+import Foundation
+
+class HomeViewModel: ObservableObject {
+    @Published var shoesResponse: ShoesResponse? = nil
+    @Published var errorMessage: String? = nil
+    @Published var successMessage: String? = nil
+    @Published var brands: [BrandItem] = []
+    @Published var brandLoading: Bool = true
+    @Published var shoesLoading: Bool = true
+    @Published var shoesFavoriteID: String? = nil
+    @Published var hasNextPage: Bool = false
+    @Published var page: Int = 1
+    var cancellables = Set<AnyCancellable>()
+
+    let getShoesUseCase: GetShoesUseCase
+    let getBrandUseCase: GetBrandUseCase
+
+    init(getShoesUseCase: GetShoesUseCase, getBrandUseCase: GetBrandUseCase) {
+        self.getShoesUseCase = getShoesUseCase
+        self.getBrandUseCase = getBrandUseCase
+        observeSharedData()
+    }
+
+    private func observeSharedData() {
+        SharedData.shared.$idShoesRemoveFav
+            .compactMap { $0 }
+            .sink { [weak self] idShoesRemoveFav in
+                guard let self = self else { return }
+                print("idShoesRemoveFav  ", idShoesRemoveFav)
+                for (index, shoes) in self.shoesResponse!.data.enumerated() {
+                    if shoes.id == idShoesRemoveFav {
+                        self.shoesResponse!.data[index].isFavorite = false
+                        self.shoesFavoriteID = idShoesRemoveFav
+                    }
+                }
+            }
+            .store(in: &cancellables)
+    }
+
+    func initDataSource() {
+        page = 1
+        getShoes(page: page)
+        getBrand()
+    }
+
+    func toggleFav(shoes: ShoeData) {
+        guard let isFav = shoes.isFavorite else { return }
+        if isFav {
+            removeFAvHome(idShoes: shoes.id)
+        } else {
+            addFAvHome(idShoes: shoes.id)
+        }
+    }
+
+    private func removeFAvHome(idShoes: String) {
+        let parameter: [String: Any] = [
+            "shoes": idShoes,
+        ]
+        getShoesUseCase.removeFavoriteShoes(parameter: parameter)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    self.successMessage = "Success remove favorite shoes"
+                case let .failure(failure):
+                    print("ErrorremoveFavoriteShoes: \(failure.localizedDescription)")
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { favoriteResponse in
+                if favoriteResponse.status == HTTPStatus.success.message {
+                    for (index, shoes) in self.shoesResponse!.data.enumerated() {
+                        if shoes.id == idShoes {
+                            self.shoesResponse!.data[index].isFavorite = false
+                            self.shoesFavoriteID = idShoes
+                        }
+                    }
+                } else { self.errorMessage = "\(favoriteResponse.status): \(favoriteResponse.message)" }
+            }).store(in: &cancellables)
+    }
+
+    private func addFAvHome(idShoes: String) {
+        let parameter: [String: Any] = [
+            "shoes": idShoes,
+        ]
+        getShoesUseCase.addFavoriteShoes(parameter: parameter)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    self.successMessage = "Success add favorite shoes"
+                case let .failure(failure):
+                    print("Error addFavoriteShoes: \(failure.localizedDescription)")
+
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { favoriteResponse in
+                if favoriteResponse.status == HTTPStatus.created.message {
+                    for (index, shoes) in self.shoesResponse!.data.enumerated() {
+                        if shoes.id == idShoes {
+                            self.shoesResponse!.data[index].isFavorite = true
+                            self.shoesFavoriteID = idShoes
+                        }
+                    }
+                } else { self.errorMessage = "\(favoriteResponse.status): \(favoriteResponse.message)" }
+            }).store(in: &cancellables)
+    }
+
+    func getMoreShoes() {
+        let parameter: [String: Any] = [
+            "size": 3,
+            "page": page,
+            "search": "",
+            "brand": "",
+            "category": "",
+        ]
+        getShoesUseCase.execute(parameter: parameter)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { shoesResponse in
+                if shoesResponse.status == HTTPStatus.success.message {
+                    self.shoesResponse?.data.append(contentsOf: shoesResponse.data)
+                    if shoesResponse.options.hasNextPage {
+                        self.page += 1
+                        self.hasNextPage = true
+                    } else {
+                        self.hasNextPage = false
+                    }
+                    self.shoesLoading = false
+
+                } else {
+                    self.errorMessage = "\(shoesResponse.status): \(shoesResponse.message)"
+                }
+            }).store(in: &cancellables)
+    }
+
+    func getShoes(page: Int) {
+        let parameter: [String: Any] = [
+            "size": 3,
+            "page": page,
+            "search": "",
+            "brand": "",
+            "category": "",
+        ]
+        getShoesUseCase.execute(parameter: parameter)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    self.shoesLoading = false
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { shoesResponse in
+                if shoesResponse.status == HTTPStatus.success.message {
+                    self.shoesResponse = shoesResponse
+                    if shoesResponse.options.hasNextPage {
+                        self.page += 1
+                        self.hasNextPage = true
+                    } else {
+                        self.hasNextPage = false
+                    }
+                } else {
+                    self.errorMessage = "\(shoesResponse.status): \(shoesResponse.message)"
+                }
+            }).store(in: &cancellables)
+    }
+
+    func getBrand() {
+        let parameter: [String: Any] = [
+            "size": 7,
+            "page": 1,
+            "search": "",
+        ]
+        getBrandUseCase.execute(parameter: parameter)
+            .sink(receiveCompletion: { result in
+                switch result {
+                case .finished:
+                    self.brandLoading = false
+                case let .failure(failure):
+                    print("Error getBrand: \(failure.localizedDescription)")
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { brandResponse in
+                self.brands = brandResponse.data
+            }).store(in: &cancellables)
+    }
+
+//    func setubBinding() {
+//        favoriteViewModel.
+//    }
+}
