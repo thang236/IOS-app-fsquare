@@ -178,7 +178,7 @@ class ShoeDetailViewController: UIViewController {
                         [.describe(shoesDetailData: shoesDetail.data)], toSection: .describe
                     )
                     snapshot.appendItems([.description(description: shoesDetail.data.description)], toSection: .description)
-                    self.priceLbl.text = "$\(shoesDetail.data.minPrice)"
+                    self.priceLbl.text = "₫ \(shoesDetail.data.minPrice)"
                     self.dataSource.apply(snapshot, animatingDifferences: false)
                 }
             }.store(in: &cancellables)

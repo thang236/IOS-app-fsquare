@@ -30,7 +30,7 @@ enum HomeCollectionType: String, CaseIterable, Hashable {
 
 enum HomeCollectionContentCell: Hashable {
     case popular(id: String, title: String, price: Double)
-    case brand(id: String, url: String, nameBrand: String)
+    case brand(id: String, url: String?, nameBrand: String)
     case shoes(shoes: ShoeData)
     case banner
 }
@@ -207,7 +207,7 @@ class HomeViewController: UIViewController {
             .sink { [weak self] brands in
                 guard let wSelf = self else { return }
                 var snapshot = wSelf.dataSource.snapshot()
-                snapshot.appendItems(brands.map { HomeCollectionContentCell.brand(id: $0.id, url: $0.thumbnail.url, nameBrand: $0.name) }, toSection: .brand)
+                snapshot.appendItems(brands.map { HomeCollectionContentCell.brand(id: $0.id, url: $0.thumbnail?.url, nameBrand: $0.name) }, toSection: .brand)
                 wSelf.dataSource.apply(snapshot, animatingDifferences: false)
             }.store(in: &viewModel.cancellables)
 

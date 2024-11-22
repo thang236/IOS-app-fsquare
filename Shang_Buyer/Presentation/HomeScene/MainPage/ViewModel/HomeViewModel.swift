@@ -47,8 +47,7 @@ class HomeViewModel: ObservableObject {
 
     func initDataSource() {
         page = 1
-        getShoes(page: page)
-        getBrand()
+        fetchShoesAndBrands(page: page)
     }
 
     func toggleFav(shoes: ShoeData) {
@@ -194,8 +193,54 @@ class HomeViewModel: ObservableObject {
                 self.brands = brandResponse.data
             }).store(in: &cancellables)
     }
+    
+    func fetchShoesAndBrands(page: Int) {
+        let shoesParameter: [String: Any] = [
+            "size": 3,
+            "page": page,
+            "search": "",
+            "brand": "",
+            "category": "",
+        ]
 
-//    func setubBinding() {
-//        favoriteViewModel.
-//    }
+        let brandParameter: [String: Any] = [
+            "size": 7,
+            "page": 1,
+            "search": "",
+        ]
+
+        let shoesPublisher = getShoesUseCase.execute(parameter: shoesParameter)
+        let brandPublisher = getBrandUseCase.execute(parameter: brandParameter)
+
+        // Combine cả hai publishers
+        Publishers.CombineLatest(shoesPublisher, brandPublisher)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    self.shoesLoading = false
+                    self.brandLoading = false
+                case let .failure(error):
+                    self.errorMessage = error.localizedDescription
+                }
+            }, receiveValue: { shoesResponse, brandResponse in
+                // Xử lý kết quả từ cả hai API
+                if shoesResponse.status == HTTPStatus.success.message {
+                    self.shoesResponse = shoesResponse
+                    if shoesResponse.options.hasNextPage {
+                        self.page += 1
+                        self.hasNextPage = true
+                    } else {
+                        self.hasNextPage = false
+                    }
+                } else {
+                    self.errorMessage = "\(shoesResponse.status): \(shoesResponse.message)"
+                }
+
+                self.brands = brandResponse.data
+            }).store(in: &cancellables)
+    }
+
+
+
 }
