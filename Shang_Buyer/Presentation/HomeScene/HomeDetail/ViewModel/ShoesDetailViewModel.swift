@@ -16,18 +16,29 @@ class ShoesDetailViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var idShoes: String? = nil
     @Published var shoesClassification: ShoesClassificationsResponse? = nil
+    @Published var classifications: ClassificationsResponse? = nil
+    @Published var sizesClassification: SizesClassificationResponse? = nil
+    @Published var quantity: Int? = nil
+    @Published var idSize: String? = nil
+    @Published var addBagResponse: AddBagResponse? = nil
     var cancellables = Set<AnyCancellable>()
 
     // MARK: - UseCase
 
     private let getShoesDetailUseCase: GetShoesDetailUseCase
     private let getShoesClassificationUseCase: GetShoesClassificationUseCase
+    private let getClassificationsUseCase: GetClassificationsUseCase
+    private let getSizeClassificationUseCase: GetSizeClassificationUseCase
+    private let addBagUseCase: AddBagUseCase
 
     // MARK: - Init
 
-    init(getShoesDetailUseCase: GetShoesDetailUseCase, getShoesClassificationUseCase: GetShoesClassificationUseCase) {
+    init(getShoesDetailUseCase: GetShoesDetailUseCase, getShoesClassificationUseCase: GetShoesClassificationUseCase, getClassificationsUseCase: GetClassificationsUseCase, getSizeClassificationUseCase: GetSizeClassificationUseCase, addBagUseCase: AddBagUseCase) {
         self.getShoesDetailUseCase = getShoesDetailUseCase
         self.getShoesClassificationUseCase = getShoesClassificationUseCase
+        self.getSizeClassificationUseCase = getSizeClassificationUseCase
+        self.getClassificationsUseCase = getClassificationsUseCase
+        self.addBagUseCase = addBagUseCase
     }
 
     // MARK: - Function
@@ -79,6 +90,54 @@ class ShoesDetailViewModel: ObservableObject {
             }, receiveValue: { shoesClassification in
                 self.isLoading = false
                 self.shoesClassification = shoesClassification
+            }).store(in: &cancellables)
+    }
+
+    func getClassificationAndSize(idClassification: String) {
+        isLoading = true
+
+        let classificationsPublisher = getClassificationsUseCase.execute(idClassification: idClassification)
+        let sizesClassificationPublisher = getSizeClassificationUseCase.execute(idClassification: idClassification)
+
+        Publishers.Zip(classificationsPublisher, sizesClassificationPublisher)
+            .sink(receiveCompletion: { completion in
+                self.isLoading = false
+                switch completion {
+                case .finished:
+                    break
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                    print("Error fetchData: \(self.errorMessage)")
+                }
+            }, receiveValue: { classifications, sizesClassification in
+                self.classifications = classifications
+                self.sizesClassification = sizesClassification
+            })
+            .store(in: &cancellables)
+    }
+
+    func addToBag(quantity: Int) {
+        guard let idSize = idSize else {
+            errorMessage = "Something is wrong"
+            return
+        }
+        let parameter: [String: Any] = [
+            "size": idSize,
+            "quantity": quantity,
+        ]
+        addBagUseCase.execute(parameter: parameter)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                    print("Error addBagUseCase: \(self.errorMessage)")
+                }
+            }, receiveValue: { response in
+                self.addBagResponse = response
+                print("Success addBagUseCase")
             }).store(in: &cancellables)
     }
 }

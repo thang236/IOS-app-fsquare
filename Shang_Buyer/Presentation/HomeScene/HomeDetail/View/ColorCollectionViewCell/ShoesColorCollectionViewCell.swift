@@ -8,8 +8,28 @@
 import UIKit
 
 class ShoesColorCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var backgroundLayout: UIView!
+    @IBOutlet var colorLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+
+    func setupCell(titleButton: String) {
+        colorLabel.text = titleButton
+    }
+
+    func setChooseCell() {
+        backgroundLayout.backgroundColor = .primaryDark
+        colorLabel.textColor = .white
+    }
+
+    func setUnChooseCell() {
+        backgroundLayout.backgroundColor = .clear
+        colorLabel.textColor = .primaryDark
     }
 }

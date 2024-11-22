@@ -185,9 +185,42 @@ final class DIContainer {
         return GetShoesClassificationUseCaseImpl(shoesClassificationRepository: shoesClassificationRepo)
     }
 
+    func resolveClassificationsRepository() -> ClassificationRepository {
+        let apiService = resolveAPIService()
+        return ClassificationRepositoryImpl(apiService: apiService)
+    }
+
+    func resolveGetClassificationsUseCase() -> GetClassificationsUseCase {
+        let classificationRepo = resolveClassificationsRepository()
+        return GetClassificationsUseCaseImpl(classificationRepository: classificationRepo)
+    }
+
+    func resolveSizeClassificationRepository() -> SizeClassificationRepositoryImpl {
+        let apiService = resolveAPIService()
+        return SizeClassificationRepositoryImpl(apiService: apiService)
+    }
+
+    func resolveGetSizeClassificationUseCase() -> GetSizeClassificationUseCase {
+        let sizeClassificationRepo = resolveSizeClassificationRepository()
+        return GetSizeClassificationUsecaseImpl(sizesClassificationRepository: sizeClassificationRepo)
+    }
+
+    func resolveAddBagRepository() -> AddBagRepository {
+        let apiService = resolveAPIService()
+        return AddBagRepositoryImpl(apiService: apiService)
+    }
+
+    func resolveAddBagUseCase() -> AddBagUseCase {
+        let addBagRepo = resolveAddBagRepository()
+        return AddBagUseCaseImpl(addBagRepository: addBagRepo)
+    }
+
     func resolveShoesDetailViewModel() -> ShoesDetailViewModel {
         let getShoesDetailUseCase = resolveGetShoesDetailUseCase()
         let getShoesClassificationUseCase = resolveGetShoesClassificationUseCase()
-        return ShoesDetailViewModel(getShoesDetailUseCase: getShoesDetailUseCase, getShoesClassificationUseCase: getShoesClassificationUseCase)
+        let getClassificationUseCase = resolveGetClassificationsUseCase()
+        let getSizeClassificationUseCase = resolveGetSizeClassificationUseCase()
+        let addBagUseCase = resolveAddBagUseCase()
+        return ShoesDetailViewModel(getShoesDetailUseCase: getShoesDetailUseCase, getShoesClassificationUseCase: getShoesClassificationUseCase, getClassificationsUseCase: getClassificationUseCase, getSizeClassificationUseCase: getSizeClassificationUseCase, addBagUseCase: addBagUseCase)
     }
 }

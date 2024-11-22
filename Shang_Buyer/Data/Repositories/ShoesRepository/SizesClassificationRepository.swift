@@ -20,10 +20,6 @@ class SizeClassificationRepositoryImpl: SizesClassificationRepository {
     }
 
     func getShoesSize(idClassification: String) -> AnyPublisher<SizesClassificationResponse, Error> {
-        if TokenManager.shared.getAccessToken() != nil || TokenManager.shared.getAccessToken() != "" {
-            apiService.request(endpoint: .getSizeClassification(idClassification: idClassification), method: .get, parameters: nil)
-        } else {
-            apiService.requestNoToken(endpoint: .getSizeClassification(idClassification: idClassification), method: .get, parameters: nil)
-        }
+        apiService.request(endpoint: .getSizeClassification(idClassification: idClassification), method: .get, parameters: nil)
     }
 }

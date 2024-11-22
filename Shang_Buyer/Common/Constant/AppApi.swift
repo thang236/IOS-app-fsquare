@@ -36,7 +36,8 @@ enum AppApi {
     case getShoesClassification(idShoes: String)
     case getClassifications(idClassification: String)
     case getSizeClassification(idClassification: String)
-    case getSize(idSize: String)
+    case bag
+    case bagRemove(idBag: String)
 
     var url: String {
         switch self {
@@ -116,16 +117,27 @@ enum AppApi {
             // MARK: Endpoint Shoes Detail
 
         case let .getClassifications(idClassification):
-            return "\(AppApi.baseURL)/api/customer/v2/classifications/\(idClassification)"
+            if TokenManager.shared.getAccessToken() != nil {
+                return "\(AppApi.baseURL)/api/customer/v1/classifications/\(idClassification)"
+            } else {
+                return "\(AppApi.baseURL)/api/customer/v2/classifications/\(idClassification)"
+            }
 
         case let .getShoesClassification(idShoes):
             return "\(AppApi.baseURL)/api/customer/v2/classifications/shoes/\(idShoes)"
 
         case let .getSizeClassification(idClassification):
-            return "\(AppApi.baseURL)/api/customer/v2/sizes/classifications/{id}/\(idClassification)"
+            if TokenManager.shared.getAccessToken() != nil {
+                return "\(AppApi.baseURL)/api/customer/v1/sizes/classifications/\(idClassification)"
+            } else {
+                return "\(AppApi.baseURL)/api/customer/v2/sizes/classifications/\(idClassification)"
+            }
 
-        case let .getSize(idSize):
-            return "\(AppApi.baseURL)/api/customer/v2/sizes/\(idSize)"
+        case .bag:
+            return "\(AppApi.baseURL)/api/customer/v1/bags"
+
+        case let .bagRemove(idBag):
+            return "\(AppApi.baseURL)/api/customer/v1/bags/\(idBag)"
         }
     }
 }

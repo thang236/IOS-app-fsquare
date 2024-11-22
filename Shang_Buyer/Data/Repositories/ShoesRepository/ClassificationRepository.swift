@@ -20,10 +20,6 @@ class ClassificationRepositoryImpl: ClassificationRepository {
     }
 
     func getClassification(idClassification: String) -> AnyPublisher<ClassificationsResponse, Error> {
-        if TokenManager.shared.getAccessToken() != nil || TokenManager.shared.getAccessToken() != "" {
-            apiService.request(endpoint: .getClassifications(idClassification: idClassification), method: .get, parameters: nil)
-        } else {
-            apiService.requestNoToken(endpoint: .getClassifications(idClassification: idClassification), method: .get, parameters: nil)
-        }
+        apiService.request(endpoint: .getClassifications(idClassification: idClassification), method: .get, parameters: nil)
     }
 }

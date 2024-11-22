@@ -8,8 +8,8 @@
 import UIKit
 
 class CartViewController: UIViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var checkOutButton: FullButton!
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var checkOutButton: FullButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
