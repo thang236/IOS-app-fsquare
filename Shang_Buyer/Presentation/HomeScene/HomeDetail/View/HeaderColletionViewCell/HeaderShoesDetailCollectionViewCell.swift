@@ -16,9 +16,9 @@ class HeaderShoesDetailCollectionViewCell: UICollectionViewCell {
         imageView.showGradientSkeleton(delay: 0.25)
     }
 
-    func configureCell(image: String) {
+    func configureCell(image: String?) {
         imageView.hideSkeleton()
-        if let url = URL(string: image) {
+        if let urlString = image ,let url = URL(string: urlString) {
             imageView.kf.setImage(with: url)
         }
     }

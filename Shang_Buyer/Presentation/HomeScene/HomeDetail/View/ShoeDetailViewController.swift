@@ -31,7 +31,7 @@ enum ShoesDetailSectionType: String, CaseIterable, Hashable {
 }
 
 enum ShoeDetailContentCell: Hashable {
-    case headerImage(image: String)
+    case headerImage(image: String?)
     case describe(shoesDetailData: ShoesDetailData)
     case colorShoes(titleColor: String)
     case sizeShoes(titleSize: String)
@@ -188,7 +188,7 @@ class ShoeDetailViewController: UIViewController {
                 if let shoesClassification = shoesClassification {
                     var snapshot = self.dataSource.snapshot()
                     for shoesClassificationItem in shoesClassification.data {
-                        snapshot.appendItems([.headerImage(image: shoesClassificationItem.thumbnail.url)], toSection: .headerImage)
+                        snapshot.appendItems([.headerImage(image: shoesClassificationItem.thumbnail?.url)], toSection: .headerImage)
                         snapshot.appendItems([.colorShoes(titleColor: shoesClassificationItem.color)], toSection: .colorShoes)
                     }
 

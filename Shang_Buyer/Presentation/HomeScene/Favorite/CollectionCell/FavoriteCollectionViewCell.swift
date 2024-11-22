@@ -50,7 +50,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
             quantitySoldLabel.text = "\(favorite.sales) sold"
             numberStart.text = "\(favorite.avgRating)"
             nameProduct.text = favorite.name
-            if let url = URL(string: favorite.thumbnail.url) {
+            if let thumbnailString = favorite.thumbnail?.url ,let url = URL(string: thumbnailString) {
                 productImageView.loadImageWithShimmer(url: url)
             }
             if favorite.avgRating == 0 {
