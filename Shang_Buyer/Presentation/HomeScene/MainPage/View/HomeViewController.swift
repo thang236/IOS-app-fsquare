@@ -199,7 +199,7 @@ class HomeViewController: UIViewController {
                     snapshot.appendItems(response.data.map { .shoes(shoes: $0) }, toSection: .shoes)
 
                 } else {
-                    snapshot.appendItems([.popular()], toSection: .popular)
+//                    snapshot.appendItems([.popular()], toSection: .popular)
                 }
                 wSelf.dataSource.apply(snapshot, animatingDifferences: false)
             }.store(in: &viewModel.cancellables)
