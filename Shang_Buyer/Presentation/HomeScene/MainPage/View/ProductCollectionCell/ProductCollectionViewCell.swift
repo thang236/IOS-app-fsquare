@@ -39,11 +39,11 @@ class ProductCollectionViewCell: UICollectionViewCell {
 
         productImageView.layer.cornerRadius = 10
         productImageView.clipsToBounds = true
-        contentView.showAnimatedSkeleton()
+        contentView.showAnimatedGradientSkeleton()
     }
 
     func setupCollectionView(shoes: ShoeData?) {
-        if let shoes = shoes {
+        if let shoes = shoes, shoes.minPrice != -1 {
             self.shoes = shoes
             if shoes.isFavorite ?? false {
                 favButton.setImage(.fav, for: .normal)

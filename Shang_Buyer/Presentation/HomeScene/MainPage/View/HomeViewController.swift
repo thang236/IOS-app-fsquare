@@ -59,19 +59,17 @@ class HomeViewController: UIViewController {
                 case let .popular(id, title, price):
                     let cell = collectionView.dequeueReusableCell(withType: PopularCollectionViewCell.self, for: indexPath)
                     cell.setupCell(title: title, price: NumberFormatter.formatToVNDWithCustomSymbol(price))
-                    cell.isSkeletonable = true
                     return cell
+                    
                 case let .brand(id, url, nameBrand):
                     let cell = collectionView.dequeueReusableCell(withType: BrandCollectionViewCell.self, for: indexPath)
                     cell.setupBrandCollectionView(url: url, nameBrand: nameBrand)
-                    cell.isSkeletonable = true
 
                     return cell
                 case let .shoes(shoes):
                     let cell = collectionView.dequeueReusableCell(withType: ProductCollectionViewCell.self, for: indexPath)
                     cell.setupCollectionView(shoes: shoes)
                     cell.delegate = wSelf
-                    cell.isSkeletonable = true
 
                     return cell
                 }
@@ -172,12 +170,31 @@ class HomeViewController: UIViewController {
         collectionView.register(loadingReusableNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "LoadingCollectionReusableView")
 
         collectionView.delegate = self
+        collectionView.dataSource = self
 
         collectionView.collectionViewLayout = createLayout()
 
         var snapshot = NSDiffableDataSourceSnapshot<HomeCollectionType, HomeCollectionContentCell>()
         snapshot.appendSections(HomeCollectionType.allCases)
         snapshot.appendItems([.banner], toSection: .banner)
+        snapshot.appendItems([
+            .popular(id: "", title: "", price: -1),
+            .popular(id: "1", title: "", price: -1)
+                             ], toSection: .popular)
+        snapshot.appendItems([
+            .shoes(shoes: ShoeData(id: "", name: "", thumbnail: nil, minPrice: -1, maxPrice: -1, rating: 0, reviewCount: 0, isFavorite: false, sales: 0)),
+            .shoes(shoes: ShoeData(id: "1", name: "", thumbnail: nil, minPrice: -1, maxPrice: -1, rating: 0, reviewCount: 0, isFavorite: false, sales: 0))
+        ], toSection: .shoes)
+        snapshot.appendItems([
+            .brand(id: "1", url: nil, nameBrand: ""),
+            .brand(id: "2", url: nil, nameBrand: ""),
+            .brand(id: "3", url: nil, nameBrand: ""),
+            .brand(id: "4", url: nil, nameBrand: ""),
+            .brand(id: "5", url: nil, nameBrand: ""),
+            .brand(id: "6", url: nil, nameBrand: ""),
+            .brand(id: "7", url: nil, nameBrand: ""),
+            .brand(id: "8", url: nil, nameBrand: ""),
+        ], toSection: .brand)
 
         dataSource.apply(snapshot, animatingDifferences: false)
     }
@@ -193,13 +210,11 @@ class HomeViewController: UIViewController {
                 if let response = response {
                     let sortedShoes = response.data.sorted { $0.maxPrice > $1.maxPrice }
                     let topShoes = Array(sortedShoes.prefix(3))
+                    snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .popular))
 
                     snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .shoes))
                     snapshot.appendItems(topShoes.map { .popular(id: $0.id, title: $0.name, price: $0.minPrice) }, toSection: .popular)
                     snapshot.appendItems(response.data.map { .shoes(shoes: $0) }, toSection: .shoes)
-
-                } else {
-//                    snapshot.appendItems([.popular()], toSection: .popular)
                 }
                 wSelf.dataSource.apply(snapshot, animatingDifferences: false)
             }.store(in: &viewModel.cancellables)
@@ -209,15 +224,18 @@ class HomeViewController: UIViewController {
             .sink { [weak self] brands in
                 guard let wSelf = self else { return }
                 var snapshot = wSelf.dataSource.snapshot()
-                snapshot.appendItems(brands.map { HomeCollectionContentCell.brand(id: $0.id, url: $0.thumbnail?.url, nameBrand: $0.name) }, toSection: .brand)
-                wSelf.dataSource.apply(snapshot, animatingDifferences: false)
+                if let brands = brands {
+                    snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .brand))
+                    snapshot.appendItems(brands.map { HomeCollectionContentCell.brand(id: $0.id, url: $0.thumbnail?.url, nameBrand: $0.name) }, toSection: .brand)
+                    wSelf.dataSource.apply(snapshot, animatingDifferences: false)
+                }
             }.store(in: &viewModel.cancellables)
 
         viewModel.$shoesFavoriteID
             .compactMap { $0 }
             .receive(on: DispatchQueue.main).sink { [weak self] _ in
                 guard let wSelf = self else { return }
-                var snapshot = wSelf.dataSource.snapshot()
+                let snapshot = wSelf.dataSource.snapshot()
                 wSelf.dataSource.applySnapshotUsingReloadData(snapshot)
             }.store(in: &viewModel.cancellables)
 
@@ -389,17 +407,14 @@ extension HomeViewController: SkeletonCollectionViewDelegate, UICollectionViewDa
         case .popular:
             let cell = collectionView.dequeueReusableCell(withType: PopularCollectionViewCell.self, for: indexPath)
             cell.setupCell(title: "", price: "")
-            cell.showAnimatedSkeleton()
             return cell
         case .brand:
             let cell = collectionView.dequeueReusableCell(withType: BrandCollectionViewCell.self, for: indexPath)
             cell.setupBrandCollectionView(url: nil, nameBrand: "")
-            cell.showAnimatedSkeleton()
             return cell
         case .shoes:
             let cell = collectionView.dequeueReusableCell(withType: ProductCollectionViewCell.self, for: indexPath)
             cell.setupCollectionView(shoes: nil)
-            cell.showAnimatedSkeleton()
             return cell
         case .banner:
             return collectionView.dequeueReusableCell(withType: BannerHomeCollectionViewCell.self, for: indexPath)

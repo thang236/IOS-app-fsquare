@@ -12,7 +12,7 @@ class HomeViewModel: ObservableObject {
     @Published var shoesResponse: ShoesResponse? = nil
     @Published var errorMessage: String? = nil
     @Published var successMessage: String? = nil
-    @Published var brands: [BrandItem] = []
+    @Published var brands: [BrandItem]? = nil
     @Published var brandLoading: Bool = true
     @Published var shoesLoading: Bool = true
     @Published var shoesFavoriteID: String? = nil
@@ -191,6 +191,8 @@ class HomeViewModel: ObservableObject {
                 }
             }, receiveValue: { brandResponse in
                 self.brands = brandResponse.data
+                let thumnail = Thumbnail(url: "more")
+                self.brands?.append(BrandItem(id: "0", name: "Xem thêm", thumbnail: thumnail))
             }).store(in: &cancellables)
     }
 
@@ -212,7 +214,6 @@ class HomeViewModel: ObservableObject {
         let shoesPublisher = getShoesUseCase.execute(parameter: shoesParameter)
         let brandPublisher = getBrandUseCase.execute(parameter: brandParameter)
 
-        // Combine cả hai publishers
         Publishers.CombineLatest(shoesPublisher, brandPublisher)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
@@ -224,7 +225,6 @@ class HomeViewModel: ObservableObject {
                     self.errorMessage = error.localizedDescription
                 }
             }, receiveValue: { shoesResponse, brandResponse in
-                // Xử lý kết quả từ cả hai API
                 if shoesResponse.status == HTTPStatus.success.message {
                     self.shoesResponse = shoesResponse
                     if shoesResponse.options.hasNextPage {
@@ -236,8 +236,9 @@ class HomeViewModel: ObservableObject {
                 } else {
                     self.errorMessage = "\(shoesResponse.status): \(shoesResponse.message)"
                 }
-
                 self.brands = brandResponse.data
+                let thumnail = Thumbnail(url: "more")
+                self.brands?.append(BrandItem(id: "0", name: "Xem thêm", thumbnail: thumnail))
             }).store(in: &cancellables)
     }
 }

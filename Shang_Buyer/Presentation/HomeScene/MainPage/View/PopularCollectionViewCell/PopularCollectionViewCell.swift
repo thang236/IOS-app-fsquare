@@ -20,23 +20,30 @@ class PopularCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundView = imageView
+        DispatchQueue.main.async {
+            self.imageView.layer.cornerRadius = 14
+            self.imageView.layer.masksToBounds = true
+            
+            self.contentView.layer.cornerRadius = 14
+            self.contentView.layer.masksToBounds = true
+            
+            self.layer.cornerRadius = 14
+            self.layer.masksToBounds = true
+        }
 
-        imageView.layer.cornerRadius = 14
-        imageView.layer.masksToBounds = true
+        showAnimatedGradientSkeleton()
 
-        contentView.layer.cornerRadius = 14
-        contentView.layer.masksToBounds = true
-
-        layer.cornerRadius = 14
-        layer.masksToBounds = true
+        
     }
 
     func setupCell(title: String?, price: String?) {
-        if let title = title {
-            nameShoes.text = title
-        }
-        if let price = price {
+        if let title = title , let price = price , title != "" {
+            hideSkeleton()
+            self.nameShoes.text = title
             self.price.text = price
+        } else {
+            showAnimatedGradientSkeleton()
         }
+        
     }
 }
