@@ -10,7 +10,7 @@ import Foundation
 struct BrandItem: Codable {
     let id: String
     let name: String
-    let thumbnail: Thumbnail
+    let thumbnail: Thumbnail?
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case name

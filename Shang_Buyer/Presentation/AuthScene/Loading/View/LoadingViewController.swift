@@ -27,6 +27,8 @@ class LoadingViewController: UIViewController {
         super.viewDidLoad()
         setupBindings()
         checkRemember()
+        let token = TokenManager.shared.getAccessToken()
+        print("token: \(String(describing: token))")
     }
 
     private func setupBindings() {
@@ -51,8 +53,6 @@ class LoadingViewController: UIViewController {
     }
 
     func checkToken() {
-        let token = TokenManager.shared.getAccessToken()
-        print("token: \(String(describing: token))")
         if TokenManager.shared.getAccessToken() != nil {
             viewModel.getProfile { completion in
                 switch completion {

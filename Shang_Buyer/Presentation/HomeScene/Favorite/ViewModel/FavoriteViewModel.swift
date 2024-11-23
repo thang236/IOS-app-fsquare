@@ -62,7 +62,8 @@ class FavoriteViewModel: ObservableObject {
                     self.errorMessage = error.localizedDescription
                 }
             } receiveValue: { _ in
-                self.favorites?.data.removeAll(where: { $0.id == idFavorite })
+                self.filteredFavorites?.removeAll(where: { $0.id == idFavorite })
+
                 self.isLoading = false
             }
             .store(in: &cancellables)

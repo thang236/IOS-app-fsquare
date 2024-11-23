@@ -15,6 +15,13 @@ protocol StepperViewDelegate: AnyObject {
 @IBDesignable
 class StepperView: UIView {
     var delegate: StepperViewDelegate?
+
+    @IBInspectable var labelFontSize: CGFloat = 22 {
+        didSet {
+            valueLabel.font = .systemFont(ofSize: labelFontSize, weight: .semibold)
+        }
+    }
+
     private let decrementButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("-", for: .normal)
@@ -87,6 +94,10 @@ class StepperView: UIView {
 
     func getValue() -> Int {
         return value
+    }
+
+    func setValue(value: Int) {
+        self.value = value
     }
 
     @objc private func decrementValue() {

@@ -6,29 +6,46 @@
 //
 
 import UIKit
+import SkeletonView
 
 class BrandCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var bannerImageView: UIImageView!
-    @IBOutlet var namebrand: UILabel!
-
+    @IBOutlet private weak var bannerImageView: UIImageView!
+    @IBOutlet private weak var namebrand: UILabel!
+    @IBOutlet private weak var imageViewParent: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        bannerImageView.isSkeletonable = true
         namebrand.isSkeletonable = true
+        imageViewParent.isSkeletonable = true
+        bannerImageView.isSkeletonable = true
+        contentView.isSkeletonable = true
+        contentView.showAnimatedGradientSkeleton()
+        DispatchQueue.main.async {
+            self.imageViewParent.layer.cornerRadius = self.imageViewParent.frame.size.width / 2
+            self.imageViewParent.clipsToBounds = true
+        }
+        
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        // Bo góc chỉ khi bannerImageView đã có kích thước cụ thể
-        bannerImageView.layer.cornerRadius = bannerImageView.frame.size.width / 2
-        bannerImageView.clipsToBounds = true
+        
     }
 
-    func setupBrandCollectionView(url: String, nameBrand: String) {
-        hideSkeleton()
-        if let url = URL(string: url) {
-            bannerImageView.loadImageWithShimmer(url: url)
+    func setupBrandCollectionView(url: String?, nameBrand: String) {
+        if  nameBrand != "" {
+            if let urlString = url, let url = URL(string: urlString) {
+                if urlString == "more" {
+                    bannerImageView.image = UIImage(systemName: "ellipsis")
+                } else {
+                    bannerImageView.loadImageWithShimmer(url: url)
+                }
+            }
+            hideSkeleton()
+        } else {
+            showAnimatedGradientSkeleton()
         }
         namebrand.text = nameBrand
+
+        
     }
 }

@@ -223,4 +223,21 @@ final class DIContainer {
         let addBagUseCase = resolveAddBagUseCase()
         return ShoesDetailViewModel(getShoesDetailUseCase: getShoesDetailUseCase, getShoesClassificationUseCase: getShoesClassificationUseCase, getClassificationsUseCase: getClassificationUseCase, getSizeClassificationUseCase: getSizeClassificationUseCase, addBagUseCase: addBagUseCase)
     }
+
+    // MARK: Cart
+
+    func resolveCartRepository() -> BagRepository {
+        let apiService = resolveAPIService()
+        return BagRepositoryImpl(apiService: apiService)
+    }
+
+    func resolveCartUseCase() -> BagUseCase {
+        let cartRepository = resolveCartRepository()
+        return BagUseCaseImpl(repository: cartRepository)
+    }
+
+    func resolveCartViewModel() -> CartViewModel {
+        let cartUseCase = resolveCartUseCase()
+        return CartViewModel(useCase: cartUseCase)
+    }
 }

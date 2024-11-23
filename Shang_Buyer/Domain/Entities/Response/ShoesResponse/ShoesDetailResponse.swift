@@ -13,14 +13,14 @@ struct ShoesDetailData: Codable, Hashable {
     let brand: String
     let category: String
     let describe: String
-    let description: String
+    let description: String?
     let classificationCount: Int
     let minPrice: Double
     let maxPrice: Double
     let rating: Double
     let reviewCount: Int
     let isFavorite: Bool?
-    let thumbnail: Thumbnail
+    let thumbnail: Thumbnail?
     let sales: Int
 
     enum CodingKeys: String, CodingKey {
