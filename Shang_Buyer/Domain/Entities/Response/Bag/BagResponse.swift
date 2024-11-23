@@ -8,12 +8,12 @@
 import Foundation
 
 struct BagData: Codable {
-    let id: Int
-    let shoes: String
-    let thumbnail: Thumbnail
-    let color: String
-    let size: String
-    let quantity: Int
+    let id: String
+    let shoes: String?
+    let thumbnail: Thumbnail?
+    let color: String?
+    let size: String?
+    var quantity: Int
     let price: Double
 
     enum CodingKeys: String, CodingKey {
@@ -30,5 +30,5 @@ struct BagData: Codable {
 struct BagResponse: Codable {
     let status: String
     let message: String
-    let data: [BagData]?
+    var data: [BagData]?
 }

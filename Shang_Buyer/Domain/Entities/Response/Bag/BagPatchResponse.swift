@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct BagPatchResponse: Codable {
+    let status: String
+    let message: String
+    let data: BagData?
+}

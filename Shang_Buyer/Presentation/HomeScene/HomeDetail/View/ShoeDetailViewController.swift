@@ -177,23 +177,31 @@ class ShoeDetailViewController: UIViewController {
                     snapshot.appendItems(
                         [.describe(shoesDetailData: shoesDetail.data)], toSection: .describe
                     )
-                    snapshot.appendItems([.description(description: shoesDetail.data.description)], toSection: .description)
-                    self.priceLbl.text = "₫ \(shoesDetail.data.minPrice)"
+                    if let description = shoesDetail.data.description {
+                        snapshot.appendItems([.description(description: description)], toSection: .description)
+                    }
+                    self.priceLbl.text = NumberFormatter.formatToVNDWithCustomSymbol(shoesDetail.data.minPrice)
                     self.dataSource.apply(snapshot, animatingDifferences: false)
                 }
             }.store(in: &cancellables)
 
         viewModel?.$shoesClassification
             .sink { shoesClassification in
-                if let shoesClassification = shoesClassification {
-                    var snapshot = self.dataSource.snapshot()
-                    for shoesClassificationItem in shoesClassification.data {
+                var snapshot = self.dataSource.snapshot()
+
+                if let shoesClassificationData = shoesClassification?.data, shoesClassificationData.isEmpty == false {
+                    let currentItems = snapshot.itemIdentifiers(inSection: .headerImage)
+                    snapshot.deleteItems(currentItems)
+                    for shoesClassificationItem in shoesClassificationData {
                         snapshot.appendItems([.headerImage(image: shoesClassificationItem.thumbnail?.url)], toSection: .headerImage)
                         snapshot.appendItems([.colorShoes(titleColor: shoesClassificationItem.color)], toSection: .colorShoes)
                     }
-
-                    self.dataSource.apply(snapshot, animatingDifferences: false)
+                    self.dataSource.applySnapshotUsingReloadData(snapshot)
+                } else {
+                    snapshot.appendItems([.headerImage(image: nil)], toSection: .headerImage)
                 }
+                self.dataSource.apply(snapshot, animatingDifferences: false)
+
             }.store(in: &cancellables)
 
         viewModel?.$sizesClassification.receive(on: DispatchQueue.main)
@@ -216,7 +224,8 @@ class ShoeDetailViewController: UIViewController {
         viewModel?.$classifications
             .sink { classifications in
                 if let classifications = classifications {
-                    self.priceLbl.text = "₫ \(classifications.data.price)"
+                    guard let price = classifications.data?.price else { return }
+                    self.priceLbl.text = NumberFormatter.formatToVNDWithCustomSymbol(price)
                 }
             }.store(in: &cancellables)
         viewModel?.$quantity
@@ -346,7 +355,16 @@ class ShoeDetailViewController: UIViewController {
             )
             header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
             return [header]
-
+        case .colorShoes:
+            guard let shoesClassification = viewModel?.shoesClassification, !(shoesClassification.data.isEmpty) else {
+                return []
+            }
+            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(25))
+            let header = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top
+            )
+            header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+            return [header]
         default:
             let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(25))
             let header = NSCollectionLayoutBoundarySupplementaryItem(
@@ -360,8 +378,17 @@ class ShoeDetailViewController: UIViewController {
     // MARK: - @IBAction
 
     @IBAction func didTapAddToCart(_: Any) {
-        let quantity = stepperView.getValue()
-        viewModel?.addToBag(quantity: quantity)
+        if TokenManager.shared.getAccessToken() != nil {
+            if viewModel?.idSize == nil {
+                showToast(message: "Vui lòng chọn màu và size", chooseImageToast: .warning)
+                return
+            } else {
+                let quantity = stepperView.getValue()
+                viewModel?.addToBag(quantity: quantity)
+            }
+        } else {
+            showToast(message: "Bản phải đăng nhập để thêm vào giỏ hàng", chooseImageToast: .warning)
+        }
     }
 }
 

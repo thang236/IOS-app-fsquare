@@ -64,7 +64,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
             } else {
                 startProduct.image = UIImage(systemName: "star.leadinghalf.filled")
             }
-            priceLabel.text = "$\(shoes.minPrice)"
+            priceLabel.text = NumberFormatter.formatToVNDWithCustomSymbol(shoes.minPrice)
         } else {
             showAnimatedGradientSkeleton()
         }

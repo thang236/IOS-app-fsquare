@@ -18,8 +18,10 @@ class HeaderShoesDetailCollectionViewCell: UICollectionViewCell {
 
     func configureCell(image: String?) {
         imageView.hideSkeleton()
-        if let urlString = image ,let url = URL(string: urlString) {
+        if let urlString = image, let url = URL(string: urlString) {
             imageView.kf.setImage(with: url)
+        } else {
+            imageView.image = UIImage.shoesshimmerPDF
         }
     }
 }

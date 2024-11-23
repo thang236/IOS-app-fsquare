@@ -37,7 +37,7 @@ enum AppApi {
     case getClassifications(idClassification: String)
     case getSizeClassification(idClassification: String)
     case bag
-    case bagRemove(idBag: String)
+    case bagID(idBag: String)
 
     var url: String {
         switch self {
@@ -128,15 +128,17 @@ enum AppApi {
 
         case let .getSizeClassification(idClassification):
             if TokenManager.shared.getAccessToken() != nil {
-                return "\(AppApi.baseURL)/api/customer/v1/sizes/classifications/\(idClassification)"
+                return "\(AppApi.baseURL)/api/customer/v1/sizes/classification/\(idClassification)"
             } else {
-                return "\(AppApi.baseURL)/api/customer/v2/sizes/classifications/\(idClassification)"
+                return "\(AppApi.baseURL)/api/customer/v2/sizes/classification/\(idClassification)"
             }
+
+            // MARK: Endpoint Bag
 
         case .bag:
             return "\(AppApi.baseURL)/api/customer/v1/bags"
 
-        case let .bagRemove(idBag):
+        case let .bagID(idBag):
             return "\(AppApi.baseURL)/api/customer/v1/bags/\(idBag)"
         }
     }

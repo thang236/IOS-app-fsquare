@@ -112,7 +112,7 @@ class HomeViewModel: ObservableObject {
 
     func getMoreShoes() {
         let parameter: [String: Any] = [
-            "size": 3,
+            "size": 10,
             "page": page,
             "search": "",
             "brand": "",
@@ -145,7 +145,7 @@ class HomeViewModel: ObservableObject {
 
     func getShoes(page: Int) {
         let parameter: [String: Any] = [
-            "size": 3,
+            "size": 10,
             "page": page,
             "search": "",
             "brand": "",
@@ -193,10 +193,10 @@ class HomeViewModel: ObservableObject {
                 self.brands = brandResponse.data
             }).store(in: &cancellables)
     }
-    
+
     func fetchShoesAndBrands(page: Int) {
         let shoesParameter: [String: Any] = [
-            "size": 3,
+            "size": 10,
             "page": page,
             "search": "",
             "brand": "",
@@ -240,7 +240,4 @@ class HomeViewModel: ObservableObject {
                 self.brands = brandResponse.data
             }).store(in: &cancellables)
     }
-
-
-
 }

@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
                     return cell
                 case let .popular(id, title, price):
                     let cell = collectionView.dequeueReusableCell(withType: PopularCollectionViewCell.self, for: indexPath)
-                    cell.setupCell(title: title, price: "\(price) VND")
+                    cell.setupCell(title: title, price: NumberFormatter.formatToVNDWithCustomSymbol(price))
                     cell.isSkeletonable = true
                     return cell
                 case let .brand(id, url, nameBrand):
@@ -189,17 +189,19 @@ class HomeViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] response in
                 guard let wSelf = self else { return }
+                var snapshot = wSelf.dataSource.snapshot()
                 if let response = response {
                     let sortedShoes = response.data.sorted { $0.maxPrice > $1.maxPrice }
                     let topShoes = Array(sortedShoes.prefix(3))
 
-                    var snapshot = wSelf.dataSource.snapshot()
                     snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .shoes))
                     snapshot.appendItems(topShoes.map { .popular(id: $0.id, title: $0.name, price: $0.minPrice) }, toSection: .popular)
                     snapshot.appendItems(response.data.map { .shoes(shoes: $0) }, toSection: .shoes)
 
-                    wSelf.dataSource.apply(snapshot, animatingDifferences: false)
-                } else { return }
+                } else {
+                    snapshot.appendItems([.popular()], toSection: .popular)
+                }
+                wSelf.dataSource.apply(snapshot, animatingDifferences: false)
             }.store(in: &viewModel.cancellables)
 
         viewModel.$brands
@@ -372,13 +374,37 @@ extension HomeViewController: ProductCollectionViewCellDelegate {
     }
 }
 
-extension HomeViewController: SkeletonCollectionViewDelegate {
+extension HomeViewController: SkeletonCollectionViewDelegate, UICollectionViewDataSource {
     func numSections(in _: UICollectionView) -> Int {
         return 4
     }
 
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return 10
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = dataSource.itemIdentifier(for: indexPath)
+        switch item {
+        case .popular:
+            let cell = collectionView.dequeueReusableCell(withType: PopularCollectionViewCell.self, for: indexPath)
+            cell.setupCell(title: "", price: "")
+            cell.showAnimatedSkeleton()
+            return cell
+        case .brand:
+            let cell = collectionView.dequeueReusableCell(withType: BrandCollectionViewCell.self, for: indexPath)
+            cell.setupBrandCollectionView(url: nil, nameBrand: "")
+            cell.showAnimatedSkeleton()
+            return cell
+        case .shoes:
+            let cell = collectionView.dequeueReusableCell(withType: ProductCollectionViewCell.self, for: indexPath)
+            cell.setupCollectionView(shoes: nil)
+            cell.showAnimatedSkeleton()
+            return cell
+        case .banner:
+            return collectionView.dequeueReusableCell(withType: BannerHomeCollectionViewCell.self, for: indexPath)
+        default: return UICollectionViewCell()
+        }
     }
 
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -31,8 +31,12 @@ class PopularCollectionViewCell: UICollectionViewCell {
         layer.masksToBounds = true
     }
 
-    func setupCell(title: String, price: String) {
-        nameShoes.text = title
-        self.price.text = price
+    func setupCell(title: String?, price: String?) {
+        if let title = title {
+            nameShoes.text = title
+        }
+        if let price = price {
+            self.price.text = price
+        }
     }
 }

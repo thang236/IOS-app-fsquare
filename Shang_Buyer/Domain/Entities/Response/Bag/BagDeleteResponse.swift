@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct BagDeleteResponse: Codable {
+    let status: String
+    let message: String
+    let data: String?
+}

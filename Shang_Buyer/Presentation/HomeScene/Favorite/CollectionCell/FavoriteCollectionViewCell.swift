@@ -50,8 +50,10 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
             quantitySoldLabel.text = "\(favorite.sales) sold"
             numberStart.text = "\(favorite.avgRating)"
             nameProduct.text = favorite.name
-            if let thumbnailString = favorite.thumbnail?.url ,let url = URL(string: thumbnailString) {
+            if let thumbnailString = favorite.thumbnail?.url, let url = URL(string: thumbnailString) {
                 productImageView.loadImageWithShimmer(url: url)
+            } else {
+                productImageView.image = UIImage.shoesshimmerPDF
             }
             if favorite.avgRating == 0 {
                 startProduct.image = UIImage(systemName: "star")
@@ -60,7 +62,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
             } else {
                 startProduct.image = UIImage(systemName: "star.leadinghalf.filled")
             }
-            priceLabel.text = "$\(favorite.minPrice)"
+            priceLabel.text = "$\(NumberFormatter.formatToVNDWithCustomSymbol(favorite.minPrice))"
         } else {
             showAnimatedGradientSkeleton()
         }

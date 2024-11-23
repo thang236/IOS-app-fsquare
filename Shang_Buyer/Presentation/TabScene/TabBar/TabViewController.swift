@@ -35,7 +35,7 @@ class TabViewController: UITabBarController {
         let homeVC = homeCoordinator.getNavigationController()
         let profileCoordinator = ProfileCoordinator(navigationMain: coordinator.getNavigationController())
         let profileVC = profileCoordinator.getNavigationController()
-        let cartVC = UINavigationController(rootViewController: CartViewController())
+        let cartVC = CartCoordinator().getNavigationController()
         let orderVC = UINavigationController(rootViewController: MyOrderViewController())
         let walletVC = UINavigationController(rootViewController: MyEWalletViewController())
 

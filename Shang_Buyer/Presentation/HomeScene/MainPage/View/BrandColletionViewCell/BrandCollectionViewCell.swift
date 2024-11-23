@@ -24,7 +24,7 @@ class BrandCollectionViewCell: UICollectionViewCell {
         bannerImageView.clipsToBounds = true
     }
 
-    func setupBrandCollectionView(url: String?, nameBrand: String) {
+    func setupBrandCollectionView(url: String?, nameBrand: String?) {
         hideSkeleton()
         if let urlString = url, let url = URL(string: urlString) {
             bannerImageView.loadImageWithShimmer(url: url)
