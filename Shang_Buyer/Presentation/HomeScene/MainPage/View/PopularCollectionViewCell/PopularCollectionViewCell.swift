@@ -23,27 +23,24 @@ class PopularCollectionViewCell: UICollectionViewCell {
         DispatchQueue.main.async {
             self.imageView.layer.cornerRadius = 14
             self.imageView.layer.masksToBounds = true
-            
+
             self.contentView.layer.cornerRadius = 14
             self.contentView.layer.masksToBounds = true
-            
+
             self.layer.cornerRadius = 14
             self.layer.masksToBounds = true
         }
 
         showAnimatedGradientSkeleton()
-
-        
     }
 
     func setupCell(title: String?, price: String?) {
-        if let title = title , let price = price , title != "" {
+        if let title = title, let price = price, title != "" {
             hideSkeleton()
-            self.nameShoes.text = title
+            nameShoes.text = title
             self.price.text = price
         } else {
             showAnimatedGradientSkeleton()
         }
-        
     }
 }

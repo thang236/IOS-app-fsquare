@@ -60,7 +60,6 @@ class HomeViewController: UIViewController {
                     let cell = collectionView.dequeueReusableCell(withType: PopularCollectionViewCell.self, for: indexPath)
                     cell.setupCell(title: title, price: NumberFormatter.formatToVNDWithCustomSymbol(price))
                     return cell
-                    
                 case let .brand(id, url, nameBrand):
                     let cell = collectionView.dequeueReusableCell(withType: BrandCollectionViewCell.self, for: indexPath)
                     cell.setupBrandCollectionView(url: url, nameBrand: nameBrand)
@@ -179,11 +178,11 @@ class HomeViewController: UIViewController {
         snapshot.appendItems([.banner], toSection: .banner)
         snapshot.appendItems([
             .popular(id: "", title: "", price: -1),
-            .popular(id: "1", title: "", price: -1)
-                             ], toSection: .popular)
+            .popular(id: "1", title: "", price: -1),
+        ], toSection: .popular)
         snapshot.appendItems([
             .shoes(shoes: ShoeData(id: "", name: "", thumbnail: nil, minPrice: -1, maxPrice: -1, rating: 0, reviewCount: 0, isFavorite: false, sales: 0)),
-            .shoes(shoes: ShoeData(id: "1", name: "", thumbnail: nil, minPrice: -1, maxPrice: -1, rating: 0, reviewCount: 0, isFavorite: false, sales: 0))
+            .shoes(shoes: ShoeData(id: "1", name: "", thumbnail: nil, minPrice: -1, maxPrice: -1, rating: 0, reviewCount: 0, isFavorite: false, sales: 0)),
         ], toSection: .shoes)
         snapshot.appendItems([
             .brand(id: "1", url: nil, nameBrand: ""),
