@@ -54,7 +54,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
             quantitySoldLabel.text = "\(shoes.sales) sold"
             numberStart.text = "\(shoes.rating)"
             nameProduct.text = shoes.name
-            if let url = URL(string: shoes.thumbnail.url) {
+            if let urlString = shoes.thumbnail?.url, let url = URL(string: urlString) {
                 productImageView.loadImageWithShimmer(url: url)
             }
             if shoes.rating == 0 {
@@ -64,7 +64,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
             } else {
                 startProduct.image = UIImage(systemName: "star.leadinghalf.filled")
             }
-            priceLabel.text = "$\(shoes.minPrice)"
+            priceLabel.text = NumberFormatter.formatToVNDWithCustomSymbol(shoes.minPrice)
         } else {
             showAnimatedGradientSkeleton()
         }

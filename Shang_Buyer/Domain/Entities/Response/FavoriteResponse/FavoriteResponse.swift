@@ -15,7 +15,7 @@ struct FavoriteData: Codable, Hashable {
     let maxPrice: Double
     let avgRating: Int
     let reviewCount: Int
-    let thumbnail: Thumbnail
+    let thumbnail: Thumbnail?
     let sales: Int
 
     enum CodingKeys: String, CodingKey {

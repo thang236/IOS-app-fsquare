@@ -14,7 +14,7 @@ struct Thumbnail: Codable {
 struct ShoeData: Codable, Hashable {
     let id: String
     let name: String
-    let thumbnail: Thumbnail
+    let thumbnail: Thumbnail?
     let minPrice: Double
     let maxPrice: Double
     let rating: Double

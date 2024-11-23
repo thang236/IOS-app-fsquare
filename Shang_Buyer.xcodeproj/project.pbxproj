@@ -119,6 +119,15 @@
 		BF600EF52CF074A70030708E /* AddBagResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF600EF42CF074A70030708E /* AddBagResponse.swift */; };
 		BF600EF82CF075350030708E /* AddBagRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF600EF72CF075350030708E /* AddBagRepository.swift */; };
 		BF600EFB2CF0775D0030708E /* AddBagUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF600EFA2CF0775D0030708E /* AddBagUseCase.swift */; };
+		BF600EFD2CF08B560030708E /* BagRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF600EFC2CF08B560030708E /* BagRepository.swift */; };
+		BF600F002CF0CF060030708E /* BagPatchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF600EFF2CF0CF060030708E /* BagPatchResponse.swift */; };
+		BF600F032CF0D00A0030708E /* BagDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF600F022CF0D00A0030708E /* BagDeleteResponse.swift */; };
+		BF600F052CF0D10B0030708E /* BagUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF600F042CF0D10B0030708E /* BagUseCase.swift */; };
+		BF600F082CF0D1CA0030708E /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF600F072CF0D1CA0030708E /* CartViewModel.swift */; };
+		BF600F0B2CF0D4690030708E /* CartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF600F0A2CF0D4690030708E /* CartCoordinator.swift */; };
+		BF600F0D2CF216BC0030708E /* NumberFormatter+Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF600F0C2CF216BC0030708E /* NumberFormatter+Extesion.swift */; };
+		BF600F122CF230CE0030708E /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF600F102CF230CE0030708E /* CheckOutViewController.swift */; };
+		BF600F132CF230CE0030708E /* CheckOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF600F112CF230CE0030708E /* CheckOutViewController.xib */; };
 		BF6120242CE39BAD00AC6562 /* PopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6120222CE39BAD00AC6562 /* PopularCollectionViewCell.swift */; };
 		BF6120252CE39BAD00AC6562 /* PopularCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6120232CE39BAD00AC6562 /* PopularCollectionViewCell.xib */; };
 		BF62C0612CD27CE900879233 /* ShoeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62C05F2CD27CE900879233 /* ShoeDetailViewController.swift */; };
@@ -328,6 +337,15 @@
 		BF600EF42CF074A70030708E /* AddBagResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBagResponse.swift; sourceTree = "<group>"; };
 		BF600EF72CF075350030708E /* AddBagRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBagRepository.swift; sourceTree = "<group>"; };
 		BF600EFA2CF0775D0030708E /* AddBagUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBagUseCase.swift; sourceTree = "<group>"; };
+		BF600EFC2CF08B560030708E /* BagRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagRepository.swift; sourceTree = "<group>"; };
+		BF600EFF2CF0CF060030708E /* BagPatchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagPatchResponse.swift; sourceTree = "<group>"; };
+		BF600F022CF0D00A0030708E /* BagDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDeleteResponse.swift; sourceTree = "<group>"; };
+		BF600F042CF0D10B0030708E /* BagUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagUseCase.swift; sourceTree = "<group>"; };
+		BF600F072CF0D1CA0030708E /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		BF600F0A2CF0D4690030708E /* CartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCoordinator.swift; sourceTree = "<group>"; };
+		BF600F0C2CF216BC0030708E /* NumberFormatter+Extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extesion.swift"; sourceTree = "<group>"; };
+		BF600F102CF230CE0030708E /* CheckOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
+		BF600F112CF230CE0030708E /* CheckOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckOutViewController.xib; sourceTree = "<group>"; };
 		BF6120222CE39BAD00AC6562 /* PopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF6120232CE39BAD00AC6562 /* PopularCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF62C05F2CD27CE900879233 /* ShoeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailViewController.swift; sourceTree = "<group>"; };
@@ -564,6 +582,8 @@
 		BF1E66602CAD2457001C48E9 /* CartScene */ = {
 			isa = PBXGroup;
 			children = (
+				BF600F0E2CF2308E0030708E /* CheckOut */,
+				BF600F092CF0D4520030708E /* Flow */,
 				BF1E66612CAD245F001C48E9 /* Cart */,
 			);
 			path = CartScene;
@@ -580,6 +600,7 @@
 		BF1E66622CAD247A001C48E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF600F062CF0D1C20030708E /* ViewModel */,
 				BFA8BAF02CEF16470008CA6E /* CartCell */,
 				BF1E66642CAD248E001C48E9 /* CartViewController.swift */,
 				BF1E66652CAD248E001C48E9 /* CartViewController.xib */,
@@ -1056,6 +1077,7 @@
 				BF25D0AE2C9D2C5300CB7EE8 /* UILabel+Extension.swift */,
 				BFCF72632CA4042C00208985 /* UIImage+Extension.swift */,
 				BF9F327B2CB66D0900530523 /* UIImageView+Extension.swift */,
+				BF600F0C2CF216BC0030708E /* NumberFormatter+Extesion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1098,6 +1120,7 @@
 			isa = PBXGroup;
 			children = (
 				BF600EF72CF075350030708E /* AddBagRepository.swift */,
+				BF600EFC2CF08B560030708E /* BagRepository.swift */,
 			);
 			path = BagReposotory;
 			sourceTree = "<group>";
@@ -1106,8 +1129,42 @@
 			isa = PBXGroup;
 			children = (
 				BF600EFA2CF0775D0030708E /* AddBagUseCase.swift */,
+				BF600F042CF0D10B0030708E /* BagUseCase.swift */,
 			);
 			path = BagUseCase;
+			sourceTree = "<group>";
+		};
+		BF600F062CF0D1C20030708E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BF600F072CF0D1CA0030708E /* CartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BF600F092CF0D4520030708E /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				BF600F0A2CF0D4690030708E /* CartCoordinator.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		BF600F0E2CF2308E0030708E /* CheckOut */ = {
+			isa = PBXGroup;
+			children = (
+				BF600F0F2CF230990030708E /* View */,
+			);
+			path = CheckOut;
+			sourceTree = "<group>";
+		};
+		BF600F0F2CF230990030708E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF600F102CF230CE0030708E /* CheckOutViewController.swift */,
+				BF600F112CF230CE0030708E /* CheckOutViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BF6120202CE398C000AC6562 /* HeaderFooterCollection */ = {
@@ -1362,6 +1419,8 @@
 			children = (
 				BFA8BAF62CEF22310008CA6E /* BagResponse.swift */,
 				BF600EF42CF074A70030708E /* AddBagResponse.swift */,
+				BF600EFF2CF0CF060030708E /* BagPatchResponse.swift */,
+				BF600F022CF0D00A0030708E /* BagDeleteResponse.swift */,
 			);
 			path = Bag;
 			sourceTree = "<group>";
@@ -1641,6 +1700,7 @@
 				BF25D0AD2C9D2ADB00CB7EE8 /* LoadingViewController.xib in Resources */,
 				BF4760912CE0A63C00207153 /* AddressTableViewCell.xib in Resources */,
 				BF6841972CED1C2D008F9FD0 /* FavoriteViewController.xib in Resources */,
+				BF600F132CF230CE0030708E /* CheckOutViewController.xib in Resources */,
 				BFCF72582CA3EC9C00208985 /* RegisterViewController.xib in Resources */,
 				BF1E665F2CAD244B001C48E9 /* HomeViewController.xib in Resources */,
 				BFA057DF2CAFF3D100890399 /* ProfileTableViewCell.xib in Resources */,
@@ -1706,7 +1766,10 @@
 				BFAF1D982CAA7F1B0085609C /* LoginWithEmailViewModel.swift in Sources */,
 				BF25D03F2C97239400CB7EE8 /* Date+Extension.swift in Sources */,
 				BF4244F12C9D634F00F43C8B /* FullButton.swift in Sources */,
+				BF600EFD2CF08B560030708E /* BagRepository.swift in Sources */,
 				BF4760832CE0A2BF00207153 /* DistrictsResponse.swift in Sources */,
+				BF600F052CF0D10B0030708E /* BagUseCase.swift in Sources */,
+				BF600F082CF0D1CA0030708E /* CartViewModel.swift in Sources */,
 				BFA8BAF32CEF16640008CA6E /* CartCollectionViewCell.swift in Sources */,
 				BF9F32712CB3C31E00530523 /* TabBarCoordinator.swift in Sources */,
 				BF25D0492C9821C400CB7EE8 /* MenuOption.swift in Sources */,
@@ -1729,6 +1792,7 @@
 				BF5B32782C92F3250063CA29 /* AppApi.swift in Sources */,
 				BF25D0A42C9C121300CB7EE8 /* LocalizableKey.swift in Sources */,
 				BF5D61932CE288A7006202D2 /* EditAddressViewController.swift in Sources */,
+				BF600F0B2CF0D4690030708E /* CartCoordinator.swift in Sources */,
 				BFAF1D832CA838AE0085609C /* AuthResponse.swift in Sources */,
 				BF18F3A92CB9074600A975F9 /* GetBrandUseCase.swift in Sources */,
 				BFD740C92CD9BCFF0041BD3F /* GetClassificationsUseCase.swift in Sources */,
@@ -1738,6 +1802,7 @@
 				09EF3A042CD8A55A00B6FE02 /* ShoesColorCollectionViewCell.swift in Sources */,
 				BFCF72642CA4042C00208985 /* UIImage+Extension.swift in Sources */,
 				BF25D04B2C9821F100CB7EE8 /* AuthInterceptor.swift in Sources */,
+				BF600F122CF230CE0030708E /* CheckOutViewController.swift in Sources */,
 				BF25D0422C97239400CB7EE8 /* UIColor+Extension.swift in Sources */,
 				BF1E66512CAC5232001C48E9 /* LoadingViewModel.swift in Sources */,
 				BFD740CB2CD9BF0A0041BD3F /* GetShoesClassification.swift in Sources */,
@@ -1765,6 +1830,7 @@
 				BFA057DB2CAEA56B00890399 /* ProfileViewModel.swift in Sources */,
 				BF96CA3B2CA4152C004F7BE9 /* RegisterUseCase.swift in Sources */,
 				BF4760852CE0A2F700207153 /* WardsResponse.swift in Sources */,
+				BF600F0D2CF216BC0030708E /* NumberFormatter+Extesion.swift in Sources */,
 				BF1E664C2CAC061C001C48E9 /* ErrorResponse.swift in Sources */,
 				BF96CA452CA56A09004F7BE9 /* OTPTextField.swift in Sources */,
 				BF25D09A2C9C089400CB7EE8 /* UserDefaultsKey.swift in Sources */,
@@ -1783,6 +1849,7 @@
 				BF4244EC2C9D599800F43C8B /* BodyLabel.swift in Sources */,
 				BFCF72572CA3EC9C00208985 /* RegisterViewController.swift in Sources */,
 				BF47608C2CE0A4FF00207153 /* GetAddressUseCase.swift in Sources */,
+				BF600F032CF0D00A0030708E /* BagDeleteResponse.swift in Sources */,
 				BF25D0502C9969E600CB7EE8 /* Product.swift in Sources */,
 				BF18F38C2CB6B91700A975F9 /* ShoesResponse.swift in Sources */,
 				BF25D03C2C97239400CB7EE8 /* TextField+Extension.swift in Sources */,
@@ -1827,6 +1894,7 @@
 				BFA057E82CB007BC00890399 /* EditProfileViewModel.swift in Sources */,
 				BF25D0442C97239400CB7EE8 /* Button+Extension.swift in Sources */,
 				BFD740D32CDA6E310041BD3F /* DescribeCollectionViewCell.swift in Sources */,
+				BF600F002CF0CF060030708E /* BagPatchResponse.swift in Sources */,
 				BFD740C52CD9B6660041BD3F /* SizesClassificationResponse.swift in Sources */,
 				BF18F3A62CB906F000A975F9 /* BrandRepository.swift in Sources */,
 				0925F3E02CD360EC00530A69 /* ShoesDetailResponse.swift in Sources */,

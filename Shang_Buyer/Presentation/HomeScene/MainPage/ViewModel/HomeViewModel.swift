@@ -47,8 +47,7 @@ class HomeViewModel: ObservableObject {
 
     func initDataSource() {
         page = 1
-        getShoes(page: page)
-        getBrand()
+        fetchShoesAndBrands(page: page)
     }
 
     func toggleFav(shoes: ShoeData) {
@@ -113,7 +112,7 @@ class HomeViewModel: ObservableObject {
 
     func getMoreShoes() {
         let parameter: [String: Any] = [
-            "size": 3,
+            "size": 10,
             "page": page,
             "search": "",
             "brand": "",
@@ -146,7 +145,7 @@ class HomeViewModel: ObservableObject {
 
     func getShoes(page: Int) {
         let parameter: [String: Any] = [
-            "size": 3,
+            "size": 10,
             "page": page,
             "search": "",
             "brand": "",
@@ -195,7 +194,50 @@ class HomeViewModel: ObservableObject {
             }).store(in: &cancellables)
     }
 
-//    func setubBinding() {
-//        favoriteViewModel.
-//    }
+    func fetchShoesAndBrands(page: Int) {
+        let shoesParameter: [String: Any] = [
+            "size": 10,
+            "page": page,
+            "search": "",
+            "brand": "",
+            "category": "",
+        ]
+
+        let brandParameter: [String: Any] = [
+            "size": 7,
+            "page": 1,
+            "search": "",
+        ]
+
+        let shoesPublisher = getShoesUseCase.execute(parameter: shoesParameter)
+        let brandPublisher = getBrandUseCase.execute(parameter: brandParameter)
+
+        // Combine cả hai publishers
+        Publishers.CombineLatest(shoesPublisher, brandPublisher)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    self.shoesLoading = false
+                    self.brandLoading = false
+                case let .failure(error):
+                    self.errorMessage = error.localizedDescription
+                }
+            }, receiveValue: { shoesResponse, brandResponse in
+                // Xử lý kết quả từ cả hai API
+                if shoesResponse.status == HTTPStatus.success.message {
+                    self.shoesResponse = shoesResponse
+                    if shoesResponse.options.hasNextPage {
+                        self.page += 1
+                        self.hasNextPage = true
+                    } else {
+                        self.hasNextPage = false
+                    }
+                } else {
+                    self.errorMessage = "\(shoesResponse.status): \(shoesResponse.message)"
+                }
+
+                self.brands = brandResponse.data
+            }).store(in: &cancellables)
+    }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 struct ShoesClassificationsData: Codable, Hashable {
     let id: String
-    let thumbnail: Thumbnail
+    let thumbnail: Thumbnail?
     let color: String
     enum CodingKeys: String, CodingKey {
         case id = "_id"
