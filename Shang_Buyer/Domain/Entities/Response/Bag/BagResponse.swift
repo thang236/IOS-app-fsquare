@@ -7,12 +7,33 @@
 
 import Foundation
 
-struct BagData: Codable {
+struct BagShoes: Codable {
     let id: String
-    let shoes: String?
+    let name: String
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case name
+    }
+}
+
+struct BagSize: Codable {
+    let id: String
+    let sizeNumber: String
+    let weight: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case sizeNumber
+        case weight
+    }
+}
+
+struct BagData: Codable, Hashable {
+    let id: String
+    let shoes: BagShoes?
     let thumbnail: Thumbnail?
     let color: String?
-    let size: String?
+    let size: BagSize?
     var quantity: Int
     let price: Double
 
@@ -25,6 +46,14 @@ struct BagData: Codable {
         case quantity
         case price
     }
+
+    static func == (lhs: BagData, rhs: BagData) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
 
 struct BagResponse: Codable {
@@ -32,3 +61,4 @@ struct BagResponse: Codable {
     let message: String
     var data: [BagData]?
 }
+

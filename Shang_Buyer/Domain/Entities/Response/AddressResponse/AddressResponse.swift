@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AddressData: Codable {
+struct AddressData: Codable, Hashable {
     let id: String
     var title: String
     var address: String
@@ -23,6 +23,14 @@ struct AddressData: Codable {
         case provinceName
         case districtName
         case isDefault
+    }
+
+    static func == (lhs: AddressData, rhs: AddressData) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 

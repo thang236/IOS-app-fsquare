@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TotalCollectionViewCell" customModule="Shang_Buyer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="156"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="156"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMp-0r-emP">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="156"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lpD-Wk-1jr">
+                                <rect key="frame" x="24" y="24" width="295" height="103"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KfN-7O-Vub">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="26"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá sản phẩm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwr-pB-8oQ" customClass="DescriptionLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="4.6666666666666679" width="87.666666666666671" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQb-QL-cth" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="259.66666666666669" y="4.6666666666666679" width="35.333333333333314" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="YQb-QL-cth" firstAttribute="centerY" secondItem="KfN-7O-Vub" secondAttribute="centerY" id="6Rq-IW-CJZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="YQb-QL-cth" secondAttribute="trailing" id="JX4-Dn-tnr"/>
+                                            <constraint firstItem="wwr-pB-8oQ" firstAttribute="centerY" secondItem="KfN-7O-Vub" secondAttribute="centerY" id="XZU-jI-de2"/>
+                                            <constraint firstAttribute="height" constant="26" id="iKe-VR-f0S"/>
+                                            <constraint firstItem="wwr-pB-8oQ" firstAttribute="leading" secondItem="KfN-7O-Vub" secondAttribute="leading" id="zhM-IX-el7"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1V-nk-aOb">
+                                        <rect key="frame" x="0.0" y="34" width="295" height="26"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phí Ship" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3L-4C-Cf4" customClass="DescriptionLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="4.6666666666666643" width="52.666666666666664" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbT-7y-NER" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="259.66666666666669" y="4.6666666666666643" width="35.333333333333314" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="k3L-4C-Cf4" firstAttribute="centerY" secondItem="w1V-nk-aOb" secondAttribute="centerY" id="4WK-aT-xj8"/>
+                                            <constraint firstAttribute="trailing" secondItem="BbT-7y-NER" secondAttribute="trailing" id="6nM-3g-Mau"/>
+                                            <constraint firstAttribute="height" constant="26" id="8xk-1X-rja"/>
+                                            <constraint firstItem="k3L-4C-Cf4" firstAttribute="leading" secondItem="w1V-nk-aOb" secondAttribute="leading" id="mZL-ZI-8Vo"/>
+                                            <constraint firstItem="BbT-7y-NER" firstAttribute="centerY" secondItem="w1V-nk-aOb" secondAttribute="centerY" id="wmj-gp-x7m"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYu-Gm-7zh">
+                                        <rect key="frame" x="0.0" y="68" width="295" height="1"/>
+                                        <color key="backgroundColor" name="borderMedium"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Lw3-m7-XJA"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJC-IY-tlY">
+                                        <rect key="frame" x="0.0" y="77" width="295" height="26"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFR-zI-j6F" customClass="DescriptionLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="4.6666666666666714" width="32.333333333333336" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBX-nv-G9v" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="259.66666666666669" y="4.6666666666666714" width="35.333333333333314" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="Ivm-BG-e3S"/>
+                                            <constraint firstItem="JFR-zI-j6F" firstAttribute="leading" secondItem="CJC-IY-tlY" secondAttribute="leading" id="cXo-np-vUh"/>
+                                            <constraint firstItem="JFR-zI-j6F" firstAttribute="centerY" secondItem="CJC-IY-tlY" secondAttribute="centerY" id="cnE-IB-1zN"/>
+                                            <constraint firstAttribute="trailing" secondItem="LBX-nv-G9v" secondAttribute="trailing" id="lgc-2E-DQl"/>
+                                            <constraint firstItem="LBX-nv-G9v" firstAttribute="centerY" secondItem="CJC-IY-tlY" secondAttribute="centerY" id="yXM-39-2Pv"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CJC-IY-tlY" firstAttribute="leading" secondItem="lpD-Wk-1jr" secondAttribute="leading" id="7wG-5q-qow"/>
+                                    <constraint firstAttribute="trailing" secondItem="w1V-nk-aOb" secondAttribute="trailing" id="i9F-8p-5Hr"/>
+                                    <constraint firstAttribute="trailing" secondItem="CJC-IY-tlY" secondAttribute="trailing" id="lKL-UZ-5s5"/>
+                                    <constraint firstItem="KfN-7O-Vub" firstAttribute="leading" secondItem="lpD-Wk-1jr" secondAttribute="leading" id="mvU-tk-7XX"/>
+                                    <constraint firstItem="w1V-nk-aOb" firstAttribute="leading" secondItem="lpD-Wk-1jr" secondAttribute="leading" id="tZk-lV-xE8"/>
+                                    <constraint firstAttribute="trailing" secondItem="KfN-7O-Vub" secondAttribute="trailing" id="vzG-2J-8gR"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lpD-Wk-1jr" secondAttribute="trailing" constant="24" id="3oa-Rf-OId"/>
+                            <constraint firstItem="lpD-Wk-1jr" firstAttribute="top" secondItem="dMp-0r-emP" secondAttribute="top" constant="24" id="X4G-nv-GZr"/>
+                            <constraint firstItem="lpD-Wk-1jr" firstAttribute="leading" secondItem="dMp-0r-emP" secondAttribute="leading" constant="24" id="j6f-a3-HqS"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="dMp-0r-emP" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottom" id="STX-R9-QzM"/>
+                <constraint firstAttribute="trailing" secondItem="dMp-0r-emP" secondAttribute="trailing" id="dpw-Nc-rFH"/>
+                <constraint firstItem="dMp-0r-emP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fOy-b2-6iE"/>
+                <constraint firstAttribute="top" secondItem="dMp-0r-emP" secondAttribute="top" id="wbm-qM-q8v"/>
+            </constraints>
+            <size key="customSize" width="370" height="145"/>
+            <connections>
+                <outlet property="amountLabel" destination="YQb-QL-cth" id="hsT-ne-Vdx"/>
+                <outlet property="shippingLabel" destination="BbT-7y-NER" id="79H-CZ-Ggj"/>
+                <outlet property="totalLabel" destination="LBX-nv-G9v" id="MoC-Hi-yQ1"/>
+            </connections>
+            <point key="canvasLocation" x="269.46564885496184" y="53.521126760563384"/>
+        </collectionViewCell>
+    </objects>
+    <designables>
+        <designable name="BbT-7y-NER">
+            <size key="intrinsicContentSize" width="35.333333333333336" height="17"/>
+        </designable>
+        <designable name="LBX-nv-G9v">
+            <size key="intrinsicContentSize" width="35.333333333333336" height="17"/>
+        </designable>
+        <designable name="YQb-QL-cth">
+            <size key="intrinsicContentSize" width="35.333333333333336" height="17"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="borderMedium">
+            <color red="0.8901960784313725" green="0.90196078431372551" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -5,13 +5,13 @@
 //  Created by Louis Macbook on 11/10/2024.
 //
 
-import UIKit
 import SkeletonView
+import UIKit
 
 class BrandCollectionViewCell: UICollectionViewCell {
-    @IBOutlet private weak var bannerImageView: UIImageView!
-    @IBOutlet private weak var namebrand: UILabel!
-    @IBOutlet private weak var imageViewParent: UIView!
+    @IBOutlet private var bannerImageView: UIImageView!
+    @IBOutlet private var namebrand: UILabel!
+    @IBOutlet private var imageViewParent: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         namebrand.isSkeletonable = true
@@ -23,16 +23,14 @@ class BrandCollectionViewCell: UICollectionViewCell {
             self.imageViewParent.layer.cornerRadius = self.imageViewParent.frame.size.width / 2
             self.imageViewParent.clipsToBounds = true
         }
-        
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        
     }
 
     func setupBrandCollectionView(url: String?, nameBrand: String) {
-        if  nameBrand != "" {
+        if nameBrand != "" {
             if let urlString = url, let url = URL(string: urlString) {
                 if urlString == "more" {
                     bannerImageView.image = UIImage(systemName: "ellipsis")
@@ -45,7 +43,5 @@ class BrandCollectionViewCell: UICollectionViewCell {
             showAnimatedGradientSkeleton()
         }
         namebrand.text = nameBrand
-
-        
     }
 }
