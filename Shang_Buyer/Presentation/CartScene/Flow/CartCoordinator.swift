@@ -23,15 +23,21 @@ class CartCoordinator: Coordinator {
     func getNavigationController() -> UINavigationController {
         return navigationController
     }
-    
+
     func goToCheckOut() {
         let checkOutVC = CheckOutViewController(viewModel: cartViewModel)
         checkOutVC.coordinator = self
         navigationController.pushViewController(checkOutVC, animated: false)
     }
-    
+
     func goToChooseAddress() {
         let chooseAddressVC = ChooseAddressViewController(viewModel: cartViewModel)
         navigationController.pushViewController(chooseAddressVC, animated: false)
+    }
+
+    func goToBaoKim(url: String) {
+        let baoKimVC = BaoKimViewController(url: url)
+        baoKimVC.coordinator = self
+        navigationController.pushViewController(baoKimVC, animated: false)
     }
 }

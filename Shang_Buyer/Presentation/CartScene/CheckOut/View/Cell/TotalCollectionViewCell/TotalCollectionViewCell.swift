@@ -11,11 +11,12 @@ class TotalCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var totalLabel: BodyLabel!
     @IBOutlet private var shippingLabel: BodyLabel!
     @IBOutlet private var amountLabel: BodyLabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+
     private func getAmount(amount: Double?) -> String {
         if let amount = amount {
             let amountString = NumberFormatter.formatToVNDWithCustomSymbol(amount)
@@ -24,7 +25,7 @@ class TotalCollectionViewCell: UICollectionViewCell {
             return "-"
         }
     }
-    
+
     private func getShipping(shipping: Double?) -> String {
         if let shipping = shipping {
             let shippingString = NumberFormatter.formatToVNDWithCustomSymbol(shipping)
@@ -33,7 +34,7 @@ class TotalCollectionViewCell: UICollectionViewCell {
             return "-"
         }
     }
-    
+
     func setupCell(amount: Double?, shipping: Double?) {
         shippingLabel.text = getShipping(shipping: shipping)
         amountLabel.text = getAmount(amount: amount)

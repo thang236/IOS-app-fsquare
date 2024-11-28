@@ -20,7 +20,6 @@ class ShoesClassificationsRepositoryImpl: ShoesClassificationRepository {
     }
 
     func getShoesClassification(idShoes: String) -> AnyPublisher<ShoesClassificationsResponse, Error> {
-            apiService.request(endpoint: .getShoesClassification(idShoes: idShoes), method: .get, parameters: nil)
-        
+        apiService.request(endpoint: .getShoesClassification(idShoes: idShoes), method: .get, parameters: nil)
     }
 }

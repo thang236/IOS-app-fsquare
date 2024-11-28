@@ -10,33 +10,31 @@ import UIKit
 class AddressCollectionViewCell: UICollectionViewCell {
     @IBOutlet var titleLabel: BodyLabel!
     @IBOutlet var addressLabel: DescriptionLabel!
-    
+
     var didTapEditButton: (() -> Void)?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+
         contentView.layer.cornerRadius = 14
         contentView.layer.masksToBounds = true
-        
-        
+
         contentView.isSkeletonable = true
         contentView.showAnimatedGradientSkeleton()
-        
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
 
         // Cấu hình shadow
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 0.2
-        self.layer.shadowOffset = CGSize(width: 0, height: 10)
-        self.layer.shadowRadius = 4
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = CGSize(width: 0, height: 10)
+        layer.shadowRadius = 4
 
-        self.layer.cornerRadius = 14
+        layer.cornerRadius = 14
 
-        self.layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: self.layer.cornerRadius).cgPath
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
     }
 
     private func getAddress(address: AddressData) -> String {

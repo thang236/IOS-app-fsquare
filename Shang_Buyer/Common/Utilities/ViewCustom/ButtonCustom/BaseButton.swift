@@ -57,8 +57,12 @@ class BaseButton: UIButton {
             self.layer.cornerRadius = 8
             self.clipsToBounds = true
             self.invalidateIntrinsicContentSize()
-            self.addTarget(self, action: #selector(self.self.updateButtonAppearance), for: [.allTouchEvents, .allEvents])
+            self.addTarget(self, action: #selector(self.updateButtonAppearance), for: [.allTouchEvents, .allEvents])
             self.updateButtonAppearance()
+
+            self.contentHorizontalAlignment = .center
+            self.contentVerticalAlignment = .center
+            self.titleLabel?.textAlignment = .center
         }
     }
 

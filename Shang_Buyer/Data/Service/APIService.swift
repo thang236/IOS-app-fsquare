@@ -12,7 +12,7 @@ import Foundation
 protocol APIService {
     func request<T: Decodable>(endpoint: AppApi, method: HTTPMethod, parameters: [String: Any]?) -> AnyPublisher<T, Error>
     func requestNoToken<T: Decodable>(endpoint: AppApi, method: HTTPMethod, parameters: [String: Any]?) -> AnyPublisher<T, Error>
-    
+
     func request<T: Decodable, U: Encodable>(endpoint: AppApi, method: HTTPMethod, parameters: U?) -> AnyPublisher<T, Error>
 }
 
@@ -36,6 +36,7 @@ class APIServiceImpl: APIService {
             self.session.request(url, method: method, parameters: parameters, encoding: encoding)
                 .validate()
                 .responseData { response in
+                    debugPrint("Response Data: \(String(data: response.data ?? Data(), encoding: .utf8) ?? "No data")")
                     switch response.result {
                     case let .success(data):
                         do {
@@ -95,7 +96,7 @@ class APIServiceImpl: APIService {
         }
         .eraseToAnyPublisher()
     }
-    
+
     func request<T: Decodable, U: Encodable>(
         endpoint: AppApi,
         method: HTTPMethod,
@@ -105,10 +106,10 @@ class APIServiceImpl: APIService {
         if method == .get {
             encoding = URLEncoding.default
         }
-        
+
         let url = endpoint.url
         var paramDict: [String: Any]?
-        
+
         if let parameters = parameters {
             do {
                 let jsonData = try JSONEncoder().encode(parameters)
@@ -117,11 +118,13 @@ class APIServiceImpl: APIService {
                 return Fail(error: error).eraseToAnyPublisher()
             }
         }
-        
+
         return Future { promise in
             self.session.request(url, method: method, parameters: paramDict, encoding: encoding)
                 .validate()
                 .responseData { response in
+                    debugPrint("Response Data: \(String(data: response.data ?? Data(), encoding: .utf8) ?? "No data")")
+
                     switch response.result {
                     case let .success(data):
                         do {
@@ -147,5 +150,4 @@ class APIServiceImpl: APIService {
         }
         .eraseToAnyPublisher()
     }
-
 }

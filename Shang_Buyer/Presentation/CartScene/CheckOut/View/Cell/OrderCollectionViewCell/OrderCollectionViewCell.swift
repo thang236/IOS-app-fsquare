@@ -24,7 +24,7 @@ class OrderCollectionViewCell: UICollectionViewCell {
 
         quantityView.layer.cornerRadius = quantityView.frame.width / 2
         quantityView.layer.masksToBounds = true
-        
+
         contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true
 

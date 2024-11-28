@@ -95,11 +95,10 @@ class CartViewController: UIViewController {
             updatePrice()
         })
     }
-    
-    @IBAction func didTapCheckOutButton(_ sender: Any) {
+
+    @IBAction func didTapCheckOutButton(_: Any) {
         coordinator?.goToCheckOut()
     }
-    
 }
 
 extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
