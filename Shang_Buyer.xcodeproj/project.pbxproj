@@ -223,6 +223,10 @@
 		BFF264E42CF5D02F009459DD /* ChooseAddressCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF264E22CF5D02F009459DD /* ChooseAddressCollectionViewCell.xib */; };
 		BFF264E62CF725FA009459DD /* OrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF264E52CF725FA009459DD /* OrderRequest.swift */; };
 		BFF264E92CF7271C009459DD /* OrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF264E82CF7271C009459DD /* OrderResponse.swift */; };
+		BFF264F52CF8E038009459DD /* PopUpPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF264F32CF8E038009459DD /* PopUpPaymentViewController.swift */; };
+		BFF264F62CF8E038009459DD /* PopUpPaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF264F42CF8E038009459DD /* PopUpPaymentViewController.xib */; };
+		BFF264F92CF8EFBE009459DD /* BaoKimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF264F72CF8EFBE009459DD /* BaoKimViewController.swift */; };
+		BFF265382CF8F3DF009459DD /* PostPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF265372CF8F3DF009459DD /* PostPaymentResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -458,6 +462,10 @@
 		BFF264E22CF5D02F009459DD /* ChooseAddressCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseAddressCollectionViewCell.xib; sourceTree = "<group>"; };
 		BFF264E52CF725FA009459DD /* OrderRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequest.swift; sourceTree = "<group>"; };
 		BFF264E82CF7271C009459DD /* OrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResponse.swift; sourceTree = "<group>"; };
+		BFF264F32CF8E038009459DD /* PopUpPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpPaymentViewController.swift; sourceTree = "<group>"; };
+		BFF264F42CF8E038009459DD /* PopUpPaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpPaymentViewController.xib; sourceTree = "<group>"; };
+		BFF264F72CF8EFBE009459DD /* BaoKimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaoKimViewController.swift; sourceTree = "<group>"; };
+		BFF265372CF8F3DF009459DD /* PostPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPaymentResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1201,6 +1209,8 @@
 		BF600F0F2CF230990030708E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFF264F02CF8E017009459DD /* PopUpPayment */,
+				BFF264EA2CF8DF21009459DD /* OnlinePayment */,
 				BFF264D32CF5CF20009459DD /* ChooseAddress */,
 				BF6573EF2CF37FE200BCA12A /* Cell */,
 				BF600F102CF230CE0030708E /* CheckOutViewController.swift */,
@@ -1723,8 +1733,26 @@
 			children = (
 				BFF264C92CF5C2B9009459DD /* FeeResponse.swift */,
 				BFF264E82CF7271C009459DD /* OrderResponse.swift */,
+				BFF265372CF8F3DF009459DD /* PostPaymentResponse.swift */,
 			);
 			path = OrderResponse;
+			sourceTree = "<group>";
+		};
+		BFF264EA2CF8DF21009459DD /* OnlinePayment */ = {
+			isa = PBXGroup;
+			children = (
+				BFF264F72CF8EFBE009459DD /* BaoKimViewController.swift */,
+			);
+			path = OnlinePayment;
+			sourceTree = "<group>";
+		};
+		BFF264F02CF8E017009459DD /* PopUpPayment */ = {
+			isa = PBXGroup;
+			children = (
+				BFF264F32CF8E038009459DD /* PopUpPaymentViewController.swift */,
+				BFF264F42CF8E038009459DD /* PopUpPaymentViewController.xib */,
+			);
+			path = PopUpPayment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1847,6 +1875,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF4760762CDFC34400207153 /* DescriptionCollectionViewCell.xib in Resources */,
+				BFF264F62CF8E038009459DD /* PopUpPaymentViewController.xib in Resources */,
 				BF25D0AD2C9D2ADB00CB7EE8 /* LoadingViewController.xib in Resources */,
 				BF4760912CE0A63C00207153 /* AddressTableViewCell.xib in Resources */,
 				BF6573F32CF3802B00BCA12A /* AddressCollectionViewCell.xib in Resources */,
@@ -1951,6 +1980,7 @@
 				BF5B32782C92F3250063CA29 /* AppApi.swift in Sources */,
 				BF25D0A42C9C121300CB7EE8 /* LocalizableKey.swift in Sources */,
 				BF5D61932CE288A7006202D2 /* EditAddressViewController.swift in Sources */,
+				BFF264F92CF8EFBE009459DD /* BaoKimViewController.swift in Sources */,
 				BF600F0B2CF0D4690030708E /* CartCoordinator.swift in Sources */,
 				BFAF1D832CA838AE0085609C /* AuthResponse.swift in Sources */,
 				BF18F3A92CB9074600A975F9 /* GetBrandUseCase.swift in Sources */,
@@ -1984,6 +2014,7 @@
 				BF1E66742CAD2E20001C48E9 /* MyEWalletViewController.swift in Sources */,
 				BF6841962CED1C2D008F9FD0 /* FavoriteViewController.swift in Sources */,
 				BF25D0402C97239400CB7EE8 /* UITableView+Extension.swift in Sources */,
+				BFF265382CF8F3DF009459DD /* PostPaymentResponse.swift in Sources */,
 				BFAF1D9A2CAA807C0085609C /* LoginEmailUseCase.swift in Sources */,
 				BFD740CD2CD9BFCA0041BD3F /* GetSizeClassificationUseCase.swift in Sources */,
 				BF4760752CDFC34400207153 /* DescriptionCollectionViewCell.swift in Sources */,
@@ -2062,6 +2093,7 @@
 				BFA057E82CB007BC00890399 /* EditProfileViewModel.swift in Sources */,
 				BF25D0442C97239400CB7EE8 /* Button+Extension.swift in Sources */,
 				BFD740D32CDA6E310041BD3F /* DescribeCollectionViewCell.swift in Sources */,
+				BFF264F52CF8E038009459DD /* PopUpPaymentViewController.swift in Sources */,
 				BF600F002CF0CF060030708E /* BagPatchResponse.swift in Sources */,
 				BFD740C52CD9B6660041BD3F /* SizesClassificationResponse.swift in Sources */,
 				BF18F3A62CB906F000A975F9 /* BrandRepository.swift in Sources */,

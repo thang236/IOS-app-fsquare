@@ -10,7 +10,7 @@ import Foundation
 struct OrderResponse: Codable {
     let status: String
     let message: String
-    let data: OrderData
+    let data: OrderData?
 }
 
 struct OrderData: Codable {
@@ -18,16 +18,16 @@ struct OrderData: Codable {
     let clientOrderCode: String
     let shippingAddress: ShippingAddress
     let orderItems: [OrderItem]
-    let weight: Int
-    let codAmount: Int
-    let shippingFee: Int
+    let weight: Double
+    let codAmount: Double
+    let shippingFee: Double
     let content: String
     let isFreeShip: Bool
     let isPayment: Bool
     let note: String
     let status: String
     let statusTimestamps: StatusTimestamps
-    let returnInfo: ReturnInfo
+    let returnInfo: ReturnInfo?
     let isActive: Bool
     let id: String
     let createdAt: String
@@ -54,7 +54,6 @@ struct OrderData: Codable {
         case updatedAt
     }
 }
-
 
 struct OrderItem: Codable {
     let size: String

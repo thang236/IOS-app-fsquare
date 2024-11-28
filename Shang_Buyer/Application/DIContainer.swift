@@ -235,12 +235,12 @@ final class DIContainer {
         let cartRepository = resolveCartRepository()
         return BagUseCaseImpl(repository: cartRepository)
     }
-    
+
     func resolveOrderRepository() -> OrderRepository {
         let apiService = resolveAPIService()
         return OrderRepositoryImpl(apiService: apiService)
     }
-    
+
     func resolveOrderUseCase() -> OrderUseCase {
         let orderRepository = resolveOrderRepository()
         return OrderUseCaseImpl(repository: orderRepository)

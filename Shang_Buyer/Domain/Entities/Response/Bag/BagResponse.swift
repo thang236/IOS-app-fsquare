@@ -20,7 +20,7 @@ struct BagSize: Codable {
     let id: String
     let sizeNumber: String
     let weight: Double
-    
+
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case sizeNumber
@@ -61,4 +61,3 @@ struct BagResponse: Codable {
     let message: String
     var data: [BagData]?
 }
-
