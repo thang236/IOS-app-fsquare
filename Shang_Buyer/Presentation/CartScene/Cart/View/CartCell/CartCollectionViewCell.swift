@@ -42,6 +42,7 @@ class CartCollectionViewCell: UICollectionViewCell {
         sizeLabel.isSkeletonable = true
         colorLabel.isSkeletonable = true
         colorView.isSkeletonable = true
+        contentView.isSkeletonable = true
 
         contentView.showAnimatedSkeleton()
     }
@@ -49,9 +50,11 @@ class CartCollectionViewCell: UICollectionViewCell {
     func setupCell(bag: BagData?) {
         if let bag = bag {
             self.bag = bag
+            hideSkeleton()
+
             priceLabel.text = NumberFormatter.formatToVNDWithCustomSymbol(bag.price * Double(bag.quantity))
-            nameLabel.text = bag.shoes
-            sizeLabel.text = bag.size
+            nameLabel.text = bag.shoes?.name
+            sizeLabel.text = bag.size?.sizeNumber
             colorLabel.text = bag.color
             if let urlString = bag.thumbnail?.url, let url = URL(string: urlString) {
                 imageView.loadImageWithShimmer(url: url)
