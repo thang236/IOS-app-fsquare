@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckOutViewController" customModule="Shang_Buyer" customModuleProvider="target">
             <connections>
+                <outlet property="bottomView" destination="6CR-K8-Gzg" id="WYi-Qc-ApK"/>
+                <outlet property="collectionView" destination="doc-ni-6hd" id="6GX-Is-JUa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,12 +19,54 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="doc-ni-6hd">
+                    <rect key="frame" x="0.0" y="69" width="393" height="679"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="90f-4g-k5g">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6CR-K8-Gzg">
+                    <rect key="frame" x="0.0" y="748" width="393" height="70"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgL-q8-R76" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="16" y="18.000000000000004" width="361" height="34.333333333333343"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" imagePlacement="trailing" title="Tiếp tục thanh toán"/>
+                            <connections>
+                                <action selector="didTapContinueButton:" destination="-1" eventType="touchUpInside" id="2tk-ev-s10"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="LgL-q8-R76" firstAttribute="centerY" secondItem="6CR-K8-Gzg" secondAttribute="centerY" id="XVa-fw-pN9"/>
+                        <constraint firstAttribute="height" constant="70" id="fQQ-uA-shj"/>
+                        <constraint firstItem="LgL-q8-R76" firstAttribute="leading" secondItem="6CR-K8-Gzg" secondAttribute="leading" constant="16" id="ida-13-Lnn"/>
+                        <constraint firstAttribute="trailing" secondItem="LgL-q8-R76" secondAttribute="trailing" constant="16" id="jgs-Fb-rOu"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="-51" y="-11"/>
+            <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="doc-ni-6hd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ASc-lQ-hlE"/>
+                <constraint firstItem="doc-ni-6hd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="CiR-z3-dEe"/>
+                <constraint firstItem="6CR-K8-Gzg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UTx-4M-NtW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="doc-ni-6hd" secondAttribute="trailing" id="afQ-a4-YrE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6CR-K8-Gzg" secondAttribute="trailing" id="kEY-PE-gNS"/>
+                <constraint firstItem="6CR-K8-Gzg" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="rWC-pB-udq"/>
+                <constraint firstItem="6CR-K8-Gzg" firstAttribute="top" secondItem="doc-ni-6hd" secondAttribute="bottom" id="ucm-iC-82j"/>
+            </constraints>
+            <point key="canvasLocation" x="-51.145038167938928" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>
+        <image name="arrow.right" catalog="system" width="128" height="95"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

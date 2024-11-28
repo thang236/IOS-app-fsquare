@@ -11,18 +11,27 @@ import Foundation
 class CartViewModel: ObservableObject {
     var cancellables = Set<AnyCancellable>()
     private let useCase: BagUseCase
-
+    private let getAddressUseCase: GetAddressUseCase
+    private let orderUseCase: OrderUseCase
+    
     @Published var bagResponse: BagResponse? = nil
     @Published var bagDeleteResponse: BagDeleteResponse? = nil
     @Published var bagPatchResponse: BagPatchResponse? = nil
-
+    @Published var addressResponse: AddressResponse? = nil
+    @Published var addressChoose: AddressData? = nil
+    @Published var feeResponse: FeeResponse? = nil
+    
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
-
-    init(useCase: BagUseCase) {
+    
+    @Published var orderResponse: OrderResponse? = nil
+    
+    init(useCase: BagUseCase, getAddressUseCase: GetAddressUseCase, orderUseCase: OrderUseCase) {
         self.useCase = useCase
+        self.getAddressUseCase = getAddressUseCase
+        self.orderUseCase = orderUseCase
     }
-
+    
     func getBag() {
         isLoading = true
         useCase.getBag()
@@ -39,7 +48,7 @@ class CartViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-
+    
     func removeBag(idBag: String) {
         isLoading = true
         useCase.removeBag(idBag: idBag)
@@ -56,7 +65,7 @@ class CartViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-
+    
     func removeAllBag() {
         isLoading = true
         useCase.removeAllBag()
@@ -66,7 +75,7 @@ class CartViewModel: ObservableObject {
                 case .finished:
                     self.isLoading = false
                     self.bagResponse?.data?.removeAll()
-
+                    
                 case let .failure(error):
                     self.errorMessage = error.localizedDescription
                 }
@@ -75,7 +84,7 @@ class CartViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-
+    
     func patchBag(idBag: String, quantity: Int, isDecrease: Bool = false) {
         var parameters: [String: Any] = ["action": "increase"]
         if isDecrease {
@@ -99,5 +108,77 @@ class CartViewModel: ObservableObject {
                 self.bagPatchResponse = response
             }
             .store(in: &cancellables)
+    }
+    
+    
+}
+
+
+//MARK: - CheckOut
+extension CartViewModel {
+    func createOrder(parameters: OrderRequest) {
+        isLoading = true
+        orderUseCase.createOrder(parameter: parameters)
+            .receive(on: RunLoop.main)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    self.isLoading = false
+                case let .failure(error):
+                    self.errorMessage = error.localizedDescription
+                }
+            } receiveValue: { orderResponse in
+                print("orderResponse: \(orderResponse)")
+                self.orderResponse = orderResponse
+            }.store(in: &cancellables)
+        
+    }
+    
+    func calculatorFee(parameters: [String: Any]) {
+        isLoading = true
+        orderUseCase.calculatorFee(parameter: parameters)
+            .receive(on: RunLoop.main)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    self.isLoading = false
+                case let .failure(error):
+                    self.errorMessage = error.localizedDescription
+                }
+            } receiveValue: { feeResponse in
+                self.feeResponse = feeResponse
+                print(feeResponse)
+            }
+            .store(in: &cancellables)
+    }
+    
+    func getAddress() {
+        isLoading = true
+        getAddressUseCase.getAddress()
+            .receive(on: RunLoop.main)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    self.isLoading = false
+                case let .failure(error):
+                    self.errorMessage = error.localizedDescription
+                }
+            } receiveValue: { addressResponse in
+                self.addressResponse = addressResponse
+                addressResponse.data.forEach { address in
+                    if address.isDefault == true {
+                        self.addressChoose = address
+                    }
+                }
+                print(addressResponse)
+            }
+            .store(in: &cancellables)
+    }
+    
+    func generateRandomID() -> String {
+        let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        let prefix = String((0..<3).map { _ in letters.randomElement()! })
+        let randomNumber = Int.random(in: 100_000...999_999)
+        return "\(prefix)\(randomNumber)"
     }
 }

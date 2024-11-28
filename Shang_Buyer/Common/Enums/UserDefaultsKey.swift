@@ -12,4 +12,6 @@ enum UserDefaultsKey: String {
     case userInfo
     case language
     case rememberMe
+    case nameUser
+    case phoneUser
 }

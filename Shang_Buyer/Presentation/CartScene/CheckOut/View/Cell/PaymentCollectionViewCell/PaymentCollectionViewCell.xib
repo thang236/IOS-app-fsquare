@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PaymentCollectionViewCell" customModule="Shang_Buyer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="294" height="71"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="294" height="71"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sfh-9a-0Oe">
+                        <rect key="frame" x="0.0" y="0.0" width="294" height="71"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="brc-A5-Ude">
+                                <rect key="frame" x="16" y="0.0" width="262" height="71"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQe-z9-bup">
+                                        <rect key="frame" x="0.0" y="0.0" width="262" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanh toán trực tiếp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbi-iL-RcD" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="10.333333333333334" width="146.66666666666666" height="19.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ton-74-DSd">
+                                                <rect key="frame" x="243.66666666666669" y="12.333333333333332" width="18.333333333333314" height="16.333333333333336"/>
+                                                <color key="tintColor" name="PrimaryDark"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="fbi-iL-RcD" firstAttribute="leading" secondItem="DQe-z9-bup" secondAttribute="leading" id="Bal-Mp-bkc"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ton-74-DSd" secondAttribute="trailing" id="IYs-ww-utk"/>
+                                            <constraint firstItem="Ton-74-DSd" firstAttribute="centerY" secondItem="DQe-z9-bup" secondAttribute="centerY" id="Q6Q-VV-HPD"/>
+                                            <constraint firstItem="fbi-iL-RcD" firstAttribute="centerY" secondItem="DQe-z9-bup" secondAttribute="centerY" id="UPg-gn-kdK"/>
+                                            <constraint firstAttribute="height" constant="40" id="ZPg-sp-NmD"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ii7-zB-0NA" userLabel="Speater View">
+                                        <rect key="frame" x="0.0" y="40" width="262" height="1"/>
+                                        <color key="backgroundColor" name="backgroundMedium"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="JJm-Iq-Gqj"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADV-dx-dWo">
+                                        <rect key="frame" x="0.0" y="41" width="262" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanh toán online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bd-gb-95d" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="5.3333333333333357" width="129.66666666666666" height="19.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DsX-IK-owK">
+                                                <rect key="frame" x="243.66666666666669" y="7.3333333333333321" width="18.333333333333314" height="16.333333333333336"/>
+                                                <color key="tintColor" name="PrimaryDark"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="DsX-IK-owK" secondAttribute="trailing" id="Bhk-8U-8VF"/>
+                                            <constraint firstItem="5Bd-gb-95d" firstAttribute="leading" secondItem="ADV-dx-dWo" secondAttribute="leading" id="DIK-Iv-2ei"/>
+                                            <constraint firstItem="DsX-IK-owK" firstAttribute="centerY" secondItem="ADV-dx-dWo" secondAttribute="centerY" id="d9x-hi-ZdO"/>
+                                            <constraint firstItem="5Bd-gb-95d" firstAttribute="centerY" secondItem="ADV-dx-dWo" secondAttribute="centerY" id="uLr-UB-mJX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="brc-A5-Ude" firstAttribute="leading" secondItem="Sfh-9a-0Oe" secondAttribute="leading" constant="16" id="FkD-CW-xdZ"/>
+                            <constraint firstItem="brc-A5-Ude" firstAttribute="top" secondItem="Sfh-9a-0Oe" secondAttribute="top" id="Raw-RG-Rnd"/>
+                            <constraint firstAttribute="bottom" secondItem="brc-A5-Ude" secondAttribute="bottom" id="cqv-wP-aJu"/>
+                            <constraint firstAttribute="trailing" secondItem="brc-A5-Ude" secondAttribute="trailing" constant="16" id="vWR-F9-ewc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Sfh-9a-0Oe" secondAttribute="trailing" id="RMy-8V-YR3"/>
+                <constraint firstAttribute="bottom" secondItem="Sfh-9a-0Oe" secondAttribute="bottom" id="Y59-5C-c3x"/>
+                <constraint firstItem="Sfh-9a-0Oe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="b40-VG-vgA"/>
+                <constraint firstItem="Sfh-9a-0Oe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xX3-bc-qzJ"/>
+            </constraints>
+            <size key="customSize" width="294" height="71"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="12"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="checkIcon1" destination="Ton-74-DSd" id="9oF-OX-vtz"/>
+                <outlet property="checkIcon2" destination="DsX-IK-owK" id="r6d-sP-lsH"/>
+                <outlet property="paymentView1" destination="DQe-z9-bup" id="0op-by-cxN"/>
+                <outlet property="paymentView2" destination="ADV-dx-dWo" id="oQX-aM-78s"/>
+            </connections>
+            <point key="canvasLocation" x="172.51908396946564" y="15.140845070422536"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <namedColor name="PrimaryDark">
+            <color red="1" green="0.50588235294117645" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundMedium">
+            <color red="0.95686274509803926" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

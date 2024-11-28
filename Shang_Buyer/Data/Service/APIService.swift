@@ -12,6 +12,8 @@ import Foundation
 protocol APIService {
     func request<T: Decodable>(endpoint: AppApi, method: HTTPMethod, parameters: [String: Any]?) -> AnyPublisher<T, Error>
     func requestNoToken<T: Decodable>(endpoint: AppApi, method: HTTPMethod, parameters: [String: Any]?) -> AnyPublisher<T, Error>
+    
+    func request<T: Decodable, U: Encodable>(endpoint: AppApi, method: HTTPMethod, parameters: U?) -> AnyPublisher<T, Error>
 }
 
 class APIServiceImpl: APIService {
@@ -93,4 +95,57 @@ class APIServiceImpl: APIService {
         }
         .eraseToAnyPublisher()
     }
+    
+    func request<T: Decodable, U: Encodable>(
+        endpoint: AppApi,
+        method: HTTPMethod,
+        parameters: U? = nil
+    ) -> AnyPublisher<T, Error> {
+        var encoding: ParameterEncoding = JSONEncoding.default
+        if method == .get {
+            encoding = URLEncoding.default
+        }
+        
+        let url = endpoint.url
+        var paramDict: [String: Any]?
+        
+        if let parameters = parameters {
+            do {
+                let jsonData = try JSONEncoder().encode(parameters)
+                paramDict = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any]
+            } catch {
+                return Fail(error: error).eraseToAnyPublisher()
+            }
+        }
+        
+        return Future { promise in
+            self.session.request(url, method: method, parameters: paramDict, encoding: encoding)
+                .validate()
+                .responseData { response in
+                    switch response.result {
+                    case let .success(data):
+                        do {
+                            let decodedObject = try JSONDecoder().decode(T.self, from: data)
+                            promise(.success(decodedObject))
+                        } catch {
+                            promise(.failure(error))
+                        }
+                    case let .failure(error):
+                        if let data = response.data {
+                            do {
+                                let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: data)
+                                let customError = NSError(domain: "", code: response.response?.statusCode ?? 0, userInfo: [NSLocalizedDescriptionKey: errorResponse.message])
+                                promise(.failure(customError))
+                            } catch {
+                                promise(.failure(error))
+                            }
+                        } else {
+                            promise(.failure(error))
+                        }
+                    }
+                }
+        }
+        .eraseToAnyPublisher()
+    }
+
 }

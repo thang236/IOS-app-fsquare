@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseAddressViewController" customModule="Shang_Buyer" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomView" destination="4fu-Ac-nSW" id="pQy-yV-Tba"/>
+                <outlet property="collectionView" destination="5p8-Ys-osh" id="NDK-Ov-IGB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5p8-Ys-osh">
+                    <rect key="frame" x="0.0" y="59" width="393" height="689"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V9J-SP-XXG">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fu-Ac-nSW">
+                    <rect key="frame" x="0.0" y="748" width="393" height="70"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMO-sC-7dh" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="16" y="13" width="361" height="44"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Xác Nhận"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="LMO-sC-7dh" firstAttribute="centerY" secondItem="4fu-Ac-nSW" secondAttribute="centerY" id="OBq-rU-VVs"/>
+                        <constraint firstAttribute="height" constant="70" id="V9t-Pq-BOW"/>
+                        <constraint firstItem="LMO-sC-7dh" firstAttribute="leading" secondItem="4fu-Ac-nSW" secondAttribute="leading" constant="16" id="Yce-Gj-6fY"/>
+                        <constraint firstAttribute="trailing" secondItem="LMO-sC-7dh" secondAttribute="trailing" constant="16" id="b1I-yI-2gp"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="4fu-Ac-nSW" firstAttribute="top" secondItem="5p8-Ys-osh" secondAttribute="bottom" id="9zo-Bi-Dlk"/>
+                <constraint firstItem="5p8-Ys-osh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="I8T-fK-QWm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5p8-Ys-osh" secondAttribute="trailing" id="KB7-JM-bET"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4fu-Ac-nSW" secondAttribute="trailing" id="kSa-2X-wxA"/>
+                <constraint firstItem="5p8-Ys-osh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lfp-OU-zKv"/>
+                <constraint firstItem="4fu-Ac-nSW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rMf-0t-CAQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4fu-Ac-nSW" secondAttribute="bottom" id="tBd-BR-AdG"/>
+            </constraints>
+            <point key="canvasLocation" x="26.717557251908396" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="LMO-sC-7dh">
+            <size key="intrinsicContentSize" width="361" height="44"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

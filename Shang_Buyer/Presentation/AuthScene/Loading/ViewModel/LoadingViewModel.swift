@@ -28,6 +28,11 @@ class LoadingViewModel: ObservableObject {
                 self.errorMessage = error.localizedDescription
             }
         }, receiveValue: { profileResponse in
+            let nameUser = "\(profileResponse.data.firstName) \(profileResponse.data.lastName)"
+            let phoneUser = profileResponse.data.phone
+            
+            UserDefaults.standard.set(nameUser, forKey: .nameUser)
+            UserDefaults.standard.set(phoneUser, forKey: .phoneUser)
             completion(.success(profileResponse))
         }).store(in: &cancellables)
     }

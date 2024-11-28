@@ -26,7 +26,10 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEf-6K-cU4" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
                             <rect key="frame" x="16" y="19" width="361" height="44"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" imagePlacement="trailing" title="Check out"/>
+                            <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" imagePlacement="trailing" title="Thanh Toán"/>
+                            <connections>
+                                <action selector="didTapCheckOutButton:" destination="-1" eventType="touchUpInside" id="AZg-Va-gc3"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
