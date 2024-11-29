@@ -227,6 +227,8 @@
 		BFF264F62CF8E038009459DD /* PopUpPaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF264F42CF8E038009459DD /* PopUpPaymentViewController.xib */; };
 		BFF264F92CF8EFBE009459DD /* BaoKimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF264F72CF8EFBE009459DD /* BaoKimViewController.swift */; };
 		BFF265382CF8F3DF009459DD /* PostPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF265372CF8F3DF009459DD /* PostPaymentResponse.swift */; };
+		DFF4DB0A2CF9C9CD00A11AAA /* MyOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DB092CF9C9CD00A11AAA /* MyOrderViewModel.swift */; };
+		DFF4DB0C2CF9CCE000A11AAA /* OrderStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DB0B2CF9CCE000A11AAA /* OrderStatusResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -466,6 +468,8 @@
 		BFF264F42CF8E038009459DD /* PopUpPaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpPaymentViewController.xib; sourceTree = "<group>"; };
 		BFF264F72CF8EFBE009459DD /* BaoKimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaoKimViewController.swift; sourceTree = "<group>"; };
 		BFF265372CF8F3DF009459DD /* PostPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPaymentResponse.swift; sourceTree = "<group>"; };
+		DFF4DB092CF9C9CD00A11AAA /* MyOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderViewModel.swift; sourceTree = "<group>"; };
+		DFF4DB0B2CF9CCE000A11AAA /* OrderStatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -672,6 +676,7 @@
 		BF1E66692CAD2D9D001C48E9 /* MyOrder */ = {
 			isa = PBXGroup;
 			children = (
+				DFF4DB082CF9C9BC00A11AAA /* ViewModel */,
 				BF1E666A2CAD2DA1001C48E9 /* View */,
 			);
 			path = MyOrder;
@@ -1734,6 +1739,7 @@
 				BFF264C92CF5C2B9009459DD /* FeeResponse.swift */,
 				BFF264E82CF7271C009459DD /* OrderResponse.swift */,
 				BFF265372CF8F3DF009459DD /* PostPaymentResponse.swift */,
+				DFF4DB0B2CF9CCE000A11AAA /* OrderStatusResponse.swift */,
 			);
 			path = OrderResponse;
 			sourceTree = "<group>";
@@ -1753,6 +1759,14 @@
 				BFF264F42CF8E038009459DD /* PopUpPaymentViewController.xib */,
 			);
 			path = PopUpPayment;
+			sourceTree = "<group>";
+		};
+		DFF4DB082CF9C9BC00A11AAA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4DB092CF9C9CD00A11AAA /* MyOrderViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1982,6 +1996,7 @@
 				BF5D61932CE288A7006202D2 /* EditAddressViewController.swift in Sources */,
 				BFF264F92CF8EFBE009459DD /* BaoKimViewController.swift in Sources */,
 				BF600F0B2CF0D4690030708E /* CartCoordinator.swift in Sources */,
+				DFF4DB0A2CF9C9CD00A11AAA /* MyOrderViewModel.swift in Sources */,
 				BFAF1D832CA838AE0085609C /* AuthResponse.swift in Sources */,
 				BF18F3A92CB9074600A975F9 /* GetBrandUseCase.swift in Sources */,
 				BFD740C92CD9BCFF0041BD3F /* GetClassificationsUseCase.swift in Sources */,
@@ -1991,6 +2006,7 @@
 				09EF3A042CD8A55A00B6FE02 /* ShoesColorCollectionViewCell.swift in Sources */,
 				BFF264E92CF7271C009459DD /* OrderResponse.swift in Sources */,
 				BFCF72642CA4042C00208985 /* UIImage+Extension.swift in Sources */,
+				DFF4DB0C2CF9CCE000A11AAA /* OrderStatusResponse.swift in Sources */,
 				BF25D04B2C9821F100CB7EE8 /* AuthInterceptor.swift in Sources */,
 				BFF264CF2CF5C32A009459DD /* OrderRepository.swift in Sources */,
 				BF600F122CF230CE0030708E /* CheckOutViewController.swift in Sources */,
