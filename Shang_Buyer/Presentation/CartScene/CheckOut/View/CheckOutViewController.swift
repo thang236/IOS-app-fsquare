@@ -271,6 +271,7 @@ class CheckOutViewController: UIViewController {
                 if let orderResponse = orderResponse {
                     if orderResponse.status == HTTPStatus.success.message || orderResponse.status == HTTPStatus.created.message {
                         popUp.appear(sender: self, isSuccess: true)
+                        self.viewModel.removeAllBag()
                     } else {
                         popUp.appear(sender: self, isSuccess: false)
                     }
