@@ -27,7 +27,7 @@ class TabViewController: UITabBarController {
         let homeTabItem = UITabBarItem(title: "Home", image: UIImage.homeOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.homeFill)
         let cartTabItem = UITabBarItem(title: "Cart", image: UIImage.bagOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.bagFill.withRenderingMode(.alwaysOriginal))
         let orderTabItem = UITabBarItem(title: "Orders", image: UIImage.cartOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.cartFill)
-        let walletTabItem = UITabBarItem(title: "Wallet", image: UIImage.walletOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.walletFill)
+//        let walletTabItem = UITabBarItem(title: "Wallet", image: UIImage.walletOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.walletFill)
         let profileTabItem = UITabBarItem(title: "Profile", image: UIImage.userOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.userFill)
 
         // Tạo view controllers cho từng tab và bọc trong UINavigationController
@@ -36,16 +36,17 @@ class TabViewController: UITabBarController {
         let profileCoordinator = ProfileCoordinator(navigationMain: coordinator.getNavigationController())
         let profileVC = profileCoordinator.getNavigationController()
         let cartVC = CartCoordinator().getNavigationController()
-        let orderVC = UINavigationController(rootViewController: MyOrderViewController())
-        let walletVC = UINavigationController(rootViewController: MyEWalletViewController())
+        let orderCoordinator = OrderCoordinator()
+        let orderVC = orderCoordinator.getNavigationController()
+//        let walletVC = UINavigationController(rootViewController: MyEWalletViewController())
 
         homeVC.tabBarItem = homeTabItem
         cartVC.tabBarItem = cartTabItem
         orderVC.tabBarItem = orderTabItem
-        walletVC.tabBarItem = walletTabItem
+//        walletVC.tabBarItem = walletTabItem
         profileVC.tabBarItem = profileTabItem
 
-        setViewControllers([homeVC, cartVC, orderVC, walletVC, profileVC], animated: true)
+        setViewControllers([homeVC, cartVC, orderVC, profileVC], animated: true)
 
         let fontAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.interItalicVariableFont(fontWeight: .regular, size: 12) as Any,

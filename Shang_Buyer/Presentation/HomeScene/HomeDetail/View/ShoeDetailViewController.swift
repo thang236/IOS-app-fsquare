@@ -71,6 +71,13 @@ class ShoeDetailViewController: UIViewController {
                     return cell
                 case let .describe(shoesDetailData):
                     let cell = collectionView.dequeueReusableCell(withType: DescribeCollectionViewCell.self, for: indexPath)
+                    cell.action = {
+                        if let isFav = self?.viewModel?.shoesDetail?.data?.isFavorite {
+                            self?.viewModel?.toggleFav(isFav: isFav)
+                        } else {
+                            self?.showToast(message: "Đã có lỗi xảy ra vui lòng thử lại", chooseImageToast: .warning)
+                        }
+                    }
                     cell.configureCell(shoesDetailData: shoesDetailData)
                     return cell
                 case let .sizeShoes(titleSize):
@@ -136,6 +143,8 @@ class ShoeDetailViewController: UIViewController {
         setupNav()
         viewModel?.initDataSource(idShoes: shoesID ?? "")
         setupBindings()
+        self.view.isSkeletonable = true
+        self.view.showAnimatedGradientSkeleton()
     }
 
     override func viewWillAppear(_: Bool) {
@@ -170,18 +179,35 @@ class ShoeDetailViewController: UIViewController {
     // MARK: - Setup Bindings
 
     private func setupBindings() {
+        viewModel?.$errorMessage
+            .compactMap { $0 }
+            .receive(on: DispatchQueue.main)
+            .sink { errorMessage in
+                self.showToast(message: errorMessage, chooseImageToast: .warning)
+            }.store(in: &cancellables)
+        
         viewModel?.$shoesDetail.receive(on: DispatchQueue.main)
             .sink { shoesDetail in
-                if let shoesDetail = shoesDetail {
-                    var snapshot = self.dataSource.snapshot()
+                var snapshot = self.dataSource.snapshot()
+                if let shoesDetailData = shoesDetail?.data {
+                    self.view.hideSkeleton()
+                    snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .describe))
+                    snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .description))
+                
                     snapshot.appendItems(
-                        [.describe(shoesDetailData: shoesDetail.data)], toSection: .describe
+                        [.describe(shoesDetailData: shoesDetailData)], toSection: .describe
                     )
-                    if let description = shoesDetail.data.description {
+                    if let description = shoesDetailData.description {
                         snapshot.appendItems([.description(description: description)], toSection: .description)
                     }
-                    self.priceLbl.text = NumberFormatter.formatToVNDWithCustomSymbol(shoesDetail.data.minPrice)
-                    self.dataSource.apply(snapshot, animatingDifferences: false)
+                    self.priceLbl.text = NumberFormatter.formatToVNDWithCustomSymbol(shoesDetailData.minPrice)
+                    self.dataSource.applySnapshotUsingReloadData(snapshot)
+                } else {
+                    let shoesDetailData = ShoesDetailData(id: "", name: "", brand: "", category: "", describe: "nil", description: "nil", classificationCount: 0, minPrice: 0, maxPrice: 0, rating: 0, reviewCount: 0, isFavorite: false, thumbnail: nil, sales: 0)
+                    snapshot.appendItems([.describe(shoesDetailData: shoesDetailData)], toSection: .describe)
+                 
+                    snapshot.appendItems([.description(description: shoesDetailData.describe)], toSection: .description)
+                    self.dataSource.applySnapshotUsingReloadData(snapshot)
                 }
             }.store(in: &cancellables)
 

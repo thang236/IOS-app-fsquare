@@ -43,6 +43,20 @@ class HomeViewModel: ObservableObject {
                 }
             }
             .store(in: &cancellables)
+        
+        SharedData.shared.$idShoesAddFav
+            .compactMap { $0 }
+            .sink { [weak self] idShoesAddFav in
+                guard let self = self else { return }
+                print("idShoesRemoveFav  ", idShoesAddFav)
+                for (index, shoes) in self.shoesResponse!.data.enumerated() {
+                    if shoes.id == idShoesAddFav {
+                        self.shoesResponse!.data[index].isFavorite = true
+                        self.shoesFavoriteID = idShoesAddFav
+                    }
+                }
+            }
+            .store(in: &cancellables)
     }
 
     func initDataSource() {

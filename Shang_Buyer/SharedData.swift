@@ -10,4 +10,5 @@ import Foundation
 class SharedData: ObservableObject {
     static let shared = SharedData()
     @Published var idShoesRemoveFav: String? = nil
+    @Published var idShoesAddFav: String? = nil
 }

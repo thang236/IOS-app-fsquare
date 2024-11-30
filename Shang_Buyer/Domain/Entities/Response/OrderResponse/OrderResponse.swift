@@ -26,7 +26,7 @@ struct OrderData: Codable {
     let isPayment: Bool
     let note: String
     let status: String
-    let statusTimestamps: StatusTimestamps
+    let statusTimestamps: StatusTimestamps?
     let returnInfo: ReturnInfo?
     let isActive: Bool
     let id: String

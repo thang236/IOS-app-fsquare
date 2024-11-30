@@ -33,7 +33,7 @@ class CartViewModel: ObservableObject {
         self.orderUseCase = orderUseCase
     }
 
-    func getBag() {
+    func getBag( completion: (() -> Void)? = nil) {
         isLoading = true
         useCase.getBag()
             .receive(on: RunLoop.main)
@@ -46,6 +46,7 @@ class CartViewModel: ObservableObject {
                 }
             } receiveValue: { bagResponse in
                 self.bagResponse = bagResponse
+                completion?()
             }
             .store(in: &cancellables)
     }
@@ -194,6 +195,6 @@ extension CartViewModel {
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         let prefix = String((0 ..< 3).map { _ in letters.randomElement()! })
         let randomNumber = Int.random(in: 100_000 ... 999_999)
-        return "\(prefix)\(randomNumber)"
+        return "FSORDER\(prefix)\(randomNumber)"
     }
 }

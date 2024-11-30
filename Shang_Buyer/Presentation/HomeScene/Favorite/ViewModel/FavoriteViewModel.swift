@@ -30,7 +30,7 @@ class FavoriteViewModel: ObservableObject {
         }
     }
 
-    func getFavoriteShoes() {
+    func getFavoriteShoes(completion: (() -> Void)? = nil) {
         favoriteUseCase.getFavoriteShoes()
             .receive(on: DispatchQueue.main)
             .sink { completion in
@@ -38,13 +38,13 @@ class FavoriteViewModel: ObservableObject {
                 case .finished:
                     break
                 case let .failure(error):
-                    print("error GetFavorite: \(error.localizedDescription)")
                     self.errorMessage = error.localizedDescription
                 }
             } receiveValue: { response in
                 self.favorites = response
                 self.filteredFavorites = response.data
                 self.isLoading = false
+                completion?()
             }
             .store(in: &cancellables)
     }
