@@ -19,7 +19,7 @@ struct ShoesDetailData: Codable, Hashable {
     let maxPrice: Double
     let rating: Double
     let reviewCount: Int
-    let isFavorite: Bool?
+    var isFavorite: Bool?
     let thumbnail: Thumbnail?
     let sales: Int
 
@@ -52,5 +52,5 @@ struct ShoesDetailData: Codable, Hashable {
 struct ShoesDetailResponse: Codable {
     let status: String
     let message: String
-    let data: ShoesDetailData
+    var data: ShoesDetailData?
 }

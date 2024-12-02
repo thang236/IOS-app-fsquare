@@ -46,7 +46,12 @@ class LoadingViewController: UIViewController {
     func checkRemember() {
         let check = UserDefaults.standard.bool(forKey: .rememberMe)
         if check {
-            checkToken()
+            if TokenManager.shared.getAccessToken() != nil {
+                checkToken()
+            } else {
+                showToast(message: "Please Login again", chooseImageToast: .warning)
+                coordinator?.goToLoginMethodSelection()
+            }
         } else {
             coordinator?.goToLoginMethodSelection()
         }
@@ -61,6 +66,7 @@ class LoadingViewController: UIViewController {
                         self.coordinator?.didFinishAuthentication()
                     } else {
                         self.showToast(message: "Please Login again", chooseImageToast: .warning)
+                        TokenManager.shared.removeTokens()
                         self.coordinator?.goToLoginMethodSelection()
                     }
                 case let .failure(failure):

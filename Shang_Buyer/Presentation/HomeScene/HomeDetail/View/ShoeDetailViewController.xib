@@ -59,8 +59,14 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                             </subviews>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXT-kH-tWk" customClass="StepperView" customModule="Shang_Buyer" customModuleProvider="target">
                             <rect key="frame" x="259" y="35.333333333333371" width="118" height="40"/>
@@ -101,6 +107,9 @@
                         <constraint firstItem="QXT-kH-tWk" firstAttribute="top" secondItem="o2y-KK-GDE" secondAttribute="bottom" constant="8" id="hje-AP-EEE"/>
                         <constraint firstItem="o2y-KK-GDE" firstAttribute="top" secondItem="UOu-hy-4IF" secondAttribute="top" constant="8" id="l0s-ha-r5o"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -114,6 +123,9 @@
                 <constraint firstItem="UOu-hy-4IF" firstAttribute="top" secondItem="Ok4-wZ-DCF" secondAttribute="bottom" id="arM-4a-qKl"/>
                 <constraint firstItem="UOu-hy-4IF" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="crT-Ud-Y29"/>
             </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="26.717557251908396" y="20.422535211267608"/>
         </view>
     </objects>

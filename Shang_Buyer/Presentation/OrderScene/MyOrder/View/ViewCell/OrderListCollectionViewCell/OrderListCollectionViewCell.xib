@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="OrderListCollectionViewCell" customModule="Shang_Buyer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="406" height="161"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="406" height="161"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOJ-mY-gpJ">
+                        <rect key="frame" x="0.0" y="0.0" width="406" height="161"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageShimmer" translatesAutoresizingMaskIntoConstraints="NO" id="sA3-KL-mlT">
+                                <rect key="frame" x="16" y="16" width="129" height="129"/>
+                                <color key="backgroundColor" name="backgroundDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sA3-KL-mlT" secondAttribute="height" multiplier="1:1" id="h74-iH-0Lw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cQm-WV-h1w">
+                                <rect key="frame" x="153" y="16" width="135.66666666666663" height="63"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eol-hf-fmZ" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="zXA-AC-imC">
+                                        <rect key="frame" x="0.0" y="24.999999999999996" width="135.66666666666666" height="14.333333333333332"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZg-MC-sWn" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="31" height="14.333333333333334"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" name="neutralLightMedium"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjx-CZ-oeK" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="0.0" width="3.3333333333333357" height="14.333333333333334"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" name="neutralLightMedium"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wi1-KP-70u" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="52.333333333333343" y="0.0" width="31" height="14.333333333333334"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" name="neutralLightMedium"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92Z-CP-fKN" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="92.333333333333343" y="0.0" width="3.3333333333333286" height="14.333333333333334"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" name="neutralLightMedium"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aP8-Dx-QKJ" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="104.66666666666669" y="0.0" width="31" height="14.333333333333334"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" name="neutralLightMedium"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kQ-Sp-4Un" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="47.333333333333336" width="33" height="15.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" name="PrimaryDark"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cQm-WV-h1w" firstAttribute="top" secondItem="cOJ-mY-gpJ" secondAttribute="top" constant="16" id="1Vv-Sp-N6z"/>
+                            <constraint firstItem="sA3-KL-mlT" firstAttribute="leading" secondItem="cOJ-mY-gpJ" secondAttribute="leading" constant="16" id="MxH-fa-cTT"/>
+                            <constraint firstAttribute="bottom" secondItem="sA3-KL-mlT" secondAttribute="bottom" constant="16" id="UhM-aZ-sf1"/>
+                            <constraint firstItem="cQm-WV-h1w" firstAttribute="leading" secondItem="sA3-KL-mlT" secondAttribute="trailing" constant="8" symbolic="YES" id="bih-JG-wSu"/>
+                            <constraint firstItem="sA3-KL-mlT" firstAttribute="top" secondItem="cOJ-mY-gpJ" secondAttribute="top" constant="16" id="yGb-Xe-E23"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="cOJ-mY-gpJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Blp-iP-T8a"/>
+                <constraint firstItem="cOJ-mY-gpJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MsY-oh-mGG"/>
+                <constraint firstAttribute="trailing" secondItem="cOJ-mY-gpJ" secondAttribute="trailing" id="cRs-BH-pAd"/>
+                <constraint firstAttribute="bottom" secondItem="cOJ-mY-gpJ" secondAttribute="bottom" id="wWk-Pn-T25"/>
+            </constraints>
+            <size key="customSize" width="406" height="161"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="colorLabel" destination="lZg-MC-sWn" id="ubM-Zi-THB"/>
+                <outlet property="imageView" destination="sA3-KL-mlT" id="Coz-DL-R3K"/>
+                <outlet property="nameLabel" destination="eol-hf-fmZ" id="cUt-OT-Jpp"/>
+                <outlet property="priceLabel" destination="2kQ-Sp-4Un" id="5ML-He-vmI"/>
+                <outlet property="quantityLabel" destination="aP8-Dx-QKJ" id="czl-I4-LCa"/>
+                <outlet property="sizeLabel" destination="wi1-KP-70u" id="MeE-zf-4Gg"/>
+            </connections>
+            <point key="canvasLocation" x="254.96183206106869" y="27.816901408450704"/>
+        </collectionViewCell>
+    </objects>
+    <designables>
+        <designable name="2kQ-Sp-4Un">
+            <size key="intrinsicContentSize" width="33" height="15.666666666666666"/>
+        </designable>
+        <designable name="92Z-CP-fKN">
+            <size key="intrinsicContentSize" width="3.3333333333333335" height="14.333333333333334"/>
+        </designable>
+        <designable name="Rjx-CZ-oeK">
+            <size key="intrinsicContentSize" width="3.3333333333333335" height="14.333333333333334"/>
+        </designable>
+        <designable name="aP8-Dx-QKJ">
+            <size key="intrinsicContentSize" width="31" height="14.333333333333334"/>
+        </designable>
+        <designable name="eol-hf-fmZ">
+            <size key="intrinsicContentSize" width="35.333333333333336" height="17"/>
+        </designable>
+        <designable name="lZg-MC-sWn">
+            <size key="intrinsicContentSize" width="31" height="14.333333333333334"/>
+        </designable>
+        <designable name="wi1-KP-70u">
+            <size key="intrinsicContentSize" width="31" height="14.333333333333334"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="imageShimmer" width="86.5" height="86.5"/>
+        <namedColor name="PrimaryDark">
+            <color red="1" green="0.50588235294117645" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundDark">
+            <color red="0.93725490196078431" green="0.94117647058823528" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="neutralLightMedium">
+            <color red="0.40392156862745099" green="0.40392156862745099" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

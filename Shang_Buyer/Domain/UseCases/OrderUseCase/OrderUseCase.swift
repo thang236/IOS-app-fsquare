@@ -12,6 +12,7 @@ protocol OrderUseCase {
     func calculatorFee(parameter: [String: Any]) -> AnyPublisher<FeeResponse, Error>
     func createOrder(parameter: OrderRequest) -> AnyPublisher<OrderResponse, Error>
     func postPayment(parameter: [String: Any]) -> AnyPublisher<PostPaymentResponse, Error>
+    func getOrderStatus(parameter: [String: Any]) -> AnyPublisher<OrderStatusResponse, Error>
 }
 
 class OrderUseCaseImpl: OrderUseCase {
@@ -31,5 +32,9 @@ class OrderUseCaseImpl: OrderUseCase {
 
     func postPayment(parameter: [String: Any]) -> AnyPublisher<PostPaymentResponse, Error> {
         repository.postPayment(parameter: parameter)
+    }
+
+    func getOrderStatus(parameter: [String: Any]) -> AnyPublisher<OrderStatusResponse, Error> {
+        repository.getOrderStatus(parameter: parameter)
     }
 }

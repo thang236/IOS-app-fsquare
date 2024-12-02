@@ -221,7 +221,11 @@ final class DIContainer {
         let getClassificationUseCase = resolveGetClassificationsUseCase()
         let getSizeClassificationUseCase = resolveGetSizeClassificationUseCase()
         let addBagUseCase = resolveAddBagUseCase()
-        return ShoesDetailViewModel(getShoesDetailUseCase: getShoesDetailUseCase, getShoesClassificationUseCase: getShoesClassificationUseCase, getClassificationsUseCase: getClassificationUseCase, getSizeClassificationUseCase: getSizeClassificationUseCase, addBagUseCase: addBagUseCase)
+        let getShoesUseCase = resolveGetShoesUseCase()
+        return ShoesDetailViewModel(
+            getShoesDetailUseCase: getShoesDetailUseCase, getShoesClassificationUseCase: getShoesClassificationUseCase, getClassificationsUseCase: getClassificationUseCase, getSizeClassificationUseCase: getSizeClassificationUseCase, addBagUseCase: addBagUseCase,
+            getShoesUseCase: getShoesUseCase
+        )
     }
 
     // MARK: Cart
@@ -251,5 +255,10 @@ final class DIContainer {
         let getAddressUseCase = resolveGetAddressUseCase()
         let orderUseCase = resolveOrderUseCase()
         return CartViewModel(useCase: cartUseCase, getAddressUseCase: getAddressUseCase, orderUseCase: orderUseCase)
+    }
+
+    func resolveOrderViewModel() -> MyOrderViewModel {
+        let orderUseCase = resolveOrderUseCase()
+        return MyOrderViewModel(orderUseCase: orderUseCase)
     }
 }

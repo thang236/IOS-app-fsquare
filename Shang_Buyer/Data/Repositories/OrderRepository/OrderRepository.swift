@@ -12,6 +12,7 @@ protocol OrderRepository {
     func calculatorFee(parameter: [String: Any]) -> AnyPublisher<FeeResponse, Error>
     func createOrder(parameter: OrderRequest) -> AnyPublisher<OrderResponse, Error>
     func postPayment(parameter: [String: Any]) -> AnyPublisher<PostPaymentResponse, Error>
+    func getOrderStatus(parameter: [String: Any]) -> AnyPublisher<OrderStatusResponse, Error>
 }
 
 class OrderRepositoryImpl: OrderRepository {
@@ -31,5 +32,9 @@ class OrderRepositoryImpl: OrderRepository {
 
     func postPayment(parameter: [String: Any]) -> AnyPublisher<PostPaymentResponse, Error> {
         apiService.request(endpoint: .payments, method: .post, parameters: parameter)
+    }
+
+    func getOrderStatus(parameter: [String: Any]) -> AnyPublisher<OrderStatusResponse, Error> {
+        apiService.request(endpoint: .order, method: .get, parameters: parameter)
     }
 }

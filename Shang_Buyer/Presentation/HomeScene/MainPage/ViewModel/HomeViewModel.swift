@@ -10,6 +10,7 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     @Published var shoesResponse: ShoesResponse? = nil
+    @Published var filterShoesResponse: ShoesResponse? = nil
     @Published var errorMessage: String? = nil
     @Published var successMessage: String? = nil
     @Published var brands: [BrandItem]? = nil
@@ -18,6 +19,7 @@ class HomeViewModel: ObservableObject {
     @Published var shoesFavoriteID: String? = nil
     @Published var hasNextPage: Bool = false
     @Published var page: Int = 1
+    @Published var pageFlitterShoes: Int = 1
     var cancellables = Set<AnyCancellable>()
 
     let getShoesUseCase: GetShoesUseCase
@@ -43,11 +45,56 @@ class HomeViewModel: ObservableObject {
                 }
             }
             .store(in: &cancellables)
+
+        SharedData.shared.$idShoesAddFav
+            .compactMap { $0 }
+            .sink { [weak self] idShoesAddFav in
+                guard let self = self else { return }
+                print("idShoesRemoveFav  ", idShoesAddFav)
+                for (index, shoes) in self.shoesResponse!.data.enumerated() {
+                    if shoes.id == idShoesAddFav {
+                        self.shoesResponse!.data[index].isFavorite = true
+                        self.shoesFavoriteID = idShoesAddFav
+                    }
+                }
+            }
+            .store(in: &cancellables)
     }
 
     func initDataSource() {
         page = 1
         fetchShoesAndBrands(page: page)
+    }
+
+    func filterBand(idBrand: String) {
+        let parameter: [String: Any] = [
+            "size": 20,
+            "page": pageFlitterShoes,
+            "search": "",
+            "brand": idBrand,
+            "category": "",
+        ]
+        getShoesUseCase.execute(parameter: parameter)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    self.shoesLoading = false
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { shoesResponse in
+                if shoesResponse.status == HTTPStatus.success.message {
+                    self.filterShoesResponse = shoesResponse
+                    if shoesResponse.options.hasNextPage {
+                        self.pageFlitterShoes += 1
+                        self.hasNextPage = true
+                    } else {
+                        self.hasNextPage = false
+                    }
+                } else {
+                    self.errorMessage = "\(shoesResponse.status): \(shoesResponse.message)"
+                }
+            }).store(in: &cancellables)
     }
 
     func toggleFav(shoes: ShoeData) {
@@ -80,6 +127,12 @@ class HomeViewModel: ObservableObject {
                             self.shoesFavoriteID = idShoes
                         }
                     }
+
+                    for (index, shoes) in self.filterShoesResponse!.data.enumerated() {
+                        if shoes.id == idShoes {
+                            self.filterShoesResponse!.data[index].isFavorite = false
+                        }
+                    }
                 } else { self.errorMessage = "\(favoriteResponse.status): \(favoriteResponse.message)" }
             }).store(in: &cancellables)
     }
@@ -104,6 +157,11 @@ class HomeViewModel: ObservableObject {
                         if shoes.id == idShoes {
                             self.shoesResponse!.data[index].isFavorite = true
                             self.shoesFavoriteID = idShoes
+                        }
+                    }
+                    for (index, shoes) in self.filterShoesResponse!.data.enumerated() {
+                        if shoes.id == idShoes {
+                            self.filterShoesResponse!.data[index].isFavorite = true
                         }
                     }
                 } else { self.errorMessage = "\(favoriteResponse.status): \(favoriteResponse.message)" }
@@ -192,7 +250,9 @@ class HomeViewModel: ObservableObject {
             }, receiveValue: { brandResponse in
                 self.brands = brandResponse.data
                 let thumnail = Thumbnail(url: "more")
-                self.brands?.append(BrandItem(id: "0", name: "Xem thêm", thumbnail: thumnail))
+                if brandResponse.data.count == 7 {
+                    self.brands?.append(BrandItem(id: "0", name: "Xem thêm", thumbnail: thumnail))
+                }
             }).store(in: &cancellables)
     }
 
@@ -238,7 +298,9 @@ class HomeViewModel: ObservableObject {
                 }
                 self.brands = brandResponse.data
                 let thumnail = Thumbnail(url: "more")
-                self.brands?.append(BrandItem(id: "0", name: "Xem thêm", thumbnail: thumnail))
+                if brandResponse.data.count == 7 {
+                    self.brands?.append(BrandItem(id: "0", name: "Xem thêm", thumbnail: thumnail))
+                }
             }).store(in: &cancellables)
     }
 }
