@@ -9,15 +9,6 @@ import Foundation
 import UIKit
 
 extension String {
-    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
-        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boundingBox = boundingRect(with: constraintRect,
-                                       options: .usesLineFragmentOrigin,
-                                       attributes: [.font: font],
-                                       context: nil)
-        return boundingBox.height
-    }
-
     func toShortDate() -> String? {
         let isoFormatter = DateFormatter()
         isoFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
