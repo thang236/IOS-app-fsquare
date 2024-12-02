@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 extension UILabel {
-
     func addTrailing(with trailingText: String, moreText: String, moreTextFont: UIFont, moreTextColor: UIColor) {
         let readMoreText: String = trailingText + moreText
 

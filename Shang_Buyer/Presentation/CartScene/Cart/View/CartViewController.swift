@@ -10,7 +10,7 @@ import UIKit
 class CartViewController: UIViewController {
     private let refreshControl = UIRefreshControl()
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet weak var iconNil: UIImageView!
+    @IBOutlet var iconNil: UIImageView!
     @IBOutlet var checkOutButton: FullButton!
     var coordinator: CartCoordinator?
     var viewModel: CartViewModel
@@ -51,9 +51,9 @@ class CartViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(refreshCart), for: .valueChanged)
         collectionView.refreshControl = refreshControl
     }
-    
+
     @objc private func refreshCart() {
-        viewModel.getBag() { [self] in
+        viewModel.getBag { [self] in
             self.refreshControl.endRefreshing()
         }
     }
@@ -113,10 +113,9 @@ class CartViewController: UIViewController {
 
     @IBAction func didTapCheckOutButton(_: Any) {
         if viewModel.bagResponse?.data?.count == 0 {
-            self.showToast(message: "Giỏ hàng của bạn đang trống", chooseImageToast: .warning)
+            showToast(message: "Giỏ hàng của bạn đang trống", chooseImageToast: .warning)
         } else {
             coordinator?.goToCheckOut()
-
         }
     }
 }

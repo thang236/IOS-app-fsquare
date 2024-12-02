@@ -33,7 +33,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnz-53-tFB" customClass="DescriptionLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="36" width="237" height="62"/>
+                                <rect key="frame" x="16" y="36" width="237" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="mnz-53-tFB" secondAttribute="bottom" id="7wz-T0-aXU"/>
+                            <constraint firstAttribute="bottom" secondItem="mnz-53-tFB" secondAttribute="bottom" constant="20" symbolic="YES" id="7wz-T0-aXU"/>
                             <constraint firstItem="rYg-jS-tXx" firstAttribute="top" secondItem="RIx-eu-zvb" secondAttribute="top" constant="10" id="BO3-Jv-mMr"/>
                             <constraint firstItem="rYg-jS-tXx" firstAttribute="leading" secondItem="RIx-eu-zvb" secondAttribute="leading" constant="16" id="MbL-KC-6di"/>
                             <constraint firstItem="mnz-53-tFB" firstAttribute="trailing" secondItem="rYg-jS-tXx" secondAttribute="trailing" id="etN-qr-ggH"/>

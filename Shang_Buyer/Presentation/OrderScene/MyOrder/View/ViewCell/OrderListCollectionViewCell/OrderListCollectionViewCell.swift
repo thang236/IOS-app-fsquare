@@ -8,12 +8,12 @@
 import UIKit
 
 class OrderListCollectionViewCell: UICollectionViewCell {
-    @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var priceLabel: BodyLabel!
-    @IBOutlet private weak var nameLabel: BodyLabel!
-    @IBOutlet private weak var quantityLabel: BodyLabel!
-    @IBOutlet private weak var sizeLabel: BodyLabel!
-    @IBOutlet private weak var colorLabel: BodyLabel!
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var priceLabel: BodyLabel!
+    @IBOutlet private var nameLabel: BodyLabel!
+    @IBOutlet private var quantityLabel: BodyLabel!
+    @IBOutlet private var sizeLabel: BodyLabel!
+    @IBOutlet private var colorLabel: BodyLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,21 +27,20 @@ class OrderListCollectionViewCell: UICollectionViewCell {
 
             self.layer.cornerRadius = 12
         }
-        
+
         contentView.isSkeletonable = true
         contentView.showAnimatedGradientSkeleton()
     }
-    
+
     override func layoutSubviews() {
         // Initialization code
-       
     }
-    
+
     func setupCell(oderStatusData: OderStatusData?) {
         if let item = oderStatusData?.firstOrderItem {
             contentView.hideSkeleton()
             if let urlString = item.thumbnail?.url, let url = URL(string: urlString) {
-                    imageView.loadImageWithShimmer(url: url)
+                imageView.loadImageWithShimmer(url: url)
             }
             nameLabel.text = item.shoes
             let priceString = NumberFormatter.formatToVNDWithCustomSymbol(item.price)
@@ -52,7 +51,5 @@ class OrderListCollectionViewCell: UICollectionViewCell {
         } else {
             showAnimatedGradientSkeleton()
         }
-       
     }
-    
 }

@@ -143,8 +143,8 @@ class ShoeDetailViewController: UIViewController {
         setupNav()
         viewModel?.initDataSource(idShoes: shoesID ?? "")
         setupBindings()
-        self.view.isSkeletonable = true
-        self.view.showAnimatedGradientSkeleton()
+        view.isSkeletonable = true
+        view.showAnimatedGradientSkeleton()
     }
 
     override func viewWillAppear(_: Bool) {
@@ -185,7 +185,7 @@ class ShoeDetailViewController: UIViewController {
             .sink { errorMessage in
                 self.showToast(message: errorMessage, chooseImageToast: .warning)
             }.store(in: &cancellables)
-        
+
         viewModel?.$shoesDetail.receive(on: DispatchQueue.main)
             .sink { shoesDetail in
                 var snapshot = self.dataSource.snapshot()
@@ -193,7 +193,7 @@ class ShoeDetailViewController: UIViewController {
                     self.view.hideSkeleton()
                     snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .describe))
                     snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .description))
-                
+
                     snapshot.appendItems(
                         [.describe(shoesDetailData: shoesDetailData)], toSection: .describe
                     )
@@ -205,7 +205,7 @@ class ShoeDetailViewController: UIViewController {
                 } else {
                     let shoesDetailData = ShoesDetailData(id: "", name: "", brand: "", category: "", describe: "nil", description: "nil", classificationCount: 0, minPrice: 0, maxPrice: 0, rating: 0, reviewCount: 0, isFavorite: false, thumbnail: nil, sales: 0)
                     snapshot.appendItems([.describe(shoesDetailData: shoesDetailData)], toSection: .describe)
-                 
+
                     snapshot.appendItems([.description(description: shoesDetailData.describe)], toSection: .description)
                     self.dataSource.applySnapshotUsingReloadData(snapshot)
                 }
@@ -312,7 +312,6 @@ class ShoeDetailViewController: UIViewController {
 
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
-
                 return section
 
             case .describe:

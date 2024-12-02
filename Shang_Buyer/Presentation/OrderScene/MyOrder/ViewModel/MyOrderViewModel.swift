@@ -5,18 +5,18 @@
 //  Created by ThangHT on 29/11/2024.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 enum OrderStatus: String {
-    case pending = "pending"
-    case processing = "processing"
-    case shipped = "shipped"
-    case delivered = "delivered"
-    case confirmed = "confirmed"
-    case cancelled = "cancelled"
-    case returned = "returned"
-    
+    case pending
+    case processing
+    case shipped
+    case delivered
+    case confirmed
+    case cancelled
+    case returned
+
     var title: String {
         switch self {
         case .pending:
@@ -35,21 +35,20 @@ enum OrderStatus: String {
             return "Đã trả"
         }
     }
-    
+
     static let allStatuses: [OrderStatus] = [.pending, .processing, .shipped, .delivered, .confirmed, .cancelled, .returned]
 }
-
 
 class MyOrderViewModel: ObservableObject {
     @Published var orderStatusResponse: OrderStatusResponse?
     var orderUseCase: OrderUseCase
-    
+
     var cancellables = Set<AnyCancellable>()
-    
+
     init(orderUseCase: OrderUseCase) {
         self.orderUseCase = orderUseCase
     }
-    
+
     func getOrder(orderStatus: OrderStatus, completion: (() -> Void)? = nil) {
         let parameter: [String: Any] = ["status": orderStatus.rawValue]
         orderUseCase.getOrderStatus(parameter: parameter)
@@ -66,7 +65,4 @@ class MyOrderViewModel: ObservableObject {
                 completion?()
             }.store(in: &cancellables)
     }
-
-    
-    
 }

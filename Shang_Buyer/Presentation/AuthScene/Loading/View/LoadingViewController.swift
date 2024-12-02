@@ -49,7 +49,7 @@ class LoadingViewController: UIViewController {
             if TokenManager.shared.getAccessToken() != nil {
                 checkToken()
             } else {
-                self.showToast(message: "Please Login again", chooseImageToast: .warning)
+                showToast(message: "Please Login again", chooseImageToast: .warning)
                 coordinator?.goToLoginMethodSelection()
             }
         } else {

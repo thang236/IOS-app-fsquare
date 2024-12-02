@@ -33,7 +33,7 @@ class CartViewModel: ObservableObject {
         self.orderUseCase = orderUseCase
     }
 
-    func getBag( completion: (() -> Void)? = nil) {
+    func getBag(completion: (() -> Void)? = nil) {
         isLoading = true
         useCase.getBag()
             .receive(on: RunLoop.main)

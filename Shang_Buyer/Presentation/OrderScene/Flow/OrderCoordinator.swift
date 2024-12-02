@@ -23,6 +23,4 @@ class OrderCoordinator: Coordinator {
     func getNavigationController() -> UINavigationController {
         return navigationController
     }
-
-    
 }

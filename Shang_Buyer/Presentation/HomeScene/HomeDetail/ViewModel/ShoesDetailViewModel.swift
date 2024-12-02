@@ -10,6 +10,7 @@ import Foundation
 
 class ShoesDetailViewModel: ObservableObject {
     // MARK: - Properties
+
     @Published var shoesFavoriteID: String? = nil
     @Published var shoesDetail: ShoesDetailResponse? = nil
     @Published var errorMessage: String? = nil
@@ -24,6 +25,7 @@ class ShoesDetailViewModel: ObservableObject {
     var cancellables = Set<AnyCancellable>()
 
     // MARK: - UseCase
+
     private let getShoesUseCase: GetShoesUseCase
     private let getShoesDetailUseCase: GetShoesDetailUseCase
     private let getShoesClassificationUseCase: GetShoesClassificationUseCase
@@ -34,7 +36,8 @@ class ShoesDetailViewModel: ObservableObject {
     // MARK: - Init
 
     init(getShoesDetailUseCase: GetShoesDetailUseCase, getShoesClassificationUseCase: GetShoesClassificationUseCase, getClassificationsUseCase: GetClassificationsUseCase, getSizeClassificationUseCase: GetSizeClassificationUseCase, addBagUseCase: AddBagUseCase,
-         getShoesUseCase: GetShoesUseCase) {
+         getShoesUseCase: GetShoesUseCase)
+    {
         self.getShoesDetailUseCase = getShoesDetailUseCase
         self.getShoesClassificationUseCase = getShoesClassificationUseCase
         self.getSizeClassificationUseCase = getSizeClassificationUseCase
@@ -142,6 +145,7 @@ class ShoesDetailViewModel: ObservableObject {
                 print("Success addBagUseCase")
             }).store(in: &cancellables)
     }
+
     func toggleFav(isFav: Bool) {
         if isFav {
             removeFAV()
@@ -149,7 +153,7 @@ class ShoesDetailViewModel: ObservableObject {
             addFAV()
         }
     }
-    
+
     private func addFAV() {
         guard let idShoes = idShoes else {
             errorMessage = "Something is wrong"
@@ -176,7 +180,7 @@ class ShoesDetailViewModel: ObservableObject {
                 }
             }).store(in: &cancellables)
     }
-    
+
     private func removeFAV() {
         guard let idShoes = idShoes else {
             errorMessage = "Something is wrong"
@@ -202,5 +206,4 @@ class ShoesDetailViewModel: ObservableObject {
                 }
             }).store(in: &cancellables)
     }
-    
 }

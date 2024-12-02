@@ -96,13 +96,13 @@ class FavoriteViewController: UIViewController {
         collectionView.registerCell(cellType: FavoriteCollectionViewCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+
         refreshControl.addTarget(self, action: #selector(refreshFavorites), for: .valueChanged)
         collectionView.refreshControl = refreshControl
     }
-    
+
     @objc private func refreshFavorites() {
-        viewModel.getFavoriteShoes(){
+        viewModel.getFavoriteShoes {
             self.refreshControl.endRefreshing()
         }
     }

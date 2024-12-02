@@ -21,7 +21,7 @@ struct OderStatusData: Codable {
     let status: String
     let createdAt: String?
     let firstOrderItem: FirstOderItem?
-    
+
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case clientOrderCode
@@ -32,7 +32,6 @@ struct OderStatusData: Codable {
         case firstOrderItem
     }
 }
-
 
 struct FirstOderItem: Codable {
     let size: String

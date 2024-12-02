@@ -33,8 +33,8 @@ class OrderRepositoryImpl: OrderRepository {
     func postPayment(parameter: [String: Any]) -> AnyPublisher<PostPaymentResponse, Error> {
         apiService.request(endpoint: .payments, method: .post, parameters: parameter)
     }
-    
-    func getOrderStatus(parameter: [String : Any]) -> AnyPublisher<OrderStatusResponse, Error> {
+
+    func getOrderStatus(parameter: [String: Any]) -> AnyPublisher<OrderStatusResponse, Error> {
         apiService.request(endpoint: .order, method: .get, parameters: parameter)
     }
 }

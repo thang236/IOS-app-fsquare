@@ -22,19 +22,19 @@ class DescribeCollectionViewCell: UICollectionViewCell {
     @IBOutlet var starImage5: UIImageView!
     @IBOutlet var starImage4: UIImageView!
     @IBOutlet var starImage3: UIImageView!
-    
+
     var action: (() -> Void)?
     override func awakeFromNib() {
         super.awakeFromNib()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapFavIcon))
         favIcon.isUserInteractionEnabled = true
         favIcon.addGestureRecognizer(tapGesture)
-        
+
         soldLbl.layer.backgroundColor = UIColor.neutralGrayMedium.cgColor
         soldLbl.layer.cornerRadius = 5
         soldLbl.layer.masksToBounds = true
         soldLbl.textAlignment = .center
-        
+
         contentView.isSkeletonable = true
         contentView.showAnimatedGradientSkeleton()
     }
@@ -76,10 +76,8 @@ class DescribeCollectionViewCell: UICollectionViewCell {
         } else {
             showAnimatedGradientSkeleton()
         }
-
-        
     }
-    
+
     @objc private func didTapFavIcon() {
         action?()
     }

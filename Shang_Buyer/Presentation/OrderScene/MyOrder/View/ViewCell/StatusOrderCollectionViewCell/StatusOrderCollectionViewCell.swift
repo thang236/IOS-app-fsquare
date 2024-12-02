@@ -8,24 +8,22 @@
 import UIKit
 
 class StatusOrderCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var titleStatusLabel: UILabel!
+    @IBOutlet var bottomView: UIView!
+    @IBOutlet var titleStatusLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     func setupCell(title: String) {
         titleStatusLabel.text = title
     }
-    
+
     func chooseCell() {
         bottomView.backgroundColor = .primaryDark
     }
-    
+
     func unChooseCell() {
         bottomView.backgroundColor = .borderMedium
     }
-
 }

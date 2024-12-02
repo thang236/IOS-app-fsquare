@@ -13,7 +13,7 @@ import UIKit
     @IBInspectable var leftPadding: CGFloat = 0.0
     @IBInspectable var bottomPadding: CGFloat = 0.0
     @IBInspectable var rightPadding: CGFloat = 0.0
-    
+
     // Khởi tạo với UIEdgeInsets
     convenience init(padding: UIEdgeInsets) {
         self.init()
@@ -24,7 +24,7 @@ import UIKit
             self.rightPadding = padding.right
         }
     }
-    
+
     private func setupStyle() {
         if let interFont = UIFont.interItalicVariableFont(fontWeight: .medium, size: font.pointSize) {
             font = interFont.withWeight(500)
@@ -32,14 +32,14 @@ import UIKit
             font = UIFont.systemFont(ofSize: font.pointSize, weight: .semibold)
         }
     }
-    
+
     override func drawText(in rect: CGRect) {
-        self.setupStyle()
+        setupStyle()
         let padding = UIEdgeInsets(top: topPadding, left: leftPadding, bottom: bottomPadding, right: rightPadding)
         let paddedRect = rect.inset(by: padding)
         super.drawText(in: paddedRect)
     }
-    
+
     override var intrinsicContentSize: CGSize {
         var contentSize = super.intrinsicContentSize
         contentSize.width += leftPadding + rightPadding

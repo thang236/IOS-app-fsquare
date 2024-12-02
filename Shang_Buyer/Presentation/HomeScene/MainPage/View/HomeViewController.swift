@@ -427,8 +427,9 @@ extension HomeViewController: SkeletonCollectionViewDelegate, UICollectionViewDa
         switch item {
         case let .popular(id, _, _):
             coordinator?.goToShoesDetail(idShoes: id)
-        case let .brand(id, _, _):
-            print("Clicked on Brand item with name: \(id)")
+        case let .brand(id, url, nameBrand):
+            viewModel.filterBand(idBrand: id)
+            coordinator?.goToProduct(titleBrand: nameBrand)
         case let .shoes(shoes):
             coordinator?.goToShoesDetail(idShoes: shoes.id)
         case .banner:

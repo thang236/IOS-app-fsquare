@@ -33,8 +33,8 @@ class OrderUseCaseImpl: OrderUseCase {
     func postPayment(parameter: [String: Any]) -> AnyPublisher<PostPaymentResponse, Error> {
         repository.postPayment(parameter: parameter)
     }
-    
-    func getOrderStatus(parameter: [String : Any]) -> AnyPublisher<OrderStatusResponse, Error> {
+
+    func getOrderStatus(parameter: [String: Any]) -> AnyPublisher<OrderStatusResponse, Error> {
         repository.getOrderStatus(parameter: parameter)
     }
 }
