@@ -110,6 +110,7 @@
 		BF4CE3252CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CE3232CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift */; };
 		BF4CE3262CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4CE3242CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib */; };
 		BF4CE32C2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CE32B2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift */; };
+		BF56B6F52CFF4314002B57A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF56B6F42CFF4314002B57A9 /* GoogleService-Info.plist */; };
 		BF59BB7E2CFE017F00225FB7 /* BrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF59BB7C2CFE017F00225FB7 /* BrandsViewController.swift */; };
 		BF59BB7F2CFE017F00225FB7 /* BrandsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF59BB7D2CFE017F00225FB7 /* BrandsViewController.xib */; };
 		BF5B322E2C92E3E00063CA29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */; };
@@ -239,6 +240,8 @@
 		BFF265382CF8F3DF009459DD /* PostPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF265372CF8F3DF009459DD /* PostPaymentResponse.swift */; };
 		BFF6B8F82CFE055B00445469 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6B8F62CFE055B00445469 /* OrderDetailViewController.swift */; };
 		BFF6B8F92CFE055B00445469 /* OrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF6B8F72CFE055B00445469 /* OrderDetailViewController.xib */; };
+		BFF6B8FE2CFF044000445469 /* InfoOrderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6B8FC2CFF044000445469 /* InfoOrderCollectionViewCell.swift */; };
+		BFF6B8FF2CFF044000445469 /* InfoOrderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF6B8FD2CFF044000445469 /* InfoOrderCollectionViewCell.xib */; };
 		DFF4DB0A2CF9C9CD00A11AAA /* MyOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DB092CF9C9CD00A11AAA /* MyOrderViewModel.swift */; };
 		DFF4DB0C2CF9CCE000A11AAA /* OrderStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DB0B2CF9CCE000A11AAA /* OrderStatusResponse.swift */; };
 /* End PBXBuildFile section */
@@ -360,6 +363,7 @@
 		BF4CE3232CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF4CE3242CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerHomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF4CE32B2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderHomeCollectionReusableView.swift; sourceTree = "<group>"; };
+		BF56B6F42CFF4314002B57A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF59BB7C2CFE017F00225FB7 /* BrandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsViewController.swift; sourceTree = "<group>"; };
 		BF59BB7D2CFE017F00225FB7 /* BrandsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandsViewController.xib; sourceTree = "<group>"; };
 		BF5B322A2C92E3E00063CA29 /* Shang_Buyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shang_Buyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -492,6 +496,8 @@
 		BFF265372CF8F3DF009459DD /* PostPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPaymentResponse.swift; sourceTree = "<group>"; };
 		BFF6B8F62CFE055B00445469 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		BFF6B8F72CFE055B00445469 /* OrderDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailViewController.xib; sourceTree = "<group>"; };
+		BFF6B8FC2CFF044000445469 /* InfoOrderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoOrderCollectionViewCell.swift; sourceTree = "<group>"; };
+		BFF6B8FD2CFF044000445469 /* InfoOrderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoOrderCollectionViewCell.xib; sourceTree = "<group>"; };
 		DFF4DB092CF9C9CD00A11AAA /* MyOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderViewModel.swift; sourceTree = "<group>"; };
 		DFF4DB0B2CF9CCE000A11AAA /* OrderStatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1015,6 +1021,7 @@
 		BF5B322C2C92E3E00063CA29 /* Shang_Buyer */ = {
 			isa = PBXGroup;
 			children = (
+				BF56B6F42CFF4314002B57A9 /* GoogleService-Info.plist */,
 				BF5B323B2C92E3E20063CA29 /* Info.plist */,
 				BF5B32752C92F1020063CA29 /* Common */,
 				BF6841AC2CEE314C008F9FD0 /* SharedData.swift */,
@@ -1855,10 +1862,28 @@
 		BFF6B8F52CFE050D00445469 /* OrderDetail */ = {
 			isa = PBXGroup;
 			children = (
+				BFF6B8FA2CFF041500445469 /* OrderDetailCell */,
 				BFF6B8F62CFE055B00445469 /* OrderDetailViewController.swift */,
 				BFF6B8F72CFE055B00445469 /* OrderDetailViewController.xib */,
 			);
 			path = OrderDetail;
+			sourceTree = "<group>";
+		};
+		BFF6B8FA2CFF041500445469 /* OrderDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				BFF6B8FB2CFF042200445469 /* InfoOrderCell */,
+			);
+			path = OrderDetailCell;
+			sourceTree = "<group>";
+		};
+		BFF6B8FB2CFF042200445469 /* InfoOrderCell */ = {
+			isa = PBXGroup;
+			children = (
+				BFF6B8FC2CFF044000445469 /* InfoOrderCollectionViewCell.swift */,
+				BFF6B8FD2CFF044000445469 /* InfoOrderCollectionViewCell.xib */,
+			);
+			path = InfoOrderCell;
 			sourceTree = "<group>";
 		};
 		DFF4DB082CF9C9BC00A11AAA /* ViewModel */ = {
@@ -2001,6 +2026,7 @@
 				BF2376A92CFC6C8D003D9366 /* ProductViewController.xib in Resources */,
 				BFA057DF2CAFF3D100890399 /* ProfileTableViewCell.xib in Resources */,
 				BF5B323A2C92E3E20063CA29 /* LaunchScreen.storyboard in Resources */,
+				BF56B6F52CFF4314002B57A9 /* GoogleService-Info.plist in Resources */,
 				BF45CC722CFB1B5B004B7F63 /* StatusOrderCollectionViewCell.xib in Resources */,
 				0925F3DE2CD3601600530A69 /* SizeCollectionViewCell.xib in Resources */,
 				BFA8BAF42CEF16640008CA6E /* CartCollectionViewCell.xib in Resources */,
@@ -2022,6 +2048,7 @@
 				BF96CBDA2CA56AF500066A1F /* VerifyOTPViewController.xib in Resources */,
 				BF869EF12CA297A800B59D8B /* LoginMethodSelectionViewController.xib in Resources */,
 				BF1E66672CAD248E001C48E9 /* CartViewController.xib in Resources */,
+				BFF6B8FF2CFF044000445469 /* InfoOrderCollectionViewCell.xib in Resources */,
 				BF9F32782CB529C600530523 /* AddressViewController.xib in Resources */,
 				BF4CE3262CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib in Resources */,
 				BF62C0622CD27CE900879233 /* ShoeDetailViewController.xib in Resources */,
@@ -2138,6 +2165,7 @@
 				BF25D0402C97239400CB7EE8 /* UITableView+Extension.swift in Sources */,
 				BFF265382CF8F3DF009459DD /* PostPaymentResponse.swift in Sources */,
 				BFAF1D9A2CAA807C0085609C /* LoginEmailUseCase.swift in Sources */,
+				BFF6B8FE2CFF044000445469 /* InfoOrderCollectionViewCell.swift in Sources */,
 				BFD740CD2CD9BFCA0041BD3F /* GetSizeClassificationUseCase.swift in Sources */,
 				BF4760752CDFC34400207153 /* DescriptionCollectionViewCell.swift in Sources */,
 				BFCF725D2CA3EF4000208985 /* NormalField.swift in Sources */,

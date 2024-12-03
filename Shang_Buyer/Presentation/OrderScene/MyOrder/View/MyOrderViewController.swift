@@ -12,7 +12,7 @@ class MyOrderViewController: UIViewController {
     var coordinator: OrderCoordinator?
     var viewModel: MyOrderViewModel?
     private var statusArray: [String] = [OrderStatus.pending.title, OrderStatus.processing.title, OrderStatus.shipped.title, OrderStatus.delivered.title, OrderStatus.confirmed.title, OrderStatus.cancelled.title, OrderStatus.returned.title]
-    private var selectedIndexPath: IndexPath = .init(item: 0, section: 0)
+    private var selectedIndexPath: IndexPath = [0, 0]
 
     @IBOutlet private var iconNil: UIImageView!
     @IBOutlet private var topCollectionView: UICollectionView!
@@ -33,6 +33,13 @@ class MyOrderViewController: UIViewController {
         setupCollectionView()
         setupBinding()
         setupNavigationBar(title: "Đơn hàng")
+        DispatchQueue.main.async {
+            self.topCollectionView.selectItem(at: self.selectedIndexPath, animated: false, scrollPosition: .centeredHorizontally)
+
+            if let cell = self.topCollectionView.cellForItem(at: self.selectedIndexPath) as? StatusOrderCollectionViewCell {
+                cell.chooseCell()
+            }
+        }
     }
 
     private func setupCollectionView() {
@@ -85,6 +92,8 @@ extension MyOrderViewController: UICollectionViewDelegate, UICollectionViewDataS
             cell.setupCell(title: statusArray[indexPath.row])
             if indexPath == selectedIndexPath {
                 cell.chooseCell()
+            } else {
+                cell.unChooseCell()
             }
             return cell
         } else {

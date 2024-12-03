@@ -13,9 +13,6 @@ class DescriptionCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         DispatchQueue.main.async {
-            self.addTopBorder(color: UIColor(hex: "#DADADA"), thickness: 3)
-            self.addBottomBorder(color: UIColor(hex: "#DADADA"), thickness: 3)
-
             self.contentView.isSkeletonable = true
             self.contentView.showAnimatedGradientSkeleton()
         }
@@ -35,5 +32,18 @@ class DescriptionCollectionViewCell: UICollectionViewCell {
         let targetSize = CGSize(width: width, height: .greatestFiniteMagnitude)
         let calculatedSize = descriptionLbl.sizeThatFits(targetSize)
         return calculatedSize.height
+    }
+
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        setNeedsLayout()
+        layoutIfNeeded()
+
+        let size = contentView.systemLayoutSizeFitting(
+            CGSize(width: layoutAttributes.frame.width, height: UIView.layoutFittingCompressedSize.height),
+            withHorizontalFittingPriority: .required,
+            verticalFittingPriority: .fittingSizeLevel
+        )
+        layoutAttributes.frame.size = size
+        return layoutAttributes
     }
 }

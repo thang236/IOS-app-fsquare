@@ -44,8 +44,8 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="How to dynamically change the height of the" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxr-Cu-D2o" customClass="DescriptionLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="154.33333333333334" width="270" height="15.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="How to dynamically change the height of the" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxr-Cu-D2o" customClass="DescriptionLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="154.33333333333334" width="635" height="15.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -177,6 +177,7 @@
                             <constraint firstItem="f2Z-Aj-TiB" firstAttribute="top" secondItem="vMI-4h-smf" secondAttribute="bottom" constant="8" symbolic="YES" id="Lil-xp-mbL"/>
                             <constraint firstItem="4sF-RN-diX" firstAttribute="leading" secondItem="8c0-QS-NuP" secondAttribute="leading" id="Np4-lO-4XW"/>
                             <constraint firstItem="M1m-GK-xd3" firstAttribute="leading" secondItem="4sF-RN-diX" secondAttribute="trailing" constant="8" symbolic="YES" id="TCX-mE-pSn"/>
+                            <constraint firstAttribute="trailing" secondItem="Hxr-Cu-D2o" secondAttribute="trailing" constant="20" symbolic="YES" id="Tg8-8K-KEV"/>
                             <constraint firstItem="4sF-RN-diX" firstAttribute="top" secondItem="8c0-QS-NuP" secondAttribute="top" constant="20" symbolic="YES" id="Y1D-WK-je4"/>
                             <constraint firstItem="O20-mW-i6u" firstAttribute="leading" secondItem="vMI-4h-smf" secondAttribute="trailing" constant="8" symbolic="YES" id="Z5S-sa-6lY"/>
                             <constraint firstItem="vMI-4h-smf" firstAttribute="leading" secondItem="8c0-QS-NuP" secondAttribute="leading" id="d3z-Mg-8QT"/>

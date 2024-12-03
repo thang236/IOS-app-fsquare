@@ -199,6 +199,8 @@ class CheckOutViewController: UIViewController {
                 size: $0.size?.id ?? "",
                 shoes: $0.shoes?.id ?? "",
                 quantity: $0.quantity,
+                color: $0.color,
+                thumbnail: nil,
                 price: $0.price,
                 id: nil
             )

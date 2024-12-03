@@ -20,6 +20,20 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIx-eu-zvb">
                         <rect key="frame" x="0.0" y="0.0" width="269" height="98"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXh-Kz-R8Q">
+                                <rect key="frame" x="0.0" y="0.0" width="269" height="3"/>
+                                <color key="backgroundColor" red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="p28-nW-gu6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="su1-sI-LxH">
+                                <rect key="frame" x="0.0" y="95" width="269" height="3"/>
+                                <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="CVk-cZ-qZd"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYg-jS-tXx" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
                                 <rect key="frame" x="16" y="10" width="237" height="18"/>
                                 <constraints>
@@ -46,11 +60,17 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="mnz-53-tFB" secondAttribute="bottom" constant="20" symbolic="YES" id="7wz-T0-aXU"/>
                             <constraint firstItem="rYg-jS-tXx" firstAttribute="top" secondItem="RIx-eu-zvb" secondAttribute="top" constant="10" id="BO3-Jv-mMr"/>
+                            <constraint firstItem="mXh-Kz-R8Q" firstAttribute="leading" secondItem="RIx-eu-zvb" secondAttribute="leading" id="ELN-KI-o2h"/>
                             <constraint firstItem="rYg-jS-tXx" firstAttribute="leading" secondItem="RIx-eu-zvb" secondAttribute="leading" constant="16" id="MbL-KC-6di"/>
+                            <constraint firstItem="su1-sI-LxH" firstAttribute="leading" secondItem="RIx-eu-zvb" secondAttribute="leading" id="Q2g-bc-iMp"/>
+                            <constraint firstAttribute="trailing" secondItem="mXh-Kz-R8Q" secondAttribute="trailing" id="aMG-ud-VU2"/>
+                            <constraint firstItem="mXh-Kz-R8Q" firstAttribute="top" secondItem="RIx-eu-zvb" secondAttribute="top" id="cke-gv-Myr"/>
                             <constraint firstItem="mnz-53-tFB" firstAttribute="trailing" secondItem="rYg-jS-tXx" secondAttribute="trailing" id="etN-qr-ggH"/>
                             <constraint firstItem="mnz-53-tFB" firstAttribute="top" secondItem="rYg-jS-tXx" secondAttribute="bottom" constant="8" id="jRw-wk-PAl"/>
+                            <constraint firstAttribute="bottom" secondItem="su1-sI-LxH" secondAttribute="bottom" id="keI-h1-WbT"/>
                             <constraint firstItem="mnz-53-tFB" firstAttribute="leading" secondItem="rYg-jS-tXx" secondAttribute="leading" id="oU2-Hg-vAr"/>
                             <constraint firstAttribute="trailing" secondItem="rYg-jS-tXx" secondAttribute="trailing" constant="16" id="uWH-n8-vfL"/>
+                            <constraint firstAttribute="trailing" secondItem="su1-sI-LxH" secondAttribute="trailing" id="ut0-xq-pvc"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>

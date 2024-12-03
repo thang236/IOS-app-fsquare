@@ -81,4 +81,17 @@ class DescribeCollectionViewCell: UICollectionViewCell {
     @objc private func didTapFavIcon() {
         action?()
     }
+
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        setNeedsLayout()
+        layoutIfNeeded()
+
+        let size = contentView.systemLayoutSizeFitting(
+            CGSize(width: layoutAttributes.frame.width, height: UIView.layoutFittingCompressedSize.height),
+            withHorizontalFittingPriority: .required,
+            verticalFittingPriority: .fittingSizeLevel
+        )
+        layoutAttributes.frame.size = size
+        return layoutAttributes
+    }
 }

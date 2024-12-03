@@ -14,7 +14,7 @@ struct OrderResponse: Codable {
 }
 
 struct OrderData: Codable {
-    let customer: String
+    let customer: String?
     let clientOrderCode: String
     let shippingAddress: ShippingAddress
     let orderItems: [OrderItem]
@@ -59,14 +59,18 @@ struct OrderItem: Codable {
     let size: String
     let shoes: String
     let quantity: Int
+    let color: String?
+    let thumbnail: Thumbnail?
     let price: Double
     let id: String?
 
     enum CodingKeys: String, CodingKey {
         case size
         case shoes
+        case color
         case quantity
         case price
+        case thumbnail
         case id = "_id"
     }
 }
