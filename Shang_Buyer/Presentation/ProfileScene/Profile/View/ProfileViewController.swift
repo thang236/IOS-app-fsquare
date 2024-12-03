@@ -6,9 +6,11 @@
 //
 
 import Combine
+import Photos
 import UIKit
 
 class ProfileViewController: UIViewController {
+    let imagePicker = UIImagePickerController()
     private var profile: ProfileItem? = nil
     var coordinator: ProfileCoordinator?
     private let profiles: [Profile] = Profile.profiles
@@ -69,6 +71,7 @@ class ProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupTableViewAppearance()
+        avatarImage.cornerRadius = avatarImage.frame.height / 2
     }
 
     private func setupBindings() {
@@ -99,6 +102,11 @@ class ProfileViewController: UIViewController {
 
     private func setupProfile(profile: ProfileItem) {
         fullNameLabel.text = "\(profile.firstName) \(profile.lastName)"
+        if let avatar = profile.avatar?.url {
+            if let url = URL(string: avatar) {
+                avatarImage.loadImageWithShimmer(url: url, placeholderImage: .avartar)
+            }
+        }
         if let phone = profile.phone {
             phoneLabel.text = "\(phone)"
         } else {
@@ -108,8 +116,15 @@ class ProfileViewController: UIViewController {
     }
 
     @IBAction func didTabEditProfile(_: Any) {
-//        let editProfileVC = EditProfileViewController()
-//        navigationController?.pushViewController(editProfileVC, animated: true)
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.mediaTypes = ["public.image"] // Chỉ cho phép chọn ảnh
+        imagePicker.title = "Hãy chọn ảnh đại diện"
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
     }
 }
 
@@ -170,5 +185,43 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 extension ProfileViewController: EditProfileViewModelDelegate {
     func updateProfile(profile: ProfileItem) {
         setupProfile(profile: profile)
+    }
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    func imagePickerController(_: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if info[.mediaType] as? String == "public.image" {
+            handlePhoto(info)
+        } else {
+            print("DEBUG PRINT:", "Unsupported media type.")
+        }
+
+        DispatchQueue.main.async { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        }
+    }
+
+    // MARK: - Images
+
+    private func handlePhoto(_ info: [UIImagePickerController.InfoKey: Any]) {
+        if let asset = info[.phAsset] as? PHAsset {
+            print("DEBUG PRINT:", asset.location ?? "No location")
+            print("DEBUG PRINT:", asset.creationDate?.description ?? "No creation date")
+            print("DEBUG PRINT:", asset.pixelHeight)
+            print("DEBUG PRINT:", asset.pixelWidth)
+        }
+
+        if let image = info[.originalImage] as? UIImage {
+            viewModel.updateProfile(avartar: image) { completion in
+                switch completion {
+                case let .success(success):
+                    print("success Update")
+                    self.avatarImage.image = image
+
+                case let .failure(failure):
+                    print("Fail Update")
+                }
+            }
+        }
     }
 }

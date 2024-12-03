@@ -48,7 +48,7 @@ class AddNewAddressViewController: UIViewController {
         let resizedImage = image.resizeImage(targetSize: CGSize(width: size, height: size))
         let backButton = UIBarButtonItem(image: resizedImage, style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.tintColor = .neutralUltraDark
-        setupNavigationBar(leftBarButton: backButton, title: "Add New Address", rightBarButton: nil)
+        setupNavigationBar(leftBarButton: backButton, title: "Thêm Địa Chỉ Mới", rightBarButton: nil)
     }
 
     @objc func backButtonTapped() {

@@ -92,7 +92,8 @@ final class DIContainer {
 
     func resolveProfileViewModel() -> ProfileViewModel {
         let getProfileUseCase = resolveGetProfileUseCase()
-        return ProfileViewModel(getProfileUseCase: getProfileUseCase)
+        let editProfileUseCase = resolveEditProfileUseCase()
+        return ProfileViewModel(getProfileUseCase: getProfileUseCase, editProfileUseCase: editProfileUseCase)
     }
 
     func resolveEditProfileUseCase() -> EditProfileUseCase {

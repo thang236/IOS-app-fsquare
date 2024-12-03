@@ -56,6 +56,7 @@ class ProfileCoordinator: Coordinator {
 
     func goToEditAddress(viewModel: AddressViewModel, address: AddressData) {
         let editAddress = EditAddressViewController(viewModel: viewModel, address: address)
+        editAddress.coordinator = self
         navigationController.pushViewController(editAddress, animated: true)
     }
 

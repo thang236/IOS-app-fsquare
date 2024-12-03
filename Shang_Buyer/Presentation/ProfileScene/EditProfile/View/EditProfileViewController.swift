@@ -11,10 +11,10 @@ import UIKit
 class EditProfileViewController: UIViewController {
     var coordinator: ProfileCoordinator?
 
-    @IBOutlet var fullNameField: NormalField!
+    @IBOutlet var lastNameField: NormalField!
     @IBOutlet var birthField: NormalField!
     @IBOutlet var emailField: NormalField!
-    @IBOutlet var countryField: NormalField!
+    @IBOutlet var firstField: NormalField!
     @IBOutlet var phoneField: NormalField!
 
     private var viewModel: EditProfileViewModel
@@ -61,10 +61,10 @@ class EditProfileViewController: UIViewController {
     }
 
     private func setupField() {
-        fullNameField.text = "\(profileModel.firstName) \(profileModel.lastName)"
+        firstField.text = profileModel.firstName
+        lastNameField.text = profileModel.lastName
         birthField.text = profileModel.birthDay ?? ""
         emailField.text = profileModel.email
-        countryField.text = profileModel.address ?? ""
         phoneField.text = profileModel.phone ?? ""
         emailField.isEnabled = false
     }
@@ -86,7 +86,7 @@ class EditProfileViewController: UIViewController {
         let resizedImage = image.resizeImage(targetSize: CGSize(width: size, height: size))
         let backButton = UIBarButtonItem(image: resizedImage, style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.tintColor = .neutralUltraDark
-        setupNavigationBar(leftBarButton: backButton, title: "Edit Profile", rightBarButton: nil)
+        setupNavigationBar(leftBarButton: backButton, title: "Chỉnh sửa hồ sơ", rightBarButton: nil)
     }
 
     @objc func backButtonTapped() {
@@ -104,9 +104,9 @@ class EditProfileViewController: UIViewController {
     }
 
     @IBAction func didTapUpdateButton(_: Any) {
-        viewModel.fullName = fullNameField.text ?? ""
+        viewModel.firstName = firstField.text ?? ""
+        viewModel.lastName = lastNameField.text ?? ""
         viewModel.birthDate = birthField.text ?? ""
-        viewModel.country = countryField.text ?? ""
         viewModel.phone = phoneField.text ?? ""
         guard let email = profileModel.email else {
             return

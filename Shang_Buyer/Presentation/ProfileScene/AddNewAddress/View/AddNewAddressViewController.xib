@@ -26,13 +26,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cbk-Q5-cXZ">
                     <rect key="frame" x="16" y="99" width="361" height="59"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tw-5M-8cN" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên địa chỉ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tw-5M-8cN" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="70" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CGe-ao-aoQ" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tên gợi nhớ cho địa chỉ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CGe-ao-aoQ" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="25" width="361" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -46,13 +46,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bXO-0x-mAC">
                     <rect key="frame" x="16" y="173" width="361" height="59"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibw-NJ-kti" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tỉnh/Thành phố" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibw-NJ-kti" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="101.33333333333333" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkU-Y1-tdE" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chọn Tỉnh/Thành phố" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkU-Y1-tdE" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="25" width="361" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -69,13 +69,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Ai-LN-dij">
                     <rect key="frame" x="16" y="247" width="361" height="59"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="District" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66D-JG-Jyu" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="46.666666666666664" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quận/Huyện" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66D-JG-Jyu" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose District" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEG-pz-TaZ" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chọn Quận/Huyện" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEG-pz-TaZ" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="25" width="361" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -100,13 +100,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="38l-9P-EL2">
                     <rect key="frame" x="16" y="321" width="361" height="59"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ward" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKn-vv-BpQ" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="34" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phường/Xã" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKn-vv-BpQ" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="70.666666666666671" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose Ward" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kqB-Sh-gBA" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chọn Phường/Xã" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kqB-Sh-gBA" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="25" width="361" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -123,13 +123,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eZX-wu-7kO">
                     <rect key="frame" x="16" y="395" width="361" height="59"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street and Apartment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCB-cV-Sm3" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="139.33333333333334" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên Đường , Phố" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCB-cV-Sm3" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="107.33333333333333" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your street and apartment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6eq-O0-yPN" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập tên đường , phố" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6eq-O0-yPN" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="25" width="361" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -168,32 +168,38 @@
         </view>
     </objects>
     <designables>
+        <designable name="5Tw-5M-8cN">
+            <size key="intrinsicContentSize" width="70" height="17"/>
+        </designable>
         <designable name="66D-JG-Jyu">
-            <size key="intrinsicContentSize" width="46.666666666666664" height="17"/>
+            <size key="intrinsicContentSize" width="80" height="17"/>
         </designable>
         <designable name="6eq-O0-yPN">
-            <size key="intrinsicContentSize" width="234.33333333333334" height="34"/>
+            <size key="intrinsicContentSize" width="168.66666666666666" height="34"/>
         </designable>
         <designable name="CGe-ao-aoQ">
-            <size key="intrinsicContentSize" width="122.66666666666667" height="34"/>
+            <size key="intrinsicContentSize" width="177.33333333333334" height="34"/>
         </designable>
         <designable name="EKn-vv-BpQ">
-            <size key="intrinsicContentSize" width="34" height="17"/>
+            <size key="intrinsicContentSize" width="70.666666666666671" height="17"/>
         </designable>
         <designable name="fkU-Y1-tdE">
-            <size key="intrinsicContentSize" width="104.66666666666667" height="34"/>
+            <size key="intrinsicContentSize" width="167.33333333333334" height="34"/>
         </designable>
         <designable name="hCB-cV-Sm3">
-            <size key="intrinsicContentSize" width="139.33333333333334" height="17"/>
+            <size key="intrinsicContentSize" width="107.33333333333333" height="17"/>
+        </designable>
+        <designable name="ibw-NJ-kti">
+            <size key="intrinsicContentSize" width="101.33333333333333" height="17"/>
         </designable>
         <designable name="kqB-Sh-gBA">
-            <size key="intrinsicContentSize" width="115" height="34"/>
+            <size key="intrinsicContentSize" width="137" height="34"/>
         </designable>
         <designable name="vAz-B9-cPC">
             <size key="intrinsicContentSize" width="78" height="34.333333333333336"/>
         </designable>
         <designable name="zEG-pz-TaZ">
-            <size key="intrinsicContentSize" width="127.66666666666667" height="34"/>
+            <size key="intrinsicContentSize" width="146" height="34"/>
         </designable>
     </designables>
     <resources>

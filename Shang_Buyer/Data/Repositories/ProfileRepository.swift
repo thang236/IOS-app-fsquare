@@ -7,10 +7,12 @@
 
 import Combine
 import Foundation
+import UIKit
 
 protocol ProfileRepository {
     func getProfile() -> AnyPublisher<ProfileResponse, Error>
     func editProfile(parameters: [String: Any]) -> AnyPublisher<ProfileResponse, Error>
+    func editAvatar(image: UIImage) -> AnyPublisher<ProfileResponse, Error>
 }
 
 class ProfileRepositoryImpl: ProfileRepository {
@@ -26,5 +28,9 @@ class ProfileRepositoryImpl: ProfileRepository {
 
     func editProfile(parameters: [String: Any]) -> AnyPublisher<ProfileResponse, Error> {
         apiService.request(endpoint: .editProfile, method: .patch, parameters: parameters)
+    }
+
+    func editAvatar(image: UIImage) -> AnyPublisher<ProfileResponse, Error> {
+        apiService.updateAvatar(avatarImage: image)
     }
 }
