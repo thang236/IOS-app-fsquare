@@ -31,6 +31,7 @@
 		BF1BFE1C2D00B5FA00793B3D /* OrderListBagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1BFE1A2D00B5FA00793B3D /* OrderListBagCollectionViewCell.xib */; };
 		BF1BFE202D00FD8700793B3D /* ReturnOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE1E2D00FD8700793B3D /* ReturnOrderViewController.swift */; };
 		BF1BFE212D00FD8700793B3D /* ReturnOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1BFE1F2D00FD8700793B3D /* ReturnOrderViewController.xib */; };
+		BF1BFE232D0105CD00793B3D /* PopularResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE222D0105CD00793B3D /* PopularResponse.swift */; };
 		BF1E66462CABE396001C48E9 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E66452CABE396001C48E9 /* UserDefaults+Extension.swift */; };
 		BF1E66482CABF95A001C48E9 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E66472CABF95A001C48E9 /* ProfileRepository.swift */; };
 		BF1E664A2CABF9A6001C48E9 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E66492CABF9A6001C48E9 /* ProfileResponse.swift */; };
@@ -305,6 +306,7 @@
 		BF1BFE1A2D00B5FA00793B3D /* OrderListBagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderListBagCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF1BFE1E2D00FD8700793B3D /* ReturnOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnOrderViewController.swift; sourceTree = "<group>"; };
 		BF1BFE1F2D00FD8700793B3D /* ReturnOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReturnOrderViewController.xib; sourceTree = "<group>"; };
+		BF1BFE222D0105CD00793B3D /* PopularResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularResponse.swift; sourceTree = "<group>"; };
 		BF1E66452CABE396001C48E9 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		BF1E66472CABF95A001C48E9 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		BF1E66492CABF9A6001C48E9 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
@@ -1790,6 +1792,7 @@
 				09EF3A092CD8B0B900B6FE02 /* ClassificationsResponse.swift */,
 				09EF3A0B2CD8BAB000B6FE02 /* ShoesClassificationsResponse.swift */,
 				BFD740C42CD9B6660041BD3F /* SizesClassificationResponse.swift */,
+				BF1BFE222D0105CD00793B3D /* PopularResponse.swift */,
 			);
 			path = ShoesResponse;
 			sourceTree = "<group>";
@@ -2313,6 +2316,7 @@
 				BFA057D82CAEA18900890399 /* Profile.swift in Sources */,
 				BFAF1D9C2CAA8FBF0085609C /* HTTPStatus.swift in Sources */,
 				BF1E66462CABE396001C48E9 /* UserDefaults+Extension.swift in Sources */,
+				BF1BFE232D0105CD00793B3D /* PopularResponse.swift in Sources */,
 				BF1E66662CAD248E001C48E9 /* CartViewController.swift in Sources */,
 				BF62C0612CD27CE900879233 /* ShoeDetailViewController.swift in Sources */,
 				BF25D0412C97239400CB7EE8 /* String+Extension.swift in Sources */,

@@ -26,6 +26,7 @@ enum AppApi {
     case deleteLocation(idLocation: String)
 
     case getShoes
+    case getPopularShoes
     case addFav
     case getFavorite
     case removeFavorite(idFavorite: String)
@@ -99,6 +100,9 @@ enum AppApi {
             } else {
                 return "\(AppApi.baseURL)/api/customer/v2/shoes"
             }
+
+        case .getPopularShoes:
+            return "\(AppApi.baseURL)/api/customer/v2/statistical"
 
         case let .getDetailShoes(idShoes):
             if TokenManager.shared.getAccessToken() != nil {

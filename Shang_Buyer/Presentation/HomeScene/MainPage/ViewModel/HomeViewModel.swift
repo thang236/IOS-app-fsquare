@@ -20,6 +20,7 @@ class HomeViewModel: ObservableObject {
     @Published var hasNextPage: Bool = false
     @Published var page: Int = 1
     @Published var pageFlitterShoes: Int = 1
+    @Published var popularResponse: PopularResponse? = nil
     var cancellables = Set<AnyCancellable>()
 
     let getShoesUseCase: GetShoesUseCase
@@ -64,6 +65,56 @@ class HomeViewModel: ObservableObject {
     func initDataSource() {
         page = 1
         fetchShoesAndBrands(page: page)
+        getPopular()
+    }
+
+    private func getPopular() {
+        getShoesUseCase.getPopularShoes()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { popularResponse in
+                if popularResponse.status == HTTPStatus.success.message {
+                    self.popularResponse = popularResponse
+                } else {
+                    self.errorMessage = "\(popularResponse.status): \(popularResponse.message)"
+                }
+            }).store(in: &cancellables)
+    }
+
+    func filterSeeMore() {
+        let parameter: [String: Any] = [
+            "size": 40,
+            "page": pageFlitterShoes,
+            "search": "",
+            "brand": "",
+            "category": "",
+        ]
+        getShoesUseCase.execute(parameter: parameter)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    self.shoesLoading = false
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { shoesResponse in
+                if shoesResponse.status == HTTPStatus.success.message {
+                    self.filterShoesResponse = shoesResponse
+                    if shoesResponse.options.hasNextPage {
+                        self.pageFlitterShoes += 1
+                        self.hasNextPage = true
+                    } else {
+                        self.hasNextPage = false
+                    }
+                } else {
+                    self.errorMessage = "\(shoesResponse.status): \(shoesResponse.message)"
+                }
+            }).store(in: &cancellables)
     }
 
     func filterBand(idBrand: String) {

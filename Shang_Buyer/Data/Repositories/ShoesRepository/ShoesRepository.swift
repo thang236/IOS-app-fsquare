@@ -12,6 +12,7 @@ protocol ShoesRepository {
     func addFavoriteShoes(parameters: [String: Any]) -> AnyPublisher<AddFavoriteResponse, Error>
     func getShoes(parameters: [String: Any]) -> AnyPublisher<ShoesResponse, Error>
     func removeFavoriteShoes(parameters: [String: Any]) -> AnyPublisher<FavoriteRemoveResponse, Error>
+    func getPopularShoes() -> AnyPublisher<PopularResponse, Error>
 }
 
 class ShoesRepositoryImpl: ShoesRepository {
@@ -31,5 +32,9 @@ class ShoesRepositoryImpl: ShoesRepository {
 
     func removeFavoriteShoes(parameters: [String: Any]) -> AnyPublisher<FavoriteRemoveResponse, Error> {
         apiService.request(endpoint: .addFav, method: .post, parameters: parameters)
+    }
+
+    func getPopularShoes() -> AnyPublisher<PopularResponse, Error> {
+        apiService.request(endpoint: .getPopularShoes, method: .get, parameters: nil)
     }
 }

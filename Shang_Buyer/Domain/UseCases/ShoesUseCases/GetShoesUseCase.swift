@@ -12,6 +12,7 @@ protocol GetShoesUseCase {
     func execute(parameter: [String: Any]) -> AnyPublisher<ShoesResponse, Error>
     func addFavoriteShoes(parameter: [String: Any]) -> AnyPublisher<AddFavoriteResponse, Error>
     func removeFavoriteShoes(parameter: [String: Any]) -> AnyPublisher<FavoriteRemoveResponse, Error>
+    func getPopularShoes() -> AnyPublisher<PopularResponse, Error>
 }
 
 class GetShoesUseCaseImpl: GetShoesUseCase {
@@ -31,5 +32,9 @@ class GetShoesUseCaseImpl: GetShoesUseCase {
 
     func removeFavoriteShoes(parameter parameters: [String: Any]) -> AnyPublisher<FavoriteRemoveResponse, Error> {
         return shoesRepository.removeFavoriteShoes(parameters: parameters)
+    }
+
+    func getPopularShoes() -> AnyPublisher<PopularResponse, Error> {
+        return shoesRepository.getPopularShoes()
     }
 }
