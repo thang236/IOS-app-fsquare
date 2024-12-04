@@ -10,11 +10,13 @@ import UIKit
 class ChooseAddressViewController: UIViewController {
     @IBOutlet private var bottomView: UIView!
     @IBOutlet private var collectionView: UICollectionView!
+    private var chooseItem: AddressData
 
     private let viewModel: CartViewModel
 
     init(viewModel: CartViewModel) {
         self.viewModel = viewModel
+        chooseItem = viewModel.addressChoose!
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -27,7 +29,23 @@ class ChooseAddressViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         setUpBinding()
-        // Do any additional setup after loading the view.
+        setupNav()
+    }
+
+    func setupNav() {
+        navigationItem.hidesBackButton = true
+        let image: UIImage = #imageLiteral(resourceName: "positionLeft")
+        guard let size = navigationController?.navigationBar.frame.height else {
+            return
+        }
+        let resizedImage = image.resizeImage(targetSize: CGSize(width: size, height: size))
+        let backButton = UIBarButtonItem(image: resizedImage, style: .plain, target: self, action: #selector(backButtonTapped))
+        backButton.tintColor = .neutralUltraDark
+        setupNavigationBar(leftBarButton: backButton, title: "Chọn địa chỉ", rightBarButton: nil)
+    }
+
+    @objc func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
     }
 
     override func viewWillAppear(_: Bool) {
@@ -62,6 +80,11 @@ class ChooseAddressViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
+
+    @IBAction func didTapSubmit(_: Any) {
+        viewModel.addressChoose = chooseItem
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension ChooseAddressViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -73,7 +96,7 @@ extension ChooseAddressViewController: UICollectionViewDataSource, UICollectionV
         let cell = collectionView.dequeueReusableCell(withType: ChooseAddressCollectionViewCell.self, for: indexPath)
 
         let data = viewModel.addressResponse?.data[indexPath.row]
-        if data == viewModel.addressChoose {
+        if data == chooseItem {
             cell.setupCell(address: data, isChoose: true)
         } else {
             cell.setupCell(address: data, isChoose: false)
@@ -83,7 +106,8 @@ extension ChooseAddressViewController: UICollectionViewDataSource, UICollectionV
     }
 
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.addressChoose = viewModel.addressResponse?.data[indexPath.row]
+        chooseItem = (viewModel.addressResponse?.data[indexPath.row])!
+        collectionView.reloadData()
     }
 
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {

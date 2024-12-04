@@ -23,4 +23,9 @@ class OrderCoordinator: Coordinator {
     func getNavigationController() -> UINavigationController {
         return navigationController
     }
+
+    func showOrderDetail() {
+        let orderDetailVC = OrderDetailViewController(viewModel: myOrderViewModel)
+        navigationController.pushViewController(orderDetailVC, animated: true)
+    }
 }

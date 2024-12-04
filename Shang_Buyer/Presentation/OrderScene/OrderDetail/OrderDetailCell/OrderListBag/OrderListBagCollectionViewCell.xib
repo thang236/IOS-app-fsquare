@@ -11,21 +11,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lKk-ao-hbb" userLabel="Order Collection View Cell" customClass="OrderCollectionViewCell" customModule="Shang_Buyer" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Dms-oP-Vsd" userLabel="Order List Bag Collection View Cell" customClass="OrderListBagCollectionViewCell" customModule="Shang_Buyer" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="471" height="152"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="471" height="152"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6N-iF-vqS">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8eB-mJ-YDP">
                         <rect key="frame" x="0.0" y="0.0" width="471" height="152"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageShimmer" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Zn-Gd-n68">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageShimmer" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2JT-As-7fv">
                                 <rect key="frame" x="16" y="16" width="120" height="120"/>
                                 <color key="backgroundColor" name="backgroundDark"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="2Zn-Gd-n68" secondAttribute="height" multiplier="1:1" id="yLZ-wO-lS0"/>
+                                    <constraint firstAttribute="width" secondItem="2JT-As-7fv" secondAttribute="height" multiplier="1:1" id="7Fb-db-f1N"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -34,13 +34,13 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVY-w7-AQd">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4L-oh-sgg">
                                 <rect key="frame" x="156" y="16" width="299" height="120"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zSA-vW-p1u">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qHm-da-D25">
                                         <rect key="frame" x="0.0" y="0.0" width="94.666666666666671" height="39.333333333333336"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7d-tF-YAr" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bom-Ic-5Wf" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -49,10 +49,10 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="E5F-4J-F9e">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YfN-Jx-jXt">
                                                 <rect key="frame" x="0.0" y="24.999999999999996" width="94.666666666666671" height="14.333333333333332"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGS-ex-prg" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0W6-WU-au8" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="22" height="14.333333333333334"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
@@ -61,7 +61,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WR-Ig-oO0" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25j-bP-Ngu" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
                                                         <rect key="frame" x="30" y="0.0" width="3.3333333333333357" height="14.333333333333334"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
@@ -70,7 +70,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size = 42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Def-E7-27c" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size = 42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDU-R5-CpJ" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
                                                         <rect key="frame" x="41.333333333333343" y="0.0" width="53.333333333333343" height="14.333333333333334"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
@@ -89,7 +89,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DL-hW-qLd" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tru-ol-hKk" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="94.333333333333329" width="37" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" name="PrimaryDark"/>
@@ -98,10 +98,10 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-Yw-Acq">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2x-St-3dB">
                                         <rect key="frame" x="267" y="88" width="32" height="32"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uM-gP-4xo" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHT-uk-hbk" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -110,12 +110,12 @@
                                         </subviews>
                                         <color key="backgroundColor" name="backgroundMedium"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="YQ9-mx-PFj"/>
-                                            <constraint firstItem="7uM-gP-4xo" firstAttribute="top" secondItem="X4w-Yw-Acq" secondAttribute="top" id="i1c-C3-cCD"/>
-                                            <constraint firstItem="7uM-gP-4xo" firstAttribute="leading" secondItem="X4w-Yw-Acq" secondAttribute="leading" id="kMY-7U-c8u"/>
-                                            <constraint firstAttribute="trailing" secondItem="7uM-gP-4xo" secondAttribute="trailing" id="sVa-di-q2D"/>
-                                            <constraint firstAttribute="bottom" secondItem="7uM-gP-4xo" secondAttribute="bottom" id="w3q-6P-DFY"/>
-                                            <constraint firstAttribute="width" secondItem="X4w-Yw-Acq" secondAttribute="height" multiplier="1:1" id="x1Y-VE-udD"/>
+                                            <constraint firstItem="lHT-uk-hbk" firstAttribute="top" secondItem="p2x-St-3dB" secondAttribute="top" id="2Oo-o4-ImB"/>
+                                            <constraint firstItem="lHT-uk-hbk" firstAttribute="leading" secondItem="p2x-St-3dB" secondAttribute="leading" id="8eX-n6-YjT"/>
+                                            <constraint firstAttribute="bottom" secondItem="lHT-uk-hbk" secondAttribute="bottom" id="DRG-gF-ams"/>
+                                            <constraint firstAttribute="trailing" secondItem="lHT-uk-hbk" secondAttribute="trailing" id="SmU-72-SOT"/>
+                                            <constraint firstAttribute="width" secondItem="p2x-St-3dB" secondAttribute="height" multiplier="1:1" id="bzf-x2-2Hh"/>
+                                            <constraint firstAttribute="width" constant="32" id="cXC-PP-10V"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -124,12 +124,12 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="3DL-hW-qLd" firstAttribute="centerY" secondItem="7uM-gP-4xo" secondAttribute="centerY" id="JZq-Qg-dpd"/>
-                                    <constraint firstItem="zSA-vW-p1u" firstAttribute="top" secondItem="IVY-w7-AQd" secondAttribute="top" id="Q1h-gM-lCL"/>
-                                    <constraint firstItem="3DL-hW-qLd" firstAttribute="leading" secondItem="zSA-vW-p1u" secondAttribute="leading" id="Wzd-rx-5Ts"/>
-                                    <constraint firstAttribute="bottom" secondItem="X4w-Yw-Acq" secondAttribute="bottom" id="XYQ-2h-MNg"/>
-                                    <constraint firstItem="zSA-vW-p1u" firstAttribute="leading" secondItem="IVY-w7-AQd" secondAttribute="leading" id="dLM-Gu-8gK"/>
-                                    <constraint firstAttribute="trailing" secondItem="X4w-Yw-Acq" secondAttribute="trailing" id="eMq-ot-CRc"/>
+                                    <constraint firstItem="tru-ol-hKk" firstAttribute="leading" secondItem="qHm-da-D25" secondAttribute="leading" id="0xH-We-Qbq"/>
+                                    <constraint firstAttribute="trailing" secondItem="p2x-St-3dB" secondAttribute="trailing" id="4LK-vD-tio"/>
+                                    <constraint firstItem="tru-ol-hKk" firstAttribute="centerY" secondItem="lHT-uk-hbk" secondAttribute="centerY" id="BNi-9W-2hx"/>
+                                    <constraint firstItem="qHm-da-D25" firstAttribute="leading" secondItem="i4L-oh-sgg" secondAttribute="leading" id="aEn-CT-lzS"/>
+                                    <constraint firstAttribute="bottom" secondItem="p2x-St-3dB" secondAttribute="bottom" id="hLk-67-dfJ"/>
+                                    <constraint firstItem="qHm-da-D25" firstAttribute="top" secondItem="i4L-oh-sgg" secondAttribute="top" id="s4s-dH-lam"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -138,14 +138,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="IVY-w7-AQd" firstAttribute="centerY" secondItem="2Zn-Gd-n68" secondAttribute="centerY" id="8kL-f8-aRt"/>
-                            <constraint firstItem="IVY-w7-AQd" firstAttribute="leading" secondItem="2Zn-Gd-n68" secondAttribute="trailing" constant="20" id="Iak-T2-56z"/>
-                            <constraint firstItem="2Zn-Gd-n68" firstAttribute="leading" secondItem="Y6N-iF-vqS" secondAttribute="leading" constant="16" id="TEn-h5-K7J"/>
-                            <constraint firstAttribute="trailing" secondItem="IVY-w7-AQd" secondAttribute="trailing" constant="16" id="TYN-qm-YpH"/>
-                            <constraint firstItem="2Zn-Gd-n68" firstAttribute="top" secondItem="Y6N-iF-vqS" secondAttribute="top" constant="16" id="ZHQ-v2-ceV"/>
-                            <constraint firstItem="IVY-w7-AQd" firstAttribute="height" secondItem="2Zn-Gd-n68" secondAttribute="height" id="dQH-Zs-fWC"/>
-                            <constraint firstItem="2Zn-Gd-n68" firstAttribute="centerY" secondItem="Y6N-iF-vqS" secondAttribute="centerY" id="s8v-7N-Nx7"/>
-                            <constraint firstItem="IVY-w7-AQd" firstAttribute="top" secondItem="Y6N-iF-vqS" secondAttribute="top" constant="16" id="wdl-zN-25N"/>
+                            <constraint firstItem="i4L-oh-sgg" firstAttribute="top" secondItem="8eB-mJ-YDP" secondAttribute="top" constant="16" id="4tI-G8-2Ep"/>
+                            <constraint firstItem="2JT-As-7fv" firstAttribute="centerY" secondItem="8eB-mJ-YDP" secondAttribute="centerY" id="Dbi-ZJ-76a"/>
+                            <constraint firstItem="2JT-As-7fv" firstAttribute="top" secondItem="8eB-mJ-YDP" secondAttribute="top" constant="16" id="McG-u7-wlY"/>
+                            <constraint firstItem="2JT-As-7fv" firstAttribute="leading" secondItem="8eB-mJ-YDP" secondAttribute="leading" constant="16" id="P4d-Ck-Ctd"/>
+                            <constraint firstItem="i4L-oh-sgg" firstAttribute="leading" secondItem="2JT-As-7fv" secondAttribute="trailing" constant="20" id="jHy-ml-Shv"/>
+                            <constraint firstItem="i4L-oh-sgg" firstAttribute="centerY" secondItem="2JT-As-7fv" secondAttribute="centerY" id="oa9-fh-hdK"/>
+                            <constraint firstItem="i4L-oh-sgg" firstAttribute="height" secondItem="2JT-As-7fv" secondAttribute="height" id="uDZ-PI-R1c"/>
+                            <constraint firstAttribute="trailing" secondItem="i4L-oh-sgg" secondAttribute="trailing" constant="16" id="vad-Q9-MM4"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -153,44 +153,44 @@
                     </view>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="BeQ-1U-7zA"/>
+            <viewLayoutGuide key="safeArea" id="uh5-Vi-Hp0"/>
             <constraints>
-                <constraint firstItem="Y6N-iF-vqS" firstAttribute="leading" secondItem="lKk-ao-hbb" secondAttribute="leading" id="KYG-6k-zND"/>
-                <constraint firstAttribute="bottom" secondItem="Y6N-iF-vqS" secondAttribute="bottom" id="NSM-89-SKW"/>
-                <constraint firstItem="Y6N-iF-vqS" firstAttribute="top" secondItem="lKk-ao-hbb" secondAttribute="top" id="Stm-mZ-0NE"/>
-                <constraint firstAttribute="trailing" secondItem="Y6N-iF-vqS" secondAttribute="trailing" id="vdc-Tk-eLr"/>
+                <constraint firstItem="8eB-mJ-YDP" firstAttribute="leading" secondItem="Dms-oP-Vsd" secondAttribute="leading" id="1AI-Wc-ph1"/>
+                <constraint firstAttribute="bottom" secondItem="8eB-mJ-YDP" secondAttribute="bottom" id="GCJ-K9-K3W"/>
+                <constraint firstItem="8eB-mJ-YDP" firstAttribute="top" secondItem="Dms-oP-Vsd" secondAttribute="top" id="Oq8-ZK-oQZ"/>
+                <constraint firstAttribute="trailing" secondItem="8eB-mJ-YDP" secondAttribute="trailing" id="Qsd-J7-F7Q"/>
             </constraints>
             <size key="customSize" width="471" height="152"/>
             <connections>
-                <outlet property="colorLabel" destination="cGS-ex-prg" id="Cga-tp-wvx"/>
-                <outlet property="imageView" destination="2Zn-Gd-n68" id="ekN-fA-u9l"/>
-                <outlet property="nameLabel" destination="G7d-tF-YAr" id="iEM-HG-FWS"/>
-                <outlet property="priceLabel" destination="3DL-hW-qLd" id="IGp-My-fcg"/>
-                <outlet property="quantityLabel" destination="7uM-gP-4xo" id="wZh-XG-lUd"/>
-                <outlet property="quantityView" destination="X4w-Yw-Acq" id="KKl-RB-paw"/>
-                <outlet property="sizeLabel" destination="Def-E7-27c" id="6jz-PO-6gp"/>
+                <outlet property="colorLabel" destination="0W6-WU-au8" id="Vyw-OV-yne"/>
+                <outlet property="imageView" destination="2JT-As-7fv" id="UIr-rE-JRs"/>
+                <outlet property="nameLabel" destination="bom-Ic-5Wf" id="ssZ-tA-KLL"/>
+                <outlet property="priceLabel" destination="tru-ol-hKk" id="fh0-Km-gKA"/>
+                <outlet property="quantityLabel" destination="lHT-uk-hbk" id="sNh-Fr-2ZN"/>
+                <outlet property="quantityView" destination="p2x-St-3dB" id="NVK-gU-NmN"/>
+                <outlet property="sizeLabel" destination="PDU-R5-CpJ" id="mjG-Y1-b6c"/>
             </connections>
             <point key="canvasLocation" x="460.30534351145036" y="55.633802816901408"/>
         </collectionViewCell>
     </objects>
     <designables>
-        <designable name="0WR-Ig-oO0">
+        <designable name="0W6-WU-au8">
+            <size key="intrinsicContentSize" width="22" height="14.333333333333334"/>
+        </designable>
+        <designable name="25j-bP-Ngu">
             <size key="intrinsicContentSize" width="3.3333333333333335" height="14.333333333333334"/>
         </designable>
-        <designable name="3DL-hW-qLd">
-            <size key="intrinsicContentSize" width="37" height="19.333333333333332"/>
-        </designable>
-        <designable name="7uM-gP-4xo">
-            <size key="intrinsicContentSize" width="17.666666666666668" height="17"/>
-        </designable>
-        <designable name="Def-E7-27c">
+        <designable name="PDU-R5-CpJ">
             <size key="intrinsicContentSize" width="53.333333333333336" height="14.333333333333334"/>
         </designable>
-        <designable name="G7d-tF-YAr">
+        <designable name="bom-Ic-5Wf">
             <size key="intrinsicContentSize" width="35.333333333333336" height="17"/>
         </designable>
-        <designable name="cGS-ex-prg">
-            <size key="intrinsicContentSize" width="22" height="14.333333333333334"/>
+        <designable name="lHT-uk-hbk">
+            <size key="intrinsicContentSize" width="17.666666666666668" height="17"/>
+        </designable>
+        <designable name="tru-ol-hKk">
+            <size key="intrinsicContentSize" width="37" height="19.333333333333332"/>
         </designable>
     </designables>
     <resources>

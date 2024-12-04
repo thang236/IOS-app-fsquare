@@ -164,7 +164,7 @@ class CheckOutViewController: UIViewController {
             "toProvinceName": address.provinceName,
             "weight": weight,
             "codAmount": totalAmount,
-            "content": "\(bagData.count) đôi giày",
+            "content": "\(bagData.count) loại sản phẩm",
         ]
         viewModel.calculatorFee(parameters: parameters)
         print("clientOrderCode", clientOrderCode)

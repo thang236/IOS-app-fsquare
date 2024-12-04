@@ -65,6 +65,11 @@
             <point key="canvasLocation" x="-51.145038167938928" y="-11.267605633802818"/>
         </view>
     </objects>
+    <designables>
+        <designable name="LgL-q8-R76">
+            <size key="intrinsicContentSize" width="199.66666666666666" height="34.333333333333336"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="95"/>
         <systemColor name="systemBackgroundColor">

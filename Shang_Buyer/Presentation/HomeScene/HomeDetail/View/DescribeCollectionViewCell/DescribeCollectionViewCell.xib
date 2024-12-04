@@ -119,7 +119,7 @@
                                 </userDefinedRuntimeAttributes>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O20-mW-i6u">
-                                <rect key="frame" x="150" y="57.333333333333343" width="110.66666666666669" height="22"/>
+                                <rect key="frame" x="150" y="57.333333333333343" width="130.66666666666663" height="22"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" sizingRule="oversize" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="70" translatesAutoresizingMaskIntoConstraints="NO" id="neL-i5-nio" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="24.333333333333332" height="22"/>
@@ -131,7 +131,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000000 sold" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="20" translatesAutoresizingMaskIntoConstraints="NO" id="qf2-Gq-ttM" customClass="PaddingLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                                        <rect key="frame" x="32.333333333333336" y="0.0" width="78.333333333333314" height="22"/>
+                                        <rect key="frame" x="32.333333333333336" y="0.0" width="98.333333333333314" height="22"/>
                                         <color key="backgroundColor" name="borderLight"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                         <nil key="textColor"/>
@@ -227,7 +227,7 @@
             <size key="intrinsicContentSize" width="24.333333333333332" height="20.333333333333332"/>
         </designable>
         <designable name="qf2-Gq-ttM">
-            <size key="intrinsicContentSize" width="78.333333333333329" height="14.333333333333334"/>
+            <size key="intrinsicContentSize" width="98.333333333333329" height="14.333333333333334"/>
         </designable>
     </designables>
     <resources>

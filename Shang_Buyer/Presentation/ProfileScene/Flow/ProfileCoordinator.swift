@@ -62,6 +62,7 @@ class ProfileCoordinator: Coordinator {
 
     func logoutUser() {
         let authCoordinator = AuthCoordinator(navigationController: navigationMain)
+        navigationMain.isNavigationBarHidden = false
         authCoordinator.goToLoginMethodSelection()
     }
 }

@@ -42,6 +42,7 @@ enum AppApi {
     case fee
     case order
     case orderID(idOrder: String)
+    case orderReturn(idOrder: String)
 
     case payments
 
@@ -155,6 +156,9 @@ enum AppApi {
 
         case let .orderID(idOrder):
             return "\(AppApi.baseURL)/api/customer/v1/orders/\(idOrder)"
+
+        case let .orderReturn(idOrder):
+            return "\(AppApi.baseURL)/api/customer/v1/orders/return/\(idOrder)"
 
         case .payments:
             return "\(AppApi.baseURL)/api/customer/v1/payments"

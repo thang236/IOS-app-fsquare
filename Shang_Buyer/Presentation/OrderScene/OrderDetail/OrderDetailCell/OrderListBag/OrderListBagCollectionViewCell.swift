@@ -1,13 +1,13 @@
 //
-//  OrderCollectionViewCell.swift
+//  OrderListBagCollectionViewCell.swift
 //  Shang_Buyer
 //
-//  Created by Louis Macbook on 24/11/2024.
+//  Created by Louis Macbook on 04/12/2024.
 //
 
 import UIKit
 
-class OrderCollectionViewCell: UICollectionViewCell {
+class OrderListBagCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var quantityLabel: BodyLabel!
     @IBOutlet var priceLabel: BodyLabel!
@@ -28,15 +28,15 @@ class OrderCollectionViewCell: UICollectionViewCell {
         contentView.showAnimatedGradientSkeleton()
     }
 
-    func setupCell(bag: BagData?) {
-        if let bag = bag {
+    func setupCell(orderItems: OrderItem?) {
+        if let orderItems = orderItems {
             hideSkeleton()
-            priceLabel.text = NumberFormatter.formatToVNDWithCustomSymbol(bag.price * Double(bag.quantity))
-            nameLabel.text = bag.shoes?.name
-            sizeLabel.text = bag.size?.sizeNumber
-            colorLabel.text = bag.color
-            quantityLabel.text = "\(bag.quantity)"
-            if let urlString = bag.thumbnail?.url, let url = URL(string: urlString) {
+            priceLabel.text = NumberFormatter.formatToVNDWithCustomSymbol(orderItems.price * Double(orderItems.quantity))
+            nameLabel.text = orderItems.shoes
+            sizeLabel.text = "Size = \(orderItems.size)"
+            colorLabel.text = orderItems.color
+            quantityLabel.text = "\(orderItems.quantity)"
+            if let urlString = orderItems.thumbnail?.url, let url = URL(string: urlString) {
                 imageView.loadImageWithShimmer(url: url)
             }
         } else {

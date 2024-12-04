@@ -13,6 +13,9 @@ protocol OrderUseCase {
     func createOrder(parameter: OrderRequest) -> AnyPublisher<OrderResponse, Error>
     func postPayment(parameter: [String: Any]) -> AnyPublisher<PostPaymentResponse, Error>
     func getOrderStatus(parameter: [String: Any]) -> AnyPublisher<OrderStatusResponse, Error>
+    func getOrderDetail(idOrder: String) -> AnyPublisher<OrderResponse, Error>
+    func patchOrderStatus(idOrder: String, newStatus: String) -> AnyPublisher<OrderResponse, Error>
+    func returnOrder(idOrder: String, reason: String) -> AnyPublisher<OrderResponse, Error>
 }
 
 class OrderUseCaseImpl: OrderUseCase {
@@ -36,5 +39,17 @@ class OrderUseCaseImpl: OrderUseCase {
 
     func getOrderStatus(parameter: [String: Any]) -> AnyPublisher<OrderStatusResponse, Error> {
         repository.getOrderStatus(parameter: parameter)
+    }
+
+    func getOrderDetail(idOrder: String) -> AnyPublisher<OrderResponse, Error> {
+        repository.getOrderDetail(idOrder: idOrder)
+    }
+
+    func patchOrderStatus(idOrder: String, newStatus: String) -> AnyPublisher<OrderResponse, Error> {
+        repository.patchOrderStatus(idOrder: idOrder, newStatus: newStatus)
+    }
+
+    func returnOrder(idOrder: String, reason: String) -> AnyPublisher<OrderResponse, Error> {
+        repository.returnOrder(idOrder: idOrder, reason: reason)
     }
 }

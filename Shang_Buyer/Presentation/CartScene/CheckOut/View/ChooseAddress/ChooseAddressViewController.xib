@@ -34,9 +34,12 @@
                     <rect key="frame" x="0.0" y="748" width="393" height="70"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMO-sC-7dh" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
-                            <rect key="frame" x="16" y="13" width="361" height="44"/>
+                            <rect key="frame" x="16" y="18.000000000000004" width="361" height="34.333333333333343"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Xác Nhận"/>
+                            <connections>
+                                <action selector="didTapSubmit:" destination="-1" eventType="touchUpInside" id="EaZ-dc-dIu"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -69,7 +72,7 @@
     </objects>
     <designables>
         <designable name="LMO-sC-7dh">
-            <size key="intrinsicContentSize" width="361" height="44"/>
+            <size key="intrinsicContentSize" width="97.666666666666671" height="34.333333333333336"/>
         </designable>
     </designables>
     <resources>

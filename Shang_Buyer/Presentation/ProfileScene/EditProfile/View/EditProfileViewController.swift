@@ -95,11 +95,9 @@ class EditProfileViewController: UIViewController {
 
     override func viewWillAppear(_: Bool) {
         tabBarController?.tabBar.isHidden = true
-        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     override func viewWillDisappear(_: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: true)
         tabBarController?.tabBar.isHidden = false
     }
 

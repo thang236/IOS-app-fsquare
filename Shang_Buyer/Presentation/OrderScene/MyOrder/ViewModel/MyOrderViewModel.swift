@@ -32,7 +32,7 @@ enum OrderStatus: String {
         case .cancelled:
             return "Đã hủy"
         case .returned:
-            return "Đã trả"
+            return "Trả hàng"
         }
     }
 
@@ -41,6 +41,8 @@ enum OrderStatus: String {
 
 class MyOrderViewModel: ObservableObject {
     @Published var orderStatusResponse: OrderStatusResponse?
+    @Published var orderDetailResponse: OrderResponse?
+    @Published var errrorMessage: String? = nil
     var orderUseCase: OrderUseCase
 
     var cancellables = Set<AnyCancellable>()
@@ -64,5 +66,61 @@ class MyOrderViewModel: ObservableObject {
                 self.orderStatusResponse = orderStatusResponse
                 completion?()
             }.store(in: &cancellables)
+    }
+
+    func getOrderDetail(idOrder: String) {
+        orderUseCase.getOrderDetail(idOrder: idOrder)
+            .receive(on: RunLoop.main)
+            .sink { [self] completion in
+                switch completion {
+                case .finished:
+                    break
+                case let .failure(error):
+                    errrorMessage = error.localizedDescription
+                    print(error.localizedDescription)
+                }
+            } receiveValue: { orderResponse in
+                self.orderDetailResponse = orderResponse
+            }.store(in: &cancellables)
+    }
+
+    func patchOrderStatus(
+        idOrder: String,
+        newStatus: String,
+        completion: ((Result<OrderResponse, Error>) -> Void)? = nil
+    ) {
+        orderUseCase.patchOrderStatus(idOrder: idOrder, newStatus: newStatus)
+            .receive(on: RunLoop.main)
+            .sink { completionResult in
+                switch completionResult {
+                case .finished:
+                    break
+                case let .failure(error):
+                    completion?(.failure(error))
+                }
+            } receiveValue: { orderResponse in
+                self.orderStatusResponse?.data?.removeAll { $0?.id == orderResponse.data?.id }
+
+                completion?(.success(orderResponse))
+            }
+            .store(in: &cancellables)
+    }
+
+    func returnOrder(idOrder: String, reason: String, completion: ((Result<OrderResponse, Error>) -> Void)? = nil) {
+        orderUseCase.returnOrder(idOrder: idOrder, reason: reason)
+            .receive(on: RunLoop.main)
+            .sink { completionResult in
+                switch completionResult {
+                case .finished:
+                    break
+                case let .failure(error):
+                    completion?(.failure(error))
+                }
+            } receiveValue: { orderResponse in
+                self.orderStatusResponse?.data?.removeAll { $0?.id == orderResponse.data?.id }
+
+                completion?(.success(orderResponse))
+            }
+            .store(in: &cancellables)
     }
 }

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RattingViewController" customModule="Shang_Buyer" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="Mz8-Fj-BNx" id="ltr-lZ-qQk"/>
+                <outlet property="contentField" destination="0YZ-2r-xda" id="yNL-j0-9jg"/>
+                <outlet property="idClientOrderLabel" destination="Iqd-6R-Dg1" id="HxG-vN-l9d"/>
+                <outlet property="imageOrder" destination="agx-eH-4bH" id="FWk-ct-1rz"/>
+                <outlet property="orderView" destination="MQ2-x6-b8z" id="Mdi-3A-3ab"/>
+                <outlet property="priceOrderLabel" destination="UZt-eW-esL" id="H8c-L6-3kR"/>
+                <outlet property="productSamplesCountLabel" destination="8Cu-jc-6k8" id="vqv-xO-11K"/>
+                <outlet property="quantityOrderLabel" destination="YFQ-If-4PT" id="ISp-B2-YSw"/>
+                <outlet property="startRattingView" destination="cip-Jy-EiZ" id="STJ-25-xRL"/>
+                <outlet property="tutorialLabel" destination="yqe-4W-V6i" id="WUF-SC-7dE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đánh giá" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nv-eF-viu" customClass="HeadingLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                    <rect key="frame" x="16" y="79" width="361" height="28.666666666666671"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQ2-x6-b8z">
+                    <rect key="frame" x="16" y="112.66666666666669" width="361" height="134"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageShimmer" translatesAutoresizingMaskIntoConstraints="NO" id="agx-eH-4bH">
+                            <rect key="frame" x="16" y="15.999999999999986" width="102" height="102"/>
+                            <color key="backgroundColor" name="backgroundDark"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="agx-eH-4bH" secondAttribute="height" multiplier="1:1" id="xnl-VE-Bl1"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="jr0-Qx-f23">
+                            <rect key="frame" x="134" y="15.999999999999986" width="211" height="51"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mã đơn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqd-6R-Dg1" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lr3-1G-aSa">
+                                    <rect key="frame" x="0.0" y="19" width="81.333333333333329" height="14.333333333333336"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cu-jc-6k8" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="31" height="14.333333333333334"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" name="neutralLightMedium"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clt-SX-FL6" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                            <rect key="frame" x="39" y="0.0" width="3.3333333333333357" height="14.333333333333334"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" name="neutralLightMedium"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFQ-If-4PT" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                            <rect key="frame" x="50.333333333333343" y="0.0" width="31" height="14.333333333333334"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" name="neutralLightMedium"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZt-eW-esL" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="35.333333333333343" width="33" height="15.666666666666664"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" name="PrimaryDark"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="134" id="6L1-S1-hFx"/>
+                        <constraint firstItem="agx-eH-4bH" firstAttribute="top" secondItem="MQ2-x6-b8z" secondAttribute="top" constant="16" id="B1J-6k-biM"/>
+                        <constraint firstAttribute="trailing" secondItem="jr0-Qx-f23" secondAttribute="trailing" constant="16" id="KJJ-Us-bv7"/>
+                        <constraint firstAttribute="bottom" secondItem="agx-eH-4bH" secondAttribute="bottom" constant="16" id="LxP-tk-Heu"/>
+                        <constraint firstItem="jr0-Qx-f23" firstAttribute="leading" secondItem="agx-eH-4bH" secondAttribute="trailing" constant="16" id="OC8-02-Sut"/>
+                        <constraint firstItem="jr0-Qx-f23" firstAttribute="top" secondItem="MQ2-x6-b8z" secondAttribute="top" constant="16" id="OrE-nP-uWC"/>
+                        <constraint firstItem="agx-eH-4bH" firstAttribute="leading" secondItem="MQ2-x6-b8z" secondAttribute="leading" constant="16" id="ZNX-bW-DkS"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đơn hàng của bạn thế nào?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-jc-quO" customClass="HeadingLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                    <rect key="frame" x="16" y="246.66666666666666" width="361" height="26.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cip-Jy-EiZ" customClass="StarRatingView" customModule="Shang_Buyer" customModuleProvider="target">
+                    <rect key="frame" x="16" y="322.66666666666669" width="361" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="HsV-r3-NLp"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng đánh giá và cũng cho ý kiến phản hồi của bạn..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y82-au-yqt" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                    <rect key="frame" x="16" y="281" width="361" height="33.666666666666686"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.40392156862745099" green="0.40392156862745099" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JpL-DB-xFZ">
+                    <rect key="frame" x="16" y="635" width="361" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuY-RL-emI" customClass="OutlineButton" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="175.66666666666666" height="60"/>
+                            <color key="tintColor" name="PrimaryDark"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="camera.fill" catalog="system" imagePlacement="top" title="Thêm ảnh"/>
+                            <connections>
+                                <action selector="didTapAddImage:" destination="-1" eventType="touchUpInside" id="IT3-My-reP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hA1-4L-e5u" customClass="OutlineButton" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="185.66666666666663" y="0.0" width="175.33333333333337" height="60"/>
+                            <color key="tintColor" name="PrimaryDark"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="video.fill" catalog="system" imagePlacement="top" title="Thêm video"/>
+                            <connections>
+                                <action selector="didTapAddVideo:" destination="-1" eventType="touchUpInside" id="3Z6-0D-uHm"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="xSf-C0-hwi"/>
+                    </constraints>
+                </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bình luận" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0YZ-2r-xda" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                    <rect key="frame" x="16" y="705" width="361" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qsI-OO-2C4">
+                    <rect key="frame" x="16" y="774" width="361" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBv-wP-z7U" customClass="LightButton" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="44"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Đặt lại"/>
+                            <connections>
+                                <action selector="didTapClearButton:" destination="-1" eventType="touchUpInside" id="ekd-wd-d8C"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ier-HR-VQ6" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
+                            <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="44"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Áp dụng"/>
+                            <connections>
+                                <action selector="didTapSubmit:" destination="-1" eventType="touchUpInside" id="WLe-bO-sC6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6b-lg-ta8">
+                    <rect key="frame" x="16" y="763" width="361" height="1"/>
+                    <color key="backgroundColor" name="borderMedium"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="aez-3Z-hZL"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Mz8-Fj-BNx">
+                    <rect key="frame" x="16" y="377.66666666666669" width="361" height="247.33333333333331"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZGa-zE-2V8">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hãy chọn ảnh sản phẩm từ thư viện" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqe-4W-V6i" customClass="HeadingLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                    <rect key="frame" x="16" y="578.66666666666663" width="361" height="26.333333333333371"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H6b-lg-ta8" secondAttribute="trailing" constant="16" id="2jg-th-OVa"/>
+                <constraint firstItem="H6b-lg-ta8" firstAttribute="top" secondItem="0YZ-2r-xda" secondAttribute="bottom" constant="10" id="3IU-a1-Slz"/>
+                <constraint firstItem="yqe-4W-V6i" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="670-7f-cAh"/>
+                <constraint firstItem="Y82-au-yqt" firstAttribute="leading" secondItem="Xi7-jc-quO" secondAttribute="leading" id="7Zi-ZX-qNx"/>
+                <constraint firstItem="0YZ-2r-xda" firstAttribute="top" secondItem="JpL-DB-xFZ" secondAttribute="bottom" constant="10" id="920-vW-SLn"/>
+                <constraint firstItem="cip-Jy-EiZ" firstAttribute="top" secondItem="Y82-au-yqt" secondAttribute="bottom" constant="8" symbolic="YES" id="A3V-D2-hwG"/>
+                <constraint firstItem="Y82-au-yqt" firstAttribute="trailing" secondItem="Xi7-jc-quO" secondAttribute="trailing" id="ATr-3S-W5X"/>
+                <constraint firstItem="qsI-OO-2C4" firstAttribute="top" secondItem="H6b-lg-ta8" secondAttribute="bottom" constant="10" id="Ei3-l5-FG1"/>
+                <constraint firstItem="JpL-DB-xFZ" firstAttribute="top" secondItem="Mz8-Fj-BNx" secondAttribute="bottom" constant="10" id="F0q-pI-zwJ"/>
+                <constraint firstItem="H6b-lg-ta8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="GDI-FB-00O"/>
+                <constraint firstItem="cip-Jy-EiZ" firstAttribute="leading" secondItem="Mz8-Fj-BNx" secondAttribute="leading" id="Gfc-oT-Bpf"/>
+                <constraint firstItem="Mz8-Fj-BNx" firstAttribute="top" secondItem="cip-Jy-EiZ" secondAttribute="bottom" constant="15" id="LNP-gO-0L8"/>
+                <constraint firstItem="qsI-OO-2C4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Mh8-vd-Yt5"/>
+                <constraint firstItem="MQ2-x6-b8z" firstAttribute="top" secondItem="2nv-eF-viu" secondAttribute="bottom" constant="5" id="O9T-XH-oYE"/>
+                <constraint firstItem="0YZ-2r-xda" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="OWD-85-Kwl"/>
+                <constraint firstItem="MQ2-x6-b8z" firstAttribute="trailing" secondItem="2nv-eF-viu" secondAttribute="trailing" id="QJx-YF-Gcf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qsI-OO-2C4" secondAttribute="trailing" constant="16" id="SWE-4d-fmj"/>
+                <constraint firstItem="Xi7-jc-quO" firstAttribute="top" secondItem="MQ2-x6-b8z" secondAttribute="bottom" id="Tjc-pg-LJn"/>
+                <constraint firstItem="Y82-au-yqt" firstAttribute="top" secondItem="Xi7-jc-quO" secondAttribute="bottom" constant="8" id="WRk-mZ-LBA"/>
+                <constraint firstItem="cip-Jy-EiZ" firstAttribute="leading" secondItem="Y82-au-yqt" secondAttribute="leading" id="YCV-bd-il9"/>
+                <constraint firstItem="cip-Jy-EiZ" firstAttribute="trailing" secondItem="Mz8-Fj-BNx" secondAttribute="trailing" id="ZGr-Ij-uZc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0YZ-2r-xda" secondAttribute="trailing" constant="16" id="Zzc-Vl-HPT"/>
+                <constraint firstItem="JpL-DB-xFZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="bwm-Xh-0hd"/>
+                <constraint firstItem="2nv-eF-viu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="eb0-FH-R33"/>
+                <constraint firstItem="MQ2-x6-b8z" firstAttribute="leading" secondItem="2nv-eF-viu" secondAttribute="leading" id="iyn-Hz-Lyn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yqe-4W-V6i" secondAttribute="trailing" constant="16" id="lLk-QK-pKe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2nv-eF-viu" secondAttribute="trailing" constant="16" id="o0f-vf-5IS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qsI-OO-2C4" secondAttribute="bottom" id="o6B-Qf-A8w"/>
+                <constraint firstItem="2nv-eF-viu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="qLJ-Hw-fQV"/>
+                <constraint firstItem="cip-Jy-EiZ" firstAttribute="trailing" secondItem="Y82-au-yqt" secondAttribute="trailing" id="rmw-Xp-kRZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JpL-DB-xFZ" secondAttribute="trailing" constant="16" id="sBz-71-ion"/>
+                <constraint firstItem="Xi7-jc-quO" firstAttribute="leading" secondItem="MQ2-x6-b8z" secondAttribute="leading" id="wkV-Ee-3vA"/>
+                <constraint firstItem="JpL-DB-xFZ" firstAttribute="top" secondItem="yqe-4W-V6i" secondAttribute="bottom" constant="30" id="x1m-tj-mBN"/>
+                <constraint firstItem="Xi7-jc-quO" firstAttribute="trailing" secondItem="MQ2-x6-b8z" secondAttribute="trailing" id="zam-oK-YE7"/>
+            </constraints>
+            <point key="canvasLocation" x="3.8167938931297707" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="0YZ-2r-xda">
+            <size key="intrinsicContentSize" width="361" height="48"/>
+        </designable>
+        <designable name="8Cu-jc-6k8">
+            <size key="intrinsicContentSize" width="31" height="14.333333333333334"/>
+        </designable>
+        <designable name="Clt-SX-FL6">
+            <size key="intrinsicContentSize" width="3.3333333333333335" height="14.333333333333334"/>
+        </designable>
+        <designable name="Iqd-6R-Dg1">
+            <size key="intrinsicContentSize" width="48.666666666666664" height="17"/>
+        </designable>
+        <designable name="NuY-RL-emI">
+            <size key="intrinsicContentSize" width="175.66666666666666" height="44"/>
+        </designable>
+        <designable name="UZt-eW-esL">
+            <size key="intrinsicContentSize" width="33" height="15.666666666666666"/>
+        </designable>
+        <designable name="Y82-au-yqt">
+            <size key="intrinsicContentSize" width="361.33333333333331" height="17"/>
+        </designable>
+        <designable name="YFQ-If-4PT">
+            <size key="intrinsicContentSize" width="31" height="14.333333333333334"/>
+        </designable>
+        <designable name="ZBv-wP-z7U">
+            <size key="intrinsicContentSize" width="172.66666666666666" height="44"/>
+        </designable>
+        <designable name="hA1-4L-e5u">
+            <size key="intrinsicContentSize" width="175.33333333333337" height="44"/>
+        </designable>
+        <designable name="ier-HR-VQ6">
+            <size key="intrinsicContentSize" width="172.33333333333337" height="44"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="93"/>
+        <image name="imageShimmer" width="86.5" height="86.5"/>
+        <image name="video.fill" catalog="system" width="128" height="81"/>
+        <namedColor name="PrimaryDark">
+            <color red="1" green="0.50588235294117645" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundDark">
+            <color red="0.93725490196078431" green="0.94117647058823528" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="borderMedium">
+            <color red="0.8901960784313725" green="0.90196078431372551" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="neutralLightMedium">
+            <color red="0.40392156862745099" green="0.40392156862745099" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -49,7 +49,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rd6-oa-rl8" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="293" width="329" height="44"/>
+                                    <rect key="frame" x="16" y="284" width="329" height="44"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Xem đơn hàng đã đặt" titleAlignment="center"/>
                                     <connections>
@@ -57,7 +57,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGG-m1-7up" customClass="LightButton" customModule="Shang_Buyer" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="345" width="329" height="35"/>
+                                    <rect key="frame" x="16" y="336" width="329" height="44"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Quay lại trang chủ" titleAlignment="center"/>
                                     <connections>
@@ -111,6 +111,9 @@
         <designable name="rd6-oa-rl8">
             <size key="intrinsicContentSize" width="329" height="44"/>
         </designable>
+        <designable name="zGG-m1-7up">
+            <size key="intrinsicContentSize" width="329" height="44"/>
+        </designable>
     </designables>
     <resources>
         <image name="successPayment" width="130" height="130"/>
@@ -121,7 +124,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

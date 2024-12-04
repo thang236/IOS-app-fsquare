@@ -35,7 +35,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cQm-WV-h1w">
-                                <rect key="frame" x="153" y="16" width="135.66666666666663" height="63"/>
+                                <rect key="frame" x="153" y="16" width="83.333333333333314" height="63"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eol-hf-fmZ" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="17"/>
@@ -47,7 +47,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="zXA-AC-imC">
-                                        <rect key="frame" x="0.0" y="24.999999999999996" width="135.66666666666666" height="14.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="24.999999999999996" width="83.333333333333329" height="14.333333333333332"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZg-MC-sWn" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="31" height="14.333333333333334"/>
@@ -63,18 +63,6 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wi1-KP-70u" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
                                                 <rect key="frame" x="52.333333333333343" y="0.0" width="31" height="14.333333333333334"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" name="neutralLightMedium"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92Z-CP-fKN" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                                                <rect key="frame" x="92.333333333333343" y="0.0" width="3.3333333333333286" height="14.333333333333334"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" name="neutralLightMedium"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aP8-Dx-QKJ" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                                                <rect key="frame" x="104.66666666666669" y="0.0" width="31" height="14.333333333333334"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" name="neutralLightMedium"/>
                                                 <nil key="highlightedColor"/>
@@ -98,13 +86,41 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7R-eH-mNc">
+                                <rect key="frame" x="317.66666666666669" y="117" width="72.333333333333314" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="cSf-Sc-wy0"/>
+                                </constraints>
+                                <color key="tintColor" name="PrimaryDark"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Huỷ đơn">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Inter-Regular_Medium"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Wsl-hp-sef"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cQm-WV-h1w" firstAttribute="top" secondItem="cOJ-mY-gpJ" secondAttribute="top" constant="16" id="1Vv-Sp-N6z"/>
                             <constraint firstItem="sA3-KL-mlT" firstAttribute="leading" secondItem="cOJ-mY-gpJ" secondAttribute="leading" constant="16" id="MxH-fa-cTT"/>
                             <constraint firstAttribute="bottom" secondItem="sA3-KL-mlT" secondAttribute="bottom" constant="16" id="UhM-aZ-sf1"/>
+                            <constraint firstAttribute="bottom" secondItem="p7R-eH-mNc" secondAttribute="bottom" constant="16" id="Wb5-C4-A5L"/>
                             <constraint firstItem="cQm-WV-h1w" firstAttribute="leading" secondItem="sA3-KL-mlT" secondAttribute="trailing" constant="8" symbolic="YES" id="bih-JG-wSu"/>
+                            <constraint firstAttribute="trailing" secondItem="p7R-eH-mNc" secondAttribute="trailing" constant="16" id="fXr-f7-OiK"/>
                             <constraint firstItem="sA3-KL-mlT" firstAttribute="top" secondItem="cOJ-mY-gpJ" secondAttribute="top" constant="16" id="yGb-Xe-E23"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -128,11 +144,11 @@
                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="actionButton" destination="p7R-eH-mNc" id="H5c-Rd-3ve"/>
                 <outlet property="colorLabel" destination="lZg-MC-sWn" id="ubM-Zi-THB"/>
                 <outlet property="imageView" destination="sA3-KL-mlT" id="Coz-DL-R3K"/>
                 <outlet property="nameLabel" destination="eol-hf-fmZ" id="cUt-OT-Jpp"/>
                 <outlet property="priceLabel" destination="2kQ-Sp-4Un" id="5ML-He-vmI"/>
-                <outlet property="quantityLabel" destination="aP8-Dx-QKJ" id="czl-I4-LCa"/>
                 <outlet property="sizeLabel" destination="wi1-KP-70u" id="MeE-zf-4Gg"/>
             </connections>
             <point key="canvasLocation" x="254.96183206106869" y="27.816901408450704"/>
@@ -142,14 +158,8 @@
         <designable name="2kQ-Sp-4Un">
             <size key="intrinsicContentSize" width="33" height="15.666666666666666"/>
         </designable>
-        <designable name="92Z-CP-fKN">
-            <size key="intrinsicContentSize" width="3.3333333333333335" height="14.333333333333334"/>
-        </designable>
         <designable name="Rjx-CZ-oeK">
             <size key="intrinsicContentSize" width="3.3333333333333335" height="14.333333333333334"/>
-        </designable>
-        <designable name="aP8-Dx-QKJ">
-            <size key="intrinsicContentSize" width="31" height="14.333333333333334"/>
         </designable>
         <designable name="eol-hf-fmZ">
             <size key="intrinsicContentSize" width="35.333333333333336" height="17"/>

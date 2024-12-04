@@ -74,6 +74,22 @@ class MyOrderViewController: UIViewController {
             })
             .store(in: &viewModel!.cancellables)
     }
+
+    func showMyViewControllerInACustomizedSheet(orderStatusData: OderStatusData) {
+        let viewControllerToPresent = RattingViewController(oderStatusData: orderStatusData)
+        if let sheet = viewControllerToPresent.sheetPresentationController {
+            let seventyPercentDetent = UISheetPresentationController.Detent.custom { context in
+                context.maximumDetentValue * 0.8
+            }
+
+            sheet.detents = [seventyPercentDetent]
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+            sheet.prefersGrabberVisible = true
+        }
+        present(viewControllerToPresent, animated: true, completion: nil)
+    }
 }
 
 extension MyOrderViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -99,6 +115,22 @@ extension MyOrderViewController: UICollectionViewDelegate, UICollectionViewDataS
         } else {
             let cell = collectionView.dequeueReusableCell(withType: OrderListCollectionViewCell.self, for: indexPath)
             cell.setupCell(oderStatusData: viewModel?.orderStatusResponse?.data?[indexPath.row])
+            cell.didTapAction = { statusOrder in
+                let idOrder = statusOrder.id
+                let statusOrderString = statusOrder.status
+                var newStatus = ""
+                if statusOrderString == "confirmed" {
+                    newStatus = "rated"
+                    self.showMyViewControllerInACustomizedSheet(orderStatusData: statusOrder)
+                } else {
+                    if statusOrderString == "pending" {
+                        newStatus = "cancelled"
+                    } else if statusOrderString == "delivered" {
+                        newStatus = "confirmed"
+                    }
+                    self.viewModel?.patchOrderStatus(idOrder: idOrder, newStatus: newStatus)
+                }
+            }
             return cell
         }
     }
@@ -150,7 +182,9 @@ extension MyOrderViewController: UICollectionViewDelegate, UICollectionViewDataS
             }
             selectedIndexPath = indexPath
         } else {
-            print(indexPath.row)
+            let idOrder = viewModel?.orderStatusResponse?.data?[indexPath.row]?.id ?? ""
+            viewModel?.getOrderDetail(idOrder: idOrder)
+            coordinator?.showOrderDetail()
         }
     }
 }
