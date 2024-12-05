@@ -55,7 +55,7 @@ class ShoesDetailViewModel: ObservableObject {
         getShoesDetail()
         getReView()
     }
-    
+
     func getReView() {
         guard let idShoes = idShoes else {
             errorMessage = "Something is wrong"

@@ -62,7 +62,6 @@ class ProfileViewController: UIViewController {
         setupNavigationBar(title: "Hồ sơ cá nhân")
     }
 
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupTableViewAppearance()

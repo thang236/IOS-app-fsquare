@@ -23,7 +23,7 @@ class ShoesDetailRepositoryImpl: ShoesDetailRepository {
     func getShoesDetail(idShoes: String) -> AnyPublisher<ShoesDetailResponse, Error> {
         apiService.request(endpoint: .getDetailShoes(idShoes: idShoes), method: .get, parameters: nil)
     }
-    
+
     func getReview(idShoes: String) -> AnyPublisher<ReviewResponse, Error> {
         apiService.request(endpoint: .getReviews(idShoes: idShoes), method: .get, parameters: nil)
     }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct NotificationsResponse: Codable {
     let status: String
     let message: String
@@ -19,7 +20,7 @@ struct NotificationData: Codable {
     let title: String
     let content: String
     let createdAt: String
-    
+
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case order, title, content, createdAt

@@ -189,7 +189,7 @@ class ShoeDetailViewController: UIViewController {
                     self.dataSource.applySnapshotUsingReloadData(snapshot)
                 }
             }.store(in: &cancellables)
-        
+
         viewModel?.$errorMessage
             .compactMap { $0 }
             .receive(on: DispatchQueue.main)
@@ -294,7 +294,7 @@ class ShoeDetailViewController: UIViewController {
         collectionView.registerCell(cellType: SizeCollectionViewCell.self)
         collectionView.registerCell(cellType: ShoesColorCollectionViewCell.self)
         collectionView.registerCell(cellType: ReviewCollectionViewCell.self)
-        
+
         collectionView.delegate = self
 
         // Register Header
@@ -378,18 +378,19 @@ class ShoeDetailViewController: UIViewController {
 
                 let section = NSCollectionLayoutSection(group: group)
                 return section
+
             case .review:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-                
+
                 let section = NSCollectionLayoutSection(group: group)
-                
+
                 section.boundarySupplementaryItems = self.createHeaderItem(for: sectionType)
                 section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
-                
+
                 return section
             }
         }

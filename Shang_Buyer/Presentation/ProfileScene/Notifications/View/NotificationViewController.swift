@@ -8,28 +8,30 @@
 import UIKit
 
 class NotificationViewController: UIViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var collectionView: UICollectionView!
     let viewModel: NotificationViewModel
-    
+
     init(viewModel: NotificationViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
-    required init?(coder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    override func viewWillAppear(_ animated: Bool) {
-        viewModel.getNotifications()
 
+    override func viewWillAppear(_: Bool) {
+        viewModel.getNotifications()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         setupBinding()
         setupNav()
     }
+
     private func setupNav() {
         navigationItem.hidesBackButton = true
         let image: UIImage = #imageLiteral(resourceName: "positionLeft")
@@ -38,26 +40,24 @@ class NotificationViewController: UIViewController {
         }
         let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(backButtonTapped))
         button.tintColor = .black
-        self.setupNavigationBar(leftBarButton: button, title: "Thông báo")
+        setupNavigationBar(leftBarButton: button, title: "Thông báo")
     }
-    
+
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
-    
+
     private func setupBinding() {
         viewModel.$notificationResponse.sink { [weak self] _ in
             self?.collectionView.reloadData()
         }.store(in: &viewModel.cancellables)
     }
-    
+
     private func setupCollectionView() {
         collectionView.registerCell(cellType: NotificationCollectionViewCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
-        
     }
-
 }
 
 extension NotificationViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -74,7 +74,7 @@ extension NotificationViewController: UICollectionViewDelegate, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
-        let width: CGFloat = (collectionView.frame.size.width ) - 32
+        let width: CGFloat = (collectionView.frame.size.width) - 32
         let height: CGFloat = 88
         return CGSize(width: width, height: height)
     }
@@ -82,7 +82,4 @@ extension NotificationViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 16, bottom: 0, right: 16)
     }
-
 }
-
-

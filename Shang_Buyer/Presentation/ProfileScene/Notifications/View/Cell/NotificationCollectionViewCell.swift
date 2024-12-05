@@ -8,19 +8,18 @@
 import UIKit
 
 class NotificationCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var titleLabel: BodyLabel!
-    
+    @IBOutlet var contentLabel: UILabel!
+    @IBOutlet var titleLabel: BodyLabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         contentView.cornerRadius = 16
         contentView.layer.masksToBounds = true
     }
-    
+
     func setupCell(notiData: NotificationData) {
         titleLabel.text = notiData.title
         contentLabel.text = notiData.content
     }
-
 }

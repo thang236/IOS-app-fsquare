@@ -47,7 +47,7 @@ enum AppApi {
     case order
     case orderID(idOrder: String)
     case orderReturn(idOrder: String)
-    
+
     case getNotifications
 
     case payments
@@ -180,7 +180,7 @@ enum AppApi {
 
         case .payments:
             return "\(AppApi.baseURL)/api/customer/v1/payments"
-            
+
         case .getNotifications:
             return "\(AppApi.baseURL)/api/customer/v1/notifications"
         }

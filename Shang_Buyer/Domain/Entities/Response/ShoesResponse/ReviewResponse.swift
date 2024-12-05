@@ -21,7 +21,7 @@ struct ReviewData: Codable, Hashable {
     let images: [Thumbnail]?
     let videos: [Thumbnail]?
     let createdAt: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case customer
@@ -31,14 +31,14 @@ struct ReviewData: Codable, Hashable {
         case videos
         case createdAt
     }
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
+
     static func == (lhs: ReviewData, rhs: ReviewData) -> Bool {
         return lhs.id == rhs.id
     }
-    
 }
 
 struct Customer: Codable {

@@ -13,36 +13,36 @@ enum MediaItemGet {
 }
 
 class ReviewCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var heightCollectionView: NSLayoutConstraint!
-    @IBOutlet weak var contentLabel: DescriptionLabel!
-    @IBOutlet weak var timeLabel: DescriptionLabel!
-    @IBOutlet weak var avartarImage: UIImageView!
-    @IBOutlet weak var starImage5: UIImageView!
-    @IBOutlet weak var starImage4: UIImageView!
-    @IBOutlet weak var starImage3: UIImageView!
-    @IBOutlet weak var starImage2: UIImageView!
-    @IBOutlet weak var starImage1: UIImageView!
-    @IBOutlet weak var nameLabel: BodyLabel!
-    @IBOutlet weak var mediaCollectionView: UICollectionView!
-    
+    @IBOutlet var heightCollectionView: NSLayoutConstraint!
+    @IBOutlet var contentLabel: DescriptionLabel!
+    @IBOutlet var timeLabel: DescriptionLabel!
+    @IBOutlet var avartarImage: UIImageView!
+    @IBOutlet var starImage5: UIImageView!
+    @IBOutlet var starImage4: UIImageView!
+    @IBOutlet var starImage3: UIImageView!
+    @IBOutlet var starImage2: UIImageView!
+    @IBOutlet var starImage1: UIImageView!
+    @IBOutlet var nameLabel: BodyLabel!
+    @IBOutlet var mediaCollectionView: UICollectionView!
+
     private var reviewData: ReviewData?
     private var mediaItems: [MediaItemGet] = []
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
 //        contentView.isSkeletonable = true
 //        contentView.showAnimatedGradientSkeleton()
-        self.avartarImage.cornerRadius = 15
+        avartarImage.cornerRadius = 15
         setupCollectionView()
     }
-    
+
     private func setupCollectionView() {
         mediaCollectionView.registerCell(cellType: MediaGetCollectionViewCell.self)
         mediaCollectionView.delegate = self
         mediaCollectionView.dataSource = self
     }
-    
+
     private func setupMediaData(reviewData: ReviewData) {
         if let reviewImages = reviewData.images {
             for image in reviewImages {
@@ -57,12 +57,11 @@ class ReviewCollectionViewCell: UICollectionViewCell {
                 if let url = URL(string: video.url) {
                     mediaItems.append(.video(url))
                     mediaCollectionView.reloadData()
-
                 }
             }
         }
     }
-    
+
     private func setUpRating(ratingNumber: Double) {
         let starImages = [starImage1, starImage2, starImage3, starImage4, starImage5]
 
@@ -81,11 +80,11 @@ class ReviewCollectionViewCell: UICollectionViewCell {
             starImage?.hideSkeleton()
         }
     }
-    
+
     func setupCell(reviewData: ReviewData?) {
         if let reviewData = reviewData {
             if self.reviewData != reviewData {
-                self.setupMediaData(reviewData: reviewData)
+                setupMediaData(reviewData: reviewData)
             } else {
                 self.reviewData = reviewData
             }
@@ -103,12 +102,12 @@ class ReviewCollectionViewCell: UICollectionViewCell {
             } else {
                 heightCollectionView.constant = 80
             }
-            
+
         } else {
             showAnimatedGradientSkeleton()
         }
     }
-    
+
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         setNeedsLayout()
         layoutIfNeeded()
@@ -121,24 +120,21 @@ class ReviewCollectionViewCell: UICollectionViewCell {
         layoutAttributes.frame.size = size
         return layoutAttributes
     }
-    
 }
 
 extension ReviewCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return mediaItems.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withType: MediaGetCollectionViewCell.self, for: indexPath)
-        cell.setupCell(with: self.mediaItems[indexPath.row])
+        cell.setupCell(with: mediaItems[indexPath.row])
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
         let size = collectionView.bounds.height - 5
         return CGSize(width: size, height: size)
     }
-    
-    
 }
