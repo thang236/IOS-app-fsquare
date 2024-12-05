@@ -115,7 +115,7 @@ enum AppApi {
             }
 
         case let .getReviews(idShoes):
-            return "\(AppApi.baseURL)/api/customer/v1/reviews/shoes/\(idShoes)"
+            return "\(AppApi.baseURL)/api/customer/v2/reviews/shoes/\(idShoes)"
 
         case .addFav:
             return "\(AppApi.baseURL)/api/customer/v1/favorites"

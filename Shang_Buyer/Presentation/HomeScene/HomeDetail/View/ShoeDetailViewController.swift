@@ -14,18 +14,21 @@ enum ShoesDetailSectionType: String, CaseIterable, Hashable {
     case colorShoes
     case sizeShoes
     case description
+    case review
     var title: String {
         switch self {
         case .headerImage:
             return "Header Image"
         case .describe:
-            return "Describe"
+            return "Miêu tả"
         case .sizeShoes:
-            return "Size"
+            return "Kích thước"
         case .colorShoes:
-            return "Color"
+            return "Màu sắc"
         case .description:
-            return "Description"
+            return "Chi tiết sản phẩm"
+        case .review:
+            return "Đánh giá"
         }
     }
 }
@@ -36,6 +39,7 @@ enum ShoeDetailContentCell: Hashable {
     case colorShoes(titleColor: String)
     case sizeShoes(titleSize: String)
     case description(description: String)
+    case review(reviewData: ReviewData)
 }
 
 class ShoeDetailViewController: UIViewController {
@@ -92,6 +96,10 @@ class ShoeDetailViewController: UIViewController {
                     let cell = collectionView.dequeueReusableCell(withType: DescriptionCollectionViewCell.self, for: indexPath)
                     cell.configureCell(description: description)
                     return cell
+                case let .review(reviewData):
+                    let cell = collectionView.dequeueReusableCell(withType: ReviewCollectionViewCell.self, for: indexPath)
+                    cell.setupCell(reviewData: reviewData)
+                    return cell
                 }
             }
             dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
@@ -99,18 +107,7 @@ class ShoeDetailViewController: UIViewController {
                 if kind == UICollectionView.elementKindSectionHeader {
                     let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderHomeDetailCollectionReusableView.reuseIdentifier, for: indexPath) as? HeaderHomeDetailCollectionReusableView
                     header?.configure(shoesDetailSectionType: section)
-                    switch section {
-                    case .headerImage:
-                        return nil
-                    case .describe:
-                        return nil
-                    case .sizeShoes:
-                        return header
-                    case .colorShoes:
-                        return header
-                    case .description:
-                        return nil
-                    }
+                    return header
                 }
 
                 return nil
@@ -179,6 +176,20 @@ class ShoeDetailViewController: UIViewController {
     // MARK: - Setup Bindings
 
     private func setupBindings() {
+        viewModel?.$reviewResponse
+            .sink { reviewResponse in
+                var snapshot = self.dataSource.snapshot()
+                if let reviewResponse = reviewResponse {
+                    snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .review))
+                    for reviewDataItem in reviewResponse.data {
+                        if let reviewDataItem = reviewDataItem {
+                            snapshot.appendItems([.review(reviewData: reviewDataItem)], toSection: .review)
+                        }
+                    }
+                    self.dataSource.applySnapshotUsingReloadData(snapshot)
+                }
+            }.store(in: &cancellables)
+        
         viewModel?.$errorMessage
             .compactMap { $0 }
             .receive(on: DispatchQueue.main)
@@ -282,7 +293,8 @@ class ShoeDetailViewController: UIViewController {
         collectionView.registerCell(cellType: DescriptionCollectionViewCell.self)
         collectionView.registerCell(cellType: SizeCollectionViewCell.self)
         collectionView.registerCell(cellType: ShoesColorCollectionViewCell.self)
-
+        collectionView.registerCell(cellType: ReviewCollectionViewCell.self)
+        
         collectionView.delegate = self
 
         // Register Header
@@ -366,6 +378,19 @@ class ShoeDetailViewController: UIViewController {
 
                 let section = NSCollectionLayoutSection(group: group)
                 return section
+            case .review:
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200))
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                
+                section.boundarySupplementaryItems = self.createHeaderItem(for: sectionType)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+                
+                return section
             }
         }
     }
@@ -386,6 +411,13 @@ class ShoeDetailViewController: UIViewController {
             guard let shoesClassification = viewModel?.shoesClassification, !(shoesClassification.data.isEmpty) else {
                 return []
             }
+            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(25))
+            let header = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top
+            )
+            header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+            return [header]
+        case .review:
             let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(25))
             let header = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top

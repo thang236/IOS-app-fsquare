@@ -22,6 +22,7 @@ class ShoesDetailViewModel: ObservableObject {
     @Published var quantity: Int? = nil
     @Published var idSize: String? = nil
     @Published var addBagResponse: AddBagResponse? = nil
+    @Published var reviewResponse: ReviewResponse? = nil
     var cancellables = Set<AnyCancellable>()
 
     // MARK: - UseCase
@@ -52,6 +53,29 @@ class ShoesDetailViewModel: ObservableObject {
         self.idShoes = idShoes
         getShoesClassification()
         getShoesDetail()
+        getReView()
+    }
+    
+    func getReView() {
+        guard let idShoes = idShoes else {
+            errorMessage = "Something is wrong"
+            return
+        }
+        isLoading = true
+        getShoesDetailUseCase.getReview(idShoes: idShoes)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                self.isLoading = false
+                switch completion {
+                case .finished:
+                    break
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                    print("Error getShoesDetail: \(self.errorMessage)")
+                }
+            }, receiveValue: { review in
+                self.reviewResponse = review
+            }).store(in: &cancellables)
     }
 
     func getShoesDetail() {
