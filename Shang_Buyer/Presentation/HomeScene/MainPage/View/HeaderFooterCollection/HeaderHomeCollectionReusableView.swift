@@ -29,7 +29,7 @@ class HeaderHomeCollectionReusableView: UICollectionReusableView {
     private let seeMoreButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("See More", for: .normal)
+        button.setTitle("Xem thêm", for: .normal)
         button.setTitleColor(.primaryDark, for: .normal)
         button.titleLabel?.font = UIFont.interItalicVariableFont(fontWeight: .medium, size: 16)
         return button

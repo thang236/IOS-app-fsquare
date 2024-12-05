@@ -62,7 +62,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
             } else {
                 startProduct.image = UIImage(systemName: "star.leadinghalf.filled")
             }
-            priceLabel.text = "$\(NumberFormatter.formatToVNDWithCustomSymbol(favorite.minPrice))"
+            priceLabel.text = "\(NumberFormatter.formatToVNDWithCustomSymbol(favorite.minPrice))"
         } else {
             showAnimatedGradientSkeleton()
         }

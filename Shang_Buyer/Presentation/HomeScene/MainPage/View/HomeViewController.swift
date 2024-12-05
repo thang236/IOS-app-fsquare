@@ -17,11 +17,11 @@ enum HomeCollectionType: String, CaseIterable, Hashable {
     var title: String {
         switch self {
         case .popular:
-            return "Popular"
+            return "Phổ biến"
         case .brand:
             return "Brand"
         case .shoes:
-            return "Newest shoes"
+            return "Giày mới nhất"
         case .banner:
             return "Banner"
         }
