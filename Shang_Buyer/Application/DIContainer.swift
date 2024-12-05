@@ -92,7 +92,8 @@ final class DIContainer {
 
     func resolveProfileViewModel() -> ProfileViewModel {
         let getProfileUseCase = resolveGetProfileUseCase()
-        return ProfileViewModel(getProfileUseCase: getProfileUseCase)
+        let editProfileUseCase = resolveEditProfileUseCase()
+        return ProfileViewModel(getProfileUseCase: getProfileUseCase, editProfileUseCase: editProfileUseCase)
     }
 
     func resolveEditProfileUseCase() -> EditProfileUseCase {
@@ -221,7 +222,11 @@ final class DIContainer {
         let getClassificationUseCase = resolveGetClassificationsUseCase()
         let getSizeClassificationUseCase = resolveGetSizeClassificationUseCase()
         let addBagUseCase = resolveAddBagUseCase()
-        return ShoesDetailViewModel(getShoesDetailUseCase: getShoesDetailUseCase, getShoesClassificationUseCase: getShoesClassificationUseCase, getClassificationsUseCase: getClassificationUseCase, getSizeClassificationUseCase: getSizeClassificationUseCase, addBagUseCase: addBagUseCase)
+        let getShoesUseCase = resolveGetShoesUseCase()
+        return ShoesDetailViewModel(
+            getShoesDetailUseCase: getShoesDetailUseCase, getShoesClassificationUseCase: getShoesClassificationUseCase, getClassificationsUseCase: getClassificationUseCase, getSizeClassificationUseCase: getSizeClassificationUseCase, addBagUseCase: addBagUseCase,
+            getShoesUseCase: getShoesUseCase
+        )
     }
 
     // MARK: Cart
@@ -235,12 +240,12 @@ final class DIContainer {
         let cartRepository = resolveCartRepository()
         return BagUseCaseImpl(repository: cartRepository)
     }
-    
+
     func resolveOrderRepository() -> OrderRepository {
         let apiService = resolveAPIService()
         return OrderRepositoryImpl(apiService: apiService)
     }
-    
+
     func resolveOrderUseCase() -> OrderUseCase {
         let orderRepository = resolveOrderRepository()
         return OrderUseCaseImpl(repository: orderRepository)
@@ -251,5 +256,25 @@ final class DIContainer {
         let getAddressUseCase = resolveGetAddressUseCase()
         let orderUseCase = resolveOrderUseCase()
         return CartViewModel(useCase: cartUseCase, getAddressUseCase: getAddressUseCase, orderUseCase: orderUseCase)
+    }
+
+    func resolveOrderViewModel() -> MyOrderViewModel {
+        let orderUseCase = resolveOrderUseCase()
+        return MyOrderViewModel(orderUseCase: orderUseCase)
+    }
+
+    func resolveNotificationRepository() -> NotificationRepository {
+        let apiService = resolveAPIService()
+        return NotificationRepositoryImpl(apiService: apiService)
+    }
+
+    func resolveNotificationUseCase() -> NotificationUseCase {
+        let notificationRepository = resolveNotificationRepository()
+        return NotificationUseCaseImpl(repository: notificationRepository)
+    }
+
+    func resolveNotificationViewModel() -> NotificationViewModel {
+        let notificationUseCase = resolveNotificationUseCase()
+        return NotificationViewModel(useCase: notificationUseCase)
     }
 }

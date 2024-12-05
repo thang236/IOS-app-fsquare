@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import UIKit
 
 class ProfileViewModel: ObservableObject {
     @Published var errorMessage: String? = nil
@@ -14,9 +15,11 @@ class ProfileViewModel: ObservableObject {
 
     private var getProfileUseCase: GetProfileUseCase
     private var cancellables = Set<AnyCancellable>()
+    private let editProfileUseCase: EditProfileUseCase
 
-    init(getProfileUseCase: GetProfileUseCase) {
+    init(getProfileUseCase: GetProfileUseCase, editProfileUseCase: EditProfileUseCase) {
         self.getProfileUseCase = getProfileUseCase
+        self.editProfileUseCase = editProfileUseCase
     }
 
     func getProfile(completion: @escaping (Result<ProfileResponse, Error>) -> Void) {
@@ -35,5 +38,22 @@ class ProfileViewModel: ObservableObject {
         }, receiveValue: { profileResponse in
             completion(.success(profileResponse))
         }).store(in: &cancellables)
+    }
+
+    func updateProfile(avartar: UIImage, completion: @escaping (Result<ProfileResponse, Error>) -> Void) {
+        editProfileUseCase.editAvatar(image: avartar)
+            .sink(receiveCompletion: { result in
+                print("Completion: \(result)")
+                switch result {
+                case .finished:
+                    break
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { response in
+                print("response:  \(response)")
+                completion(.success(response))
+
+            }).store(in: &cancellables)
     }
 }

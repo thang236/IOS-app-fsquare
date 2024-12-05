@@ -15,13 +15,11 @@ struct Profile {
 
 extension Profile {
     static let profiles: [Profile] = [
-        Profile(icon: UIImage.user, title: "Edit Profile"),
-        Profile(icon: UIImage.mappin, title: "Address"),
-        Profile(icon: UIImage.bell, title: "Notification"),
-        Profile(icon: UIImage.myWallete, title: "My Wallete"),
-        Profile(icon: UIImage.shield, title: "Security"),
-        Profile(icon: UIImage.lockFix, title: "Privacy  Policy"),
-        Profile(icon: UIImage.loginLogout, title: "Logout"),
+        Profile(icon: UIImage.user, title: "Chỉnh sửa hồ sơ"),
+        Profile(icon: UIImage.mappin, title: "Địa chỉ"),
+        Profile(icon: UIImage.bell, title: "Thông báo"),
+        Profile(icon: UIImage.lockFix, title: "Chính sách quyền riêng tư"),
+        Profile(icon: UIImage.loginLogout, title: "Đăng xuất"),
     ]
 }
 
@@ -29,8 +27,6 @@ enum SettingProfileTable: Int {
     case editProfile = 0
     case address = 1
     case noti = 2
-    case wallet = 3
-    case security = 4
-    case policy = 5
-    case logout = 6
+    case policy = 3
+    case logout = 4
 }

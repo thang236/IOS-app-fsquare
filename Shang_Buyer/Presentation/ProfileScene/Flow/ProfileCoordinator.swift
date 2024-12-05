@@ -56,11 +56,19 @@ class ProfileCoordinator: Coordinator {
 
     func goToEditAddress(viewModel: AddressViewModel, address: AddressData) {
         let editAddress = EditAddressViewController(viewModel: viewModel, address: address)
+        editAddress.coordinator = self
         navigationController.pushViewController(editAddress, animated: true)
+    }
+
+    func goToNotification() {
+        let notificationViewModel = DIContainer.shared.resolveNotificationViewModel()
+        let notiVC = NotificationViewController(viewModel: notificationViewModel)
+        navigationController.pushViewController(notiVC, animated: true)
     }
 
     func logoutUser() {
         let authCoordinator = AuthCoordinator(navigationController: navigationMain)
+        navigationMain.isNavigationBarHidden = false
         authCoordinator.goToLoginMethodSelection()
     }
 }

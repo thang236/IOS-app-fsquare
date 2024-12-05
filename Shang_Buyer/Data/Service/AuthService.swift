@@ -21,6 +21,8 @@ class AuthServiceImpl: AuthService {
             AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
                 .validate()
                 .responseData { response in
+                    debugPrint("Response Auth Data: \(String(data: response.data ?? Data(), encoding: .utf8) ?? "No data")")
+
                     switch response.result {
                     case let .success(data):
                         do {

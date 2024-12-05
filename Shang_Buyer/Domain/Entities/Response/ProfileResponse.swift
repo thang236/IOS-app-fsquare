@@ -12,7 +12,7 @@ struct ProfileItem: Codable {
     let firstName: String
     let lastName: String
     let email: String?
-    let avatar: String?
+    let avatar: Thumbnail?
     let birthDay: String?
     let phone: String?
     let address: String?

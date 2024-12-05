@@ -5,6 +5,7 @@
 //  Created by Louis Macbook on 12/09/2024.
 //
 
+import FirebaseCore
 import IQKeyboardManagerSwift
 import UIKit
 
@@ -13,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
+        FirebaseApp.configure()
         return true
     }
 

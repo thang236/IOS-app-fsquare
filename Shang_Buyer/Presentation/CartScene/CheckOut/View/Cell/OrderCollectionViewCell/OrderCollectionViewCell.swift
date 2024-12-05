@@ -13,18 +13,14 @@ class OrderCollectionViewCell: UICollectionViewCell {
     @IBOutlet var priceLabel: BodyLabel!
     @IBOutlet var sizeLabel: BodyLabel!
     @IBOutlet var colorLabel: BodyLabel!
-    @IBOutlet var colorView: UIView!
     @IBOutlet var quantityView: UIView!
     @IBOutlet var nameLabel: BodyLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        colorView.layer.cornerRadius = colorView.frame.width / 2
-        colorView.layer.masksToBounds = true
-
         quantityView.layer.cornerRadius = quantityView.frame.width / 2
         quantityView.layer.masksToBounds = true
-        
+
         contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true
 

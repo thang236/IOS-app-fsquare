@@ -10,9 +10,10 @@ import UIKit
 
 class HomeCoordinator: Coordinator {
     private let navigationController: UINavigationController
+    var homeViewModel: HomeViewModel
 
     init() {
-        let homeViewModel = DIContainer.shared.resolveHomeViewModel()
+        homeViewModel = DIContainer.shared.resolveHomeViewModel()
         let homeVC = HomeViewController(viewModel: homeViewModel)
         navigationController = UINavigationController(rootViewController: homeVC)
         homeVC.coordinator = self
@@ -35,5 +36,17 @@ class HomeCoordinator: Coordinator {
         let favoriteVC = FavoriteViewController(viewModel: favoriteViewModel)
         favoriteVC.coordinator = self
         navigationController.pushViewController(favoriteVC, animated: true)
+    }
+
+    func goToProduct(titleBrand: String) {
+        let productVC = ProductViewController(title: titleBrand, viewModel: homeViewModel)
+        productVC.coordinator = self
+        navigationController.pushViewController(productVC, animated: true)
+    }
+
+    func goToSearch() {
+        let searchVC = SearchHomeViewController(viewModel: homeViewModel)
+        searchVC.coordinator = self
+        navigationController.pushViewController(searchVC, animated: false)
     }
 }

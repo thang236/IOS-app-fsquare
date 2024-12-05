@@ -13,26 +13,27 @@ class CartViewModel: ObservableObject {
     private let useCase: BagUseCase
     private let getAddressUseCase: GetAddressUseCase
     private let orderUseCase: OrderUseCase
-    
+
     @Published var bagResponse: BagResponse? = nil
     @Published var bagDeleteResponse: BagDeleteResponse? = nil
     @Published var bagPatchResponse: BagPatchResponse? = nil
     @Published var addressResponse: AddressResponse? = nil
     @Published var addressChoose: AddressData? = nil
     @Published var feeResponse: FeeResponse? = nil
-    
+    @Published var postPaymentResponse: PostPaymentResponse? = nil
+
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
-    
+
     @Published var orderResponse: OrderResponse? = nil
-    
+
     init(useCase: BagUseCase, getAddressUseCase: GetAddressUseCase, orderUseCase: OrderUseCase) {
         self.useCase = useCase
         self.getAddressUseCase = getAddressUseCase
         self.orderUseCase = orderUseCase
     }
-    
-    func getBag() {
+
+    func getBag(completion: (() -> Void)? = nil) {
         isLoading = true
         useCase.getBag()
             .receive(on: RunLoop.main)
@@ -45,10 +46,11 @@ class CartViewModel: ObservableObject {
                 }
             } receiveValue: { bagResponse in
                 self.bagResponse = bagResponse
+                completion?()
             }
             .store(in: &cancellables)
     }
-    
+
     func removeBag(idBag: String) {
         isLoading = true
         useCase.removeBag(idBag: idBag)
@@ -65,7 +67,7 @@ class CartViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
+
     func removeAllBag() {
         isLoading = true
         useCase.removeAllBag()
@@ -75,7 +77,7 @@ class CartViewModel: ObservableObject {
                 case .finished:
                     self.isLoading = false
                     self.bagResponse?.data?.removeAll()
-                    
+
                 case let .failure(error):
                     self.errorMessage = error.localizedDescription
                 }
@@ -84,7 +86,7 @@ class CartViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
+
     func patchBag(idBag: String, quantity: Int, isDecrease: Bool = false) {
         var parameters: [String: Any] = ["action": "increase"]
         if isDecrease {
@@ -109,13 +111,28 @@ class CartViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
-    
 }
 
+// MARK: - CheckOut
 
-//MARK: - CheckOut
 extension CartViewModel {
+    func postPayment(parameters: [String: Any]) {
+        isLoading = true
+        orderUseCase.postPayment(parameter: parameters)
+            .receive(on: RunLoop.main)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    self.isLoading = false
+                case let .failure(error):
+                    self.errorMessage = error.localizedDescription
+                }
+            } receiveValue: { postPaymentResponse in
+                self.postPaymentResponse = postPaymentResponse
+            }
+            .store(in: &cancellables)
+    }
+
     func createOrder(parameters: OrderRequest) {
         isLoading = true
         orderUseCase.createOrder(parameter: parameters)
@@ -126,14 +143,14 @@ extension CartViewModel {
                     self.isLoading = false
                 case let .failure(error):
                     self.errorMessage = error.localizedDescription
+                    print("CreateOrderError:  \(error.localizedDescription)")
                 }
             } receiveValue: { orderResponse in
                 print("orderResponse: \(orderResponse)")
                 self.orderResponse = orderResponse
             }.store(in: &cancellables)
-        
     }
-    
+
     func calculatorFee(parameters: [String: Any]) {
         isLoading = true
         orderUseCase.calculatorFee(parameter: parameters)
@@ -147,11 +164,10 @@ extension CartViewModel {
                 }
             } receiveValue: { feeResponse in
                 self.feeResponse = feeResponse
-                print(feeResponse)
             }
             .store(in: &cancellables)
     }
-    
+
     func getAddress() {
         isLoading = true
         getAddressUseCase.getAddress()
@@ -165,7 +181,7 @@ extension CartViewModel {
                 }
             } receiveValue: { addressResponse in
                 self.addressResponse = addressResponse
-                addressResponse.data.forEach { address in
+                for address in addressResponse.data {
                     if address.isDefault == true {
                         self.addressChoose = address
                     }
@@ -174,11 +190,11 @@ extension CartViewModel {
             }
             .store(in: &cancellables)
     }
-    
+
     func generateRandomID() -> String {
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        let prefix = String((0..<3).map { _ in letters.randomElement()! })
-        let randomNumber = Int.random(in: 100_000...999_999)
-        return "\(prefix)\(randomNumber)"
+        let prefix = String((0 ..< 3).map { _ in letters.randomElement()! })
+        let randomNumber = Int.random(in: 100_000 ... 999_999)
+        return "FSORDER\(prefix)\(randomNumber)"
     }
 }

@@ -12,6 +12,7 @@ protocol FavoriteViewControllerDelegate: AnyObject {
 }
 
 class FavoriteViewController: UIViewController {
+    private let refreshControl = UIRefreshControl()
     var delegate: FavoriteViewControllerDelegate?
     var coordinator: HomeCoordinator?
     @IBOutlet private var collectionView: UICollectionView!
@@ -95,6 +96,15 @@ class FavoriteViewController: UIViewController {
         collectionView.registerCell(cellType: FavoriteCollectionViewCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
+
+        refreshControl.addTarget(self, action: #selector(refreshFavorites), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
+    }
+
+    @objc private func refreshFavorites() {
+        viewModel.getFavoriteShoes {
+            self.refreshControl.endRefreshing()
+        }
     }
 
     private func setupBindings() {

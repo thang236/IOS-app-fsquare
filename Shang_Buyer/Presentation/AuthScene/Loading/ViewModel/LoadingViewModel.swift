@@ -26,14 +26,16 @@ class LoadingViewModel: ObservableObject {
                 print("finished")
             case let .failure(error):
                 self.errorMessage = error.localizedDescription
+                TokenManager.shared.removeTokens()
             }
         }, receiveValue: { profileResponse in
+            completion(.success(profileResponse))
+
             let nameUser = "\(profileResponse.data.firstName) \(profileResponse.data.lastName)"
             let phoneUser = profileResponse.data.phone
-            
+
             UserDefaults.standard.set(nameUser, forKey: .nameUser)
             UserDefaults.standard.set(phoneUser, forKey: .phoneUser)
-            completion(.success(profileResponse))
         }).store(in: &cancellables)
     }
 }

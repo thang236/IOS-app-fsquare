@@ -32,4 +32,3 @@ struct ShippingAddress: Codable {
     let toWardName: String
     let toPhone: String
 }
-

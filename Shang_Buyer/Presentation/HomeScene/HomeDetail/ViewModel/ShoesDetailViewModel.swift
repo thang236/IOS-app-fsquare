@@ -11,8 +11,9 @@ import Foundation
 class ShoesDetailViewModel: ObservableObject {
     // MARK: - Properties
 
+    @Published var shoesFavoriteID: String? = nil
     @Published var shoesDetail: ShoesDetailResponse? = nil
-    @Published var errorMessage: String = ""
+    @Published var errorMessage: String? = nil
     @Published var isLoading: Bool = false
     @Published var idShoes: String? = nil
     @Published var shoesClassification: ShoesClassificationsResponse? = nil
@@ -21,10 +22,12 @@ class ShoesDetailViewModel: ObservableObject {
     @Published var quantity: Int? = nil
     @Published var idSize: String? = nil
     @Published var addBagResponse: AddBagResponse? = nil
+    @Published var reviewResponse: ReviewResponse? = nil
     var cancellables = Set<AnyCancellable>()
 
     // MARK: - UseCase
 
+    private let getShoesUseCase: GetShoesUseCase
     private let getShoesDetailUseCase: GetShoesDetailUseCase
     private let getShoesClassificationUseCase: GetShoesClassificationUseCase
     private let getClassificationsUseCase: GetClassificationsUseCase
@@ -33,12 +36,15 @@ class ShoesDetailViewModel: ObservableObject {
 
     // MARK: - Init
 
-    init(getShoesDetailUseCase: GetShoesDetailUseCase, getShoesClassificationUseCase: GetShoesClassificationUseCase, getClassificationsUseCase: GetClassificationsUseCase, getSizeClassificationUseCase: GetSizeClassificationUseCase, addBagUseCase: AddBagUseCase) {
+    init(getShoesDetailUseCase: GetShoesDetailUseCase, getShoesClassificationUseCase: GetShoesClassificationUseCase, getClassificationsUseCase: GetClassificationsUseCase, getSizeClassificationUseCase: GetSizeClassificationUseCase, addBagUseCase: AddBagUseCase,
+         getShoesUseCase: GetShoesUseCase)
+    {
         self.getShoesDetailUseCase = getShoesDetailUseCase
         self.getShoesClassificationUseCase = getShoesClassificationUseCase
         self.getSizeClassificationUseCase = getSizeClassificationUseCase
         self.getClassificationsUseCase = getClassificationsUseCase
         self.addBagUseCase = addBagUseCase
+        self.getShoesUseCase = getShoesUseCase
     }
 
     // MARK: - Function
@@ -47,6 +53,29 @@ class ShoesDetailViewModel: ObservableObject {
         self.idShoes = idShoes
         getShoesClassification()
         getShoesDetail()
+        getReView()
+    }
+
+    func getReView() {
+        guard let idShoes = idShoes else {
+            errorMessage = "Something is wrong"
+            return
+        }
+        isLoading = true
+        getShoesDetailUseCase.getReview(idShoes: idShoes)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                self.isLoading = false
+                switch completion {
+                case .finished:
+                    break
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                    print("Error getShoesDetail: \(self.errorMessage)")
+                }
+            }, receiveValue: { review in
+                self.reviewResponse = review
+            }).store(in: &cancellables)
     }
 
     func getShoesDetail() {
@@ -138,6 +167,67 @@ class ShoesDetailViewModel: ObservableObject {
             }, receiveValue: { response in
                 self.addBagResponse = response
                 print("Success addBagUseCase")
+            }).store(in: &cancellables)
+    }
+
+    func toggleFav(isFav: Bool) {
+        if isFav {
+            removeFAV()
+        } else {
+            addFAV()
+        }
+    }
+
+    private func addFAV() {
+        guard let idShoes = idShoes else {
+            errorMessage = "Something is wrong"
+            return
+        }
+        let parameter: [String: Any] = [
+            "shoes": idShoes,
+        ]
+        getShoesUseCase.addFavoriteShoes(parameter: parameter)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { favoriteResponse in
+                if favoriteResponse.status == HTTPStatus.created.message {
+                    self.shoesDetail?.data?.isFavorite = true
+                    SharedData.shared.idShoesAddFav = idShoes
+
+                } else {
+                    self.errorMessage = "\(favoriteResponse.status): \(favoriteResponse.message)"
+                }
+            }).store(in: &cancellables)
+    }
+
+    private func removeFAV() {
+        guard let idShoes = idShoes else {
+            errorMessage = "Something is wrong"
+            return
+        }
+        let parameter: [String: Any] = [
+            "shoes": idShoes,
+        ]
+        getShoesUseCase.removeFavoriteShoes(parameter: parameter)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                }
+            }, receiveValue: { favoriteResponse in
+                if favoriteResponse.status == HTTPStatus.success.message {
+                    self.shoesDetail?.data?.isFavorite = false
+                    SharedData.shared.idShoesRemoveFav = idShoes
+                } else {
+                    self.errorMessage = "\(favoriteResponse.status): \(favoriteResponse.message)"
+                }
             }).store(in: &cancellables)
     }
 }

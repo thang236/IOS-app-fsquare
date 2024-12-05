@@ -9,9 +9,9 @@ import Combine
 import UIKit
 
 enum ChooseLocationType: String {
-    case provinces = "Choose provinces"
-    case district = "Choose district"
-    case ward = "Choose ward"
+    case provinces = "Chọn Tỉnh/Thành phố"
+    case district = "Chọn Quận/Huyện"
+    case ward = "Chọn Phường/Xã"
 }
 
 protocol Location {
@@ -87,7 +87,7 @@ class ChooseLocationViewController: UIViewController {
         navigationItem.leftBarButtonItem = backButton
 
         let searchBar = UISearchBar()
-        searchBar.placeholder = "Search Location"
+        searchBar.placeholder = "Tìm kiếm"
         searchBar.delegate = self
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
@@ -147,6 +147,7 @@ class ChooseLocationViewController: UIViewController {
             .compactMap { $0 }
             .receive(on: DispatchQueue.main).sink { [weak self] errorMessage in
                 self?.showToast(message: errorMessage, chooseImageToast: .warning)
+                self?.viewModel?.errorMessage = nil
             }.store(in: &cancellables)
     }
 

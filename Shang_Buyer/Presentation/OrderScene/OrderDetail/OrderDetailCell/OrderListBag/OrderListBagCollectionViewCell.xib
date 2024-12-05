@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Dms-oP-Vsd" userLabel="Order List Bag Collection View Cell" customClass="OrderListBagCollectionViewCell" customModule="Shang_Buyer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="471" height="152"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="471" height="152"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8eB-mJ-YDP">
+                        <rect key="frame" x="0.0" y="0.0" width="471" height="152"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageShimmer" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2JT-As-7fv">
+                                <rect key="frame" x="16" y="16" width="120" height="120"/>
+                                <color key="backgroundColor" name="backgroundDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2JT-As-7fv" secondAttribute="height" multiplier="1:1" id="7Fb-db-f1N"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4L-oh-sgg">
+                                <rect key="frame" x="156" y="16" width="299" height="120"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qHm-da-D25">
+                                        <rect key="frame" x="0.0" y="0.0" width="94.666666666666671" height="39.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bom-Ic-5Wf" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YfN-Jx-jXt">
+                                                <rect key="frame" x="0.0" y="24.999999999999996" width="94.666666666666671" height="14.333333333333332"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0W6-WU-au8" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="14.333333333333334"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25j-bP-Ngu" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                        <rect key="frame" x="30" y="0.0" width="3.3333333333333357" height="14.333333333333334"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size = 42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDU-R5-CpJ" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                        <rect key="frame" x="41.333333333333343" y="0.0" width="53.333333333333343" height="14.333333333333334"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </stackView>
+                                        </subviews>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tru-ol-hKk" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="94.333333333333329" width="37" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" name="PrimaryDark"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2x-St-3dB">
+                                        <rect key="frame" x="267" y="88" width="32" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHT-uk-hbk" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="backgroundMedium"/>
+                                        <constraints>
+                                            <constraint firstItem="lHT-uk-hbk" firstAttribute="top" secondItem="p2x-St-3dB" secondAttribute="top" id="2Oo-o4-ImB"/>
+                                            <constraint firstItem="lHT-uk-hbk" firstAttribute="leading" secondItem="p2x-St-3dB" secondAttribute="leading" id="8eX-n6-YjT"/>
+                                            <constraint firstAttribute="bottom" secondItem="lHT-uk-hbk" secondAttribute="bottom" id="DRG-gF-ams"/>
+                                            <constraint firstAttribute="trailing" secondItem="lHT-uk-hbk" secondAttribute="trailing" id="SmU-72-SOT"/>
+                                            <constraint firstAttribute="width" secondItem="p2x-St-3dB" secondAttribute="height" multiplier="1:1" id="bzf-x2-2Hh"/>
+                                            <constraint firstAttribute="width" constant="32" id="cXC-PP-10V"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="tru-ol-hKk" firstAttribute="leading" secondItem="qHm-da-D25" secondAttribute="leading" id="0xH-We-Qbq"/>
+                                    <constraint firstAttribute="trailing" secondItem="p2x-St-3dB" secondAttribute="trailing" id="4LK-vD-tio"/>
+                                    <constraint firstItem="tru-ol-hKk" firstAttribute="centerY" secondItem="lHT-uk-hbk" secondAttribute="centerY" id="BNi-9W-2hx"/>
+                                    <constraint firstItem="qHm-da-D25" firstAttribute="leading" secondItem="i4L-oh-sgg" secondAttribute="leading" id="aEn-CT-lzS"/>
+                                    <constraint firstAttribute="bottom" secondItem="p2x-St-3dB" secondAttribute="bottom" id="hLk-67-dfJ"/>
+                                    <constraint firstItem="qHm-da-D25" firstAttribute="top" secondItem="i4L-oh-sgg" secondAttribute="top" id="s4s-dH-lam"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i4L-oh-sgg" firstAttribute="top" secondItem="8eB-mJ-YDP" secondAttribute="top" constant="16" id="4tI-G8-2Ep"/>
+                            <constraint firstItem="2JT-As-7fv" firstAttribute="centerY" secondItem="8eB-mJ-YDP" secondAttribute="centerY" id="Dbi-ZJ-76a"/>
+                            <constraint firstItem="2JT-As-7fv" firstAttribute="top" secondItem="8eB-mJ-YDP" secondAttribute="top" constant="16" id="McG-u7-wlY"/>
+                            <constraint firstItem="2JT-As-7fv" firstAttribute="leading" secondItem="8eB-mJ-YDP" secondAttribute="leading" constant="16" id="P4d-Ck-Ctd"/>
+                            <constraint firstItem="i4L-oh-sgg" firstAttribute="leading" secondItem="2JT-As-7fv" secondAttribute="trailing" constant="20" id="jHy-ml-Shv"/>
+                            <constraint firstItem="i4L-oh-sgg" firstAttribute="centerY" secondItem="2JT-As-7fv" secondAttribute="centerY" id="oa9-fh-hdK"/>
+                            <constraint firstItem="i4L-oh-sgg" firstAttribute="height" secondItem="2JT-As-7fv" secondAttribute="height" id="uDZ-PI-R1c"/>
+                            <constraint firstAttribute="trailing" secondItem="i4L-oh-sgg" secondAttribute="trailing" constant="16" id="vad-Q9-MM4"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="uh5-Vi-Hp0"/>
+            <constraints>
+                <constraint firstItem="8eB-mJ-YDP" firstAttribute="leading" secondItem="Dms-oP-Vsd" secondAttribute="leading" id="1AI-Wc-ph1"/>
+                <constraint firstAttribute="bottom" secondItem="8eB-mJ-YDP" secondAttribute="bottom" id="GCJ-K9-K3W"/>
+                <constraint firstItem="8eB-mJ-YDP" firstAttribute="top" secondItem="Dms-oP-Vsd" secondAttribute="top" id="Oq8-ZK-oQZ"/>
+                <constraint firstAttribute="trailing" secondItem="8eB-mJ-YDP" secondAttribute="trailing" id="Qsd-J7-F7Q"/>
+            </constraints>
+            <size key="customSize" width="471" height="152"/>
+            <connections>
+                <outlet property="colorLabel" destination="0W6-WU-au8" id="Vyw-OV-yne"/>
+                <outlet property="imageView" destination="2JT-As-7fv" id="UIr-rE-JRs"/>
+                <outlet property="nameLabel" destination="bom-Ic-5Wf" id="ssZ-tA-KLL"/>
+                <outlet property="priceLabel" destination="tru-ol-hKk" id="fh0-Km-gKA"/>
+                <outlet property="quantityLabel" destination="lHT-uk-hbk" id="sNh-Fr-2ZN"/>
+                <outlet property="quantityView" destination="p2x-St-3dB" id="NVK-gU-NmN"/>
+                <outlet property="sizeLabel" destination="PDU-R5-CpJ" id="mjG-Y1-b6c"/>
+            </connections>
+            <point key="canvasLocation" x="460.30534351145036" y="55.633802816901408"/>
+        </collectionViewCell>
+    </objects>
+    <designables>
+        <designable name="0W6-WU-au8">
+            <size key="intrinsicContentSize" width="22" height="14.333333333333334"/>
+        </designable>
+        <designable name="25j-bP-Ngu">
+            <size key="intrinsicContentSize" width="3.3333333333333335" height="14.333333333333334"/>
+        </designable>
+        <designable name="PDU-R5-CpJ">
+            <size key="intrinsicContentSize" width="53.333333333333336" height="14.333333333333334"/>
+        </designable>
+        <designable name="bom-Ic-5Wf">
+            <size key="intrinsicContentSize" width="35.333333333333336" height="17"/>
+        </designable>
+        <designable name="lHT-uk-hbk">
+            <size key="intrinsicContentSize" width="17.666666666666668" height="17"/>
+        </designable>
+        <designable name="tru-ol-hKk">
+            <size key="intrinsicContentSize" width="37" height="19.333333333333332"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="imageShimmer" width="86.5" height="86.5"/>
+        <namedColor name="PrimaryDark">
+            <color red="1" green="0.50588235294117645" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundDark">
+            <color red="0.93725490196078431" green="0.94117647058823528" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundMedium">
+            <color red="0.95686274509803926" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

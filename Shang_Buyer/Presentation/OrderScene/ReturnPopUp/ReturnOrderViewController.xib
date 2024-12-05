@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReturnOrderViewController" customModule="Shang_Buyer" customModuleProvider="target">
+            <connections>
+                <outlet property="backView" destination="8Ly-rC-TXX" id="7xy-5V-A2P"/>
+                <outlet property="contentField" destination="wi7-jy-dl3" id="Wyc-MZ-T6L"/>
+                <outlet property="contentView" destination="rFC-5x-mdX" id="Bu3-nS-w5z"/>
+                <outlet property="view" destination="i0Z-NA-AmG" id="V4Y-cv-65d"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i0Z-NA-AmG">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ly-rC-TXX" userLabel="backView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFC-5x-mdX">
+                            <rect key="frame" x="16" y="226" width="361" height="400"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoàn hàng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZ9-0g-xSn" customClass="HeadingLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="60" width="329" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8x-e6-Seg" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="294.66666666666663" width="329" height="34.333333333333314"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Xác nhận" titleAlignment="center"/>
+                                    <connections>
+                                        <action selector="didTapSubmit:" destination="-1" eventType="touchUpInside" id="z4Q-uD-S0o"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng cho chúng tôi biết lý do bạn muốn hoàn hàng để chúng tôi có thể hỗ trợ bạn tốt hơn." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLV-ES-8wv" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="116" width="329" height="61"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.15686274509803921" green="0.17254901960784313" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vui lòng nhập lý do" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wi7-jy-dl3" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="197" width="329" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQZ-NU-CiT" customClass="OutlineButton" customModule="Shang_Buyer" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="349" width="329" height="35"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Huỷ"/>
+                                    <connections>
+                                        <action selector="didTapCancel:" destination="-1" eventType="touchUpInside" id="kzh-tE-Hof"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="wi7-jy-dl3" firstAttribute="top" secondItem="CLV-ES-8wv" secondAttribute="bottom" constant="20" id="6Gt-OD-pfU"/>
+                                <constraint firstItem="CLV-ES-8wv" firstAttribute="top" secondItem="YZ9-0g-xSn" secondAttribute="bottom" constant="35" id="BwN-Kd-uWc"/>
+                                <constraint firstItem="X8x-e6-Seg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wi7-jy-dl3" secondAttribute="bottom" constant="8" symbolic="YES" id="GiN-za-v6c"/>
+                                <constraint firstAttribute="bottom" secondItem="zQZ-NU-CiT" secondAttribute="bottom" constant="16" id="Gmp-47-JKR"/>
+                                <constraint firstItem="zQZ-NU-CiT" firstAttribute="top" secondItem="X8x-e6-Seg" secondAttribute="bottom" constant="20" id="HDS-OP-xUV"/>
+                                <constraint firstItem="wi7-jy-dl3" firstAttribute="leading" secondItem="rFC-5x-mdX" secondAttribute="leading" constant="16" id="HFW-Ap-PSh"/>
+                                <constraint firstAttribute="trailing" secondItem="YZ9-0g-xSn" secondAttribute="trailing" constant="16" id="Mb5-7O-5FJ"/>
+                                <constraint firstAttribute="trailing" secondItem="zQZ-NU-CiT" secondAttribute="trailing" constant="16" id="Mhk-Hn-sSj"/>
+                                <constraint firstItem="CLV-ES-8wv" firstAttribute="leading" secondItem="rFC-5x-mdX" secondAttribute="leading" constant="16" id="YeV-c2-hrK"/>
+                                <constraint firstItem="YZ9-0g-xSn" firstAttribute="leading" secondItem="rFC-5x-mdX" secondAttribute="leading" constant="16" id="Yhh-6n-knh"/>
+                                <constraint firstAttribute="trailing" secondItem="X8x-e6-Seg" secondAttribute="trailing" constant="16" id="aop-Gl-uPC"/>
+                                <constraint firstItem="X8x-e6-Seg" firstAttribute="leading" secondItem="rFC-5x-mdX" secondAttribute="leading" constant="16" id="d9W-Nv-tuG"/>
+                                <constraint firstAttribute="height" constant="400" id="fEI-h1-E5T"/>
+                                <constraint firstAttribute="trailing" secondItem="CLV-ES-8wv" secondAttribute="trailing" constant="16" id="hSy-tN-XNv"/>
+                                <constraint firstItem="zQZ-NU-CiT" firstAttribute="leading" secondItem="rFC-5x-mdX" secondAttribute="leading" constant="16" id="j0r-b1-zdv"/>
+                                <constraint firstItem="YZ9-0g-xSn" firstAttribute="top" secondItem="rFC-5x-mdX" secondAttribute="top" constant="60" id="lj2-xd-CuW"/>
+                                <constraint firstAttribute="trailing" secondItem="wi7-jy-dl3" secondAttribute="trailing" constant="16" id="nBp-MU-p9R"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="rFC-5x-mdX" secondAttribute="trailing" constant="16" id="T4H-Uw-1Ef"/>
+                        <constraint firstItem="rFC-5x-mdX" firstAttribute="centerY" secondItem="8Ly-rC-TXX" secondAttribute="centerY" id="cU2-D4-i9p"/>
+                        <constraint firstItem="rFC-5x-mdX" firstAttribute="leading" secondItem="8Ly-rC-TXX" secondAttribute="leading" constant="16" id="g32-nU-UBp"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="lhb-5W-ddh"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="8Ly-rC-TXX" firstAttribute="top" secondItem="i0Z-NA-AmG" secondAttribute="top" id="7Pb-yk-1jb"/>
+                <constraint firstAttribute="trailing" secondItem="8Ly-rC-TXX" secondAttribute="trailing" id="Gao-ky-cKU"/>
+                <constraint firstItem="8Ly-rC-TXX" firstAttribute="leading" secondItem="i0Z-NA-AmG" secondAttribute="leading" id="HGj-Zi-DVG"/>
+                <constraint firstAttribute="bottom" secondItem="8Ly-rC-TXX" secondAttribute="bottom" id="Qx3-lR-BXN"/>
+            </constraints>
+            <point key="canvasLocation" x="16" y="21"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="X8x-e6-Seg">
+            <size key="intrinsicContentSize" width="95" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

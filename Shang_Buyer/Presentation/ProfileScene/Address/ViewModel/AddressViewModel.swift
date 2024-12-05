@@ -63,6 +63,10 @@ class AddressViewModel: ObservableObject {
                 }
             }, receiveValue: { response in
                 completion(.success(response))
+                self.provinceName = nil
+                self.districtName = nil
+                self.wardName = nil
+                self.street = nil
             }).store(in: &cancellables)
     }
 
@@ -86,6 +90,11 @@ class AddressViewModel: ObservableObject {
                 }
             }, receiveValue: { response in
                 completion(.success(response))
+                self.provinceName = nil
+                self.districtName = nil
+                self.wardName = nil
+                self.street = nil
+
             }).store(in: &cancellables)
     }
 

@@ -85,7 +85,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="j8u-3v-Yqe">
-                                        <rect key="frame" x="0.0" y="24" width="148" height="24"/>
+                                        <rect key="frame" x="0.0" y="24" width="136" height="24"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:yZf-SS-eRt:image" translatesAutoresizingMaskIntoConstraints="NO" id="yZf-SS-eRt">
                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -114,33 +114,25 @@
                                                     <constraint firstAttribute="width" constant="1" id="ogE-b8-c5n"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1y-yC-lH7">
-                                                <rect key="frame" x="77.333333333333314" y="0.0" width="70.666666666666686" height="24"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1203102301" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMf-H6-wJ5" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                                                        <rect key="frame" x="6.9999999999999964" y="7" width="58.666666666666657" height="12"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                        <color key="textColor" name="neutralDark"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" name="borderLight"/>
-                                                <constraints>
-                                                    <constraint firstItem="cMf-H6-wJ5" firstAttribute="leading" secondItem="R1y-yC-lH7" secondAttribute="leading" constant="7" id="J9n-lk-PQm"/>
-                                                    <constraint firstAttribute="trailing" secondItem="cMf-H6-wJ5" secondAttribute="trailing" constant="5" id="RY2-OR-C7l"/>
-                                                    <constraint firstAttribute="bottom" secondItem="cMf-H6-wJ5" secondAttribute="bottom" constant="5" id="ZRV-B5-dO3"/>
-                                                    <constraint firstItem="cMf-H6-wJ5" firstAttribute="top" secondItem="R1y-yC-lH7" secondAttribute="top" constant="7" id="ws9-8J-cMY"/>
-                                                </constraints>
+                                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1203102301" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMf-H6-wJ5" customClass="PaddingLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                                <rect key="frame" x="77.333333333333329" y="0.0" width="58.666666666666671" height="24"/>
+                                                <color key="backgroundColor" name="backgroundLight"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" name="neutralDark"/>
+                                                <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                            </view>
+                                            </label>
                                         </subviews>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -16212,8 +16204,8 @@ BAEAAAAAAAAAVgAAAAAAAAAAAAAAAAAOoZY
         <namedColor name="backgroundDark">
             <color red="0.93725490196078431" green="0.94117647058823528" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="borderLight">
-            <color red="0.94509803921568625" green="0.94901960784313721" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="backgroundLight">
+            <color red="0.97254901960784312" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="neutralDark">
             <color red="0.15294117647058825" green="0.16862745098039217" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

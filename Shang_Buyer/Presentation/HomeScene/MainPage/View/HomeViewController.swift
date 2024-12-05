@@ -201,21 +201,28 @@ class HomeViewController: UIViewController {
     // MARK: - Setup binding
 
     private func setupBinding() {
+        viewModel.$popularResponse
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] response in
+                guard let wSelf = self else { return }
+                var snapshot = wSelf.dataSource.snapshot()
+                if let response = response {
+                    snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .popular))
+                    snapshot.appendItems(response.data.map { .popular(id: $0.id, title: $0.name, price: $0.totalRevenue) }, toSection: .popular)
+                }
+                wSelf.dataSource.apply(snapshot, animatingDifferences: false)
+            }.store(in: &viewModel.cancellables)
+
         viewModel.$shoesResponse
             .receive(on: DispatchQueue.main)
             .sink { [weak self] response in
                 guard let wSelf = self else { return }
                 var snapshot = wSelf.dataSource.snapshot()
                 if let response = response {
-                    let sortedShoes = response.data.sorted { $0.maxPrice > $1.maxPrice }
-                    let topShoes = Array(sortedShoes.prefix(3))
-                    snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .popular))
-
                     snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .shoes))
-                    snapshot.appendItems(topShoes.map { .popular(id: $0.id, title: $0.name, price: $0.minPrice) }, toSection: .popular)
                     snapshot.appendItems(response.data.map { .shoes(shoes: $0) }, toSection: .shoes)
                 }
-                wSelf.dataSource.apply(snapshot, animatingDifferences: false)
+                wSelf.dataSource.applySnapshotUsingReloadData(snapshot)
             }.store(in: &viewModel.cancellables)
 
         viewModel.$brands
@@ -369,7 +376,9 @@ class HomeViewController: UIViewController {
 
     // MARK: - Action
 
-    @objc func didTapSearchButton() {}
+    @objc func didTapSearchButton() {
+        coordinator?.goToSearch()
+    }
 
     @objc func didTapFavorite() {
         if TokenManager.shared.getAccessToken() == nil {
@@ -383,7 +392,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: ProductCollectionViewCellDelegate {
     func didTapFavButton(shoes: ShoeData) {
         if TokenManager.shared.getAccessToken() == nil {
-            showToast(message: "Please login to add to favorite", chooseImageToast: .warning)
+            showToast(message: "Đăng nhập mới có thể sử dụng tính năng này", chooseImageToast: .warning)
             return
         } else {
             viewModel.toggleFav(shoes: shoes)
@@ -427,8 +436,9 @@ extension HomeViewController: SkeletonCollectionViewDelegate, UICollectionViewDa
         switch item {
         case let .popular(id, _, _):
             coordinator?.goToShoesDetail(idShoes: id)
-        case let .brand(id, _, _):
-            print("Clicked on Brand item with name: \(id)")
+        case let .brand(id, url, nameBrand):
+            viewModel.filterBand(idBrand: id)
+            coordinator?.goToProduct(titleBrand: nameBrand)
         case let .shoes(shoes):
             coordinator?.goToShoesDetail(idShoes: shoes.id)
         case .banner:
@@ -459,5 +469,17 @@ extension HomeViewController: SkeletonCollectionViewDelegate, UICollectionViewDa
 extension HomeViewController: HeaderHomeCollectionReusableViewDelegate {
     func didTapSeeMoreButton(homeCollectionType: HomeCollectionType) {
         print(homeCollectionType.title)
+        switch homeCollectionType {
+        case .popular:
+            viewModel.filterSeeMore()
+            coordinator?.goToProduct(titleBrand: homeCollectionType.title)
+
+        case .shoes:
+            viewModel.filterSeeMore()
+            coordinator?.goToProduct(titleBrand: homeCollectionType.title)
+
+        default:
+            break
+        }
     }
 }

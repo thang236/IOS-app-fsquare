@@ -10,6 +10,7 @@ import Foundation
 
 protocol GetShoesDetailUseCase {
     func execute(idShoes: String) -> AnyPublisher<ShoesDetailResponse, Error>
+    func getReview(idShoes: String) -> AnyPublisher<ReviewResponse, Error>
 }
 
 class GetShoesDetailUseCaseImpl: GetShoesDetailUseCase {
@@ -21,5 +22,9 @@ class GetShoesDetailUseCaseImpl: GetShoesDetailUseCase {
 
     func execute(idShoes: String) -> AnyPublisher<ShoesDetailResponse, Error> {
         return shoesDetailRepository.getShoesDetail(idShoes: idShoes)
+    }
+
+    func getReview(idShoes: String) -> AnyPublisher<ReviewResponse, Error> {
+        return shoesDetailRepository.getReview(idShoes: idShoes)
     }
 }

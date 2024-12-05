@@ -15,7 +15,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     var delegate: FavoriteCollectionViewCellDelegate?
     @IBOutlet private var favButton: UIButton!
     @IBOutlet private var priceLabel: BodyLabel!
-    @IBOutlet private var quantitySoldLabel: BodyLabel!
+    @IBOutlet private var quantitySoldLabel: PaddingLabel!
     @IBOutlet private var numberStart: BodyLabel!
     @IBOutlet private var startProduct: UIImageView!
     @IBOutlet private var nameProduct: BodyLabel!

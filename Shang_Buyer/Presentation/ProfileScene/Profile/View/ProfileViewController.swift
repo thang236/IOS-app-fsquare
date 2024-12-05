@@ -6,9 +6,11 @@
 //
 
 import Combine
+import Photos
 import UIKit
 
 class ProfileViewController: UIViewController {
+    let imagePicker = UIImagePickerController()
     private var profile: ProfileItem? = nil
     var coordinator: ProfileCoordinator?
     private let profiles: [Profile] = Profile.profiles
@@ -57,18 +59,13 @@ class ProfileViewController: UIViewController {
     }
 
     private func setupNav() {
-        let image = UIImage.moreHorizontal
-        let resize = image.resizeImage(targetSize: CGSize(width: 32, height: 32))
-        let moreButton = UIBarButtonItem(image: resize, style: .plain, target: self, action: #selector(didTapMoreButton))
-        moreButton.tintColor = .black
-        setupNavigationBar(title: "Profile", rightBarButton: [moreButton])
+        setupNavigationBar(title: "Hồ sơ cá nhân")
     }
-
-    @objc func didTapMoreButton() {}
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupTableViewAppearance()
+        avatarImage.cornerRadius = avatarImage.frame.height / 2
     }
 
     private func setupBindings() {
@@ -99,6 +96,11 @@ class ProfileViewController: UIViewController {
 
     private func setupProfile(profile: ProfileItem) {
         fullNameLabel.text = "\(profile.firstName) \(profile.lastName)"
+        if let avatar = profile.avatar?.url {
+            if let url = URL(string: avatar) {
+                avatarImage.loadImageWithShimmer(url: url, placeholderImage: .avartar)
+            }
+        }
         if let phone = profile.phone {
             phoneLabel.text = "\(phone)"
         } else {
@@ -108,8 +110,15 @@ class ProfileViewController: UIViewController {
     }
 
     @IBAction func didTabEditProfile(_: Any) {
-//        let editProfileVC = EditProfileViewController()
-//        navigationController?.pushViewController(editProfileVC, animated: true)
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.mediaTypes = ["public.image"] // Chỉ cho phép chọn ảnh
+        imagePicker.title = "Hãy chọn ảnh đại diện"
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
     }
 }
 
@@ -138,25 +147,23 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             guard let profile = profile else {
                 return
             }
-            if let token = TokenManager.shared.getAccessToken() {
-                print("Token: \(token)")
+            if TokenManager.shared.getAccessToken() != nil {
                 coordinator?.goToEditProfile(profileModel: profile, vc: self)
             } else {
-                showToast(message: "Please login to use this feature", chooseImageToast: .warning)
+                showToast(message: "Vui lòng đăng nhập để sử dụng tính năng này", chooseImageToast: .warning)
             }
         case .address:
-            if let token = TokenManager.shared.getAccessToken() {
-                print("Token: \(token)")
+            if TokenManager.shared.getAccessToken() != nil {
                 coordinator?.goToAddress()
             } else {
-                showToast(message: "Please login to use this feature", chooseImageToast: .warning)
+                showToast(message: "Vui lòng đăng nhập để sử dụng tính năng này", chooseImageToast: .warning)
             }
         case .noti:
-            print("111")
-        case .wallet:
-            print("111")
-        case .security:
-            print("111")
+            if TokenManager.shared.getAccessToken() != nil {
+                coordinator?.goToNotification()
+            } else {
+                showToast(message: "Vui lòng đăng nhập để sử dụng tính năng này", chooseImageToast: .warning)
+            }
         case .policy:
             print("111")
         case .logout:
@@ -170,5 +177,44 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 extension ProfileViewController: EditProfileViewModelDelegate {
     func updateProfile(profile: ProfileItem) {
         setupProfile(profile: profile)
+    }
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    func imagePickerController(_: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if info[.mediaType] as? String == "public.image" {
+            handlePhoto(info)
+        } else {
+            print("DEBUG PRINT:", "Unsupported media type.")
+        }
+
+        DispatchQueue.main.async { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        }
+    }
+
+    // MARK: - Images
+
+    private func handlePhoto(_ info: [UIImagePickerController.InfoKey: Any]) {
+        if let asset = info[.phAsset] as? PHAsset {
+            print("DEBUG PRINT:", asset.location ?? "No location")
+            print("DEBUG PRINT:", asset.creationDate?.description ?? "No creation date")
+            print("DEBUG PRINT:", asset.pixelHeight)
+            print("DEBUG PRINT:", asset.pixelWidth)
+        }
+
+        if let image = info[.originalImage] as? UIImage {
+            viewModel.updateProfile(avartar: image) { completion in
+                switch completion {
+                case let .success(success):
+                    if success.status == HTTPStatus.success.message {
+                        self.avatarImage.image = image
+                        self.showToast(message: "Cập nhật thành công", chooseImageToast: .success)
+                    }
+                case let .failure(failure):
+                    self.showToast(message: failure.localizedDescription, chooseImageToast: .error)
+                }
+            }
+        }
     }
 }

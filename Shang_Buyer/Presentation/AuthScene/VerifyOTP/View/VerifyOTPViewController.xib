@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbK-zo-r6E" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
-                    <rect key="frame" x="20" y="768" width="353" height="50"/>
+                    <rect key="frame" x="20" y="783.66666666666663" width="353" height="34.333333333333371"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Submit"/>
                     <userDefinedRuntimeAttributes>
@@ -44,31 +43,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="emC-0J-XUS">
-                    <rect key="frame" x="20" y="320" width="353" height="44"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send code reload in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZt-Qr-hF3" customClass="DescriptionLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="172.33333333333334" height="44"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" name="neutralGrayMedium"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="right" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ZvS-vD-oRd" customClass="GhostButton" customModule="Shang_Buyer" customModuleProvider="target">
-                            <rect key="frame" x="180.66666666666663" y="0.0" width="172.33333333333337" height="44"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="Arrows/focusLeft" imagePlacement="leading" title="Resend Code" imagePadding="0.0" titleAlignment="trailing">
-                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
-                            </buttonConfiguration>
-                            <connections>
-                                <action selector="didTapResendCode:" destination="-1" eventType="touchUpInside" id="cNo-kp-4u3"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="ZvS-vD-oRd" secondAttribute="trailing" id="YEI-R3-sQH"/>
-                        <constraint firstItem="bZt-Qr-hF3" firstAttribute="width" secondItem="ZvS-vD-oRd" secondAttribute="width" multiplier="10:10" id="hlu-e4-Hbm"/>
-                    </constraints>
-                </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ku2-tC-QSK">
                     <rect key="frame" x="20" y="129" width="213" height="56"/>
                     <subviews>
@@ -86,23 +60,44 @@
                         </label>
                     </subviews>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send code reload in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZt-Qr-hF3" customClass="DescriptionLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                    <rect key="frame" x="20" y="326" width="128.33333333333334" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="AIP-kv-Dh0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" name="neutralGrayMedium"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="right" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ZvS-vD-oRd" customClass="GhostButton" customModule="Shang_Buyer" customModuleProvider="target">
+                    <rect key="frame" x="223" y="326" width="150" height="38"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="Arrows/focusLeft" imagePlacement="leading" title="Resend Code" titleAlignment="trailing">
+                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="didTapResendCode:" destination="-1" eventType="touchUpInside" id="cNo-kp-4u3"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="emC-0J-XUS" firstAttribute="top" secondItem="3lM-zB-B1d" secondAttribute="bottom" constant="15" id="2Hm-1m-H1n"/>
+                <constraint firstItem="ZvS-vD-oRd" firstAttribute="height" secondItem="bZt-Qr-hF3" secondAttribute="height" id="7Js-eh-5z1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CbK-zo-r6E" secondAttribute="trailing" constant="20" id="BLJ-BA-uyt"/>
                 <constraint firstItem="3lM-zB-B1d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="NQ2-e9-H9c"/>
                 <constraint firstItem="CbK-zo-r6E" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="OUp-vU-cZP"/>
-                <constraint firstItem="emC-0J-XUS" firstAttribute="trailing" secondItem="3lM-zB-B1d" secondAttribute="trailing" id="ZeF-GH-GIJ"/>
+                <constraint firstItem="ZvS-vD-oRd" firstAttribute="trailing" secondItem="3lM-zB-B1d" secondAttribute="trailing" id="Rif-af-6V1"/>
+                <constraint firstItem="ZvS-vD-oRd" firstAttribute="centerY" secondItem="bZt-Qr-hF3" secondAttribute="centerY" id="Y52-zz-fsb"/>
+                <constraint firstItem="bZt-Qr-hF3" firstAttribute="top" secondItem="3lM-zB-B1d" secondAttribute="bottom" constant="21" id="azV-Am-e5G"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3lM-zB-B1d" secondAttribute="trailing" constant="20" id="hvV-E7-e4u"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CbK-zo-r6E" secondAttribute="bottom" id="lTm-1l-zFH"/>
                 <constraint firstItem="Ku2-tC-QSK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="70" id="rMX-Wk-e33"/>
                 <constraint firstItem="3lM-zB-B1d" firstAttribute="top" secondItem="Ku2-tC-QSK" secondAttribute="bottom" constant="40" id="seG-lk-y9R"/>
-                <constraint firstItem="emC-0J-XUS" firstAttribute="leading" secondItem="3lM-zB-B1d" secondAttribute="leading" id="xTX-99-Flm"/>
+                <constraint firstItem="bZt-Qr-hF3" firstAttribute="leading" secondItem="3lM-zB-B1d" secondAttribute="leading" id="veO-90-LDg"/>
                 <constraint firstItem="3lM-zB-B1d" firstAttribute="leading" secondItem="Ku2-tC-QSK" secondAttribute="leading" id="yta-8T-Tkx"/>
             </constraints>
-            <point key="canvasLocation" x="138" y="21"/>
+            <point key="canvasLocation" x="136.64122137404578" y="20.422535211267608"/>
         </view>
     </objects>
     <designables>
@@ -110,13 +105,13 @@
             <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
         </designable>
         <designable name="CbK-zo-r6E">
-            <size key="intrinsicContentSize" width="353" height="50"/>
+            <size key="intrinsicContentSize" width="78" height="34.333333333333336"/>
         </designable>
         <designable name="JuN-Oa-Sns">
             <size key="intrinsicContentSize" width="158.33333333333334" height="19.333333333333332"/>
         </designable>
         <designable name="ZvS-vD-oRd">
-            <size key="intrinsicContentSize" width="172.33333333333337" height="44"/>
+            <size key="intrinsicContentSize" width="150" height="38"/>
         </designable>
     </designables>
     <resources>

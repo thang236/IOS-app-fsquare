@@ -14,7 +14,8 @@ protocol EditProfileViewModelDelegate {
 
 class EditProfileViewModel: ObservableObject {
     var delegate: EditProfileViewModelDelegate?
-    @Published var fullName: String = ""
+    @Published var firstName: String = ""
+    @Published var lastName: String = ""
     @Published var birthDate: String = ""
     @Published var email: String = ""
     @Published var country: String = ""
@@ -29,16 +30,14 @@ class EditProfileViewModel: ObservableObject {
     }
 
     func updateProfile(completion: @escaping (Result<ProfileResponse, Error>) -> Void) {
-        if fullName.isEmpty || birthDate.isEmpty || country.isEmpty || phone.isEmpty {
-            errorMessage = "Please fill all your field"
+        if firstName.isEmpty || birthDate.isEmpty || country.isEmpty || phone.isEmpty || lastName.isEmpty {
+            errorMessage = "Xin hãy điền đủ các trường"
         } else if !phone.isValidVietnamesePhoneNumber() {
-            errorMessage = "Please fill your phone number (VietNam)"
+            errorMessage = "Hãy nhập số điện thoại hợp lệ"
         } else {
-            let name = fullName.split(separator: " ").map(String.init)
-
             let parameter = [
-                "firstName": name[0],
-                "lastName": name[1],
+                "firstName": firstName,
+                "lastName": lastName,
                 "birthDay": birthDate,
                 "phone": phone,
                 "address": country,
