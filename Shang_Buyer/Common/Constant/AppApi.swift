@@ -32,8 +32,11 @@ enum AppApi {
     case removeFavorite(idFavorite: String)
 
     case getBrand
+    case history
+    case historyID(idHistory: String)
 
     case getDetailShoes(idShoes: String)
+    case getReviews(idShoes: String)
     case getShoesClassification(idShoes: String)
     case getClassifications(idClassification: String)
     case getSizeClassification(idClassification: String)
@@ -111,6 +114,9 @@ enum AppApi {
                 return "\(AppApi.baseURL)/api/customer/v2/shoes/\(idShoes)"
             }
 
+        case let .getReviews(idShoes):
+            return "\(AppApi.baseURL)/api/customer/v1/reviews/shoes/\(idShoes)"
+
         case .addFav:
             return "\(AppApi.baseURL)/api/customer/v1/favorites"
 
@@ -124,6 +130,12 @@ enum AppApi {
 
         case .getBrand:
             return "\(AppApi.baseURL)/api/customer/v2/brands"
+
+        case .history:
+            return "\(AppApi.baseURL)/api/customer/v1/histories"
+
+        case let .historyID(idHistory):
+            return "\(AppApi.baseURL)/api/customer/v1/histories/\(idHistory)"
 
             // MARK: Endpoint Shoes Detail
 

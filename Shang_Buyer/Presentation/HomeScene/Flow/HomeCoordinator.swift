@@ -43,4 +43,10 @@ class HomeCoordinator: Coordinator {
         productVC.coordinator = self
         navigationController.pushViewController(productVC, animated: true)
     }
+
+    func goToSearch() {
+        let searchVC = SearchHomeViewController(viewModel: homeViewModel)
+        searchVC.coordinator = self
+        navigationController.pushViewController(searchVC, animated: false)
+    }
 }

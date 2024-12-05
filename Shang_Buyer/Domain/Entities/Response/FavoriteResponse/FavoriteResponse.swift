@@ -13,7 +13,7 @@ struct FavoriteData: Codable, Hashable {
     let name: String
     let minPrice: Double
     let maxPrice: Double
-    let avgRating: Int
+    let avgRating: Double
     let reviewCount: Int
     let thumbnail: Thumbnail?
     let sales: Int
@@ -24,7 +24,7 @@ struct FavoriteData: Codable, Hashable {
         case name
         case minPrice
         case maxPrice
-        case avgRating
+        case avgRating = "rating"
         case reviewCount
         case thumbnail
         case sales

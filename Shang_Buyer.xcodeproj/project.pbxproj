@@ -32,6 +32,10 @@
 		BF1BFE202D00FD8700793B3D /* ReturnOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE1E2D00FD8700793B3D /* ReturnOrderViewController.swift */; };
 		BF1BFE212D00FD8700793B3D /* ReturnOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1BFE1F2D00FD8700793B3D /* ReturnOrderViewController.xib */; };
 		BF1BFE232D0105CD00793B3D /* PopularResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE222D0105CD00793B3D /* PopularResponse.swift */; };
+		BF1BFE252D010AC800793B3D /* ReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE242D010AC800793B3D /* ReviewResponse.swift */; };
+		BF1BFE272D010C4D00793B3D /* HistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE262D010C4D00793B3D /* HistoryResponse.swift */; };
+		BF1BFE2B2D010F4900793B3D /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE292D010F4900793B3D /* HistoryCollectionViewCell.swift */; };
+		BF1BFE2C2D010F4900793B3D /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1BFE2A2D010F4900793B3D /* HistoryCollectionViewCell.xib */; };
 		BF1E66462CABE396001C48E9 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E66452CABE396001C48E9 /* UserDefaults+Extension.swift */; };
 		BF1E66482CABF95A001C48E9 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E66472CABF95A001C48E9 /* ProfileRepository.swift */; };
 		BF1E664A2CABF9A6001C48E9 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E66492CABF9A6001C48E9 /* ProfileResponse.swift */; };
@@ -307,6 +311,10 @@
 		BF1BFE1E2D00FD8700793B3D /* ReturnOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnOrderViewController.swift; sourceTree = "<group>"; };
 		BF1BFE1F2D00FD8700793B3D /* ReturnOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReturnOrderViewController.xib; sourceTree = "<group>"; };
 		BF1BFE222D0105CD00793B3D /* PopularResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularResponse.swift; sourceTree = "<group>"; };
+		BF1BFE242D010AC800793B3D /* ReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResponse.swift; sourceTree = "<group>"; };
+		BF1BFE262D010C4D00793B3D /* HistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponse.swift; sourceTree = "<group>"; };
+		BF1BFE292D010F4900793B3D /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		BF1BFE2A2D010F4900793B3D /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF1E66452CABE396001C48E9 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		BF1E66472CABF95A001C48E9 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		BF1E66492CABF9A6001C48E9 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
@@ -665,6 +673,15 @@
 				BF1BFE1F2D00FD8700793B3D /* ReturnOrderViewController.xib */,
 			);
 			path = ReturnPopUp;
+			sourceTree = "<group>";
+		};
+		BF1BFE282D010F2300793B3D /* SearchHomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BFE292D010F4900793B3D /* HistoryCollectionViewCell.swift */,
+				BF1BFE2A2D010F4900793B3D /* HistoryCollectionViewCell.xib */,
+			);
+			path = SearchHomeCell;
 			sourceTree = "<group>";
 		};
 		BF1E664D2CAC508A001C48E9 /* ProfileUseCase */ = {
@@ -1506,6 +1523,7 @@
 		BF77771F2D00A76E00FAA681 /* SearchHome */ = {
 			isa = PBXGroup;
 			children = (
+				BF1BFE282D010F2300793B3D /* SearchHomeCell */,
 				BF7777202D00A7B900FAA681 /* SearchHomeViewController.swift */,
 				BF7777212D00A7B900FAA681 /* SearchHomeViewController.xib */,
 			);
@@ -1793,6 +1811,8 @@
 				09EF3A0B2CD8BAB000B6FE02 /* ShoesClassificationsResponse.swift */,
 				BFD740C42CD9B6660041BD3F /* SizesClassificationResponse.swift */,
 				BF1BFE222D0105CD00793B3D /* PopularResponse.swift */,
+				BF1BFE242D010AC800793B3D /* ReviewResponse.swift */,
+				BF1BFE262D010C4D00793B3D /* HistoryResponse.swift */,
 			);
 			path = ShoesResponse;
 			sourceTree = "<group>";
@@ -2166,6 +2186,7 @@
 				BF6841AB2CED20A9008F9FD0 /* FavoriteCollectionViewCell.xib in Resources */,
 				BF1E66752CAD2E20001C48E9 /* MyEWalletViewController.xib in Resources */,
 				BF6573F72CF3844D00BCA12A /* OrderCollectionViewCell.xib in Resources */,
+				BF1BFE2C2D010F4900793B3D /* HistoryCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2231,6 +2252,7 @@
 				BFF264F92CF8EFBE009459DD /* BaoKimViewController.swift in Sources */,
 				BF600F0B2CF0D4690030708E /* CartCoordinator.swift in Sources */,
 				DFF4DB0A2CF9C9CD00A11AAA /* MyOrderViewModel.swift in Sources */,
+				BF1BFE2B2D010F4900793B3D /* HistoryCollectionViewCell.swift in Sources */,
 				BFAF1D832CA838AE0085609C /* AuthResponse.swift in Sources */,
 				BF18F3A92CB9074600A975F9 /* GetBrandUseCase.swift in Sources */,
 				BFD740C92CD9BCFF0041BD3F /* GetClassificationsUseCase.swift in Sources */,
@@ -2296,8 +2318,10 @@
 				BF56B7112D00502F002B57A9 /* MediaRattingCollectionViewCell.swift in Sources */,
 				BFAF1D7E2CA6A0CA0085609C /* VerifyOTPUseCase.swift in Sources */,
 				BF6120242CE39BAD00AC6562 /* PopularCollectionViewCell.swift in Sources */,
+				BF1BFE272D010C4D00793B3D /* HistoryResponse.swift in Sources */,
 				BF25D0552C996AF400CB7EE8 /* GetProductsUseCase.swift in Sources */,
 				BF4244EC2C9D599800F43C8B /* BodyLabel.swift in Sources */,
+				BF1BFE252D010AC800793B3D /* ReviewResponse.swift in Sources */,
 				BFCF72572CA3EC9C00208985 /* RegisterViewController.swift in Sources */,
 				BF47608C2CE0A4FF00207153 /* GetAddressUseCase.swift in Sources */,
 				BF600F032CF0D00A0030708E /* BagDeleteResponse.swift in Sources */,

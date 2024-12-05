@@ -376,7 +376,9 @@ class HomeViewController: UIViewController {
 
     // MARK: - Action
 
-    @objc func didTapSearchButton() {}
+    @objc func didTapSearchButton() {
+        coordinator?.goToSearch()
+    }
 
     @objc func didTapFavorite() {
         if TokenManager.shared.getAccessToken() == nil {
@@ -471,9 +473,11 @@ extension HomeViewController: HeaderHomeCollectionReusableViewDelegate {
         case .popular:
             viewModel.filterSeeMore()
             coordinator?.goToProduct(titleBrand: homeCollectionType.title)
+
         case .shoes:
             viewModel.filterSeeMore()
             coordinator?.goToProduct(titleBrand: homeCollectionType.title)
+
         default:
             break
         }
