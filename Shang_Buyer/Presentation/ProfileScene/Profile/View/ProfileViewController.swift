@@ -59,14 +59,9 @@ class ProfileViewController: UIViewController {
     }
 
     private func setupNav() {
-        let image = UIImage.moreHorizontal
-        let resize = image.resizeImage(targetSize: CGSize(width: 32, height: 32))
-        let moreButton = UIBarButtonItem(image: resize, style: .plain, target: self, action: #selector(didTapMoreButton))
-        moreButton.tintColor = .black
-        setupNavigationBar(title: "Profile", rightBarButton: [moreButton])
+        setupNavigationBar(title: "Hồ sơ cá nhân")
     }
 
-    @objc func didTapMoreButton() {}
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -153,25 +148,23 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             guard let profile = profile else {
                 return
             }
-            if let token = TokenManager.shared.getAccessToken() {
-                print("Token: \(token)")
+            if TokenManager.shared.getAccessToken() != nil {
                 coordinator?.goToEditProfile(profileModel: profile, vc: self)
             } else {
-                showToast(message: "Please login to use this feature", chooseImageToast: .warning)
+                showToast(message: "Vui lòng đăng nhập để sử dụng tính năng này", chooseImageToast: .warning)
             }
         case .address:
-            if let token = TokenManager.shared.getAccessToken() {
-                print("Token: \(token)")
+            if TokenManager.shared.getAccessToken() != nil {
                 coordinator?.goToAddress()
             } else {
-                showToast(message: "Please login to use this feature", chooseImageToast: .warning)
+                showToast(message: "Vui lòng đăng nhập để sử dụng tính năng này", chooseImageToast: .warning)
             }
         case .noti:
-            print("111")
-        case .wallet:
-            print("111")
-        case .security:
-            print("111")
+            if TokenManager.shared.getAccessToken() != nil {
+                coordinator?.goToNotification()
+            } else {
+                showToast(message: "Vui lòng đăng nhập để sử dụng tính năng này", chooseImageToast: .warning)
+            }
         case .policy:
             print("111")
         case .logout:
@@ -215,11 +208,12 @@ extension ProfileViewController: UIImagePickerControllerDelegate & UINavigationC
             viewModel.updateProfile(avartar: image) { completion in
                 switch completion {
                 case let .success(success):
-                    print("success Update")
-                    self.avatarImage.image = image
-
+                    if success.status == HTTPStatus.success.message {
+                        self.avatarImage.image = image
+                        self.showToast(message: "Cập nhật thành công", chooseImageToast: .success)
+                    }
                 case let .failure(failure):
-                    print("Fail Update")
+                    self.showToast(message: failure.localizedDescription, chooseImageToast: .error)
                 }
             }
         }

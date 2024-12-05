@@ -262,4 +262,19 @@ final class DIContainer {
         let orderUseCase = resolveOrderUseCase()
         return MyOrderViewModel(orderUseCase: orderUseCase)
     }
+    
+    func resolveNotificationRepository() -> NotificationRepository {
+        let apiService = resolveAPIService()
+        return NotificationRepositoryImpl(apiService: apiService)
+    }
+    
+    func resolveNotificationUseCase() -> NotificationUseCase {
+        let notificationRepository = resolveNotificationRepository()
+        return NotificationUseCaseImpl(repository: notificationRepository)
+    }
+    func resolveNotificationViewModel() -> NotificationViewModel {
+        let notificationUseCase = resolveNotificationUseCase()
+        return NotificationViewModel(useCase: notificationUseCase)
+    }
+    
 }

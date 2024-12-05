@@ -40,6 +40,14 @@
 		BF1BFE332D01AA0900793B3D /* ReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1BFE312D01AA0900793B3D /* ReviewCollectionViewCell.xib */; };
 		BF1BFE372D01B97400793B3D /* MediaGetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE352D01B97400793B3D /* MediaGetCollectionViewCell.swift */; };
 		BF1BFE382D01B97400793B3D /* MediaGetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1BFE362D01B97400793B3D /* MediaGetCollectionViewCell.xib */; };
+		BF1BFE3C2D01D57B00793B3D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE3A2D01D57B00793B3D /* NotificationViewController.swift */; };
+		BF1BFE3D2D01D57B00793B3D /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1BFE3B2D01D57B00793B3D /* NotificationViewController.xib */; };
+		BF1BFE412D01D65300793B3D /* NotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE402D01D65300793B3D /* NotificationResponse.swift */; };
+		BF1BFE432D01D71E00793B3D /* NotificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE422D01D71E00793B3D /* NotificationRepository.swift */; };
+		BF1BFE452D01D78E00793B3D /* NotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE442D01D78E00793B3D /* NotificationUseCase.swift */; };
+		BF1BFE482D01D7C000793B3D /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE472D01D7C000793B3D /* NotificationViewModel.swift */; };
+		BF1BFE4C2D01DBC600793B3D /* NotificationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BFE4A2D01DBC600793B3D /* NotificationCollectionViewCell.swift */; };
+		BF1BFE4D2D01DBC600793B3D /* NotificationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1BFE4B2D01DBC600793B3D /* NotificationCollectionViewCell.xib */; };
 		BF1E66462CABE396001C48E9 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E66452CABE396001C48E9 /* UserDefaults+Extension.swift */; };
 		BF1E66482CABF95A001C48E9 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E66472CABF95A001C48E9 /* ProfileRepository.swift */; };
 		BF1E664A2CABF9A6001C48E9 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E66492CABF9A6001C48E9 /* ProfileResponse.swift */; };
@@ -323,6 +331,14 @@
 		BF1BFE312D01AA0900793B3D /* ReviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF1BFE352D01B97400793B3D /* MediaGetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaGetCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF1BFE362D01B97400793B3D /* MediaGetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaGetCollectionViewCell.xib; sourceTree = "<group>"; };
+		BF1BFE3A2D01D57B00793B3D /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		BF1BFE3B2D01D57B00793B3D /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
+		BF1BFE402D01D65300793B3D /* NotificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationResponse.swift; sourceTree = "<group>"; };
+		BF1BFE422D01D71E00793B3D /* NotificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRepository.swift; sourceTree = "<group>"; };
+		BF1BFE442D01D78E00793B3D /* NotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUseCase.swift; sourceTree = "<group>"; };
+		BF1BFE472D01D7C000793B3D /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		BF1BFE4A2D01DBC600793B3D /* NotificationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCollectionViewCell.swift; sourceTree = "<group>"; };
+		BF1BFE4B2D01DBC600793B3D /* NotificationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF1E66452CABE396001C48E9 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		BF1E66472CABF95A001C48E9 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		BF1E66492CABF9A6001C48E9 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
@@ -711,6 +727,50 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		BF1BFE392D01D55400793B3D /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BFE462D01D7AE00793B3D /* ViewModel */,
+				BF1BFE3E2D01D57D00793B3D /* View */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		BF1BFE3E2D01D57D00793B3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BFE492D01DBA400793B3D /* Cell */,
+				BF1BFE3A2D01D57B00793B3D /* NotificationViewController.swift */,
+				BF1BFE3B2D01D57B00793B3D /* NotificationViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF1BFE3F2D01D63F00793B3D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BFE402D01D65300793B3D /* NotificationResponse.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BF1BFE462D01D7AE00793B3D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BFE472D01D7C000793B3D /* NotificationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BF1BFE492D01DBA400793B3D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BFE4A2D01DBC600793B3D /* NotificationCollectionViewCell.swift */,
+				BF1BFE4B2D01DBC600793B3D /* NotificationCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		BF1E664D2CAC508A001C48E9 /* ProfileUseCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -855,6 +915,7 @@
 		BF1E66762CAD2E52001C48E9 /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
+				BF1BFE392D01D55400793B3D /* Notifications */,
 				BF5D618F2CE2888E006202D2 /* EditAddress */,
 				BF47609D2CE2513600207153 /* AddNewAddress */,
 				BF9F32722CB5293A00530523 /* Address */,
@@ -1248,6 +1309,7 @@
 				BF18F3A52CB906F000A975F9 /* BrandRepository.swift */,
 				BF4760892CE0A38D00207153 /* AddressRepository.swift */,
 				BF68419E2CED1EE4008F9FD0 /* FavoriteRepository.swift */,
+				BF1BFE422D01D71E00793B3D /* NotificationRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1273,6 +1335,7 @@
 				BF96CA392CA4151C004F7BE9 /* AuthUseCase */,
 				BF25D0542C996AF400CB7EE8 /* GetProductsUseCase.swift */,
 				BF68419C2CED1E55008F9FD0 /* FavoriteUseCase.swift */,
+				BF1BFE442D01D78E00793B3D /* NotificationUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1738,6 +1801,7 @@
 		BFAF1D812CA838A00085609C /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				BF1BFE3F2D01D63F00793B3D /* Profile */,
 				BFF264E72CF7270A009459DD /* OrderResponse */,
 				BFA8BAF52CEF22260008CA6E /* Bag */,
 				BF6841982CED1D5F008F9FD0 /* FavoriteResponse */,
@@ -2205,6 +2269,7 @@
 				BFAF1D952CAA7DF60085609C /* LoginWithEmailViewController.xib in Resources */,
 				BF1BFE212D00FD8700793B3D /* ReturnOrderViewController.xib in Resources */,
 				BF9F32812CB6868D00530523 /* ProductCollectionViewCell.xib in Resources */,
+				BF1BFE3D2D01D57B00793B3D /* NotificationViewController.xib in Resources */,
 				BF5D618E2CE259EF006202D2 /* ChooseLocationViewController.xib in Resources */,
 				BF4760A22CE2516100207153 /* AddNewAddressViewController.xib in Resources */,
 				BF1E666E2CAD2DAE001C48E9 /* MyOrderViewController.xib in Resources */,
@@ -2217,6 +2282,7 @@
 				BF1E66752CAD2E20001C48E9 /* MyEWalletViewController.xib in Resources */,
 				BF6573F72CF3844D00BCA12A /* OrderCollectionViewCell.xib in Resources */,
 				BF1BFE2C2D010F4900793B3D /* HistoryCollectionViewCell.xib in Resources */,
+				BF1BFE4D2D01DBC600793B3D /* NotificationCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2293,6 +2359,7 @@
 				09EF3A042CD8A55A00B6FE02 /* ShoesColorCollectionViewCell.swift in Sources */,
 				BFF264E92CF7271C009459DD /* OrderResponse.swift in Sources */,
 				BFCF72642CA4042C00208985 /* UIImage+Extension.swift in Sources */,
+				BF1BFE432D01D71E00793B3D /* NotificationRepository.swift in Sources */,
 				DFF4DB0C2CF9CCE000A11AAA /* OrderStatusResponse.swift in Sources */,
 				BF25D04B2C9821F100CB7EE8 /* AuthInterceptor.swift in Sources */,
 				BFF264CF2CF5C32A009459DD /* OrderRepository.swift in Sources */,
@@ -2307,6 +2374,7 @@
 				BF25D03E2C97239400CB7EE8 /* UIView+Extension.swift in Sources */,
 				BF4244F92CA15C3F00F43C8B /* OutlineButton.swift in Sources */,
 				BF45CC7F2CFB8BD2004B7F63 /* OrderCoordinator.swift in Sources */,
+				BF1BFE4C2D01DBC600793B3D /* NotificationCollectionViewCell.swift in Sources */,
 				BF25D05D2C99756300CB7EE8 /* ProductRepository.swift in Sources */,
 				BF5B322E2C92E3E00063CA29 /* AppDelegate.swift in Sources */,
 				BFF264E62CF725FA009459DD /* OrderRequest.swift in Sources */,
@@ -2317,6 +2385,7 @@
 				BF6573F62CF3844D00BCA12A /* OrderCollectionViewCell.swift in Sources */,
 				BF6841922CE83A9E008F9FD0 /* AddRemoveFavoriteResponse.swift in Sources */,
 				BF1E66742CAD2E20001C48E9 /* MyEWalletViewController.swift in Sources */,
+				BF1BFE482D01D7C000793B3D /* NotificationViewModel.swift in Sources */,
 				BF6841962CED1C2D008F9FD0 /* FavoriteViewController.swift in Sources */,
 				BF25D0402C97239400CB7EE8 /* UITableView+Extension.swift in Sources */,
 				BFF265382CF8F3DF009459DD /* PostPaymentResponse.swift in Sources */,
@@ -2360,6 +2429,7 @@
 				BF1BFE1B2D00B5FA00793B3D /* OrderListBagCollectionViewCell.swift in Sources */,
 				BF18F38C2CB6B91700A975F9 /* ShoesResponse.swift in Sources */,
 				BF25D03C2C97239400CB7EE8 /* TextField+Extension.swift in Sources */,
+				BF1BFE412D01D65300793B3D /* NotificationResponse.swift in Sources */,
 				09EF3A0A2CD8B0B900B6FE02 /* ClassificationsResponse.swift in Sources */,
 				BF4CE3252CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift in Sources */,
 				BFF264E32CF5D02F009459DD /* ChooseAddressCollectionViewCell.swift in Sources */,
@@ -2391,6 +2461,7 @@
 				BF1BFE322D01AA0900793B3D /* ReviewCollectionViewCell.swift in Sources */,
 				BFF6B8F82CFE055B00445469 /* OrderDetailViewController.swift in Sources */,
 				BF1E664A2CABF9A6001C48E9 /* ProfileResponse.swift in Sources */,
+				BF1BFE452D01D78E00793B3D /* NotificationUseCase.swift in Sources */,
 				BF9F326C2CB0166400530523 /* EditProfileUseCase.swift in Sources */,
 				BF68419F2CED1EE4008F9FD0 /* FavoriteRepository.swift in Sources */,
 				BF4760782CE05CB800207153 /* StepperView.swift in Sources */,
@@ -2399,6 +2470,7 @@
 				BF68419B2CED1D97008F9FD0 /* FavoriteResponse.swift in Sources */,
 				BF600EF82CF075350030708E /* AddBagRepository.swift in Sources */,
 				BFD740C12CD9B5600041BD3F /* ClassificationRepository.swift in Sources */,
+				BF1BFE3C2D01D57B00793B3D /* NotificationViewController.swift in Sources */,
 				BF25D05B2C9973B100CB7EE8 /* TokenManager.swift in Sources */,
 				BF25D0592C9972EE00CB7EE8 /* APIService.swift in Sources */,
 				BF25D06E2C9AC0D100CB7EE8 /* DIContainer.swift in Sources */,

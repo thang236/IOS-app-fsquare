@@ -59,6 +59,12 @@ class ProfileCoordinator: Coordinator {
         editAddress.coordinator = self
         navigationController.pushViewController(editAddress, animated: true)
     }
+    
+    func goToNotification() {
+        let notificationViewModel = DIContainer.shared.resolveNotificationViewModel()
+        let notiVC = NotificationViewController(viewModel: notificationViewModel)
+        navigationController.pushViewController(notiVC, animated: true)
+    }
 
     func logoutUser() {
         let authCoordinator = AuthCoordinator(navigationController: navigationMain)
