@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PolicyViewController" customModule="FSquare" customModuleProvider="target">
+            <connections>
+                <outlet property="agreeButton" destination="baZ-BB-fen" id="AmO-ee-ikf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJe-Vx-4h3">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6S-5E-K2o" userLabel="contentView">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="940.33333333333337"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng đọc kỹ điều khoản và điều kiện" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sz-nc-14x">
+                                    <rect key="frame" x="16" y="10" width="361" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-7t-yS3">
+                                    <rect key="frame" x="16" y="41" width="361" height="778.33333333333337"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <attributedString key="attributedText">
+                                        <fragment>
+                                            <mutableString key="content">Điều khoản và Điều Kiện
+1. Chấp nhận Điều khoản và Điều Kiện: Bằng cách sử dụng ứng dụng của chúng tôi, bạn đồng ý tuân thủ các điều khoản và điều kiện này.
+Đặt hàng và Thanh toán:
+Bạn chịu trách nhiệm trả tiền cho mọi đơn hàng được đặt qua ứng dụng của chúng tôi.
+Chúng tôi có thể chấp nhận thanh toán qua các phương thức đã chỉ định trong ứng dụng.
+Thực phẩm và Dịch vụ:
+Chúng tôi sẽ cố gắng cung cấp thực phẩm và dịch vụ chất lượng như mô tả trong ứng dụng.
+Chúng tôi không chịu trách nhiệm cho bất kỳ sự cố hoặc hậu quả nào do thực phẩm hoặc dịch vụ gây ra.
+Hủy đơn hàng:
+Bạn có thể hủy đơn hàng trước thời điểm nó được xác nhận bởi nhà cung cấp thực phẩm.
+Chúng tôi có thể hủy đơn hàng nếu không thể đảm bảo giao hàng đúng hẹn hoặc vì lý do khách quan khác.
+Quyền Sở Hữu Trí Tuệ:
+Tất cả quyền sở hữu trí tuệ liên quan đến ứng dụng và nội dung của chúng tôi thuộc về chúng tôi.
+Quyền Riêng Tư:
+Chúng tôi sẽ bảo vệ thông tin cá nhân của bạn theo chính sách quyền riêng tư của chúng tôi.
+Bảo Mật:
+Chúng tôi cam kết bảo mật thông tin của bạn và thực hiện các biện pháp an toàn để bảo vệ dữ liệu.
+Sử dụng Hợp Lý:
+Bạn đồng ý sử dụng ứng dụng của chúng tôi cho các mục đích hợp lý và không vi phạm pháp luật.
+Thay Đổi Điều Khoản và Điều Kiện:
+Chúng tôi có quyền thay đổi điều khoản và điều kiện này theo quyết định của chúng tôi.
+Kết thúc Sử dụng:
+Bạn có thể ngừng sử dụng ứng dụng của chúng tôi bất kỳ lúc nào.
+Chúng tôi cũng có quyền ngừng cung cấp dịch vụ cho bạn nếu bạn vi phạm các điều khoản này.
+Liên Hệ:
+Nếu bạn có bất kỳ câu hỏi hoặc phàn nàn nào, vui lòng liên hệ với chúng tôi theo thông tin liên hệ đã được cung cấp trong ứng dụng.</mutableString>
+                                            <attributes>
+                                                <color key="NSColor" systemColor="labelColor"/>
+                                                <font key="NSFont" size="14" name="Inter-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baZ-BB-fen">
+                                    <rect key="frame" x="16" y="835.33333333333337" width="361" height="38"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                    <state key="normal" image="Toggle/focusFalse">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="Tôi đồng ý với các điều khoản đã nêu trên">
+                                                <attributes>
+                                                    <font key="NSFont" size="14" name="Inter-Regular_SemiBold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <buttonConfiguration key="configuration" style="plain" image="Toggle/focusFalse" imagePadding="8">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="Tôi đồng ý với các điều khoản đã nêu trên">
+                                                <attributes>
+                                                    <font key="NSFont" size="14" name="Inter-Regular_SemiBold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="didTapAgreeButton:" destination="-1" eventType="touchUpInside" id="fE7-Qs-Opi"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-qK-7F0" customClass="FullButton" customModule="FSquare" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="889.33333333333337" width="361" height="35"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Tiếp theo"/>
+                                    <connections>
+                                        <action selector="didTapSubmit:" destination="-1" eventType="touchUpInside" id="dDJ-uM-duj"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="baZ-BB-fen" secondAttribute="trailing" constant="16" id="815-eK-h5g"/>
+                                <constraint firstAttribute="trailing" secondItem="LjY-qK-7F0" secondAttribute="trailing" constant="16" id="Bs6-fY-n43"/>
+                                <constraint firstAttribute="trailing" secondItem="3sz-nc-14x" secondAttribute="trailing" constant="16" id="Cur-zx-Fsr"/>
+                                <constraint firstItem="baZ-BB-fen" firstAttribute="leading" secondItem="c6S-5E-K2o" secondAttribute="leading" constant="16" id="Jiw-SH-wlU"/>
+                                <constraint firstAttribute="bottom" secondItem="LjY-qK-7F0" secondAttribute="bottom" constant="16" id="W7x-7R-Zuj"/>
+                                <constraint firstAttribute="trailing" secondItem="lwe-7t-yS3" secondAttribute="trailing" constant="16" id="ay3-8A-wii"/>
+                                <constraint firstItem="baZ-BB-fen" firstAttribute="top" secondItem="lwe-7t-yS3" secondAttribute="bottom" constant="16" id="lKi-aZ-Dcb"/>
+                                <constraint firstItem="3sz-nc-14x" firstAttribute="leading" secondItem="c6S-5E-K2o" secondAttribute="leading" constant="16" id="nVa-Mr-bmd"/>
+                                <constraint firstItem="LjY-qK-7F0" firstAttribute="leading" secondItem="c6S-5E-K2o" secondAttribute="leading" constant="16" id="raY-Uc-Flc"/>
+                                <constraint firstItem="3sz-nc-14x" firstAttribute="top" secondItem="c6S-5E-K2o" secondAttribute="top" constant="10" id="rnN-GJ-5ad"/>
+                                <constraint firstItem="lwe-7t-yS3" firstAttribute="leading" secondItem="c6S-5E-K2o" secondAttribute="leading" constant="16" id="rof-M6-c39"/>
+                                <constraint firstItem="LjY-qK-7F0" firstAttribute="top" secondItem="baZ-BB-fen" secondAttribute="bottom" constant="16" id="uMs-jS-JjJ"/>
+                                <constraint firstItem="lwe-7t-yS3" firstAttribute="top" secondItem="3sz-nc-14x" secondAttribute="bottom" constant="10" id="wZq-PO-7Sc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="c6S-5E-K2o" firstAttribute="trailing" secondItem="fmQ-cP-HyO" secondAttribute="trailing" id="JAS-aO-PUo"/>
+                        <constraint firstItem="c6S-5E-K2o" firstAttribute="width" secondItem="IDE-xB-mE4" secondAttribute="width" multiplier="1:1" id="MgS-aP-Rmo"/>
+                        <constraint firstItem="c6S-5E-K2o" firstAttribute="top" secondItem="fmQ-cP-HyO" secondAttribute="top" id="R7S-jA-Dtx"/>
+                        <constraint firstItem="c6S-5E-K2o" firstAttribute="leading" secondItem="fmQ-cP-HyO" secondAttribute="leading" id="bEg-Tc-0P5"/>
+                        <constraint firstItem="c6S-5E-K2o" firstAttribute="bottom" secondItem="fmQ-cP-HyO" secondAttribute="bottom" id="ccn-Sa-jyH"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="fmQ-cP-HyO"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="IDE-xB-mE4"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="VJe-Vx-4h3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GZN-Gl-Z8g"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VJe-Vx-4h3" secondAttribute="bottom" id="bEe-6A-GND"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VJe-Vx-4h3" secondAttribute="trailing" id="oBf-DS-sJy"/>
+                <constraint firstItem="VJe-Vx-4h3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sIS-ev-oI7"/>
+            </constraints>
+            <point key="canvasLocation" x="134" y="-39"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Toggle/focusFalse" width="24" height="24"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
