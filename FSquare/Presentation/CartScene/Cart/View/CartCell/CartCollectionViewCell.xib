@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CartCollectionViewCell" customModule="Shang_Buyer" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CartCollectionViewCell" customModule="FSquare" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="471" height="152"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="471" height="152"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageShimmer" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WiR-L0-jnT">
-                                <rect key="frame" x="0.0" y="16" width="120" height="120"/>
+                                <rect key="frame" x="16" y="16" width="120" height="120"/>
                                 <color key="backgroundColor" name="backgroundDark"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WiR-L0-jnT" secondAttribute="height" multiplier="1:1" id="bPv-aB-jPx"/>
@@ -36,12 +36,12 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJc-Ag-vA1">
-                                <rect key="frame" x="140" y="16" width="315" height="120"/>
+                                <rect key="frame" x="156" y="16" width="299" height="120"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NSZ-gz-0xJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="257" height="39.333333333333336"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppj-2w-AI1" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppj-2w-AI1" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -51,18 +51,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wGx-0o-ZxH">
-                                                <rect key="frame" x="0.0" y="25" width="120.66666666666667" height="18"/>
+                                                <rect key="frame" x="0.0" y="24.999999999999996" width="94.666666666666671" height="14.333333333333332"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Neb-qt-O7Z">
-                                                        <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
-                                                        <color key="backgroundColor" systemColor="systemRedColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="Neb-qt-O7Z" secondAttribute="height" multiplier="1:1" id="RGT-GF-gog"/>
-                                                            <constraint firstAttribute="height" constant="18" id="kNd-nz-Vla"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fp-NS-Tg0" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                                                        <rect key="frame" x="26" y="0.0" width="22" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fp-NS-Tg0" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="14.333333333333334"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -70,8 +62,8 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byc-fn-veo" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                                                        <rect key="frame" x="56" y="0.0" width="3.3333333333333357" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byc-fn-veo" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
+                                                        <rect key="frame" x="30" y="0.0" width="3.3333333333333357" height="14.333333333333334"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -79,8 +71,8 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size = 42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvu-7w-Rj4" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
-                                                        <rect key="frame" x="67.333333333333343" y="0.0" width="53.333333333333343" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size = 42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvu-7w-Rj4" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
+                                                        <rect key="frame" x="41.333333333333343" y="0.0" width="53.333333333333343" height="14.333333333333334"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -98,7 +90,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOs-ek-4UO" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOs-ek-4UO" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="99.333333333333329" width="37" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" name="PrimaryDark"/>
@@ -108,7 +100,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpY-S9-zOd">
-                                        <rect key="frame" x="281" y="0.0" width="34" height="34"/>
+                                        <rect key="frame" x="265" y="0.0" width="34" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hpY-S9-zOd" secondAttribute="height" multiplier="1:1" id="5Jx-pl-g22"/>
                                             <constraint firstAttribute="height" constant="34" id="rFJ-JA-aSh"/>
@@ -128,7 +120,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dbE-OJ-mjX">
-                                        <rect key="frame" x="212.33333333333329" y="91.666666666666671" width="102.66666666666666" height="34.333333333333329"/>
+                                        <rect key="frame" x="196.33333333333331" y="91.666666666666671" width="102.66666666666669" height="34.333333333333329"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1u-St-jHA">
                                                 <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="34.333333333333336"/>
@@ -209,7 +201,7 @@
                             <constraint firstAttribute="bottom" secondItem="dbE-OJ-mjX" secondAttribute="bottom" constant="10" id="4dY-zw-YcA"/>
                             <constraint firstItem="WiR-L0-jnT" firstAttribute="top" secondItem="wBD-gX-F6n" secondAttribute="top" constant="16" id="D9S-65-8o3"/>
                             <constraint firstItem="SJc-Ag-vA1" firstAttribute="leading" secondItem="WiR-L0-jnT" secondAttribute="trailing" constant="20" id="DYM-U3-vTM"/>
-                            <constraint firstItem="WiR-L0-jnT" firstAttribute="leading" secondItem="wBD-gX-F6n" secondAttribute="leading" id="KOd-Py-ZZP"/>
+                            <constraint firstItem="WiR-L0-jnT" firstAttribute="leading" secondItem="wBD-gX-F6n" secondAttribute="leading" constant="16" id="KOd-Py-ZZP"/>
                             <constraint firstAttribute="trailing" secondItem="SJc-Ag-vA1" secondAttribute="trailing" constant="16" id="eor-FX-cdh"/>
                             <constraint firstItem="SJc-Ag-vA1" firstAttribute="top" secondItem="wBD-gX-F6n" secondAttribute="top" constant="16" id="fxZ-ze-oba"/>
                             <constraint firstItem="SJc-Ag-vA1" firstAttribute="height" secondItem="WiR-L0-jnT" secondAttribute="height" id="ozP-Rd-74w"/>
@@ -218,6 +210,9 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
@@ -232,7 +227,6 @@
             <size key="customSize" width="471" height="152"/>
             <connections>
                 <outlet property="colorLabel" destination="2Fp-NS-Tg0" id="4an-ZR-jMm"/>
-                <outlet property="colorView" destination="Neb-qt-O7Z" id="ocT-5t-syM"/>
                 <outlet property="deleteButton" destination="hpY-S9-zOd" id="YJP-VV-msh"/>
                 <outlet property="imageView" destination="WiR-L0-jnT" id="mQU-h4-DiQ"/>
                 <outlet property="nameLabel" destination="ppj-2w-AI1" id="F8n-Xb-q3U"/>
@@ -280,9 +274,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

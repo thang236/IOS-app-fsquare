@@ -10,6 +10,7 @@ import UIKit
 class PolicyViewController: UIViewController {
     @IBOutlet weak var agreeButton: UIButton!
     private var viewModel: RegisterViewModel
+    @IBOutlet weak var textView: UITextView!
     private var isCheck = false
 
     init(viewModel: RegisterViewModel) {
@@ -24,6 +25,7 @@ class PolicyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNav()
+        textView.isEditable = false
     }
     private func setupNav() {
         navigationItem.hidesBackButton = true

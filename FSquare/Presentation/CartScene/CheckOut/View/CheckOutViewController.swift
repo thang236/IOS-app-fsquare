@@ -62,9 +62,7 @@ class CheckOutViewController: UIViewController {
                 case let .address(address):
                     let cell = collectionView.dequeueReusableCell(withType: AddressCollectionViewCell.self, for: indexPath)
                     cell.setupCell(address: address)
-                    cell.didTapEditButton = {
-                        wSelf.coordinator?.goToChooseAddress()
-                    }
+                    cell.delegate = self
                     return cell
 
                 case let .order(bag):
@@ -121,16 +119,15 @@ class CheckOutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        popUp.delegate = self
         setupCollectionView()
         viewModel.getAddress()
+        popUp.delegate = self
         setupNav()
+        setUpBinding()
     }
 
     override func viewWillAppear(_: Bool) {
-        setUpBinding()
         tabBarController?.tabBar.isHidden = true
-
         bottomView.layer.backgroundColor = UIColor.white.cgColor
         bottomView.layer.shadowColor = UIColor.borderDark.cgColor
         bottomView.layer.shadowOffset = CGSize(width: 0.0, height: -4.0)
@@ -271,7 +268,6 @@ class CheckOutViewController: UIViewController {
             .receive(on: RunLoop.main)
             .sink { orderResponse in
                
-                
                 if let orderResponse = orderResponse {
                     if orderResponse.status == HTTPStatus.success.message || orderResponse.status == HTTPStatus.created.message {
                         self.popUp.appear(sender: self, isSuccess: true)
@@ -395,10 +391,18 @@ extension CheckOutViewController: PopUpPaymentViewControllerDelegate {
     func didTapViewOrder() {
         tabBarController?.tabBar.isHidden = false
         tabBarController?.selectedIndex = 2
+        navigationController?.popViewController(animated: false)
     }
 
     func didTapHomeScreen() {
         tabBarController?.tabBar.isHidden = false
         tabBarController?.selectedIndex = 0
+        navigationController?.popViewController(animated: false)
+    }
+}
+
+extension CheckOutViewController: AddressCollectionViewCellDelegate {
+    func didTapEditButton() {
+        coordinator?.goToChooseAddress()
     }
 }

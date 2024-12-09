@@ -101,6 +101,7 @@ class CartViewController: UIViewController {
             .sink { [weak self] errorMessage in
                 print("errorMessage:  \(errorMessage)")
                 self?.showToast(message: errorMessage, chooseImageToast: .warning)
+                self?.viewModel.errorMessage = nil
             }.store(in: &viewModel.cancellables)
     }
 
@@ -142,6 +143,10 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 16, bottom: 0, right: 16)
     }
+    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10 
+    }
+
 }
 
 extension CartViewController: CartCollectionViewCellDelegate {

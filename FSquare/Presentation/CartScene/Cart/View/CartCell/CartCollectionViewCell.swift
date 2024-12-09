@@ -19,7 +19,6 @@ class CartCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var nameLabel: BodyLabel!
     @IBOutlet private var sizeLabel: BodyLabel!
     @IBOutlet private var colorLabel: BodyLabel!
-    @IBOutlet private var colorView: UIView!
     @IBOutlet private var deleteButton: UIButton!
 
     @IBOutlet var quantityLabel: UILabel!
@@ -30,8 +29,17 @@ class CartCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        colorView.layer.cornerRadius = colorView.frame.width / 2
-        colorView.layer.masksToBounds = true
+        
+        DispatchQueue.main.async {
+            self.layer.backgroundColor = UIColor.white.cgColor
+            self.layer.shadowColor = UIColor.borderDark.cgColor
+            self.layer.shadowOffset = CGSize(width: 2.0, height: 10.0)
+            self.layer.shadowRadius = 12
+            self.layer.shadowOpacity = 0.5
+            self.layer.masksToBounds = false
+
+            self.layer.cornerRadius = 12
+        }
 
         deleteButton.layer.cornerRadius = deleteButton.frame.width / 2
         deleteButton.layer.masksToBounds = true
@@ -41,7 +49,6 @@ class CartCollectionViewCell: UICollectionViewCell {
         nameLabel.isSkeletonable = true
         sizeLabel.isSkeletonable = true
         colorLabel.isSkeletonable = true
-        colorView.isSkeletonable = true
         contentView.isSkeletonable = true
 
         contentView.showAnimatedSkeleton()

@@ -132,6 +132,8 @@
 		BF49226A2D022A5F00C6B59B /* PolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4922682D022A5F00C6B59B /* PolicyViewController.xib */; };
 		BF49226D2D0486EE00C6B59B /* PopUpLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF49226B2D0486EE00C6B59B /* PopUpLoginViewController.swift */; };
 		BF49226E2D0486EE00C6B59B /* PopUpLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF49226C2D0486EE00C6B59B /* PopUpLoginViewController.xib */; };
+		BF4922712D053D5900C6B59B /* SheetLogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF49226F2D053D5900C6B59B /* SheetLogoutViewController.swift */; };
+		BF4922722D053D5900C6B59B /* SheetLogoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4922702D053D5900C6B59B /* SheetLogoutViewController.xib */; };
 		BF4CE3252CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CE3232CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift */; };
 		BF4CE3262CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4CE3242CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib */; };
 		BF4CE32C2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CE32B2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift */; };
@@ -403,6 +405,8 @@
 		BF4922682D022A5F00C6B59B /* PolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PolicyViewController.xib; sourceTree = "<group>"; };
 		BF49226B2D0486EE00C6B59B /* PopUpLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpLoginViewController.swift; sourceTree = "<group>"; };
 		BF49226C2D0486EE00C6B59B /* PopUpLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpLoginViewController.xib; sourceTree = "<group>"; };
+		BF49226F2D053D5900C6B59B /* SheetLogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetLogoutViewController.swift; sourceTree = "<group>"; };
+		BF4922702D053D5900C6B59B /* SheetLogoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheetLogoutViewController.xib; sourceTree = "<group>"; };
 		BF4CE3232CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF4CE3242CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerHomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF4CE32B2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderHomeCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -900,6 +904,8 @@
 			children = (
 				BFA057D92CAEA53700890399 /* ViewModel */,
 				BF1E66782CAD2E65001C48E9 /* View */,
+				BF49226F2D053D5900C6B59B /* SheetLogoutViewController.swift */,
+				BF4922702D053D5900C6B59B /* SheetLogoutViewController.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -2162,6 +2168,7 @@
 				BF1BFE1C2D00B5FA00793B3D /* OrderListBagCollectionViewCell.xib in Resources */,
 				BF6120252CE39BAD00AC6562 /* PopularCollectionViewCell.xib in Resources */,
 				BFD740D42CDA6E310041BD3F /* DescribeCollectionViewCell.xib in Resources */,
+				BF4922722D053D5900C6B59B /* SheetLogoutViewController.xib in Resources */,
 				BF5B32372C92E3E20063CA29 /* Assets.xcassets in Resources */,
 				BF1BFE382D01B97400793B3D /* MediaGetCollectionViewCell.xib in Resources */,
 				BFA057E62CB007AD00890399 /* EditProfileViewController.xib in Resources */,
@@ -2353,6 +2360,7 @@
 				BF96CBD92CA56AF500066A1F /* VerifyOTPViewController.swift in Sources */,
 				BF59BB7E2CFE017F00225FB7 /* BrandsViewController.swift in Sources */,
 				BF25D0AF2C9D2C5300CB7EE8 /* UILabel+Extension.swift in Sources */,
+				BF4922712D053D5900C6B59B /* SheetLogoutViewController.swift in Sources */,
 				BF9F326F2CB3B96700530523 /* ProfileCoordinator.swift in Sources */,
 				BFF264C42CF5A8D9009459DD /* PaymentCollectionViewCell.swift in Sources */,
 				BF6841AD2CEE314C008F9FD0 /* SharedData.swift in Sources */,

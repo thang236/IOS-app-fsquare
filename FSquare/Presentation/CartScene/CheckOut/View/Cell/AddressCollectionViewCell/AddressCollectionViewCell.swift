@@ -6,12 +6,15 @@
 //
 
 import UIKit
+protocol AddressCollectionViewCellDelegate: AnyObject {
+    func didTapEditButton()
+}
 
 class AddressCollectionViewCell: UICollectionViewCell {
+    var delegate: AddressCollectionViewCellDelegate?
     @IBOutlet var titleLabel: BodyLabel!
     @IBOutlet var addressLabel: DescriptionLabel!
 
-    var didTapEditButton: (() -> Void)?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -52,6 +55,6 @@ class AddressCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func didTapEditButton(_: Any) {
-        didTapEditButton?()
+        delegate?.didTapEditButton()
     }
 }

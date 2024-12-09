@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PolicyViewController" customModule="FSquare" customModuleProvider="target">
             <connections>
                 <outlet property="agreeButton" destination="baZ-BB-fen" id="AmO-ee-ikf"/>
+                <outlet property="textView" destination="lwe-7t-yS3" id="fyf-L7-07c"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +24,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6S-5E-K2o" userLabel="contentView">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="940.33333333333337"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="770"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng đọc kỹ điều khoản và điều kiện" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sz-nc-14x">
                                     <rect key="frame" x="16" y="10" width="361" height="21"/>
@@ -31,47 +32,65 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-7t-yS3">
-                                    <rect key="frame" x="16" y="41" width="361" height="778.33333333333337"/>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" allowsEditingTextAttributes="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-7t-yS3">
+                                    <rect key="frame" x="16" y="39" width="361" height="626"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <attributedString key="attributedText">
                                         <fragment>
-                                            <mutableString key="content">Điều khoản và Điều Kiện
-1. Chấp nhận Điều khoản và Điều Kiện: Bằng cách sử dụng ứng dụng của chúng tôi, bạn đồng ý tuân thủ các điều khoản và điều kiện này.
-Đặt hàng và Thanh toán:
-Bạn chịu trách nhiệm trả tiền cho mọi đơn hàng được đặt qua ứng dụng của chúng tôi.
-Chúng tôi có thể chấp nhận thanh toán qua các phương thức đã chỉ định trong ứng dụng.
-Thực phẩm và Dịch vụ:
-Chúng tôi sẽ cố gắng cung cấp thực phẩm và dịch vụ chất lượng như mô tả trong ứng dụng.
-Chúng tôi không chịu trách nhiệm cho bất kỳ sự cố hoặc hậu quả nào do thực phẩm hoặc dịch vụ gây ra.
-Hủy đơn hàng:
-Bạn có thể hủy đơn hàng trước thời điểm nó được xác nhận bởi nhà cung cấp thực phẩm.
-Chúng tôi có thể hủy đơn hàng nếu không thể đảm bảo giao hàng đúng hẹn hoặc vì lý do khách quan khác.
-Quyền Sở Hữu Trí Tuệ:
-Tất cả quyền sở hữu trí tuệ liên quan đến ứng dụng và nội dung của chúng tôi thuộc về chúng tôi.
-Quyền Riêng Tư:
-Chúng tôi sẽ bảo vệ thông tin cá nhân của bạn theo chính sách quyền riêng tư của chúng tôi.
-Bảo Mật:
-Chúng tôi cam kết bảo mật thông tin của bạn và thực hiện các biện pháp an toàn để bảo vệ dữ liệu.
-Sử dụng Hợp Lý:
-Bạn đồng ý sử dụng ứng dụng của chúng tôi cho các mục đích hợp lý và không vi phạm pháp luật.
-Thay Đổi Điều Khoản và Điều Kiện:
-Chúng tôi có quyền thay đổi điều khoản và điều kiện này theo quyết định của chúng tôi.
-Kết thúc Sử dụng:
-Bạn có thể ngừng sử dụng ứng dụng của chúng tôi bất kỳ lúc nào.
-Chúng tôi cũng có quyền ngừng cung cấp dịch vụ cho bạn nếu bạn vi phạm các điều khoản này.
-Liên Hệ:
-Nếu bạn có bất kỳ câu hỏi hoặc phàn nàn nào, vui lòng liên hệ với chúng tôi theo thông tin liên hệ đã được cung cấp trong ứng dụng.</mutableString>
+                                            <string key="content">1. Chấp nhận điều khoản
+</string>
                                             <attributes>
-                                                <color key="NSColor" systemColor="labelColor"/>
-                                                <font key="NSFont" size="14" name="Inter-Regular"/>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Inter-Regular"/>
+                                                <real key="NSKern" value="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                    <tabStops/>
+                                                </paragraphStyle>
+                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <real key="NSStrokeWidth" value="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">Khi đăng ký tài khoản trên FSquare, người dùng đồng ý với tất cả các điều khoản và điều kiện sử dụng dịch vụ được quy định tại đây.</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Inter-Regular"/>
+                                                <real key="NSKern" value="0.0"/>
+                                                <font key="NSOriginalFont" size="12" name="Inter-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                    <tabStops/>
+                                                </paragraphStyle>
+                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <real key="NSStrokeWidth" value="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <mutableString key="content">
+2. Độ tuổi và năng lực pháp lý Người dùng phải từ 16 tuổi trở lên và có đầy đủ năng lực hành vi dân sự để thực hiện các giao dịch trên ứng dụng.
+3. Thông tin tài khoản Người dùng cam kết cung cấp đầy đủ, chính xác và cập nhật các thông tin cá nhân (tên, email, số điện thoại, v.v.). FSquare không chịu trách nhiệm đối với các vấn đề phát sinh từ thông tin sai lệch.
+4. Bảo mật thông tin Người dùng có trách nhiệm bảo mật thông tin đăng nhập của mình. FSquare không chịu trách nhiệm khi tài khoản bị truy cập trái phép do lỗi bảo mật từ phía người dùng.
+5. Mục đích sử dụng Người dùng chỉ được sử dụng tài khoản trên FSquare cho mục đích mua sắm cá nhân và không được sử dụng tài khoản để thực hiện các hoạt động vi phạm pháp luật.
+6. Hủy bỏ và khóa tài khoản FSquare có quyền tạm ngừng hoặc khóa tài khoản của người dùng nếu phát hiện các hành vi vi phạm quy định như gian lận, cung cấp thông tin giả mạo hoặc có hành động gây ảnh hưởng xấu đến hệ thống.
+7. Quyền riêng tư Thông tin cá nhân của người dùng sẽ được bảo mật theo Chính sách bảo mật thông tin của FSquare và sẽ không chia sẻ cho bên thứ ba trái với quy định pháp luật.
+8. Thay đổi điều khoản FSquare có quyền thay đổi, cập nhật các điều khoản và điều kiện bất cứ lúc nào. Thay đổi sẽ được thông báo trên ứng dụng hoặc qua email.
+9. Trách nhiệm của người dùng Người dùng có trách nhiệm thực hiện đúng các giao dịch, thanh toán đầy đủ và tuân thủ quy định khi sử dụng dịch vụ trên FSquare.
+10. Giải quyết tranh chấp Mọi tranh chấp phát sinh giữa người dùng và FSquare sẽ được ưu tiên giải quyết thông qua thương lượng, hòa giải. Nếu không thành, tranh chấp sẽ được giải quyết theo quy định pháp luật.</mutableString>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Inter-Regular"/>
+                                                <real key="NSKern" value="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                    <tabStops/>
+                                                </paragraphStyle>
+                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <real key="NSStrokeWidth" value="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baZ-BB-fen">
-                                    <rect key="frame" x="16" y="835.33333333333337" width="361" height="38"/>
+                                    <rect key="frame" x="16" y="673" width="361" height="38"/>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
                                     <state key="normal" image="Toggle/focusFalse">
@@ -97,7 +116,7 @@ Nếu bạn có bất kỳ câu hỏi hoặc phàn nàn nào, vui lòng liên h�
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-qK-7F0" customClass="FullButton" customModule="FSquare" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="889.33333333333337" width="361" height="35"/>
+                                    <rect key="frame" x="16" y="719" width="361" height="35"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Tiếp theo"/>
                                     <connections>
@@ -113,13 +132,13 @@ Nếu bạn có bất kỳ câu hỏi hoặc phàn nàn nào, vui lòng liên h�
                                 <constraint firstItem="baZ-BB-fen" firstAttribute="leading" secondItem="c6S-5E-K2o" secondAttribute="leading" constant="16" id="Jiw-SH-wlU"/>
                                 <constraint firstAttribute="bottom" secondItem="LjY-qK-7F0" secondAttribute="bottom" constant="16" id="W7x-7R-Zuj"/>
                                 <constraint firstAttribute="trailing" secondItem="lwe-7t-yS3" secondAttribute="trailing" constant="16" id="ay3-8A-wii"/>
-                                <constraint firstItem="baZ-BB-fen" firstAttribute="top" secondItem="lwe-7t-yS3" secondAttribute="bottom" constant="16" id="lKi-aZ-Dcb"/>
+                                <constraint firstItem="baZ-BB-fen" firstAttribute="top" secondItem="lwe-7t-yS3" secondAttribute="bottom" constant="8" symbolic="YES" id="lKi-aZ-Dcb"/>
                                 <constraint firstItem="3sz-nc-14x" firstAttribute="leading" secondItem="c6S-5E-K2o" secondAttribute="leading" constant="16" id="nVa-Mr-bmd"/>
                                 <constraint firstItem="LjY-qK-7F0" firstAttribute="leading" secondItem="c6S-5E-K2o" secondAttribute="leading" constant="16" id="raY-Uc-Flc"/>
                                 <constraint firstItem="3sz-nc-14x" firstAttribute="top" secondItem="c6S-5E-K2o" secondAttribute="top" constant="10" id="rnN-GJ-5ad"/>
                                 <constraint firstItem="lwe-7t-yS3" firstAttribute="leading" secondItem="c6S-5E-K2o" secondAttribute="leading" constant="16" id="rof-M6-c39"/>
-                                <constraint firstItem="LjY-qK-7F0" firstAttribute="top" secondItem="baZ-BB-fen" secondAttribute="bottom" constant="16" id="uMs-jS-JjJ"/>
-                                <constraint firstItem="lwe-7t-yS3" firstAttribute="top" secondItem="3sz-nc-14x" secondAttribute="bottom" constant="10" id="wZq-PO-7Sc"/>
+                                <constraint firstItem="LjY-qK-7F0" firstAttribute="top" secondItem="baZ-BB-fen" secondAttribute="bottom" constant="8" symbolic="YES" id="uMs-jS-JjJ"/>
+                                <constraint firstItem="lwe-7t-yS3" firstAttribute="top" secondItem="3sz-nc-14x" secondAttribute="bottom" constant="8" symbolic="YES" id="wZq-PO-7Sc"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -147,9 +166,6 @@ Nếu bạn có bất kỳ câu hỏi hoặc phàn nàn nào, vui lòng liên h�
     </objects>
     <resources>
         <image name="Toggle/focusFalse" width="24" height="24"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

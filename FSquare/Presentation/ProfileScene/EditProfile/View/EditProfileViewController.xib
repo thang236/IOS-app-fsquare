@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileViewController" customModule="Shang_Buyer" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileViewController" customModule="FSquare" customModuleProvider="target">
             <connections>
                 <outlet property="birthField" destination="UDX-tJ-KwH" id="v3y-Sl-dgt"/>
                 <outlet property="emailField" destination="23b-lL-uXb" id="yk1-v5-Eqc"/>
@@ -28,13 +28,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="peT-k7-QDp" userLabel="FullName">
                     <rect key="frame" x="20" y="79" width="353" height="73"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ix0-nH-f3R" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ix0-nH-f3R" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="23.666666666666668" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" name="neutralDark"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập tên của bạn" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3TT-fY-UDz" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập tên của bạn" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3TT-fY-UDz" customClass="NormalField" customModule="FSquare" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="25" width="353" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="Rqx-iU-n71"/>
@@ -51,13 +51,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w8j-QV-GJi" userLabel="BirthDate">
                     <rect key="frame" x="20" y="265" width="353" height="73"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày Sinh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-Oo-lKi" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày Sinh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-Oo-lKi" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="65.666666666666671" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" name="neutralDark"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chọn ngày sinh của bạn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDX-tJ-KwH" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chọn ngày sinh của bạn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDX-tJ-KwH" customClass="NormalField" customModule="FSquare" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="25" width="353" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="6gd-4A-Wbd"/>
@@ -82,13 +82,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6VG-eB-buk">
                     <rect key="frame" x="20" y="451" width="353" height="73"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số Điện Thoại" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rl-Tx-2Ui" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số Điện Thoại" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rl-Tx-2Ui" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="90" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" name="neutralDark"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập số điện thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tXg-d7-rgD" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập số điện thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tXg-d7-rgD" customClass="NormalField" customModule="FSquare" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="25" width="353" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="CWP-os-zfy"/>
@@ -105,13 +105,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LN8-bX-P0k" userLabel="Country">
                     <rect key="frame" x="20" y="172" width="353" height="73"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Họ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzI-7T-xC7" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Họ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzI-7T-xC7" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="18.666666666666668" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" name="neutralDark"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập họ , tên đệm của bạn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xq0-qr-PDX" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập họ , tên đệm của bạn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xq0-qr-PDX" customClass="NormalField" customModule="FSquare" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="25" width="353" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="Oq8-8M-jk8"/>
@@ -128,13 +128,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Cy-Zi-fPl" userLabel="Email">
                     <rect key="frame" x="20" y="358" width="353" height="73"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7e-8Z-qyP" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7e-8Z-qyP" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="34.666666666666664" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" name="neutralDark"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23b-lL-uXb" customClass="NormalField" customModule="Shang_Buyer" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23b-lL-uXb" customClass="NormalField" customModule="FSquare" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="25" width="353" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="Td1-6d-Pc9"/>
@@ -160,12 +160,12 @@
                     </constraints>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHI-eE-iZj">
-                    <rect key="frame" x="0.0" y="766" width="393" height="86"/>
+                    <rect key="frame" x="0.0" y="732" width="393" height="86"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVX-bp-EYN" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVX-bp-EYN" customClass="FullButton" customModule="FSquare" customModuleProvider="target">
                             <rect key="frame" x="20" y="25.666666666666632" width="353" height="34.333333333333343"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Update"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Chỉnh sửa"/>
                             <connections>
                                 <action selector="didTapUpdateButton:" destination="-1" eventType="touchUpInside" id="KzH-T4-4ex"/>
                             </connections>
@@ -198,7 +198,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="peT-k7-QDp" secondAttribute="trailing" constant="20" id="lkx-ri-iQj"/>
                 <constraint firstItem="w8j-QV-GJi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="lll-5Y-AdT"/>
                 <constraint firstItem="w8j-QV-GJi" firstAttribute="top" secondItem="LN8-bX-P0k" secondAttribute="bottom" constant="20" id="mLX-fp-U8g"/>
-                <constraint firstAttribute="bottom" secondItem="qHI-eE-iZj" secondAttribute="bottom" id="oFl-y6-5lf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qHI-eE-iZj" secondAttribute="bottom" id="oFl-y6-5lf"/>
                 <constraint firstItem="peT-k7-QDp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="rkz-xJ-AWS"/>
                 <constraint firstItem="6VG-eB-buk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="w7k-Wt-eEa"/>
             </constraints>
@@ -237,7 +237,7 @@
             <size key="intrinsicContentSize" width="149" height="34"/>
         </designable>
         <designable name="vVX-bp-EYN">
-            <size key="intrinsicContentSize" width="80" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="99.666666666666671" height="34.333333333333336"/>
         </designable>
     </designables>
     <resources>

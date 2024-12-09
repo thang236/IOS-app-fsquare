@@ -10,7 +10,7 @@ import UIKit
 class MyOrderViewController: UIViewController {
     private let refreshControl = UIRefreshControl()
     var coordinator: OrderCoordinator?
-    var viewModel: MyOrderViewModel?
+    var viewModel: MyOrderViewModel
     private var statusArray: [String] = [OrderStatus.pending.title, OrderStatus.processing.title, OrderStatus.shipped.title, OrderStatus.delivered.title, OrderStatus.confirmed.title, OrderStatus.cancelled.title, OrderStatus.returned.title]
     private var selectedIndexPath: IndexPath = [0, 0]
 
@@ -19,7 +19,6 @@ class MyOrderViewController: UIViewController {
     @IBOutlet private var orderCollectionView: UICollectionView!
     init(viewModel: MyOrderViewModel) {
         self.viewModel = viewModel
-        viewModel.getOrder(orderStatus: .pending)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -30,6 +29,7 @@ class MyOrderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.getOrder(orderStatus: .pending)
         setupCollectionView()
         setupBinding()
         setupNavigationBar(title: "Đơn hàng")
@@ -55,13 +55,13 @@ class MyOrderViewController: UIViewController {
     }
 
     @objc private func refreshFavorites() {
-        viewModel?.getOrder(orderStatus: OrderStatus.allStatuses[selectedIndexPath.row]) { [self] in
+        viewModel.getOrder(orderStatus: OrderStatus.allStatuses[selectedIndexPath.row]) { [self] in
             refreshControl.endRefreshing()
         }
     }
 
     private func setupBinding() {
-        viewModel?.$orderStatusResponse
+        viewModel.$orderStatusResponse
             .sink(receiveValue: { [weak self] orderStatusResponse in
                 self?.orderCollectionView.reloadData()
                 if let count = orderStatusResponse?.data?.count {
@@ -72,7 +72,7 @@ class MyOrderViewController: UIViewController {
                     }
                 }
             })
-            .store(in: &viewModel!.cancellables)
+            .store(in: &viewModel.cancellables)
     }
 
     func showMyViewControllerInACustomizedSheet(orderStatusData: OderStatusData) {
@@ -97,7 +97,7 @@ extension MyOrderViewController: UICollectionViewDelegate, UICollectionViewDataS
         if collectionView == topCollectionView {
             return statusArray.count
         } else {
-            guard let index = viewModel?.orderStatusResponse?.data?.count else { return 5 }
+            guard let index = viewModel.orderStatusResponse?.data?.count else { return 5 }
             return index
         }
     }
@@ -114,7 +114,7 @@ extension MyOrderViewController: UICollectionViewDelegate, UICollectionViewDataS
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withType: OrderListCollectionViewCell.self, for: indexPath)
-            cell.setupCell(oderStatusData: viewModel?.orderStatusResponse?.data?[indexPath.row])
+            cell.setupCell(oderStatusData: viewModel.orderStatusResponse?.data?[indexPath.row])
             cell.didTapAction = { statusOrder in
                 let idOrder = statusOrder.id
                 let statusOrderString = statusOrder.status
@@ -128,7 +128,7 @@ extension MyOrderViewController: UICollectionViewDelegate, UICollectionViewDataS
                     } else if statusOrderString == "delivered" {
                         newStatus = "confirmed"
                     }
-                    self.viewModel?.patchOrderStatus(idOrder: idOrder, newStatus: newStatus)
+                    self.viewModel.patchOrderStatus(idOrder: idOrder, newStatus: newStatus)
                 }
             }
             return cell
@@ -177,13 +177,13 @@ extension MyOrderViewController: UICollectionViewDelegate, UICollectionViewDataS
                 currentCell.chooseCell()
                 if indexPath.row < OrderStatus.allStatuses.count {
                     let status = OrderStatus.allStatuses[indexPath.row]
-                    viewModel?.getOrder(orderStatus: status)
+                    viewModel.getOrder(orderStatus: status)
                 }
             }
             selectedIndexPath = indexPath
         } else {
-            let idOrder = viewModel?.orderStatusResponse?.data?[indexPath.row]?.id ?? ""
-            viewModel?.getOrderDetail(idOrder: idOrder)
+            let idOrder = viewModel.orderStatusResponse?.data?[indexPath.row]?.id ?? ""
+            viewModel.getOrderDetail(idOrder: idOrder)
             coordinator?.showOrderDetail()
         }
     }

@@ -67,6 +67,7 @@ class ProfileViewController: UIViewController {
         setupTableViewAppearance()
         avatarImage.cornerRadius = avatarImage.frame.height / 2
     }
+    
 
     private func setupBindings() {
         viewModel.$errorMessage
@@ -112,13 +113,30 @@ class ProfileViewController: UIViewController {
     @IBAction func didTabEditProfile(_: Any) {
         imagePicker.delegate = self
         imagePicker.allowsEditing = false
-        imagePicker.mediaTypes = ["public.image"] // Chỉ cho phép chọn ảnh
+        imagePicker.mediaTypes = ["public.image"]
         imagePicker.title = "Hãy chọn ảnh đại diện"
 
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.present(self.imagePicker, animated: true, completion: nil)
         }
+    }
+    
+    func showMyViewControllerInACustomizedSheet() {
+        let viewControllerToPresent = SheetLogoutViewController()
+        viewControllerToPresent.delegate = self
+        if let sheet = viewControllerToPresent.sheetPresentationController {
+            let seventyPercentDetent = UISheetPresentationController.Detent.custom { context in
+                context.maximumDetentValue * 0.25
+            }
+
+            sheet.detents = [seventyPercentDetent]
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+            sheet.prefersGrabberVisible = true
+        }
+        present(viewControllerToPresent, animated: true, completion: nil)
     }
 }
 
@@ -144,10 +162,10 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         let indexSelected = SettingProfileTable(rawValue: indexPath.row)!
         switch indexSelected {
         case .editProfile:
-            guard let profile = profile else {
-                return
-            }
             if TokenManager.shared.getAccessToken() != nil {
+                guard let profile = profile else {
+                    return
+                }
                 coordinator?.goToEditProfile(profileModel: profile, vc: self)
             } else {
                 showToast(message: "Vui lòng đăng nhập để sử dụng tính năng này", chooseImageToast: .warning)
@@ -167,9 +185,11 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         case .policy:
             print("111")
         case .logout:
-            TokenManager.shared.removeTokens()
-            UserDefaults.standard.set(false, forKey: .rememberMe)
-            coordinator?.logoutUser()
+            if TokenManager.shared.getAccessToken() != nil {
+                showMyViewControllerInACustomizedSheet()
+            } else {
+                coordinator?.logoutUser()
+            }
         }
     }
 }
@@ -216,5 +236,12 @@ extension ProfileViewController: UIImagePickerControllerDelegate & UINavigationC
                 }
             }
         }
+    }
+}
+extension ProfileViewController: SheetLogoutViewControllerDelegate {
+    func didTapLogoutButton() {
+        TokenManager.shared.removeTokens()
+        UserDefaults.standard.set(false, forKey: .rememberMe)
+        coordinator?.logoutUser()
     }
 }

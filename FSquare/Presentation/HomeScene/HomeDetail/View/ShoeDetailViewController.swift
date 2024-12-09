@@ -280,7 +280,11 @@ class ShoeDetailViewController: UIViewController {
         viewModel?.$addBagResponse
             .sink { addBagResponse in
                 if let addBagResponse = addBagResponse {
-                    self.showToast(message: addBagResponse.message, chooseImageToast: .success)
+                    if addBagResponse.status == HTTPStatus.success.message || addBagResponse.status == HTTPStatus.created.message {
+                        self.showToast(message: "Thêm vào giỏ hàng thành công", chooseImageToast: .success)
+                    } else {
+                        self.showToast(message: "Thêm vào giỏ hàng thất bại", chooseImageToast: .error)
+                    }
                 }
             }.store(in: &cancellables)
     }
