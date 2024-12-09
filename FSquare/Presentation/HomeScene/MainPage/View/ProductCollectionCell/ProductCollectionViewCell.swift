@@ -51,7 +51,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
                 favButton.setImage(.notFav, for: .normal)
             }
             hideSkeleton()
-            quantitySoldLabel.text = "\(shoes.sales) sold"
+            quantitySoldLabel.text = "\(shoes.sales) đã bán"
             numberStart.text = "\(shoes.rating)"
             nameProduct.text = shoes.name
             if let urlString = shoes.thumbnail?.url, let url = URL(string: urlString) {

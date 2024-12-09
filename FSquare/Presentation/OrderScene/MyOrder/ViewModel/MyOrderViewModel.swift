@@ -87,9 +87,10 @@ class MyOrderViewModel: ObservableObject {
     func patchOrderStatus(
         idOrder: String,
         newStatus: String,
+        content: String? = nil,
         completion: ((Result<OrderResponse, Error>) -> Void)? = nil
     ) {
-        orderUseCase.patchOrderStatus(idOrder: idOrder, newStatus: newStatus)
+        orderUseCase.patchOrderStatus(idOrder: idOrder, newStatus: newStatus, content: content)
             .receive(on: RunLoop.main)
             .sink { completionResult in
                 switch completionResult {

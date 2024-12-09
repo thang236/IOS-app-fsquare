@@ -137,6 +137,8 @@
 		BF4CE3252CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CE3232CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift */; };
 		BF4CE3262CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4CE3242CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib */; };
 		BF4CE32C2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CE32B2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift */; };
+		BF4DF0192D0737650013CBE9 /* PopUpCanncelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4DF0172D0737650013CBE9 /* PopUpCanncelViewController.swift */; };
+		BF4DF01A2D0737650013CBE9 /* PopUpCanncelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4DF0182D0737650013CBE9 /* PopUpCanncelViewController.xib */; };
 		BF56B6F52CFF4314002B57A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF56B6F42CFF4314002B57A9 /* GoogleService-Info.plist */; };
 		BF56B6FE2CFF7188002B57A9 /* RattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56B6FC2CFF7188002B57A9 /* RattingViewController.swift */; };
 		BF56B6FF2CFF7188002B57A9 /* RattingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF56B6FD2CFF7188002B57A9 /* RattingViewController.xib */; };
@@ -184,6 +186,8 @@
 		BF6573FB2CF388F200BCA12A /* TotalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6573F92CF388F200BCA12A /* TotalCollectionViewCell.swift */; };
 		BF6573FC2CF388F200BCA12A /* TotalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6573FA2CF388F200BCA12A /* TotalCollectionViewCell.xib */; };
 		BF6573FE2CF396AC00BCA12A /* CheckOutHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6573FD2CF396AC00BCA12A /* CheckOutHeaderCollectionReusableView.swift */; };
+		BF675F8A2D074F110061D819 /* PopConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF675F882D074F110061D819 /* PopConfirmViewController.swift */; };
+		BF675F8B2D074F110061D819 /* PopConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF675F892D074F110061D819 /* PopConfirmViewController.xib */; };
 		BF68418F2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF68418D2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.swift */; };
 		BF6841902CE7D2A5008F9FD0 /* LoadingCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF68418E2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.xib */; };
 		BF6841922CE83A9E008F9FD0 /* AddRemoveFavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6841912CE83A9E008F9FD0 /* AddRemoveFavoriteResponse.swift */; };
@@ -408,6 +412,8 @@
 		BF4CE3232CE3CA2900165FB7 /* BannerHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF4CE3242CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerHomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF4CE32B2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderHomeCollectionReusableView.swift; sourceTree = "<group>"; };
+		BF4DF0172D0737650013CBE9 /* PopUpCanncelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpCanncelViewController.swift; sourceTree = "<group>"; };
+		BF4DF0182D0737650013CBE9 /* PopUpCanncelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpCanncelViewController.xib; sourceTree = "<group>"; };
 		BF56B6F42CFF4314002B57A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF56B6FC2CFF7188002B57A9 /* RattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RattingViewController.swift; sourceTree = "<group>"; };
 		BF56B6FD2CFF7188002B57A9 /* RattingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RattingViewController.xib; sourceTree = "<group>"; };
@@ -457,6 +463,8 @@
 		BF6573F92CF388F200BCA12A /* TotalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF6573FA2CF388F200BCA12A /* TotalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF6573FD2CF396AC00BCA12A /* CheckOutHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		BF675F882D074F110061D819 /* PopConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopConfirmViewController.swift; sourceTree = "<group>"; };
+		BF675F892D074F110061D819 /* PopConfirmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopConfirmViewController.xib; sourceTree = "<group>"; };
 		BF68418D2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionReusableView.swift; sourceTree = "<group>"; };
 		BF68418E2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCollectionReusableView.xib; sourceTree = "<group>"; };
 		BF6841912CE83A9E008F9FD0 /* AddRemoveFavoriteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemoveFavoriteResponse.swift; sourceTree = "<group>"; };
@@ -828,6 +836,8 @@
 		BF1E66682CAD2D5A001C48E9 /* OrderScene */ = {
 			isa = PBXGroup;
 			children = (
+				BF675F862D074EEF0061D819 /* PopConfirmOrder */,
+				BF4DF0162D0737490013CBE9 /* PopCanncelOrder */,
 				BF1BFE1D2D00FD5900793B3D /* ReturnPopUp */,
 				BF56B6FB2CFF6F46002B57A9 /* Ratting */,
 				BFF6B8F52CFE050D00445469 /* OrderDetail */,
@@ -1126,6 +1136,15 @@
 				BF4922682D022A5F00C6B59B /* PolicyViewController.xib */,
 			);
 			path = Policy;
+			sourceTree = "<group>";
+		};
+		BF4DF0162D0737490013CBE9 /* PopCanncelOrder */ = {
+			isa = PBXGroup;
+			children = (
+				BF4DF0172D0737650013CBE9 /* PopUpCanncelViewController.swift */,
+				BF4DF0182D0737650013CBE9 /* PopUpCanncelViewController.xib */,
+			);
+			path = PopCanncelOrder;
 			sourceTree = "<group>";
 		};
 		BF56B6FB2CFF6F46002B57A9 /* Ratting */ = {
@@ -1533,6 +1552,15 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BF675F862D074EEF0061D819 /* PopConfirmOrder */ = {
+			isa = PBXGroup;
+			children = (
+				BF675F882D074F110061D819 /* PopConfirmViewController.swift */,
+				BF675F892D074F110061D819 /* PopConfirmViewController.xib */,
+			);
+			path = PopConfirmOrder;
 			sourceTree = "<group>";
 		};
 		BF6841932CED1BEB008F9FD0 /* Favorite */ = {
@@ -2150,6 +2178,7 @@
 				BF5B323A2C92E3E20063CA29 /* LaunchScreen.storyboard in Resources */,
 				BF56B6F52CFF4314002B57A9 /* GoogleService-Info.plist in Resources */,
 				BF45CC722CFB1B5B004B7F63 /* StatusOrderCollectionViewCell.xib in Resources */,
+				BF675F8B2D074F110061D819 /* PopConfirmViewController.xib in Resources */,
 				0925F3DE2CD3601600530A69 /* SizeCollectionViewCell.xib in Resources */,
 				BFA8BAF42CEF16640008CA6E /* CartCollectionViewCell.xib in Resources */,
 				BF18F3A42CB900FE00A975F9 /* BrandCollectionViewCell.xib in Resources */,
@@ -2173,6 +2202,7 @@
 				0925F3D92CD35DE700530A69 /* HeaderShoesDetailCollectionViewCell.xib in Resources */,
 				BF96CBDA2CA56AF500066A1F /* VerifyOTPViewController.xib in Resources */,
 				BF7777232D00A7B900FAA681 /* SearchHomeViewController.xib in Resources */,
+				BF4DF01A2D0737650013CBE9 /* PopUpCanncelViewController.xib in Resources */,
 				BF869EF12CA297A800B59D8B /* LoginMethodSelectionViewController.xib in Resources */,
 				BF56B7122D00502F002B57A9 /* MediaRattingCollectionViewCell.xib in Resources */,
 				BF1E66672CAD248E001C48E9 /* CartViewController.xib in Resources */,
@@ -2325,6 +2355,7 @@
 				BF4244EC2C9D599800F43C8B /* BodyLabel.swift in Sources */,
 				BF1BFE252D010AC800793B3D /* ReviewResponse.swift in Sources */,
 				BFCF72572CA3EC9C00208985 /* RegisterViewController.swift in Sources */,
+				BF4DF0192D0737650013CBE9 /* PopUpCanncelViewController.swift in Sources */,
 				BF47608C2CE0A4FF00207153 /* GetAddressUseCase.swift in Sources */,
 				BF49226D2D0486EE00C6B59B /* PopUpLoginViewController.swift in Sources */,
 				BF600F032CF0D00A0030708E /* BagDeleteResponse.swift in Sources */,
@@ -2378,6 +2409,7 @@
 				BF1BFE3C2D01D57B00793B3D /* NotificationViewController.swift in Sources */,
 				BF25D05B2C9973B100CB7EE8 /* TokenManager.swift in Sources */,
 				BF25D0592C9972EE00CB7EE8 /* APIService.swift in Sources */,
+				BF675F8A2D074F110061D819 /* PopConfirmViewController.swift in Sources */,
 				BF25D06E2C9AC0D100CB7EE8 /* DIContainer.swift in Sources */,
 				BF9F327C2CB66D0900530523 /* UIImageView+Extension.swift in Sources */,
 				BF18F39F2CB8FFFC00A975F9 /* BrandResponse.swift in Sources */,

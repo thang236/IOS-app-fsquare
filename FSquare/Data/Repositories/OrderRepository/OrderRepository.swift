@@ -14,7 +14,7 @@ protocol OrderRepository {
     func postPayment(parameter: [String: Any]) -> AnyPublisher<PostPaymentResponse, Error>
     func getOrderStatus(parameter: [String: Any]) -> AnyPublisher<OrderStatusResponse, Error>
     func getOrderDetail(idOrder: String) -> AnyPublisher<OrderResponse, Error>
-    func patchOrderStatus(idOrder: String, newStatus: String) -> AnyPublisher<OrderResponse, Error>
+    func patchOrderStatus(idOrder: String, newStatus: String, content: String?) -> AnyPublisher<OrderResponse, Error>
     func returnOrder(idOrder: String, reason: String) -> AnyPublisher<OrderResponse, Error>
 }
 
@@ -45,8 +45,16 @@ class OrderRepositoryImpl: OrderRepository {
         apiService.request(endpoint: .orderID(idOrder: idOrder), method: .get, parameters: nil)
     }
 
-    func patchOrderStatus(idOrder: String, newStatus: String) -> AnyPublisher<OrderResponse, Error> {
-        apiService.request(endpoint: .orderID(idOrder: idOrder), method: .patch, parameters: ["newStatus": newStatus])
+    func patchOrderStatus(idOrder: String, newStatus: String, content: String?) -> AnyPublisher<OrderResponse, Error> {
+        if let content = content {
+            apiService.request(endpoint: .orderID(idOrder: idOrder), method: .patch, parameters: [
+                "newStatus": newStatus,
+                "content": content
+            ])
+        } else {
+            apiService.request(endpoint: .orderID(idOrder: idOrder), method: .patch, parameters: ["newStatus": newStatus])
+
+        }
     }
 
     func returnOrder(idOrder: String, reason: String) -> AnyPublisher<OrderResponse, Error> {

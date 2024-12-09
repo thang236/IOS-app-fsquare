@@ -105,4 +105,13 @@ struct StatusTimestamps: Codable {
 
 struct ReturnInfo: Codable {
     let status: String
+    let statusTimestamps: StatusReturnTimestamps?
+}
+
+struct StatusReturnTimestamps: Codable {
+    let pending: String?
+    let initiated: String?
+    let completed: String?
+    let refunded: String?
+    let cancelled: String?
 }

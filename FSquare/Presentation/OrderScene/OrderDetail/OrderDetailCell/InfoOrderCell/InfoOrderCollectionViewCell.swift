@@ -17,19 +17,19 @@ class InfoOrderCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-
+        
         contentView.isSkeletonable = true
         contentView.showAnimatedGradientSkeleton()
     }
-
+    
     private func getShippingAddress(address: ShippingAddress) -> String {
         return "\(address.toName) (\(address.toPhone))"
     }
-
+    
     private func getValueAddress(address: ShippingAddress) -> String {
         return "\(address.toAddress), \(address.toWardName), \(address.toDistrictName), \(address.toProvinceName)"
     }
-
+    
     private func getStatusTitle(orderData: OrderData) {
         switch orderData.status {
         case "pending":
@@ -51,14 +51,34 @@ class InfoOrderCollectionViewCell: UICollectionViewCell {
             statusTitleLabel.text = "Đơn hàng đã bị hủy"
             statusValue.text = "Đã hủy"
         case "returned":
-            statusTitleLabel.text = "Đơn hàng đã được trả lại"
-            statusValue.text = "Đã trả"
+            if let returnInfo = orderData.returnInfo {
+                switch returnInfo.status {
+                case "pending":
+                    statusTitleLabel.text = "Đơn hàng đang được xử lý hoàn trả"
+                    statusValue.text = "Đang xử lý hoàn trả"
+                case "initiated":
+                    statusTitleLabel.text = "Đã chấp nhận - Đang chờ kiểm hàng"
+                    statusValue.text = "Đang xử lý hoàn trả"
+                case "completed":
+                    statusTitleLabel.text = "Đã kiểm hàng chờ hoàn tiền"
+                    statusValue.text = "Đã chấp thuận hoàn trả"
+                case "refunded":
+                    statusTitleLabel.text = "Đã hoàn tiền"
+                    statusValue.text = "Hoàn hàng thành công"
+                case "cancelled":
+                    statusTitleLabel.text = "Từ chối hoàn hàng"
+                    statusValue.text = "Từ chới hoàn hàng"
+                default:
+                    statusTitleLabel.text = "Trạng thái đơn hàng không xác định"
+                    statusValue.text = "Đã có lỗi xảy ra"
+                }
+            }
         default:
             statusTitleLabel.text = "Trạng thái đơn hàng không xác định"
             statusValue.text = "Đã có lỗi xảy ra"
         }
     }
-
+    
     private func getTimeOrder(orderData: OrderData) -> String {
         guard let statusTimestamps = orderData.statusTimestamps else { return "" }
         switch orderData.status {
@@ -75,7 +95,24 @@ class InfoOrderCollectionViewCell: UICollectionViewCell {
         case "cancelled":
             return statusTimestamps.cancelled?.toShortDate() ?? ""
         case "returned":
-            return statusTimestamps.returned?.toShortDate() ?? ""
+            if let returnInfo = orderData.returnInfo {
+                switch returnInfo.status {
+                case "pending":
+                    return returnInfo.statusTimestamps?.pending?.toShortDate() ?? ""
+                case "initiated":
+                    return returnInfo.statusTimestamps?.initiated?.toShortDate() ?? ""
+                case "completed":
+                    return returnInfo.statusTimestamps?.completed?.toShortDate() ?? ""
+                case "refunded":
+                    return returnInfo.statusTimestamps?.refunded?.toShortDate() ?? ""
+                case "cancelled":
+                    return returnInfo.statusTimestamps?.cancelled?.toShortDate() ?? ""
+                default:
+                    return "Đã có lỗi xảy ra"
+                }
+            } else {
+                return "Đã có lỗi xảy ra"
+            }
         default:
             return "Đã có lỗi xảy ra"
         }

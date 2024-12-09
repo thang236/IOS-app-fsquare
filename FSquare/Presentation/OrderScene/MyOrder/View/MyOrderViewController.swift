@@ -13,6 +13,8 @@ class MyOrderViewController: UIViewController {
     var viewModel: MyOrderViewModel
     private var statusArray: [String] = [OrderStatus.pending.title, OrderStatus.processing.title, OrderStatus.shipped.title, OrderStatus.delivered.title, OrderStatus.confirmed.title, OrderStatus.cancelled.title, OrderStatus.returned.title]
     private var selectedIndexPath: IndexPath = [0, 0]
+    private var popUpCancel : PopUpCanncelViewController?
+    private var popUpConfirm : PopConfirmViewController?
 
     @IBOutlet private var iconNil: UIImageView!
     @IBOutlet private var topCollectionView: UICollectionView!
@@ -34,6 +36,8 @@ class MyOrderViewController: UIViewController {
         setupCollectionView()
         setupBinding()
         setupNavigationBar(title: "Đơn hàng")
+        popUpCancel = PopUpCanncelViewController(viewModel: viewModel)
+        popUpConfirm = PopConfirmViewController(viewModel: viewModel)
         
         DispatchQueue.main.async {
             self.topCollectionView.selectItem(at: self.selectedIndexPath, animated: false, scrollPosition: .centeredHorizontally)
@@ -129,20 +133,18 @@ extension MyOrderViewController: UICollectionViewDelegate, UICollectionViewDataS
         } else {
             let cell = collectionView.dequeueReusableCell(withType: OrderListCollectionViewCell.self, for: indexPath)
             cell.setupCell(oderStatusData: viewModel.orderStatusResponse?.data?[indexPath.row])
-            cell.didTapAction = { statusOrder in
+            cell.didTapAction = { [self] statusOrder in
                 let idOrder = statusOrder.id
                 let statusOrderString = statusOrder.status
-                var newStatus = ""
                 if statusOrderString == "confirmed" {
-                    newStatus = "rated"
                     self.showMyViewControllerInACustomizedSheet(orderStatusData: statusOrder)
                 } else {
                     if statusOrderString == "pending" {
-                        newStatus = "cancelled"
+                        popUpCancel?.appear(sender: self, idOrder: idOrder)
                     } else if statusOrderString == "delivered" {
-                        newStatus = "confirmed"
+                        popUpConfirm?.appear(sender: self, idOrder: idOrder)
+//                        self.viewModel.patchOrderStatus(idOrder: idOrder, newStatus: newStatus)
                     }
-                    self.viewModel.patchOrderStatus(idOrder: idOrder, newStatus: newStatus)
                 }
             }
             return cell

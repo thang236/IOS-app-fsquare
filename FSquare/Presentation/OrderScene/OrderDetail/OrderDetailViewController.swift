@@ -34,6 +34,9 @@ class OrderDetailViewController: UIViewController {
     @IBOutlet var firstButtonStack: OutlineButton!
     @IBOutlet var collectionView: UICollectionView!
     private var viewModel: MyOrderViewModel
+    private var popupCancelVC : PopUpCanncelViewController?
+    private var popConfirm : PopConfirmViewController?
+
 
     init(viewModel: MyOrderViewModel) {
         self.viewModel = viewModel
@@ -72,6 +75,9 @@ class OrderDetailViewController: UIViewController {
         setupCollectionView()
         setupBinding()
         setupNav()
+        popupCancelVC = PopUpCanncelViewController(viewModel: viewModel)
+        popupCancelVC?.delegate = self
+        popConfirm = PopConfirmViewController(viewModel: viewModel)
     }
 
     func setupNav() {
@@ -195,16 +201,8 @@ class OrderDetailViewController: UIViewController {
     @IBAction func didTapSingleButton(_: Any) {
         switch viewModel.orderDetailResponse?.data?.status {
         case "pending":
-            viewModel.patchOrderStatus(idOrder: viewModel.orderDetailResponse?.data?.id ?? "", newStatus: "cancelled") { completion in
-                switch completion {
-                case let .success(success):
-                    if success.status == HTTPStatus.success.message {
-                        self.viewModel.getOrderDetail(idOrder: self.viewModel.orderDetailResponse?.data?.id ?? "")
-                        self.showToast(message: success.message, chooseImageToast: .success)
-                    }
-                case let .failure(failure):
-                    self.showToast(message: failure.localizedDescription, chooseImageToast: .error)
-                }
+            if let orderData = viewModel.orderDetailResponse?.data {
+                popupCancelVC?.appear(sender: self, idOrder: orderData.id)
             }
         case "confirmed":
             if let orderData = viewModel.orderDetailResponse?.data {
@@ -224,16 +222,8 @@ class OrderDetailViewController: UIViewController {
     }
 
     @IBAction func didTapRightButton(_: Any) {
-        viewModel.patchOrderStatus(idOrder: viewModel.orderDetailResponse?.data?.id ?? "", newStatus: "delivered") { completion in
-            switch completion {
-            case let .success(success):
-                if success.status == HTTPStatus.success.message {
-                    self.viewModel.getOrderDetail(idOrder: self.viewModel.orderDetailResponse?.data?.id ?? "")
-                    self.showToast(message: "Đơn hàng đã được xác nhận", chooseImageToast: .success)
-                }
-            case let .failure(failure):
-                self.showToast(message: failure.localizedDescription, chooseImageToast: .error)
-            }
+        if let orderData = viewModel.orderDetailResponse?.data {
+            popConfirm?.appear(sender: self, idOrder: orderData.id)
         }
     }
 
@@ -275,5 +265,10 @@ extension OrderDetailViewController: ReturnOrderViewControllerDelegate {
                 self.showToast(message: failure.localizedDescription, chooseImageToast: .error)
             }
         }
+    }
+}
+extension OrderDetailViewController: PopUpCanncelDelegate {
+    func didSuccess() {
+        viewModel.getOrderDetail(idOrder: viewModel.orderDetailResponse?.data?.id ?? "")
     }
 }
