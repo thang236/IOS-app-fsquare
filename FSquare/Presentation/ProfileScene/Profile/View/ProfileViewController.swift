@@ -10,6 +10,7 @@ import Photos
 import UIKit
 
 class ProfileViewController: UIViewController {
+    private var popupVc = PopUpLoginViewController()
     let imagePicker = UIImagePickerController()
     private var profile: ProfileItem? = nil
     var coordinator: ProfileCoordinator?
@@ -33,10 +34,14 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        popupVc.delegate = self
         setupBindings()
-        getProfile()
         setupNav()
         setupTableView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getProfile()
     }
 
     private func setupTableView() {
@@ -81,16 +86,20 @@ class ProfileViewController: UIViewController {
     }
 
     private func getProfile() {
-        viewModel.getProfile { completion in
-            switch completion {
-            case let .success(data):
-                self.profile = data.data
-                guard let profile = self.profile else {
-                    return
+        if TokenManager.shared.getAccessToken() == nil {
+            popupVc.appear(sender: self)
+        } else {
+            viewModel.getProfile { completion in
+                switch completion {
+                case let .success(data):
+                    self.profile = data.data
+                    guard let profile = self.profile else {
+                        return
+                    }
+                    self.setupProfile(profile: profile)
+                case let .failure(failure):
+                    self.showToast(message: failure.localizedDescription, chooseImageToast: .warning)
                 }
-                self.setupProfile(profile: profile)
-            case let .failure(failure):
-                self.showToast(message: failure.localizedDescription, chooseImageToast: .warning)
             }
         }
     }
@@ -244,4 +253,15 @@ extension ProfileViewController: SheetLogoutViewControllerDelegate {
         UserDefaults.standard.set(false, forKey: .rememberMe)
         coordinator?.logoutUser()
     }
+}
+extension ProfileViewController: PopUpLoginViewControllerDelegate {
+    func didTapLoginButton() {
+        coordinator?.logoutUser()
+    }
+    
+    func didTapBackButton() {
+        tabBarController?.selectedIndex = 0
+    }
+    
+    
 }

@@ -31,8 +31,8 @@ class ReviewCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        contentView.isSkeletonable = true
-//        contentView.showAnimatedGradientSkeleton()
+        contentView.isSkeletonable = true
+        showAnimatedGradientSkeleton()
         avartarImage.cornerRadius = 15
         setupCollectionView()
     }
@@ -83,6 +83,7 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 
     func setupCell(reviewData: ReviewData?) {
         if let reviewData = reviewData {
+            hideSkeleton()
             if self.reviewData != reviewData {
                 setupMediaData(reviewData: reviewData)
             } else {

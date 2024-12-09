@@ -11,8 +11,10 @@ import UIKit
 class HomeCoordinator: Coordinator {
     private let navigationController: UINavigationController
     var homeViewModel: HomeViewModel
-
-    init() {
+    private let navigationMain: UINavigationController
+    
+    init(navigationMain: UINavigationController) {
+        self.navigationMain = navigationMain
         homeViewModel = DIContainer.shared.resolveHomeViewModel()
         let homeVC = HomeViewController(viewModel: homeViewModel)
         navigationController = UINavigationController(rootViewController: homeVC)
@@ -28,6 +30,7 @@ class HomeCoordinator: Coordinator {
     func goToShoesDetail(idShoes: String) {
         let shoesDetailViewModel = DIContainer.shared.resolveShoesDetailViewModel()
         let shoesDetailVC = ShoeDetailViewController(shoesID: idShoes, viewModel: shoesDetailViewModel)
+        shoesDetailVC.coordinator = self
         navigationController.pushViewController(shoesDetailVC, animated: true)
     }
 
@@ -48,5 +51,11 @@ class HomeCoordinator: Coordinator {
         let searchVC = SearchHomeViewController(viewModel: homeViewModel)
         searchVC.coordinator = self
         navigationController.pushViewController(searchVC, animated: false)
+    }
+    
+    func goToLogin() {
+        let authCoordinator = AuthCoordinator(navigationController: navigationMain)
+        navigationMain.isNavigationBarHidden = false
+        authCoordinator.goToLoginMethodSelection()
     }
 }

@@ -18,6 +18,8 @@ class MediaGetCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        contentView.isSkeletonable = true
+        showAnimatedGradientSkeleton()
     }
 
     func setupCell(with mediaItem: MediaItemGet) {
@@ -30,11 +32,13 @@ class MediaGetCollectionViewCell: UICollectionViewCell {
     }
 
     private func showImage(from url: URL) {
+        hideSkeleton()
         mediaImageView.loadImageWithShimmer(url: url)
         mediaImageView.contentMode = .scaleAspectFill
     }
 
     private func showVideo(from url: URL) {
+        hideSkeleton()
         player = AVPlayer(url: url)
         playerLayer = AVPlayerLayer(player: player)
         playerLayer?.frame = mediaContainerView.bounds

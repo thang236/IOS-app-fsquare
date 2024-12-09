@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpLoginViewController" customModule="FSquare" customModuleProvider="target">
             <connections>
+                <outlet property="LoginButton" destination="IB6-aL-qFJ" id="LhY-cC-H9z"/>
+                <outlet property="backButton" destination="kKo-C2-F2H" id="6Gh-BA-WR8"/>
+                <outlet property="backGroundView" destination="PG2-2M-ANm" id="bsm-vV-EB0"/>
+                <outlet property="contentView" destination="B5G-k9-Z3Z" id="2gB-BR-W8W"/>
                 <outlet property="view" destination="Drg-fk-AAp" id="iPV-3J-s9E"/>
             </connections>
         </placeholder>
@@ -44,14 +48,20 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IB6-aL-qFJ" customClass="FullButton" customModule="FSquare" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="303.33333333333337" width="329" height="34.333333333333314"/>
+                                    <rect key="frame" x="16" y="284" width="329" height="44"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Đăng nhập ngay" titleAlignment="center"/>
+                                    <connections>
+                                        <action selector="didTapLoginButton:" destination="-1" eventType="touchUpInside" id="qit-5I-oh7"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKo-C2-F2H" customClass="LightButton" customModule="FSquare" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="345.66666666666663" width="329" height="34.333333333333314"/>
+                                    <rect key="frame" x="16" y="336" width="329" height="44"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Quay lại" titleAlignment="center"/>
+                                    <connections>
+                                        <action selector="didTapBackButton:" destination="-1" eventType="touchUpInside" id="rVc-f2-qs3"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -95,13 +105,13 @@
     </objects>
     <designables>
         <designable name="IB6-aL-qFJ">
-            <size key="intrinsicContentSize" width="148.33333333333334" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="329" height="44"/>
         </designable>
         <designable name="PiS-QX-k18">
             <size key="intrinsicContentSize" width="415.66666666666669" height="19.333333333333332"/>
         </designable>
         <designable name="kKo-C2-F2H">
-            <size key="intrinsicContentSize" width="84.666666666666671" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="329" height="44"/>
         </designable>
     </designables>
     <resources>

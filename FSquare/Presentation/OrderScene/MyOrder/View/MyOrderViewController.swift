@@ -17,6 +17,7 @@ class MyOrderViewController: UIViewController {
     @IBOutlet private var iconNil: UIImageView!
     @IBOutlet private var topCollectionView: UICollectionView!
     @IBOutlet private var orderCollectionView: UICollectionView!
+    
     init(viewModel: MyOrderViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -29,16 +30,29 @@ class MyOrderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getOrder(orderStatus: .pending)
+        checkGust()
         setupCollectionView()
         setupBinding()
         setupNavigationBar(title: "Đơn hàng")
+        
         DispatchQueue.main.async {
             self.topCollectionView.selectItem(at: self.selectedIndexPath, animated: false, scrollPosition: .centeredHorizontally)
 
             if let cell = self.topCollectionView.cellForItem(at: self.selectedIndexPath) as? StatusOrderCollectionViewCell {
                 cell.chooseCell()
             }
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        checkGust()
+    }
+    private func checkGust() {
+        if TokenManager.shared.getAccessToken() == nil {
+            let popUp = PopUpLoginViewController()
+            popUp.delegate = self
+            popUp.appear(sender: self)
+        } else {
+            viewModel.getOrder(orderStatus: OrderStatus.allStatuses[selectedIndexPath.row])
         }
     }
 
@@ -186,5 +200,15 @@ extension MyOrderViewController: UICollectionViewDelegate, UICollectionViewDataS
             viewModel.getOrderDetail(idOrder: idOrder)
             coordinator?.showOrderDetail()
         }
+    }
+}
+
+extension MyOrderViewController: PopUpLoginViewControllerDelegate {
+    func didTapLoginButton() {
+        coordinator?.goToLogin()
+    }
+    
+    func didTapBackButton() {
+        tabBarController?.selectedIndex = 0
     }
 }

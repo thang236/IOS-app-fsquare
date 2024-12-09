@@ -11,7 +11,10 @@ import UIKit
 class CartCoordinator: Coordinator {
     private let navigationController: UINavigationController
     private var cartViewModel: CartViewModel
-    init() {
+    private let navigationMain: UINavigationController
+    
+    init(navigationMain: UINavigationController) {
+        self.navigationMain = navigationMain
         cartViewModel = DIContainer.shared.resolveCartViewModel()
         let cartVC = CartViewController(viewModel: cartViewModel)
         navigationController = UINavigationController(rootViewController: cartVC)
@@ -39,5 +42,11 @@ class CartCoordinator: Coordinator {
         let baoKimVC = BaoKimViewController(url: url)
         baoKimVC.coordinator = self
         navigationController.pushViewController(baoKimVC, animated: false)
+    }
+    
+    func goToLogin() {
+        let authCoordinator = AuthCoordinator(navigationController: navigationMain)
+        navigationMain.isNavigationBarHidden = false
+        authCoordinator.goToLoginMethodSelection()
     }
 }

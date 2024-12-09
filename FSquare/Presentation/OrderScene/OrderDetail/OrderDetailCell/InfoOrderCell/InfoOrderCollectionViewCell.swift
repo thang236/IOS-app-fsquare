@@ -60,21 +60,22 @@ class InfoOrderCollectionViewCell: UICollectionViewCell {
     }
 
     private func getTimeOrder(orderData: OrderData) -> String {
+        guard let statusTimestamps = orderData.statusTimestamps else { return "" }
         switch orderData.status {
         case "pending":
-            return orderData.statusTimestamps?.pending ?? ""
+            return statusTimestamps.pending?.toShortDate() ?? ""
         case "processing":
-            return orderData.statusTimestamps?.processing ?? ""
+            return statusTimestamps.processing?.toShortDate() ?? ""
         case "shipped":
-            return orderData.statusTimestamps?.shipped ?? ""
+            return statusTimestamps.shipped?.toShortDate() ?? ""
         case "delivered":
-            return orderData.statusTimestamps?.delivered ?? ""
+            return statusTimestamps.delivered?.toShortDate() ?? ""
         case "confirmed":
-            return orderData.statusTimestamps?.confirmed ?? ""
+            return statusTimestamps.confirmed?.toShortDate() ?? ""
         case "cancelled":
-            return orderData.statusTimestamps?.cancelled ?? ""
+            return statusTimestamps.cancelled?.toShortDate() ?? ""
         case "returned":
-            return orderData.statusTimestamps?.returned ?? ""
+            return statusTimestamps.returned?.toShortDate() ?? ""
         default:
             return "Đã có lỗi xảy ra"
         }

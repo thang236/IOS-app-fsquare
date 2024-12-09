@@ -56,7 +56,8 @@ class ShoeDetailViewController: UIViewController {
     @IBOutlet var stepperView: StepperView!
 
     // MARK: - Properties
-
+    var coordinator: HomeCoordinator?
+    private var popupVC = PopUpLoginViewController()
     private var selectedSizeIndexPath: IndexPath?
     private var selectedColorIndexPath: IndexPath?
     private var viewModel: ShoesDetailViewModel?
@@ -133,6 +134,7 @@ class ShoeDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        popupVC.delegate = self
         stepperView.delegate = self
         stepperView.setMaxValue(maxValue: 1)
         setupCollectionView()
@@ -451,7 +453,7 @@ class ShoeDetailViewController: UIViewController {
                 viewModel?.addToBag(quantity: quantity)
             }
         } else {
-            showToast(message: "Bản phải đăng nhập để thêm vào giỏ hàng", chooseImageToast: .warning)
+            popupVC.appear(sender: self)
         }
     }
 }
@@ -505,4 +507,15 @@ extension ShoeDetailViewController: StepperViewDelegate {
     func showToast(message: String) {
         showToast(message: message, chooseImageToast: .warning)
     }
+}
+extension ShoeDetailViewController: PopUpLoginViewControllerDelegate {
+    func didTapLoginButton() {
+        coordinator?.goToLogin()
+    }
+    
+    func didTapBackButton() {
+        
+    }
+    
+    
 }

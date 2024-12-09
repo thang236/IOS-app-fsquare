@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpPaymentViewController" customModule="Shang_Buyer" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpPaymentViewController" customModule="FSquare" customModuleProvider="target">
             <connections>
                 <outlet property="backView" destination="LQo-YP-Tln" id="dmS-Ql-C8p"/>
                 <outlet property="contentView" destination="oRO-Ra-yYe" id="nM3-Oo-Xq6"/>
@@ -36,19 +36,19 @@
                                         <constraint firstAttribute="width" secondItem="ZV5-tr-OZo" secondAttribute="height" multiplier="1:1" id="vFl-g2-JOT"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmb-iQ-FwA" customClass="HeadingLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmb-iQ-FwA" customClass="HeadingLabel" customModule="FSquare" customModuleProvider="target">
                                     <rect key="frame" x="16" y="210" width="329" height="28.666666666666657"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c87-3k-LJb" customClass="BodyLabel" customModule="Shang_Buyer" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c87-3k-LJb" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
                                     <rect key="frame" x="16" y="246.66666666666669" width="329" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" name="neutralLightMedium"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rd6-oa-rl8" customClass="FullButton" customModule="Shang_Buyer" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rd6-oa-rl8" customClass="FullButton" customModule="FSquare" customModuleProvider="target">
                                     <rect key="frame" x="16" y="284" width="329" height="44"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Xem đơn hàng đã đặt" titleAlignment="center"/>
@@ -56,7 +56,7 @@
                                         <action selector="didTapViewOrder:" destination="-1" eventType="touchUpInside" id="Seu-Gp-dhq"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGG-m1-7up" customClass="LightButton" customModule="Shang_Buyer" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGG-m1-7up" customClass="LightButton" customModule="FSquare" customModuleProvider="target">
                                     <rect key="frame" x="16" y="336" width="329" height="44"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Quay lại trang chủ" titleAlignment="center"/>

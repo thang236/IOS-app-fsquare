@@ -12,6 +12,8 @@ class CartViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var iconNil: UIImageView!
     @IBOutlet var checkOutButton: FullButton!
+    
+    var popUp = PopUpLoginViewController()
     var coordinator: CartCoordinator?
     var viewModel: CartViewModel
     init(viewModel: CartViewModel) {
@@ -29,12 +31,21 @@ class CartViewController: UIViewController {
         setupCollectionView()
         setupBinding()
         setupNav()
+        self.popUp.delegate = self
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.getBag()
+        DispatchQueue.main.async {
+            if TokenManager.shared.getAccessToken() != nil {
+                self.viewModel.getBag()
+            } else {
+                self.popUp.appear(sender: self)
+            }
+        }
     }
+    
 
     private func setupNav() {
         let removeAllButton = UIBarButtonItem(image: UIImage.listRemove, style: .plain, target: self, action: #selector(removeAll))
@@ -169,4 +180,17 @@ extension CartViewController: CartCollectionViewCellDelegate {
             self.viewModel.removeBag(idBag: bag.id)
         })
     }
+}
+
+
+extension CartViewController: PopUpLoginViewControllerDelegate {
+    func didTapLoginButton() {
+        coordinator?.goToLogin()
+    }
+    
+    func didTapBackButton() {
+        tabBarController?.selectedIndex = 0
+    }
+    
+    
 }

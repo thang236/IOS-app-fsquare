@@ -16,7 +16,7 @@ extension String {
 
         if let date = isoFormatter.date(from: self) {
             let shortDateFormatter = DateFormatter()
-            shortDateFormatter.dateFormat = "yyyy-MM-dd"
+            shortDateFormatter.dateFormat = "dd-MM-yyyy"
             return shortDateFormatter.string(from: date)
         }
 

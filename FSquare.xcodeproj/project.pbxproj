@@ -138,8 +138,6 @@
 		BF4CE3262CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4CE3242CE3CA2900165FB7 /* BannerHomeCollectionViewCell.xib */; };
 		BF4CE32C2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CE32B2CE799CB00165FB7 /* HeaderHomeCollectionReusableView.swift */; };
 		BF56B6F52CFF4314002B57A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF56B6F42CFF4314002B57A9 /* GoogleService-Info.plist */; };
-		BF56B6F82CFF44D2002B57A9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BF56B6F72CFF44D2002B57A9 /* FirebaseAnalytics */; };
-		BF56B6FA2CFF44D2002B57A9 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BF56B6F92CFF44D2002B57A9 /* FirebaseMessaging */; };
 		BF56B6FE2CFF7188002B57A9 /* RattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56B6FC2CFF7188002B57A9 /* RattingViewController.swift */; };
 		BF56B6FF2CFF7188002B57A9 /* RattingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF56B6FD2CFF7188002B57A9 /* RattingViewController.xib */; };
 		BF56B7032CFF9E18002B57A9 /* StarRatingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56B7002CFF9E18002B57A9 /* StarRatingStackView.swift */; };
@@ -562,8 +560,6 @@
 			files = (
 				BF25D02C2C971ABE00CB7EE8 /* ProgressHUD in Frameworks */,
 				BF25D0272C971A7700CB7EE8 /* Alamofire in Frameworks */,
-				BF56B6FA2CFF44D2002B57A9 /* FirebaseMessaging in Frameworks */,
-				BF56B6F82CFF44D2002B57A9 /* FirebaseAnalytics in Frameworks */,
 				BF25D0212C971A5B00CB7EE8 /* Kingfisher in Frameworks */,
 				BF25D0242C971A6600CB7EE8 /* IQKeyboardManagerSwift in Frameworks */,
 				BF6B5DDB2CBC08CB00AF4372 /* SkeletonView in Frameworks */,
@@ -2086,8 +2082,6 @@
 				BF25D0262C971A7700CB7EE8 /* Alamofire */,
 				BF25D02B2C971ABE00CB7EE8 /* ProgressHUD */,
 				BF6B5DDA2CBC08CB00AF4372 /* SkeletonView */,
-				BF56B6F72CFF44D2002B57A9 /* FirebaseAnalytics */,
-				BF56B6F92CFF44D2002B57A9 /* FirebaseMessaging */,
 			);
 			productName = Shang_Buyer;
 			productReference = BF5B322A2C92E3E00063CA29 /* FSquare.app */;
@@ -2124,7 +2118,6 @@
 				BF25D0252C971A7700CB7EE8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				BF25D02A2C971ABE00CB7EE8 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 				BF6B5DD92CBC08CB00AF4372 /* XCRemoteSwiftPackageReference "SkeletonView" */,
-				BF56B6F62CFF44D2002B57A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = BF5B322B2C92E3E00063CA29 /* Products */;
 			projectDirPath = "";
@@ -2667,14 +2660,6 @@
 				minimumVersion = 14.1.3;
 			};
 		};
-		BF56B6F62CFF44D2002B57A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		BF6B5DD92CBC08CB00AF4372 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
@@ -2705,16 +2690,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF25D02A2C971ABE00CB7EE8 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
 			productName = ProgressHUD;
-		};
-		BF56B6F72CFF44D2002B57A9 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BF56B6F62CFF44D2002B57A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		BF56B6F92CFF44D2002B57A9 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BF56B6F62CFF44D2002B57A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
 		};
 		BF6B5DDA2CBC08CB00AF4372 /* SkeletonView */ = {
 			isa = XCSwiftPackageProductDependency;

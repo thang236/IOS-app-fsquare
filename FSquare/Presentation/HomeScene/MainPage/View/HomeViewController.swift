@@ -39,6 +39,7 @@ class HomeViewController: UIViewController {
     // MARK: - @IBOutlet
 
     @IBOutlet var collectionView: UICollectionView!
+    private var popUp = PopUpLoginViewController()
 
     // MARK: - Properties
 
@@ -121,6 +122,7 @@ class HomeViewController: UIViewController {
         setupCollectionView()
         setupNavigationBar()
         setupBinding()
+        popUp.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -382,7 +384,7 @@ class HomeViewController: UIViewController {
 
     @objc func didTapFavorite() {
         if TokenManager.shared.getAccessToken() == nil {
-            showToast(message: "Please login to view favorite", chooseImageToast: .warning)
+            popUp.appear(sender: self)
         } else {
             coordinator?.goToFavorite()
         }
@@ -482,4 +484,15 @@ extension HomeViewController: HeaderHomeCollectionReusableViewDelegate {
             break
         }
     }
+}
+
+extension HomeViewController: PopUpLoginViewControllerDelegate {
+    func didTapBackButton() {
+        
+    }
+    
+    func didTapLoginButton() {
+        coordinator?.goToLogin()
+    }
+
 }

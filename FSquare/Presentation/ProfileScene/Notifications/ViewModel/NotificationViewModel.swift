@@ -12,6 +12,7 @@ class NotificationViewModel: ObservableObject {
     private let useCase: NotificationUseCase
 
     @Published var notificationResponse: NotificationsResponse? = nil
+    @Published var notificationData: [NotificationData] = []
     @Published var errorMessage: String? = nil
 
     var cancellables = Set<AnyCancellable>()
@@ -37,6 +38,7 @@ class NotificationViewModel: ObservableObject {
                 }
             }, receiveValue: { response in
                 self.notificationResponse = response
+                self.notificationData = response.data
             })
             .store(in: &cancellables)
     }

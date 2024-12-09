@@ -31,12 +31,13 @@ class TabViewController: UITabBarController {
         let profileTabItem = UITabBarItem(title: "Hồ sơ", image: UIImage.userOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.userFill)
 
         // Tạo view controllers cho từng tab và bọc trong UINavigationController
-        let homeCoordinator = HomeCoordinator()
+        let homeCoordinator = HomeCoordinator(navigationMain: coordinator.getNavigationController())
+        let cartCoordinator = CartCoordinator(navigationMain: coordinator.getNavigationController())
         let homeVC = homeCoordinator.getNavigationController()
         let profileCoordinator = ProfileCoordinator(navigationMain: coordinator.getNavigationController())
         let profileVC = profileCoordinator.getNavigationController()
-        let cartVC = CartCoordinator().getNavigationController()
-        let orderCoordinator = OrderCoordinator()
+        let cartVC = cartCoordinator.getNavigationController()
+        let orderCoordinator = OrderCoordinator(navigationMain: coordinator.getNavigationController())
         let orderVC = orderCoordinator.getNavigationController()
 //        let walletVC = UINavigationController(rootViewController: MyEWalletViewController())
 
