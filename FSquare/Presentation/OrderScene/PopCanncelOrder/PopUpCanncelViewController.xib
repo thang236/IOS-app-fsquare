@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpCanncelViewController" customModule="FSquare" customModuleProvider="target">
+            <connections>
+                <outlet property="backGroundView" destination="WnW-zS-5rL" id="jTU-WQ-TpG"/>
+                <outlet property="contentField" destination="dxs-G5-gr2" id="xf8-k8-k4Z"/>
+                <outlet property="contentView" destination="mBn-Xj-rjj" id="FSA-FE-8DJ"/>
+                <outlet property="optionButton1" destination="vKH-e1-K8J" id="Xht-RD-Aq8"/>
+                <outlet property="optionButton2" destination="pnH-E1-atx" id="gME-9t-chK"/>
+                <outlet property="optionButton3" destination="H6R-zF-RAl" id="fYV-cN-6fe"/>
+                <outlet property="optionOther" destination="sDM-mM-HjT" id="RoB-Na-FGS"/>
+                <outlet property="stackViewOption" destination="TRW-Lo-7v9" id="aB7-Yr-fQ8"/>
+                <outlet property="view" destination="KYT-hX-lzy" id="lTX-Rh-BrT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="KYT-hX-lzy">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WnW-zS-5rL" userLabel="backView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBn-Xj-rjj">
+                            <rect key="frame" x="16" y="211" width="361" height="430"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Huỷ dặt hàng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDM-9f-kYC" customClass="HeadingLabel" customModule="FSquare" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="20" width="329" height="21.666666666666671"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fsquare rất mong được sự góp ý của khách hàng để dịch vụ được tốt hơn" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hK-6w-UZC" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="71.666666666666686" width="329" height="40.666666666666657"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.15686274510000001" green="0.17254901959999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TRW-Lo-7v9">
+                                    <rect key="frame" x="16" y="120.00000000000001" width="329" height="234.33333333333337"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKH-e1-K8J">
+                                            <rect key="frame" x="0.0" y="0.0" width="329" height="44"/>
+                                            <color key="tintColor" red="0.15686274509803921" green="0.17254901960784313" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="Toggle/radioSelected" title="Đổi ý, không mua nữa" imagePadding="5"/>
+                                            <connections>
+                                                <action selector="didtapOption1:" destination="-1" eventType="touchUpInside" id="O2F-re-z2Z"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnH-E1-atx">
+                                            <rect key="frame" x="0.0" y="44" width="329" height="44"/>
+                                            <color key="tintColor" red="0.15686274509803921" green="0.17254901960784313" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="Toggle/radio" title="Tìm được chỗ khác rẻ hơn" imagePadding="5"/>
+                                            <connections>
+                                                <action selector="didTapOption2:" destination="-1" eventType="touchUpInside" id="gkb-24-ljo"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6R-zF-RAl">
+                                            <rect key="frame" x="0.0" y="88" width="329" height="54.333333333333343"/>
+                                            <color key="tintColor" red="0.15686274509803921" green="0.17254901960784313" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="Toggle/radio" title="Muốn thay đổi thông tin đặt hàng (số lượng, màu sắc, kích thước, ...)" imagePadding="5"/>
+                                            <connections>
+                                                <action selector="didTapOption3:" destination="-1" eventType="touchUpInside" id="ryS-Y5-cMB"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDM-mM-HjT">
+                                            <rect key="frame" x="0.0" y="142.33333333333331" width="329" height="44"/>
+                                            <color key="tintColor" red="0.15686274509803921" green="0.17254901960784313" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="Toggle/radio" title="Lý do khác" imagePadding="5"/>
+                                            <connections>
+                                                <action selector="didTapOtherButton:" destination="-1" eventType="touchUpInside" id="RdF-xL-lUf"/>
+                                            </connections>
+                                        </button>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập lý do" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dxs-G5-gr2" customClass="NormalField" customModule="FSquare" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="186.33333333333337" width="329" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mbW-14-HqL">
+                                    <rect key="frame" x="16" y="366" width="329" height="44"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Oc-Yk-fFS" customClass="FullButton" customModule="FSquare" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="156.66666666666666" height="44"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Trở lại" titleAlignment="center"/>
+                                            <connections>
+                                                <action selector="didTapCanncel:" destination="-1" eventType="touchUpInside" id="qC8-X3-1nY"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugB-NF-dpT" customClass="OutlineButton" customModule="FSquare" customModuleProvider="target">
+                                            <rect key="frame" x="172.66666666666663" y="0.0" width="156.33333333333337" height="44"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Xác nhận"/>
+                                            <connections>
+                                                <action selector="didTapSubmit:" destination="-1" eventType="touchUpInside" id="oIV-Dw-dCZ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="mbW-14-HqL" secondAttribute="bottom" constant="20" id="0bs-zp-Fgy"/>
+                                <constraint firstItem="kDM-9f-kYC" firstAttribute="top" secondItem="mBn-Xj-rjj" secondAttribute="top" constant="20" id="1pa-yB-a5s"/>
+                                <constraint firstItem="kDM-9f-kYC" firstAttribute="leading" secondItem="mBn-Xj-rjj" secondAttribute="leading" constant="16" id="8EK-mh-hfw"/>
+                                <constraint firstItem="mbW-14-HqL" firstAttribute="leading" secondItem="mBn-Xj-rjj" secondAttribute="leading" constant="16" id="8Y4-kb-bFj"/>
+                                <constraint firstAttribute="height" constant="430" id="9x5-bb-Eop"/>
+                                <constraint firstItem="TRW-Lo-7v9" firstAttribute="top" secondItem="7hK-6w-UZC" secondAttribute="bottom" constant="7.6666666666666572" id="EmY-6m-lLN"/>
+                                <constraint firstItem="TRW-Lo-7v9" firstAttribute="leading" secondItem="mBn-Xj-rjj" secondAttribute="leading" constant="16" id="GPw-CQ-fii"/>
+                                <constraint firstAttribute="trailing" secondItem="mbW-14-HqL" secondAttribute="trailing" constant="16" id="QBh-jC-H5a"/>
+                                <constraint firstItem="7hK-6w-UZC" firstAttribute="top" secondItem="kDM-9f-kYC" secondAttribute="bottom" constant="30" id="SC8-TY-ysg"/>
+                                <constraint firstAttribute="trailing" secondItem="TRW-Lo-7v9" secondAttribute="trailing" constant="16" id="VQW-if-JpK"/>
+                                <constraint firstItem="mbW-14-HqL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TRW-Lo-7v9" secondAttribute="bottom" constant="8" symbolic="YES" id="bpW-Y3-9KP"/>
+                                <constraint firstAttribute="trailing" secondItem="kDM-9f-kYC" secondAttribute="trailing" constant="16" id="dw6-tV-5lo"/>
+                                <constraint firstItem="7hK-6w-UZC" firstAttribute="leading" secondItem="mBn-Xj-rjj" secondAttribute="leading" constant="16" id="f1a-ta-rgz"/>
+                                <constraint firstAttribute="trailing" secondItem="7hK-6w-UZC" secondAttribute="trailing" constant="16" id="hWS-Gy-EIY"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <constraints>
+                        <constraint firstItem="mBn-Xj-rjj" firstAttribute="centerY" secondItem="WnW-zS-5rL" secondAttribute="centerY" id="JNh-8N-pQD"/>
+                        <constraint firstItem="mBn-Xj-rjj" firstAttribute="leading" secondItem="WnW-zS-5rL" secondAttribute="leading" constant="16" id="WYM-F9-lRw"/>
+                        <constraint firstAttribute="trailing" secondItem="mBn-Xj-rjj" secondAttribute="trailing" constant="16" id="ra9-rh-dqa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Pv5-zk-SGd"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="WnW-zS-5rL" firstAttribute="leading" secondItem="KYT-hX-lzy" secondAttribute="leading" id="JG6-Oi-KnR"/>
+                <constraint firstItem="WnW-zS-5rL" firstAttribute="top" secondItem="KYT-hX-lzy" secondAttribute="top" id="a9t-FM-fqk"/>
+                <constraint firstAttribute="trailing" secondItem="WnW-zS-5rL" secondAttribute="trailing" id="jFH-yp-qlQ"/>
+                <constraint firstAttribute="bottom" secondItem="WnW-zS-5rL" secondAttribute="bottom" id="pCP-kS-nfB"/>
+            </constraints>
+            <point key="canvasLocation" x="14.503816793893129" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="2Oc-Yk-fFS">
+            <size key="intrinsicContentSize" width="156.66666666666666" height="44"/>
+        </designable>
+        <designable name="7hK-6w-UZC">
+            <size key="intrinsicContentSize" width="556.33333333333337" height="20.333333333333332"/>
+        </designable>
+        <designable name="dxs-G5-gr2">
+            <size key="intrinsicContentSize" width="329" height="48"/>
+        </designable>
+        <designable name="ugB-NF-dpT">
+            <size key="intrinsicContentSize" width="156.33333333333337" height="44"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Toggle/radio" width="30" height="30"/>
+        <image name="Toggle/radioSelected" width="30" height="30"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

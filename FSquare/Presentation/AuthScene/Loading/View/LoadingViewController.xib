@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-VariableFont_opsz,wght.ttf">
+            <string>Inter-Regular_ExtraBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingViewController" customModule="FSquare" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage/loangdingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="X0S-67-1uu">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chào mừng đến" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXm-NN-MLi" customClass="HeadingLabel" customModule="FSquare" customModuleProvider="target">
+                    <rect key="frame" x="20" y="633" width="353" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="customFontSize">
+                            <real key="value" value="36"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="customTextColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bước đi phong cách, dẫn đầu xu hướng." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m5-uC-lFS" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
+                    <rect key="frame" x="20" y="801" width="353" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="customTextColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FSquare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGa-1u-HsA">
+                    <rect key="frame" x="20" y="684" width="320.33333333333331" height="97"/>
+                    <fontDescription key="fontDescription" name="Inter-Regular_ExtraBold" family="Inter" pointSize="80"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="X0S-67-1uu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6SZ-bI-ylr"/>
+                <constraint firstAttribute="trailing" secondItem="X0S-67-1uu" secondAttribute="trailing" id="9p9-qP-LLD"/>
+                <constraint firstItem="dXm-NN-MLi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="EOu-V8-KNt"/>
+                <constraint firstItem="X0S-67-1uu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Eae-JP-xU1"/>
+                <constraint firstItem="dXm-NN-MLi" firstAttribute="leading" secondItem="yGa-1u-HsA" secondAttribute="leading" id="FUS-fh-FaA"/>
+                <constraint firstItem="yGa-1u-HsA" firstAttribute="top" secondItem="dXm-NN-MLi" secondAttribute="bottom" constant="8" symbolic="YES" id="L5b-6Q-Slh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5m5-uC-lFS" secondAttribute="trailing" constant="20" id="MFt-sh-3XU"/>
+                <constraint firstItem="yGa-1u-HsA" firstAttribute="leading" secondItem="5m5-uC-lFS" secondAttribute="leading" id="Ruh-AQ-3Q3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5m5-uC-lFS" secondAttribute="bottom" id="S1r-37-Q4I"/>
+                <constraint firstItem="5m5-uC-lFS" firstAttribute="top" secondItem="yGa-1u-HsA" secondAttribute="bottom" constant="20" id="btq-cx-X5j"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dXm-NN-MLi" secondAttribute="trailing" constant="20" id="ntG-1I-Wie"/>
+                <constraint firstAttribute="bottom" secondItem="X0S-67-1uu" secondAttribute="bottom" id="or2-WS-drF"/>
+            </constraints>
+            <point key="canvasLocation" x="96.946564885496173" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="5m5-uC-lFS">
+            <size key="intrinsicContentSize" width="256" height="17"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="BackgroundImage/loangdingBackground" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

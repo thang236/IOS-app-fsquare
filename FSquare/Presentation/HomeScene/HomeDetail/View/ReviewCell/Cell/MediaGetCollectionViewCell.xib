@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MediaGetCollectionViewCell" customModule="FSquare" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="211" height="183"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="211" height="183"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pkr-xR-r17">
+                        <rect key="frame" x="0.0" y="0.0" width="211" height="183"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D66-bu-zGK">
+                                <rect key="frame" x="0.0" y="2" width="211" height="179"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="PrimaryDark"/>
+                                <imageReference key="image" image="play.fill" catalog="system" symbolScale="default"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="backgroundDark"/>
+                        <color key="tintColor" name="PrimaryDark"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="D66-bu-zGK" secondAttribute="bottom" id="8Yb-7l-d1s"/>
+                            <constraint firstItem="D66-bu-zGK" firstAttribute="leading" secondItem="Pkr-xR-r17" secondAttribute="leading" id="CZL-hl-lep"/>
+                            <constraint firstItem="D66-bu-zGK" firstAttribute="top" secondItem="Pkr-xR-r17" secondAttribute="top" id="fAJ-yc-Vma"/>
+                            <constraint firstAttribute="trailing" secondItem="D66-bu-zGK" secondAttribute="trailing" id="gfa-jJ-mJ7"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Pkr-xR-r17" secondAttribute="trailing" id="6Wn-EQ-JoU"/>
+                <constraint firstAttribute="bottom" secondItem="Pkr-xR-r17" secondAttribute="bottom" id="9tt-h9-EDH"/>
+                <constraint firstItem="Pkr-xR-r17" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QHS-Zp-sz6"/>
+                <constraint firstItem="Pkr-xR-r17" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wSt-as-Ggi"/>
+            </constraints>
+            <size key="customSize" width="211" height="183"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="mediaContainerView" destination="Pkr-xR-r17" id="bdz-UK-WEo"/>
+                <outlet property="mediaImageView" destination="D66-bu-zGK" id="4sN-gG-L92"/>
+            </connections>
+            <point key="canvasLocation" x="145.80152671755724" y="35.563380281690144"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <namedColor name="PrimaryDark">
+            <color red="1" green="0.50588235294117645" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundDark">
+            <color red="0.93725490196078431" green="0.94117647058823528" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
