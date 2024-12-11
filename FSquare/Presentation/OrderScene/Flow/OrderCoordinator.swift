@@ -31,7 +31,7 @@ class OrderCoordinator: Coordinator {
         let orderDetailVC = OrderDetailViewController(viewModel: myOrderViewModel)
         navigationController.pushViewController(orderDetailVC, animated: true)
     }
-    
+
     func goToLogin() {
         let authCoordinator = AuthCoordinator(navigationController: navigationMain)
         navigationMain.isNavigationBarHidden = false

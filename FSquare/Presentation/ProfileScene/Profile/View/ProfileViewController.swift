@@ -39,6 +39,7 @@ class ProfileViewController: UIViewController {
         setupNav()
         setupTableView()
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getProfile()
@@ -72,7 +73,6 @@ class ProfileViewController: UIViewController {
         setupTableViewAppearance()
         avatarImage.cornerRadius = avatarImage.frame.height / 2
     }
-    
 
     private func setupBindings() {
         viewModel.$errorMessage
@@ -130,7 +130,7 @@ class ProfileViewController: UIViewController {
             self.present(self.imagePicker, animated: true, completion: nil)
         }
     }
-    
+
     func showMyViewControllerInACustomizedSheet() {
         let viewControllerToPresent = SheetLogoutViewController()
         viewControllerToPresent.delegate = self
@@ -247,6 +247,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate & UINavigationC
         }
     }
 }
+
 extension ProfileViewController: SheetLogoutViewControllerDelegate {
     func didTapLogoutButton() {
         TokenManager.shared.removeTokens()
@@ -254,14 +255,13 @@ extension ProfileViewController: SheetLogoutViewControllerDelegate {
         coordinator?.logoutUser()
     }
 }
+
 extension ProfileViewController: PopUpLoginViewControllerDelegate {
     func didTapLoginButton() {
         coordinator?.logoutUser()
     }
-    
+
     func didTapBackButton() {
         tabBarController?.selectedIndex = 0
     }
-    
-    
 }

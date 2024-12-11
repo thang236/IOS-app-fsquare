@@ -8,25 +8,27 @@
 import UIKit
 
 class PolicyViewController: UIViewController {
-    @IBOutlet weak var agreeButton: UIButton!
+    @IBOutlet var agreeButton: UIButton!
     private var viewModel: RegisterViewModel
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet var textView: UITextView!
     private var isCheck = false
 
     init(viewModel: RegisterViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
-    required init?(coder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNav()
         textView.isEditable = false
     }
+
     private func setupNav() {
         navigationItem.hidesBackButton = true
         let image: UIImage = #imageLiteral(resourceName: "positionLeft")
@@ -38,20 +40,21 @@ class PolicyViewController: UIViewController {
         backButton.tintColor = .neutralUltraDark
         setupNavigationBar(leftBarButton: backButton, title: "Đăng ký tài khoản mới", rightBarButton: nil)
     }
-    
+
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
+
+    override func viewWillAppear(_: Bool) {
         isCheck = viewModel.checkAgree
         toggleCheckBox()
     }
 
-    @IBAction func didTapAgreeButton(_ sender: Any) {
+    @IBAction func didTapAgreeButton(_: Any) {
         isCheck.toggle()
         toggleCheckBox()
     }
+
     func toggleCheckBox() {
         if isCheck {
             let icon = UIImage.Toggle.focusTrue
@@ -61,13 +64,13 @@ class PolicyViewController: UIViewController {
             agreeButton.setImage(icon, for: .normal)
         }
     }
-    
-    @IBAction func didTapSubmit(_ sender: Any) {
+
+    @IBAction func didTapSubmit(_: Any) {
         if isCheck {
             viewModel.checkAgree = isCheck
             navigationController?.popViewController(animated: true)
         } else {
-            self.showToast(message: "Bạn cách phải đồng ý với điều khoản để tiếp tục", chooseImageToast: .warning)
+            showToast(message: "Bạn cách phải đồng ý với điều khoản để tiếp tục", chooseImageToast: .warning)
         }
     }
 }

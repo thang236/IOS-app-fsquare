@@ -14,11 +14,11 @@ protocol PopUpLoginViewControllerDelegate: AnyObject {
 
 class PopUpLoginViewController: UIViewController {
     var delegate: PopUpLoginViewControllerDelegate?
-    @IBOutlet weak var LoginButton: FullButton!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var backGroundView: UIView!
-    @IBOutlet weak var backButton: LightButton!
-    
+    @IBOutlet var LoginButton: FullButton!
+    @IBOutlet var contentView: UIView!
+    @IBOutlet var backGroundView: UIView!
+    @IBOutlet var backButton: LightButton!
+
     init() {
         super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .overFullScreen
@@ -28,12 +28,12 @@ class PopUpLoginViewController: UIViewController {
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
     }
-    
+
     func configView() {
         view.backgroundColor = .clear
         backGroundView.backgroundColor = .black.withAlphaComponent(0.6)
@@ -41,13 +41,12 @@ class PopUpLoginViewController: UIViewController {
         contentView.alpha = 0
         contentView.layer.cornerRadius = 10
     }
-    
+
     func appear(sender: UIViewController) {
         sender.present(self, animated: false) {
             self.show()
         }
     }
-    
 
     private func show() {
         UIView.animate(withDuration: 0.3, delay: 0.1) {
@@ -55,7 +54,7 @@ class PopUpLoginViewController: UIViewController {
             self.contentView.alpha = 1
         }
     }
-    
+
     func hide() {
         UIView.animate(withDuration: 0.3, delay: 0.0) {
             self.backGroundView.alpha = 0
@@ -65,13 +64,12 @@ class PopUpLoginViewController: UIViewController {
         }
     }
 
-
-    @IBAction func didTapLoginButton(_ sender: Any) {
+    @IBAction func didTapLoginButton(_: Any) {
         hide()
         delegate?.didTapLoginButton()
     }
-    
-    @IBAction func didTapBackButton(_ sender: Any) {
+
+    @IBAction func didTapBackButton(_: Any) {
         hide()
         delegate?.didTapBackButton()
     }

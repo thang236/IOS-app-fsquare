@@ -56,6 +56,7 @@ class ShoeDetailViewController: UIViewController {
     @IBOutlet var stepperView: StepperView!
 
     // MARK: - Properties
+
     var coordinator: HomeCoordinator?
     private var popupVC = PopUpLoginViewController()
     private var selectedSizeIndexPath: IndexPath?
@@ -508,14 +509,11 @@ extension ShoeDetailViewController: StepperViewDelegate {
         showToast(message: message, chooseImageToast: .warning)
     }
 }
+
 extension ShoeDetailViewController: PopUpLoginViewControllerDelegate {
     func didTapLoginButton() {
         coordinator?.goToLogin()
     }
-    
-    func didTapBackButton() {
-        
-    }
-    
-    
+
+    func didTapBackButton() {}
 }

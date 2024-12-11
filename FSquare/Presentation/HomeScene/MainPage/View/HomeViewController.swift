@@ -487,12 +487,9 @@ extension HomeViewController: HeaderHomeCollectionReusableViewDelegate {
 }
 
 extension HomeViewController: PopUpLoginViewControllerDelegate {
-    func didTapBackButton() {
-        
-    }
-    
+    func didTapBackButton() {}
+
     func didTapLoginButton() {
         coordinator?.goToLogin()
     }
-
 }

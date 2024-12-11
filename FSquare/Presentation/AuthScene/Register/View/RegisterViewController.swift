@@ -30,7 +30,8 @@ class RegisterViewController: UIViewController {
         setUpNavigationBar()
         setupBindings()
     }
-    override func viewWillAppear(_ animated: Bool) {
+
+    override func viewWillAppear(_: Bool) {
         toggleCheckBox()
     }
 
@@ -105,8 +106,8 @@ class RegisterViewController: UIViewController {
             showToast(message: "Email không hợp lệ", chooseImageToast: .warning)
         }
     }
-    
-    @IBAction func didTappolicyButton(_ sender: Any) {
+
+    @IBAction func didTappolicyButton(_: Any) {
         let policyVC = PolicyViewController(viewModel: viewModel)
         navigationController?.pushViewController(policyVC, animated: true)
     }

@@ -267,7 +267,7 @@ class CheckOutViewController: UIViewController {
         viewModel.$orderResponse
             .receive(on: RunLoop.main)
             .sink { orderResponse in
-               
+
                 if let orderResponse = orderResponse {
                     if orderResponse.status == HTTPStatus.success.message || orderResponse.status == HTTPStatus.created.message {
                         self.popUp.appear(sender: self, isSuccess: true)

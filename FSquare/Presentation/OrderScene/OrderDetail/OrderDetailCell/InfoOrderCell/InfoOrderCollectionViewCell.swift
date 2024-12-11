@@ -17,19 +17,19 @@ class InfoOrderCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+
         contentView.isSkeletonable = true
         contentView.showAnimatedGradientSkeleton()
     }
-    
+
     private func getShippingAddress(address: ShippingAddress) -> String {
         return "\(address.toName) (\(address.toPhone))"
     }
-    
+
     private func getValueAddress(address: ShippingAddress) -> String {
         return "\(address.toAddress), \(address.toWardName), \(address.toDistrictName), \(address.toProvinceName)"
     }
-    
+
     private func getStatusTitle(orderData: OrderData) {
         switch orderData.status {
         case "pending":
@@ -78,7 +78,7 @@ class InfoOrderCollectionViewCell: UICollectionViewCell {
             statusValue.text = "Đã có lỗi xảy ra"
         }
     }
-    
+
     private func getTimeOrder(orderData: OrderData) -> String {
         guard let statusTimestamps = orderData.statusTimestamps else { return "" }
         switch orderData.status {

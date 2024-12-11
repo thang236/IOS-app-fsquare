@@ -12,7 +12,7 @@ class HomeCoordinator: Coordinator {
     private let navigationController: UINavigationController
     var homeViewModel: HomeViewModel
     private let navigationMain: UINavigationController
-    
+
     init(navigationMain: UINavigationController) {
         self.navigationMain = navigationMain
         homeViewModel = DIContainer.shared.resolveHomeViewModel()
@@ -52,7 +52,7 @@ class HomeCoordinator: Coordinator {
         searchVC.coordinator = self
         navigationController.pushViewController(searchVC, animated: false)
     }
-    
+
     func goToLogin() {
         let authCoordinator = AuthCoordinator(navigationController: navigationMain)
         navigationMain.isNavigationBarHidden = false

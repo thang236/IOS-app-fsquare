@@ -115,6 +115,8 @@ class EditProfileViewController: UIViewController {
             case let .success(success):
                 if success.status == HTTPStatus.success.message {
                     self.showToast(message: success.message, chooseImageToast: .success)
+                    let nameUser = "\(success.data.firstName) \(success.data.lastName)"
+                    let phoneUser = success.data.phone
                 }
             case let .failure(failure):
                 self.showToast(message: failure.localizedDescription, chooseImageToast: .error)

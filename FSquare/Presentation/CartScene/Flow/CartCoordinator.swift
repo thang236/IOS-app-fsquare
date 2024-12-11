@@ -12,7 +12,7 @@ class CartCoordinator: Coordinator {
     private let navigationController: UINavigationController
     private var cartViewModel: CartViewModel
     private let navigationMain: UINavigationController
-    
+
     init(navigationMain: UINavigationController) {
         self.navigationMain = navigationMain
         cartViewModel = DIContainer.shared.resolveCartViewModel()
@@ -43,7 +43,7 @@ class CartCoordinator: Coordinator {
         baoKimVC.coordinator = self
         navigationController.pushViewController(baoKimVC, animated: false)
     }
-    
+
     func goToLogin() {
         let authCoordinator = AuthCoordinator(navigationController: navigationMain)
         navigationMain.isNavigationBarHidden = false

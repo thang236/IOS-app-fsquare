@@ -29,7 +29,7 @@ class CartCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+
         DispatchQueue.main.async {
             self.layer.backgroundColor = UIColor.white.cgColor
             self.layer.shadowColor = UIColor.borderDark.cgColor
