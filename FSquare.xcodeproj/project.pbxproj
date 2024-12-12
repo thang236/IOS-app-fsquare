@@ -281,6 +281,8 @@
 		BFF6B8F92CFE055B00445469 /* OrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF6B8F72CFE055B00445469 /* OrderDetailViewController.xib */; };
 		BFF6B8FE2CFF044000445469 /* InfoOrderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6B8FC2CFF044000445469 /* InfoOrderCollectionViewCell.swift */; };
 		BFF6B8FF2CFF044000445469 /* InfoOrderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF6B8FD2CFF044000445469 /* InfoOrderCollectionViewCell.xib */; };
+		DF2B06AB2D0AD06600651915 /* ChinhSachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2B06A92D0AD06600651915 /* ChinhSachViewController.swift */; };
+		DF2B06AC2D0AD06600651915 /* ChinhSachViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2B06AA2D0AD06600651915 /* ChinhSachViewController.xib */; };
 		DFF4DB0A2CF9C9CD00A11AAA /* MyOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DB092CF9C9CD00A11AAA /* MyOrderViewModel.swift */; };
 		DFF4DB0C2CF9CCE000A11AAA /* OrderStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DB0B2CF9CCE000A11AAA /* OrderStatusResponse.swift */; };
 /* End PBXBuildFile section */
@@ -557,6 +559,8 @@
 		BFF6B8F72CFE055B00445469 /* OrderDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailViewController.xib; sourceTree = "<group>"; };
 		BFF6B8FC2CFF044000445469 /* InfoOrderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoOrderCollectionViewCell.swift; sourceTree = "<group>"; };
 		BFF6B8FD2CFF044000445469 /* InfoOrderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoOrderCollectionViewCell.xib; sourceTree = "<group>"; };
+		DF2B06A92D0AD06600651915 /* ChinhSachViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinhSachViewController.swift; sourceTree = "<group>"; };
+		DF2B06AA2D0AD06600651915 /* ChinhSachViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChinhSachViewController.xib; sourceTree = "<group>"; };
 		DFF4DB092CF9C9CD00A11AAA /* MyOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderViewModel.swift; sourceTree = "<group>"; };
 		DFF4DB0B2CF9CCE000A11AAA /* OrderStatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -894,6 +898,7 @@
 		BF1E66762CAD2E52001C48E9 /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
+				DF2B06A82D0AD02900651915 /* ChinhSach */,
 				BF1BFE392D01D55400793B3D /* Notifications */,
 				BF5D618F2CE2888E006202D2 /* EditAddress */,
 				BF47609D2CE2513600207153 /* AddNewAddress */,
@@ -2080,6 +2085,15 @@
 			path = InfoOrderCell;
 			sourceTree = "<group>";
 		};
+		DF2B06A82D0AD02900651915 /* ChinhSach */ = {
+			isa = PBXGroup;
+			children = (
+				DF2B06A92D0AD06600651915 /* ChinhSachViewController.swift */,
+				DF2B06AA2D0AD06600651915 /* ChinhSachViewController.xib */,
+			);
+			path = ChinhSach;
+			sourceTree = "<group>";
+		};
 		DFF4DB082CF9C9BC00A11AAA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2186,6 +2200,7 @@
 				BF5D61942CE288A7006202D2 /* EditAddressViewController.xib in Resources */,
 				BFF264DB2CF5CF6A009459DD /* ChooseAddressViewController.xib in Resources */,
 				BFF6B8F92CFE055B00445469 /* OrderDetailViewController.xib in Resources */,
+				DF2B06AC2D0AD06600651915 /* ChinhSachViewController.xib in Resources */,
 				BF6841902CE7D2A5008F9FD0 /* LoadingCollectionReusableView.xib in Resources */,
 				BF1BFE1C2D00B5FA00793B3D /* OrderListBagCollectionViewCell.xib in Resources */,
 				BF6120252CE39BAD00AC6562 /* PopularCollectionViewCell.xib in Resources */,
@@ -2239,6 +2254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF2B06AB2D0AD06600651915 /* ChinhSachViewController.swift in Sources */,
 				BF25D03B2C97239400CB7EE8 /* UICollectionView+Extension.swift in Sources */,
 				BF600EF52CF074A70030708E /* AddBagResponse.swift in Sources */,
 				BF5B32612C92E4E10063CA29 /* AppCoordinator.swift in Sources */,

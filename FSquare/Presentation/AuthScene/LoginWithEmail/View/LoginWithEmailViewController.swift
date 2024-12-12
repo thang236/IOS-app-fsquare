@@ -73,6 +73,7 @@ class LoginWithEmailViewController: UIViewController {
             .compactMap { $0 }
             .receive(on: DispatchQueue.main).sink { [weak self] errorMessage in
                 self?.showToast(message: errorMessage, chooseImageToast: .error)
+                self?.viewModel.errorMessage = nil
             }.store(in: &cancellables)
     }
 

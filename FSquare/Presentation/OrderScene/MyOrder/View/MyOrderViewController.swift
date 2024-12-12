@@ -32,7 +32,6 @@ class MyOrderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkGust()
         setupCollectionView()
         setupBinding()
         setupNavigationBar(title: "Đơn hàng")
@@ -145,7 +144,6 @@ extension MyOrderViewController: UICollectionViewDelegate, UICollectionViewDataS
                         popUpCancel?.appear(sender: self, idOrder: idOrder)
                     } else if statusOrderString == "delivered" {
                         popUpConfirm?.appear(sender: self, idOrder: idOrder)
-//                        self.viewModel.patchOrderStatus(idOrder: idOrder, newStatus: newStatus)
                     }
                 }
             }

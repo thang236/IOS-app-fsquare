@@ -40,6 +40,7 @@ class LoadingViewController: UIViewController {
                     self?.coordinator?.goToLoginMethodSelection()
                 }
                 self?.showToast(message: errorMessage, chooseImageToast: .error)
+                self?.viewModel.errorMessage = nil
             }.store(in: &cancellables)
     }
 

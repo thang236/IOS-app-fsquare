@@ -198,6 +198,7 @@ class ShoeDetailViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { errorMessage in
                 self.showToast(message: errorMessage, chooseImageToast: .warning)
+                self.viewModel?.errorMessage = nil
             }.store(in: &cancellables)
 
         viewModel?.$shoesDetail.receive(on: DispatchQueue.main)

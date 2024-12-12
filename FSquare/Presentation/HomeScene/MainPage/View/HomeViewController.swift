@@ -253,6 +253,7 @@ class HomeViewController: UIViewController {
             .sink { [weak self] errorMessage in
                 guard let wSelf = self else { return }
                 wSelf.showToast(message: errorMessage, chooseImageToast: .warning)
+                self?.viewModel.errorMessage = nil
             }.store(in: &viewModel.cancellables)
 
         viewModel.$successMessage
@@ -261,6 +262,7 @@ class HomeViewController: UIViewController {
             .sink { [weak self] successMessage in
                 guard let wSelf = self else { return }
                 wSelf.showToast(message: successMessage, chooseImageToast: .success)
+                self?.viewModel.successMessage = nil
             }.store(in: &viewModel.cancellables)
     }
 
