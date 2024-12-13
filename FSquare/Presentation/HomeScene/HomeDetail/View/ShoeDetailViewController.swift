@@ -7,6 +7,7 @@
 
 import Combine
 import UIKit
+import AVKit
 
 enum ShoesDetailSectionType: String, CaseIterable, Hashable {
     case headerImage
@@ -46,17 +47,13 @@ class ShoeDetailViewController: UIViewController {
     // MARK: - @IBOutlet
 
     @IBOutlet private var collectionView: UICollectionView!
-
-    @IBOutlet var BottomView: UIView!
-
+    @IBOutlet private var BottomView: UIView!
     @IBOutlet private var quantityStackView: UIStackView!
     @IBOutlet private var quantityLabel: UILabel!
     @IBOutlet private var priceLbl: HeadingLabel!
-
-    @IBOutlet var stepperView: StepperView!
+    @IBOutlet private var stepperView: StepperView!
 
     // MARK: - Properties
-
     var coordinator: HomeCoordinator?
     private var popupVC = PopUpLoginViewController()
     private var selectedSizeIndexPath: IndexPath?
@@ -64,6 +61,7 @@ class ShoeDetailViewController: UIViewController {
     private var viewModel: ShoesDetailViewModel?
     private var shoesID: String?
     private var cancellables = Set<AnyCancellable>()
+    private var popMedia : MediaViewController?
     private lazy var dataSource:
         UICollectionViewDiffableDataSource<ShoesDetailSectionType, ShoeDetailContentCell> = {
             let dataSource = UICollectionViewDiffableDataSource<ShoesDetailSectionType, ShoeDetailContentCell>(collectionView: self.collectionView) { [weak self] collectionView, indexPath, item in
@@ -101,6 +99,7 @@ class ShoeDetailViewController: UIViewController {
                 case let .review(reviewData):
                     let cell = collectionView.dequeueReusableCell(withType: ReviewCollectionViewCell.self, for: indexPath)
                     cell.setupCell(reviewData: reviewData)
+                    cell.delegate = self
                     return cell
                 }
             }
@@ -135,6 +134,7 @@ class ShoeDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        popMedia = MediaViewController()
         popupVC.delegate = self
         stepperView.delegate = self
         stepperView.setMaxValue(maxValue: 1)
@@ -517,4 +517,37 @@ extension ShoeDetailViewController: PopUpLoginViewControllerDelegate {
     }
 
     func didTapBackButton() {}
+}
+
+extension ShoeDetailViewController: ReviewCollectionViewCellDelegate {
+    func didTapMediaItem(mediaItem: MediaItemGet) {
+        switch mediaItem {
+        case .image(let uRL):
+            self.popMedia?.appear(sender: self, with: uRL)
+        case .video(let uRL):
+            let asset = AVAsset(url: uRL)
+            let audioTracks = asset.tracks(withMediaType: .audio)
+
+            if audioTracks.isEmpty {
+                print("Video không chứa track audio.")
+            } else {
+                print("Video chứa \(audioTracks.count) track audio.")
+            }
+            
+            let avPlayer = AVPlayer(url: uRL)
+            let avController = AVPlayerViewController()
+            avController.player = avPlayer
+            avPlayer.isMuted = false
+            avPlayer.volume = 1.0
+            
+            try? AVAudioSession.sharedInstance().setCategory(.playback, options: [.duckOthers, .allowBluetooth])
+            try? AVAudioSession.sharedInstance().setActive(true)
+            
+            self.present(avController, animated: true) {
+                avPlayer.play()
+            }
+        }
+    }
+    
+    
 }

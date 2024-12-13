@@ -283,6 +283,10 @@
 		BFF6B8FF2CFF044000445469 /* InfoOrderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF6B8FD2CFF044000445469 /* InfoOrderCollectionViewCell.xib */; };
 		DF2B06AB2D0AD06600651915 /* ChinhSachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2B06A92D0AD06600651915 /* ChinhSachViewController.swift */; };
 		DF2B06AC2D0AD06600651915 /* ChinhSachViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2B06AA2D0AD06600651915 /* ChinhSachViewController.xib */; };
+		DFDF60C12D0C177300C2CB68 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF60BF2D0C177300C2CB68 /* MediaViewController.swift */; };
+		DFDF60C22D0C177300C2CB68 /* MediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDF60C02D0C177300C2CB68 /* MediaViewController.xib */; };
+		DFDF60C52D0C237A00C2CB68 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF60C32D0C237A00C2CB68 /* VideoViewController.swift */; };
+		DFDF60C62D0C237A00C2CB68 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDF60C42D0C237A00C2CB68 /* VideoViewController.xib */; };
 		DFF4DB0A2CF9C9CD00A11AAA /* MyOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DB092CF9C9CD00A11AAA /* MyOrderViewModel.swift */; };
 		DFF4DB0C2CF9CCE000A11AAA /* OrderStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DB0B2CF9CCE000A11AAA /* OrderStatusResponse.swift */; };
 /* End PBXBuildFile section */
@@ -561,6 +565,10 @@
 		BFF6B8FD2CFF044000445469 /* InfoOrderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoOrderCollectionViewCell.xib; sourceTree = "<group>"; };
 		DF2B06A92D0AD06600651915 /* ChinhSachViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinhSachViewController.swift; sourceTree = "<group>"; };
 		DF2B06AA2D0AD06600651915 /* ChinhSachViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChinhSachViewController.xib; sourceTree = "<group>"; };
+		DFDF60BF2D0C177300C2CB68 /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
+		DFDF60C02D0C177300C2CB68 /* MediaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaViewController.xib; sourceTree = "<group>"; };
+		DFDF60C32D0C237A00C2CB68 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		DFDF60C42D0C237A00C2CB68 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		DFF4DB092CF9C9CD00A11AAA /* MyOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderViewModel.swift; sourceTree = "<group>"; };
 		DFF4DB0B2CF9CCE000A11AAA /* OrderStatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1527,6 +1535,7 @@
 		BF62C05E2CD27CC000879233 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DFDF60BE2D0C175E00C2CB68 /* MediaView */,
 				BF1BFE2D2D01A9B300793B3D /* ReviewCell */,
 				BF600EF12CEF80E70030708E /* HeaderHomeDetail */,
 				BF4760712CDFC31400207153 /* DescriptionViewCell */,
@@ -2094,6 +2103,17 @@
 			path = ChinhSach;
 			sourceTree = "<group>";
 		};
+		DFDF60BE2D0C175E00C2CB68 /* MediaView */ = {
+			isa = PBXGroup;
+			children = (
+				DFDF60BF2D0C177300C2CB68 /* MediaViewController.swift */,
+				DFDF60C02D0C177300C2CB68 /* MediaViewController.xib */,
+				DFDF60C32D0C237A00C2CB68 /* VideoViewController.swift */,
+				DFDF60C42D0C237A00C2CB68 /* VideoViewController.xib */,
+			);
+			path = MediaView;
+			sourceTree = "<group>";
+		};
 		DFF4DB082CF9C9BC00A11AAA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2237,7 +2257,9 @@
 				BFF264E42CF5D02F009459DD /* ChooseAddressCollectionViewCell.xib in Resources */,
 				BF49226A2D022A5F00C6B59B /* PolicyViewController.xib in Resources */,
 				BF6573FC2CF388F200BCA12A /* TotalCollectionViewCell.xib in Resources */,
+				DFDF60C62D0C237A00C2CB68 /* VideoViewController.xib in Resources */,
 				BF1E667C2CAD2E70001C48E9 /* ProfileViewController.xib in Resources */,
+				DFDF60C22D0C177300C2CB68 /* MediaViewController.xib in Resources */,
 				BF6841AB2CED20A9008F9FD0 /* FavoriteCollectionViewCell.xib in Resources */,
 				BF1E66752CAD2E20001C48E9 /* MyEWalletViewController.xib in Resources */,
 				BF6573F72CF3844D00BCA12A /* OrderCollectionViewCell.xib in Resources */,
@@ -2270,6 +2292,7 @@
 				BF600F082CF0D1CA0030708E /* CartViewModel.swift in Sources */,
 				BFA8BAF32CEF16640008CA6E /* CartCollectionViewCell.swift in Sources */,
 				BF9F32712CB3C31E00530523 /* TabBarCoordinator.swift in Sources */,
+				DFDF60C12D0C177300C2CB68 /* MediaViewController.swift in Sources */,
 				BF25D0492C9821C400CB7EE8 /* MenuOption.swift in Sources */,
 				BF68418F2CE7D2A5008F9FD0 /* LoadingCollectionReusableView.swift in Sources */,
 				BF47608A2CE0A38D00207153 /* AddressRepository.swift in Sources */,
@@ -2407,6 +2430,7 @@
 				BF25D03D2C97239400CB7EE8 /* UIFont+Extension.swift in Sources */,
 				BF4760A12CE2516100207153 /* AddNewAddressViewController.swift in Sources */,
 				BF25D0AC2C9D2ADB00CB7EE8 /* LoadingViewController.swift in Sources */,
+				DFDF60C52D0C237A00C2CB68 /* VideoViewController.swift in Sources */,
 				BFAF1D802CA6A18A0085609C /* VerifyOTPViewModel.swift in Sources */,
 				0925F3D82CD35DE700530A69 /* HeaderShoesDetailCollectionViewCell.swift in Sources */,
 				BF1E665E2CAD244B001C48E9 /* HomeViewController.swift in Sources */,
