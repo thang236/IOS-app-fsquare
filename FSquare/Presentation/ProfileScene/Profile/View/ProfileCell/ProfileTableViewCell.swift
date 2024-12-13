@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
-    @IBOutlet weak var iconChevron: UIImageView!
+    @IBOutlet var iconChevron: UIImageView!
     @IBOutlet var titleLabel: BodyLabel!
     @IBOutlet var iconImage: UIImageView!
     override func awakeFromNib() {

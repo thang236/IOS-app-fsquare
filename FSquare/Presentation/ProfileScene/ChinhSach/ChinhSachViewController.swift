@@ -8,19 +8,19 @@
 import UIKit
 
 class ChinhSachViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNav()
     }
-    override func viewWillAppear(_ animated: Bool) {
+
+    override func viewWillAppear(_: Bool) {
         tabBarController?.tabBar.isHidden = true
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
+
+    override func viewWillDisappear(_: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
-    
+
     private func setupNav() {
         navigationItem.hidesBackButton = true
         let image: UIImage = #imageLiteral(resourceName: "positionLeft")
@@ -31,10 +31,8 @@ class ChinhSachViewController: UIViewController {
         button.tintColor = .black
         setupNavigationBar(leftBarButton: button, title: "Chính sách quyền riêng tư")
     }
-    
+
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
-    
-
 }

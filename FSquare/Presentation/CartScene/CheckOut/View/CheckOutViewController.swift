@@ -247,7 +247,7 @@ class CheckOutViewController: UIViewController {
                 self?.showToast(message: errorMessage, chooseImageToast: .warning)
                 self?.viewModel.errorMessage = nil
             }.store(in: &viewModel.cancellables)
-        
+
         viewModel.$addressChoose
             .receive(on: RunLoop.main)
             .sink { [weak self] addressChoose in

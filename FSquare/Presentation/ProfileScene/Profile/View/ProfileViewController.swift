@@ -51,7 +51,7 @@ class ProfileViewController: UIViewController {
         profileTableView.registerCell(cellType: ProfileTableViewCell.self)
         profileTableView.isScrollEnabled = false
     }
-    
+
     private func setupTableViewAppearance() {
         profileTableView.layer.backgroundColor = UIColor.white.cgColor
         profileTableView.layer.shadowColor = UIColor.borderDark.cgColor

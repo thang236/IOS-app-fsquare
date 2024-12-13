@@ -65,7 +65,7 @@ class ProfileCoordinator: Coordinator {
         let notiVC = NotificationViewController(viewModel: notificationViewModel)
         navigationController.pushViewController(notiVC, animated: true)
     }
-    
+
     func goToChinhSach() {
         let chinhSachVC = ChinhSachViewController()
         navigationController.pushViewController(chinhSachVC, animated: true)
