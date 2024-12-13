@@ -34,7 +34,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAh-Hy-Drh" customClass="DescriptionLabel" customModule="FSquare" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAh-Hy-Drh" customClass="DescriptionLabel" customModule="FSquare" customModuleProvider="target">
                             <rect key="frame" x="5.3333333333333428" y="36.666666666666686" width="268.66666666666663" height="50.333333333333343"/>
                             <string key="text">Sau bước này, bạn có thể khám phá dịch vụ của chúng tôi và thưởng thức các
  sản phẩm. Chúc bạn vui vẻ và tận hưởng!</string>
