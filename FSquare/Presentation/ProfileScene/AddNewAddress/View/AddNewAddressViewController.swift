@@ -88,7 +88,7 @@ class AddNewAddressViewController: UIViewController {
               let ward = wardField.text, !ward.isEmpty,
               let street = streetField.text, !street.isEmpty
         else {
-            showToast(message: "Please fill all fields", chooseImageToast: .warning)
+            showToast(message: "Vui lòng hãy điền đủ tất cả các trường", chooseImageToast: .warning)
             return
         }
 
@@ -109,7 +109,7 @@ class AddNewAddressViewController: UIViewController {
                 self?.navigationController?.popViewController(animated: true)
 
             case let .failure(failure):
-                self?.showToast(message: "Something went wrong, please try again", chooseImageToast: .warning)
+                self?.showToast(message: "Đã có lỗi xảy ra, vui lòng thử lại", chooseImageToast: .warning)
             }
         })
     }
@@ -139,7 +139,7 @@ extension AddNewAddressViewController: UITextFieldDelegate {
         if let provinceID = viewModel.provinceID, provinceID != 0 {
             coordinator.goToChooseLocation(viewModel: viewModel, chooseLocationType: .district)
         } else {
-            showToast(message: "Please choose province before", chooseImageToast: .warning)
+            showToast(message: "Bạn phải chọn tỉnh, thành phố trước", chooseImageToast: .warning)
         }
     }
 
@@ -150,7 +150,7 @@ extension AddNewAddressViewController: UITextFieldDelegate {
         if let districtID = viewModel.districtID {
             coordinator.goToChooseLocation(viewModel: viewModel, chooseLocationType: .ward)
         } else {
-            showToast(message: "Please choose province and district before", chooseImageToast: .warning)
+            showToast(message: "Vui lòng chọn quận, huyện trước", chooseImageToast: .warning)
         }
     }
 }

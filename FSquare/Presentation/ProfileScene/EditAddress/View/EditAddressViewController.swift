@@ -59,7 +59,7 @@ class EditAddressViewController: UIViewController {
 
     @IBAction func didTapIsDefaultButton(_: Any) {
         if !isDefaultSwitch.isOn {
-            showToast(message: "This address is is default you must set default other address", chooseImageToast: .warning)
+            showToast(message: "Địa chỉ này là mặc định bạn phải đặt mặc định địa chỉ khác mới có thể xoá", chooseImageToast: .warning)
             isDefaultSwitch.setOn(true, animated: false)
         }
     }
@@ -115,7 +115,7 @@ class EditAddressViewController: UIViewController {
               let ward = wardField.text, !ward.isEmpty,
               let street = streetField.text, !street.isEmpty
         else {
-            showToast(message: "Please fill all fields", chooseImageToast: .warning)
+            showToast(message: "Vui lòng hãy nhập đủ các trường", chooseImageToast: .warning)
             return
         }
 
