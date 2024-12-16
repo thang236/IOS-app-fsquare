@@ -49,11 +49,10 @@ class OrderRepositoryImpl: OrderRepository {
         if let content = content {
             apiService.request(endpoint: .orderID(idOrder: idOrder), method: .patch, parameters: [
                 "newStatus": newStatus,
-                "content": content
+                "content": content,
             ])
         } else {
             apiService.request(endpoint: .orderID(idOrder: idOrder), method: .patch, parameters: ["newStatus": newStatus])
-
         }
     }
 

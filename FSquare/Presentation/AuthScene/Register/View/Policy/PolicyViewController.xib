@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6S-5E-K2o" userLabel="contentView">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="770"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="832.66666666666663"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng đọc kỹ điều khoản và điều kiện" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sz-nc-14x">
                                     <rect key="frame" x="16" y="10" width="361" height="21"/>
@@ -33,71 +33,45 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" allowsEditingTextAttributes="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-7t-yS3">
-                                    <rect key="frame" x="16" y="39" width="361" height="626"/>
+                                    <rect key="frame" x="16" y="39" width="361" height="689.33333333333337"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <attributedString key="attributedText">
                                         <fragment>
-                                            <string key="content">1. Chấp nhận điều khoản
-</string>
+                                            <mutableString key="content">1. Chấp nhận điều khoản
+Khi đăng ký tài khoản trên FSquare, người dùng đồng ý với tất cả các điều khoản và điều kiện sử dụng dịch vụ được quy định tại đây.
+
+2. Thông tin tài khoản Người dùng cam kết cung cấp đầy đủ, chính xác và cập nhật các thông tin cá nhân (tên, email, số điện thoại, v.v.). FSquare không chịu trách nhiệm đối với các vấn đề phát sinh từ thông tin sai lệch.
+
+3. Bảo mật thông tin Người dùng có trách nhiệm bảo mật thông tin đăng nhập của mình. FSquare không chịu trách nhiệm khi tài khoản bị truy cập trái phép do lỗi bảo mật từ phía người dùng.
+
+4. Mục đích sử dụng Người dùng chỉ được sử dụng tài khoản trên FSquare cho mục đích mua sắm cá nhân và không được sử dụng tài khoản để thực hiện các hoạt động vi phạm pháp luật.
+
+5. Hủy bỏ và khóa tài khoản FSquare có quyền tạm ngừng hoặc khóa tài khoản của người dùng nếu phát hiện các hành vi vi phạm quy định như gian lận, cung cấp thông tin giả mạo hoặc có hành động gây ảnh hưởng xấu đến hệ thống.
+
+6. Quyền riêng tư Thông tin cá nhân của người dùng sẽ được bảo mật theo Chính sách bảo mật thông tin của FSquare và sẽ không chia sẻ cho bên thứ ba trái với quy định pháp luật.
+
+7. Thay đổi điều khoản FSquare có quyền thay đổi, cập nhật các điều khoản và điều kiện bất cứ lúc nào. Thay đổi sẽ được thông báo trên ứng dụng hoặc qua email.
+
+8. Trách nhiệm của người dùng Người dùng có trách nhiệm thực hiện đúng các giao dịch, thanh toán đầy đủ và tuân thủ quy định khi sử dụng dịch vụ trên FSquare.
+
+9. Giải quyết tranh chấp Mọi tranh chấp phát sinh giữa người dùng và FSquare sẽ được ưu tiên giải quyết thông qua thương lượng, hòa giải. Nếu không thành, tranh chấp sẽ được giải quyết theo quy định pháp luật.</mutableString>
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" size="12" name="Inter-Regular"/>
-                                                <real key="NSKern" value="0.0"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                    <tabStops/>
-                                                </paragraphStyle>
-                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <real key="NSStrokeWidth" value="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment>
-                                            <string key="content">Khi đăng ký tài khoản trên FSquare, người dùng đồng ý với tất cả các điều khoản và điều kiện sử dụng dịch vụ được quy định tại đây.</string>
-                                            <attributes>
-                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" size="12" name="Inter-Regular"/>
-                                                <real key="NSKern" value="0.0"/>
-                                                <font key="NSOriginalFont" size="12" name="Inter-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                    <tabStops/>
-                                                </paragraphStyle>
-                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <real key="NSStrokeWidth" value="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment>
-                                            <mutableString key="content">
-2. Độ tuổi và năng lực pháp lý Người dùng phải từ 16 tuổi trở lên và có đầy đủ năng lực hành vi dân sự để thực hiện các giao dịch trên ứng dụng.
-3. Thông tin tài khoản Người dùng cam kết cung cấp đầy đủ, chính xác và cập nhật các thông tin cá nhân (tên, email, số điện thoại, v.v.). FSquare không chịu trách nhiệm đối với các vấn đề phát sinh từ thông tin sai lệch.
-4. Bảo mật thông tin Người dùng có trách nhiệm bảo mật thông tin đăng nhập của mình. FSquare không chịu trách nhiệm khi tài khoản bị truy cập trái phép do lỗi bảo mật từ phía người dùng.
-5. Mục đích sử dụng Người dùng chỉ được sử dụng tài khoản trên FSquare cho mục đích mua sắm cá nhân và không được sử dụng tài khoản để thực hiện các hoạt động vi phạm pháp luật.
-6. Hủy bỏ và khóa tài khoản FSquare có quyền tạm ngừng hoặc khóa tài khoản của người dùng nếu phát hiện các hành vi vi phạm quy định như gian lận, cung cấp thông tin giả mạo hoặc có hành động gây ảnh hưởng xấu đến hệ thống.
-7. Quyền riêng tư Thông tin cá nhân của người dùng sẽ được bảo mật theo Chính sách bảo mật thông tin của FSquare và sẽ không chia sẻ cho bên thứ ba trái với quy định pháp luật.
-8. Thay đổi điều khoản FSquare có quyền thay đổi, cập nhật các điều khoản và điều kiện bất cứ lúc nào. Thay đổi sẽ được thông báo trên ứng dụng hoặc qua email.
-9. Trách nhiệm của người dùng Người dùng có trách nhiệm thực hiện đúng các giao dịch, thanh toán đầy đủ và tuân thủ quy định khi sử dụng dịch vụ trên FSquare.
-10. Giải quyết tranh chấp Mọi tranh chấp phát sinh giữa người dùng và FSquare sẽ được ưu tiên giải quyết thông qua thương lượng, hòa giải. Nếu không thành, tranh chấp sẽ được giải quyết theo quy định pháp luật.</mutableString>
-                                            <attributes>
-                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" size="12" name="Inter-Regular"/>
-                                                <real key="NSKern" value="0.0"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                    <tabStops/>
-                                                </paragraphStyle>
-                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                <font key="NSFont" metaFont="system" size="12"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baZ-BB-fen">
-                                    <rect key="frame" x="16" y="673" width="361" height="38"/>
+                                    <rect key="frame" x="16" y="736.33333333333337" width="361" height="38"/>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
                                     <state key="normal" image="Toggle/focusFalse">
                                         <attributedString key="attributedTitle">
                                             <fragment content="Tôi đồng ý với các điều khoản đã nêu trên">
                                                 <attributes>
-                                                    <font key="NSFont" size="14" name="Inter-Regular_SemiBold"/>
+                                                    <font key="NSFont" metaFont="menu" size="14"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -106,7 +80,7 @@
                                         <attributedString key="attributedTitle">
                                             <fragment content="Tôi đồng ý với các điều khoản đã nêu trên">
                                                 <attributes>
-                                                    <font key="NSFont" size="14" name="Inter-Regular_SemiBold"/>
+                                                    <font key="NSFont" metaFont="menu" size="14"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -116,7 +90,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-qK-7F0" customClass="FullButton" customModule="FSquare" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="719" width="361" height="35"/>
+                                    <rect key="frame" x="16" y="782.33333333333337" width="361" height="34.333333333333371"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Tiếp theo"/>
                                     <connections>
@@ -164,6 +138,11 @@
             <point key="canvasLocation" x="134" y="-39"/>
         </view>
     </objects>
+    <designables>
+        <designable name="LjY-qK-7F0">
+            <size key="intrinsicContentSize" width="96" height="34.333333333333336"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Toggle/focusFalse" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">

@@ -11,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginWithEmailViewController" customModule="FSquare" customModuleProvider="target">
             <connections>
                 <outlet property="emailField" destination="YTy-9S-owj" id="oMy-OO-ijq"/>
-                <outlet property="rememberButton" destination="DJK-Cf-Zkm" id="L3b-0W-nHA"/>
                 <outlet property="view" destination="gY8-u6-nxM" id="L6r-oC-Ed7"/>
             </connections>
         </placeholder>
@@ -70,17 +69,6 @@
                         <constraint firstItem="YTy-9S-owj" firstAttribute="leading" secondItem="F6d-ED-Ass" secondAttribute="leading" id="yu8-Hb-cjh"/>
                     </constraints>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJK-Cf-Zkm">
-                    <rect key="frame" x="10" y="290" width="152.33333333333334" height="38"/>
-                    <color key="tintColor" name="neutralGrayMedium"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="Toggle/focusFalse" title="Lưu đăng nhập" imagePadding="5">
-                        <fontDescription key="titleFontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="didTapRemberButton:" destination="-1" eventType="touchUpInside" id="2VR-Um-zf3"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Ylo-ZP-bsT"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,10 +76,8 @@
                 <constraint firstItem="Ylo-ZP-bsT" firstAttribute="trailing" secondItem="U3s-jm-Rhx" secondAttribute="trailing" constant="20" id="34P-jg-ncD"/>
                 <constraint firstItem="F6d-ED-Ass" firstAttribute="leading" secondItem="Ylo-ZP-bsT" secondAttribute="leading" constant="20" id="CZm-KD-xsZ"/>
                 <constraint firstItem="F6d-ED-Ass" firstAttribute="leading" secondItem="GTl-Kg-vV2" secondAttribute="leading" id="FDk-aL-9OT"/>
-                <constraint firstItem="DJK-Cf-Zkm" firstAttribute="leading" secondItem="Ylo-ZP-bsT" secondAttribute="leading" constant="10" id="WfR-iM-eLH"/>
                 <constraint firstItem="U3s-jm-Rhx" firstAttribute="leading" secondItem="Ylo-ZP-bsT" secondAttribute="leading" constant="20" id="hPw-aU-qca"/>
                 <constraint firstItem="Ylo-ZP-bsT" firstAttribute="bottom" secondItem="U3s-jm-Rhx" secondAttribute="bottom" id="iXm-rN-GNm"/>
-                <constraint firstItem="DJK-Cf-Zkm" firstAttribute="top" secondItem="F6d-ED-Ass" secondAttribute="bottom" constant="8" symbolic="YES" id="nME-iu-QJq"/>
                 <constraint firstItem="GTl-Kg-vV2" firstAttribute="top" secondItem="Ylo-ZP-bsT" secondAttribute="top" constant="70" id="rh1-gJ-4tr"/>
                 <constraint firstItem="F6d-ED-Ass" firstAttribute="top" secondItem="GTl-Kg-vV2" secondAttribute="bottom" constant="35" id="s6z-8H-nAU"/>
                 <constraint firstItem="Ylo-ZP-bsT" firstAttribute="trailing" secondItem="F6d-ED-Ass" secondAttribute="trailing" constant="20" id="znS-dO-FRH"/>
@@ -114,10 +100,6 @@
         </designable>
     </designables>
     <resources>
-        <image name="Toggle/focusFalse" width="24" height="24"/>
-        <namedColor name="neutralGrayMedium">
-            <color red="0.5725490196078431" green="0.60392156862745094" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="neutralLightMedium">
             <color red="0.40392156862745099" green="0.40392156862745099" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

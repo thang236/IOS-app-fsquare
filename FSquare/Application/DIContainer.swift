@@ -50,7 +50,8 @@ final class DIContainer {
 
     func resolveLoadingViewModel() -> LoadingViewModel {
         let getProfileUseCase = resolveGetProfileUseCase()
-        return LoadingViewModel(getProfileUseCase: getProfileUseCase)
+        let getAddressUseCase = resolveGetAddressUseCase()
+        return LoadingViewModel(getProfileUseCase: getProfileUseCase, getAddressUseCase: getAddressUseCase)
     }
 
     func resolveLoginEmailViewModel() -> LoginWithEmailViewModel {
@@ -75,7 +76,8 @@ final class DIContainer {
 
     func resolveVerifyAthViewModel() -> VerifyOTPViewModel {
         let verifyOTPUseCase = resolveVerifyOTPUseCase()
-        return VerifyOTPViewModel(verifyOTPUseCase: verifyOTPUseCase)
+        let getProfileUseCase = resolveGetProfileUseCase()
+        return VerifyOTPViewModel(verifyOTPUseCase: verifyOTPUseCase, getProfileUseCase: getProfileUseCase)
     }
 
     // MARK: Profile

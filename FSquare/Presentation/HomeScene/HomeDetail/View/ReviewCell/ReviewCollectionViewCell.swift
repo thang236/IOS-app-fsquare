@@ -12,7 +12,12 @@ enum MediaItemGet {
     case video(URL)
 }
 
+protocol ReviewCollectionViewCellDelegate {
+    func didTapMediaItem(mediaItem: MediaItemGet)
+}
+
 class ReviewCollectionViewCell: UICollectionViewCell {
+    var delegate: ReviewCollectionViewCellDelegate?
     @IBOutlet var heightCollectionView: NSLayoutConstraint!
     @IBOutlet var contentLabel: DescriptionLabel!
     @IBOutlet var timeLabel: DescriptionLabel!
@@ -96,7 +101,7 @@ class ReviewCollectionViewCell: UICollectionViewCell {
             }
             nameLabel.text = "\(reviewData.customer.firstName) \(reviewData.customer.lastName)"
             contentLabel.text = reviewData.content
-            timeLabel.text = reviewData.createdAt
+            timeLabel.text = reviewData.createdAt?.toShortDateTime()
             setUpRating(ratingNumber: reviewData.rating)
             if mediaItems.isEmpty {
                 heightCollectionView.constant = 0
@@ -132,6 +137,10 @@ extension ReviewCollectionViewCell: UICollectionViewDelegate, UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withType: MediaGetCollectionViewCell.self, for: indexPath)
         cell.setupCell(with: mediaItems[indexPath.row])
         return cell
+    }
+
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didTapMediaItem(mediaItem: mediaItems[indexPath.row])
     }
 
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {

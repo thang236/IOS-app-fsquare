@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 protocol PopUpPaymentViewControllerDelegate {
     func didTapViewOrder()
     func didTapHomeScreen()
@@ -13,7 +14,7 @@ protocol PopUpPaymentViewControllerDelegate {
 
 class PopUpPaymentViewController: UIViewController {
     var delegate: PopUpPaymentViewControllerDelegate?
-    
+
     @IBOutlet var contentView: UIView!
     @IBOutlet var titleLabel: HeadingLabel!
     @IBOutlet var imageView: UIImageView!

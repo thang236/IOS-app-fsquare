@@ -59,7 +59,7 @@ class EditAddressViewController: UIViewController {
 
     @IBAction func didTapIsDefaultButton(_: Any) {
         if !isDefaultSwitch.isOn {
-            showToast(message: "This address is is default you must set default other address", chooseImageToast: .warning)
+            showToast(message: "Địa chỉ này là mặc định bạn phải đặt mặc định địa chỉ khác mới có thể xoá", chooseImageToast: .warning)
             isDefaultSwitch.setOn(true, animated: false)
         }
     }
@@ -69,12 +69,15 @@ class EditAddressViewController: UIViewController {
             .compactMap { $0 }
             .sink { [weak self] provinceName in
                 self?.cityField.text = provinceName
+                self?.districtField.text = ""
+                self?.wardField.text = ""
             }.store(in: &viewModel.cancellables)
 
         viewModel.$districtName
             .compactMap { $0 }
             .sink { [weak self] districtName in
                 self?.districtField.text = districtName
+                self?.wardField.text = ""
             }.store(in: &viewModel.cancellables)
 
         viewModel.$wardName
@@ -115,7 +118,7 @@ class EditAddressViewController: UIViewController {
               let ward = wardField.text, !ward.isEmpty,
               let street = streetField.text, !street.isEmpty
         else {
-            showToast(message: "Please fill all fields", chooseImageToast: .warning)
+            showToast(message: "Vui lòng hãy nhập đủ các trường", chooseImageToast: .warning)
             return
         }
 

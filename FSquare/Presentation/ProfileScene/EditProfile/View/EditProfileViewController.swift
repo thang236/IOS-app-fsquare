@@ -74,6 +74,7 @@ class EditProfileViewController: UIViewController {
             .compactMap { $0 }
             .receive(on: DispatchQueue.main).sink { [weak self] errorMessage in
                 self?.showToast(message: errorMessage, chooseImageToast: .warning)
+                self?.viewModel.errorMessage = nil
             }.store(in: &cancellables)
     }
 
@@ -115,6 +116,8 @@ class EditProfileViewController: UIViewController {
             case let .success(success):
                 if success.status == HTTPStatus.success.message {
                     self.showToast(message: success.message, chooseImageToast: .success)
+                    let nameUser = "\(success.data.firstName) \(success.data.lastName)"
+                    let phoneUser = success.data.phone
                 }
             case let .failure(failure):
                 self.showToast(message: failure.localizedDescription, chooseImageToast: .error)

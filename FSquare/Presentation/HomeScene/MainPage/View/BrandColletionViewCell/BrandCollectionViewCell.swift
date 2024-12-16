@@ -31,17 +31,14 @@ class BrandCollectionViewCell: UICollectionViewCell {
 
     func setupBrandCollectionView(url: String?, nameBrand: String) {
         if nameBrand != "" {
-            if let urlString = url, let url = URL(string: urlString) {
-                if urlString == "more" {
-                    bannerImageView.image = UIImage(systemName: "ellipsis")
-                } else {
-                    bannerImageView.loadImageWithShimmer(url: url)
-                }
-            }
             hideSkeleton()
+            if let urlString = url, let url = URL(string: urlString) {
+                bannerImageView.loadImageWithShimmer(url: url)
+            }
+            namebrand.text = nameBrand
+
         } else {
             showAnimatedGradientSkeleton()
         }
-        namebrand.text = nameBrand
     }
 }

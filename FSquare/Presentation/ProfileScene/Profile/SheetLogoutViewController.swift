@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 protocol SheetLogoutViewControllerDelegate: AnyObject {
     func didTapLogoutButton()
 }
@@ -15,18 +16,15 @@ class SheetLogoutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
-    @IBAction func didTapCancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func didTapCancelButton(_: Any) {
+        dismiss(animated: true, completion: nil)
     }
-    
 
-    @IBAction func didTapLogoutButton(_ sender: Any) {
-        self.dismiss(animated: true){
+    @IBAction func didTapLogoutButton(_: Any) {
+        dismiss(animated: true) {
             self.delegate?.didTapLogoutButton()
         }
-        
     }
 }

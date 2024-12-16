@@ -20,7 +20,7 @@ class AddressViewController: UIViewController {
 
     private let noDataLabel: UILabel = {
         let label = UILabel()
-        label.text = "You don't have any address"
+        label.text = "Bạn chưa có một địa chỉ giao hàng nào cả"
         label.textColor = .neutralUltraDark
         label.textAlignment = .center
         label.isHidden = true
@@ -109,7 +109,6 @@ class AddressViewController: UIViewController {
     }
 
     private func toggleNoDataLabel() {
-        // Kiểm tra xem dữ liệu có trống hay không để hiển thị hoặc ẩn UILabel
         noDataLabel.isHidden = !addressDatas.isEmpty
     }
 
@@ -141,14 +140,14 @@ extension AddressViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let swipeAction = UIContextualAction(style: .normal, title: nil) { _, _, completionHandler in
             if self.addressDatas[indexPath.section].isDefault {
-                self.showToast(message: "this address is default you can't remove", chooseImageToast: .warning)
+                self.showToast(message: "Đây là địa chỉ giao hàng mặc định bạn không thể xoá", chooseImageToast: .warning)
             } else {
                 self.viewModel?.deleteLocation(idLocation: self.addressDatas[indexPath.section].id, completion: { completion in
                     switch completion {
                     case .success:
 
                         self.addressDatas.remove(at: indexPath.section)
-                        self.showToast(message: "Delete address success", chooseImageToast: .success)
+                        self.showToast(message: "Xoá thành công", chooseImageToast: .success)
                         self.tableView.reloadData()
 
                     case let .failure(failure):

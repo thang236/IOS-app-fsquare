@@ -97,7 +97,7 @@ class VerifyOTPViewController: UIViewController {
             .compactMap { $0 }
             .receive(on: DispatchQueue.main).sink { [weak self] errorMessage in
                 self?.showToast(message: "\(errorMessage) OTP, Hãy thử lại", chooseImageToast: .error)
-
+                self?.viewModel.errorMessage = nil
             }.store(in: &cancellables)
     }
 
@@ -118,7 +118,7 @@ class VerifyOTPViewController: UIViewController {
                 guard let token = authResponse.data else {
                     return
                 }
-
+                UserDefaults.standard.set(true, forKey: .rememberMe)
                 TokenManager.shared.saveAccessToken(token)
                 DispatchQueue.main.async {
                     if self.isLogin {

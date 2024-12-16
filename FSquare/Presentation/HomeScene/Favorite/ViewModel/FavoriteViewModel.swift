@@ -63,7 +63,7 @@ class FavoriteViewModel: ObservableObject {
                 }
             } receiveValue: { _ in
                 self.filteredFavorites?.removeAll(where: { $0.id == idFavorite })
-
+                self.favorites?.data.removeAll(where: { $0.id == idFavorite })
                 self.isLoading = false
             }
             .store(in: &cancellables)

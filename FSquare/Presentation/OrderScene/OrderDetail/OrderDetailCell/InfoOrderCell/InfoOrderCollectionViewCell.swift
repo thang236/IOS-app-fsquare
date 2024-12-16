@@ -17,19 +17,19 @@ class InfoOrderCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+
         contentView.isSkeletonable = true
         contentView.showAnimatedGradientSkeleton()
     }
-    
+
     private func getShippingAddress(address: ShippingAddress) -> String {
         return "\(address.toName) (\(address.toPhone))"
     }
-    
+
     private func getValueAddress(address: ShippingAddress) -> String {
         return "\(address.toAddress), \(address.toWardName), \(address.toDistrictName), \(address.toProvinceName)"
     }
-    
+
     private func getStatusTitle(orderData: OrderData) {
         switch orderData.status {
         case "pending":
@@ -78,35 +78,35 @@ class InfoOrderCollectionViewCell: UICollectionViewCell {
             statusValue.text = "Đã có lỗi xảy ra"
         }
     }
-    
+
     private func getTimeOrder(orderData: OrderData) -> String {
         guard let statusTimestamps = orderData.statusTimestamps else { return "" }
         switch orderData.status {
         case "pending":
-            return statusTimestamps.pending?.toShortDate() ?? ""
+            return statusTimestamps.pending?.toShortDateTime() ?? ""
         case "processing":
-            return statusTimestamps.processing?.toShortDate() ?? ""
+            return statusTimestamps.processing?.toShortDateTime() ?? ""
         case "shipped":
-            return statusTimestamps.shipped?.toShortDate() ?? ""
+            return statusTimestamps.shipped?.toShortDateTime() ?? ""
         case "delivered":
-            return statusTimestamps.delivered?.toShortDate() ?? ""
+            return statusTimestamps.delivered?.toShortDateTime() ?? ""
         case "confirmed":
-            return statusTimestamps.confirmed?.toShortDate() ?? ""
+            return statusTimestamps.confirmed?.toShortDateTime() ?? ""
         case "cancelled":
-            return statusTimestamps.cancelled?.toShortDate() ?? ""
+            return statusTimestamps.cancelled?.toShortDateTime() ?? ""
         case "returned":
             if let returnInfo = orderData.returnInfo {
                 switch returnInfo.status {
                 case "pending":
-                    return returnInfo.statusTimestamps?.pending?.toShortDate() ?? ""
+                    return returnInfo.statusTimestamps?.pending?.toShortDateTime() ?? ""
                 case "initiated":
-                    return returnInfo.statusTimestamps?.initiated?.toShortDate() ?? ""
+                    return returnInfo.statusTimestamps?.initiated?.toShortDateTime() ?? ""
                 case "completed":
-                    return returnInfo.statusTimestamps?.completed?.toShortDate() ?? ""
+                    return returnInfo.statusTimestamps?.completed?.toShortDateTime() ?? ""
                 case "refunded":
-                    return returnInfo.statusTimestamps?.refunded?.toShortDate() ?? ""
+                    return returnInfo.statusTimestamps?.refunded?.toShortDateTime() ?? ""
                 case "cancelled":
-                    return returnInfo.statusTimestamps?.cancelled?.toShortDate() ?? ""
+                    return returnInfo.statusTimestamps?.cancelled?.toShortDateTime() ?? ""
                 default:
                     return "Đã có lỗi xảy ra"
                 }

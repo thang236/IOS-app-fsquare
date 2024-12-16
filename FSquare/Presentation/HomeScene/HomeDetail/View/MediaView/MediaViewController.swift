@@ -1,23 +1,21 @@
 //
-//  PopUpLoginViewController.swift
+//  MediaViewController.swift
 //  FSquare
 //
-//  Created by Louis Macbook on 07/12/2024.
+//  Created by ThangHT on 13/12/2024.
 //
 
+import AVFoundation
+import AVKit
 import UIKit
 
-protocol PopUpLoginViewControllerDelegate: AnyObject {
-    func didTapLoginButton()
-    func didTapBackButton()
-}
+class MediaViewController: UIViewController {
+    @IBOutlet private var backView: UIView!
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var contentView: UIView!
 
-class PopUpLoginViewController: UIViewController {
-    var delegate: PopUpLoginViewControllerDelegate?
-    @IBOutlet var LoginButton: FullButton!
-    @IBOutlet var contentView: UIView!
-    @IBOutlet var backGroundView: UIView!
-    @IBOutlet var backButton: LightButton!
+    private var player: AVPlayer?
+    private var playerLayer: AVPlayerLayer?
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -36,41 +34,41 @@ class PopUpLoginViewController: UIViewController {
 
     func configView() {
         view.backgroundColor = .clear
-        backGroundView.backgroundColor = .black.withAlphaComponent(0.6)
-        backGroundView.alpha = 0
+        backView.backgroundColor = .black.withAlphaComponent(0.6)
+        backView.alpha = 0
         contentView.alpha = 0
         contentView.layer.cornerRadius = 10
     }
 
-    func appear(sender: UIViewController) {
+    func appear(sender: UIViewController, with url: URL) {
         sender.present(self, animated: false) {
             self.show()
+            self.showImage(from: url)
         }
+    }
+
+    private func showImage(from url: URL) {
+        imageView.loadImageWithShimmer(url: url)
+        imageView.contentMode = .scaleAspectFill
     }
 
     private func show() {
         UIView.animate(withDuration: 0.3, delay: 0.1) {
-            self.backGroundView.alpha = 1
+            self.backView.alpha = 1
             self.contentView.alpha = 1
         }
     }
 
     func hide() {
         UIView.animate(withDuration: 0.3, delay: 0.0) {
-            self.backGroundView.alpha = 0
+            self.backView.alpha = 0
             self.contentView.alpha = 0
         } completion: { _ in
             self.dismiss(animated: false, completion: nil)
         }
     }
 
-    @IBAction func didTapLoginButton(_: Any) {
+    @IBAction func didTapCloseButton(_: Any) {
         hide()
-        delegate?.didTapLoginButton()
-    }
-
-    @IBAction func didTapBackButton(_: Any) {
-        hide()
-        delegate?.didTapBackButton()
     }
 }

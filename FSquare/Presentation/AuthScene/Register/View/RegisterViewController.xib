@@ -104,7 +104,7 @@
                             <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
                             <color key="tintColor" red="0.40392156862745099" green="0.40392156862745099" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="Tôi muốn nhận thông báo và chính sách từ FSqare."/>
+                            <state key="normal" title="Tôi chấp thuận chính sách và điều khoản từ FSqare."/>
                             <connections>
                                 <action selector="didTappolicyButton:" destination="-1" eventType="touchUpInside" id="CU4-aX-J9d"/>
                             </connections>

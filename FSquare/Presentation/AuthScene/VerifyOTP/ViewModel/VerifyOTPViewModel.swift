@@ -14,9 +14,11 @@ class VerifyOTPViewModel: ObservableObject {
     @Published var errorMessage: String? = nil
 
     private let verifyOTPUseCase: VerifyOTPUseCase
+    private var getProfileUseCase: GetProfileUseCase
     private var cancellables = Set<AnyCancellable>()
 
-    init(verifyOTPUseCase: VerifyOTPUseCase) {
+    init(verifyOTPUseCase: VerifyOTPUseCase, getProfileUseCase: GetProfileUseCase) {
+        self.getProfileUseCase = getProfileUseCase
         self.verifyOTPUseCase = verifyOTPUseCase
     }
 
@@ -32,11 +34,31 @@ class VerifyOTPViewModel: ObservableObject {
                 switch completion {
                 case .finished:
                     print("complete")
+                    self.getProfile()
                 case let .failure(error):
                     self.errorMessage = error.localizedDescription
                 }
             }, receiveValue: { authResponse in
                 completion(.success(authResponse))
             }).store(in: &cancellables)
+    }
+
+    func getProfile() {
+        getProfileUseCase.execute().sink(receiveCompletion: { completion in
+            switch completion {
+            case .finished:
+                print("finished")
+            case let .failure(error):
+                self.errorMessage = error.localizedDescription
+                TokenManager.shared.removeTokens()
+            }
+        }, receiveValue: { profileResponse in
+
+            let nameUser = "\(profileResponse.data.firstName) \(profileResponse.data.lastName)"
+            let phoneUser = profileResponse.data.phone
+
+            UserDefaults.standard.set(nameUser, forKey: .nameUser)
+            UserDefaults.standard.set(phoneUser, forKey: .phoneUser)
+        }).store(in: &cancellables)
     }
 }

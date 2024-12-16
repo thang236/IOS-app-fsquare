@@ -34,9 +34,8 @@ class OrderDetailViewController: UIViewController {
     @IBOutlet var firstButtonStack: OutlineButton!
     @IBOutlet var collectionView: UICollectionView!
     private var viewModel: MyOrderViewModel
-    private var popupCancelVC : PopUpCanncelViewController?
-    private var popConfirm : PopConfirmViewController?
-
+    private var popupCancelVC: PopUpCanncelViewController?
+    private var popConfirm: PopConfirmViewController?
 
     init(viewModel: MyOrderViewModel) {
         self.viewModel = viewModel
@@ -267,6 +266,7 @@ extension OrderDetailViewController: ReturnOrderViewControllerDelegate {
         }
     }
 }
+
 extension OrderDetailViewController: PopUpCanncelDelegate {
     func didSuccess() {
         viewModel.getOrderDetail(idOrder: viewModel.orderDetailResponse?.data?.id ?? "")

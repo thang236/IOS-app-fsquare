@@ -8,9 +8,10 @@
 import UIKit
 
 class NotificationViewController: UIViewController {
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet private var collectionView: UICollectionView!
     let viewModel: NotificationViewModel
 
+    @IBOutlet private var iconNil: UIImageView!
     init(viewModel: NotificationViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -48,7 +49,12 @@ class NotificationViewController: UIViewController {
     }
 
     private func setupBinding() {
-        viewModel.$notificationResponse.sink { [weak self] _ in
+        viewModel.$notificationResponse.sink { [weak self] notificationResponse in
+            if notificationResponse?.data.count == 0 {
+                self?.iconNil.isHidden = false
+            } else {
+                self?.iconNil.isHidden = true
+            }
             self?.collectionView.reloadData()
         }.store(in: &viewModel.cancellables)
     }

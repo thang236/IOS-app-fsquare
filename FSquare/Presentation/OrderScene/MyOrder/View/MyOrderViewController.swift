@@ -13,13 +13,13 @@ class MyOrderViewController: UIViewController {
     var viewModel: MyOrderViewModel
     private var statusArray: [String] = [OrderStatus.pending.title, OrderStatus.processing.title, OrderStatus.shipped.title, OrderStatus.delivered.title, OrderStatus.confirmed.title, OrderStatus.cancelled.title, OrderStatus.returned.title]
     private var selectedIndexPath: IndexPath = [0, 0]
-    private var popUpCancel : PopUpCanncelViewController?
-    private var popUpConfirm : PopConfirmViewController?
+    private var popUpCancel: PopUpCanncelViewController?
+    private var popUpConfirm: PopConfirmViewController?
 
     @IBOutlet private var iconNil: UIImageView!
     @IBOutlet private var topCollectionView: UICollectionView!
     @IBOutlet private var orderCollectionView: UICollectionView!
-    
+
     init(viewModel: MyOrderViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -32,13 +32,12 @@ class MyOrderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkGust()
         setupCollectionView()
         setupBinding()
         setupNavigationBar(title: "Đơn hàng")
         popUpCancel = PopUpCanncelViewController(viewModel: viewModel)
         popUpConfirm = PopConfirmViewController(viewModel: viewModel)
-        
+
         DispatchQueue.main.async {
             self.topCollectionView.selectItem(at: self.selectedIndexPath, animated: false, scrollPosition: .centeredHorizontally)
 
@@ -47,9 +46,11 @@ class MyOrderViewController: UIViewController {
             }
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
+
+    override func viewWillAppear(_: Bool) {
         checkGust()
     }
+
     private func checkGust() {
         if TokenManager.shared.getAccessToken() == nil {
             let popUp = PopUpLoginViewController()
@@ -95,6 +96,7 @@ class MyOrderViewController: UIViewController {
 
     func showMyViewControllerInACustomizedSheet(orderStatusData: OderStatusData) {
         let viewControllerToPresent = RattingViewController(oderStatusData: orderStatusData)
+        viewControllerToPresent.delegate = self
         if let sheet = viewControllerToPresent.sheetPresentationController {
             let seventyPercentDetent = UISheetPresentationController.Detent.custom { context in
                 context.maximumDetentValue * 0.8
@@ -143,7 +145,6 @@ extension MyOrderViewController: UICollectionViewDelegate, UICollectionViewDataS
                         popUpCancel?.appear(sender: self, idOrder: idOrder)
                     } else if statusOrderString == "delivered" {
                         popUpConfirm?.appear(sender: self, idOrder: idOrder)
-//                        self.viewModel.patchOrderStatus(idOrder: idOrder, newStatus: newStatus)
                     }
                 }
             }
@@ -209,8 +210,14 @@ extension MyOrderViewController: PopUpLoginViewControllerDelegate {
     func didTapLoginButton() {
         coordinator?.goToLogin()
     }
-    
+
     func didTapBackButton() {
         tabBarController?.selectedIndex = 0
+    }
+}
+
+extension MyOrderViewController: RattingViewControllerDelegate {
+    func didTapSubmit() {
+        viewModel.getOrder(orderStatus: OrderStatus.allStatuses[selectedIndexPath.row])
     }
 }

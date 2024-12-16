@@ -181,12 +181,15 @@ extension CartViewModel {
                 }
             } receiveValue: { addressResponse in
                 self.addressResponse = addressResponse
-                for address in addressResponse.data {
-                    if address.isDefault == true {
-                        self.addressChoose = address
+                if addressResponse.data.isEmpty {
+                    self.addressChoose = AddressData(id: "0", title: "Địa chỉ mặc định", address: "address.address", wardName: "address.wardName", districtName: "address.districtName", provinceName: "address.provinceName", isDefault: false)
+                } else {
+                    for address in addressResponse.data {
+                        if address.isDefault == true {
+                            self.addressChoose = address
+                        }
                     }
                 }
-                print(addressResponse)
             }
             .store(in: &cancellables)
     }

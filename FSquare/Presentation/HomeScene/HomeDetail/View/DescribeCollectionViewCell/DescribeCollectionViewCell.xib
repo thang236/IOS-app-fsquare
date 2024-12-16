@@ -35,8 +35,8 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2Z-Aj-TiB" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="87.333333333333329" width="78.666666666666671" height="58.999999999999986"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miêu tả" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2Z-Aj-TiB" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="87.333333333333329" width="50.666666666666664" height="58.999999999999986"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -221,7 +221,7 @@
     </objects>
     <designables>
         <designable name="f2Z-Aj-TiB">
-            <size key="intrinsicContentSize" width="78.666666666666671" height="18"/>
+            <size key="intrinsicContentSize" width="50.666666666666664" height="18"/>
         </designable>
         <designable name="neL-i5-nio">
             <size key="intrinsicContentSize" width="24.333333333333332" height="20.333333333333332"/>

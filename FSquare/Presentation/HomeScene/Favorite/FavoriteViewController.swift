@@ -71,7 +71,7 @@ class FavoriteViewController: UIViewController {
         navigationItem.rightBarButtonItems = nil
         navigationItem.leftBarButtonItems = nil
         searchBar = UISearchBar()
-        searchBar.placeholder = "Search some shoes..."
+        searchBar.placeholder = "Tìm kiếm sản phẩm"
         searchBar.delegate = self
         searchBar.showsCancelButton = true
         searchBar.becomeFirstResponder()
@@ -121,6 +121,7 @@ class FavoriteViewController: UIViewController {
             .sink { [weak self] errorMessage in
                 guard let wSelf = self else { return }
                 wSelf.showToast(message: errorMessage, chooseImageToast: .warning)
+                self?.viewModel.errorMessage = nil
             }.store(in: &viewModel.cancellables)
 
         viewModel.$successMessage
@@ -140,7 +141,7 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withType: FavoriteCollectionViewCell.self, for: indexPath)
-        cell.setupCollectionView(favorite: viewModel.favorites?.data[indexPath.row])
+        cell.setupCollectionView(favorite: viewModel.filteredFavorites?[indexPath.row])
         cell.delegate = self
         return cell
     }
@@ -156,7 +157,7 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
     }
 
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        coordinator?.goToShoesDetail(idShoes: viewModel.favorites?.data[indexPath.row].shoesId ?? "")
+        coordinator?.goToShoesDetail(idShoes: viewModel.filteredFavorites?[indexPath.row].shoesId ?? "")
     }
 }
 

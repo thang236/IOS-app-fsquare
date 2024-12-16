@@ -8,6 +8,7 @@
 import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
+    @IBOutlet var iconChevron: UIImageView!
     @IBOutlet var titleLabel: BodyLabel!
     @IBOutlet var iconImage: UIImageView!
     override func awakeFromNib() {
@@ -18,6 +19,10 @@ class ProfileTableViewCell: UITableViewCell {
     func setUpTableView(profile: Profile) {
         iconImage.image = profile.icon
         titleLabel.text = profile.title
+        if profile.title == "Đăng xuất" || profile.title == "Đăng nhập" {
+            iconChevron.isHidden = true
+            titleLabel.textColor = .systemRed
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

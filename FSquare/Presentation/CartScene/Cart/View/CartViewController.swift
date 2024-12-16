@@ -12,7 +12,7 @@ class CartViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var iconNil: UIImageView!
     @IBOutlet var checkOutButton: FullButton!
-    
+
     var popUp = PopUpLoginViewController()
     var coordinator: CartCoordinator?
     var viewModel: CartViewModel
@@ -31,8 +31,7 @@ class CartViewController: UIViewController {
         setupCollectionView()
         setupBinding()
         setupNav()
-        self.popUp.delegate = self
-        
+        popUp.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +44,6 @@ class CartViewController: UIViewController {
             }
         }
     }
-    
 
     private func setupNav() {
         let removeAllButton = UIBarButtonItem(image: UIImage.listRemove, style: .plain, target: self, action: #selector(removeAll))
@@ -154,10 +152,10 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 16, bottom: 0, right: 16)
     }
-    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10 
-    }
 
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumLineSpacingForSectionAt _: Int) -> CGFloat {
+        return 10
+    }
 }
 
 extension CartViewController: CartCollectionViewCellDelegate {
@@ -182,15 +180,12 @@ extension CartViewController: CartCollectionViewCellDelegate {
     }
 }
 
-
 extension CartViewController: PopUpLoginViewControllerDelegate {
     func didTapLoginButton() {
         coordinator?.goToLogin()
     }
-    
+
     func didTapBackButton() {
         tabBarController?.selectedIndex = 0
     }
-    
-    
 }

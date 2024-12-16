@@ -39,6 +39,7 @@ class ProfileViewController: UIViewController {
         setupNav()
         setupTableView()
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getProfile()
@@ -52,15 +53,15 @@ class ProfileViewController: UIViewController {
     }
 
     private func setupTableViewAppearance() {
-        profileTableView.layer.cornerRadius = 16
-        profileTableView.layer.masksToBounds = true
+        profileTableView.layer.backgroundColor = UIColor.white.cgColor
+        profileTableView.layer.shadowColor = UIColor.borderDark.cgColor
+        profileTableView.layer.shadowOffset = CGSize(width: 2.0, height: 20.0)
+        profileTableView.layer.shadowRadius = 12
+        profileTableView.layer.shadowOpacity = 0.5
+        profileTableView.layer.masksToBounds = false
         profileTableView.layer.borderWidth = 1
         profileTableView.layer.borderColor = UIColor.borderLight.cgColor
-
-        profileTableView.layer.shadowColor = UIColor.black.cgColor
-        profileTableView.layer.shadowOffset = CGSize(width: 10, height: 10)
-        profileTableView.layer.shadowOpacity = 0.4
-        profileTableView.layer.shadowRadius = 10
+        profileTableView.layer.cornerRadius = 12
     }
 
     private func setupNav() {
@@ -72,15 +73,14 @@ class ProfileViewController: UIViewController {
         setupTableViewAppearance()
         avatarImage.cornerRadius = avatarImage.frame.height / 2
     }
-    
 
     private func setupBindings() {
         viewModel.$errorMessage
             .compactMap { $0 }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] errorMessage in
-                print("errorMessage:   \(errorMessage)")
                 self?.showToast(message: errorMessage, chooseImageToast: .error)
+                self?.viewModel.errorMessage = nil
 
             }.store(in: &cancellables)
     }
@@ -130,7 +130,7 @@ class ProfileViewController: UIViewController {
             self.present(self.imagePicker, animated: true, completion: nil)
         }
     }
-    
+
     func showMyViewControllerInACustomizedSheet() {
         let viewControllerToPresent = SheetLogoutViewController()
         viewControllerToPresent.delegate = self
@@ -192,7 +192,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
                 showToast(message: "Vui lòng đăng nhập để sử dụng tính năng này", chooseImageToast: .warning)
             }
         case .policy:
-            print("111")
+            coordinator?.goToChinhSach()
         case .logout:
             if TokenManager.shared.getAccessToken() != nil {
                 showMyViewControllerInACustomizedSheet()
@@ -247,6 +247,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate & UINavigationC
         }
     }
 }
+
 extension ProfileViewController: SheetLogoutViewControllerDelegate {
     func didTapLogoutButton() {
         TokenManager.shared.removeTokens()
@@ -254,14 +255,13 @@ extension ProfileViewController: SheetLogoutViewControllerDelegate {
         coordinator?.logoutUser()
     }
 }
+
 extension ProfileViewController: PopUpLoginViewControllerDelegate {
     func didTapLoginButton() {
         coordinator?.logoutUser()
     }
-    
+
     func didTapBackButton() {
         tabBarController?.selectedIndex = 0
     }
-    
-    
 }

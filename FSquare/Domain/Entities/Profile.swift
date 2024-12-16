@@ -19,7 +19,7 @@ extension Profile {
             Profile(icon: UIImage.user, title: "Chỉnh sửa hồ sơ"),
             Profile(icon: UIImage.mappin, title: "Địa chỉ"),
             Profile(icon: UIImage.bell, title: "Thông báo"),
-            Profile(icon: UIImage.lockFix, title: "Chính sách quyền riêng tư")
+            Profile(icon: UIImage.lockFix, title: "Chính sách quyền riêng tư"),
         ]
         let loginLogoutProfile = TokenManager.shared.getAccessToken() != nil
             ? Profile(icon: UIImage.loginLogout, title: "Đăng xuất")

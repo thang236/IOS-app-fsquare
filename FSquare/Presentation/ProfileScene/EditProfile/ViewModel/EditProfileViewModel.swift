@@ -18,7 +18,6 @@ class EditProfileViewModel: ObservableObject {
     @Published var lastName: String = ""
     @Published var birthDate: String = ""
     @Published var email: String = ""
-    @Published var country: String = ""
     @Published var phone: String = ""
 
     @Published var errorMessage: String? = nil
@@ -30,18 +29,17 @@ class EditProfileViewModel: ObservableObject {
     }
 
     func updateProfile(completion: @escaping (Result<ProfileResponse, Error>) -> Void) {
-        if firstName.isEmpty || birthDate.isEmpty || country.isEmpty || phone.isEmpty || lastName.isEmpty {
+        if firstName.isEmpty || birthDate.isEmpty || phone.isEmpty || lastName.isEmpty {
             errorMessage = "Xin hãy điền đủ các trường"
         } else if !phone.isValidVietnamesePhoneNumber() {
             errorMessage = "Hãy nhập số điện thoại hợp lệ"
         } else {
+            print("birthDay: \(birthDate)")
             let parameter = [
                 "firstName": firstName,
                 "lastName": lastName,
                 "birthDay": birthDate,
                 "phone": phone,
-                "address": country,
-                "email": email,
             ]
             editProfileUseCase.execute(parameter: parameter)
                 .sink(receiveCompletion: { result in
@@ -59,6 +57,10 @@ class EditProfileViewModel: ObservableObject {
                         return
                     }
                     if response.status == HTTPStatus.success.message {
+                        let nameUser = "\(response.data.firstName) \(response.data.lastName)"
+                        let phoneUser = response.data.phone
+                        UserDefaults.standard.set(nameUser, forKey: .nameUser)
+                        UserDefaults.standard.set(phoneUser, forKey: .phoneUser)
                         delegate.updateProfile(profile: response.data)
                     }
                 }).store(in: &cancellables)

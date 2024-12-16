@@ -5,6 +5,7 @@
 //  Created by Louis Macbook on 30/10/2024.
 //
 
+import AVKit
 import Combine
 import UIKit
 
@@ -46,16 +47,14 @@ class ShoeDetailViewController: UIViewController {
     // MARK: - @IBOutlet
 
     @IBOutlet private var collectionView: UICollectionView!
-
-    @IBOutlet var BottomView: UIView!
-
+    @IBOutlet private var BottomView: UIView!
     @IBOutlet private var quantityStackView: UIStackView!
     @IBOutlet private var quantityLabel: UILabel!
     @IBOutlet private var priceLbl: HeadingLabel!
-
-    @IBOutlet var stepperView: StepperView!
+    @IBOutlet private var stepperView: StepperView!
 
     // MARK: - Properties
+
     var coordinator: HomeCoordinator?
     private var popupVC = PopUpLoginViewController()
     private var selectedSizeIndexPath: IndexPath?
@@ -63,6 +62,7 @@ class ShoeDetailViewController: UIViewController {
     private var viewModel: ShoesDetailViewModel?
     private var shoesID: String?
     private var cancellables = Set<AnyCancellable>()
+    private var popMedia: MediaViewController?
     private lazy var dataSource:
         UICollectionViewDiffableDataSource<ShoesDetailSectionType, ShoeDetailContentCell> = {
             let dataSource = UICollectionViewDiffableDataSource<ShoesDetailSectionType, ShoeDetailContentCell>(collectionView: self.collectionView) { [weak self] collectionView, indexPath, item in
@@ -100,6 +100,7 @@ class ShoeDetailViewController: UIViewController {
                 case let .review(reviewData):
                     let cell = collectionView.dequeueReusableCell(withType: ReviewCollectionViewCell.self, for: indexPath)
                     cell.setupCell(reviewData: reviewData)
+                    cell.delegate = self
                     return cell
                 }
             }
@@ -134,6 +135,7 @@ class ShoeDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        popMedia = MediaViewController()
         popupVC.delegate = self
         stepperView.delegate = self
         stepperView.setMaxValue(maxValue: 1)
@@ -197,6 +199,7 @@ class ShoeDetailViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { errorMessage in
                 self.showToast(message: errorMessage, chooseImageToast: .warning)
+                self.viewModel?.errorMessage = nil
             }.store(in: &cancellables)
 
         viewModel?.$shoesDetail.receive(on: DispatchQueue.main)
@@ -247,6 +250,7 @@ class ShoeDetailViewController: UIViewController {
             .sink { sizesClassification in
                 var snapshot = self.dataSource.snapshot()
                 if let sizesClassification = sizesClassification {
+                    snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .sizeShoes))
                     guard let sizesClassificationData = sizesClassification.data else { return }
                     for sizesClassificationDataItem in sizesClassificationData {
                         snapshot.appendItems([.sizeShoes(titleSize: sizesClassificationDataItem.sizeNumber)], toSection: .sizeShoes)
@@ -425,6 +429,9 @@ class ShoeDetailViewController: UIViewController {
             header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
             return [header]
         case .review:
+            guard let reviewResponse = viewModel?.reviewResponse, !(reviewResponse.data.isEmpty) else {
+                return []
+            }
             let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(25))
             let header = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top
@@ -508,14 +515,42 @@ extension ShoeDetailViewController: StepperViewDelegate {
         showToast(message: message, chooseImageToast: .warning)
     }
 }
+
 extension ShoeDetailViewController: PopUpLoginViewControllerDelegate {
     func didTapLoginButton() {
         coordinator?.goToLogin()
     }
-    
-    func didTapBackButton() {
-        
+
+    func didTapBackButton() {}
+}
+
+extension ShoeDetailViewController: ReviewCollectionViewCellDelegate {
+    func didTapMediaItem(mediaItem: MediaItemGet) {
+        switch mediaItem {
+        case let .image(uRL):
+            popMedia?.appear(sender: self, with: uRL)
+        case let .video(uRL):
+            let asset = AVAsset(url: uRL)
+            let audioTracks = asset.tracks(withMediaType: .audio)
+
+            if audioTracks.isEmpty {
+                print("Video không chứa track audio.")
+            } else {
+                print("Video chứa \(audioTracks.count) track audio.")
+            }
+
+            let avPlayer = AVPlayer(url: uRL)
+            let avController = AVPlayerViewController()
+            avController.player = avPlayer
+            avPlayer.isMuted = false
+            avPlayer.volume = 1.0
+
+            try? AVAudioSession.sharedInstance().setCategory(.playback, options: [.duckOthers, .allowBluetooth])
+            try? AVAudioSession.sharedInstance().setActive(true)
+
+            present(avController, animated: true) {
+                avPlayer.play()
+            }
+        }
     }
-    
-    
 }

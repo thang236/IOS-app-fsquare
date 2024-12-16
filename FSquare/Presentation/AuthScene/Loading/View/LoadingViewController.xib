@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chào mừng đến" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXm-NN-MLi" customClass="HeadingLabel" customModule="FSquare" customModuleProvider="target">
-                    <rect key="frame" x="20" y="633" width="353" height="43"/>
+                    <rect key="frame" x="20" y="629.66666666666663" width="353" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -41,8 +41,8 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bước đi phong cách, dẫn đầu xu hướng." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m5-uC-lFS" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
-                    <rect key="frame" x="20" y="801" width="353" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <rect key="frame" x="20" y="797.66666666666663" width="353" height="20.333333333333371"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
@@ -52,7 +52,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FSquare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGa-1u-HsA">
-                    <rect key="frame" x="20" y="684" width="320.33333333333331" height="97"/>
+                    <rect key="frame" x="20" y="680.66666666666663" width="320.33333333333331" height="97"/>
                     <fontDescription key="fontDescription" name="Inter-Regular_ExtraBold" family="Inter" pointSize="80"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
     </objects>
     <designables>
         <designable name="5m5-uC-lFS">
-            <size key="intrinsicContentSize" width="256" height="17"/>
+            <size key="intrinsicContentSize" width="301.66666666666669" height="20.333333333333332"/>
         </designable>
     </designables>
     <resources>

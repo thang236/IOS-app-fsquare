@@ -123,6 +123,7 @@ class CheckOutViewController: UIViewController {
         viewModel.getAddress()
         popUp.delegate = self
         setupNav()
+        checkInfoUser()
         setUpBinding()
     }
 
@@ -136,6 +137,28 @@ class CheckOutViewController: UIViewController {
         bottomView.layer.masksToBounds = false
 
         bottomView.layer.cornerRadius = 16
+    }
+
+    private func checkInfoUser() {
+        if UserDefaults.standard.string(forKey: .nameUser) == nil ||
+            UserDefaults.standard.string(forKey: .nameUser) == "" ||
+            UserDefaults.standard.string(forKey: .phoneUser) == nil ||
+            UserDefaults.standard.string(forKey: .phoneUser) == ""
+        {
+            showAlertWithActions(title: "Thông báo", message: "Vui lòng cập nhật thông tin tài khoản trước khi thanh toán",
+                                 okButtonTitle: "Cập nhật thông tin",
+                                 cancelButtonTitle: "Trở lại",
+                                 okAction: { [self] in
+                                     DispatchQueue.main.async {
+                                         self.tabBarController?.tabBar.isHidden = false
+                                         self.tabBarController?.selectedIndex = 3
+                                         self.navigationController?.popViewController(animated: false)
+                                     }
+                                 }, cancelAction: { [self] in
+                                     self.navigationController?.popViewController(animated: true)
+                                     self.tabBarController?.tabBar.isHidden = false
+                                 })
+        }
     }
 
     private func setupNav() {
@@ -241,16 +264,42 @@ class CheckOutViewController: UIViewController {
     }
 
     private func setUpBinding() {
+        viewModel.$errorMessage
+            .compactMap { $0 }
+            .receive(on: DispatchQueue.main).sink { [weak self] errorMessage in
+                self?.showToast(message: errorMessage, chooseImageToast: .warning)
+                self?.viewModel.errorMessage = nil
+            }.store(in: &viewModel.cancellables)
+
         viewModel.$addressChoose
             .receive(on: RunLoop.main)
             .sink { [weak self] addressChoose in
                 guard let self = self else { return }
                 var snapshot = self.dataSource.snapshot()
                 if let addressChoose = addressChoose {
-                    snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .address))
-                    snapshot.appendItems([.address(address: addressChoose)], toSection: .address)
-                    self.dataSource.applySnapshotUsingReloadData(snapshot)
-                    calculatorFee(address: addressChoose)
+                    if addressChoose.id == "0" {
+                        showAlertWithActions(title: "Thông báo", message: "Bạn cần phải thêm địa chỉ trước khi đặt hàng",
+                                             okButtonTitle: "Thêm địa chỉ",
+                                             cancelButtonTitle: "Trở lại",
+                                             okAction: { [self] in
+                                                 DispatchQueue.main.async {
+                                                     self.tabBarController?.tabBar.isHidden = false
+                                                     self.tabBarController?.selectedIndex = 3
+                                                     self.navigationController?.popViewController(animated: false)
+                                                     self.viewModel.addressChoose = nil
+                                                 }
+
+                                             }, cancelAction: { [self] in
+                                                 self.navigationController?.popViewController(animated: true)
+                                                 self.tabBarController?.tabBar.isHidden = false
+                                                 self.viewModel.addressChoose = nil
+                                             })
+                    } else {
+                        snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .address))
+                        snapshot.appendItems([.address(address: addressChoose)], toSection: .address)
+                        self.dataSource.applySnapshotUsingReloadData(snapshot)
+                        calculatorFee(address: addressChoose)
+                    }
                 }
             }.store(in: &viewModel.cancellables)
 
@@ -267,7 +316,7 @@ class CheckOutViewController: UIViewController {
         viewModel.$orderResponse
             .receive(on: RunLoop.main)
             .sink { orderResponse in
-               
+
                 if let orderResponse = orderResponse {
                     if orderResponse.status == HTTPStatus.success.message || orderResponse.status == HTTPStatus.created.message {
                         self.popUp.appear(sender: self, isSuccess: true)
@@ -286,11 +335,7 @@ class CheckOutViewController: UIViewController {
                     if paymentResponse.status == HTTPStatus.success.message {
                         if let url = paymentResponse.data?.paymentUrl {
                             let baoKimVC = BaoKimViewController(url: url)
-                            baoKimVC.onPaymentComplete = {
-                                self.createOrder()
-                                let popUp = PopUpPaymentViewController()
-                                popUp.appear(sender: self, isSuccess: true)
-                            }
+                            baoKimVC.delegate = self
                             self.navigationController?.pushViewController(baoKimVC, animated: false)
                         }
                     }
@@ -404,5 +449,18 @@ extension CheckOutViewController: PopUpPaymentViewControllerDelegate {
 extension CheckOutViewController: AddressCollectionViewCellDelegate {
     func didTapEditButton() {
         coordinator?.goToChooseAddress()
+    }
+}
+
+extension CheckOutViewController: BaoKimViewControllerDelegate {
+    func didCloseBaoKim() {
+        clientOrderCode = viewModel.generateRandomID()
+    }
+
+    func onPaymentComplete() {
+        createOrder()
+        let popUp = PopUpPaymentViewController()
+        popUp.delegate = self
+        popUp.appear(sender: self, isSuccess: true)
     }
 }
