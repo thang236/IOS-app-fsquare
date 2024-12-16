@@ -27,7 +27,6 @@ class TabViewController: UITabBarController {
         let homeTabItem = UITabBarItem(title: "Trang chủ", image: UIImage.homeOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.homeFill)
         let cartTabItem = UITabBarItem(title: "Giỏ hàng", image: UIImage.bagOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.bagFill.withRenderingMode(.alwaysOriginal))
         let orderTabItem = UITabBarItem(title: "Đơn hàng", image: UIImage.cartOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.cartFill)
-//        let walletTabItem = UITabBarItem(title: "Wallet", image: UIImage.walletOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.walletFill)
         let profileTabItem = UITabBarItem(title: "Hồ sơ", image: UIImage.userOutline.withRenderingMode(.alwaysOriginal).withTintColor(.neutralLight), selectedImage: UIImage.userFill)
 
         // Tạo view controllers cho từng tab và bọc trong UINavigationController
@@ -39,12 +38,10 @@ class TabViewController: UITabBarController {
         let cartVC = cartCoordinator.getNavigationController()
         let orderCoordinator = OrderCoordinator(navigationMain: coordinator.getNavigationController())
         let orderVC = orderCoordinator.getNavigationController()
-//        let walletVC = UINavigationController(rootViewController: MyEWalletViewController())
 
         homeVC.tabBarItem = homeTabItem
         cartVC.tabBarItem = cartTabItem
         orderVC.tabBarItem = orderTabItem
-//        walletVC.tabBarItem = walletTabItem
         profileVC.tabBarItem = profileTabItem
 
         setViewControllers([homeVC, cartVC, orderVC, profileVC], animated: true)

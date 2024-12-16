@@ -11,7 +11,7 @@ class NotificationViewController: UIViewController {
     @IBOutlet private var collectionView: UICollectionView!
     let viewModel: NotificationViewModel
 
-    @IBOutlet private weak var iconNil: UIImageView!
+    @IBOutlet private var iconNil: UIImageView!
     init(viewModel: NotificationViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)

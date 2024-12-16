@@ -27,6 +27,7 @@ class LoadingViewController: UIViewController {
         super.viewDidLoad()
         setupBindings()
         checkRemember()
+        viewModel.getAddress()
         let token = TokenManager.shared.getAccessToken()
         print("token: \(String(describing: token))")
     }
@@ -39,7 +40,6 @@ class LoadingViewController: UIViewController {
                 if errorMessage == "Token is obsolete" {
                     self?.coordinator?.goToLoginMethodSelection()
                 }
-                self?.showToast(message: errorMessage, chooseImageToast: .error)
                 self?.viewModel.errorMessage = nil
             }.store(in: &cancellables)
     }

@@ -5,9 +5,9 @@
 //  Created by Louis Macbook on 30/10/2024.
 //
 
+import AVKit
 import Combine
 import UIKit
-import AVKit
 
 enum ShoesDetailSectionType: String, CaseIterable, Hashable {
     case headerImage
@@ -54,6 +54,7 @@ class ShoeDetailViewController: UIViewController {
     @IBOutlet private var stepperView: StepperView!
 
     // MARK: - Properties
+
     var coordinator: HomeCoordinator?
     private var popupVC = PopUpLoginViewController()
     private var selectedSizeIndexPath: IndexPath?
@@ -61,7 +62,7 @@ class ShoeDetailViewController: UIViewController {
     private var viewModel: ShoesDetailViewModel?
     private var shoesID: String?
     private var cancellables = Set<AnyCancellable>()
-    private var popMedia : MediaViewController?
+    private var popMedia: MediaViewController?
     private lazy var dataSource:
         UICollectionViewDiffableDataSource<ShoesDetailSectionType, ShoeDetailContentCell> = {
             let dataSource = UICollectionViewDiffableDataSource<ShoesDetailSectionType, ShoeDetailContentCell>(collectionView: self.collectionView) { [weak self] collectionView, indexPath, item in
@@ -249,6 +250,7 @@ class ShoeDetailViewController: UIViewController {
             .sink { sizesClassification in
                 var snapshot = self.dataSource.snapshot()
                 if let sizesClassification = sizesClassification {
+                    snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .sizeShoes))
                     guard let sizesClassificationData = sizesClassification.data else { return }
                     for sizesClassificationDataItem in sizesClassificationData {
                         snapshot.appendItems([.sizeShoes(titleSize: sizesClassificationDataItem.sizeNumber)], toSection: .sizeShoes)
@@ -427,6 +429,9 @@ class ShoeDetailViewController: UIViewController {
             header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
             return [header]
         case .review:
+            guard let reviewResponse = viewModel?.reviewResponse, !(reviewResponse.data.isEmpty) else {
+                return []
+            }
             let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(25))
             let header = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top
@@ -522,9 +527,9 @@ extension ShoeDetailViewController: PopUpLoginViewControllerDelegate {
 extension ShoeDetailViewController: ReviewCollectionViewCellDelegate {
     func didTapMediaItem(mediaItem: MediaItemGet) {
         switch mediaItem {
-        case .image(let uRL):
-            self.popMedia?.appear(sender: self, with: uRL)
-        case .video(let uRL):
+        case let .image(uRL):
+            popMedia?.appear(sender: self, with: uRL)
+        case let .video(uRL):
             let asset = AVAsset(url: uRL)
             let audioTracks = asset.tracks(withMediaType: .audio)
 
@@ -533,21 +538,19 @@ extension ShoeDetailViewController: ReviewCollectionViewCellDelegate {
             } else {
                 print("Video chứa \(audioTracks.count) track audio.")
             }
-            
+
             let avPlayer = AVPlayer(url: uRL)
             let avController = AVPlayerViewController()
             avController.player = avPlayer
             avPlayer.isMuted = false
             avPlayer.volume = 1.0
-            
+
             try? AVAudioSession.sharedInstance().setCategory(.playback, options: [.duckOthers, .allowBluetooth])
             try? AVAudioSession.sharedInstance().setActive(true)
-            
-            self.present(avController, animated: true) {
+
+            present(avController, animated: true) {
                 avPlayer.play()
             }
         }
     }
-    
-    
 }

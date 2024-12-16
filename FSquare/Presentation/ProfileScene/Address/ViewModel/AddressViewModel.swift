@@ -163,6 +163,11 @@ class AddressViewModel: ObservableObject {
                 }
             } receiveValue: { address in
                 self.address = address
+                if address.data.isEmpty {
+                    UserDefaults.standard.set(false, forKey: .addressUser)
+                } else {
+                    UserDefaults.standard.set(true, forKey: .addressUser)
+                }
             }
             .store(in: &cancellables)
     }

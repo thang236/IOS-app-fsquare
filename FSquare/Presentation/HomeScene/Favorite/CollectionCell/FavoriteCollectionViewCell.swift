@@ -47,7 +47,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
             favButton.setImage(.fav, for: .normal)
 
             hideSkeleton()
-            quantitySoldLabel.text = "\(favorite.sales) sold"
+            quantitySoldLabel.text = "\(favorite.sales) đã bán"
             numberStart.text = "\(favorite.avgRating)"
             nameProduct.text = favorite.name
             if let thumbnailString = favorite.thumbnail?.url, let url = URL(string: thumbnailString) {

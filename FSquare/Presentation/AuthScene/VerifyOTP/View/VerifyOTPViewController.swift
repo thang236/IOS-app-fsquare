@@ -118,7 +118,7 @@ class VerifyOTPViewController: UIViewController {
                 guard let token = authResponse.data else {
                     return
                 }
-
+                UserDefaults.standard.set(true, forKey: .rememberMe)
                 TokenManager.shared.saveAccessToken(token)
                 DispatchQueue.main.async {
                     if self.isLogin {

@@ -56,7 +56,7 @@
                                     <color key="textColor" name="neutralDark"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="098-4892-489" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvB-XA-OhO" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxx-xxxx-xxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvB-XA-OhO" customClass="BodyLabel" customModule="FSquare" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="34" width="247" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" name="neutralDark"/>
@@ -111,7 +111,7 @@
     </objects>
     <designables>
         <designable name="cvB-XA-OhO">
-            <size key="intrinsicContentSize" width="100.33333333333333" height="17"/>
+            <size key="intrinsicContentSize" width="91" height="17"/>
         </designable>
     </designables>
     <resources>

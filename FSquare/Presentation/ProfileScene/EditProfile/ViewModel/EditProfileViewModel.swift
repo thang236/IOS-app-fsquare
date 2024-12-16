@@ -34,12 +34,12 @@ class EditProfileViewModel: ObservableObject {
         } else if !phone.isValidVietnamesePhoneNumber() {
             errorMessage = "Hãy nhập số điện thoại hợp lệ"
         } else {
+            print("birthDay: \(birthDate)")
             let parameter = [
                 "firstName": firstName,
                 "lastName": lastName,
                 "birthDay": birthDate,
                 "phone": phone,
-                "email": email,
             ]
             editProfileUseCase.execute(parameter: parameter)
                 .sink(receiveCompletion: { result in
@@ -57,6 +57,10 @@ class EditProfileViewModel: ObservableObject {
                         return
                     }
                     if response.status == HTTPStatus.success.message {
+                        let nameUser = "\(response.data.firstName) \(response.data.lastName)"
+                        let phoneUser = response.data.phone
+                        UserDefaults.standard.set(nameUser, forKey: .nameUser)
+                        UserDefaults.standard.set(phoneUser, forKey: .phoneUser)
                         delegate.updateProfile(profile: response.data)
                     }
                 }).store(in: &cancellables)

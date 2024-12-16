@@ -7,7 +7,7 @@ class AddNewAddressViewController: UIViewController {
     @IBOutlet var districtField: NormalField!
     @IBOutlet var wardField: NormalField!
     @IBOutlet var streetField: NormalField!
-    private var viewModel: AddressViewModel?
+    private var viewModel: AddressViewModel
 
     init(viewModel: AddressViewModel) {
         self.viewModel = viewModel
@@ -23,6 +23,7 @@ class AddNewAddressViewController: UIViewController {
         super.viewDidLoad()
         setupNav()
         setupField()
+        setupBinding()
     }
 
     private func setupField() {
@@ -55,26 +56,36 @@ class AddNewAddressViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    private func setupBinding() {
+        viewModel.$provinceName
+            .sink { [weak self] provinceName in
+                self?.cityField.text = provinceName
+                self?.districtField.text = ""
+                self?.wardField.text = ""
+            }.store(in: &viewModel.cancellables)
+
+        viewModel.$districtName
+            .sink { [weak self] districtName in
+                self?.districtField.text = districtName
+                self?.wardField.text = ""
+            }.store(in: &viewModel.cancellables)
+
+        viewModel.$wardName
+            .sink { [weak self] wardName in
+                self?.wardField.text = wardName
+            }.store(in: &viewModel.cancellables)
+
+        viewModel.$errorMessage
+            .sink { [weak self] errorMessage in
+                if let errorMessage = errorMessage {
+                    self?.showToast(message: errorMessage, chooseImageToast: .warning)
+                    self?.viewModel.errorMessage = nil
+                }
+            }.store(in: &viewModel.cancellables)
+    }
+
     override func viewWillAppear(_: Bool) {
         tabBarController?.tabBar.isHidden = true
-        guard let viewModel = viewModel else { return }
-        if let city = viewModel.provinceName {
-            cityField.text = city
-        } else {
-            cityField.text = ""
-        }
-
-        if let district = viewModel.districtName {
-            districtField.text = district
-        } else {
-            districtField.text = ""
-        }
-
-        if let ward = viewModel.wardName {
-            wardField.text = ward
-        } else {
-            wardField.text = ""
-        }
     }
 
     override func viewWillDisappear(_: Bool) {
@@ -102,7 +113,7 @@ class AddNewAddressViewController: UIViewController {
             isDefault: false
         )
 
-        viewModel?.addLocation(location: address, completion: { [weak self] result in
+        viewModel.addLocation(location: address, completion: { [weak self] result in
             switch result {
             case let .success(success):
                 print(success.message)
@@ -126,14 +137,14 @@ extension AddNewAddressViewController: UITextFieldDelegate {
     }
 
     @objc private func cityFieldTapped() {
-        guard let coordinator = coordinator, let viewModel = viewModel else {
+        guard let coordinator = coordinator else {
             return
         }
         coordinator.goToChooseLocation(viewModel: viewModel, chooseLocationType: .provinces)
     }
 
     @objc private func districtFieldTapped() {
-        guard let coordinator = coordinator, let viewModel = viewModel else {
+        guard let coordinator = coordinator else {
             return
         }
         if let provinceID = viewModel.provinceID, provinceID != 0 {
@@ -144,7 +155,7 @@ extension AddNewAddressViewController: UITextFieldDelegate {
     }
 
     @objc private func wardFieldTapped() {
-        guard let coordinator = coordinator, let viewModel = viewModel else {
+        guard let coordinator = coordinator else {
             return
         }
         if let districtID = viewModel.districtID {

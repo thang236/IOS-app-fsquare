@@ -125,11 +125,7 @@ class CartViewController: UIViewController {
         if viewModel.bagResponse?.data?.count == 0 {
             showToast(message: "Giỏ hàng của bạn đang trống", chooseImageToast: .warning)
         } else {
-            if let phoneUser = UserDefaults.standard.string(forKey: .phoneUser), let nameUser = UserDefaults.standard.string(forKey: .nameUser), phoneUser != "", nameUser != "" {
-                coordinator?.goToCheckOut()
-            } else {
-                showToast(message: "Hãy cập nhật lại thông tin tài khoản", chooseImageToast: .warning)
-            }
+            coordinator?.goToCheckOut()
         }
     }
 }

@@ -14,9 +14,11 @@ class LoadingViewModel: ObservableObject {
 
     private var getProfileUseCase: GetProfileUseCase
     private var cancellables = Set<AnyCancellable>()
+    private let getAddressUseCase: GetAddressUseCase
 
-    init(getProfileUseCase: GetProfileUseCase) {
+    init(getProfileUseCase: GetProfileUseCase, getAddressUseCase: GetAddressUseCase) {
         self.getProfileUseCase = getProfileUseCase
+        self.getAddressUseCase = getAddressUseCase
     }
 
     func getProfile(completion: @escaping (Result<ProfileResponse, Error>) -> Void) {
@@ -37,5 +39,25 @@ class LoadingViewModel: ObservableObject {
             UserDefaults.standard.set(nameUser, forKey: .nameUser)
             UserDefaults.standard.set(phoneUser, forKey: .phoneUser)
         }).store(in: &cancellables)
+    }
+
+    func getAddress() {
+        getAddressUseCase.getAddress()
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    print("Completion: Success")
+                case let .failure(failure):
+                    self.errorMessage = failure.localizedDescription
+                }
+            } receiveValue: { address in
+                if address.data.isEmpty {
+                    UserDefaults.standard.set(false, forKey: .addressUser)
+                } else {
+                    UserDefaults.standard.set(true, forKey: .addressUser)
+                }
+            }
+            .store(in: &cancellables)
     }
 }

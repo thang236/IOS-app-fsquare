@@ -12,9 +12,7 @@ class LoginWithEmailViewController: UIViewController {
     var coordinator: AuthCoordinator?
     private var viewModel: LoginWithEmailViewModel
     @IBOutlet private var emailField: NormalField!
-    @IBOutlet private var rememberButton: UIButton!
 
-    private var checkBox = false
     private var cancellables = Set<AnyCancellable>()
 
     init(viewModel: LoginWithEmailViewModel) {
@@ -49,23 +47,8 @@ class LoginWithEmailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func didTapRemberButton(_: Any) {
-        checkBox = !checkBox
-        toggleCheckBox()
-    }
-
     @IBAction func didTapNextButton(_: Any) {
         handleNextButton()
-    }
-
-    private func toggleCheckBox() {
-        if checkBox {
-            let icon = UIImage.Toggle.focusTrue
-            rememberButton.setImage(icon, for: .normal)
-        } else {
-            let icon = UIImage.Toggle.focusFalse
-            rememberButton.setImage(icon, for: .normal)
-        }
     }
 
     private func setupBindings() {
@@ -91,7 +74,6 @@ class LoginWithEmailViewController: UIViewController {
     }
 
     private func login(email: String) {
-        UserDefaults.standard.set(checkBox, forKey: .rememberMe)
         viewModel.loginByEmail { completion in
             switch completion {
             case let .success(authResponse):

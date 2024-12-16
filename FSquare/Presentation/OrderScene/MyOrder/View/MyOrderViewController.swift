@@ -96,6 +96,7 @@ class MyOrderViewController: UIViewController {
 
     func showMyViewControllerInACustomizedSheet(orderStatusData: OderStatusData) {
         let viewControllerToPresent = RattingViewController(oderStatusData: orderStatusData)
+        viewControllerToPresent.delegate = self
         if let sheet = viewControllerToPresent.sheetPresentationController {
             let seventyPercentDetent = UISheetPresentationController.Detent.custom { context in
                 context.maximumDetentValue * 0.8
@@ -212,5 +213,11 @@ extension MyOrderViewController: PopUpLoginViewControllerDelegate {
 
     func didTapBackButton() {
         tabBarController?.selectedIndex = 0
+    }
+}
+
+extension MyOrderViewController: RattingViewControllerDelegate {
+    func didTapSubmit() {
+        viewModel.getOrder(orderStatus: OrderStatus.allStatuses[selectedIndexPath.row])
     }
 }

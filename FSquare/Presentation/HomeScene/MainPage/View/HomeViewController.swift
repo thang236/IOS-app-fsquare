@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
 
     private var viewModel: HomeViewModel
     var coordinator: HomeCoordinator?
-
+    private let refreshControl = UIRefreshControl()
     private lazy var dataSource:
         UICollectionViewDiffableDataSource<HomeCollectionType, HomeCollectionContentCell> = {
             let dataSource = UICollectionViewDiffableDataSource<HomeCollectionType, HomeCollectionContentCell>(collectionView: self.collectionView) { [weak self] collectionView, indexPath, item in
@@ -123,6 +123,13 @@ class HomeViewController: UIViewController {
         setupNavigationBar()
         setupBinding()
         popUp.delegate = self
+
+        refreshControl.addTarget(self, action: #selector(refreshHome), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
+    }
+
+    @objc private func refreshHome() {
+        viewModel.initDataSource()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -221,6 +228,7 @@ class HomeViewController: UIViewController {
                 guard let wSelf = self else { return }
                 var snapshot = wSelf.dataSource.snapshot()
                 if let response = response {
+                    self?.refreshControl.endRefreshing()
                     snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .shoes))
                     snapshot.appendItems(response.data.map { .shoes(shoes: $0) }, toSection: .shoes)
                 }

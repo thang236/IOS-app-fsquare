@@ -69,12 +69,15 @@ class EditAddressViewController: UIViewController {
             .compactMap { $0 }
             .sink { [weak self] provinceName in
                 self?.cityField.text = provinceName
+                self?.districtField.text = ""
+                self?.wardField.text = ""
             }.store(in: &viewModel.cancellables)
 
         viewModel.$districtName
             .compactMap { $0 }
             .sink { [weak self] districtName in
                 self?.districtField.text = districtName
+                self?.wardField.text = ""
             }.store(in: &viewModel.cancellables)
 
         viewModel.$wardName

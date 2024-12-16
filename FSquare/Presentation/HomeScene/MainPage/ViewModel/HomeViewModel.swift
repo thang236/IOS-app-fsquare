@@ -307,7 +307,7 @@ class HomeViewModel: ObservableObject {
 
     func getBrand() {
         let parameter: [String: Any] = [
-            "size": 7,
+            "size": 8,
             "page": 1,
             "search": "",
         ]
@@ -322,14 +322,10 @@ class HomeViewModel: ObservableObject {
                 }
             }, receiveValue: { brandResponse in
                 self.brands = brandResponse.data
-                let thumnail = Thumbnail(url: "more")
-                if brandResponse.data.count == 7 {
-                    self.brands?.append(BrandItem(id: "0", name: "Xem thêm", thumbnail: thumnail))
-                }
             }).store(in: &cancellables)
     }
 
-    func fetchShoesAndBrands(page: Int) {
+    func fetchShoesAndBrands(page: Int, doneAction _: (() -> Void)? = nil) {
         let shoesParameter: [String: Any] = [
             "size": 10,
             "page": page,
@@ -339,7 +335,7 @@ class HomeViewModel: ObservableObject {
         ]
 
         let brandParameter: [String: Any] = [
-            "size": 7,
+            "size": 8,
             "page": 1,
             "search": "",
         ]
@@ -370,10 +366,6 @@ class HomeViewModel: ObservableObject {
                     self.errorMessage = "\(shoesResponse.status): \(shoesResponse.message)"
                 }
                 self.brands = brandResponse.data
-                let thumnail = Thumbnail(url: "more")
-                if brandResponse.data.count == 7 {
-                    self.brands?.append(BrandItem(id: "0", name: "Xem thêm", thumbnail: thumnail))
-                }
             }).store(in: &cancellables)
     }
 }

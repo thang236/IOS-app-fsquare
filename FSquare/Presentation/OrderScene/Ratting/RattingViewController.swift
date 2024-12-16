@@ -7,6 +7,7 @@
 
 import AVKit
 import PhotosUI
+import ProgressHUD
 import UIKit
 import UniformTypeIdentifiers
 
@@ -107,6 +108,7 @@ class RattingViewController: UIViewController {
         } else if mediaItems.count >= 5 {
             showToast(message: "Bạn chỉ có thể chọn tối đa 5 mục", chooseImageToast: .warning)
         } else {
+            ProgressHUD.animate("Loading...")
             let orderID = oderStatusData.id
             let files = changeToURLArray()
             let rating = startRattingView.rating
@@ -115,10 +117,12 @@ class RattingViewController: UIViewController {
                 switch result {
                 case .success:
                     print("Gửi đánh giá thành công!")
+                    ProgressHUD.succeed()
                     self.dismiss(animated: true) {
                         self.delegate?.didTapSubmit()
                     }
                 case let .failure(error):
+                    ProgressHUD.failed()
                     self.showToast(message: "Lỗi khi gửi đánh giá", chooseImageToast: .error)
                     print("Lỗi khi gửi đánh giá: \(error.localizedDescription)")
                 }

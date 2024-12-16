@@ -14,4 +14,5 @@ enum UserDefaultsKey: String {
     case rememberMe
     case nameUser
     case phoneUser
+    case addressUser
 }

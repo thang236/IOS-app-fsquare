@@ -83,30 +83,30 @@ class InfoOrderCollectionViewCell: UICollectionViewCell {
         guard let statusTimestamps = orderData.statusTimestamps else { return "" }
         switch orderData.status {
         case "pending":
-            return statusTimestamps.pending?.toShortDate() ?? ""
+            return statusTimestamps.pending?.toShortDateTime() ?? ""
         case "processing":
-            return statusTimestamps.processing?.toShortDate() ?? ""
+            return statusTimestamps.processing?.toShortDateTime() ?? ""
         case "shipped":
-            return statusTimestamps.shipped?.toShortDate() ?? ""
+            return statusTimestamps.shipped?.toShortDateTime() ?? ""
         case "delivered":
-            return statusTimestamps.delivered?.toShortDate() ?? ""
+            return statusTimestamps.delivered?.toShortDateTime() ?? ""
         case "confirmed":
-            return statusTimestamps.confirmed?.toShortDate() ?? ""
+            return statusTimestamps.confirmed?.toShortDateTime() ?? ""
         case "cancelled":
-            return statusTimestamps.cancelled?.toShortDate() ?? ""
+            return statusTimestamps.cancelled?.toShortDateTime() ?? ""
         case "returned":
             if let returnInfo = orderData.returnInfo {
                 switch returnInfo.status {
                 case "pending":
-                    return returnInfo.statusTimestamps?.pending?.toShortDate() ?? ""
+                    return returnInfo.statusTimestamps?.pending?.toShortDateTime() ?? ""
                 case "initiated":
-                    return returnInfo.statusTimestamps?.initiated?.toShortDate() ?? ""
+                    return returnInfo.statusTimestamps?.initiated?.toShortDateTime() ?? ""
                 case "completed":
-                    return returnInfo.statusTimestamps?.completed?.toShortDate() ?? ""
+                    return returnInfo.statusTimestamps?.completed?.toShortDateTime() ?? ""
                 case "refunded":
-                    return returnInfo.statusTimestamps?.refunded?.toShortDate() ?? ""
+                    return returnInfo.statusTimestamps?.refunded?.toShortDateTime() ?? ""
                 case "cancelled":
-                    return returnInfo.statusTimestamps?.cancelled?.toShortDate() ?? ""
+                    return returnInfo.statusTimestamps?.cancelled?.toShortDateTime() ?? ""
                 default:
                     return "Đã có lỗi xảy ra"
                 }

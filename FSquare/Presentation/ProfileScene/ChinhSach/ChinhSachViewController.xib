@@ -22,22 +22,21 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdc-TZ-yIP">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="824.66666666666663"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="758"/>
                             <subviews>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDP-A6-aO3">
-                                    <rect key="frame" x="16" y="20" width="361" height="784.66666666666663"/>
+                                    <rect key="frame" x="16" y="20" width="361" height="718"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <string key="text">1. Chấp nhận điều khoản
+                                    <mutableString key="text">1. Chấp nhận điều khoản
 Khi đăng ký tài khoản trên FSquare, người dùng đồng ý với tất cả các điều khoản và điều kiện sử dụng dịch vụ được quy định tại đây.
-2. Độ tuổi và năng lực pháp lý Người dùng phải từ 16 tuổi trở lên và có đầy đủ năng lực hành vi dân sự để thực hiện các giao dịch trên ứng dụng.
-3. Thông tin tài khoản Người dùng cam kết cung cấp đầy đủ, chính xác và cập nhật các thông tin cá nhân (tên, email, số điện thoại, v.v.). FSquare không chịu trách nhiệm đối với các vấn đề phát sinh từ thông tin sai lệch.
-4. Bảo mật thông tin Người dùng có trách nhiệm bảo mật thông tin đăng nhập của mình. FSquare không chịu trách nhiệm khi tài khoản bị truy cập trái phép do lỗi bảo mật từ phía người dùng.
-5. Mục đích sử dụng Người dùng chỉ được sử dụng tài khoản trên FSquare cho mục đích mua sắm cá nhân và không được sử dụng tài khoản để thực hiện các hoạt động vi phạm pháp luật.
-6. Hủy bỏ và khóa tài khoản FSquare có quyền tạm ngừng hoặc khóa tài khoản của người dùng nếu phát hiện các hành vi vi phạm quy định như gian lận, cung cấp thông tin giả mạo hoặc có hành động gây ảnh hưởng xấu đến hệ thống.
-7. Quyền riêng tư Thông tin cá nhân của người dùng sẽ được bảo mật theo Chính sách bảo mật thông tin của FSquare và sẽ không chia sẻ cho bên thứ ba trái với quy định pháp luật.
-8. Thay đổi điều khoản FSquare có quyền thay đổi, cập nhật các điều khoản và điều kiện bất cứ lúc nào. Thay đổi sẽ được thông báo trên ứng dụng hoặc qua email.
-9. Trách nhiệm của người dùng Người dùng có trách nhiệm thực hiện đúng các giao dịch, thanh toán đầy đủ và tuân thủ quy định khi sử dụng dịch vụ trên FSquare.
-10. Giải quyết tranh chấp Mọi tranh chấp phát sinh giữa người dùng và FSquare sẽ được ưu tiên giải quyết thông qua thương lượng, hòa giải. Nếu không thành, tranh chấp sẽ được giải quyết theo quy định pháp luật.</string>
+2. Thông tin tài khoản Người dùng cam kết cung cấp đầy đủ, chính xác và cập nhật các thông tin cá nhân (tên, email, số điện thoại, v.v.). FSquare không chịu trách nhiệm đối với các vấn đề phát sinh từ thông tin sai lệch.
+3. Bảo mật thông tin Người dùng có trách nhiệm bảo mật thông tin đăng nhập của mình. FSquare không chịu trách nhiệm khi tài khoản bị truy cập trái phép do lỗi bảo mật từ phía người dùng.
+4. Mục đích sử dụng Người dùng chỉ được sử dụng tài khoản trên FSquare cho mục đích mua sắm cá nhân và không được sử dụng tài khoản để thực hiện các hoạt động vi phạm pháp luật.
+5. Hủy bỏ và khóa tài khoản FSquare có quyền tạm ngừng hoặc khóa tài khoản của người dùng nếu phát hiện các hành vi vi phạm quy định như gian lận, cung cấp thông tin giả mạo hoặc có hành động gây ảnh hưởng xấu đến hệ thống.
+6. Quyền riêng tư Thông tin cá nhân của người dùng sẽ được bảo mật theo Chính sách bảo mật thông tin của FSquare và sẽ không chia sẻ cho bên thứ ba trái với quy định pháp luật.
+7. Thay đổi điều khoản FSquare có quyền thay đổi, cập nhật các điều khoản và điều kiện bất cứ lúc nào. Thay đổi sẽ được thông báo trên ứng dụng hoặc qua email.
+8. Trách nhiệm của người dùng Người dùng có trách nhiệm thực hiện đúng các giao dịch, thanh toán đầy đủ và tuân thủ quy định khi sử dụng dịch vụ trên FSquare.
+9. Giải quyết tranh chấp Mọi tranh chấp phát sinh giữa người dùng và FSquare sẽ được ưu tiên giải quyết thông qua thương lượng, hòa giải. Nếu không thành, tranh chấp sẽ được giải quyết theo quy định pháp luật.</mutableString>
                                     <color key="textColor" systemColor="labelColor"/>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

@@ -5,18 +5,18 @@
 //  Created by ThangHT on 13/12/2024.
 //
 
-import UIKit
 import AVFoundation
 import AVKit
+import UIKit
 
 class MediaViewController: UIViewController {
-    @IBOutlet private weak var backView: UIView!
-    @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var contentView: UIView!
-    
+    @IBOutlet private var backView: UIView!
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var contentView: UIView!
+
     private var player: AVPlayer?
     private var playerLayer: AVPlayerLayer?
-    
+
     init() {
         super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .overFullScreen
@@ -26,12 +26,12 @@ class MediaViewController: UIViewController {
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
     }
-    
+
     func configView() {
         view.backgroundColor = .clear
         backView.backgroundColor = .black.withAlphaComponent(0.6)
@@ -46,15 +46,11 @@ class MediaViewController: UIViewController {
             self.showImage(from: url)
         }
     }
-    
+
     private func showImage(from url: URL) {
         imageView.loadImageWithShimmer(url: url)
         imageView.contentMode = .scaleAspectFill
     }
-
-
-
-    
 
     private func show() {
         UIView.animate(withDuration: 0.3, delay: 0.1) {
@@ -72,10 +68,7 @@ class MediaViewController: UIViewController {
         }
     }
 
-    
-    @IBAction func didTapCloseButton(_ sender: Any) {
+    @IBAction func didTapCloseButton(_: Any) {
         hide()
     }
-    
-
 }

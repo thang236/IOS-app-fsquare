@@ -44,6 +44,7 @@ class MyOrderViewModel: ObservableObject {
     @Published var orderDetailResponse: OrderResponse?
     @Published var errrorMessage: String? = nil
     var orderUseCase: OrderUseCase
+    @Published var status: String? = nil
 
     var cancellables = Set<AnyCancellable>()
 
