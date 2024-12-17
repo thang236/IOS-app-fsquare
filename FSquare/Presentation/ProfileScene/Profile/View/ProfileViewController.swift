@@ -193,6 +193,9 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             }
         case .policy:
             coordinator?.goToChinhSach()
+        case .contact:
+            let contactVC = ContactViewController()
+            navigationController?.pushViewController(contactVC, animated: true)
         case .logout:
             if TokenManager.shared.getAccessToken() != nil {
                 showMyViewControllerInACustomizedSheet()

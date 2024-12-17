@@ -20,6 +20,7 @@ extension Profile {
             Profile(icon: UIImage.mappin, title: "Địa chỉ"),
             Profile(icon: UIImage.bell, title: "Thông báo"),
             Profile(icon: UIImage.lockFix, title: "Chính sách quyền riêng tư"),
+            Profile(icon: UIImage(systemName: "phone.bubble") ?? UIImage.bell, title: "Liên hệ"),
         ]
         let loginLogoutProfile = TokenManager.shared.getAccessToken() != nil
             ? Profile(icon: UIImage.loginLogout, title: "Đăng xuất")
@@ -34,5 +35,6 @@ enum SettingProfileTable: Int {
     case address = 1
     case noti = 2
     case policy = 3
-    case logout = 4
+    case contact = 4
+    case logout = 5
 }
