@@ -149,6 +149,8 @@
 		BF56B7092CFFAE9E002B57A9 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56B7082CFFAE9E002B57A9 /* URL+Extension.swift */; };
 		BF56B7112D00502F002B57A9 /* MediaRattingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56B70F2D00502F002B57A9 /* MediaRattingCollectionViewCell.swift */; };
 		BF56B7122D00502F002B57A9 /* MediaRattingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF56B7102D00502F002B57A9 /* MediaRattingCollectionViewCell.xib */; };
+		BF56E31F2D116BA20019F0CD /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56E31D2D116BA20019F0CD /* ContactViewController.swift */; };
+		BF56E3202D116BA20019F0CD /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF56E31E2D116BA20019F0CD /* ContactViewController.xib */; };
 		BF59BB7E2CFE017F00225FB7 /* BrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF59BB7C2CFE017F00225FB7 /* BrandsViewController.swift */; };
 		BF59BB7F2CFE017F00225FB7 /* BrandsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF59BB7D2CFE017F00225FB7 /* BrandsViewController.xib */; };
 		BF5B322E2C92E3E00063CA29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B322D2C92E3E00063CA29 /* AppDelegate.swift */; };
@@ -430,6 +432,8 @@
 		BF56B7082CFFAE9E002B57A9 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		BF56B70F2D00502F002B57A9 /* MediaRattingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRattingCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF56B7102D00502F002B57A9 /* MediaRattingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaRattingCollectionViewCell.xib; sourceTree = "<group>"; };
+		BF56E31D2D116BA20019F0CD /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		BF56E31E2D116BA20019F0CD /* ContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
 		BF59BB7C2CFE017F00225FB7 /* BrandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsViewController.swift; sourceTree = "<group>"; };
 		BF59BB7D2CFE017F00225FB7 /* BrandsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandsViewController.xib; sourceTree = "<group>"; };
 		BF5B322A2C92E3E00063CA29 /* FSquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -906,6 +910,7 @@
 		BF1E66762CAD2E52001C48E9 /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
+				BF56E31C2D116B800019F0CD /* Contact */,
 				DF2B06A82D0AD02900651915 /* ChinhSach */,
 				BF1BFE392D01D55400793B3D /* Notifications */,
 				BF5D618F2CE2888E006202D2 /* EditAddress */,
@@ -1177,6 +1182,15 @@
 				BF56B7102D00502F002B57A9 /* MediaRattingCollectionViewCell.xib */,
 			);
 			path = ImageRattingCell;
+			sourceTree = "<group>";
+		};
+		BF56E31C2D116B800019F0CD /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				BF56E31D2D116BA20019F0CD /* ContactViewController.swift */,
+				BF56E31E2D116BA20019F0CD /* ContactViewController.xib */,
+			);
+			path = Contact;
 			sourceTree = "<group>";
 		};
 		BF59BB7B2CFE016900225FB7 /* Brands */ = {
@@ -2232,6 +2246,7 @@
 				BFEB4E2A2CAAB1310033F950 /* SuccessfullyRegisterViewController.xib in Resources */,
 				BF25D0A22C9C0BC000CB7EE8 /* Localizable.xcstrings in Resources */,
 				09EF3A052CD8A55A00B6FE02 /* ShoesColorCollectionViewCell.xib in Resources */,
+				BF56E3202D116BA20019F0CD /* ContactViewController.xib in Resources */,
 				BF25D0302C97237900CB7EE8 /* Inter-VariableFont_opsz,wght.ttf in Resources */,
 				BF1BFE332D01AA0900793B3D /* ReviewCollectionViewCell.xib in Resources */,
 				0925F3D92CD35DE700530A69 /* HeaderShoesDetailCollectionViewCell.xib in Resources */,
@@ -2290,6 +2305,7 @@
 				BF4760832CE0A2BF00207153 /* DistrictsResponse.swift in Sources */,
 				BF600F052CF0D10B0030708E /* BagUseCase.swift in Sources */,
 				BF600F082CF0D1CA0030708E /* CartViewModel.swift in Sources */,
+				BF56E31F2D116BA20019F0CD /* ContactViewController.swift in Sources */,
 				BFA8BAF32CEF16640008CA6E /* CartCollectionViewCell.swift in Sources */,
 				BF9F32712CB3C31E00530523 /* TabBarCoordinator.swift in Sources */,
 				DFDF60C12D0C177300C2CB68 /* MediaViewController.swift in Sources */,
