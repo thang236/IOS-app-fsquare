@@ -37,7 +37,7 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <attributedString key="attributedText">
                                         <fragment>
-                                            <mutableString key="content">1. Chấp nhận điều khoản
+                                            <string key="content">1. Chấp nhận điều khoản
 Khi đăng ký tài khoản trên FSquare, người dùng đồng ý với tất cả các điều khoản và điều kiện sử dụng dịch vụ được quy định tại đây.
 
 2. Thông tin tài khoản Người dùng cam kết cung cấp đầy đủ, chính xác và cập nhật các thông tin cá nhân (tên, email, số điện thoại, v.v.). FSquare không chịu trách nhiệm đối với các vấn đề phát sinh từ thông tin sai lệch.
@@ -54,10 +54,10 @@ Khi đăng ký tài khoản trên FSquare, người dùng đồng ý với tất
 
 8. Trách nhiệm của người dùng Người dùng có trách nhiệm thực hiện đúng các giao dịch, thanh toán đầy đủ và tuân thủ quy định khi sử dụng dịch vụ trên FSquare.
 
-9. Giải quyết tranh chấp Mọi tranh chấp phát sinh giữa người dùng và FSquare sẽ được ưu tiên giải quyết thông qua thương lượng, hòa giải. Nếu không thành, tranh chấp sẽ được giải quyết theo quy định pháp luật.</mutableString>
+9. Giải quyết tranh chấp Mọi tranh chấp phát sinh giữa người dùng và FSquare sẽ được ưu tiên giải quyết thông qua thương lượng, hòa giải. Nếu không thành, tranh chấp sẽ được giải quyết theo quy định pháp luật.</string>
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" metaFont="system" size="12"/>
+                                                <font key="NSFont" metaFont="cellTitle"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>

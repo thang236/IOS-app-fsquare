@@ -43,13 +43,24 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wik-BB-Hvi">
+                        <rect key="frame" x="145" y="16" width="157" height="133"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="wik-BB-Hvi" secondAttribute="trailing" constant="8" id="1lC-7L-h6E"/>
                 <constraint firstItem="Iwj-gB-jKF" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.4" id="Pvh-bm-shB"/>
                 <constraint firstItem="CIV-dK-BWW" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="Xsx-1S-qij"/>
+                <constraint firstAttribute="top" secondItem="wik-BB-Hvi" secondAttribute="top" constant="-16" id="mtU-8S-Htu"/>
+                <constraint firstItem="wik-BB-Hvi" firstAttribute="leading" secondItem="CIV-dK-BWW" secondAttribute="trailing" constant="5" id="rgm-bb-wff"/>
                 <constraint firstItem="CIV-dK-BWW" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="16" id="vfJ-PN-gYE"/>
+                <constraint firstAttribute="bottom" secondItem="wik-BB-Hvi" secondAttribute="bottom" constant="16" id="yWP-8D-5pc"/>
             </constraints>
             <size key="customSize" width="380" height="130"/>
             <userDefinedRuntimeAttributes>
@@ -58,6 +69,7 @@
             <connections>
                 <outlet property="nameShoes" destination="Iwj-gB-jKF" id="KIE-PP-7BC"/>
                 <outlet property="price" destination="Sda-q5-aGf" id="891-9j-ADX"/>
+                <outlet property="shoeImageView" destination="wik-BB-Hvi" id="KJ5-0n-7hX"/>
             </connections>
             <point key="canvasLocation" x="390.83969465648852" y="47.535211267605639"/>
         </collectionViewCell>

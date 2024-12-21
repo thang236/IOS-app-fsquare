@@ -29,7 +29,7 @@ enum HomeCollectionType: String, CaseIterable, Hashable {
 }
 
 enum HomeCollectionContentCell: Hashable {
-    case popular(id: String, title: String, price: Double)
+    case popular(id: String, title: String, price: Double, thumbnail: String?)
     case brand(id: String, url: String?, nameBrand: String)
     case shoes(shoes: ShoeData)
     case banner
@@ -57,9 +57,9 @@ class HomeViewController: UIViewController {
                 case .banner:
                     let cell = collectionView.dequeueReusableCell(withType: BannerHomeCollectionViewCell.self, for: indexPath)
                     return cell
-                case let .popular(id, title, price):
+                case let .popular(id, title, price, thumbnail):
                     let cell = collectionView.dequeueReusableCell(withType: PopularCollectionViewCell.self, for: indexPath)
-                    cell.setupCell(title: title, price: NumberFormatter.formatToVNDWithCustomSymbol(price))
+                    cell.setupCell(title: title, price: NumberFormatter.formatToVNDWithCustomSymbol(price),thumbnail: thumbnail)
                     return cell
                 case let .brand(id, url, nameBrand):
                     let cell = collectionView.dequeueReusableCell(withType: BrandCollectionViewCell.self, for: indexPath)
@@ -186,8 +186,8 @@ class HomeViewController: UIViewController {
         snapshot.appendSections(HomeCollectionType.allCases)
         snapshot.appendItems([.banner], toSection: .banner)
         snapshot.appendItems([
-            .popular(id: "", title: "", price: -1),
-            .popular(id: "1", title: "", price: -1),
+            .popular(id: "", title: "", price: -1, thumbnail: ""),
+            .popular(id: "1", title: "", price: -1, thumbnail: ""),
         ], toSection: .popular)
         snapshot.appendItems([
             .shoes(shoes: ShoeData(id: "", name: "", thumbnail: nil, minPrice: -1, maxPrice: -1, rating: 0, reviewCount: 0, isFavorite: false, sales: 0)),
@@ -217,7 +217,7 @@ class HomeViewController: UIViewController {
                 var snapshot = wSelf.dataSource.snapshot()
                 if let response = response {
                     snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .popular))
-                    snapshot.appendItems(response.data.map { .popular(id: $0.id, title: $0.name, price: $0.totalRevenue) }, toSection: .popular)
+                    snapshot.appendItems(response.data.map { .popular(id: $0.id, title: $0.name, price: $0.totalRevenue, thumbnail: $0.thumbnail?.url) }, toSection: .popular)
                 }
                 wSelf.dataSource.apply(snapshot, animatingDifferences: false)
             }.store(in: &viewModel.cancellables)
@@ -426,7 +426,7 @@ extension HomeViewController: SkeletonCollectionViewDelegate, UICollectionViewDa
         switch item {
         case .popular:
             let cell = collectionView.dequeueReusableCell(withType: PopularCollectionViewCell.self, for: indexPath)
-            cell.setupCell(title: "", price: "")
+            cell.setupCell(title: "", price: "", thumbnail: "")
             return cell
         case .brand:
             let cell = collectionView.dequeueReusableCell(withType: BrandCollectionViewCell.self, for: indexPath)
@@ -446,7 +446,7 @@ extension HomeViewController: SkeletonCollectionViewDelegate, UICollectionViewDa
         let item = dataSource.itemIdentifier(for: indexPath)
 
         switch item {
-        case let .popular(id, _, _):
+        case let .popular(id, _, _, _):
             coordinator?.goToShoesDetail(idShoes: id)
         case let .brand(id, url, nameBrand):
             viewModel.filterBand(idBrand: id)

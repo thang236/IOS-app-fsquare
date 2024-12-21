@@ -254,7 +254,7 @@ class CheckOutViewController: UIViewController {
 
             snapshot.appendItems(bagData.map { .order(bag: $0) }, toSection: .order)
 
-            totalAmount = bagData.reduce(0) { $0 + ($1.price * Double($1.quantity)) }
+            totalAmount = bagData.map({ $0.price * Double($0.quantity) }).reduce(0, +)
 
             snapshot.appendItems([.total(amount: totalAmount, shipping: nil)], toSection: .total)
 
@@ -453,6 +453,12 @@ extension CheckOutViewController: AddressCollectionViewCellDelegate {
 }
 
 extension CheckOutViewController: BaoKimViewControllerDelegate {
+    func onPaymentFailed() {
+        let popUp = PopUpPaymentViewController()
+        popUp.delegate = self
+        popUp.appear(sender: self, isSuccess: false)
+    }
+    
     func didCloseBaoKim() {
         clientOrderCode = viewModel.generateRandomID()
     }

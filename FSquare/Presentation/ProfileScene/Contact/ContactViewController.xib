@@ -117,8 +117,14 @@
         </view>
     </objects>
     <designables>
+        <designable name="8iI-51-huS">
+            <size key="intrinsicContentSize" width="95.333333333333329" height="19.333333333333332"/>
+        </designable>
         <designable name="U5q-ej-ft6">
             <size key="intrinsicContentSize" width="228" height="19.333333333333332"/>
+        </designable>
+        <designable name="x9K-Bi-wW7">
+            <size key="intrinsicContentSize" width="664" height="19.333333333333332"/>
         </designable>
     </designables>
     <resources>

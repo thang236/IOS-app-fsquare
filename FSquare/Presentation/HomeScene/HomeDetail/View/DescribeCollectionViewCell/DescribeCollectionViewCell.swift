@@ -66,7 +66,7 @@ class DescribeCollectionViewCell: UICollectionViewCell {
 
             setUpRating(ratingNumber: shoesDetailData.rating)
             rattingLbl.text = "\(shoesDetailData.rating)"
-            soldLbl.text = "\(shoesDetailData.sales) Sold"
+            soldLbl.text = "\(shoesDetailData.sales) Đã bán"
 
             if shoesDetailData.isFavorite ?? false {
                 favIcon.image = UIImage.fav

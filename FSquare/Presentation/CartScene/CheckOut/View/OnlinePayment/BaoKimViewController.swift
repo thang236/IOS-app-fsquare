@@ -10,6 +10,7 @@ import WebKit
 
 protocol BaoKimViewControllerDelegate: AnyObject {
     func onPaymentComplete()
+    func onPaymentFailed()
     func didCloseBaoKim()
 }
 
@@ -74,7 +75,12 @@ extension BaoKimViewController: WKUIDelegate, WKNavigationDelegate {
     func webView(_: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let url = navigationAction.request.url?.absoluteString {
             if url.contains("https://www.baokim.vn/?created_at=") {
-                navigateToSuccessScreen()
+                navigateToSuccessScreen(isSuccess: true)
+                decisionHandler(.cancel)
+                return
+            }
+            if url.contains("https://www.baokim.vn/?id=") {
+                navigateToSuccessScreen(isSuccess: false)
                 decisionHandler(.cancel)
                 return
             }
@@ -86,8 +92,12 @@ extension BaoKimViewController: WKUIDelegate, WKNavigationDelegate {
         print("Error: \(error.localizedDescription)")
     }
 
-    private func navigateToSuccessScreen() {
+    private func navigateToSuccessScreen(isSuccess: Bool) {
         navigationController?.popViewController(animated: false)
-        delegate?.onPaymentComplete()
+        if isSuccess {
+            delegate?.onPaymentComplete()
+        } else {
+            delegate?.onPaymentFailed()
+        }
     }
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 class PopularCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var shoeImageView: UIImageView!
     @IBOutlet var price: HeadingLabel!
     @IBOutlet var nameShoes: HeadingLabel!
     private let imageView: UIImageView = {
@@ -34,11 +35,14 @@ class PopularCollectionViewCell: UICollectionViewCell {
         showAnimatedGradientSkeleton()
     }
 
-    func setupCell(title: String?, price: String?) {
+    func setupCell(title: String?, price: String?, thumbnail: String?) {
         if let title = title, let price = price, title != "" {
             hideSkeleton()
             nameShoes.text = title
             self.price.text = price
+            if let url = URL(string: thumbnail ?? "") {
+                shoeImageView.loadImageWithShimmer(url: url)
+            }
         } else {
             showAnimatedGradientSkeleton()
         }

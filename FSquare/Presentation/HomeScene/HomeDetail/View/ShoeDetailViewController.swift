@@ -149,11 +149,21 @@ class ShoeDetailViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.standardAppearance = appearance
         tabBarController?.tabBar.isHidden = true
     }
 
     override func viewWillDisappear(_: Bool) {
         tabBarController?.tabBar.isHidden = false
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .clear
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.standardAppearance = appearance
     }
 
     func setupNav() {

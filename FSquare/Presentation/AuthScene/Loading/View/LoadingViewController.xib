@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chào mừng đến" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXm-NN-MLi" customClass="HeadingLabel" customModule="FSquare" customModuleProvider="target">
-                    <rect key="frame" x="20" y="629.66666666666663" width="353" height="43"/>
+                    <rect key="frame" x="20" y="631" width="353" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -52,8 +52,8 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FSquare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGa-1u-HsA">
-                    <rect key="frame" x="20" y="680.66666666666663" width="320.33333333333331" height="97"/>
-                    <fontDescription key="fontDescription" name="Inter-Regular_ExtraBold" family="Inter" pointSize="80"/>
+                    <rect key="frame" x="20" y="682" width="316.33333333333331" height="95.666666666666629"/>
+                    <fontDescription key="fontDescription" name="Inter-Regular_ExtraBold" family="Inter" pointSize="79"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>

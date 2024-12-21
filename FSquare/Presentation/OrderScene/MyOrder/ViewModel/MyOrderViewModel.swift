@@ -53,7 +53,8 @@ class MyOrderViewModel: ObservableObject {
     }
 
     func getOrder(orderStatus: OrderStatus, completion: (() -> Void)? = nil) {
-        let parameter: [String: Any] = ["status": orderStatus.rawValue]
+        let parameter: [String: Any] = ["status": orderStatus.rawValue,
+                                        "size": 100]
         orderUseCase.getOrderStatus(parameter: parameter)
             .receive(on: RunLoop.main)
             .sink { completion in
